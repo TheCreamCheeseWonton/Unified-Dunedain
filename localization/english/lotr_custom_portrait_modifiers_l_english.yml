@@ -1,0 +1,18 @@
+﻿l_english:
+ ##Quonton
+ PORTRAIT_MODIFIER_custom_clothes_male_clothes_golden_numenorean_war_01:0 "@realmsinexile_icon! Númenórean Armour"
+ PORTRAIT_MODIFIER_custom_clothes_female_clothes_golden_numenorean_war_01:0 "@realmsinexile_icon! Númenórean Armour"
+
+ PORTRAIT_MODIFIER_custom_legwear_male_legwear_golden_numenorean_war_01:0 "@realmsinexile_icon! Númenórean Armour"
+ PORTRAIT_MODIFIER_custom_legwear_female_legwear_golden_numenorean_war_01:0 "@realmsinexile_icon! Númenórean Armour"
+
+ PORTRAIT_MODIFIER_custom_headgear_male_helmet_golden_numenorean_warhelm1:0 "@realmsinexile_icon! Númenórean Helmet"
+ PORTRAIT_MODIFIER_custom_headgear_female_helmet_golden_numenorean_warhelm1:0 "@realmsinexile_icon! Númenórean Helmet"
+
+ PORTRAIT_MODIFIER_custom_headgear_male_helmet_golden_numenorean_royalhelm1:0 "@realmsinexile_icon! Númenórean Royal Helmet"
+ PORTRAIT_MODIFIER_custom_headgear_female_helmet_golden_numenorean_royalhelm1:0 "@realmsinexile_icon! Númenórean Royal Helmet"
+
+ PORTRAIT_MODIFIER_custom_headgear_male_headgear_golden_numenorean_crown1:0 "@realmsinexile_icon! Númenórean Royal Crown"
+ PORTRAIT_MODIFIER_custom_headgear_female_headgear_golden_numenorean_crown1:0 "@realmsinexile_icon! Númenórean Royal Crown"
+
+ numenorean_unit_gfx:0 "Númenórean"

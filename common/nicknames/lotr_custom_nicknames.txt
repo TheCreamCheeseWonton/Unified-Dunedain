@@ -1,0 +1,5 @@
+﻿	##################
+	# TRIGGERED ONLY #
+	##################
+
+	nick_bearer_of_light = {}

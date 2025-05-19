@@ -1,0 +1,33 @@
+﻿male_helmet_golden_numenorean_warhelm1 = {	
+	set_tags = "cap,cap_02"
+	
+	entity = { required_tags = ""			shared_pose_entity = head		entity = male_golden_numenorean_warhelm1_entity 	 }		
+}
+
+male_helmet_golden_numenorean_royalhelm1 = {	
+	set_tags = "cap,cap_02"
+	
+	entity = { required_tags = ""			shared_pose_entity = head		entity = male_golden_numenorean_royalhelm1_entity 	 }		
+}
+
+female_helmet_golden_numenorean_warhelm1 = {	
+	set_tags = "cap,cap_02"
+	
+	entity = { required_tags = ""			shared_pose_entity = head		entity = female_golden_numenorean_warhelm1_entity 	 }		
+}
+
+female_helmet_golden_numenorean_royalhelm1 = {	
+	set_tags = "cap,cap_02"
+	
+	entity = { required_tags = ""			shared_pose_entity = head		entity = female_golden_numenorean_royalhelm1_entity 	 }		
+}
+
+male_headgear_golden_numenorean_crown1 = {	
+	set_tags = "crown"
+	entity = { required_tags = ""			shared_pose_entity = head		entity = male_headgear_golden_numenorean_crown1_entity 	 }		
+}
+
+female_headgear_golden_numenorean_crown1 = {	
+	set_tags = "crown"
+	entity = { required_tags = ""			shared_pose_entity = head		entity = female_headgear_golden_numenorean_crown1_entity 	 }		
+}

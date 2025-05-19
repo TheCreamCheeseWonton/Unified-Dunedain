@@ -1,0 +1,60 @@
+﻿pharazaini_culture = {
+	color = { 215 175 55 }
+	created = 7000.1.1 # Doesn't Exist at game start
+	parents = { black_numenorean south_adunai_colonial }
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_unified_adunaic
+	language = language_adunaic
+	martial_custom = martial_custom_male_only
+	traditions = {
+		tradition_adunaic_legacy
+		tradition_unified_adunaic
+		tradition_ruling_caste
+		tradition_seafaring
+		tradition_fp3_beacon_of_learning
+	}
+	
+	name_list = name_list_adunaic
+	
+	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
+	building_gfx = { dunedain_building_gfx numenorean_building_gfx mediterranean_building_gfx }
+	clothing_gfx = { numenorean_clothing_gfx }
+	unit_gfx = { numenorean_unit_gfx }
+	
+	ethnicities = {
+		1 = black_numenorean_ethnicity
+	}
+}
+
+new_numenorean_adunaic = {
+	color = { 215 70 120 }
+	#	color = hsv { 0.85 0.27 0.42 }
+	created = 7000.1.1 # Doesn't Exist at game start
+	parents = { new_dunedain pharazaini_culture }
+	
+	ethos = ethos_bureaucratic
+	heritage = heritage_unified_adunaic
+	language = language_adunaic
+	martial_custom = martial_custom_male_only
+	traditions = {
+		tradition_adunaic_legacy
+		tradition_new_numenor
+		tradition_ruling_caste
+		tradition_tales_of_great_deeds
+		tradition_seafaring
+		tradition_castle_keepers
+		tradition_fp3_beacon_of_learning
+	}
+	
+	name_list = name_list_adunaic
+	
+	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
+	building_gfx = { dunedain_building_gfx numenorean_building_gfx mediterranean_building_gfx }
+	clothing_gfx = { numenorean_clothing_gfx }
+	unit_gfx = { numenorean_unit_gfx }
+	
+	ethnicities = {
+		1 = numenorean_ethnicity
+	}
+}

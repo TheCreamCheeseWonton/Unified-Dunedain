@@ -1,0 +1,246 @@
+﻿
+namespace = dunedain_identity
+
+dunedain_identity.1 = { # Westron vs Sindarin
+	content_source = realms_dlc
+	type = character_event
+	title = dunedain_identity.1.t
+	desc = dunedain_identity.1.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = minas_tirith }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = {
+		name = dunedain_identity.1.a
+		custom_tooltip = dunedain_identity_westron
+		hidden_effect = {
+			culture:new_dunedain = {
+				set_culture_pillar = language_westron
+			}
+		}
+	}
+
+	option = {
+		name = dunedain_identity.1.b
+		custom_tooltip = dunedain_identity_sindarin
+		hidden_effect = {
+			culture:new_dunedain = {
+				set_culture_pillar = language_sindarin
+			}
+		}
+	}
+}
+
+dunedain_identity.2 = { # Integrate Rohan
+	content_source = realms_dlc
+	type = character_event
+	title = dunedain_identity.2.t
+	desc = dunedain_identity.2.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = minas_tirith }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				exists = title:e_reunitedkingdom.holder
+			}
+			title:e_reunitedkingdom = { save_scope_as = gondor_title }
+		}
+		else_if = {
+			limit = {
+				exists = title:e_numenor_in_exile.holder
+			}
+			title:e_numenor_in_exile = { save_scope_as = gondor_title }
+		}
+		else = {
+			title:e_gondor = { save_scope_as = gondor_title }
+		}
+		title:k_rohan.holder = { save_scope_as = rohan_title }
+
+		scope:gondor_title.holder ?= { save_scope_as = high_king_of_gondor } 
+	}
+
+	option = { # Send over to Rohan to accept
+		name = dunedain_identity.2.a
+		custom_tooltip = reclaim_calenardhon_dunedain
+	}
+
+	after = {
+		title:k_rohan.holder = { 
+			trigger_event = {
+				id = dunedain_identity.3
+				months = { 1 2 }
+			}
+		}
+	}
+}
+
+dunedain_identity.3 = { # Event for Rohan
+	content_source = realms_dlc
+	type = character_event
+	title = dunedain_identity.3.t
+	desc = dunedain_identity.3.desc
+	theme = stewardship_duty_focus
+
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = stress
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				exists = title:e_reunitedkingdom.holder
+			}
+			title:e_reunitedkingdom = { save_scope_as = gondor_title }
+		}
+		else = {
+			title:e_numenor_in_exile = { save_scope_as = gondor_title }
+		}
+		title:k_rohan.holder = { save_scope_as = rohan_title }
+		scope:gondor_title.holder = { save_scope_as = high_king_of_gondor }
+	}
+
+	option = { # Become a vassal of the King of Gondor
+		name = dunedain_identity.3.a
+		
+		title:k_rohan = { set_de_jure_liege_title = scope:gondor_title }
+
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		
+		title:k_rohan.holder = {
+			change_liege = {
+				liege = scope:gondor_title.holder
+				change = scope:change
+			}
+		}
+		
+		resolve_title_and_vassal_change = scope:change
+
+		scope:high_king_of_gondor = { 
+			trigger_event = {
+				id = dunedain_identity.4
+				days = 1
+			}
+		}
+
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+
+	option = { # Stay independent
+		name = dunedain_identity.3.b
+
+		scope:high_king_of_gondor = { 
+			trigger_event = {
+				id = dunedain_identity.5
+				months = { 1 2 }
+			}
+		}
+
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 0
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 30
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+}
+
+dunedain_identity.4 = { # Integrate Rohan
+	content_source = realms_dlc
+	type = character_event
+	title = dunedain_identity.4.t
+	desc = dunedain_identity.4.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = minas_tirith }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = { # Yay Rohan
+		name = dunedain_identity.4.a
+		add_prestige = 1000
+		dynasty = { add_dynasty_prestige = 500 }
+	}
+}
+
+dunedain_identity.5 = { # Integrate Rohan NOT
+	content_source = realms_dlc
+	type = character_event
+	title = dunedain_identity.5.t
+	desc = dunedain_identity.5.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = minas_tirith }
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				exists = title:e_reunitedkingdom.holder
+			}
+			title:e_reunitedkingdom = { save_scope_as = gondor_title }
+		}
+		else = {
+			title:e_numenor_in_exile = { save_scope_as = gondor_title }
+		}
+		title:k_rohan.holder = { save_scope_as = rohan_title }
+		scope:gondor_title.holder = { save_scope_as = high_king_of_gondor }
+	}
+
+	option = { # Bleh Rohan
+		name = dunedain_identity.5.a
+		scope:high_king_of_gondor = {
+			add_pressed_claim = title:k_rohan
+		}
+	}
+}

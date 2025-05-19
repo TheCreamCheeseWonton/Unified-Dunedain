@@ -1,0 +1,3 @@
+﻿gimilziran = {
+	parent = conceptmajorcharacter
+}

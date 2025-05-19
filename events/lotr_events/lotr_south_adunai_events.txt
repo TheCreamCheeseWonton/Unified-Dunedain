@@ -1,0 +1,102 @@
+﻿
+namespace = south_adunai_events
+
+south_adunai_events.1 = { # Solidify Empire Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.1.t
+	desc = south_adunai_events.1.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = south_adunai_events.1.a
+	}
+}
+
+south_adunai_events.2 = { # Gimilzadan Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.2.t
+	desc = south_adunai_events.2.desc
+	theme = diplomacy
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	right_portrait = {
+		character = scope:linegimilzadan3
+		animation = personality_honorable
+	}
+	
+	option = {
+		name = south_adunai_events.2.a
+		add_short_term_gold = 350
+		root.dynasty = {
+			add_dynasty_prestige = 1150
+		}
+		add_prestige = 150
+	}
+}
+
+#south_adunai_events.3 = { # Gimilzadan Flavor 2
+#	content_source = realms_dlc 
+#	type = character_event
+#	title = south_adunai_events.3.t
+#	desc = south_adunai_events.3.desc
+#	theme = stewardship_domain_focus
+#	
+#	left_portrait = {
+#		character = root
+#		animation = personality_honorable
+#	}
+#	
+#	trigger = {
+#		character:linegimilzadan2 = {
+#			prestige >= 5000
+#		}
+#	}
+#
+#	#Reclaim Thani Hazad
+#	option = {
+#		name = south_adunai_events.3.a
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#	
+#	#Claim An Bambakugan Holy Warior
+#	option = {
+#		name = south_adunai_events.3.b
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#	
+#	#Claim Sarul Conqueror
+#	option = {
+#		name = south_adunai_events.3.c
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#	
+#	#My Own Path
+#	option = {
+#		name = south_adunai_events.3.d
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#}

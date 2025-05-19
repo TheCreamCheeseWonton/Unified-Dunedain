@@ -1,0 +1,23 @@
+﻿can_my_culture_seduce_chance = {
+    value = 1
+
+    if = {
+        limit = { 
+			culture = { has_cultural_parameter = seduce_schemes_less_common } 
+			NOT = { any_player = { this = prev } }
+		}
+
+        multiply = { 0 1 }
+    }
+}
+
+number_of_adunaic_culture_provinces = {
+    value = 0
+    every_county_in_region = {
+        region = special_nie_extra
+        limit = { 
+            my_adunaic_culture_trigger = yes
+        }
+        add = 1
+    }
+}

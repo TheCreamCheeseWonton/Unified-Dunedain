@@ -1,0 +1,527 @@
+﻿l_english:
+ ##Buildings
+ building_wonder_cirith_ungol_02:0 "Cirith Ungol - Reclaimed"
+ building_wonder_cirith_ungol_02_desc:0 "Long ago Cirith Ungol was built to keep the watch on [mordor|E] and protect [gondor|E] after the [warlastalliance|E]. After countless years under the dictatorship of the [witchkingshort|E] of [angmar|E], this once proud [gondorian|E] fortress has been reclaimed. Evermore shall the watchful gaze of Cirith Ungol be used to protect [gondor|E]'s heartland from the darkness of [mordor|E]."
+
+ building_wonder_aldburg_03:0 "Calenmîr - Rebuilt"
+ building_wonder_aldburg_03_desc:0 "Calenmîr, or the Green Jewel, has been reclaimed by the [dunedain|E]. Whether through diplomacy or the sword, [calenardhon|E] has been reborn as a province within the [realms_in_exile|E]. Rebuilt in the image of Calenmîr of old, the city has once again become one of the wealthiest cities in all of [calenardhon|E], with a distinct [gondorian|E] character."
+
+ building_wonder_mispir_2:0 "Capital of Mispir"
+ building_wonder_mispir_2_desc:0 "The city of Mispir, since the unification of the [thanihazad|E], has grown prosperous. Expanded considerably, and with an extensive increase in population, the city is unrivaled in all of southern [middleearth|E] and rivals some of the greatest cities in the world. Her ports are full, markets bustling, and homes filled with prosperity and wealth. The long history of Mispir as the seat of the [balan_lai|E] and the center of [adunaic|E] rule persists in the city, inspiring politics and vice even to this day. Mispir continues to be the center of [thanihazad|E] in heart, soul, and state. "
+
+ building_type_wonder_anonarmenlos_01:0 "Armenelostion"
+ building_type_wonder_anonarmenlos_01_desc:0 "Armenelostion, or 'Son of [armenelos|E]', is one of the greatest cities made by [man|E], even rivaling the cities of [numenor|E] in their splendor. From her white walls and great ports, the legacy of [numenor|E] flows. Made in the shape and memory of [armenelos|E], no other city today has as strong a claim as Armenelostion of being a truly [numenorean|E] city."
+ building_wonder_anonarmenlos_01:0 "Armenelostion"
+ building_wonder_anonarmenlos_01_desc:0 "Armenelostion, or 'Son of [armenelos|E]', is one of the greatest cities made by [man|E], even rivaling the cities of [numenor|E] in their splendor. From her white walls and great ports, the legacy of [numenor|E] flows. Made in the shape and memory of [armenelos|E], no other city today has as strong a claim as Armenelostion of being a truly [numenorean|E] city."
+ building_wonder_anonarmenlos_02:0 "Yantalondë"
+ building_wonder_anonarmenlos_02_desc:0 "The Yantalondë, or 'Bridge Havens' are the many havens of Armenelostion. The archipelago is a collection of many comparatively small islands, and between them all are the Great Bridges of Armenelostion. So great and colossal are their breadth that many host entire towns and districts of the city themselves! And along every Great Bridge is a Great Haven, where goods from all over the world come and go as the center of trade in all of [middleearth|E]. The Yantalondë exemplifies the maritime character of the city and the immense effort required in their construction."
+ building_wonder_anonarmenlos_03:0 "Númen Mindon"
+ building_wonder_anonarmenlos_03_desc:0 "The Númen Mindon, or 'Western Great Tower' is on the archipelago's tallest point on the westernmost island. This soaring tower reaches into the very heavens and peers outwards towards the western seas, towards [meneltarma|E]. Here is taught the history of [numenor|E], of the corruption and wicked hate that infected the hearts of the [numenoreans|E], and of their eventual fait in the [akallabeth|E]. A somber place of lore, remembrance, and teaching, the wardens of Númen Mindon dedicate themselves to duty, ensuring that the painful events at the end of the [secondage|E] never again come to pass."
+
+ ##Religions
+ faith_adunaic_faithful:0 "Batân an-Êru"
+ faith_adunaic_faithful_adj:0 "Batân an-Êru"
+ faith_adunaic_faithful_adherent:0 "Batâni"
+ faith_adunaic_faithful_adherent_plural:0 "Batânim"
+ faith_adunaic_faithful_desc:0 "[Glossary('Anâm nakhô Bârazra sakalada — phazagada, magada, azarada — katha gimilî nâluthôr.', 'gimils_pledge_gloss' )]\n\nThus spoke [gimilziran|E], upon his landing in [middleearth|E] after the [akallabeth|E], and so was the High Kingdom of [thanihazad|E] borne from his ships and the colonies of the [sevenlands|E]. \n\nOr at least, this was the ambition of [gimilziran|E].\n\nBatân an-Êru (The Path of Êru) is a faith of the [faithful|E], a continuation of ancient [numenorean|E] tradition and the teachings once bestowed by the [highelves|E]. Established in the wake of the short-lived conquests of the [faithful|E] [gimilziran|E], it was conceived as a means to preserve stability within his realm by syncretizing his [faithful|E] beliefs with the beliefs of the local [kingsmen|E] population. Unlike their northern [faithful|E] brethren, the Batân an-Êru incorporates some aspects of [kingsmen|E] philosophy into their doctrine, most notably the idea of the [adunaic|E] divine mandate to rule, while remaining rooted in the central truths of [faithful|E] ideals. The Batân an-Êru continues on the legacy of the [numenoreans|E] original intent, coming as teachers and friends to the Men of [middleearth|E].\n\nToday, the followers of Batân an-Êru are scattered and few. In the wake of [gimilziran|E]'s failed grasp for empire, only his heirs and a small, underground circle remain. Yet those who still walk the Path do so with iron resolve. Their faith is fierce, unyielding where others bend, and they would gladly take up arms to preserve the legacy of the Southern [faithful|E] of [thanihazad|E]."
+
+ tenet_unrelenting_faith_adunai_faithful_name:0 "Light Unyielding"
+ tenet_unrelenting_faith_adunai_faithful_desc:0 "Surrounded by those who have turned from the light of [eru|E], we stand alone in a sea of shadow. Yet we do not waver. No trial will bend us, no darkness unmake us. We will stand, and we will fight any who would tear our faith from us."
+
+ ##Cultures
+ new_dunedain:0 "Erthad Dúnedain"
+ new_dunedain_collective_noun:0 "Erthad Dúnedain"
+ new_dunedain_prefix:0 "Erthad Dúnedain"
+ new_dunedain_ethnicity:0 "Erthad Dúnedain"
+ new_dunedain_desc:0 "#size:15    [dunedain|E] is a term used to refer to those descended from the [faithful|E] [numenoreans|E] in [middleearth|E]. They primarily populated the realms of [arnor|E] and [gondor|E], and because of this, many of the great events of the [thirdage|E] revolved around this proud people. Their strength and number have dwindled with the destruction of [arnor|E] and the constant assaults on [gondor|E], but the heirs of [numenor|E] retain much of the wisdom and nobility of their ancient forefathers. Now united, the future is within Erthad [dunedain|E] hands.#"
+
+ heritage_unified_adunaic_name:0 "Adûnâic"
+ heritage_unified_adunaic_collective_noun:0 "Adûnâic"
+
+ pharazaini_culture:0 "Pharazâini"
+ pharazaini_culture_collective_noun:0 "Pharazâini"
+ pharazaini_culture_prefix:0 "Pharazâinic"
+ pharazaini_culture_ethnicity:0 "Pharazâinic"
+ pharazaini_culture_desc:0 "#size:15    The Pharazâini, or 'People of the Golden Lands', refer to the [culture|E] that has developed in the Lands of [umbar|E], [bellakar|E], [anbalkumagan|E], and [thanihazad|E] since the unification of the former southern [numenorean|E] colonies. While the lands of the Pharazâini are more distant and disunified than those of their northern [dunedain|E] cousins, the [adunaic|E] peoples of the south hold onto their ancient [numenorean|E] heritage with a much firmer grasp, and won't allow their sacred traditions to fall out of favor. Interestingly, the unification of the disparate [adunaic|E] realms of the south has led the Pharazâini to become less depraved than many of their forefathers.\n\nThe Pharazâini believe that their noble heritage gives them a right to rule over lesser peoples, but this should be done with some echo of the original [numenorean|E] mission to educate and aid the benighted natives.#"
+
+ new_numenorean:0 "Cîr Númenórean"
+ new_numenorean_ethnicity:0 "Cîr Númenórean"
+ new_numenorean_collective_noun:0 "Cîr Númenóreans"
+ new_numenorean_prefix:0 "Cîr Númenórean"
+ new_numenorean_desc:0 "#size:15    Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the former [numenoreans|E] of [middleearth|E] have diverged. Separated by politics, religion, conflict, and sheer distance, the many Sons of [numenor|E] have long been divided. Now, with all of the old Númenórean Colonies under our rule, and the formation of Númenor-in-Exile, the Númenóreans are once again united!#"
+
+ new_numenorean_adunaic:0 "Adûnâhin"
+ new_numenorean_adunaic_ethnicity:0 "Adûnâhin"
+ new_numenorean_adunaic_collective_noun:0 "Adûnâhin"
+ new_numenorean_adunaic_prefix:0 "Adûnâhin"
+ new_numenorean_adunaic_culture_desc:0 "#size:15    Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the former [numenoreans|E] of [middleearth|E] have diverged. Separated by politics, religion, conflict, and sheer distance, the many Sons of [numenor|E] have long been divided. Now, with all of the old Númenórean Colonies under our rule, and the formation of Númenor-in-Exile, the Númenóreans are once again united!#"
+
+ ar_adunaim_numenorean:0 "Pharazônabênî"
+ ar_adunaim_numenorean_ethnicity:0 "Pharazônabênî"
+ ar_adunaim_numenorean_collective_noun:0 "Pharazônabênî"
+ ar_adunaim_numenorean_prefix:0 "Pharazônabênî"
+ ar_adunaim_numenorean_culture_desc:0 "#size:15    The Pharazônabênî (Adunaic: People of Pharazôn) are the insular and, according to many, detestable culture of [GetTitleByKey('e_adunaim').GetName]. An ostensibly proud and noble people, they seemingly exude the nobility and grace of [anadune|E]. In their grand halls and great palaces, one of sufficient [bloodofnumenor|e] would find themselves in the company of friends and the recipient of gifts and respect. However, if you are one that the Pharazônabênî consider "lesser," you will find nothing but disdain, disrespect, and hostility. For the Pharazônabênî, their superiority and the inferiority of others is a simple fact of life. \n\nFormed after the Blood-Purists were exiled from [umbar|E], the Pharazônabênî haven't forgiven the Umbareans for all they have lost and the disgrace they levied upon them. For this and several other transgressions, a burning desire for revenge has grown in the hearts of many Pharazônabênî. Hatred for the "other" runs deep in their society, and while they certainly will treat an Heir of [anadune|E] with respect, if you do not follow their ways, you may find many a cold shoulder.#"
+ ar_adunaim_numenorean_loc:0 "Diverged from [CULTURE.GetName] by those who sought to bring purity to the [adunai|E]"
+
+ kharatakhori:0 "Kharatakhôri"
+ kharatakhori_ethnicity:0 "Kharatakhôric"
+ kharatakhori_collective_noun:0 "Kharatakhôri"
+ kharatakhori_prefix:0 "Kharatakhôric"
+ kharatakhori_culture_desc:0 "#size:15    The Kharatakhôri are a people of many faces. They remember the days of their dominance in [anbalkumagan|E] and their fair rule in [thanihazad|E]. Combining the more domineering aspects of Anbalûkkhôri with the mercantile, equitable, and noble Kharadûnâi, the Kharatakhôri are a proud and just people. Reunited into one nation, the [adunai|E] of [thanihazad|E] have secured their eternal rule over the Seven Lands, and will govern with grace and cunning.  #"
+
+ ##Traditions
+ tradition_unified_dunedain_name:0 "A Unified Dúnedain"
+ tradition_unified_dunedain_desc:0 "With the mending of [arnor|E] and [gondor|E], and the unification of the [dunedain|E], we stand ready to reclaim our glorious ancestry! United by our heritage, we embrace our shared legacy as descendants of [elendil|E], from whom the blood of [numenor|E] flows. Together, as one people united in purpose and destiny, let this be the age where the spirit of [westernesse|E] rises anew for generations yet unborn to marvel at and emulate. A new age begins for the Sons of [numenor|E]."
+
+ tradition_unified_adunaic_name:0 "A Unified Adûnâi"
+ tradition_unified_adunaic_desc:0 "With the unification of the [adunaic|E] peoples of [umbar|E], [bellakar|E], [anbalkumagan|E], and [thanihazad|E] we stand as the true successors of [numenor|E]! Never before have those Adûnâi of the south been as united as now, never our goals and efforts as focused. Together, as one people united in purpose and destiny, let this be the age where the spirit of [westernesse|E] rises anew for generations yet unborn to marvel at and emulate. A new age begins for the Sons of [numenor|E]."
+
+ tradition_adunaic_legacy_name:0 "Adûnâic Legacy"
+ tradition_adunaic_legacy_desc:0 "The [black_numenoreans|E], and the descendants of the several other Southern Colonies are our forebearers. From [umbar|E] and the ever vengeful [kingsmen|E], [bellakar|E] and their egalitarian [faithful|E], [anbalkumagan|E] and their endless depravity, and [thanihazad|E] and the machinations of the [balan_lai|E]. We are a storied people. We survived the [akallabeth|E]. We stretch the entire length of the [greatsea|E]. And we conquered, created kingdoms, and layed low those who opposed us. And so we will continue to do so into the [fourthage|E] and beyond."
+
+ tradition_new_numenor_name:0 "Númenórean Reborn"
+ tradition_new_numenor_desc:0 "Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the former [numenoreans|E] of [middleearth|E] have diverged. Separated by politics, religion, conflict, and sheer distance, the many Sons of [numenor|E] have long been divided. Now, with all of the old Númenórean Colonies under our rule, and the formation of Númenor-in-Exile, the Númenóreans are once again united!"
+
+ tradition_fueled_by_vengeance_name:0 "Fueled by Vengeance"
+ tradition_fueled_by_vengeance_desc:0 "The unjust [banofthevalar|E], the machinations of [sauroncharacter|E] and his provoking of the [akallabeth|E], the [warlastalliance|E] and the terrible losses of the [kingsmen|E], the endless civil wars and infighting of the [black_numenoreans|E], the loss of our rightful land in [umbar|E] to the plunderers of [gondor|E], and finally the prejudiced exile of the virtuous Blood-Purists from [umbar|E]. We are beset from all sides by traitors, rivals, and lesser men who wish to destroy the glory of [anadune|E]. We shall never let them! Not only that, but we will achieve our long-wanted vengeance! Slights will be punished, and the pain of the [adunai|E] shall never be forgotten. Every foe of our people will be vanquished, and we will take our place as the rightful Heirs of [middleearth|E], with all others beneath our feet."
+
+ tradition_kharatakhori_name:0 "Kharatakhôric Legacy"
+ tradition_kharatakhori_desc:0 "The [numenoreans|E] of the Southern Colonies are our forebearers. [thanihazad|E] is our home, and the land that has been proven time after time to be ours and ours alone. It is the nature of the world for the [adunai|E] to be its rulers, with other, lesser men below us."
+
+
+ ##Innovations 
+ innovation_lords_of_the_golden_lands:0 "Lords of the Golden Lands"
+ innovation_lords_of_the_golden_lands_desc:0 "Having risen like a phoenix from the ashes, the Adûnâi have established their supremacy in the Golden Lands, a new age of the world dawning under their stewardship."
+
+ innovation_unified_adunai_warfare:0 "Soldiers of the Adûnâi"
+ innovation_unified_adunai_warfare_desc:0 "The Adûnâi retain much of the strength of their Númenorean forefathers and field among the fiercest armies in all of Middle-earth."  
+
+ innovation_numenorean_warriors_custom:0 "Soldiers of Númenor"
+ innovation_numenorean_warriors_custom_desc:0 "The soldiers of [numenor|E], blessed with the wisdom and craft of the [eldar|E] and the teachings of [eonwecharacter|E], were worth 20 lesser men. Their steel-bows struck fear into all that faced them, and few were the foes that could breach their armour."
+
+ innovation_numenorean_warriors_adunaic:0 "Soldiers of Númenor"
+ innovation_numenorean_warriors_adunaic_desc:0 "The soldiers of [numenor|E], blessed with the wisdom and craft of the [eldar|E] and the teachings of [eonwecharacter|E], were worth 20 lesser men. Their steel-bows struck fear into all that faced them, and few were the foes that could breach their armour."
+
+ unlock_dunedain_marines: "Can recruit [GetMaA('dunedain_marines').GetName] as [men_at_arms|E]"
+ unlock_dunedain_reformed_rangers: "Can recruit [GetMaA('dunedain_reformed_rangers').GetName] as [men_at_arms|E]"
+ unlock_dunedain_reformed_wardens: "Can recruit [GetMaA('dunedain_reformed_wardens').GetName] as [men_at_arms|E]"
+ unlock_dunedain_reformed_outriders: "Can recruit [GetMaA('dunedain_reformed_outriders').GetName] as [men_at_arms|E]"
+ 
+ unlock_adunaic_skirmishers: "Can recruit [GetMaA('adunaic_skirmishers').GetName] as [men_at_arms|E]"
+ unlock_adunaic_elites: "Can recruit [GetMaA('adunaic_elites').GetName] as [men_at_arms|E]"
+ unlock_adunaic_soldiers: "Can recruit [GetMaA('adunaic_soldiers').GetName] as [men_at_arms|E]"
+ unlock_adunaic_spearmen: "Can recruit [GetMaA('adunaic_spearmen').GetName] as [men_at_arms|E]"
+ unlock_adunic_steelbowmen: "Can recruit [GetMaA('adunic_steelbowmen').GetName] as [men_at_arms|E]"
+ unlock_knights_of_the_adunai: "Can recruit [GetMaA('knights_of_the_adunai').GetName] as [men_at_arms|E]"
+
+ unlock_numenorean_archers_custom: "Can recruit [GetMaA('numenorean_archers_custom').GetName] as [men_at_arms|E]"
+ unlock_numenorean_knights_custom: "Can recruit [GetMaA('numenorean_knights_custom').GetName] as [men_at_arms|E]"
+ unlock_numenorean_soldiers_custom: "Can recruit [GetMaA('numenorean_soldiers_custom').GetName] as [men_at_arms|E]"
+ unlock_numenorean_elites_custom: "Can recruit [GetMaA('numenorean_elites_custom').GetName] as [men_at_arms|E]"
+ unlock_numenorean_marines: "Can recruit [GetMaA('numenorean_marines').GetName] as [men_at_arms|E]"
+ unlock_numenorean_reformed_outriders: "Can recruit [GetMaA('numenorean_reformed_outriders').GetName] as [men_at_arms|E]"
+ unlock_numenorean_pikemen: "Can recruit [GetMaA('numenorean_pikemen').GetName] as [men_at_arms|E]"
+
+ unlock_numenorean_archers_adunaic: "Can recruit [GetMaA('numenorean_archers_adunaic').GetName] as [men_at_arms|E]"
+ unlock_numenorean_knights_adunaic: "Can recruit [GetMaA('numenorean_knights_adunaic').GetName] as [men_at_arms|E]"
+ unlock_numenorean_soldiers_adunaic: "Can recruit [GetMaA('numenorean_soldiers_adunaic').GetName] as [men_at_arms|E]"
+ unlock_numenorean_elites_adunaic: "Can recruit [GetMaA('numenorean_elites_adunaic').GetName] as [men_at_arms|E]"
+ unlock_numenorean_marines_adunaic: "Can recruit [GetMaA('numenorean_marines_adunaic').GetName] as [men_at_arms|E]"
+ unlock_numenorean_reformed_outriders_adunaic: "Can recruit [GetMaA('numenorean_reformed_outriders_adunaic').GetName] as [men_at_arms|E]"
+ unlock_numenorean_pikemen_adunaic: "Can recruit [GetMaA('numenorean_pikemen_adunaic').GetName] as [men_at_arms|E]"
+
+ ##Custom Loc 
+ unify_with_umbar_pharazain_custom:0 "The [GetTitleByKey('e_umbar').GetName] becomes [de_jure|E] "
+
+ control_of_pharazain_dunedain_full_desc:0 "You must control at least #V 90%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
+
+ control_percentage_of_umbar_dunedain_desc:0 "You must control at least #V 90%#! of the [counties|E] of the [GetTitleByKey('e_umbar').GetName]"
+
+ control_of_pharazain_dunedain_desc:0 "You must control at least #V 75%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
+
+ control_of_thani_hazad_dunedain_full_desc:0 "You must control at least #V 90%#! of the [counties|E] of both the [GetGeographicalRegion('custom_mannish_thani_hazad').GetName] and [GetGeographicalRegion('custom_anbalkumagan').GetName] [regions|E]"
+ 
+ culture_parameter_seduce_schemes_less_common:0 "[rulers|E] are less likely to start the [GetScheme('seduce').GetTypeName] [scheme|E]"
+
+ irtil_corsair_kingdom_or_adunaic_stuffs:0 "The holder must be $faith_corsair$, own the title [GetTitleByKey('k_sacred_isles').GetName], or be in the Adûnâic Heritage Group"
+
+ reached_meneltarma_desc_tooltip:0 "You have found the peak of the [meneltarma|E]"
+
+ darkness_religion_yes:0 "This character's faith is a faith of Darkness"
+
+ not_darkness_religion:0 "This character's faith is not a faith of Darkness"
+
+ #Modifiers 
+ custom_add_cultural_acceptance_gain_for_nie:0 "Numenorean Revival"
+ custom_add_cultural_acceptance_gain_for_nie_desc:0 "With the establishment of Númenor-in-Exile, the many different cultures descendant from [numenor|E] have been united into one state, and have thus begun to mingle and find their differences fewer and fewer by the day."
+ custom_building_construction_special:0 "Armenelostion Under Construction"
+ custom_building_construction_special_desc:0 "The city of Armenelostion is under construction in this county. The lofty ambitions of the construction are to recapture the splendor and awe of [armenelos|E] in [numenor|E]. It has brought many builders and settlers to the islands, along with their commerce."
+
+ custom_building_construction_special_character1:0 "Building Armenelostion - Large Commitment"
+ custom_building_construction_special_character1_desc:0 "This character is throwing much of their effort into building [GetBuilding('wonder_anonarmenlos_01').GetName], decreasing their effectiveness in other areas of governance."
+ custom_building_construction_special_character2:0 "Building Armenelostion - Gigantic Commitment"
+ custom_building_construction_special_character2_desc:0 "This character spends nearly every second of their days building [GetBuilding('wonder_anonarmenlos_01').GetName], massively decreasing their effectiveness in other areas of governance."
+ custom_building_construction_special_character3:0 "Building Armenelostion - Insane Commitment"
+ custom_building_construction_special_character3_desc:0 "This character spends every waking moment fixated on building [GetBuilding('wonder_anonarmenlos_01').GetName], sundering them as inept in other areas of governance."
+
+ #MAA localization
+ dunedain_marines:0 "Dúnedain Marines"
+ dunedain_marines_flavor:0 "Armed with bows, swords, and boarding axes, these lightly armored soldiers are accustomed to fighting against corsairs and all other manners of threats on the sea."
+ dunedain_reformed_rangers:0 "Dúnedain Rangers"
+ dunedain_reformed_rangers_flavor:0 "Grim in appearance and clad in grey and dark green, the Rangers of the [westlands|E] fight against the world's evils, even as others would falter and flee."
+ dunedain_reformed_wardens:0 "Dúnedain Wardens"
+ dunedain_reformed_wardens_flavor:0 "With spear and shield in hand, these rangers keep foes at bay while their bow-wielding brethren deal the killing strike."
+ dunedain_reformed_outriders:0 "Dúnedain Outriders"
+ dunedain_reformed_outriders_flavor:0 "Speed is required to patrol the vast lands of the [westlands|E]. These [dunedain|E] are well suited to long and arduous journeys, with only their mounts for company."
+
+ adunaic_skirmishers:0 "Nadêphalnardû"
+ adunaic_skirmishers_flavor:0 "The 'Flanking Speermen' of the Adûnâi, the Nadêphalnardû are armed with spears and medium sized shields. These lightly armored [adunaic|E] soldiers are accustomed to flanking their enemies, and crushing them with their superior mobility."
+ adunaic_soldiers:0 "Nardûpharazôr "
+ adunaic_soldiers_flavor:0 "The 'Soldiers of the Golden Flame', the Nardûpharazôr fight with grim determination. Learned of the long and storied history of the [adunai|E], they fight knowing what is at stake. Strong-willed, they are willing to do whatever is needed to ensure the [adunai|E] continue far into the [fourthage|E] strong and undefeated."
+ adunaic_elites:0 "Adûnakhôri"
+ adunaic_elites_flavor:0 "The 'Lords of the West', the Adûnakhôri have flowing through their veins some of the purest [bloodofnumenor|E] left in all of [middleearth|E]. With the pride and glory of their ancient [numenorean|E] ancestors, the Adûnakhôri will carry on their back the future of the [adunai|E], and the legacy of [numenor|E]."
+ adunaic_spearmen:0 "Pharaztud"
+ adunaic_spearmen_flavor:0 "The 'Golden Watch', the Pharaztud are some of the preeminent soldiers in [middleearth|E]. Professional spearmen, disciplined and with unbreakable moral, they will fight to the very last. These [adunai|E] are the backbone of the Pharazani army and have secured many victories."
+ adunic_steelbowmen:0 "Khôrankalûtai"
+ adunic_steelbowmen_flavor:0 "The 'Lords of the Steelbow', the Khôrankalûtai fight with the heralded [numenorean|E] Steelbow. Each of these bowmen is more skilled than any other, and even the most heavily armored opponents fall to the power of just one arrow. Drilled day and night, the Khôrankalûtai are more skilled than many [elves|E]."
+ knights_of_the_adunai:0 "Gimilzagar-an-Êru"
+ knights_of_the_adunai_flavor:0 "The 'Silver Swords of Êru', are the elite Knights of the [adunai|E]. Proud of their pure [numenorean|E] blood, these knights come from fair and noble houses that can trace their lineage as far back as [numenor|E] itself! No foe could hope to cross with the Silver Swords and live till the next dawn."
+ 
+ numenorean_marines:0 "Airëheru"
+ numenorean_marines_flavor:0 "The 'Sea Lords', bear weapons wrought with spells of power. They are armed with bows, swords, and boarding axes. These [numenorean|E] soldiers are accustomed to fighting against all manners of threats on the sea."
+ numenorean_reformed_outriders:0 "Calaquentur"
+ numenorean_reformed_outriders_flavor:0 "The 'Light Horselords', bear weapons wrought with spells of power. Speed is required to patrol the vast lands of [middleearth|E]. These [numenorean|E] soldiers are well suited to long and arduous journeys, with only their mounts for company."
+ numenorean_pikemen:0 "Cundohatal "
+ numenorean_pikemen_flavor:0 "The 'Spear Lords', are the pikemen of [numenor|E], bearing heavy armour and spears wrought with spells of power. They are the wall of [numenor|E], who protect those behind them at any personal cost. These [numenoreans|E] are the backbone of the army and have secured many victories."
+ numenorean_soldiers_custom:0 "Túranúohtar"
+ numenorean_soldiers_custom_flavor:0 "The 'Great Soldiers of the West', bear heavy armour and swords wrought with spells of power. Strong-willed, they are willing to do whatever is needed to ensure the [numenoreans|E] continue far into the [fourthage|E] strong and undefeated."
+ numenorean_archers_custom:0 "Erëquingatur"
+ numenorean_archers_custom_flavor:0 "The 'Lords of the Steelbow', are the archers of [numenor|E] bearing the legendary steel great-bows, with range and power unparalleled among [men|e]. Even the most heavily armored opponents fall to the power of just one arrow. Drilled day and night, the Erëquingatur are more skilled than many [elves|E]."
+ numenorean_elites_custom:0 "Tirnúmentur"
+ numenorean_elites_custom_flavor:0 "The 'Watch of the Western Lords', are the elite guard of [numenor|E], bearing heavy armour and swords wrought with spells of power. Made by the finest smiths known to [man|E], their arms and armor are some of the finest seen since the [firstage|E], only surpassed by their bearers virtue."
+ numenorean_knights_custom:0 "Númenarquen"
+ numenorean_knights_custom_flavor:0 "The 'Knights of the West', bear heavy armour, well-bred horses, and weapons wrought with spells of power. Proud of their pure [numenorean|E] blood, these knights come from fair and noble houses. No foe could hope to cross with the Númenarquen and live till the next dawn."
+
+ numenorean_marines_adunaic:0 "Arazrakhôri"
+ numenorean_marines_adunaic_flavor:0 "The 'Kingly Sea Lords' bear weapons wrought with spells of power. They are armed with bows, swords, and boarding axes. These [numenorean|E] soldiers are accustomed to fighting against all manners of threats on the sea."
+ numenorean_reformed_outriders_adunaic:0 "Arkarabkhôri"
+ numenorean_reformed_outriders_adunaic_flavor:0 "The 'Kingly Horse lords' bear weapons wrought with spells of power. Speed is required to patrol the vast lands of [middleearth|E]. These [numenorean|E] soldiers are well suited to long and arduous journeys, with only their mounts for company."
+ numenorean_pikemen_adunaic:0 "Arpharaztud "
+ numenorean_pikemen_adunaic_flavor:0 "The 'Kingly Golden Watch' are the pikemen of [numenor|E], bearing heavy armour and spears wrought with spells of power. They are the wall of [numenor|E], who protect those behind them at any personal cost. These [numenoreans|E] are the backbone of the army and have secured many victories."
+ numenorean_soldiers_adunaic:0 "Arnardûpharazôr"
+ numenorean_soldiers_adunaic_flavor:0 "The 'Kingly Soldiers of the Golden Flame' bear heavy armour and swords wrought with spells of power. Strong-willed, they are willing to do whatever is needed to ensure the [numenoreans|E] continue far into the [fourthage|E] strong and undefeated."
+ numenorean_archers_adunaic:0 "Arkhôrankalûtai"
+ numenorean_archers_adunaic_flavor:0 "The 'Kingly Lords of the Steelbow' are the archers of [numenor|E] bearing the legendary steel great-bows, with range and power unparalleled among [men|e]. Even the most heavily armored opponents fall to the power of just one arrow. Drilled day and night, the Erëquingatur are more skilled than many [elves|E]."
+ numenorean_elites_adunaic:0 "Aradûnakhôri"
+ numenorean_elites_adunaic_flavor:0 "The 'Kingly Lords of the West' are the elite guard of [numenor|E], bearing heavy armour and swords wrought with spells of power. Made by the finest smiths known to [man|E], their arms and armor are some of the finest seen since the [firstage|E], only surpassed by their bearers virtue."
+ numenorean_knights_adunaic:0 "Argimilzagar-an-Êru"
+ numenorean_knights_adunaic_flavor:0 "The 'Kingly Silver Swords of Êru', bear heavy armour, well-bred horses, and weapons wrought with spells of power. Proud of their pure [numenorean|E] blood, these knights come from fair and noble houses. No foe could hope to cross with the Argimilzagar-an-Êru and live till the next dawn."
+
+
+ ##Decisions
+ decision_solidify_pharazain:0 "Solidify the Golden Dominion"
+ decision_solidify_pharazain_desc:0 "Despite our proclamation of [GetTitleByKey('e_pharazain').GetNameNoTier], our lack of control over the entirety of the [adunai|E] kingdoms, primarily [umbar|E], have had some look askance at our claim to be lords of a true Kingdom of all the [adunaic|E] peoples. We could put these doubts to rest by securing our control over the lands of both [GetGeographicalRegion('special_pharazain').GetName] and the [GetTitleByKey('e_umbar').GetName], we could finally quell any remaining regionalism and permanently solidify the [GetTitleByKey('e_pharazain').GetName] as one entity."
+ decision_solidify_pharazain_tooltip:0 "The homelands of the Adûnâi shall never again be sundered!"
+ decision_solidify_pharazain_confirm:0 "The homelands of the Adûnâi shall never again be sundered!"
+
+ decision_unify_adunai:0 "Restore a Unified Adûnâic Identity"
+ decision_unify_adunai_desc:0 "Since the [akallabeth|E] sundered the many colonies of [numenor|E], the different realms of our forefathers split apart and developed wildly different cultures. From [umbar|E] and the ever vengeful [kingsmen|E], [bellakar|E] and their egalitarian [faithful|E], [anbalkumagan|E] and their endless depravity, and [thanihazad|E] and the machinations of the [balan_lai|E]. All have developed their own distinct cultures, shaped by their long histories and the many trials and outside influences they have faced. Yet all have ever been fundamentally kingdoms of the [adunai|E], and proud of their high heritage. With the proclamation and solidification of [GetTitleByKey('e_pharazain').GetNameNoTier], the boundaries which once divided the [adunai|E] have fallen, and our people for the first time since the golden age of [numenor|E] have been united beneath a single crown. It will require much work to bring cultures long sundered under one roof once more, but given time and effort, even the diversity of the [adunaic|E] peoples might once more be made one."
+ decision_unify_adunai_tooltip:0 "We are the [adunai|E]."
+ decision_unify_adunai_confirm:0 "We are the Adûnâi."
+ decision_unify_pharazaini_get_innovations:0 "The [pharazaini_culture_culture.GetName] [culture|E] gains all [black_numenorean|E] and [adunaic|E] [innovations|E]"
+ decision_unify_pharazaini_characters_custom:0 "All Northern Adûnâic, Southern Adûnâic, and non-Bellanarûd Bellakari [heritage|E] [characters|e]"
+ decision_unify_pharazaini_county_custom:0 "All Northern Adûnâic, Southern Adûnâic, and non-Bellanarûd Bellakari [heritage|E] [counties|e]"
+ decision_unify_adunai_own_all_aduanic_provinces:0 "You must own all Northern Adûnâic, Southern Adûnâic, and non-Bellanarûd Bellakari [heritage|E] [counties|e] in the [GetGeographicalRegion('special_nie_extra').GetName] [region|E]"
+ special_nie_extra:0 "the Greater [numenorean|E] Colonies"
+
+ decision_reunify_numenor_culture:0 "Restore a Númenórean Identity"
+ decision_reunify_numenor_culture_desc:0 "Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the former [numenoreans|E] of [middleearth|E] have diverged. Separated by politics, religion, conflict, and sheer distance, the many Sons of [numenor|E] have long been divided. Now, with all of the old Númenórean Colonies under our rule, and the formation of Númenor-in-Exile, the Númenóreans are once again united!""
+ decision_reunify_numenor_culture_tooltip:0 "We are the [numenorean|E]."
+ decision_reunify_numenor_culture_confirm:0 "We are the Númenórean."
+
+ renovate_special_building_arminalethor:0 "Renovate [GetTitleByKey('b_tol_uialgaer').GetNameNoTier]"
+ renovate_special_building_arminalethor_desc:0 "The islands of [GetTitleByKey('b_tol_uialgaer').GetNameNoTier] has long been inhabited by [numenoreans|E]. Since before the [akallabeth|E], these islands have been sacred to worshipers of [ulmocharacter|E], who believed that they were created by the great [valargods|E] himself. However, for many long years, the islands have been occupied by servants of the Enemy, the [kingsmen|E]. Their beauty and splendor wasted on those who didn't appreciate their value. \nSince we took these islands, many minds have wondered what we could do with such a beautiful land of farms, sand, and sea. Singular is the idea that stands out from all the rest: to build a city in the memory of [armenelos|E] on the island's white sand beaches. Often it's been said that these Sacred Islands have emanated the memory of [numenor|E], and now we shall make those words a reality, by forging from nothing a city whose ancestor would be proud."
+ renovate_special_building_arminalethor_tooltip:0 "Renovate the [GetTitleByKey('b_tol_uialgaer').GetName]"
+ renovate_special_building_arminalethor_confirm:0 "The splendor of [numenor|E] shall be reborn here in [middleearth|E]"
+ renovate_special_building_arminalethor_effect_message:0 "We will decide how much we wish to invest into building the great city of [GetBuilding('wonder_anonarmenlos_01').GetName]"
+
+ decision_reunify_numenor_culture_adunaic_get_innovations:0 "The [new_numenorean_adunaic_culture.GetName] [culture|E] gains all [arnorian_culture.GetName], [gondorian_culture.GetName], [dunedain_culture.GetName], [pharazaini_culture_culture.GetName], [black_numenorean_culture.GetName], [umbarean_culture.GetName], [mardrukan_culture.GetName], [felayan_culture.GetName], [bellakarani_culture.GetName], [bellakaze_culture.GetName], [anbalukkhori_culture.GetName], [kharadunaim_culture.GetName], and [numenorean_culture.GetName] [innovations|E]"
+ decision_reunify_numenor_culture_get_innovations:0 "The [new_numenorean_culture.GetName] [culture|E] gains all [arnorian_culture.GetName], [gondorian_culture.GetName], [dunedain_culture.GetName], [black_numenorean_culture.GetName], [umbarean_culture.GetName], [mardrukan_culture.GetName], [felayan_culture.GetName], [bellakarani_culture.GetName], [bellakaze_culture.GetName], [anbalukkhori_culture.GetName], and [numenorean_culture.GetName] [innovations|E]"
+ decision_reunify_numenor_culture_vassals_custom:0 "All Númenórean-decedent [characters|e] convert to #P Cîr Númenórean#!"
+ decision_reunify_numenor_culture_counties_custom:0 "All Númenórean-decedent [counties|e]"
+ decision_reunify_numenor_culture_vassals_custom_a:0 "All Númenórean-decedent [characters|e] convert to #P Adûnâhin#!"
+ decision_reunify_numenor_culture_counties_custom_a:0 "All Númenórean-decedent [counties|e]"
+ decision_gain_numenor_blood_culture_self:0 "You will become #P Númenórean#!, and gain the max level [bloodofnumenor|E] trait!"
+ decision_gain_numenor_blood_culture:0 "All Númenórean-decedent [characters|e] become #P Númenórean#!, and gain four levels of the [bloodofnumenor|E] trait!"
+
+ decision_unify_southern_adunai:0 "Restore a Southern Adûnâic Identity"
+ decision_unify_southern_adunai_desc:0 "Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the [numenoreans|E] of the former Southern Colonies have diverged. The north in the more populated heartland of [anbalkumagan|E] has fallen into depravity and pride, being some of the most wicked [men|E] to exist in the [thirdage|E]. The [numenoreans|E] of the south in the much more sparsely settled [thanihazad|E] have developed a much less degenerate culture, one much more founded on the original principles of [numenor|E]. United as one people before the [downfall|E], they can be one once more!"
+ decision_unify_southern_adunai_tooltip:0 "We are the Kharatakhôri."
+ decision_unify_southern_adunai_confirm:0 "We are the Kharatakhôri."
+ decision_unify_south_adunai_get_innovations:0 "The [kharatakhori_culture.GetName] [culture|E] gains all [anbalukkhori_culture.GetName] and [kharadunaim_culture.GetName] [innovations|E]"
+ decision_unify_south_adunai_county_custom:0 "All Southern Adûnaic Heritage [counties|e]"
+ decision_unify_south_adunai_characters_custom:0 "All Southern Adûnaic Heritage [characters|e]"
+
+ numenor_in_exile_acceptance_tt_custum:0 "Every Realm [culture|E] sharing the #V [numenorean|E]#! [heritage_group|E] increases their [cultural_acceptance|E] by a mutual #p 40%#!"
+ decision_gain_numenorean_soldiers_innovations:0 "Our [culture|E] will gain Powerful [numenorean|E] [men_at_arms|E]"
+ decision_gain_numenor_blood_culture_self_family:0 "You and your family will strengthen your #P Númenórean Blood#!, and gain one level of the [bloodofnumenor|E] trait!"
+
+ decision_integrate_rohan:0 "Unify With Rohan"
+ decision_integrate_rohan_desc:0 "[rohan|E] has long been an ally to [gondor|E], coming to our defense time after time. Ever since Eorl the Young was gifted the land of [calenardhon|E] by the Stewards of [gondor|E], the [rohirrim|E] have governed and lived in the wide, green plains of [rohan|E]. Now, with the evil of [mordor|E] vanquished, and with relations between [rohan|E] and [gondor|E] never before being stronger, some within [gondor|E] wish to reclaim the old province of [calenardhon|E]. While some wish to claim the land via our great armies, wiser minds have suggested we ask the ruler of [rohan|E] to join our nation as a vassal."
+ decision_integrate_rohan_tooltip:0 "Rohan can into Gondor"
+ decision_integrate_rohan_confirm:0 "[rohan|E] will once again be a land of [gondor|E]"
+ rohan_ruler_is_dunedain:0 "The ruler of [rohan|E] is [dunedain|E]"
+ reclaim_calenardhon_dunedain:0 "We will ask the ruler of [rohan|E] to peacefully join [gondor|E]\n If they accept [rohan|E] will become your [vassal|E]"
+
+ ##Events
+ dunedain_identity.1.t:0 "The Language Question"
+ dunedain_identity.1.desc:0 "Now that the [dunedain|E] have been reunited, a question has arisen on what language our people will use. Those of [gondor|E] request that we use Westron as the language of the [dunedain|E]. The people of [arnor|E], and many other groups in the north call to use [sindarin|E], as was custom for the [faithful|E] [numenoreans|E]. Which of these two languages should we use?"
+ dunedain_identity.1.a:0 "Westron, language of the [gondor|E] and of the [westlands|E], shall be our language!"
+ dunedain_identity.1.b:0 "Sindarin, language of the [faithful|E] [numenoreans|E] and the [elves|E], shall be our language!"
+ decision_reunify_dunedain_characters_custom:0 "All Dúnedan Heritage [characters|e]"
+ decision_reunify_dunedain_counties_custom2:0 "All Dúnedan Heritage [counties|e]"
+
+ dunedain_identity_westron:0 "The [dunedain|E] shall adopt Westron as its day-to-day tongue"
+ dunedain_identity_sindarin:0 "The [dunedain|E] shall adopt Sindarin as its day-to-day tongue"
+
+ #Rohan Eventline
+ dunedain_identity.2.t:0 "An Envoy to Rohan"
+ dunedain_identity.2.desc:0 "[rohan|E] has long been an ally of [gondor|E], and now we have been presented with a unique opportunity, to unite with our northern neighbor. After their aid in the destruction of [sauroncharacter|E], our great relations, and the subsequent peace and prosperity, the lords of [rohan|E] may agree to unite with [gondor|E]. We must send an envoy to Edoras at once!"
+ dunedain_identity.2.a:0 "The Envoy is ready, lets see if this works"
+
+ dunedain_identity.3.t:0 "An Envoy from Gondor"
+ dunedain_identity.3.desc:0 "An envoy under the employ of the ruler of [gondor|E] entered our court early in the morning today, asking for an audience with [ROOT.Char.GetFirstName]. They gave us a treaty, one they expect us to sign. It would make us a vassal of [gondor|E]. We would lose our independence, but would give our people some amount of the prosperity [gondor|E] has been seeing as of late. Should we accept?"
+ dunedain_identity.3.a:0 "Tell the King of [gondor|E] that he is my King"
+ dunedain_identity.3.b:0 "[gondor|E] gave us [rohan|E], and now they want it back? Never!"
+
+ dunedain_identity.4.t:0 "Rohan Accepts!"
+ dunedain_identity.4.desc:0 "[rohan|E] has accepted our terms! Now once again [gondor|E] is the ruler of [calenardhon|E]!"
+ dunedain_identity.4.a:0 "Never again will [gondor|E] be sundered!"
+
+ dunedain_identity.5.t:0 "Rohan Rufused!"
+ dunedain_identity.5.desc:0 "[rohan|E] has refused our terms! Already they are preparing for war, ready to fight for their independence."
+ dunedain_identity.5.a:0 "Well atleast we tried"
+
+
+
+ south_adunai_events.1.t:0 "Union of Kharat Ephalaim"
+ south_adunai_events.1.desc:0 "Today will be a historic day in the annals of history. For the first time since the [akallabeth|E], the [adunai|E] of the south have ended their rivalry and united under one nation. Brought together, mingled and traded with one another, and broke the barriers between each other, finally, we are one. The Anbalûkkhôri and Kharadûnâi have been ever-bickering enemies, but now our efforts have brought both together as one people. The [fourthage|E] will be the age of the [adunai|E] of the south!"
+  south_adunai_events.1.a:0 "The [adunai|E] of the south, one and the same."
+
+ south_adunai_events.2.t:0 "The Rise of House Gimilzîr"
+ south_adunai_events.2.desc:0 "House Gimilzîr has always been a small, insular, but close-knit family. Taking care of their own, not interacting much with those outside their palace in [GetTitleByKey('c_mispir').GetNameNoTier]. Able to trace their bloodline back to [elrosshort|E] himself, they retain some of the purest [bloodofnumenor|E] in all of [thanihazad|E] which has afforded them some amount of renown. After [gimilziran|E]'s failed conquests in the early [thirdage|E], this is how the family lingered. Rotting as their ancient palace built by [gimilziran|E] himself gathered dust and slowly crumbled away.\n\nHowever, [GetScriptedCharacterByHistoryID( 'linegimilzadan01' ).GetFirstNameNicknamed] Gimilzîr, changed the tune of the family forever. The [stormhost|E] invaded [thanihazad|E] early in the man's life, and returning the call of the [balan_lai|E] [GetScriptedCharacterByHistoryID( 'linegimilzadan01' ).GetFirstNameNicknamed] came to their aid as a Knight of Kharadûne. During a seige on [GetTitleByKey('c_mispir').GetNameNoTier], the ancient Palace of Gimilzîr was rassed, and reduced to rubble by the [stormhost|E] army. Since that day the Gimilzîr family has been without an estate, following the head of their House wherever they may go. [GetScriptedCharacterByHistoryID( 'linegimilzadan01' ).GetFirstNameNicknamed] fought valiantly and served for most of his life, becoming the personal champion of [GetScriptedCharacterByHistoryID( 'lineofgimilthani47' ).GetFirstNameNicknamed]. He won the Gimilzîr family much honor with his many great deeds in those days, of which he is remembered quite fondly by all who knew him. \n\nMuch like his grandfather before him, [GetScriptedCharacterByHistoryID( 'linegimilzadan1' ).GetFirstNameNicknamed] also joined the Knights at the young age of 24. There he rose through the ranks at lightning speed. He quickly made a name for himself as one of the greatest knights in the history of [thanihazad|E], with some even saying he rivaled his Grandfather. However, after a particularly bad wound, and the news of his newborn son, [GetScriptedCharacterByHistoryID( 'linegimilzadan1' ).GetFirstNameNicknamed] left the knights to see after his family. Now, at the young age of 19 [GetScriptedCharacterByHistoryID( 'linegimilzadan2' ).GetFirstNameNicknamed] was gifted by his father the honor of becoming head of House Gimilzîr. The young man was not ready for such a great responsibility, fearing he would let down his family and fail to rise to the great heights of his Father and Great-Grandfather, and he did not dare think of even approaching the brilliance of [gimilziran|E]. [GetScriptedCharacterByHistoryID( 'linegimilzadan1' ).GetFirstNameNicknamed] nonetheless believes in his son and sees him as a true heir of [numenor|E], with the wits and grace to forge a destiny greater than any other in House Gimilzîr, and to possibly, even fulfill the lamented dream of [gimilziran|E]."
+  south_adunai_events.2.a:0 "We all have hope in the young [GetScriptedCharacterByHistoryID( 'linegimilzadan2' ).GetFirstNameNicknamed]!"
+
+##\n\n #VNote!#bold For #TÂrûgimil#! to prove his worth he must gain atleast 5000 [prestige|E].
+
+ pharazain_events.1.t:0 "Union of The Adûnâi"
+ pharazain_events.1.desc:0 "Today, we renew our vows and reaffirm our commitment to an undivided and indivisible union.\n\nSince the proclamation, the Golden Dominion has functioned in a primarily administrative role that struggled to coordinate the efforts of the many disparate realms of the [adunai|E], but our tireless work has yielded fruits.\n\nA profound change has already occurred. The people of [umbar|E], [bellakar|E], [anbalkumagan|E], and [thanihazad|E] all identify with [GetTitleByKey('e_pharazain').GetNameNoTier]. And the reconstruction efforts have mostly concluded, with all our cities reclaimed and repopulated with true [adunaic|E] peoples.\n\nFrom north in [GetTitleByKey('c_umbar').GetNameNoTier], to the riches of [GetTitleByKey('c_nilulonde').GetNameNoTier], to all the way down south in [GetTitleByKey('c_mispir').GetNameNoTier], the people recognize all as one realm. After centuries of division and strife, all the lands of the [adunai|E] have been united under one King!"
+  pharazain_events.1.a:0 "North and South, one and the same."
+
+ pharazain_events.2.t:0 "Sons of Anadûnê"
+ pharazain_events.2.desc:0 "For too long have the [adunai|E] of these lands remained divided, their ancient bonds broken by time and circumstance. With the mending of the once-sundered realms, we stand ready to reclaim our glorious ancestry!\n\nUnited by our heritage, we embrace our shared legacy as descendants of [numenor|E], from whom the [bloodofnumenor|E] flows.\n\nTogether, as one people united in purpose and destiny, let this be the age where the spirit of [numenor|E] rises anew for generations yet unborn to marvel at and emulate."
+ pharazain_events.2.a:0 "Today marks the restoration of our Adûnâic heritage."
+
+ pharazain_events.3.t:0 "The Language Question"
+ pharazain_events.3.desc:0 "Now that the [adunai|E] have been reunited, a question has arisen on what language our people will use, with there being many different voices in the matter. Some wish for us to revive the language of our [numenorean|E] forefathers, High Adûnâic, which has been dead since not long after the [akallabeth|E]. The many different modern [adunai|E] wish for us to use their dialect of [adunaic|E], and abandon all the rest to create one true [adunaic|E] language. And more [faithful|E] noobles in [umbar|E] wish to adopt Southron, to closen relations to [gondor|E] and the [dunedain|E] of the north. Which of these languages should we use?"
+ pharazain_events.3.a:0 "High Adûnâic, language of our [numenorean|E] forefathers, shall be our language!"
+ pharazain_events.3.b:0 "Umbarean Adûnâic, language of the [umbar|E] [kingsmen|E], shall be our language!"
+ pharazain_events.3.c:0 "Belladûnâic, language of the [faithful|E] of [bellakar|E], shall be our language!"
+ pharazain_events.3.d:0 "Kharadûnâic, language of the proud people of [thanihazad|E], shall be our language!"
+ pharazain_events.3.e:0 "Southron, language of the [faithful|E] of [umbar|E], shall be our language!"
+
+ pharazaini_culture_identity_adunaic:0 "The [adunai|E] shall adopt High Adûnâic as its day-to-day tongue"
+ pharazaini_culture_identity_umbar:0 "The [adunai|E] shall adopt Umbarean Adûnâic as its day-to-day tongue"
+ pharazaini_culture_identity_bellakar:0 "The [adunai|E] shall adopt Belladûnâic as its day-to-day tongue"
+ pharazaini_culture_identity_kharadunaic:0 "The [adunai|E] shall adopt Kharadûnâic as its day-to-day tongue"
+ pharazaini_culture_identity_westron:0 "The [adunai|E] shall adopt Southron as its day-to-day tongue"
+
+ numenor_identity.1.t:0 "The Language Question" 
+ numenor_identity.1.desc:0 "Now that the [numenoreans|E] have been reunited, a question has arisen on what language we should use. The people of [gondor|E] request that we use Westron as the Cîr Númenórean language. The [dunedain|E] and many other groups in the north calls to use [sindarin|E], as was custom for the [faithful|E] [numenoreans|E]. A third group, quite small in number, wishes for us to use High [elven|E] [quenya|E] as our language. A final, fourth group, mainly from the southern coasts, calls to use [adunaic|E], the old original language of [numenor|E]. What language should we use?"
+ numenor_identity.1.a:0 "Westron, language of the [dunedain|E] and the north, shall be our language!"
+ numenor_identity.1.b:0 "Sindarin, language of the [faithful|E] [numenoreans|E] and the Elves, shall be our language!"
+ numenor_identity.1.c:0 "Quenya, language of the lore on [numenor|E], and of the High [elves|E], shall be our language!"
+ numenor_identity.1.e:0 "Adûnaic, language of the [kingsmen|E], and of the native [numenoreans|E], shall be our language!"
+
+ numenor_identity.2.t:0 "The Language Question"
+ numenor_identity.2.desc:0 "Now that the [numenoreans|E] have been reunited, a question has arisen on what language we should use. Some wish for us to revive the language of our [numenorean|E] forefathers, High Adûnâic, the old original language of [numenor|E]. The many different modern [adunai|E] wish for us to use their dialect of [adunaic|E], and abandon all the rest to create one true [adunaic|E] language. And more [faithful|E] noobles in [umbar|E] wish to adopt Southron. And finally, the people of [gondor|E] and [arnor|E] request that we use Westron as the Adûnâhin language. Which of these languages should we use?"
+ numenor_identity.2.a:0 "High Adûnâic, language of our [numenorean|E] forefathers, shall be our language!"
+ numenor_identity.2.b:0 "Umbarean Adûnâic, language of the [umbar|E] [kingsmen|E], shall be our language!"
+ numenor_identity.2.c:0 "Belladûnâic, language of the [faithful|E] of [bellakar|E], shall be our language!"
+ numenor_identity.2.d:0 "Kharadûnâic, language of the proud people of [thanihazad|E], shall be our language!"
+ numenor_identity.2.e:0 "Southron, language of the [faithful|E] of [umbar|E], shall be our language!"
+ numenor_identity.2.f:0 "Westron, language of the [dunedain|E] and the north, shall be our language!"
+
+ numenor_identity_adunaic:0 "The [numenoreans|E] shall adopt High Adûnâic as its day-to-day tongue"
+ numenor_identity_umbar:0 "The [numenoreans|E] shall adopt Umbarean Adûnâic as its day-to-day tongue"
+ numenor_identity_bellakar:0 "The [numenoreans|E] shall adopt Belladûnâic as its day-to-day tongue"
+ numenor_identity_kharadunaic:0 "The [numenoreans|E] shall adopt Kharadûnâic as its day-to-day tongue"
+ numenor_identity_westron:0 "The [numenoreans|E] shall adopt Southron as its day-to-day tongue"
+ numenor_identity_westron2:0 "The [numenoreans|E] shall adopt Westron as its day-to-day tongue"
+
+ lotr_anonarmenlos.1.t:0 "The Rebuilding of Armenelos in Middle-earth"
+ lotr_anonarmenlos.1.desc:0 "[armenelos|E], the grand capital of [numenor|E], was in the days before the [akallabeth|E] the greatest and fairest city of [men|E], and perhaps of all [conceptraces|El] in [middleearth|E]. Its white walls and tall towers were the inspiration for many of the great cities of the [dunedain|E] such as the three cities of [minasanor|E], [osgiliath|E], and [minasithil|E]. Even so, a city of its quality was never again achieved by any of the many descendants of [numenor|E]. We hope to change that. With a significant sum of [gold|El] and the efforts of our entire nation behind us, we can attempt to reach the great heights of [armenelos|E]. Forging a great successor to its splendor never before seen in [middleearth|E]. The question is however, how much are we willing to spend?"
+ lotr_anonarmenlos.1.a:0 "No sacrifice will be too great to construct Armenelostion"
+ lotr_anonarmenlos.1.a.tt:0 "In 10 years, [GetBuilding('wonder_anonarmenlos_01').GetName] will finish construction"
+ lotr_anonarmenlos.1.b:0 "Every effort will be made to build this Great City"
+ lotr_anonarmenlos.1.b.tt:0 "In 25 years, [GetBuilding('wonder_anonarmenlos_01').GetName] will finish construction"
+ lotr_anonarmenlos.1.c:0 "With our whole nation behind us, Armenelos will be born anew"
+ lotr_anonarmenlos.1.c.tt:0 "In 50 years, [GetBuilding('wonder_anonarmenlos_01').GetName] will finally finish construction"
+ lotr_anonarmenlos_debuff_remove_once_completed:0 "Once construction has been completed, the modifier above will be removed. \nIf you die your [heir|E] will inherit the modifier"
+
+ lotr_anonarmenlos.2.t:0 "Armenelos Reborn"
+ lotr_anonarmenlos.2.desc:0 "At last, after years of dedication, time, [gold|El], and so much more, Armenelostion has finally been completed. The 'Son of [armenelos|E]' has become a city unrivaled in all of [middleearth|E]. Her newly founded havens already are a bustle with life and commerce, her broad streets flowing with [men|El] of the [faithful|E]. Still many more [men|e] from all corners of the world already have begun to travel here to see her sights and experience her wonder. Never since the [akallabeth] has such a graceful and wonderous city been the home of [man|E]. But here we now are, with a city unrivaled built upon Sacred Islands of white sands. A new age has been born, an age reminiscent of ages past!"
+ lotr_anonarmenlos.2.a:0 "[GetBuilding('wonder_anonarmenlos_01').GetName] has been completed, ushering in a new age of prosperity"
+
+ #Sindar Names
+
+ gondor.9011.t: "A Name of Royal Bearing"
+ gondor.9011.desc: "Which name will I choose?"
+ gondor.9011.a: "Míriel"
+ gondor.9011.a.tt: "Míriel, daughter of King Tar-Palantir, and the rightful heir of Númenor. When Númenor sank, Míriel attempted to ascend Meneltarma and save Númenor, but she drowned before reaching the summit. A tragic hero who almost saved Númenor"
+ gondor.9011.aa: "Silmariën"
+ gondor.9011.aa.tt: "Silmariën, the progenitor of the line of the Lords of Andúnië, from which the Kings of Gondor and Arnor later sprung, and oldest child of King Tar-Elendil. The Mother of the Line of Kings."
+ gondor.9011.b: "Ancalimë"
+ gondor.9011.b.tt: "Ancalimë, 'Most bright', the first Ruling Queen of Númenor. If not for her, Númenórean Queenship would never have been attempted."
+ gondor.9011.c: "Telperiën"
+ gondor.9011.c.tt: "Telperiën, named after Telperion, the Silver Tree of Valinor, the 10th ruler and second Ruling Queen of Númenor. A woman who's rule was prosperous."
+ gondor.9011.d: "Vanimeldë"
+ gondor.9011.d.tt: "Vanimeldë, 'Beautiful Beloved', was the sixteenth ruler of Númenor and its third Ruling Queen. Her reign stands among the last faithful and flourishing chapters in the island’s storied history."
+ gondor.9011.e: "Next Page"
+ 
+ gondor.9022.t: "A Name of Royal Bearing"
+ gondor.9022.desc: "Which name will I choose?"
+ gondor.9022.a: "Fíriel"
+ gondor.9022.a.tt: "Fíriel of Arthedain, daughter and only surviving child of King Ondoher. From her the Line of Isildur continued, and became the Dúnedain Rangers in the wilds of Eriador."
+ gondor.9022.b: "Lúthien"
+ gondor.9022.b.tt: "Lúthien, famous from her romance with Beren, and subject of one of the great stories of the Elder Days. Her story was told for many ages to come, and it was said her bloodline will never perish."
+ gondor.9022.c: "Haleth"
+ gondor.9022.c.tt: "Haleth, leader of the Haladin in Eldar Days, lead her people through strife and hardship, and gave them peace on the other side. She gave birth to the House of Haleth who would later take part in the founding of Númenor."
+ gondor.9022.d: "Berúthiel"
+ gondor.9022.d.tt: "Berúthiel, Queen of Gondor, and the subject of many intriguing stories. She was noted for being 'nefarious, solitary, and loveless' and wearing plain black and silver garments."
+ gondor.9022.e: "None of these suit me."
+ 
+
+ ##Change Capital Loc
+
+ decision_new_capital.tt.new_capital_nykkea:0 "[GetTitleByKey('c_nykkea').GetNameNoTier]" 
+ new_capital_nykkea_tooltip:0 "For centuries, the Shipyards of Nykkea have constructed many great naval vessels, which have been used for anything from Privateering to trade. Even with the city's founding being after the [akallabeth|E], the city has much [numenorean|E] heritage from the many waves of Adûnâic settlers in the region. The city's prosperity seems to grow daily as countless lords need endless ships."
+
+ decision_new_capital.tt.new_capital_ciryandur:0 "[GetTitleByKey('c_hazaj_tollin').GetNameNoTier]" 
+ new_capital_ciryandur_tooltip:0 "Hazaj Tollin, previously known as Ciryandur, is one of if not the oldest [numenorean|E] settlements in [bellakar|E]. With the Arch at its gate, this city shows great potential."
+
+ decision_new_capital.tt.new_capital_urezayan:0 "[GetTitleByKey('c_urezayan').GetNameNoTier]" 
+ new_capital_urezayan_tooltip:0 "Ûrêzâyaneth was, and still is, the great jewel of the [bellakari|E] coast. Its pillared eagle ever facing west, remembering the days of [numenorean|E] plenty and indulgence, and the devastation that followed."
+
+ decision_new_capital.tt.new_capital_inzilloni:0 "[GetTitleByKey('c_inzilloni').GetNameNoTier]" 
+ new_capital_inzilloni_tooltip:0 "The merchant fleets of Inzillôni are rich and powerful, sailing to as far as [gondor|E] to make their plenty. A truly [adunaic|E] city, a proud mercantile culture has blossomed here in [thanihazad|E]."
+
+ decision_new_capital.tt.new_capital_mispir:0 "[GetTitleByKey('c_mispir').GetNameNoTier]" 
+ new_capital_mispir_tooltip:0 "Mispír, the home of the [balan_lai|E], and the center of diplomacy and vice in [thanihazad|E]. If any single city were to be named the capital of [thanihazad|E], it would be Mispír."
+
+ decision_new_capital.tt.new_capital_uruloni:0 "[GetTitleByKey('c_uruloni').GetNameNoTier]" 
+ new_capital_uruloni_tooltip:0 "Ûrulôni is an old and great city. Overlooking the lower suburb of Ûrulômik, Ûrulôni is truly of [numenorean|E] make, emulating the old architecture of Ondostar."
+
+ ##Restore Province Loc
+ decision_restore_gondor_province.adunaic:0 "Restore Adûnâic Province"
+
+ decision_restore_gondor_province.tt.haruzan_desc:0 "[GetTitleByKey('k_haruzan').GetNameNoTier]"
+ decision_restore_gondor_province.tt.haruzan:0 ""
+ reintegrate_province_haruzan_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_haruzan').GetNameNoTier]#! #!\n\nFor many generations, the Province of Haruzan has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Haruzan is a rightful land of the [adunai|E]!"
+ reintegrate_province_haruzan_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_haruzan').GetNameNoTier]" #unused
+ integrate_haruzan_decision:0 "The ancient lands of [GetTitleByKey('k_haruzan').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.narak_desc:0 "[GetTitleByKey('k_narak').GetNameNoTier]"
+ decision_restore_gondor_province.tt.narak:0 ""
+ reintegrate_province_narak_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_narak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Narak has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Narak is a rightful land of the [adunai|E]!"
+ reintegrate_province_narak_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_narak').GetNameNoTier]" #unused
+ integrate_narak_decision:0 "The ancient lands of [GetTitleByKey('k_narak').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.tedja_desc:0 "[GetTitleByKey('k_tedja').GetNameNoTier]"
+ decision_restore_gondor_province.tt.tedja:0 ""
+ reintegrate_province_tedja_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_tedja').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tedja has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Tedja is a rightful land of the [adunai|E]!"
+ reintegrate_province_tedja_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_tedja').GetNameNoTier]" #unused
+ integrate_tedja_decision:0 "The ancient lands of [GetTitleByKey('k_tedja').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.qarsa_desc:0 "[GetTitleByKey('k_qarsa').GetNameNoTier]"
+ decision_restore_gondor_province.tt.qarsa:0 ""
+ reintegrate_province_qarsa_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_qarsa').GetNameNoTier]#! #!\n\nFor many generations, the Province of Qarsa has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Qarsa is a rightful land of the [adunai|E]!"
+ reintegrate_province_qarsa_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_qarsa').GetNameNoTier]" #unused
+ integrate_qarsa_decision:0 "The ancient lands of [GetTitleByKey('k_qarsa').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.aukar_desc:0 "[GetTitleByKey('k_aukar').GetNameNoTier]"
+ decision_restore_gondor_province.tt.aukar:0 ""
+ reintegrate_province_aukar_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_aukar').GetNameNoTier]#! #!\n\nFor many generations, the Province of Aukar has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Aukar is a rightful land of the [adunai|E]!"
+ reintegrate_province_aukar_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_aukar').GetNameNoTier]" #unused
+ integrate_aukar_decision:0 "The ancient lands of [GetTitleByKey('k_aukar').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.ray_desc:0 "[GetTitleByKey('k_ray').GetNameNoTier]"
+ decision_restore_gondor_province.tt.ray:0 ""
+ reintegrate_province_ray_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_ray').GetNameNoTier]#! #!\n\nFor many generations, the Province of Ray has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Ray is a rightful land of the [adunai|E]!"
+ reintegrate_province_ray_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_ray').GetNameNoTier]" #unused
+ integrate_ray_decision:0 "The ancient lands of [GetTitleByKey('k_ray').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.raishoul_desc:0 "[GetTitleByKey('k_raishoul').GetNameNoTier]"
+ decision_restore_gondor_province.tt.raishoul:0 ""
+ reintegrate_province_raishoul_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_raishoul').GetNameNoTier]#! #!\n\nFor many generations, the Province of Raishoul has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Raishoul is a rightful land of the [adunai|E]!"
+ reintegrate_province_raishoul_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_raishoul').GetNameNoTier]" #unused
+ integrate_raishoul_decision:0 "The ancient lands of [GetTitleByKey('k_raishoul').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.zajantak_desc:0 "[GetTitleByKey('k_zajantak').GetNameNoTier]"
+ decision_restore_gondor_province.tt.zajantak:0 ""
+ reintegrate_province_zajantak_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_zajantak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Zajantak has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Zajantak is a rightful land of the [adunai|E]!"
+ reintegrate_province_zajantak_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_zajantak').GetNameNoTier]" #unused
+ integrate_zajantak_decision:0 "The ancient lands of [GetTitleByKey('k_zajantak').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.mag_desc:0 "[GetTitleByKey('k_mag').GetNameNoTier]"
+ decision_restore_gondor_province.tt.mag:0 ""
+ reintegrate_province_mag_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_mag').GetNameNoTier]#! #!\n\nFor many generations, the Province of Mag has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Mag is a rightful land of the [adunai|E]!"
+ reintegrate_province_mag_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_mag').GetNameNoTier]" #unused
+ integrate_mag_decision:0 "The ancient lands of [GetTitleByKey('k_mag').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.tumag_desc:0 "[GetTitleByKey('k_tumag').GetNameNoTier]"
+ decision_restore_gondor_province.tt.tumag:0 ""
+ reintegrate_province_tumag_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_tumag').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tumag has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Tumag is a rightful land of the [adunai|E]!"
+ reintegrate_province_tumag_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_tumag').GetNameNoTier]" #unused
+ integrate_tumag_decision:0 "The ancient lands of [GetTitleByKey('k_tumag').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.usakan_desc:0 "[GetTitleByKey('k_usakan').GetNameNoTier]"
+ decision_restore_gondor_province.tt.usakan:0 ""
+ reintegrate_province_usakan_tooltip:0 "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_usakan').GetNameNoTier]#! #!\n\nFor many generations, the Province of Usakan has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Usakan is a rightful land of the [adunai|E]!"
+ reintegrate_province_usakan_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_usakan').GetNameNoTier]" #unused
+ integrate_usakan_decision:0 "The ancient lands of [GetTitleByKey('k_usakan').GetNameNoTier] will become de-jure part of your realm"
+
+ decision_restore_gondor_province.tt.tanturak_desc:0 "[GetTitleByKey('k_tanturak').GetNameNoTier]"
+ decision_restore_gondor_province.tt.tanturak:0 ""
+ reintegrate_province_tanturak_tooltip:0 "#T #V Conquer the Long Lost Province of [GetTitleByKey('k_tanturak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tantûrak has been abandoned by its former [black_numenorean|E] inhabitants. Ever since the fall of Sarûl the province has been beyond the [adunai|E]'s reach. With the province at last fully reclaimed, it is time to end the debate once for all and set in stone that Tantûrak is a rightful land of the [adunai|E]!"
+ reintegrate_province_tanturak_valid:0 "You must fully control the Long-Contested Province of [GetTitleByKey('k_tanturak').GetNameNoTier]" #unused
+ integrate_tanturak_decision:0 "The ancient lands of [GetTitleByKey('k_tanturak').GetNameNoTier] will become de-jure part of your realm"
+
+ ##Dynasties
+ dynn_Arazranionath:0 "Arazranionath"
+ dynn_Arazranionath_motto:0 "Lords of the sea, for all eternity"
+ dynn_Belazgarath:0 "Belazgarath"
+ dynn_Belazgarath_motto:0 "War is our calling, for we our its lords"
+
+ dynn_gimilzadan:0 "Gimilzîr"
+ dynn_gimilzadan_motto:0 "[Glossary('Anâm nakhô Bârazra sakalada — phazagada, magada, azarada — katha gimilî nâluthôr.', 'gimils_pledge_gloss' )]"
+
+ ##Gloss
+ gimils_pledge_gloss:0 "[adunaic|E] #bold Anâm nakhô Bârazra sakalada — phazagada, magada, azarada — katha gimilî nâluthôr.#! \n\nThus spoke [gimilziran|E], upon his landing in [middleearth|E] after the [akallabeth|E]; vowing: 'Out of the Great Sea we rose — to rule, to shape, to shine — like stars born of shadow.'"
+ ##Names
+ quon_nakhoran:0 "Nakhôrân"
+ quon_hazrimira:0 "Hazrimîra
+ quon_quinazir:0 "Ârûgimil"
+ quon_nakalmira:0 "Akalmîra"
+ g_imilziran:0 "Gimilattô"
+
+ ##Titles 
+ d_laamp_house_of_gimilzadan:0 "The Gimilzîr Estate"
+
+ ##Game Concepts
+ game_concept_gimilziran:0 "Gimilattô"
+ game_concept_gimilziran_desc:0 "Gimilattô, known as the Star Father, was the would-be founder of the High Kingdom of [thanihazad|E] and a formidable conqueror who, for a time, held vast swaths of the [sevenlands|E] under his banner. \n\nHe was raised in [numenor|E] during the rise of the Shadow and became a leader among the [faithful|E] [numenoreans|E] exiled from Andúnië. Believing his life to be a mission in service to [iluvatar|E] and the [valargods|E], Gimilattô sought tirelessly to rekindle the light of [eru|E] among those who had turned away. When the Great Armament was summoned, he defied Ar-Pharazôn’s command and fled to Nindamas, where he secretly prepared ships. Warned by his friend [elendil|E] of Amandil’s vision of the [downfallofnumenor|E], Gimilattô and his sons narrowly escaped the cataclysm in a small fleet of vessels carrying their followers. He made landfall in Mispír, ancestral seat of his house, whose forebears once ruled Zimrathâni. \n\nFrom this refuge, he launched his campaign of conquest. Rallying the survivors of [numenor|E], Gimilattô rapidly took control of the Kingdom of Zimrathâni, establishing it as the heart of his new realm. On the outskirts of Mispír, he began constructing a grand palace, envisioning it as the core of a city that would mirror the lost beauty of Andúnië. Declaring himself High King of [thanihazad|E], he demanded fealty from the lords of the [sevenlands|E] and called upon them to renounce the ways of the [kingsmen|E]. This bold proclamation, however, proved his undoing. The nascent [balan_lai|E], viewing Gimilattô as both a heretic and existential threat, launched a full-scale invasion. A simultaneous uprising of native [kingsmen|E] shattered his fragile hold on power. Within just a century, Gimilattô’s dream lay in ruins. He and his son Izinduzôr fell in the bloody Battle of Tharazârûl, ending his short-lived reign. Though his grandson, Adûnafazor, attempted to rekindle the flame of his legacy, he too perished in battle a few years later. Thus the vision of a [faithful|E] [thanihazad|E] was extinguished forever. The war was a total loss, and Gimilattô, along with his son and grandson, were laid to rest in a hidden tomb deep beneath the Gimilzîr Palace."
+
+ ##Nicknames
+  nick_bearer_of_light: "Nimruzîr" 
+  nick_bearer_of_light_desc: "[gimilziran|E] was often known as Nimruzîr, or Elf Friend, for his attempted conversion of [thanihazad|E] into a land of the [faithful|E], and his friendship with the [cuind|E] [elves|E]. His fervor was legendary, and his devotion to [erutheone|E] was unwavering, which ultimately led to his downfall."

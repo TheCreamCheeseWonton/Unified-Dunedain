@@ -1,0 +1,10 @@
+﻿my_adunaic_culture_trigger = {
+    OR = {
+        culture = { has_cultural_pillar = heritage_northern_adunaic }
+        culture = { has_cultural_pillar = heritage_southern_adunaic }
+        AND = { 
+            culture = { has_cultural_pillar = heritage_bellakari }
+            NOT = { culture = { this = culture:bellanarud } }
+        }
+    }                
+}

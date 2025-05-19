@@ -1,0 +1,335 @@
+﻿### BASE GAME COA TRIGGERS ###
+coa_feudal_trigger = {
+	scope:faith.religion = { is_in_family = rf_eruhini }
+#	scope:faith.religion = religion:christianity_religion
+	OR = {
+		government_has_flag = government_is_feudal
+		government_has_flag = government_is_elven
+	}
+}
+
+coa_african_trigger = {
+	OR = {
+		coa_african_culture_trigger = yes
+		coa_african_religion_trigger = yes
+	}
+}
+
+coa_african_culture_trigger = {
+	scope:culture = { has_coa_gfx = arabic_group_coa_gfx }
+#	scope:culture = {
+#		OR = {
+#			has_coa_gfx = central_african_group_coa_gfx
+#			has_coa_gfx = east_african_coa_gfx
+#			has_coa_gfx = west_african_group_coa_gfx
+#		}
+#	}
+}
+
+coa_african_religion_trigger = {
+#	scope:faith.religion = { 
+#		save_temporary_scope_as = religion 
+#	}
+	OR = {
+		scope:faith = faith:faith_nafar
+		scope:faith = faith:faith_kanra
+		scope:faith = faith:cult_of_zigur
+#		scope:religion = religion:akom_religion
+#		scope:religion = religion:waaqism_religion
+#		scope:religion = religion:west_african_religion
+#		scope:religion = religion:west_african_bori_religion
+#		scope:religion = religion:west_african_orisha_religion
+#		scope:religion = religion:west_african_roog_religion
+	}
+}
+
+coa_mena_trigger = {
+#	OR = {
+#		scope:faith.religion = religion:islam_religion
+		scope:culture = {
+#			OR = {
+#				has_coa_gfx = arabic_group_coa_gfx
+#				has_coa_gfx = berber_group_coa_gfx
+#			}
+			has_coa_gfx = arabic_group_coa_gfx
+		}
+#	}
+}
+
+coa_indian_culture_trigger = {
+	scope:culture = { has_coa_gfx = indo_aryan_group_coa_gfx } #lotr_rayan_group
+#	OR = {
+#		scope:culture = { has_coa_gfx = burman_group_coa_gfx }
+#		scope:culture = { has_coa_gfx = dravidian_group_coa_gfx }
+#		scope:culture = { has_coa_gfx = indo_aryan_group_coa_gfx }
+#		scope:culture = { has_coa_gfx = tibetan_group_coa_gfx }
+#	}
+}
+coa_indian_region_trigger = {
+	exists = scope:title
+	scope:title = {
+		any_this_title_or_de_jure_above = {
+			this = title:e_bozisha_miraz
+#			OR = {
+#				this = title:e_india
+#				this = title:e_bengal
+#				this = title:e_deccan
+#				this = title:e_rajastan
+#				this = title:e_tibet
+#			}
+		}
+	}
+}
+coa_indian_religion_trigger = {
+#	scope:faith.religion = { 
+#		save_temporary_scope_as = religion 
+#	}
+	scope:faith = faith:faith_vatra
+#	OR = {
+#		scope:religion = religion:bon_religion
+#		scope:religion = religion:buddhism_religion
+#		scope:religion = religion:hinduism_religion
+#		scope:religion = religion:jainism_religion
+#	}
+}
+coa_indian_trigger = {
+	OR = {
+		coa_indian_culture_trigger = yes
+		coa_indian_region_trigger = yes
+		coa_indian_religion_trigger = yes
+	}
+}
+
+
+
+### LOTR COA TRIGGERS ###
+coa_settled_gwathuirim_trigger = {
+	scope:culture = { has_coa_gfx = adornaen_coa_gfx }
+	scope:faith.religion = { is_in_family = rf_eruhini }
+	government_has_flag = government_is_feudal
+}
+coa_dunlending_trigger = {
+	 scope:culture = { has_coa_gfx = dunlending_group_coa_gfx }
+}
+coa_dunland_kingdom_trigger = {
+	OR = {
+		scope:culture = { has_coa_gfx = dunlending_group_coa_gfx }
+		AND = {
+			exists = primary_title
+			primary_title = {
+				any_this_title_or_de_jure_above = {
+					this = title:k_dunland
+				}
+			}
+		}
+	}
+}
+coa_eredrim_tartan_trigger = {
+	geographical_region = middleearth_west_gondor_whitemountains
+	OR = {
+		scope:culture = { has_coa_gfx = eredrim_coa_gfx }
+		scope:culture = { has_coa_gfx = dunedain_group_coa_gfx }
+	}
+}
+coa_edain_trigger = {
+	OR = {
+		scope:culture = { has_coa_gfx = dunedain_group_coa_gfx }
+		scope:culture = { has_coa_gfx = numenorean_coa_gfx }
+	}
+}
+coa_switch_to_dunedain_trigger = {
+	holder.culture = { has_cultural_pillar = heritage_dunedain }
+}
+coa_switch_to_adunai_trigger = {
+	OR = {
+		holder.culture = { has_cultural_pillar = heritage_northern_adunaic }
+		holder.culture = { has_cultural_pillar = heritage_southern_adunaic }
+		##Quonton
+		holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
+}
+coa_switch_to_northern_adunai_trigger = { # this was set for umbar
+	##Quonton
+	OR = { 
+		holder.culture = { has_cultural_pillar = heritage_northern_adunaic }
+		holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
+	##End Quonton
+}
+coa_switch_to_evil_trigger = {
+	culture = { has_coa_gfx = orc_coa_gfx }
+}
+coa_switch_to_hadorim_trigger = {
+	culture = { has_coa_gfx = northron_coa_gfx }
+	NOR = {
+		culture = { has_coa_gfx = dale_coa_gfx }
+		culture = { has_coa_gfx = dorwinion_coa_gfx }
+		culture = { has_coa_gfx = woodmen_coa_gfx }
+		culture = { has_coa_gfx = vale_coa_gfx }
+	}
+}
+coa_switch_to_gwathuirim_trigger = {
+	culture = { has_coa_gfx = dunlending_group_coa_gfx }
+}
+coa_switch_to_central_mirkwood_trigger =  {
+	OR = {
+		holder.culture = { is_orc_culture = yes }
+		holder.culture = { has_cultural_pillar = heritage_undead }
+	}
+}
+coa_switch_to_northern_mirkwood_trigger =  {
+	OR = {
+		holder.culture = { is_orc_culture = yes }
+		holder.culture = { has_cultural_pillar = heritage_undead }
+	}
+}
+coa_switch_to_east_lorien_trigger =  {
+	holder.culture = { has_cultural_pillar = heritage_lomiquendi }
+}
+coa_switch_to_bellakari_trigger = {
+	##Quonton
+	OR = { 
+		holder.culture = { has_cultural_pillar = heritage_bellakari }
+		holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
+	##End Quonton
+}
+coa_switch_to_abrakhan_trigger =  {
+	OR = {
+		holder.culture = { is_orc_culture = yes }
+		holder.culture = { has_cultural_pillar = heritage_undead }
+		holder.culture = { has_cultural_pillar = heritage_middle_apysaic }
+		holder.culture = { has_cultural_pillar = heritage_northern_apysaic }
+		holder.culture = { has_cultural_pillar = heritage_northern_adunaic }
+		holder.culture = { has_cultural_pillar = heritage_southern_adunaic }
+		##Quonton
+		holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
+}
+coa_switch_to_haradrim_trigger =  {
+	OR = {
+		holder.culture = { has_cultural_pillar = heritage_northern_apysaic }
+		holder.culture = { has_cultural_pillar = heritage_middle_apysaic }
+		holder.culture = { has_cultural_pillar = heritage_southern_apysaic }
+	}
+}
+
+coa_switch_to_donan_trigger =  {
+	holder.culture = culture:donan
+}
+
+#coa_iranian_trigger = {
+#	scope:culture = { has_coa_gfx = iranian_group_coa_gfx }
+#}
+
+coa_switch_to_dwarf_trigger = {
+	holder.culture = { has_coa_gfx = dwarven_group_coa_gfx }
+}
+
+coa_switch_to_gobbo_trigger = {
+	OR = {
+		holder.culture = { is_orc_culture = yes }
+		holder.culture = {has_cultural_pillar = heritage_undead }
+		holder.culture = {has_cultural_pillar = heritage_goblin}
+		holder.culture = {has_cultural_pillar = heritage_orc}
+		holder.culture = {has_cultural_pillar = heritage_fallen_ainur}
+	}
+}
+
+coa_switch_to_druedain_trigger = {
+	holder.culture = {has_cultural_pillar = heritage_druedain}
+}
+
+coa_switch_to_nadimanye_trigger = {
+    holder.faith = faith:faith_chelkar
+}
+
+coa_switch_to_dunlending_trigger = {
+	holder.culture = {has_cultural_pillar = heritage_daen_lintis}
+}
+
+coa_switch_to_daen_trigger = {
+	OR = {
+		holder.culture = {has_cultural_pillar = heritage_daen_lintis }
+		holder.culture = {has_cultural_pillar = heritage_daen_coentis}
+		holder.culture = {has_cultural_pillar = heritage_danan_lin}
+	}
+}
+
+coa_switch_to_tedjin_trigger = {
+	AND = {
+		holder.culture = {has_cultural_pillar = heritage_tedjin}
+		holder.faith = faith:faith_path_of_wisdom
+	}
+}
+
+coa_switch_to_evil_tedjin_trigger = {
+	AND = {
+		holder.culture = {has_cultural_pillar = heritage_tedjin}
+		holder.faith = faith:faith_easterling_war
+	}
+}
+
+coa_switch_to_easterling_trigger = {
+	OR = {
+		holder.culture = {has_cultural_pillar = heritage_ioriag }
+		holder.culture = {has_cultural_pillar = heritage_igath}
+	}
+}
+
+coa_switch_to_native_trigger = {
+	NOR = {
+		holder.culture = {has_cultural_pillar = heritage_dunedain}
+		holder.culture = {has_cultural_pillar = heritage_northern_adunaic}
+		##Quonton
+		holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
+}
+
+coa_switch_to_wholesome_lossoth_trigger = {
+	OR = {
+		holder.faith = faith:faith_lossoth
+		holder.faith = faith:faith_whale_cult
+		holder.faith = faith:faith_angmar_balsha
+		holder.faith = faith:faith_hillmen
+	}
+}
+
+coa_switch_to_corsair_trigger = {
+	AND = {
+	holder.faith = faith:faith_corsair
+	holder.culture = {has_cultural_pillar = heritage_northern_apysaic}
+	}
+}
+
+coa_switch_to_elf_trigger = {
+	OR = {
+		holder.culture = { has_cultural_pillar = heritage_moriquendi }
+		holder.culture = { has_cultural_pillar = heritage_lomiquendi }
+		holder.culture = { has_cultural_pillar = heritage_calaquendi }
+	}
+}
+
+coa_switch_to_womaw_trigger = {
+	holder.culture = { has_cultural_pillar = heritage_womaw }
+}
+
+coa_switch_from_serpent_trigger = {
+	NOR = {
+		holder.faith = faith:faith_haruze
+		holder.faith = faith:lidless_eye
+		holder.faith = faith:faith_nurniag
+	}
+}
+
+coa_switch_to_rohan_trigger = {
+	holder.culture = { has_cultural_pillar = heritage_hadorim}
+}
+
+coa_switch_to_freca_trigger = {
+	holder.dynasty = dynasty:dynasty_freca
+}
+
+coa_switch_to_hillmen_trigger = {
+	holder.culture = { has_cultural_pillar = heritage_hillmen }
+}

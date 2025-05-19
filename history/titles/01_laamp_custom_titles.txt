@@ -1,0 +1,45 @@
+d_laamp_house_of_gimilzadan = {  # House of Gimilzadan - Custom for me <:)
+	6560.11.30 = {
+		liege = 0
+		holder = linegimilzadan43
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_dlc_feature = roads_to_power }
+				}
+				holder = { destroy_title = prev }
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+	6655.4.14 = {
+		holder = linegimilzadan44
+	}
+	6695.4.14 = {
+		holder = linegimilzadan45
+	}
+	6745.4.14 = {
+		holder = linegimilzadan46
+	}
+	6835.4.14 = {
+		holder = linegimilzadan47
+	}
+	6905.4.14 = {
+		holder = linegimilzadan48
+	}
+	6951.12.6 = {
+		holder = linegimilzadan01
+	}
+	6898.12.6 = {
+		holder = linegimilzadan02
+	}
+	6991.12.6 = {
+		holder = linegimilzadan1
+	}
+	7032.11.30 = {
+		holder = linegimilzadan2
+	}
+}

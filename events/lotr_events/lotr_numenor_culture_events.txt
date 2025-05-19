@@ -1,0 +1,118 @@
+﻿### Dol Guldur ###
+namespace = numenor_identity
+
+numenor_identity.1 = { # adunaic vs sindarin vs westron
+	content_source = realms_dlc
+	type = character_event
+	title = numenor_identity.1.t
+	desc = numenor_identity.1.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = minas_tirith }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = {
+		name = numenor_identity.1.a
+		culture:new_numenorean = {
+			set_culture_pillar = language_westron
+		}
+	}
+
+	option = {
+		name = numenor_identity.1.b
+		culture:new_numenorean = {
+			set_culture_pillar = language_sindarin
+		}
+	}
+
+	option = {
+		name = numenor_identity.1.c
+		culture:new_numenorean = {
+			set_culture_pillar = language_quenya
+		}
+	}
+
+	option = {
+		name = numenor_identity.1.e
+		culture:new_numenorean = {
+			set_culture_pillar = language_adunaic
+		}
+	}
+}
+
+numenor_identity.2 = { # Southern vs sindarin vs westron
+	content_source = realms_dlc
+	type = character_event
+	title = numenor_identity.2.t
+	desc = numenor_identity.2.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = minas_tirith }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = {
+		name = numenor_identity.2.a
+		custom_tooltip = numenor_identity_adunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic
+			}
+		}
+	}
+
+	option = {
+		name = numenor_identity.2.b
+		custom_tooltip = numenor_identity_umbar
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic_umbar
+			}
+		}
+	}
+	
+	option = {
+		name = numenor_identity.2.c
+		custom_tooltip = numenor_identity_bellakar
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic_bellakar
+			}
+		}
+	}
+	
+	option = {
+		name = numenor_identity.2.d
+		custom_tooltip = numenor_identity_kharadunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_kharadunaic
+			}
+		}
+	}
+	
+	option = {
+		name = numenor_identity.2.e
+		custom_tooltip = numenor_identity_westron
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_westron_south
+			}
+		}
+	}
+	
+	option = {
+		name = numenor_identity.2.f
+		custom_tooltip = numenor_identity_westron2
+		hidden_effect = {
+			culture:new_numenorean = {
+				set_culture_pillar = language_westron
+			}
+		}
+	}
+}

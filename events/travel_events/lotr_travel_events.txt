@@ -1,0 +1,4310 @@
+﻿#LotR travel events
+
+namespace = lotr_travel_events
+
+############################
+## LotR Travel Events
+############################
+
+# lotr_travel_events.0001 		- A Colossal Wreck by Juke
+# lotr_travel_events.0002 		- Giant Scorpion Attack
+# lotr_travel_events.0003 		- Sandstorm!
+# lotr_travel_events.0004-0006	- An Encounter in Rhosgobel - Meet Radagast!
+# lotr_travel_events.0007 		- Travelling past Fangorn
+# lotr_travel_events.0008		- Endless Darkness
+# lotr_travel_events.0009		- Local Storyteller
+# lotr_travel_events.0010		- Mount Doom's Breath
+# lotr_travel_events.0011		- Troll Attack!
+# lotr_travel_events.0012       - Wonders of a Mallorn Forest
+# lotr_travel_events.0013 		- Call of the Sea
+# lotr_travel_events.0014		- Ruins of the North
+# lotr_travel_events.0015		- Flies and Spiders
+# lotr_travel_events.0016       - Haunted Ruins
+# lotr_travel_events.0017       - Shuddering Earth
+# lotr_travel_events.0018		- A Gruesome Cave
+# lotr_travel_events.0019		- Follow-up to #18
+
+############################################
+
+
+##########################################
+# A Colossal Wreck
+# by Juke
+# 0001
+# Came across an ancient (numenorean?) monument somewhere around the dune sea
+##########################################
+
+lotr_travel_events.0001 = { # A Colossal Wreck
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0001.t
+	desc = lotr_travel_events.0001.desc
+	theme = travel	
+	#override_background = {
+	#	reference = wilderness_desert
+	#}
+	left_portrait = {
+		character = root
+	}
+	cooldown = { years = 50 }
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		NOT = { has_character_flag = had_event_ozymandias }
+		location = {
+			OR = {
+				terrain = desert
+				terrain = desert_mountains
+				terrain = dune_sea
+				terrain = red_desert
+				terrain = saltflats
+			}
+		}
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 6
+		}
+	}
+	option = { # Nothing besides remains.
+		name = lotr_travel_events.0001.a
+		trigger = {
+			has_trait = humble
+		}
+		add_character_flag = {
+			flag = had_event_ozymandias
+		}
+		add_character_modifier = {
+			modifier = harad_0017_ozymandias_good_modifier
+			years = 25
+		}
+		stress_impact = {
+			base = miniscule_stress_impact_loss
+		}
+		add_piety = 50
+	}
+	option = { # Nothing besides remains...
+		name = lotr_travel_events.0001.b
+		trigger = {
+			NOR = {
+				has_trait = humble
+				has_trait = arrogant
+			}
+		}
+		add_character_flag = {
+			flag = had_event_ozymandias
+		}
+		add_character_modifier = {
+			modifier = harad_0017_ozymandias_bad_modifier
+			years = 25
+		}
+		stress_impact = {
+			base = miniscule_stress_impact_gain
+		}
+	}
+	option = { # Nothing besides remains...!
+		name = lotr_travel_events.0001.c
+		trigger = {
+			has_trait = arrogant
+		}
+		add_character_flag = {
+			flag = had_event_ozymandias
+		}
+		add_character_modifier = {
+			modifier = harad_0017_ozymandias_bad_modifier
+			years = 25
+		}
+		stress_impact = {
+			base = miniscule_stress_impact_gain
+		}
+		add_prestige = 50	
+		random = {
+			chance = 10
+			add_trait = depressed_1	
+		}
+	}
+}
+
+##########################################
+# Giant Scorpion Attack
+# by Jaco_Daan and Juke
+# 0002
+# Attacked by Giant Scorpion in the Dune Sea!
+##########################################
+
+scripted_effect lotr_travel_events_scorpion_duel_effect = {	#lifted from #travel_danger_events_6000_beast_duel_effect
+	$FIGHTER$ = {
+		duel = {
+			skill = prowess
+			value = high_skill_rating
+			5 = {
+				desc = lotr_travel_events.0002.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+					min = -49
+				}
+				root = {
+					send_interface_toast = {
+						title = lotr_travel_events.0002.success
+						left_icon = $FIGHTER$
+						$FIGHTER$ = { add_prestige = medium_prestige_gain }
+					}
+				}
+				min = 1
+			}
+			15 = {
+				desc = lotr_travel_events.0002.wound
+				trigger = {
+					NOT = {
+						has_trait_rank = {
+							trait = wounded
+							rank > 1
+						}
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				root = {
+					send_interface_toast = {
+						title = lotr_travel_events.0002.wound
+						left_icon = $FIGHTER$
+						$FIGHTER$ = {
+							hunt_animal_wound_effect = { VARIABLE = root.var:animal_type }
+						}
+					}
+				}
+				min = 3
+			}
+			10 = {
+				desc = lotr_travel_events.0002.failure
+				trigger = {
+					cannot_be_killed = no #lotr
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				root = {
+					send_interface_toast = {
+						title = lotr_travel_events.0002.failure
+						left_icon = $FIGHTER$
+						$FIGHTER$ = {
+							death = { death_reason = death_scorpion }
+						}
+					}
+				}
+				min = 2
+				modifier = {
+					add = -30
+					is_elf = yes
+				}
+			}
+		}
+	}
+}
+
+lotr_travel_events.0002 = { ### GIANT SCORPION ###
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0002.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_character_flag = had_scorpion_event_recently }
+				desc = lotr_travel_events.0002.desc.again
+			}
+			desc = lotr_travel_events.0002.desc
+		}
+		triggered_desc = {
+			trigger = { exists = scope:beast_victim }
+			desc = lotr_travel_events.0002.desc.victim
+		}
+	}
+	theme = travel
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	right_portrait = {
+		character = scope:beast_victim
+		animation = fear
+	}
+	lower_left_portrait = {
+		trigger = { exists = scope:travel_leader }
+		character = scope:travel_leader
+	}
+	widgets = {
+		widget = {
+			gui = "event_window_widget_vfx_sandstorm"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		location = {
+			OR = {
+				terrain = dune_sea
+				terrain = desert
+				terrain = red_desert
+				terrain = oasis
+			}
+		}
+		location = { geographical_region = middleearth_haradwaith_far_dune_sea }
+	}
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 3
+			location = { terrain = dune_sea }
+		}
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 6
+		}
+		current_travel_plan = {
+			random_entourage_character = {
+				limit = {
+					can_be_combatant_based_on_gender_trigger = { ARMY_OWNER = root }
+					cannot_be_killed = no #lotr
+				}
+				alternative_limit = { always = yes }
+				weight = {
+					base = 1
+					modifier = { add = prowess }
+					modifier = {
+						add = 10
+						has_court_position = bodyguard_court_position
+					}
+					modifier = {
+						add = 10
+						is_knight_of = root
+					}
+				}
+				save_scope_as = beast_victim
+			}
+			#Save travel leader
+			if = {
+				limit = {
+					NOT = { travel_leader ?= scope:beast_victim }
+				}
+				travel_leader ?= { save_scope_as = travel_leader }
+			}
+			#Save destination scope 
+			next_destination_province = { save_scope_as = destination }
+		}
+	}
+	option = { #Fight it
+		name = lotr_travel_events.0002.a
+		save_scope_as = fighter
+		stress_impact = {
+			craven = medium_stress_gain
+		}
+		lotr_travel_events_scorpion_duel_effect = { FIGHTER = root }
+		current_travel_plan = { 
+			delay_travel_plan = { days = 5 }
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_trait = craven
+			}
+		}
+		
+	}
+
+	option = { #Distract with someone else
+		name = lotr_travel_events.0002.b
+		trigger = { exists = scope:beast_victim }
+		lotr_travel_events_scorpion_duel_effect = { FIGHTER = scope:beast_victim }
+		current_travel_plan = { 
+			delay_travel_plan = { days = 2 }
+		}
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+			brave = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_trait = compassionate
+			}
+		}
+	}
+
+	option = { #Run!
+		name = lotr_travel_events.0002.c
+		trigger = {
+			culture = {
+				NOT = { has_cultural_tradition = tradition_dune_sea_warfare }
+			}
+		}
+		add_prestige = minor_prestige_loss
+		current_travel_plan = { 
+			delay_travel_plan = { days = 15 }
+		}
+		stress_impact = {
+			base = minor_stress_impact_gain
+			craven = minor_stress_impact_gain
+		}
+		stress_impact = {
+			brave = medium_stress_impact_gain
+			craven = minor_stress_impact_loss
+		}
+		random_list = {
+			50 = {
+				desc = lotr_travel_events.0002.ran
+				send_interface_toast = {
+					title = lotr_travel_events.0002.ran
+				}
+			}
+			40 = {
+				desc = lotr_travel_events.0002.wound
+				trigger = {
+					NOT = {
+						has_trait_rank = {
+							trait = wounded
+							rank > 1
+						}
+					}
+				}
+				send_interface_toast = {
+					title = lotr_travel_events.0002.wound
+					left_icon = root
+					root = {
+						hunt_animal_wound_effect = { VARIABLE = root.var:animal_type }
+					}
+				}
+			}
+			10 = {
+				desc = lotr_travel_events.0002.failure
+				trigger = {
+					cannot_be_killed = no #lotr
+				}
+				send_interface_toast = {
+					title = lotr_travel_events.0002.failure
+					left_icon = root
+					root = {
+						death = { death_reason = death_scorpion }
+					}
+				}
+				modifier = {
+					add = -30
+					is_elf = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_trait = brave
+			}
+		}
+	}
+	option = {
+		name = lotr_travel_events.0002.d
+		trigger = {
+			culture = {
+				has_cultural_tradition = tradition_dune_sea_warfare
+			}
+		}
+		custom_tooltip = lotr_travel_events.0002.d.tt
+		send_interface_toast = {
+			title = lotr_travel_events.0002.sneak
+			left_icon = root
+		}
+		stress_impact = {
+			base = minor_stress_impact_gain
+			impatient = medium_stress_gain
+			reckless = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 500
+			modifier = {
+				factor = 0.1
+				OR = {
+					has_trait = reckless
+					has_trait = impatient
+				}
+			}
+		}
+	}
+	
+	after = {
+		mp_resume_travel_plan = yes
+		#First time getting the event
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			add_character_flag = {
+				flag = had_scorpion_event_recently
+				years = 1
+			}
+		}
+	}
+}
+
+##########################################
+# Sandstorm!
+# by Jaco_Daan and Juke
+# 0003
+# A great Sand Storm engulfs you in the dune sea/desert
+##########################################
+
+lotr_travel_events.0003 = { # Sandstorm!
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0003.t
+	desc = lotr_travel_events.0003.desc
+	theme = travel
+	left_portrait = {
+		character = root 
+	   	animation = fear
+	}
+	right_portrait = {
+		character = root.current_travel_plan.travel_leader
+	   	animation = stress
+	}
+	cooldown = { months = 1 }
+	widgets = {
+		widget = {
+			gui = "event_window_widget_vfx_sandstorm"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		exists = current_travel_plan.travel_leader
+		NOT = { current_travel_plan.travel_leader = root }
+		is_available_travelling = yes
+		is_landed = yes
+		location = {
+			OR = {
+				terrain = red_desert
+				terrain = oasis
+				terrain = desert
+				terrain = dune_sea
+			}
+		}
+	}
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 2
+			location = { terrain = desert }
+		}
+		modifier = {
+			add = 3
+			location = { terrain = dune_sea }
+		}
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		hidden_effect = {
+			while = {
+				count = 5
+				current_travel_plan = {
+					random_entourage_character = {
+						limit = {
+							NOT = { this = root }
+							cannot_be_killed = no #lotr
+						}
+						weight = {
+							base = 1
+							# Try to find someone relevant
+							modifier = {
+								is_close_family_of = root
+								add = 1
+							}
+							modifier = {
+								is_elf = yes
+								add = -0.75
+							}
+						}
+						add_to_list = drowning_courtiers_list
+					}
+				}
+			}
+		}
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 7
+		}
+	}
+	# Trust your guide's judgement
+	option = {
+		name = lotr_travel_events.0003.a
+		current_travel_plan = { 
+			delay_travel_plan = { days = 10 }
+		}
+		current_travel_plan.travel_leader = {
+			duel = {
+				skill = martial
+				value = high_skill_rating
+				50 = { # You manage to navigate the storm
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 0.5
+					}
+					custom_tooltip = sandstorm_survived
+					hidden_effect = {
+						root = {
+							send_interface_toast = {
+								title = sandstorm_survived
+								left_icon = root
+								add_prestige = 10
+							}
+						}
+					}
+				}
+				40 = { # You mess up and get someone killed
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.5
+					}
+					add_prestige = medium_prestige_loss
+					increase_wounds_effect = { REASON = sandstorm}
+					custom_tooltip = sandstorm_someone_dies
+					hidden_effect = {
+						root = {
+							send_interface_toast = {
+								title = sandstorm_someone_dies
+								left_icon = root
+								random_in_list = {
+									list = drowning_courtiers_list
+									death = {
+										death_reason = death_sandstorm
+									}
+								}
+							}
+						}
+					}
+				}
+				10 = { # They mess up a lot and kill a lot of people
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -0.5
+					}
+					increase_wounds_effect = { REASON = sandstorm}
+					custom_tooltip = sandstorm_many_die
+					hidden_effect = {
+						root = {
+							send_interface_toast = {
+								title = sandstorm_many_die
+								left_icon = root
+								every_in_list = {
+									list = drowning_courtiers_list
+									death = {
+										death_reason = death_sandstorm
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		stress_impact = {
+			arrogant = medium_stress_impact_gain
+			brave = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_trait = arrogant
+					has_trait = brave
+				}
+			}
+		}
+	}
+	# I will coordinate the camp!
+	option = {
+		name = lotr_travel_events.0003.b
+		stress_impact = {
+			arrogant = minor_stress_impact_loss
+			craven = medium_stress_impact_gain
+		}
+		progress_towards_rival_effect = {
+			REASON = rival_upstaged_at_sea
+			CHARACTER = root.current_travel_plan.travel_leader
+			OPINION = default_rival_opinion
+		}
+		duel = {
+			skill = martial
+			value = high_skill_rating
+			50 = { # You manage to navigate the storm
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 0.5
+				}
+				send_interface_toast = {
+					title = sandstorm_survived
+					left_icon = root
+				current_travel_plan = { 
+					delay_travel_plan = { days = 3 }
+				}
+					add_prestige = medium_prestige_gain
+				}
+			}
+			40 = { # You mess up and get someone killed
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				custom_tooltip = sandstorm_someone_dies
+
+				send_interface_toast = {
+					title = sandstorm_someone_dies
+					left_icon = root
+					every_in_list = {
+						list = drowning_courtiers_list
+						death = {
+							death_reason = death_sandstorm
+						}
+					}
+					current_travel_plan = { 
+						delay_travel_plan = { days = 15 }
+					}
+					add_prestige = medium_prestige_loss
+					increase_wounds_effect = { REASON = sandstorm}
+				}
+			}
+			10 = { # You really mess up and get yourself killed
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				IF = {
+					limit = {
+						cannot_be_killed = yes #lotr
+					}
+					send_interface_toast = {
+						title = travel_danger_events.6020.immortaltoast #you return to middle earth
+						left_icon = root
+						current_travel_plan = { 
+							delay_travel_plan = { days = 30 }
+						}
+						add_prestige = medium_prestige_loss
+						add_character_modifier = {
+							modifier = recovering_from_storm_modifier
+							years = 2
+						}
+					}
+				}
+				ELSE = {
+					send_interface_toast = {
+						title = sandstorm_you_die
+						left_icon = root
+						current_travel_plan = { 
+							delay_travel_plan = { days = 15 }
+						}
+						add_prestige = medium_prestige_loss
+						death = {
+							death_reason = death_sandstorm
+						}
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = arrogant
+			}
+			modifier = {
+				factor = 0
+				has_trait = craven
+			}
+		}
+	}
+	# I will Save myself!
+	option = {
+		name = lotr_travel_events.0003.c
+		current_travel_plan = { 
+			delay_travel_plan = { days = 8 }
+		}
+		add_prestige = minor_prestige_loss
+		stress_impact = {
+			just = medium_stress_impact_gain
+			patient = medium_stress_impact_gain
+			compassionate = medium_stress_impact_gain
+			craven = minor_stress_impact_loss
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_trait = arrogant
+					has_trait = brave
+				}
+			}
+		}
+	}
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# An Encounter in Rhosgobel - Meet Radagast!
+# by Juke
+# 0004-6
+# You decide to take a stroll through Rhosgobel and have a chancer to meet an odd brown sage!
+##########################################
+
+lotr_travel_events.0004 = { # An Encounter in Rhosgobel
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0004.t
+	desc = {
+		desc = lotr_travel_events.0004.desc
+		triggered_desc = {
+			trigger = {
+				faith_is_good = yes
+			}
+			desc = lotr_travel_events.0004.desc.sage
+		}
+	}
+	theme = travel
+	override_background = { reference = wilderness_forest_pine }
+	left_portrait = {
+		character = root
+	}
+	cooldown = { years = 10 }
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		NOT = { has_character_flag = asked_radagast_for_help }
+		location = province:3189 # Rhosgobel
+		current_travel_plan.travel_plan_owner = root
+		is_landed = yes
+		is_location_valid_for_travel_event_on_land = yes #Should not be needed...
+		NOT = { location.county.holder = root } #If I own it then it does not make sense to visit it.
+		faith_is_evil = no
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 6
+		}
+	}
+	option = {	# attempt to find the brown sage!
+		name = lotr_travel_events.0004.b
+		trigger = {
+			#faith = faith:faith_woodmen
+			faith_is_good = yes
+			is_landed = yes
+			#faith.religion = { religion:northmen_religion }
+			character:lineofradagast = {
+				#has_title = title:d_woodmen_faith_head
+				has_title = title:c_rhosghobel
+			}
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 10 }
+		}
+		custom_tooltip = lotr_travel_events.0004.btt	#Inform player - they will wander the woods a bit
+		hidden_effect = {
+			random_list = {
+				# Didnt find him
+				700 = {
+					trigger_event = {
+						id = lotr_travel_events.0005
+						days = 5
+					}
+				}
+				# Found Radagast 1
+				50 = {
+					save_scope_value_as = {
+						name = radagast_advice
+						value = flag:advice_1
+					}
+					trigger_event = {
+						id = lotr_travel_events.0006
+						days = 5
+					}
+				}
+				# Found Radagast 2
+				50 = {
+					save_scope_value_as = {
+						name = radagast_advice
+						value = flag:advice_2
+					}
+					trigger_event = {
+						id = lotr_travel_events.0006
+						days = 5
+					}
+				}
+				# Found Radagast 3
+				50 = {
+					save_scope_value_as = {
+						name = radagast_advice
+						value = flag:advice_3
+					}
+					trigger_event = {
+						id = lotr_travel_events.0006
+						days = 5
+					}
+				}
+				# Found Radagast 4
+				50 = {
+					save_scope_value_as = {
+						name = radagast_advice
+						value = flag:advice_4
+					}
+					trigger_event = {
+						id = lotr_travel_events.0006
+						days = 5
+					}
+				}
+			}
+		}
+	}
+	option = {	#No time
+		name = lotr_travel_events.0004.a
+		stress_impact = {
+			base = minor_stress_impact_gain
+			impatient = minor_stress_impact_loss
+			patient = minor_stress_impact_gain
+		}
+		mp_resume_travel_plan = yes
+	}
+}
+
+lotr_travel_events.0005 = { # Sairtheod (Rhosgobel), didnt find Radagast
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0005.t
+	desc = lotr_travel_events.0005.desc
+	theme = travel
+	override_background = { reference = wilderness_forest_deep }
+	left_portrait = {
+		character = root
+		animation = dismissal
+	}
+	option = {	#At least the weather was nice...
+		name = lotr_travel_events.0005.a
+		custom_tooltip = lotr_travel_events.0005.att
+		add_prestige = minor_prestige_loss
+	}
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+lotr_travel_events.0006 = { # Sairtheod (Rhosgobel), Radagast gives Advice
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0006.t
+	desc = {
+		desc = lotr_travel_events.0006.desc.intro
+		# What advice does he give?
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:radagast_advice = flag:advice_1 }
+				desc = lotr_travel_events.0006.desc.advice1
+			}
+			triggered_desc = {
+				trigger = { scope:radagast_advice = flag:advice_2 }
+				desc = lotr_travel_events.0006.desc.advice2
+			}
+			triggered_desc = {
+				trigger = { scope:radagast_advice = flag:advice_3 }
+				desc = lotr_travel_events.0006.desc.advice3
+			}
+			triggered_desc = {
+				trigger = { scope:radagast_advice = flag:advice_4 }
+				desc = lotr_travel_events.0006.desc.advice4
+			}
+		}
+	#	desc = lotr_travel_events.0006.desc.outro
+	}
+	theme = travel
+	override_background = {
+		reference = wilderness_forest_deep
+	}
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = character:lineofradagast
+		animation = idle
+	}
+	option = {	# I am reading too much into this
+		name = lotr_travel_events.0006.b
+		add_piety = miniscule_piety_gain
+	}
+	option = {	# attempt to interpret
+
+		name = lotr_travel_events.0006.a
+		custom_tooltip = lotr_travel_events.0006.att
+		duel = {
+			skill = learning
+			value = 10
+			30 = {		
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+					min = -20
+				}
+				desc = lotr_travel_events.0006.a.success
+				send_interface_toast = {
+					left_icon = root
+					add_piety = medium_piety_gain
+					title = lotr_travel_events.0006.a.success.toast.t
+					if = {
+						limit = {
+							scope:radagast_advice = flag:advice_1
+						}
+						add_character_modifier = radagast_advice_1_modifier
+					}
+					if = {
+						limit = {
+							scope:radagast_advice = flag:advice_2
+						}
+						add_character_modifier = radagast_advice_2_modifier
+					}
+					if = {
+						limit = {
+							scope:radagast_advice = flag:advice_3
+						}
+						add_character_modifier = radagast_advice_3_modifier
+					}
+					if = {
+						limit = {
+							scope:radagast_advice = flag:advice_4
+						}
+						add_character_modifier = radagast_advice_4_modifier
+					}
+				}
+			}
+			40 = {		
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2
+					min = -25
+				}
+				desc = lotr_travel_events.0006.a.failure				
+				send_interface_toast = {
+					left_icon = root
+					title = lotr_travel_events.0006.a.failure.toast.t
+				}
+			
+			}
+		}
+	}
+	after = {
+		add_character_flag = {
+			flag = asked_radagast_for_help
+		}
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# Travelling past Fangorn
+# by Juke
+# 0007
+# Travelling past the edges of Fangorn makes you feel uneasy...
+##########################################
+
+lotr_travel_events.0007 = { # Travelling past Fangorn
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0007.t
+	desc = lotr_travel_events.0007.desc
+	theme = travel	
+	override_background = {
+		reference = fangorn
+	}
+	left_portrait = {
+		character = root
+	}
+	right_portrait = {
+		character = root.current_travel_plan.travel_leader
+	   	animation = stress
+	}
+	cooldown = { years = 20 }
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		OR = {
+			# Edges of Fangorn
+			location = province:25
+			location = province:36
+			location = province:37
+			location = province:38
+			location = province:40
+			location = province:55
+			location = province:96
+			location = province:95
+			location = province:94
+			location = province:176
+			location = province:175
+		}
+		NOT = { is_elf = yes }
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		traveler_danger_xp_effect = {
+			MIN = 1
+			MAX = 4
+		}
+	}
+	option = { # Best move on.
+		name = lotr_travel_events.0007.a
+		custom_tooltip = lotr_travel_events.0007.a.tt
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+	}
+	option = { # We should take a detour...
+		name = lotr_travel_events.0007.b
+		custom_tooltip = lotr_travel_events.0007.b.tt
+		add_prestige = minor_prestige_loss
+		current_travel_plan ?= {
+			delay_travel_plan = { days = 15 }
+		}
+	}
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# Endless Darkness
+# by Juke
+# 0008
+# Overgrounders find themselves missing sunlight while travelling underground
+##########################################
+
+lotr_travel_events.0008 = { # Endless Darkness
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0008.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					location.culture = { is_dwarf_culture = yes }
+				}
+				desc = lotr_travel_events.0008.desc.dwarfhold
+			}
+			desc = lotr_travel_events.0008.desc.caverns
+		}
+		desc = lotr_travel_events.0008.desc.outro
+	}
+	theme = travel
+	left_portrait = {
+		character = root
+	   	animation = boredom
+	}
+	right_portrait = {
+		character = root.current_travel_plan.travel_leader
+	   	animation = lantern
+	}
+	lower_center_portrait  = {
+		character = scope:beloved
+	}
+	cooldown = { years = 5 }
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		location = {
+			terrain = halls
+		}
+		NOR = {
+			# Not at home underground
+			is_orc = yes
+			is_goblin = yes
+			is_nazgul = yes
+			is_dwarf = yes
+			is_sauron = yes
+		}
+	}
+	immediate = {
+		root.current_travel_plan.travel_leader ?= {
+			save_scope_as = caravan_leader
+		}
+		location = {
+			save_scope_as = this_place
+		}
+		current_travel_plan = {
+			random_entourage_character ?= {
+				limit = {
+					is_ai = yes
+					is_lotr_adult = yes
+					NOT = {
+						this = root
+					}
+					cannot_be_killed = no
+				}
+				alternative_limit = {
+					NOT = {
+						this = root
+					}
+					cannot_be_killed = no
+				}
+				save_scope_as = chasm_victim
+			}
+		}
+		if = { #Prioritise Soulmate
+			random_relation = {
+				type = soulmate
+				save_scope_as = beloved
+			}
+		}
+		if = { #But backup lover just in case
+			random_relation = {
+				type = lover
+				save_scope_as = beloved
+			}
+		}
+	}
+	option = { # The Darkness is actually rather... comforting.
+		name = lotr_travel_events.0008.a
+		trigger = {
+			has_trait = reclusive
+		}
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		current_travel_plan = {
+			every_entourage_character = {
+				limit = {
+					NOR = {
+						this = root
+						has_trait = reclusive
+						has_trait = shy
+					}
+				}
+				add_opinion = {
+					target = root
+					modifier = suspicion_opinion
+					opinion = -10
+				}
+			}
+		}
+	}
+	option = { # Push entourage member into a chasm.
+		name = lotr_travel_events.0008.b
+		trigger = {
+			has_trait = sadistic
+		}
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		add_tyranny = minor_tyranny_gain
+		scope:chasm_victim = {
+			increase_wounds_effect = { REASON = avalanche }
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -50
+			}
+			progress_towards_rival_effect = {
+				CHARACTER = root
+				reason = rival_tried_to_kill_me
+				OPINION = 0
+			}
+		}
+	}
+	option = { # At least some fascinating mushrooms grow around here
+		name = lotr_travel_events.0008.c
+		trigger = {
+			has_trait = lifestyle_herbalist 
+		}
+		add_character_modifier = {
+			modifier = rare_herbal_remedies_modifier
+			years = 5
+		}
+	}
+	option = { # Thoughts of my beloved keep my heart warm
+		name = lotr_travel_events.0008.d
+		custom_tooltip = lotr_travel_events.0008.d.tt
+		trigger = {
+			OR = {
+				any_relation = {
+					type = soulmate
+					is_available_healthy_ai_adult = yes
+				}
+				any_relation = {
+					type = lover
+					is_available_healthy_ai_adult = yes
+				}
+			}
+		}
+		stress_impact = {
+			lustful = minor_stress_impact_loss
+		}
+		add_piety = 50
+	}
+	option = { # Just... move on.
+		name = lotr_travel_events.0008.e
+		random_list = {
+			30 = {
+				add_prestige = -150
+				stress_impact = {
+					base = minor_stress_impact_gain
+				}
+			}
+			55 = {
+				stress_impact = {
+					base = medium_stress_impact_gain
+				}
+			}
+			5 = {
+				trigger = {
+					NOT = {
+						has_trait = reclusive
+					}
+				}
+				modifier = {
+					add = 5
+					has_trait = shy
+				}
+				modifier = {
+					add = -3
+					has_trait = gregarious
+				}
+				add_trait = reclusive
+			}
+			3 = {
+				trigger = {
+					NOR = {
+						has_trait = depressed_1
+						has_trait = depressed_genetic
+					}
+				}
+				add_trait = depressed_1
+			}
+		}
+	}
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# Local Storyteller
+# by Juke
+# 0009
+# While travelling, you encounter a local storyteller, recounting a tale/fable/myth/legend to a small audience.
+# Dynamic localization! Hopefully, a wide range of tales can be written
+##########################################
+
+# Scripted triggers for individual tales
+scripted_trigger tale_stout_men_trigger = {
+	NOT = { has_character_flag = tale_stout_men }
+	current_year >= 6500
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_northron
+			has_cultural_pillar = heritage_hadorim
+		}
+	}
+}
+scripted_trigger tale_woodmen_king_trigger = {
+	NOT = { has_character_flag = tale_woodmen_king }
+	current_year >= 4500
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_northron
+			has_cultural_pillar = heritage_hadorim
+		}
+	}
+}
+scripted_trigger tale_bridge_troll_trigger = {
+	NOT = { has_character_flag = tale_bridge_troll }
+	current_year >= 4500
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_periannath
+			has_cultural_pillar = heritage_eriadorim
+			has_cultural_pillar = heritage_hillmen
+			this = culture:saralain 
+            any_parent_culture_or_above = { this = culture:saralain }
+		}
+	}
+}
+scripted_trigger tale_captain_suramir_trigger = {
+	NOT = { has_character_flag = tale_captain_suramir }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_northern_adunaic
+			has_cultural_pillar = heritage_southern_adunaic
+			has_cultural_pillar = heritage_bellakari
+			##Quonton
+			has_cultural_pillar = heritage_unified_adunaic
+			this = culture:sakalai 
+            any_parent_culture_or_above = { this = culture:sakalai }
+			this = culture:umbaredain 
+            any_parent_culture_or_above = { this = culture:umbaredain }
+			this = culture:harondorim 
+            any_parent_culture_or_above = { this = culture:harondorim }
+		}
+	}
+}
+scripted_trigger tale_weeping_pass_trigger = {
+	NOT = { has_character_flag = tale_weeping_pass }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_ioriag
+			this = culture:nurnoth 
+            any_parent_culture_or_above = { this = culture:nurnoth }
+			this = culture:igath 
+            any_parent_culture_or_above = { this = culture:igath }
+		}
+	}
+}
+scripted_trigger tale_razarac_trigger = {
+	NOT = { has_character_flag = tale_razarac }
+	#location = { geographical_region = middleearth_haradwaith }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_northern_apysaic
+			has_cultural_pillar = heritage_middle_apysaic
+			#has_cultural_pillar = heritage_southern_apysaic
+			#has_cultural_pillar = heritage_bellakari
+			#has_cultural_pillar = heritage_tulwangi
+			has_cultural_pillar = heritage_tedjin
+		}
+	}
+}
+scripted_trigger tale_kings_kettle_trigger = {
+	NOT = { has_character_flag = tale_kings_kettle }
+	current_year >= 6000
+	location = { geographical_region = middleearth_west }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_periannath
+			has_cultural_pillar = heritage_eriadorim
+			has_cultural_pillar = heritage_hillmen
+			this = culture:saralain 
+			any_parent_culture_or_above = { this = culture:saralain }
+		}
+	}
+	always = no # NOT YET WRITTEN
+}
+scripted_trigger tale_vision_iunast_trigger = {
+	NOT = { has_character_flag = tale_vision_iunast }
+	#location = { geographical_region = middleearth_haradwaith }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_northern_apysaic
+			has_cultural_pillar = heritage_middle_apysaic
+			has_cultural_pillar = heritage_southern_apysaic
+			has_cultural_pillar = heritage_bellakari
+			has_cultural_pillar = heritage_tulwangi
+			has_cultural_pillar = heritage_tedjin
+		}
+	}
+}
+scripted_trigger tale_crag_king_trigger = {
+	NOT = { has_character_flag = tale_crag_king }
+	#location = { geographical_region = middleearth_haradwaith }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_northern_apysaic
+			has_cultural_pillar = heritage_middle_apysaic
+			has_cultural_pillar = heritage_southern_apysaic
+			has_cultural_pillar = heritage_bellakari
+			has_cultural_pillar = heritage_tulwangi
+			has_cultural_pillar = heritage_tedjin
+		}
+	}
+}
+scripted_trigger tale_merchant_prince_trigger = {
+	NOT = { has_character_flag = tale_merchant_prince }
+	#location = { geographical_region = middleearth_haradwaith }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_southern_apysaic
+			has_cultural_pillar = heritage_bellakari
+			has_cultural_pillar = heritage_tulwangi
+			has_cultural_pillar = heritage_thani_native
+			has_cultural_pillar = heritage_southern_adunaic
+			##Quonton
+			has_cultural_pillar = heritage_unified_adunaic
+			#has_cultural_pillar = heritage_nafarati
+			#has_cultural_pillar = heritage_tedjin
+		}
+	}
+}
+scripted_trigger tale_zildur_king_trigger = {
+	NOT = { has_character_flag = tale_zildur_king }
+	location.culture = {
+		OR = {
+			has_cultural_pillar = heritage_northron
+			has_cultural_pillar = heritage_hadorim
+		}
+		OR = {
+			this = culture:woodmen 
+			any_parent_culture_or_above = { this = culture:woodmen }
+			this = culture:framling
+			any_parent_culture_or_above = { this = culture:framling }
+		}
+	}
+}
+
+# The Event
+lotr_travel_events.0009 = { # Local Storyteller
+	content_source = realms_dlc
+	type = character_event
+	title = {
+		desc = lotr_travel_events.0009.t
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_stout_men }
+				desc = lotr_travel_events.0009.tale_stout_men.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_woodmen_king }
+				desc = lotr_travel_events.0009.tale_woodmen_king.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_bridge_troll }
+				desc = lotr_travel_events.0009.tale_bridge_troll.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_captain_suramir }
+				desc = lotr_travel_events.0009.tale_captain_suramir.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_weeping_pass }
+				desc = lotr_travel_events.0009.tale_weeping_pass.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_razarac }
+				desc = lotr_travel_events.0009.tale_razarac.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_kings_kettle }
+				desc = lotr_travel_events.0009.tale_kings_kettle.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_vision_iunast }
+				desc = lotr_travel_events.0009.tale_vision_iunast.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_crag_king }
+				desc = lotr_travel_events.0009.tale_crag_king.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_merchant_prince }
+				desc = lotr_travel_events.0009.tale_merchant_prince.t
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_zildur_king }
+				desc = lotr_travel_events.0009.tale_zildur_king.t
+			}
+			desc = lotr_travel_events.0009.t.fallback
+		}
+	}
+	desc = {
+		desc = lotr_travel_events.0009.desc.intro
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_stout_men }
+				desc = lotr_travel_events.0009.tale_stout_men.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_woodmen_king }
+				desc = lotr_travel_events.0009.tale_woodmen_king.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_bridge_troll }
+				desc = lotr_travel_events.0009.tale_bridge_troll.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_captain_suramir }
+				desc = lotr_travel_events.0009.tale_captain_suramir.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_weeping_pass }
+				desc = lotr_travel_events.0009.tale_weeping_pass.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_razarac }
+				desc = lotr_travel_events.0009.tale_razarac.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_kings_kettle }
+				desc = lotr_travel_events.0009.tale_kings_kettle.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_vision_iunast }
+				desc = lotr_travel_events.0009.tale_vision_iunast.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_crag_king }
+				desc = lotr_travel_events.0009.tale_crag_king.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_merchant_prince }
+				desc = lotr_travel_events.0009.tale_merchant_prince.desc
+			}
+			triggered_desc = {
+				trigger = { scope:local_tale = flag:tale_zildur_king }
+				desc = lotr_travel_events.0009.tale_zildur_king.desc
+			}
+			desc = lotr_travel_events.0009.desc.fallback
+		}
+	}
+	theme = travel
+	left_portrait = {
+		character = root
+	}
+	right_portrait = {
+		character = scope:storyteller
+	}
+	lower_left_portrait  = {
+		character = scope:tale_character_left
+	}
+	lower_center_portrait  = {
+		character = scope:tale_character_center
+	}
+	lower_right_portrait  = {
+		character = scope:tale_character_right
+	}
+	cooldown = { years = 15 }
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		OR = { # One of the tales must be valid
+			tale_stout_men_trigger = yes
+			tale_woodmen_king_trigger = yes
+			tale_bridge_troll_trigger = yes
+			tale_captain_suramir_trigger = yes
+			tale_weeping_pass_trigger = yes
+			tale_razarac_trigger = yes
+			tale_kings_kettle_trigger = yes
+			tale_vision_iunast_trigger = yes
+			tale_crag_king_trigger = yes
+			tale_merchant_prince_trigger = yes
+			tale_zildur_king_trigger = yes
+		}
+	}
+	immediate = {
+		location = {
+			save_scope_as = this_place
+		}
+		create_character = {
+			template = garden_hermit_character
+			location = root.location
+			culture = root.location.county.culture
+			faith = root.location.county.faith
+			dynasty = none
+			save_scope_as = storyteller
+		}
+		scope:storyteller = {
+			add_character_flag = peasant_outfit
+		}
+		random_list = { # Pick a tale!
+			10 = { # The Swift and the Stout Men
+				trigger = { tale_stout_men_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_stout_men
+				}
+				add_character_flag = tale_stout_men
+			}
+			10 = { # The Sorrow of Faderda
+				trigger = { tale_woodmen_king_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_woodmen_king
+				}
+				add_character_flag = tale_woodmen_king
+				character:lineoffaderda1 = { save_scope_as = tale_character_center }
+				culture:woodmen = { save_scope_as = woodmen_scope }
+			}
+			10 = { # The Bridge-Troll of Brittlebridge
+				trigger = { tale_bridge_troll_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_bridge_troll
+				}
+				add_character_flag = tale_bridge_troll
+				scope:storyteller = { add_trait = poet }
+			}
+			10 = { # Captain Sûramir and the Sunken Folk
+				trigger = { tale_captain_suramir_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_captain_suramir
+				}
+				add_character_flag = tale_captain_suramir
+				scope:storyteller = { add_trait = lifestyle_mariner }
+			}
+			10 = { # Battle of the Weeping Pass
+				trigger = { tale_weeping_pass_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_weeping_pass
+				}
+				add_character_flag = tale_weeping_pass
+				culture:igath = { save_scope_as = igath_scope }
+				culture:chelkari = { save_scope_as = chelkari_scope }
+				character:line_kohan3 = { save_scope_as = tale_character_left }
+				character:khandwarlord1 = { save_scope_as = tale_character_center }
+				character:khandwarlord2 = { save_scope_as = tale_character_right }
+			}
+			10 = { # The Razarac/ Mirror of Fire
+				trigger = { tale_razarac_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_razarac
+				}
+				add_character_flag = tale_razarac
+			}
+			10 = { # The Old King's Seeing Kettle (TBD)
+				trigger = { tale_kings_kettle_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_kings_kettle
+				}
+				add_character_flag = tale_kings_kettle
+			}
+			10 = { # Iunást's Vision
+				trigger = { tale_vision_iunast_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_vision_iunast
+				}
+				character:lineiunast1 ?= { save_scope_as = tale_character_center }
+				add_character_flag = tale_vision_iunast
+			}
+			10 = { # Iunást and the Crag-King of Ûz
+				trigger = { tale_crag_king_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_crag_king
+				}
+				character:lineiunast1 ?= { save_scope_as = tale_character_center }
+				character:lineofcragking ?= { save_scope_as = tale_character_right }
+				add_character_flag = tale_crag_king
+			}
+			10 = { # Merchant Prince of the Dâr
+				trigger = { tale_merchant_prince_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_merchant_prince
+				}
+				add_character_flag = tale_merchant_prince
+			}
+			10 = { # Zildur-King, Alendilson by RedArkady
+				trigger = { tale_zildur_king_trigger = yes }
+				save_scope_value_as = {
+					name = local_tale
+					value = flag:tale_zildur_king
+				}
+				character:lineisildur0 = { save_scope_as = tale_character_left }
+				character:lineoforopher1 = { save_scope_as = tale_character_center }
+				character:lineofsauron = { save_scope_as = tale_character_right }
+				add_character_flag = tale_zildur_king
+			}
+		}
+	}
+	
+	option = { # Stay a while and listen
+		name = lotr_travel_events.0009.a
+		current_travel_plan = { 
+			delay_travel_plan = { days = 15 }
+		}
+		stress_impact = {
+			base = minor_stress_impact_loss
+			patient = minor_stress_impact_loss
+			impatient = medium_stress_impact_gain
+			shy = minor_stress_impact_gain
+			arrogant = minor_stress_impact_gain
+		}
+		
+		### Story-dependent  XP rewards
+		## Lifestyle trait xp 
+		# Only applies if you already have the trait and the tale is appropriate!
+		if = { # Mariner XP
+			limit = {
+				has_trait = lifestyle_mariner
+				OR = {
+					scope:local_tale = flag:tale_captain_suramir
+					scope:local_tale = flag:tale_merchant_prince
+				}
+			}
+			add_trait_xp = {
+				trait = lifestyle_mariner
+				value = 5
+			}
+		}
+		if = { # Blademaster XP
+			limit = {
+				has_trait = lifestyle_blademaster
+				OR = {
+					scope:local_tale = flag:tale_weeping_pass
+					scope:local_tale = flag:tale_razarac
+				}
+			}
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = 5
+			}
+		}
+		else_if = { # Historian XP
+			limit = {
+				has_trait = lifestyle_archivist
+				has_trait_xp = {
+					trait = lifestyle_archivist
+					track = historian
+					value >= 1
+				}
+			}
+			add_trait_xp = {
+				trait = lifestyle_archivist
+				track = historian
+				value = 5
+			}
+		}
+		
+		## Generic lifestyle xp
+		if = { # Diplomacy Reward
+			limit = {
+				OR = {
+					scope:local_tale = flag:tale_stout_men
+					scope:local_tale = flag:tale_crag_king
+				}
+			}
+			add_diplomacy_lifestyle_xp = 100
+			random = {
+				chance = 10
+				add_diplomacy_skill = 1
+			}
+		}
+		else_if = { # Martial Reward
+			limit = {
+				OR = {
+					scope:local_tale = flag:tale_weeping_pass
+					scope:local_tale = flag:tale_razarac
+				}
+			}
+			add_martial_lifestyle_xp = 100
+			random = {
+				chance = 10
+				add_martial_skill = 1
+			}
+		}
+		else_if = { # Stewardship Reward
+			limit = {
+				OR = {
+					scope:local_tale = flag:tale_merchant_prince
+				}
+			}
+			add_stewardship_lifestyle_xp = 100
+			random = {
+				chance = 10
+				add_stewardship_skill = 1
+			}
+		}
+		else = { # Learning Reward
+			add_learning_lifestyle_xp = 100
+			random = {
+				chance = 10
+				add_learning_skill = 1
+			}
+		}
+	}
+	
+	option = { # Come on, we don't have time for this
+		name = lotr_travel_events.0009.b
+		stress_impact = {
+			patient = medium_stress_impact_gain
+			gregarious = miniscule_stress_impact_gain
+		}
+	}
+	
+	after = {
+		mp_resume_travel_plan = yes
+		scope:storyteller = { silent_disappearance_effect = yes }
+	}
+}
+
+##########################################
+# Mount Doom's Breath
+# by Juke
+# 0010
+# The fel winds of Mordor burn your throat
+##########################################
+lotr_travel_events.0010 = { # Mount Doom's Breath
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0010.t
+	desc = lotr_travel_events.0010.desc
+	theme = battle
+	override_background = {
+		reference = barad_dur
+	}
+	override_effect_2d = {
+		reference = smoke	
+	}
+	left_portrait = {
+		character = root 
+	   	animation = sick
+	}
+	right_portrait = {
+		character = root.current_travel_plan.travel_leader
+	   	animation = pain
+	}
+	cooldown = { months = 1 }
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		exists = current_travel_plan.travel_leader
+		NOT = { current_travel_plan.travel_leader = root }
+		is_available_travelling = yes
+		is_landed = yes
+		location = {
+			geographical_region = middleearth_mordor
+			terrain = volcanic_plains
+		}
+		has_character_modifier = scorched_throat_modifier
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 7
+		}
+	}
+	# Every breath hurts.
+	option = {
+		name = {
+			trigger = { is_orc = yes }
+			text = lotr_travel_events.0010.a.orc
+		}
+		name = lotr_travel_events.0010.a
+		current_travel_plan = { 
+			delay_travel_plan = { days = 10 }
+		}
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		if = {
+			limit = {
+				NOR = {
+					is_elf = yes
+					cannot_be_killed = yes
+					has_character_modifier = scorched_throat_modifier
+				}
+			}
+			random = {
+				chance = 65
+				add_character_modifier = {
+					modifier = scorched_throat_modifier
+					years = 10
+				}
+			}
+		}
+		current_travel_plan = {
+			every_entourage_character = {
+				limit = {
+					NOR = {
+						this = root
+						is_elf = yes
+						cannot_be_killed = yes
+						has_character_modifier = scorched_throat_modifier
+					}
+				}
+				random = {
+					chance = 65
+					add_character_modifier = {
+						modifier = scorched_throat_modifier
+						years = 10
+					}
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+
+##########################################
+# Troll Attack!
+# by Juke
+# 0011
+# You encounter a huge, geographically appropriate troll!
+##########################################
+scripted_trigger lotr_travel_events_black_troll_trigger = {
+	location = {
+		OR = { # Only in Mordor
+			geographical_region = middleearth_mordor
+		}
+		OR = {
+			terrain = volcanic_plains
+			terrain = mountains
+			terrain = hills
+		}
+	}
+}
+scripted_trigger lotr_travel_events_cave_troll_trigger = {
+	location = {
+		terrain = halls
+	}
+}
+scripted_trigger lotr_travel_events_sand_troll_trigger = {
+	location = {
+		OR = { # Only in the South
+			geographical_region = middleearth_haradwaith
+		}
+		OR = {
+			terrain = desert
+			terrain = desert_mountains
+			terrain = dune_sea
+			terrain = hills
+			terrain = red_desert
+			terrain = plains
+			terrain = savanna
+			terrain = drylands
+		}
+	}
+}
+scripted_trigger lotr_travel_events_snow_troll_trigger = {
+	location = {
+		OR = { # Only in the far North
+			geographical_region = middleearth_forodwaith
+		}
+		NOR = { # Not in Angmar
+			geographical_region = middleearth_forodwaith_angmar
+		}
+		OR = {
+			terrain = arctic
+			terrain = taiga
+			terrain = plains
+			terrain = wetlands
+			terrain = mountains
+			terrain = forest
+		}
+	}
+}
+scripted_trigger lotr_travel_events_hill_troll_trigger = {
+	location = {
+		OR = {
+			geographical_region = middleearth_west
+		}
+		OR = {
+			terrain = mountains
+			terrain = hills
+			terrain = plains
+			terrain = wetlands
+			terrain = forest
+		}
+	}
+}
+
+scripted_effect lotr_travel_events_0011_riddle_effect = {
+	random_list = {
+		1 = {
+			custom_tooltip = lotr_travel_events.0011.riddle1
+		}
+		1 = {
+			custom_tooltip = lotr_travel_events.0011.riddle2
+		}
+		1 = {
+			custom_tooltip = lotr_travel_events.0011.riddle3
+		}
+		1 = {
+			custom_tooltip = lotr_travel_events.0011.riddle4
+		}
+	}
+	add_diplomacy_lifestyle_xp = 250
+	if = {
+		limit = {
+			scope:troll_fodder ?= { cannot_be_killed = no }
+		}
+		scope:troll_fodder = {
+			add_opinion = {
+				target = root
+				modifier = grateful_opinion
+				opinion = 30
+			}
+		}
+	}
+}
+lotr_travel_events.0011 = { # Troll Attack!
+	content_source = realms_dlc
+	type = character_event
+	title = {
+		desc = lotr_travel_events.0011.t.intro
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:black_troll }
+				desc = lotr_travel_events.0011.t.black_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:cave_troll }
+				desc = lotr_travel_events.0011.t.cave_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:sand_troll }
+				desc = lotr_travel_events.0011.t.sand_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:snow_troll }
+				desc = lotr_travel_events.0011.t.snow_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:hill_troll }
+				desc = lotr_travel_events.0011.t.hill_troll
+			}
+			desc = lotr_travel_events.0011.t.hill_troll #Fallback
+		}
+	}
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:black_troll }
+				desc = lotr_travel_events.0011.desc.black_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:cave_troll }
+				desc = lotr_travel_events.0011.desc.cave_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:sand_troll }
+				desc = lotr_travel_events.0011.desc.sand_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:snow_troll }
+				desc = lotr_travel_events.0011.desc.snow_troll
+			}
+			triggered_desc = {
+				trigger = { scope:troll_type = flag:hill_troll }
+				desc = lotr_travel_events.0011.desc.hill_troll
+			}
+			desc = lotr_travel_events.0011.desc.hill_troll #Fallback
+		}
+		triggered_desc = {
+			trigger = { scope:troll_fodder ?= { cannot_be_killed = no } }
+			desc = lotr_travel_events.0011.desc.outro
+		}
+	}
+	theme = travel
+	#left_portrait = {
+	#	character = root
+	#	animation = shock
+	#}
+	right_portrait = {
+		character = scope:troll
+		animation = idle
+	}
+	cooldown = { years = 15 }
+	lower_left_portrait = {
+		character = root
+	}
+	lower_center_portrait = {
+		trigger = { scope:troll_fodder ?= { cannot_be_killed = no } }
+		character = scope:troll_fodder
+	}
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		cannot_be_killed = no
+		OR = {
+			lotr_travel_events_black_troll_trigger = yes
+			lotr_travel_events_cave_troll_trigger = yes
+			lotr_travel_events_sand_troll_trigger = yes
+			lotr_travel_events_snow_troll_trigger = yes
+			lotr_travel_events_hill_troll_trigger = yes
+		}
+		current_travel_plan = {
+			#Potential troll fodder ?
+			any_entourage_character = {
+				cannot_be_killed = no
+				NOT = { is_elf = yes }
+			}
+		}
+	}
+	weight_multiplier = {
+		base = 1
+		modifier = {
+			add = 1
+			location = {
+				county.holder = { is_wastelands = yes }
+			}
+		}
+		modifier = { #More likely in Underground
+			add = 1
+			lotr_travel_events_cave_troll_trigger = yes
+		}
+		modifier = { #More likely in Gorgoroth
+			add = 1
+			lotr_travel_events_black_troll_trigger = yes
+			location = {
+				geographical_region = middleearth_mordor_gorgoroth
+			}
+		}
+		modifier = { #More likely in Angmar
+			add = 1
+			lotr_travel_events_hill_troll_trigger = yes
+			location = {
+				geographical_region = middleearth_forodwaith_angmar
+			}
+		}
+		modifier = { #Much More likely in Rhudaur
+			add = 2
+			lotr_travel_events_hill_troll_trigger = yes
+			location = {
+				geographical_region = middleearth_west_arnor_rhudaur
+			}
+		}
+		modifier = { #less likely in developed lands
+			location.county.development_level > bad_development_level
+			NOT = { location.culture = { is_orc_culture = yes } }
+			factor = 0.5
+		}
+		modifier = {
+			location.county.development_level > medium_development_level
+			NOT = { location.culture = { is_orc_culture = yes } }
+			factor = 0.5
+		}
+		modifier = {
+			location.county.development_level > good_development_level
+			NOT = { location.culture = { is_orc_culture = yes } }
+			factor = 0.5
+		}
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 6
+		}
+		# Pick a troll!
+		if = { # Olog
+			limit = {
+				lotr_travel_events_black_troll_trigger = yes
+			}
+			save_scope_value_as = {
+				name = troll_type
+				value = flag:black_troll
+			}
+			create_character = {
+				template = troll_character
+				gender = male
+				dynasty = none
+				location = root.location
+				culture = culture:black_troll
+				faith = faith:red_eye_cult
+				save_scope_as = troll
+			}
+		}
+		else_if = { # Cave troll
+			limit = {
+				lotr_travel_events_cave_troll_trigger = yes
+			}
+			save_scope_value_as = {
+				name = troll_type
+				value = flag:cave_troll
+			}
+			create_character = {
+				template = troll_character
+				gender = male
+				dynasty = none
+				location = root.location
+				culture = culture:cave_troll
+				faith = faith:way_of_strength
+				save_scope_as = troll
+			}
+		}
+		else_if = { # Sand Troll
+			limit = {
+				lotr_travel_events_sand_troll_trigger = yes
+			}
+			save_scope_value_as = {
+				name = troll_type
+				value = flag:sand_troll
+			}
+			create_character = {
+				template = troll_character
+				gender = male
+				dynasty = none
+				location = root.location
+				culture = culture:sand_troll
+				faith = faith:way_of_strength
+				save_scope_as = troll
+			}
+		}
+		else_if = { # Snow Troll
+			limit = {
+				lotr_travel_events_snow_troll_trigger = yes
+			}
+			save_scope_value_as = {
+				name = troll_type
+				value = flag:snow_troll
+			}
+			create_character = {
+				template = troll_character
+				gender = male
+				dynasty = none
+				location = root.location
+				culture = culture:snow_troll
+				faith = faith:way_of_strength
+				save_scope_as = troll
+			}
+		}
+		else = { # Hill Troll
+			#No trigger as its the fallback
+			save_scope_value_as = {
+				name = troll_type
+				value = flag:hill_troll
+			}
+			create_character = {
+				template = troll_character
+				gender = male
+				dynasty = none
+				location = root.location
+				culture = culture:hill_troll
+				faith = faith:way_of_strength
+				save_scope_as = troll
+			}
+		}
+		
+		current_travel_plan = {
+			#Save potential troll fodder
+			random_entourage_character = {
+				limit = {
+					cannot_be_killed = no #lotr
+					NOT = { is_elf = yes }
+				}
+				weight = {
+					base = 1
+					#modifier = { add = prowess }
+					modifier = { # Clowns are extra delicious
+						add = 4
+						has_court_position = court_jester_court_position
+					}
+					modifier = { # Feeding family to trolls is generally considered rude
+						add = -0.9
+						is_close_family_of = ROOT
+					}
+					modifier = { # ...unless you really, really hate them
+						add = 10
+						has_relation_rival = ROOT
+					}
+				}
+				save_scope_as = troll_fodder
+			}
+			#Save travel leader
+			if = {
+				limit = {
+					NOT = { travel_leader ?= scope:troll_fodder }
+				}
+				travel_leader ?= { save_scope_as = travel_leader }
+			}
+			#Save destination scope 
+			next_destination_province = { save_scope_as = destination }
+		}
+	}
+	
+	#Juke note: tweaked the order the options appear in, which is why they arent alphabetical
+	option = { #Give it supplies
+		name = lotr_travel_events.0011.c
+		trigger = {
+			NOT = {
+				culture = {
+					OR = {
+						has_cultural_tradition = tradition_horse_breeder
+						has_cultural_tradition = tradition_riders_of_the_mark
+						has_cultural_tradition = tradition_warriors_of_rhun
+						has_cultural_tradition = tradition_variag_horse_lords
+						has_cultural_tradition = tradition_warriors_of_rhun
+					}
+				}
+			}
+		}
+		remove_short_term_gold = medium_gold_value
+		add_dread = -15
+		stress_impact = {
+			base = minor_stress_impact_gain
+			greedy = minor_stress_impact_gain
+			brave = minor_stress_impact_gain
+			generous = medium_stress_impact_loss
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 10 }
+		}
+		ai_chance = {
+			base = 300
+		}
+	}
+	
+	option = { #Give it a horse
+		name = lotr_travel_events.0011.d
+		trigger = {
+			culture = {
+				OR = {
+					has_cultural_tradition = tradition_horse_breeder
+					has_cultural_tradition = tradition_riders_of_the_mark
+					has_cultural_tradition = tradition_warriors_of_rhun
+					has_cultural_tradition = tradition_variag_horse_lords
+					has_cultural_tradition = tradition_warriors_of_rhun
+				}
+			}
+		}
+		add_prestige = -150
+		stress_impact = {
+			base = medium_stress_impact_gain
+			greedy = minor_stress_impact_gain
+			brave = minor_stress_impact_gain
+			generous = medium_stress_impact_loss
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 10 }
+		}
+		ai_chance = {
+			base = 500
+		}
+		
+	}
+	
+	option = { #Courtier can spare an arm, right?
+		name = lotr_travel_events.0011.f
+		trigger = {
+			OR = {
+				has_trait = callous
+				has_trait = sadistic
+				is_orc = yes
+				faith.religion = { is_in_family = rf_forcesofevil }
+			}
+			NOT = { is_elf = yes }
+			NOT = { # We dont want too many options
+				AND = {
+					has_trait = poet
+					NOT = { is_orc = yes }
+				}
+			}
+		}
+		scope:troll_fodder = {
+			if = {
+				limit = {
+					has_trait = maimed
+					has_trait = one_legged
+				}
+				increase_wounds_effect = { REASON = fight }
+			}
+			else_if = {
+				limit = { has_trait = maimed }
+				add_trait = one_legged
+				increase_wounds_effect = { REASON = fight }
+			}
+			else = {
+				add_trait = maimed
+				increase_wounds_effect = { REASON = fight }
+			}
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -50
+			}
+			progress_towards_rival_effect = {
+				CHARACTER = root
+				reason = rival_tried_to_kill_me
+				OPINION = 0
+			}
+			random = {
+				chance = 15
+				death = {
+					death_reason = death_eaten
+					killer = scope:troll
+				}
+			}
+		}
+		current_travel_plan = {
+			every_entourage_character = {
+				limit = {
+					NOR = {
+						this = root
+						this = scope:troll_fodder
+						has_trait = callous
+						has_trait = sadistic
+						has_trait = cannibal
+						is_orc = yes
+					}
+				}
+				add_opinion = {
+					target = root
+					modifier = absolutely_horrified_opinion
+					opinion = -30
+				}
+			}
+		}
+		add_tyranny = 5
+		current_travel_plan = { 
+			delay_travel_plan = { days = 5 }
+		}
+		ai_chance = {
+			base = 300
+			modifier = {
+				factor = 0
+				has_trait = compassionate
+			}
+			modifier = {
+				factor = 0
+				is_elf = yes
+			}
+			modifier = {
+				factor = 0.1
+				faith_is_good = yes
+			}
+		}
+	}
+
+	option = { #Guards! To Arms!
+		name = lotr_travel_events.0011.b
+		trigger = {
+			current_travel_plan = {
+				OR = {
+					has_travel_option = hire_experienced_mercenaries_option
+					has_travel_option = military_recruits_option
+					any_entourage_character = {
+						is_knight_of = root 
+						has_court_position = bodyguard_court_position 
+					}
+				}
+			}
+		}
+		
+		random_list = {
+			45 = {
+				desc = lotr_travel_events.0011.b.success.tt
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = lotr_travel_events.0011.b.success.tt
+					right_icon = scope:troll
+				}
+				if = {
+					scope:troll_fodder = {
+						add_opinion = {
+							target = root
+							modifier = grateful_opinion
+							opinion = 30
+						}
+					}
+				}
+			}
+			50 = {
+				desc = lotr_travel_events.0011.b.failure.tt
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.b.failure.tt
+					right_icon = scope:troll
+					increase_wounds_effect = { REASON = fight }
+					scope:troll_fodder = {
+						death = {
+							death_reason = death_eaten
+							killer = scope:troll
+						}
+					}
+				}
+			}
+			5 = {
+				desc = lotr_travel_events.0011.b.critical_failure.tt
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.b.critical_failure.tt
+					right_icon = scope:troll
+					if = {
+						limit = {
+							NOT = { is_elf = yes }
+							cannot_be_killed = no
+						}
+						death = {
+							death_reason = death_eaten
+							killer = scope:troll
+						}
+					}
+					scope:troll_fodder = {
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+				modifier = { # Make AI die less
+					factor = 0.3
+					is_ai = yes
+				}
+			}
+		}
+		
+		stress_impact = {
+			compassionate = minor_stress_impact_gain
+			forgiving = minor_stress_impact_gain
+			craven = minor_stress_impact_gain
+		}
+		
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 2
+				has_trait = brave
+			}
+			modifier = {
+				factor = 0.25
+				has_trait = compassionate
+			}
+			modifier = {
+				factor = 0.25
+				has_trait = forgiving
+			}
+			modifier = {
+				factor = 0.25
+				has_trait = generous
+			}
+			modifier = {
+				factor = 0.25
+				prowess < 15
+			}
+			modifier = {
+				factor = 2
+				prowess >= 15
+			}
+		}
+	}
+	
+	option = { #I will slay you myself!
+		name = lotr_travel_events.0011.a
+		stress_impact = {
+			craven = medium_stress_gain
+			brave = medium_stress_loss
+			fickle = minor_stress_loss
+		}
+		custom_tooltip = lotr_travel_events.0011.a.tt
+		duel = {
+			skill = prowess
+			target = scope:troll
+			9 = {
+				desc = lotr_travel_events.0011.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 1
+					min = -49
+				}
+				send_interface_toast = {
+					title = lotr_travel_events.0011.success
+					right_icon = scope:troll
+					if = {
+						limit = {
+							exists = promoted_legend
+							promoted_legend = {
+								legend_owner = root
+							}
+						}
+						promoted_legend = {
+							change_legend_quality_effect = {
+								VALUE = minor_legend_quality_increase
+							}
+						}
+					}
+					add_legitimacy_effect = { LEGITIMACY = minor_legitimacy_gain }
+					add_prestige = 300
+					if = {
+						limit = {
+							scope:troll_fodder ?= { cannot_be_killed = no }
+						}
+						scope:troll_fodder = {
+							add_opinion = {
+								target = root
+								modifier = grateful_opinion
+								opinion = 30
+							}
+						}
+					}
+				}
+				min = 1
+			}
+			14 = {
+				desc = lotr_travel_events.0011.wound
+				trigger = {
+					NOT = {
+						has_trait_rank = {
+							trait = wounded
+							rank > 1
+						}
+					}
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				send_interface_toast = {
+					title = lotr_travel_events.0011.wound
+					right_icon = scope:troll
+					increase_wounds_effect = { REASON = fight }
+					scope:troll_fodder = {
+						death = {
+							death_reason = death_eaten
+							killer = scope:troll
+						}
+					}
+				}
+				current_travel_plan = { 
+					delay_travel_plan = { days = 5 }
+				}
+				min = 3
+			}
+			7 = {
+				desc = lotr_travel_events.0011.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				send_interface_toast = {
+					title = lotr_travel_events.0011.failure
+					right_icon = scope:troll
+					if = {
+						limit = {
+							cannot_be_killed = no #lotr
+							NOT = { is_elf = yes }
+						}
+						death = {
+							death_reason = death_eaten
+							killer = scope:troll
+						}
+					}
+					scope:troll_fodder = {
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+				current_travel_plan = { 
+					delay_travel_plan = { days = 10 }
+				}
+				min = 2
+				modifier = {
+					factor = 0.5
+					is_elf = yes
+				}
+				modifier = { # Make AI die less
+					factor = 0.3
+					is_ai = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 30
+			modifier = {
+				factor = 0
+				has_trait = craven
+			}
+			modifier = {
+				factor = 0
+				prowess < 15
+			}
+			modifier = {
+				factor = 2
+				has_trait = brave
+				prowess >= 15
+			}
+			modifier = {
+				factor = 2
+				NOT = { has_trait = brave }
+				prowess >= 25
+			}
+		}
+	}
+	
+	option = { #Distract it with a riddle
+		name = lotr_travel_events.0011.j
+		trigger = {
+			NOT = { has_trait = poet }
+			OR = {
+				is_hobbit = yes
+				diplomacy >= 16
+			}
+			NOT = {
+				faith_is_evil = yes
+			}
+		}
+		duel = {
+			skill = diplomacy
+			value = very_high_skill_rating
+			20 = {
+				desc = lotr_travel_events.0011.e.success.tt
+				custom_tooltip = lotr_travel_events.0011.e.success.tt
+				show_as_tooltip = {
+					add_diplomacy_lifestyle_xp = 250
+					if = {
+						limit = {
+							scope:troll_fodder ?= { cannot_be_killed = no }
+						}
+						scope:troll_fodder = {
+							add_opinion = {
+								target = root
+								modifier = grateful_opinion
+								opinion = 30
+							}
+						}
+					}
+				}
+				hidden_effect = {
+					send_interface_toast = {
+						type = event_toast_effect_good
+						title = lotr_travel_events.0011.e.success.tt
+						right_icon = scope:troll
+						lotr_travel_events_0011_riddle_effect = yes
+					}
+				}
+			}
+			8 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				desc = lotr_travel_events.0011.e.failure.tt
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.e.failure.tt
+					right_icon = scope:troll
+					increase_wounds_effect = { REASON = fight }
+					remove_short_term_gold = minor_gold_value
+					add_prestige = -100
+				}
+			}
+			3 = {
+				trigger = {
+					NOT = { is_elf = yes }
+					cannot_be_killed = no
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				desc = lotr_travel_events.0011.e.critical_failure.tt
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.e.critical_failure.tt
+					right_icon = scope:troll
+					death = {
+						death_reason = death_eaten
+						killer = scope:troll
+					}
+					remove_short_term_gold = minor_gold_value
+					add_prestige = -100
+				}
+				modifier = { # Make AI die less
+					factor = 0.3
+					is_ai = yes
+				}
+			}
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 2 }
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				factor = 0
+				has_trait = shy
+			}
+			modifier = {
+				factor = 3
+				diplomacy >= 18
+			}
+		}
+	}
+	
+	option = { #Distract it with a riddle (Always succeeds)
+		name = lotr_travel_events.0011.e
+		trigger = {
+			OR = {
+				is_hobbit = yes
+				diplomacy >= 10
+			}
+			has_trait = poet
+			NOT = { is_orc = yes }
+		}
+		custom_tooltip = lotr_travel_events.0011.e.success.tt
+		show_as_tooltip = {
+			add_diplomacy_lifestyle_xp = 250
+			if = {
+				limit = {
+					scope:troll_fodder ?= { cannot_be_killed = no }
+				}
+				scope:troll_fodder = {
+					add_opinion = {
+						target = root
+						modifier = grateful_opinion
+						opinion = 30
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			send_interface_toast = {
+				type = event_toast_effect_good
+				title = lotr_travel_events.0011.e.success.tt
+				right_icon = scope:troll
+				lotr_travel_events_0011_riddle_effect = yes
+			}
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 2 }
+		}
+		ai_chance = {
+			base = 500
+		}
+	}
+	
+	option = { # Attempt to recruit it!
+		name = lotr_travel_events.0011.g
+		trigger = {
+			OR = {
+				is_orc = yes
+				AND = {
+					faith_is_evil = yes
+					cannot_be_killed = yes
+				}
+			}
+		}
+		stress_impact = {
+			gregarious = minor_stress_impact_loss
+			ambitious = minor_stress_impact_loss
+			shy = medium_stress_impact_gain
+		}
+		duel = {
+			skill = diplomacy
+			value = medium_skill_rating
+			20 = {
+				desc = lotr_travel_events.0011.g.success.tt
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = lotr_travel_events.0011.g.success.tt
+					right_icon = scope:troll
+					add_character_modifier = {
+						modifier = orcs_recruited_troll_modifier
+						years = 10
+					}
+					add_legitimacy_effect = { LEGITIMACY = minor_legitimacy_gain }
+					add_diplomacy_lifestyle_xp = 250
+					remove_short_term_gold = minor_gold_value
+					add_prestige = 150
+				}
+			}
+			8 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				desc = lotr_travel_events.0011.g.failure.tt
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.g.failure.tt
+					right_icon = scope:troll
+					increase_wounds_effect = { REASON = fight }
+					remove_short_term_gold = minor_gold_value
+					add_prestige = -100
+				}
+			}
+			2 = {
+				trigger = {
+					NOT = { is_elf = yes }
+					cannot_be_killed = no
+				}
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -0.5
+				}
+				desc = lotr_travel_events.0011.g.critical_failure.tt
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.g.critical_failure.tt
+					right_icon = scope:troll
+					death = {
+						death_reason = death_eaten
+						killer = scope:troll
+					}
+					remove_short_term_gold = minor_gold_value
+					add_prestige = -100
+				}
+				modifier = { # Make AI die less
+					factor = 0.3
+					is_ai = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 2
+				OR = {
+					has_trait = ambitious
+					has_trait = gregarious
+				}
+			}
+		}
+	}
+	
+	option = { #Run!
+		name = lotr_travel_events.0011.h
+		add_prestige = minor_prestige_loss
+		current_travel_plan = { 
+			delay_travel_plan = { days = 10 }
+		}
+		stress_impact = {
+			base = minor_stress_impact_gain
+			craven = minor_stress_impact_loss
+			brave = medium_stress_impact_gain
+			stubborn = minor_stress_impact_gain
+			arrogant = minor_stress_impact_gain
+		}
+		random_list = {
+			25 = {
+				desc = lotr_travel_events.0011.h.success.tt
+				send_interface_toast = {
+					type = event_toast_effect_good
+					title = lotr_travel_events.0011.h.success.tt
+					right_icon = scope:troll
+					custom_tooltip = lotr_travel_events.0011.h.continue.tt
+				}
+			}
+			65 = {
+				desc = lotr_travel_events.0011.h.failure.tt
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.h.failure.tt
+					right_icon = scope:troll
+					increase_wounds_effect = { REASON = fight }
+					scope:troll_fodder = {
+						death = {
+							death_reason = death_eaten
+							killer = scope:troll
+						}
+					}
+				}
+			}
+			10 = {
+				desc = lotr_travel_events.0011.h.critical_failure.tt
+				trigger = {
+					cannot_be_killed = no
+					NOT = { is_elf = yes }
+				}
+				send_interface_toast = {
+					type = event_toast_effect_bad
+					title = lotr_travel_events.0011.h.critical_failure.tt
+					right_icon = scope:troll
+					death = {
+						death_reason = death_eaten
+						killer = scope:troll
+					}
+					scope:troll_fodder = {
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+				modifier = { # Make AI die less
+					factor = 0.3
+					is_ai = yes
+				}
+			}
+		}
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 0.5
+				has_trait = brave
+			}
+		}
+	}
+
+	after = {
+		mp_resume_travel_plan = yes
+		hidden_effect = { # Dont want troll courtiers runnin around
+			scope:troll = {
+				if = {
+					limit = { is_alive = yes }
+					silent_disappearance_effect = yes
+				}
+			}
+		}
+	}
+}
+
+##########################################
+# Wonders of the Mallorn Forest
+# by Icy
+# 0012
+# Traveler admires Mallorn Forest
+##########################################
+
+lotr_travel_events.0012 = { # Wonders of the Mallorn Forest
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0012.t
+	desc = lotr_travel_events.0012.desc
+	theme = travel	
+	
+	left_portrait = {
+		character = root
+	}
+	cooldown = { years = 50 }
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		is_landed = yes
+		NOT = { has_character_flag = had_event_mallornforest }
+		location = { terrain = mallorn_forest }
+		faith_is_good = yes
+		NOT = { location.county.holder = root }
+		NOT = { is_elf = yes }
+	}
+	
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 30 }
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 6
+		}
+	}
+	option = { # Admire the forest for a moment
+		name = lotr_travel_events.0012.a
+		
+		add_character_flag = {
+			flag = had_event_mallornforest
+		}
+		add_character_modifier = {
+			modifier = lothlorien_mallorn_modifier_positive
+			years = 25
+		}
+		stress_impact = {
+			base = miniscule_stress_impact_loss
+		}
+		add_piety = 30
+	}
+	option = { # Stay for a while
+		name = lotr_travel_events.0012.b
+		
+		add_character_flag = {
+			flag = had_event_mallornforest
+		}
+		add_character_modifier = {
+			modifier = lothlorien_mallorn_modifier_positive_2
+			years = 25
+		}
+		stress_impact = {
+			base = major_stress_impact_loss
+		}
+		add_piety = 150
+		current_travel_plan = {
+			delay_travel_plan = { days = 15 }
+		}
+		
+	}
+	option = { # Let us move on
+		name = lotr_travel_events.0012.c
+		trigger = {
+			OR = {
+				has_trait = arrogant
+				has_trait = impatient
+			}
+		}
+		add_character_flag = {
+			flag = had_event_mallornforest
+		}
+		add_character_modifier = {
+			modifier = lothlorien_mallorn_modifier_negative
+			years = 25
+		}
+		stress_impact = {
+			base = miniscule_stress_impact_gain
+		}
+		add_prestige = 50
+		
+	}
+	after = {
+		mp_resume_travel_plan = yes
+    }
+}
+
+
+##########################################
+# Call of the Sea
+# by Aerien
+# 0013
+# When travelling along the coast
+##########################################
+
+lotr_travel_events.0013 = { # Call of the Sea
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0013.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { employs_court_position = travel_leader_court_position }
+				}
+				desc = lotr_travel_events.0013.desc.solo
+			}
+			desc = lotr_travel_events.0013.desc
+		}
+	}
+	theme = travel
+	left_portrait = {
+		character = root
+	   	animation = worry
+	}
+	right_portrait = {
+		trigger = {
+			employs_court_position = travel_leader_court_position
+		}
+		character = root.current_travel_plan.travel_leader
+	   	animation = dismissal
+	}
+	cooldown = { years = 7 }
+	trigger = {
+		is_available_travelling = yes
+		is_landed = yes
+		location = {
+			OR = {
+				terrain = mangrove
+				terrain = littoral
+				terrain = coastal_sea
+			}
+		}
+		NOR = {
+			# Must be a "coastal" race
+			is_orc = yes
+			is_goblin = yes
+			is_nazgul = yes
+			is_sauron = yes
+		}
+	}
+	immediate = {
+		if = {
+			limit = { employs_court_position = travel_leader_court_position }
+			root.current_travel_plan.travel_leader = {
+				save_scope_as = caravan_leader
+			}
+		}
+	}
+	option = { # I wish to command my own ship once more
+		name = lotr_travel_events.0013.a
+		trigger = {
+			has_trait = lifestyle_mariner
+		}
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		add_prestige = 100
+		add_trait_xp = {
+			trait = lifestyle_mariner
+			value = 15
+		}
+	}
+	option = { # I hear the call of the gulls...
+		name = lotr_travel_events.0013.b
+		trigger = {
+			is_elf = yes
+		}
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		add_piety = 150
+	}
+	option = { # I wish to stay awhile
+		name = lotr_travel_events.0013.c
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 5 }
+		}
+	}
+	option = { # We cannot stay, I've places to be
+		name = lotr_travel_events.0013.d
+		stress_impact = {
+			base = minor_stress_impact_gain
+			ambitious = minor_stress_impact_loss
+			impatient = medium_stress_impact_loss
+		}
+	}
+	option = { # It is... strangely soothing...
+		name = lotr_travel_events.0013.e
+		trigger = {
+			has_trait = depressed_1
+		}
+		random_list = {
+			55 = {
+				stress_impact = {
+					base = medium_stress_impact_loss
+				}
+			}
+			20 = {
+				stress_impact = {
+					base = minor_stress_impact_loss
+				}
+			}
+			25 = {
+				remove_trait = depressed_1
+			}
+		}
+	}
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# Ruins of the North
+# by Aerien
+# 0014
+# loc by Icyveganbtw
+##########################################
+
+lotr_travel_events.0014 = { # Ruins of the North
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0014.t
+	desc = lotr_travel_events.0014.desc
+	theme = travel
+	override_background = {
+		reference = eregion_ruins
+    }
+	left_portrait = {
+		character = root
+	   	animation = personality_rational
+	}
+	right_portrait = {
+		character = root.current_travel_plan.travel_leader
+	   	animation = dismissal
+	}
+	cooldown = { years = 7 }
+	trigger = {
+		is_available_travelling = yes
+		is_landed = yes
+		is_location_valid_for_travel_event_on_land = yes
+		location = {
+			geographical_region = middleearth_west_arnor
+		}
+		NOR = {
+			is_nazgul = yes
+			is_sauron = yes
+		}
+	}
+	immediate = {
+		root.current_travel_plan.travel_leader = {
+			save_scope_as = caravan_leader
+		}
+	}
+	option = { # Good riddance to those arnorians!
+		name = lotr_travel_events.0014.a
+		trigger = {
+			faith_is_evil = yes #Bad guys
+		}
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+		add_piety = 50
+	}
+	option = { # I think there was a King in these lands once!
+		name = lotr_travel_events.0014.b
+		trigger = {
+			is_hobbit = yes
+		}
+		add_learning_lifestyle_xp = 150
+	}
+	option = { # I mourn my fallen ancestors
+		name = lotr_travel_events.0014.c
+		trigger = {
+			faith = faith:faith_edain #Dúnedain
+		}
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		add_piety = 100
+	}
+	option = { # We could study these ruins
+		name = lotr_travel_events.0014.d
+		current_travel_plan = { 
+			delay_travel_plan = { days = 5 }
+		}
+		add_stewardship_lifestyle_xp = 200
+		add_prestige = 50
+	}
+	option = { # These ruins may be haunted. Let us move on quickly...
+		name = lotr_travel_events.0014.e
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+	}
+	option = { #Search the ruins for plunder!
+		name = lotr_travel_events.0014.f
+		trigger = { #Greedy or shrewd people
+			OR = {
+				has_trait = greedy
+				has_trait = shrewd
+			}
+		}
+		random_list = {
+			55 = {
+				add_gold = 50
+			}
+			20 = {
+				add_prestige = 100
+			}
+			25 = {
+				stress_impact = {
+					base = minor_stress_impact_gain
+				}
+			}
+		}
+	}
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# Flies and Spiders
+# by Aerien
+# 0015
+# When travelling through Mirkwood
+##########################################
+
+lotr_travel_events.0015 = { # Flies and Spiders
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0015.t
+	desc = lotr_travel_events.0015.desc
+	theme = travel
+	override_background = {
+		reference = wilderness_forest_deep
+    }
+	left_portrait = {
+		character = root
+	   	animation = worry
+	}
+	right_portrait = {
+		character = root.current_travel_plan.travel_leader
+	   	animation = personality_rational
+	}
+	cooldown = { years = 8 }
+	trigger = {
+		is_available_travelling = yes
+		is_landed = yes
+		is_location_valid_for_travel_event_on_land = yes
+		location = {
+			geographical_region = middleearth_west_rhovanion_mirkwood
+		}
+		NOR = {
+			is_sauron = yes
+		}
+	}
+	immediate = {
+		root.current_travel_plan.travel_leader = {
+			save_scope_as = caravan_leader
+		}
+	}
+	option = { # Those spiders might make useful allies
+		name = lotr_travel_events.0015.a
+		trigger = {
+			OR = {
+				is_orc = yes
+				is_nazgul = yes
+			}
+		}
+		stress_impact = {
+			base = minor_stress_impact_loss
+			ambitious = major_stress_impact_loss
+		}
+		add_prestige = 50
+	}
+	option = { # We should move unseen!
+		name = lotr_travel_events.0015.b
+		trigger = {
+			OR = {
+				is_elf = yes
+				has_trait = shrewd
+				is_hobbit = yes
+			}
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 5 }
+		}
+		add_intrigue_lifestyle_xp = 200
+	}
+	option = { # We fight our way through them
+		name = lotr_travel_events.0015.c
+		stress_impact = {
+			base = minor_stress_impact_gain
+			impatient = miniscule_stress_impact_loss
+			wrathful = miniscule_stress_impact_loss
+			patient = major_stress_impact_gain
+		}
+		random_list = {
+			30 = {
+				current_travel_plan = { 
+					delay_travel_plan = { days = 5 }
+				}
+			}
+			25 = {
+				scope:caravan_leader = { add_trait = wounded_1 }
+			}
+			15 = {
+				add_gold = 15 
+			}
+			30 = { 
+				add_prestige = 50
+			}
+		}
+	}
+			
+	option = { # Stay on the path!
+		name = lotr_travel_events.0015.d
+		stress_impact = {
+			base = major_stress_impact_gain
+			patient = miniscule_stress_impact_gain
+			content = miniscule_stress_impact_loss
+		}
+	}
+	
+	option = { # We'll wait until they're gone...
+		name = lotr_travel_events.0015.e
+		current_travel_plan = { 
+			delay_travel_plan = { days = 7 }
+		}
+
+	}
+	option = { #Hack down the forest to make another path!
+		name = lotr_travel_events.0015.f
+		trigger = { 
+			OR = {
+				has_trait = greedy
+				is_dwarf = yes
+				is_orc = yes
+			}
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 2 }
+		}
+	}
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# Haunted Ruins
+# by Icy
+# 0016
+# When travelling through Eregion
+##########################################
+
+scripted_trigger lotr_is_suitable_guide_trigger = {
+	NOT = { is_close_or_extended_family_of = root }
+	is_available_travelling_adult = yes
+	OR = {
+		# Elves are knowledgeable of most terrains
+		AND = {
+			is_elf = yes #lotr
+			NOR = {
+				location = { terrain = desert }
+				location = { terrain = saltflats }
+				location = { terrain = red_desert }
+				location = { terrain = dune_sea }
+				location = {  terrain = volcanic_plains }
+				location = {  terrain = arctic }
+				location = { terrain = caverns }
+				location = { terrain = halls }
+				location = { terrain = pathsofthedead }
+			}
+		}
+		# Dwarves are knowledgeable in mountains and caverns
+		AND = {
+			is_dwarf = yes #lotr
+			OR = {
+				location = { terrain = caverns }
+				location = { terrain = halls }
+				location = { terrain = pathsofthedead }
+				location = { terrain = hills }
+				location = { terrain = mountains }
+				location = { terrain = desert_mountains }
+			}
+		}
+		#Desert person
+		AND = {
+			OR = {
+				location = { terrain = drylands }
+				location = { terrain = desert }
+				location = { terrain = saltflats }
+				location = { terrain = red_desert }
+				location = { terrain = dune_sea }
+			}
+			has_trait = desert_warrior
+		}
+		#Open terrain person
+		AND = {
+			OR = {
+				location = { terrain = plains }
+				location = { terrain = farmlands }
+				location = { terrain = savanna }
+			}
+			has_trait = open_terrain_expert
+		}
+		#Rough terrain person
+		AND = {
+			OR = {
+				location = { terrain = hills }
+				location = { terrain = mountains }
+			}
+			has_trait = rough_terrain_expert
+		}
+		#Jungle person
+		AND = {
+			location = { terrain = jungle }
+			has_trait = jungle_stalker
+		}
+		#River person
+		AND = {
+			OR = {
+				location = { terrain = floodplains }
+				location = { terrain = wetlands }
+				location = { terrain = mangrove }
+				location = { terrain = littoral }
+			}
+			has_trait = forder
+		}
+		#Forest person
+		AND = {
+			OR = {
+				location = { terrain = forest }
+				location = { terrain = myrtle_forest }
+				location = { terrain = deep_forest }
+				location = { terrain = mallorn_forest }
+			}
+			has_trait = forest_fighter
+		}
+		#Winter person
+		AND = {
+			OR = {
+				location_has_winter_trigger = yes
+				location = { terrain = arctic }
+			}
+			has_trait = winter_soldier
+		}
+		#Random educated person
+		AND = {
+			AND = {
+				learning > medium_skill_rating
+				OR = {
+					has_trait = scholar
+					has_trait = education_learning_3
+					has_trait = education_learning_4
+					has_trait = education_learning_5
+				}
+			}
+			#Organized person
+			OR = {
+				has_trait = logistician
+				has_trait = organizer
+				has_trait = adventurer
+				has_trait = lifestyle_hunter
+			}
+		}
+	}
+}
+
+lotr_travel_events.0016 = {
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0016.t
+	desc = lotr_travel_events.0016.desc
+	theme = travel
+	override_background = {
+		reference = eregion_ruins
+    }
+	left_portrait = {
+		character = root
+	   	animation = personality_rational
+	}
+	right_portrait = {
+		character = root.current_travel_plan.travel_leader
+	   	animation = worry
+	}
+
+	trigger = {
+		is_available_travelling = yes
+		is_landed = yes
+		is_location_valid_for_travel_event_on_land = yes
+		location = {
+			geographical_region = middleearth_west_eregion_south
+		}
+		current_travel_plan = {
+			any_entourage_character = {
+				lotr_is_suitable_guide_trigger = yes
+			}
+			num_entourage_characters > 3
+		}
+		NOT = { has_character_flag = had_event_haunted_ruins_0016 }
+		NOR = {
+			is_sauron = yes
+			is_nazgul = yes
+		}
+	}
+
+	immediate = {
+		current_travel_plan = {
+			random_entourage_character = {
+				limit = { lotr_is_suitable_guide_trigger = yes }
+				hidden_effect = {
+					if = {
+						limit = {
+							NOT = {
+								has_character_modifier = bp1_superstition_modifier
+							}
+						}
+						add_character_modifier = bp1_superstition_modifier
+					}
+				}
+				save_scope_as = caravan_leader
+			}
+		}
+	}
+
+	option = { #You're right, lets avoid these ruins
+		name = lotr_travel_events.0016.a
+		add_character_flag = {
+			flag = had_event_haunted_ruins_0016
+		}
+		current_travel_plan = { 
+			delay_travel_plan = { days = 30 }
+		}
+		scope:caravan_leader = {
+			add_opinion = {
+				modifier = pleased_opinion 
+				opinion = 20
+				target = root
+			}
+		}
+		stress_impact = {
+			impatient = major_stress_impact_gain
+			brave = miniscule_stress_impact_gain
+			craven = miniscule_stress_impact_loss
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = patient
+				has_trait = craven
+			}
+			modifier = {
+				factor = 0
+				has_trait = patient
+			}
+		}
+
+	}
+
+	option = { # I'll whip you for your insolence (copied mostly from the vanilla anthill event)
+		name = lotr_travel_events.0016.b
+		custom_tooltip = lotr_travel_events.0016.b.tt
+		trigger = {
+			OR = {
+				has_trait = sadistic
+				is_orc = yes
+			}
+		}
+		scope:caravan_leader = {
+			increase_wounds_effect = { REASON = whipping }
+		}
+		reverse_add_opinion = {
+			modifier = whipped_me_opinion
+			target = scope:caravan_leader
+			opinion = -40
+		}
+		random_list = {
+			45 = {
+				desc = lotr_travel_events.0016.c.neutral
+			}
+			45 = {
+				desc = lotr_travel_events.0016.c.failure
+				stress_impact = {
+						base = major_stress_impact_gain
+						
+				}
+			}
+			10 = {
+				desc = lotr_travel_events.0016.c.critical.failure
+				add_trait = possessed_1
+			}
+		}
+		stress_impact = {
+			compassionate = major_stress_impact_gain
+			sadistic = minor_stress_impact_loss
+			eccentric = minor_stress_impact_loss
+			callous = miniscule_stress_impact_loss
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				has_trait = sadistic
+				has_trait = wrathful
+				has_trait = callous
+				OR = {
+					has_relation_rival = scope:caravan_leader
+					opinion = {
+						target = scope:caravan_leader
+						value <= low_negative_opinion
+					}
+				}	
+				factor = 2
+			}
+			modifier = {
+				is_elf = yes
+				factor = 0.5
+			}
+			ai_value_modifier = {
+				ai_vengefulness = 2
+				ai_honor = -1
+				ai_rationality = -1
+				ai_energy = -1
+				ai_compassion = -2
+			}
+		}
+		add_character_flag = {
+			flag = had_event_haunted_ruins_0016
+		}
+
+	}
+
+	option = { # What's the worst that can happen?
+		name = lotr_travel_events.0016.c
+		add_character_flag = {
+			flag = had_event_haunted_ruins_0016
+		}
+		reverse_add_opinion = {
+			modifier = ignored_concerns
+			target = scope:caravan_leader
+			opinion = -20
+		}
+		random_list = {
+			45 = {
+				desc = lotr_travel_events.0016.c.neutral
+			}
+			45 = {
+				desc = lotr_travel_events.0016.c.failure
+				stress_impact = {
+						base = major_stress_impact_gain
+						brave = medium_stress_impact_gain
+				}
+			}
+			10 = {
+				desc = lotr_travel_events.0016.c.critical.failure
+				add_trait = possessed_1
+			}
+		}
+		stress_impact = {
+			craven = major_stress_impact_gain
+			patient = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = brave
+				has_trait = impatient
+			}
+			modifier = {
+				factor = 0
+				has_trait = craven
+				has_trait = patient
+			}
+		}
+	}
+	
+	after = {
+		mp_resume_travel_plan = yes
+	}
+}
+
+##########################################
+# Shuddering Earth
+# by Icy, inspired by Juke
+# 0017
+# When travelling through Mordor
+##########################################
+
+lotr_travel_events.0017 = {
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0017.t
+	desc = lotr_travel_events.0017.desc
+	theme = travel
+	override_background = {
+		reference = barad_dur
+	}
+	left_portrait = {
+		character = root
+	   	animation = worry
+	}
+	cooldown = { years = 18 }
+	trigger = {
+		is_available_travelling = yes
+		is_landed = yes
+		is_location_valid_for_travel_event_on_land = yes
+		location = {
+			geographical_region = middleearth_mordor_gorgoroth
+			terrain = volcanic_plains
+		}
+		NOR = {
+			is_sauron = yes
+			is_nazgul = yes
+		}
+	}
+	immediate = {
+		mp_delay_travel_plan = { DAYS = 90 }
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 7
+		}
+	}
+	option = { #Brace!
+		name = lotr_travel_events.0017.a
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		
+		random = {
+			chance = 50
+			increase_wounds_effect = { REASON = fall }
+		}
+		
+		current_travel_plan = {
+			every_entourage_character = {
+				limit = {
+					NOR = {
+						this = root
+						is_elf = yes
+						cannot_be_killed = yes
+						
+					}
+				}
+				random = {
+					chance = 50
+					increase_wounds_effect = { REASON = fall }
+				}
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = lazy
+				has_trait = craven
+			}
+			modifier = {
+				factor = 0
+				has_trait = diligent
+				has_trait = brave
+			}
+		}
+		
+	}
+	option = { # Run for higher ground!
+		name = lotr_travel_events.0017.b
+		duel = {
+			skill = learning
+			value = average_skill_rating
+			60 = {
+				desc = lotr_travel_events.0017.b.success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				send_interface_toast = {
+					left_icon = root
+					title = lotr_travel_events.0017.b.success.tt
+					stress_impact = {
+						base = minor_stress_gain
+						craven = minor_stress_impact_gain
+					}
+				}
+			}
+			40 = {
+				desc = lotr_travel_events.0017.b.failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				send_interface_toast = {
+					left_icon = root
+					title = lotr_travel_events.0017.b.failure.tt
+					increase_wounds_effect = { REASON = fall }
+					stress_impact = {
+						base = medium_stress_impact_gain
+						craven = minor_stress_impact_gain
+					}
+				}
+			}
+		}
+		stress_impact = {
+			craven = major_stress_impact_gain
+			lazy = major_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = brave
+				has_trait = diligent
+			}
+			modifier = {
+				factor = 0
+				has_trait = craven
+				has_trait = lazy
+			}
+		}
+
+	}
+
+	option = { # Prostrate before the Dark Lord
+		name = lotr_travel_events.0017.c
+		trigger = {
+			sauron_is_alive = yes
+			faith_is_good = yes
+			NOR = {
+				has_trait = zealous
+				is_elf = yes
+			}
+		}
+		custom_tooltip = lotr_travel_events.0017.c.tt
+		add_piety = -1000
+		add_piety = -500
+		remove_short_term_gold = minor_gold_value
+		every_vassal = {
+			limit = {faith_is_good = yes}
+			add_opinion = {
+				modifier = disappointed_opinion
+				opinion = -25
+				target = root
+			}
+		}
+			
+		random = {
+			chance = 25
+			increase_wounds_effect = { REASON = fall }
+		}
+		stress_impact = {
+			compassionate = major_stress_impact_gain
+			forgiving = major_stress_impact_gain
+			brave = major_stress_impact_gain
+			just = major_stress_impact_gain
+			arrogant = major_stress_impact_gain
+			ambitious = major_stress_impact_gain
+			honest = major_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = craven
+				has_trait = cynical
+			}
+			modifier = {
+				factor = 0
+				has_trait = compassionate
+				has_trait = forgiving
+				has_trait = just
+				has_trait = arrogant
+				has_trait = honest
+				has_trait = ambitious
+			}
+		}
+		
+
+	}
+
+	option = { # Pray to the Dark Lord
+		name = lotr_travel_events.0017.d
+		trigger = {
+			faith_is_evil = yes
+		}
+		custom_tooltip = lotr_travel_events.0017.d.tt
+		add_piety = 50
+		add_prestige = -45
+		remove_short_term_gold = minor_gold_value
+			
+		random = {
+			chance = 25
+			increase_wounds_effect = { REASON = fall }
+		}
+		stress_impact = {
+			cynical = medium_stress_impact_gain
+			arrogant = major_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = zealous
+				has_trait = craven
+			}
+			modifier = {
+				factor = 0
+				has_trait = arrogant
+				has_trait = cynical
+			}
+		}
+	}
+}
+
+##########################################
+# A Gruesome Cave
+# by Aerien
+# 0018
+# Very rare event for travelling in the North
+##########################################
+
+lotr_travel_events.0018 = {
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0018.t
+	desc = lotr_travel_events.0018.desc
+	theme = travel
+	override_background = {
+		reference = wilderness_forest_deep
+	}
+	left_portrait = {
+		character = root
+	   	animation = thinking
+	}
+	cooldown = { years = 25 }
+	trigger = {
+		is_available_travelling = yes
+		is_landed = yes
+		is_location_valid_for_travel_event_on_land = yes
+		location = {
+			OR = {
+				geographical_region = middleearth_west_rhovanion
+				geographical_region = middleearth_west_arnor
+				geographical_region = middleearth_misty_mountains
+			}
+			NOT = { terrain = halls }
+		}
+		NOR = {
+			is_maiar_fallen = yes
+			is_nazgul = yes
+		}
+	}
+	immediate = {
+		traveler_danger_xp_effect = {
+			MIN = 3
+			MAX = 7
+		}
+	}
+	option = { # Uh, best leave that scary cave be
+		name = lotr_travel_events.0018.a
+		stress_impact = {
+			base = minor_stress_impact_loss
+			craven = major_stress_impact_loss
+			brave = minor_stress_impact_gain
+			shy = major_stress_impact_loss
+			lazy = major_stress_impact_loss
+		}
+		
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = lazy
+				has_trait = craven
+				has_trait = shy
+			}
+			modifier = {
+				factor = 0
+				has_trait = diligent
+				has_trait = brave
+			}
+		}
+		
+	}
+	option = { # Bury the dead
+		name = lotr_travel_events.0018.b
+		trigger = { faith_is_evil = no }
+		add_piety = medium_piety_gain
+		stress_impact = {
+			zealous = medium_stress_impact_loss
+			cynical = medium_stress_impact_gain
+			diligent = minor_stress_impact_loss
+			lazy = minor_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = zealous
+				has_trait = diligent
+			}
+			modifier = {
+				factor = 0
+				has_trait = cynical
+				has_trait = lazy
+			}
+		}
+	}
+
+	option = { # Loot and desecrate the corpses
+		name = lotr_travel_events.0018.c
+		trigger = {
+			faith_is_evil = yes
+		}
+		add_gold = medium_gold_value
+		add_piety = medium_piety_gain
+		stress_impact = {
+			compassionate = major_stress_impact_gain
+			forgiving = major_stress_impact_gain
+			zealous = medium_stress_impact_loss
+			sadistic = major_stress_impact_loss
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = sadistic
+				has_trait = zealous
+			}
+			modifier = {
+				factor = 0
+				has_trait = compassionate
+				has_trait = forgiving
+			}
+		}
+	}
+
+	option = { # Investigate the cave!
+		name = lotr_travel_events.0018.d
+		trigger = {
+			NOT = { is_orc = yes }
+		}
+		custom_tooltip = lotr_travel_events.0018.d.tt
+		current_travel_plan = {
+			delay_travel_plan = { days = 5 }
+		}
+		trigger_event = {
+			id = lotr_travel_events.0019
+			days = 1 
+		}
+		stress_impact = {
+			brave = medium_stress_impact_loss
+			diligent = medium_stress_impact_loss
+			lazy = medium_stress_impact_gain
+			craven = medium_stress_impact_gain
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				has_trait = brave
+				has_trait = diligent
+			}
+			modifier = {
+				factor = 0
+				has_trait = lazy
+				has_trait = craven
+			}
+		}
+	}
+}
+
+##########################################
+# A Gruesome Cave - Follow-up: investigate
+# by Aerien
+# 0019
+# Very rare event for travelling in the North
+##########################################
+
+lotr_travel_events.0019 = {
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0019.t
+	desc = lotr_travel_events.0019.desc
+	theme = travel
+	override_background = {
+		reference = wilderness_underground
+	}
+	left_portrait = {
+		character = root
+	   	animation = personality_callous
+	}
+	right_portrait = {
+		character = scope:cavechild
+		animation = stayback
+	}
+	immediate = {
+		create_character = {
+			location = root.location
+			dynasty = none
+			culture = culture:hithaeglirim
+			faith = faith:faith_nefrea
+			template = peasant_character
+			gender_female_chance = 50
+			age = 6
+			after_creation = {
+				#set_to_lowborn = yes
+				add_trait = skinchanger
+				add_trait = physique_good_2
+				remove_trait = peasant_leader
+			}
+			save_scope_as = cavechild
+		}
+	}
+	option = { # Leave it be 
+		name = lotr_travel_events.0019.a 
+		add_gold = minor_gold_value
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+			sadistic = medium_stress_impact_loss
+		}
+	}
+	option = { # Take the child with you
+		name = lotr_travel_events.0019.b 
+		stress_impact = {
+			compassionate = medium_stress_impact_loss
+			sadistic = medium_stress_impact_gain
+		}
+		add_gold = minor_gold_value
+		add_courtier = scope:cavechild
+	}
+}

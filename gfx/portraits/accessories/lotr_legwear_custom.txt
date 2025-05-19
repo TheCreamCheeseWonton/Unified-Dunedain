@@ -1,0 +1,11 @@
+﻿#Quonton
+
+male_legwear_golden_numenorean_war_01 = {
+	set_tags = "shrink_legs"
+	entity = { required_tags = ""		shared_pose_entity = torso		entity = male_legwear_golden_numenorean_war_01_entity }
+}
+
+female_legwear_golden_numenorean_war_01 = {
+	set_tags = "shrink_legs"
+	entity = { required_tags = ""		shared_pose_entity = torso		entity = female_legwear_golden_numenorean_war_01_entity }
+}

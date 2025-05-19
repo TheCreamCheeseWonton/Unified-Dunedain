@@ -1,0 +1,17 @@
+﻿special_nie_extra = { # The former Numenorean Colonies - United into one for trigger purposes
+	regions = {
+		custom_colonial_minhiriath
+		custom_gondorian_heartlands
+		middleearth_haradwaith_near_umbar
+		custom_bellakar
+		custom_anbalkumagan
+		custom_colonial_thani_hazad
+	}
+	duchies = {
+		d_doriant d_harfalas d_forethir d_aegardh
+		d_annun d_carnentir d_eredir d_laergaladrin
+		d_ramlond
+		d_tulija d_ashatur d_tulwa d_bishra d_kanjar d_khorsaj
+		
+	}
+}

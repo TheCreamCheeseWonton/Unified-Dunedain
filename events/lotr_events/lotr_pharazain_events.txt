@@ -1,0 +1,102 @@
+﻿
+namespace = pharazain_events
+
+pharazain_events.1 = { # Solidify Empire Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.1.t
+	desc = pharazain_events.1.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = pharazain_events.1.a
+	}
+}
+
+pharazain_events.2 = { # Unify Culture Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.2.t
+	desc = pharazain_events.2.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = pharazain_events.2.a
+	}
+}
+
+pharazain_events.3 = { # Different Adunaic Question
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.3.t
+	desc = pharazain_events.3.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = {
+		name = pharazain_events.3.a
+		custom_tooltip = pharazaini_culture_identity_adunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic
+			}
+		}
+	}
+
+	option = {
+		name = pharazain_events.3.b
+		custom_tooltip = pharazaini_culture_identity_umbar
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic_umbar
+			}
+		}
+	}
+	
+	option = {
+		name = pharazain_events.3.c
+		custom_tooltip = pharazaini_culture_identity_bellakar
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic_bellakar
+			}
+		}
+	}
+	
+	option = {
+		name = pharazain_events.3.d
+		custom_tooltip = pharazaini_culture_identity_kharadunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_kharadunaic
+			}
+		}
+	}
+	
+	option = {
+		name = pharazain_events.3.e
+		custom_tooltip = pharazaini_culture_identity_westron
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_westron_south
+			}
+		}
+	}
+}

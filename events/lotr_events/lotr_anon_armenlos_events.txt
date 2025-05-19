@@ -1,0 +1,154 @@
+﻿### Dol Guldur ###
+namespace = lotr_anonarmenlos
+
+lotr_anonarmenlos.1 = {
+	type = character_event
+	title = lotr_anonarmenlos.1.t
+	desc = lotr_anonarmenlos.1.desc
+	override_background = { reference = minas_tirith }
+	theme = stewardship_duty_focus
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	
+	option = {
+		name = lotr_anonarmenlos.1.a
+		remove_short_term_gold = 25000
+		custom_tooltip = lotr_anonarmenlos.1.a.tt
+
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 4
+				ai_greed = -3
+				ai_rationality = -1
+			}
+			modifier = {
+				add = -50
+				short_term_gold <= 20000
+			}
+		}
+		province:1018.county = {
+			add_county_modifier = {
+				modifier = custom_building_construction_special
+				years = 10
+			}
+		}
+		trigger_event = {
+			id = lotr_anonarmenlos.2
+			years = 10.1
+		}
+		
+		add_character_modifier = custom_building_construction_special_character3
+		custom_tooltip = lotr_anonarmenlos_debuff_remove_once_completed
+	}
+
+	option = {
+		name = lotr_anonarmenlos.1.b
+		remove_short_term_gold = 17500
+		custom_tooltip = lotr_anonarmenlos.1.b.tt
+
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 1.5
+				ai_greed = -0.5
+				ai_rationality = 2
+			}
+			modifier = {
+				add = -50
+				short_term_gold <= 15000
+			}
+		}
+
+		province:1018.county = {
+			add_county_modifier = {
+				modifier = custom_building_construction_special
+				years = 25
+			}
+		}
+		trigger_event = {
+			id = lotr_anonarmenlos.2
+			years = 25.1
+		}
+		
+		add_character_modifier = custom_building_construction_special_character2
+		custom_tooltip = lotr_anonarmenlos_debuff_remove_once_completed
+	}
+
+	option = {
+		name = lotr_anonarmenlos.1.c
+		remove_short_term_gold = 10000
+		custom_tooltip = lotr_anonarmenlos.1.c.tt
+
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -3
+				ai_greed = 5
+				ai_rationality = -1
+			}
+		}
+
+		province:1018.county = {
+			add_county_modifier = {
+				modifier = custom_building_construction_special
+				years = 50
+			}
+		}
+		trigger_event = {
+			id = lotr_anonarmenlos.2
+			years = 50.1
+		}
+		
+		add_character_modifier = custom_building_construction_special_character1
+
+		custom_tooltip = lotr_anonarmenlos_debuff_remove_once_completed
+	}
+}
+
+lotr_anonarmenlos.2 = {
+	type = character_event
+	title = lotr_anonarmenlos.2.t
+	desc = lotr_anonarmenlos.2.desc
+	override_background = { reference = minas_tirith }
+	theme = faith
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	immediate = {
+		province:1018 = {
+			if = { limit = { has_building = wonder_arminalethor_01 }
+				remove_building = wonder_arminalethor_01
+			}
+			else_if = { limit = { has_building = wonder_arminalethor_02 }
+				remove_building = wonder_arminalethor_02
+			}
+			else_if = { limit = { has_building = wonder_arminalethor_03 }
+				remove_building = wonder_arminalethor_03
+			}
+			if = { limit = { has_special_building_slot = yes }
+				add_special_building = wonder_anonarmenlos_01
+			}
+			else = {
+				hidden_effect = { add_special_building_slot = wonder_anonarmenlos_01 } 
+				add_special_building = wonder_anonarmenlos_01
+			}
+		}
+	}
+
+	option = {
+		name = lotr_anonarmenlos.2.a
+		if = { limit = { has_character_modifier = custom_building_construction_special_character1 }
+			remove_character_modifier = custom_building_construction_special_character1
+		}
+		else_if = { limit = { has_character_modifier = custom_building_construction_special_character2 }
+			remove_character_modifier = custom_building_construction_special_character2
+		}
+		else = {
+			remove_character_modifier = custom_building_construction_special_character3
+		}
+	}
+}

@@ -1,0 +1,50 @@
+pdxmesh = {
+	name = "wonder_minas_morgul_mesh"
+	file = "wonder_minas_morgul.mesh"
+	scale = 0.45
+
+	meshsettings = {
+		name = "wonder_minas_morgul"
+		index = 0
+		texture_diffuse = "dunedain_buildings_03_morgul_diffuse.dds"
+		texture_normal = "dunedain_buildings_02_normal.dds"
+		texture_specular = "dunedain_buildings_02_properties.dds"
+		shader = "standard_winter"
+		shader_file = "gfx/FX/pdxmesh.shader"
+	}
+
+    meshsettings = {
+		name = "decal_plane"
+		index = 0
+		texture_diffuse = "minas_morgul_decal_diffuse.dds"
+		texture_normal = "orc_fort_decal_normal.dds"
+		texture_specular = "orc_fort_decal_properties.dds"
+		shader = "decal_local"
+		shader_file = "gfx/FX/pdxmesh_decal.shader"
+		subpass = "LocalDecals"
+	}
+}
+
+entity = {
+	name = "wonder_minas_morgul_entity"
+	pdxmesh = "wonder_minas_morgul_mesh"
+    attach = { morgul_mist1 = morgul_disease1 }
+    locator = { name = morgul_mist1 position = { 0 0 0 } }
+}
+
+entity = {
+    name = "morgul_disease1"
+    scale = 1.0
+    default_state = "idle"
+    state = 
+    { 
+        name = "idle" state_time = 5 looping = yes 
+        event = 
+        { 
+            time = 0 
+            particle = "morgul_disease"
+            trigger_once = yes 
+            keep_particle = yes
+        }
+    }
+}
