@@ -592,7 +592,6 @@ decision_unify_adunai = {
 			}
 		}
 		trigger_event = pharazain_events.2   # Unify Adunaic Identity Flavor
-		trigger_event = pharazain_events.3   # Unify Adunaic Identity Flavor Language Question
 		
 		every_living_character = { 
 			custom = decision_unify_pharazaini_characters_custom
@@ -633,6 +632,12 @@ decision_unify_adunai = {
 			name = unavailable_unique_decisions
 			target = flag:decision_unify_adunai
 		}
+	}
+	
+	cost = { 
+		piety = { value = 750 }
+		prestige = { value = 750 }
+		gold = { value = 500 }
 	}
 
 	# AI
@@ -761,6 +766,12 @@ decision_unify_southern_adunai = {
 	}
 
 	# AI
+	cost = { 
+		piety = { value = 500 }
+		prestige = { value = 500 }
+		gold = { value = 250 }
+	}
+	
 	ai_goal = yes
 	ai_potential = { always = yes }
 	ai_will_do = { base = 100 }

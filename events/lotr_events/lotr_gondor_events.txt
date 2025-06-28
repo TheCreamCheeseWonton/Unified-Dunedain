@@ -10064,6 +10064,7 @@ gondor.3604 = {   # Restore Dunedain Identity flavour
 
 	option = {
 		name = gondor.3604.a
+		trigger_event = dunedain_identity.1 #  Restore Dúnedain Identity flavour
 	}
 }
 

@@ -2115,7 +2115,6 @@ decision_reunify_dunedain = {
 			}
 		}
 		trigger_event = gondor.3604   # Restore Dunedain Identity flavour
-		trigger_event = dunedain_identity.1 # Restore Dúnedain Identity flavour
 		
 		every_living_character = { 
 			custom = decision_reunify_dunedain_characters_custom
@@ -2142,6 +2141,12 @@ decision_reunify_dunedain = {
 			name = unavailable_unique_decisions
 			target = flag:decision_reunify_dunedain
 		}
+	}
+
+	cost = { 
+		piety = { value = 750 }
+		prestige = { value = 750 }
+		gold = { value = 500 }
 	}
 
 	# AI
@@ -2683,6 +2688,12 @@ decision_reunify_numenor_culture = {
 				target = flag:decision_reunify_numenor_culture
 			}
 		}
+	}
+
+	cost = { 
+		piety = { value = 2500 }
+		prestige = { value = 1750 }
+		gold = { value = 1500 }
 	}
 
 	# AI

@@ -29,17 +29,19 @@ numenor_identity.1 = { # adunaic vs sindarin vs westron
 	}
 
 	option = {
-		name = numenor_identity.1.c
-		culture:new_numenorean = {
-			set_culture_pillar = language_quenya
-		}
-	}
-
-	option = {
 		name = numenor_identity.1.e
 		culture:new_numenorean = {
 			set_culture_pillar = language_adunaic
 		}
+		remove_short_term_gold = 300
+	}
+
+	option = {
+		name = numenor_identity.1.c
+		culture:new_numenorean = {
+			set_culture_pillar = language_quenya
+		}
+		remove_short_term_gold = 500
 	}
 }
 
@@ -54,16 +56,6 @@ numenor_identity.2 = { # Southern vs sindarin vs westron
 	left_portrait = {
 		character = root
 		animation = personality_honorable
-	}
-
-	option = {
-		name = numenor_identity.2.a
-		custom_tooltip = numenor_identity_adunaic
-		hidden_effect = {
-			culture:pharazaini_culture = {
-				set_culture_pillar = language_adunaic
-			}
-		}
 	}
 
 	option = {
@@ -114,5 +106,16 @@ numenor_identity.2 = { # Southern vs sindarin vs westron
 				set_culture_pillar = language_westron
 			}
 		}
+	}
+	
+	option = {
+		name = numenor_identity.2.a
+		custom_tooltip = numenor_identity_adunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic
+			}
+		}
+		remove_short_term_gold = 250
 	}
 }
