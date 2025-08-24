@@ -34,6 +34,7 @@ pharazain_events.2 = { # Unify Culture Flavor
 
 	option = {
 		name = pharazain_events.2.a
+		trigger_event = pharazain_events.3   # Unify Adunaic Identity Flavor Language Question
 	}
 }
 
@@ -48,16 +49,6 @@ pharazain_events.3 = { # Different Adunaic Question
 	left_portrait = {
 		character = root
 		animation = personality_honorable
-	}
-
-	option = {
-		name = pharazain_events.3.a
-		custom_tooltip = pharazaini_culture_identity_adunaic
-		hidden_effect = {
-			culture:pharazaini_culture = {
-				set_culture_pillar = language_adunaic
-			}
-		}
 	}
 
 	option = {
@@ -98,5 +89,16 @@ pharazain_events.3 = { # Different Adunaic Question
 				set_culture_pillar = language_westron_south
 			}
 		}
+	}
+	
+	option = {
+		name = pharazain_events.3.a
+		custom_tooltip = pharazaini_culture_identity_adunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic
+			}
+		}
+		remove_short_term_gold = 400
 	}
 }

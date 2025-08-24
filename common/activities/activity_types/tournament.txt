@@ -488,7 +488,7 @@
         if = {
             limit = {
                 exists = capital_county
-				capital_county.title_province = { geographical_region = adventure_nearharad }
+				capital_county.title_province = { geographical_region = middleearth_harad_near }
                 NOT = {
 					exists = global_var:tournament_middleearth_nearharad_motivation
 				}
@@ -501,7 +501,7 @@
         if = {
             limit = {
                 exists = capital_county
-				capital_county.title_province = { geographical_region = middleearth_haradwaith_far }
+				capital_county.title_province = { geographical_region = middleearth_harad_far }
                 NOT = {
 					exists = global_var:tournament_middleearth_farharad_motivation
 				}
@@ -705,7 +705,7 @@
             limit = {
 				years_from_game_start > 100
                 exists = capital_county
-				capital_county.title_province = { geographical_region = adventure_nearharad }
+				capital_county.title_province = { geographical_region = middleearth_harad_near }
                 exists = global_var:tournament_middleearth_nearharad_motivation
             }
             add = {
@@ -717,7 +717,7 @@
             limit = {
 				years_from_game_start > 100
                 exists = capital_county
-				capital_county.title_province = { geographical_region = middleearth_haradwaith_far }
+				capital_county.title_province = { geographical_region = middleearth_harad_far }
                 exists = global_var:tournament_middleearth_farharad_motivation
             }
             add = {
@@ -1258,7 +1258,9 @@
 		triggered_desc = {
 			trigger = {
 				OR = {
-					
+					terrain = plains
+					terrain = oasis
+					terrain = steppe
 				}
 			}
 			desc = activity_tournament_province_desc_terrain_good
@@ -2652,6 +2654,7 @@
 								has_cultural_pillar = heritage_northron
 								##Quonton
 								has_cultural_tradition = tradition_new_numenor
+								
 							}
 						}
 					}
@@ -3956,7 +3959,7 @@
 										subtract = tournament_contest_base_cost
 									}
 								}
-								multiply = tournament_contest_cost_low_discount_value
+								multiply = tournament_contest_cost_discount_value
 								desc = tournament_duel_contest_cost_low_discount_desc
 							}
 						}
@@ -4305,6 +4308,15 @@
 				if = {
 					limit = {
 						culture = { has_cultural_tradition = tradition_the_people_of_the_plains }
+					}
+					add = {
+						value = 75
+						desc = tradition_the_people_of_the_plains_name
+					}
+				}
+				if = {
+					limit = {
+						culture = { has_cultural_tradition = tradition_the_people_of_the_plains_old }
 					}
 					add = {
 						value = 75
@@ -5215,7 +5227,7 @@
 		
 		if = {
 			limit = {
-				scope:host.location = { geographical_region = adventure_nearharad }
+				scope:host.location = { geographical_region = middleearth_harad_near }
 				NOT = {
 					exists = global_var:tournament_middleearth_nearharad_motivation
 				}
@@ -5229,7 +5241,7 @@
 		
 		if = {
 			limit = {
-				scope:host.location = { geographical_region = middleearth_haradwaith_far }
+				scope:host.location = { geographical_region = middleearth_harad_far }
 				NOT = {
 					exists = global_var:tournament_middleearth_farharad_motivation
 				}
@@ -5243,7 +5255,7 @@
 		
 		if = {
 			limit = {
-				scope:host.location = { geographical_region = middleearth_haradwaith_far }
+				scope:host.location = { geographical_region = middleearth_harad_far }
 				NOT = {
 					exists = global_var:tournament_middleearth_farharad_motivation
 				}
@@ -5257,7 +5269,7 @@
 		
 		if = {
 			limit = {
-				scope:host.location = { geographical_region = middleearth_haradwaith_far }
+				scope:host.location = { geographical_region = middleearth_harad_far }
 				NOT = {
 					exists = global_var:tournament_middleearth_farharad_motivation
 				}
