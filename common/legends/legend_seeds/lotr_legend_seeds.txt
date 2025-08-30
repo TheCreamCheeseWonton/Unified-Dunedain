@@ -14,7 +14,15 @@ castamir = {
 			##Quonton
 			culture = { has_cultural_pillar = heritage_unified_adunaic }
 			dynasty = dynasty:dynasty_kamal # Kamalaka
+			house = house:house_castamir
+			AND = { # Show for Gondorians in Umbar
+				culture = { has_cultural_pillar = heritage_dunedain }
+				any_realm_county = {
+					empire = title:e_umbar
+				}
+			}
 		}
+		NOT = { dynasty = dynasty:dynasty_elendil }
 		game_start_date >= 5481 #Castamir gotta be dead !
 	}
 	is_valid = {
@@ -464,32 +472,8 @@ durin1 = { # Durin the Deathless
 
 	chronicle = ancestral_glory
 	chronicle_properties = {
-		ancestor = character:lineofdurin1 # Durin the Deathless
+		ancestor = character:lineofdurinI # Durin the Deathless
 		title = title:e_misty_mountains
-	}
-}
-dwalin = { # Dwalin the Wise
-	type = legitimizing
-	quality = famed
-	is_shown = {
-		has_dlc_feature = legends
-		NOT = {
-			has_global_variable = dwalin_legend
-		}
-		OR = {
-			culture = { has_cultural_pillar = heritage_broadbeam }
-			dynasty = dynasty:dynasty_dwalin
-		}
-	}
-	is_valid = {
-		is_landed = yes
-		prestige_level >= high_prestige_level
-	}
-
-	chronicle = ancestral_glory
-	chronicle_properties = {
-		ancestor = character:lineofdwalin0 # Dwalin the Wise
-		title = title:e_blue_mountains
 	}
 }
 uri = { # Uri the Scarred
@@ -512,7 +496,31 @@ uri = { # Uri the Scarred
 
 	chronicle = ancestral_glory
 	chronicle_properties = {
-		ancestor = character:lineofuri0 # Uri the Scarred
+		ancestor = character:lineofuriI # Uri the Scarred
+		title = title:e_blue_mountains
+	}
+}
+dwalin = { # Dwalin the Wise
+	type = legitimizing
+	quality = famed
+	is_shown = {
+		has_dlc_feature = legends
+		NOT = {
+			has_global_variable = dwalin_legend
+		}
+		OR = {
+			culture = { has_cultural_pillar = heritage_broadbeam }
+			dynasty = dynasty:dynasty_dwalin
+		}
+	}
+	is_valid = {
+		is_landed = yes
+		prestige_level >= high_prestige_level
+	}
+
+	chronicle = ancestral_glory
+	chronicle_properties = {
+		ancestor = character:lineofdwalinI # Dwalin the Wise
 		title = title:e_blue_mountains
 	}
 }
@@ -536,8 +544,53 @@ thrar = { # Thrár the Proud
 
 	chronicle = ancestral_glory
 	chronicle_properties = {
-		ancestor = character:lineofthrar1 # Thrár the Proud
+		ancestor = character:lineofthrarI # Thrár the Proud
 		title = title:e_yellow_mountains
+	}
+}
+fulla_VII_flamehand = { # Fullâ Flamehand
+	type = legitimizing
+	quality = famed
+	is_shown = {
+		has_dlc_feature = legends
+		NOT = {
+			has_global_variable = fulla_VII_flamehand_legend
+		}
+		OR = {
+			culture = { has_cultural_pillar = heritage_blacklock }
+			dynasty = dynasty:dynasty_thrar
+		}
+	}
+	is_valid = {
+		is_landed = yes
+		prestige_level >= high_prestige_level
+	}
+
+	chronicle = ancestral_glory
+	chronicle_properties = {
+		ancestor = character:lineofthrar51 # Fullâ VII Flamehand
+		title = title:e_bizaruldum
+	}
+}
+ron_the_exile = { # Rôn the Exile
+	type = legitimizing
+	quality = famed
+	is_shown = {
+		has_dlc_feature = legends
+		NOT = {
+			has_global_variable = ron_the_exile_legend
+		}			
+		culture = culture:blacklocks_nargubraz
+	}
+	is_valid = {
+		is_landed = yes
+		prestige_level >= high_prestige_level
+	}
+
+	chronicle = ancestral_glory
+	chronicle_properties = {
+		ancestor = character:lineofbarukodlig1 # Rôn the Exile
+		title = title:k_nargubraz
 	}
 }
 gerontius = { # Old Took
@@ -853,12 +906,7 @@ elendil = { # Elendil the Tall
 			has_global_variable = elendil_legend
 		}
 		OR = {
-			##Quonton
-			OR = { 
-				culture = { has_cultural_pillar = heritage_dunedain }
-				culture = { has_cultural_tradition = tradition_new_numenor }
-			}
-			##End Quonton
+			culture = { has_cultural_pillar = heritage_dunedain }
 			is_eldar = yes
 		}
 	}
@@ -891,7 +939,7 @@ fingolfin = { # Fingolfin
 
 	chronicle = inspiring_hero
 	chronicle_properties = {
-		ancestor = character:linefinwe4 # Fingolfin
+		ancestor = character:lineoffinwe5 # Fingolfin
 		antagonist = flag:morgoth
 	}
 }
@@ -903,7 +951,7 @@ pharazon = { # Pharazôn the Golden
 		NOT = {
 			has_global_variable = pharazon_legend
 		}
-		lotr_numenor_culture_trigger = yes
+		lotr_has_numenorean_culture_trigger = yes
 		faith_is_good = no
 	}
 	is_valid = {
@@ -1062,7 +1110,7 @@ earendil_dunedain = { # Earendil
 
 	chronicle = saintly_deed
 	chronicle_properties = {
-		ancestor = character:linefinwe26 # Earendil
+		ancestor = character:lineoffingolfin9 # Earendil
 		religion = religion:dunedain_religion
 	}
 }
@@ -1075,7 +1123,8 @@ earendil_elven = { # Earendil
 		NOT = {
 			has_global_variable = earendil_elven_legend
 		}
-		religion = religion:elven_religion
+		#religion = religion:elven_religion #Was causing Avari to take it
+		is_eldar = yes
 	}
 	is_valid = {
 		is_landed = yes
@@ -1084,7 +1133,7 @@ earendil_elven = { # Earendil
 
 	chronicle = saintly_deed
 	chronicle_properties = {
-		ancestor = character:linefinwe26 # Earendil
+		ancestor = character:lineoffingolfin9 # Earendil
 		religion = religion:elven_religion
 	}
 }
@@ -1105,7 +1154,7 @@ earendil_bellakari = { # Earendil
 
 	chronicle = saintly_deed
 	chronicle_properties = {
-		ancestor = character:linefinwe26 # Earendil
+		ancestor = character:lineoffingolfin9 # Earendil
 		religion = religion:bellakari_religion
 	}
 }
@@ -1165,7 +1214,7 @@ telchar = { # Telchar
 		}
 		religion = religion:dwarven_religion
 		OR = {
-			capital_province = { geographical_region = middleearth_blue_mountains }
+			capital_province = { geographical_region = middleearth_mountains_blue }
 			culture = { has_cultural_pillar = heritage_broadbeam }
 			culture = { has_cultural_pillar = heritage_firebeard }
 		}
@@ -1191,7 +1240,7 @@ narvi = { # Narvi
 		}
 		religion = religion:dwarven_religion
 		OR = {
-			capital_province = { geographical_region = middleearth_misty_mountains }
+			capital_province = { geographical_region = middleearth_mountains_misty }
 			culture = { has_cultural_pillar = heritage_longbeard }
 		}
 	}

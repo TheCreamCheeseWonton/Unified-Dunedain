@@ -247,7 +247,7 @@ throne = {
 			exists = capital_county
 			capital_county.culture = {
 				OR = { 
-					culture = { has_cultural_pillar = heritage_dunedain }
+					has_cultural_pillar = heritage_dunedain
 					has_cultural_tradition = tradition_new_numenor
 				}
 			}
@@ -3215,7 +3215,7 @@ crown_court = {
 			scope:owner = {
 				OR = { 
 					culture = { has_cultural_pillar = heritage_dunedain }
-					has_cultural_tradition = tradition_new_numenor
+					culture = { has_cultural_tradition = tradition_new_numenor }
 				}
 				# culture = { has_cultural_pillar = heritage_byzantine }
 				highest_held_title_tier = tier_empire
@@ -3228,7 +3228,7 @@ crown_court = {
 			scope:owner = {
 				OR = { 
 					culture = { has_cultural_pillar = heritage_dunedain }
-					has_cultural_tradition = tradition_new_numenor
+					culture = { has_cultural_tradition = tradition_new_numenor }
 				}
 				# culture = { has_cultural_pillar = heritage_byzantine }
 				highest_held_title_tier <= tier_kingdom

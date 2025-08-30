@@ -1,13 +1,13 @@
 ﻿l_english:
  ##Buildings
- building_wonder_cirith_ungol_02:0 "Cirith Ungol - Reclaimed"
- building_wonder_cirith_ungol_02_desc:0 "Long ago Cirith Ungol was built to keep the watch on [mordor|E] and protect [gondor|E] after the [warlastalliance|E]. After countless years under the dictatorship of the [witchkingshort|E] of [angmar|E], this once proud [gondorian|E] fortress has been reclaimed. Evermore shall the watchful gaze of Cirith Ungol be used to protect [gondor|E]'s heartland from the darkness of [mordor|E]."
+ #building_wonder_cirith_ungol_02:0 "Cirith Ungol - Reclaimed"
+ #building_wonder_cirith_ungol_02_desc:0 "Long ago Cirith Ungol was built to keep the watch on [mordor|E] and protect [gondor|E] after the [warlastalliance|E]. After countless years under the dictatorship of the [witchkingshort|E] of [angmar|E], this once proud [gondorian|E] fortress has been reclaimed. Evermore shall the watchful gaze of Cirith Ungol be used to protect [gondor|E]'s heartland from the darkness of [mordor|E]."
 
- building_wonder_aldburg_03:0 "Calenmîr - Rebuilt"
- building_wonder_aldburg_03_desc:0 "Calenmîr, or the Green Jewel, has been reclaimed by the [dunedain|E]. Whether through diplomacy or the sword, [calenardhon|E] has been reborn as a province within the [realms_in_exile|E]. Rebuilt in the image of Calenmîr of old, the city has once again become one of the wealthiest cities in all of [calenardhon|E], with a distinct [gondorian|E] character."
+ #building_wonder_Calenmîr_03:0 "Calenmîr - Rebuilt"
+ #building_wonder_aldburg_03_desc:0 "Calenmîr, or the Green Jewel, has been reclaimed by the [dunedain|E]. Whether through diplomacy or the sword, [calenardhon|E] has been reborn as a province within the [realms_in_exile|E]. Rebuilt in the image of Calenmîr of old, the city has once again become one of the wealthiest cities in all of [calenardhon|E], with a distinct [gondorian|E] character."
 
- building_wonder_mispir_2:0 "Capital of Mispir"
- building_wonder_mispir_2_desc:0 "The city of Mispir, since the unification of the [thanihazad|E], has grown prosperous. Expanded considerably, and with an extensive increase in population, the city is unrivaled in all of southern [middleearth|E] and rivals some of the greatest cities in the world. Her ports are full, markets bustling, and homes filled with prosperity and wealth. The long history of Mispir as the seat of the [balan_lai|E] and the center of [adunaic|E] rule persists in the city, inspiring politics and vice even to this day. Mispir continues to be the center of [thanihazad|E] in heart, soul, and state. "
+ #building_wonder_mispir_2:0 "Capital of Mispir"
+ #building_wonder_mispir_2_desc:0 "The city of Mispir, since the unification of the [thanihazad|E], has grown prosperous. Expanded considerably, and with an extensive increase in population, the city is unrivaled in all of southern [middleearth|E] and rivals some of the greatest cities in the world. Her ports are full, markets bustling, and homes filled with prosperity and wealth. The long history of Mispir as the seat of the [balan_lai|E] and the center of [adunaic|E] rule persists in the city, inspiring politics and vice even to this day. Mispir continues to be the center of [thanihazad|E] in heart, soul, and state. "
 
  building_type_wonder_anonarmenlos_01:0 "Armenelostion"
  building_type_wonder_anonarmenlos_01_desc:0 "Armenelostion, or 'Son of [armenelos|E]', is one of the greatest cities made by [man|E], even rivaling the cities of [numenor|E] in their splendor. From her white walls and great ports, the legacy of [numenor|E] flows. Made in the shape and memory of [armenelos|E], no other city today has as strong a claim as Armenelostion of being a truly [numenorean|E] city."

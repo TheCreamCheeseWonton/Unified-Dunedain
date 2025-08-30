@@ -11,6 +11,7 @@
 	heritage = heritage_northern_adunaic
 	language = language_adunaic
 	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
 	traditions = {
 		tradition_blacknumenorean_legacy
 		tradition_seafaring
@@ -41,6 +42,7 @@ old_umbarean = {
 	heritage = heritage_northern_adunaic
 	language = language_adunaic_umbar
 	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
 	traditions = {
 		tradition_blacknumenorean_legacy
 		tradition_seafaring
@@ -57,8 +59,8 @@ old_umbarean = {
 	unit_gfx = { eastern_unit_gfx }
 	
 	ethnicities = {
-		55 = black_numenorean_ethnicity
-		45 = umbarean_ethnicity
+		80 = black_numenorean_ethnicity
+		20 = umbarean_ethnicity
 	}
 }
 
@@ -72,6 +74,7 @@ umbarean = {
 	heritage = heritage_northern_apysaic # with their hatred of gondor and its people, they shift to an adunaic identity (now in history)
 	language = language_westron_south 			#language_adunaic_umbar - Westron has long since grown to dominate Umbar. Classical Adunaic is reserved for court usage
 	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
 	traditions = {
 		#tradition_blacknumenorean_legacy # Given in history
 		tradition_seafaring
@@ -84,7 +87,7 @@ umbarean = {
 		requires_dlc_flag = the_fate_of_iberia
 	}
 	
-	name_list = name_list_umbarean
+	name_list = name_list_gondorian_apysaic
 	
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
@@ -92,7 +95,10 @@ umbarean = {
 	unit_gfx = { eastern_unit_gfx }
 	
 	ethnicities = {
-		1 = umbarean_ethnicity
+		60 = umbarean_ethnicity
+		5 = gondorian_ethnicity
+		5 = black_numenorean_ethnicity		
+		30 = haradrim_ethnicity		
 	}
 }
 
@@ -108,6 +114,7 @@ ar_adunaim_numenorean = { #Pharazônabênî
 	heritage = heritage_northern_adunaic
 	language = language_adunaic
 	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
 	traditions = {
 		tradition_blacknumenorean_legacy
 		tradition_fueled_by_vengeance

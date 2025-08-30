@@ -29,6 +29,8 @@
 @special_maa_01 = "gfx/interface/icons/culture_innovations/innovation_special_maa_01.dds"
 @special_maa_02 = "gfx/interface/icons/culture_innovations/innovation_special_maa_02.dds"
 
+@lotr_special_maa_haradrim = "gfx/interface/icons/culture_innovations/innovation_haradrim_maa.dds"
+@lotr_special_maa_sirayn = "gfx/interface/icons/culture_innovations/innovation_sirayn_maa.dds"
 @lotr_special_maa_broadbeams = "gfx/interface/icons/culture_innovations/innovation_lotr_special_maa_broadbeams.dds"
 @lotr_special_maa_firebeards = "gfx/interface/icons/culture_innovations/innovation_lotr_special_maa_firebeards.dds" 
 @lotr_special_maa_blacklocks = "gfx/interface/icons/culture_innovations/innovation_lotr_special_maa_blacklocks.dds"
@@ -155,6 +157,184 @@ innovation_angmar_warriors = {
 	custom = unlock_angmarim_archers
 	custom = culture_parameter_unlock_maa_thrall_master
 }
+
+### Donan ###
+innovation_donan_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:donan
+				any_parent_culture_or_above = { this = culture:donan }
+			}
+		}
+	}
+	custom = unlock_donan_slingers
+}
+
+### Sederi ###
+innovation_sederi_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:sederi
+				any_parent_culture_or_above = { this = culture:sederi }
+			}
+		}
+	}
+	custom = unlock_impali_tribesmen
+	custom = unlock_zeba_outriders
+}
+
+### Usakani ###
+innovation_usakani_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:usakani
+				any_parent_culture_or_above = { this = culture:usakani }
+			}
+		}
+	}
+	custom = unlock_usakani_ambushers
+}
+
+### Adena ###
+innovation_adena_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:adena
+				any_parent_culture_or_above = { this = culture:adena }
+			}
+		}
+	}
+	custom = unlock_marshstriders
+	custom = unlock_matriarchs_guard
+}
+
+### Drel ###
+innovation_drel_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:drel
+				any_parent_culture_or_above = { this = culture:drel }
+			}
+		}
+	}
+	custom = unlock_tiderunners
+	custom = unlock_shorewardens
+}
+
+### Pel ###
+innovation_pel_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:pel
+				any_parent_culture_or_above = { this = culture:pel }
+			}
+		}
+	}
+	custom = unlock_blacksteel_phalanx
+	custom = unlock_marksmen_of_the_matron
+}
+
+### Chaialla ###
+innovation_chaialla_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:chaialla
+				any_parent_culture_or_above = { this = culture:chaialla }
+			}
+		}
+	}
+	custom = unlock_hill_stalkers
+	custom = unlock_silent_stingers
+}
+
+### Mag ###
+innovation_mag_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:mag
+				any_parent_culture_or_above = { this = culture:mag }
+			}
+		}
+	}
+	custom = unlock_ivory_sentinels
+	custom = unlock_zebaback_slavers
+}
+
+### Logath ###
+innovation_logath_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:logath
+				any_parent_culture_or_above = { this = culture:logath }
+			}
+		}
+	}
+	custom = unlock_logath_horsearchers
+}
+
+### Vulmaw ###
+innovation_vulmaw_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:vulmaw
+				any_parent_culture_or_above = { this = culture:vulmaw }
+			}
+		}
+	}
+	custom = unlock_waw_pirates
+	custom = unlock_vulmaw_venturers
+}
+
 
 ### Dunedain ###
 innovation_numenorean_warriors = {
@@ -314,6 +494,31 @@ innovation_gondorian_soldiers = {
 	custom = culture_parameter_unlock_maa_guard_of_the_citadel
 }
 
+innovation_caledhrim_soldiers = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		this = culture:caledhrim
+	}
+
+	custom = unlock_caledhrim_cavalry
+	custom = unlock_caledhrim_footmen
+}
+
+innovation_umbaredain_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		this = culture:umbaredain
+	}
+
+	custom = unlock_umbaredain_infantry
+	custom = unlock_umbaredain_spearmen
+}
 innovation_dunedain_ranger_warfare = {
 	group = culture_group_regional
 	culture_era = culture_era_tribal
@@ -354,6 +559,7 @@ innovation_orc_pits = {
 	custom = unlock_orc_pikemen
 	custom = unlock_orc_trackers
 	custom = unlock_siege_tower
+	custom = unlock_wargrider_scouts
 	
 	flag = global_maa
 }
@@ -402,10 +608,10 @@ innovation_goblin_warfare = {
 innovation_haradrim_tradition = {
 	group = culture_group_regional
 	culture_era = culture_era_tribal
-	icon = @fortifications
+	icon = @lotr_special_maa_haradrim
 
 	potential = {
-		OR = { # Variag or Variag-descendant
+		OR = { # Haruwe or Haruze-descendant
 			has_cultural_pillar = heritage_northern_apysaic
 			this = culture:jelut
 			any_parent_culture_or_above = { this = culture:jelut }
@@ -559,6 +765,7 @@ innovation_druedain_warfare = {
 		OR = {
 			this = culture:druedain
 			this = culture:chaialla
+			this = culture:yatali_gan
 			AND = {
 				this = culture:honnin
 				NOT = {
@@ -663,6 +870,123 @@ innovation_warriors_rhun = {
 	custom = unlock_easterling_kataphrakt
 	custom = unlock_easterling_pikemen
 	custom = unlock_easterling_swordsmen
+
+	flag = global_maa
+}
+
+
+### Harshandatt ###
+innovation_harshandatt_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @lotr_special_maa_sirayn
+
+	potential = {
+		has_cultural_pillar = heritage_harshandatt
+	}
+
+	custom = unlock_ancient_charioteers
+	#custom = unlock_chennacatti_slingers
+
+	flag = global_maa
+}
+
+### Sirayn ###
+
+
+
+innovation_bulgan_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @lotr_special_maa_sirayn
+
+	potential = {
+		this = culture:bulgan
+	}
+
+	custom = unlock_bulgan_enforcers
+	custom = unlock_bulgan_stormriders
+
+	flag = global_maa
+}
+
+innovation_sirayni_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @lotr_special_maa_sirayn
+
+	potential = {
+		OR = {
+			AND = {
+				has_cultural_pillar = heritage_new_sirayni
+				NOT = {
+					this = culture:bulgan	
+				}
+			}
+			has_cultural_pillar = heritage_old_sirayni
+		}
+			
+	}
+
+	custom = unlock_poan_hunters
+	custom = unlock_chennacatti_slingers
+	custom = unlock_tyari_tollkeepers
+
+	flag = global_maa
+}
+### Khy ###
+innovation_anarikean_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @maa_02
+
+	potential = {
+		has_cultural_pillar = heritage_south_khailuza
+		OR = {
+			this = culture:bulchyadean
+			this = { any_parent_culture_or_above = { this = culture:bulchyadean } }
+		}
+	}
+
+	custom = unlock_tizyarshti
+	custom = unlock_ballistrai_khy
+
+	flag = global_maa
+}
+
+innovation_khyan_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_01
+
+	potential = {
+		has_cultural_pillar = heritage_south_khailuza
+	}
+
+	custom = unlock_tizaspa
+	custom = unlock_tizrava
+	custom = unlock_tirandaza
+
+	flag = global_maa
+}
+
+### Shayn ###
+
+innovation_lynerian_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_01
+
+	potential = {
+		OR = {
+			this = culture:lynerian
+			this = { any_parent_culture_or_above = { this = culture:lynerian } }
+		}
+	}
+
+	custom = unlock_ivory_behemoths
+	custom = unlock_league_halberdiers
+	custom = unlock_quayside_crossbowmen
 
 	flag = global_maa
 }

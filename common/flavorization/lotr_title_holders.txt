@@ -6,7 +6,7 @@
 # heritages = { mongolic_group central_germanic_group }
 # For this to apply a character MUST BE feudal, AND must also be EITHER altaic OR germanic
 # priority is used to determine priority, if they are the same then the LAST will be selected,
-# and honorifics will be prefered over landed titles. Default priority is 1
+# and honorifics will be preferred over landed titles. Default priority is 1
 # If a flavorization does not have a tier it can apply to all tiers of characters, too many non-tiered
 # flavorizations is bad for performance though, YOU HAVE BEEN WARNED!
 # 'top_liege = no' means that its the holder of the title causing the honorific that is tested for
@@ -819,9 +819,8 @@ count_feudal_adunaic = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 count_feudal_female_adunaic = {
 	type = character
@@ -833,9 +832,8 @@ count_feudal_female_adunaic = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 county_feudal_adunaic = {
 	type = title
@@ -844,9 +842,8 @@ county_feudal_adunaic = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 	priority = 202
 }
 
@@ -860,9 +857,8 @@ duke_feudal_male_adunaic = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 duke_feudal_female_adunaic = {
 	type = character
@@ -874,9 +870,8 @@ duke_feudal_female_adunaic = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 duchy_feudal_adunaic = {
 	type = title
@@ -885,9 +880,8 @@ duchy_feudal_adunaic = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 	priority = 333
 }
 king_feudal_female_adunaic = {
@@ -900,9 +894,8 @@ king_feudal_female_adunaic = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 king_feudal_male_adunaic = {
 	type = character
@@ -914,9 +907,8 @@ king_feudal_male_adunaic = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 kingdom_feudal_adunaic = {
 	type = title
@@ -925,9 +917,8 @@ kingdom_feudal_adunaic = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 	priority = 355
 }
 emperor_feudal_male_adunaic = {
@@ -940,9 +931,8 @@ emperor_feudal_male_adunaic = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 emperor_feudal_female_adunaic = {
 	type = character
@@ -954,9 +944,8 @@ emperor_feudal_female_adunaic = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 emperor_feudal_female_adunaic_nonholder = {
 	type = character
@@ -968,9 +957,8 @@ emperor_feudal_female_adunaic_nonholder = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
 }
 
 empire_feudal_adunaic = {
@@ -980,9 +968,8 @@ empire_feudal_adunaic = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
-	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_umbarean }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai name_list_umbarean }
 	priority = 900
 }
 
@@ -996,7 +983,7 @@ emperor_feudal_male_adunaic_bellakar = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_bellakari }
+	heritages = { heritage_bellakari heritage_unified_adunaic }
 	name_lists = { name_list_bellakaze }
 }
 emperor_feudal_female_adunaic_bellakar = {
@@ -1009,7 +996,7 @@ emperor_feudal_female_adunaic_bellakar = {
 		top_liege = no
 		only_holder = yes
 	}
-	heritages = { heritage_bellakari }
+	heritages = { heritage_bellakari heritage_unified_adunaic }
 	name_lists = { name_list_bellakaze }
 }
 
@@ -1024,8 +1011,7 @@ count_male_thani_hazad = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 count_female_thani_hazad = { 
@@ -1038,8 +1024,7 @@ count_female_thani_hazad = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 county_thani_hazad = {
@@ -1049,8 +1034,7 @@ county_thani_hazad = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 	priority = 300
 }
@@ -1063,8 +1047,7 @@ count_male_vassal_thani_hazad = {
 		only_vassals = yes
 		top_liege = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 count_female_vassal_thani_hazad = { 
@@ -1077,8 +1060,7 @@ count_female_vassal_thani_hazad = {
 		only_vassals = yes
 		top_liege = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 county_vassal_thani_hazad = {
@@ -1088,8 +1070,7 @@ county_vassal_thani_hazad = {
 		only_vassals = yes
 		top_liege = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi }
 	faiths = { faith_thani_hazad faith_gimileth }
 	priority = 500
 }
@@ -1104,8 +1085,7 @@ duke_male_thani_hazad = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 duke_female_thani_hazad = {
@@ -1118,8 +1098,7 @@ duke_female_thani_hazad = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 duchy_thani_hazad = {
@@ -1129,8 +1108,7 @@ duchy_thani_hazad = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 	priority = 400
 }
@@ -1144,8 +1122,7 @@ duke_male_vassal_thani_hazad = {
 		only_vassals = yes
 		top_liege = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 duke_female_vassal_thani_hazad = {
@@ -1158,8 +1135,7 @@ duke_female_vassal_thani_hazad = {
 		only_vassals = yes
 		top_liege = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 duchy_vassal_thani_hazad = {
@@ -1169,8 +1145,7 @@ duchy_vassal_thani_hazad = {
 		only_vassals = yes
 		top_liege = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 	priority = 500
 }
@@ -1185,8 +1160,7 @@ king_female_thani_hazad = {
 		top_liege = yes
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 king_male_thani_hazad = {
@@ -1199,8 +1173,7 @@ king_male_thani_hazad = {
 		top_liege = yes
 		only_holder = no
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 }
 kingdom_thani_hazad = {
@@ -1209,9 +1182,9 @@ kingdom_thani_hazad = {
 	flavourization_rules = { 
 		top_liege = yes
 		only_holder = yes
+	
 	}
-	##Quonton
-	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native heritage_unified_adunaic }
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }
 	priority = 400
 }
@@ -2081,7 +2054,7 @@ emperor_feudal_male_steward = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_gondor_steward }
 }
 emperor_feudal_female_steward = { 
@@ -2094,7 +2067,7 @@ emperor_feudal_female_steward = {
 		top_liege = no
 		only_holder = yes
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_gondor_steward }
 }
 
@@ -2108,7 +2081,7 @@ emperor_feudal_female_steward_nonholder = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_gondor_steward }
 }
 
@@ -2128,7 +2101,7 @@ king_feudal_male_steward = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { k_gondor_steward }
 }
 king_feudal_female_steward = { 
@@ -2140,7 +2113,7 @@ king_feudal_female_steward = {
 		top_liege = no
 		only_holder = yes
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { k_gondor_steward }
 }
 king_feudal_female_steward_nonholder = { 
@@ -2152,7 +2125,7 @@ king_feudal_female_steward_nonholder = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { k_gondor_steward }
 }
 
@@ -2173,7 +2146,7 @@ prince_male_steward = {
 	gender = male
 	special = ruler_child
 	priority = 100
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_gondor_steward k_gondor_steward }
 	flavourization_rules = { 
 		top_liege = no
@@ -2185,14 +2158,14 @@ prince_female_steward = {
 	gender = female
 	special = ruler_child
 	priority = 100
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_gondor_steward k_gondor_steward }
 	flavourization_rules = { 
 		top_liege = no
 	}
 }
 
-# Gondor Admin Titles #
+# Admin Gondor Title Flavour #
 baron_administrative_male_gondor = {
 	type = character
 	gender = male
@@ -2200,10 +2173,10 @@ baron_administrative_male_gondor = {
 	tier = barony
 	priority = 31
 	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	
 	flavourization_rules = {
-		top_liege = no
+		top_liege = yes
 		spouse_takes_title = no
 	}
 }
@@ -2214,127 +2187,135 @@ baron_administrative_female_gondor = {
 	tier = barony
 	priority = 31
 	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	
 	flavourization_rules = {
-		top_liege = no
+		top_liege = yes
 		spouse_takes_title = no
 	}
 }
-count_administrative_male_gondor = {
-	type = character
-	gender = male
-	special = holder
-	tier = county
-	priority = 42
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+# Handled by custom loc
+# count_administrative_male_gondor = {
+# 	type = character
+# 	gender = male
+# 	special = holder
+# 	tier = county
+# 	priority = 42
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
 	
-	flavourization_rules = {
-		top_liege = no
-		spouse_takes_title = no
-	}
-}
-count_administrative_female_gondor = {
-	type = character
-	gender = female
-	special = holder
-	tier = county
-	priority = 41
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+# 	flavourization_rules = {
+# 		top_liege = no
+# 		spouse_takes_title = no
+# 	}
+# }
+# count_administrative_female_gondor = {
+# 	type = character
+# 	gender = female
+# 	special = holder
+# 	tier = county
+# 	priority = 41
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
 	
-	flavourization_rules = {
-		top_liege = no
-		spouse_takes_title = no
-	}
-}
-county_administrative_gondor = {
-	type = title
-	tier = county
-	priority = 100
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
-}
-duke_administrative_male_gondor = {
-	type = character
-	gender = male
-	special = holder
-	tier = duchy
-	priority = 52
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+# 	flavourization_rules = {
+# 		top_liege = no
+# 		spouse_takes_title = no
+# 	}
+# }
+# county_administrative_gondor = {
+# 	type = title
+# 	tier = county
+# 	priority = 100
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
+# duke_administrative_male_gondor = {
+# 	type = character
+# 	gender = male
+# 	special = holder
+# 	tier = duchy
+# 	priority = 52
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
 
-	flavourization_rules = {
-		top_liege = no
-		spouse_takes_title = no
-	}
-}
-duke_administrative_female_gondor = {
-	type = character
-	gender = female
-	special = holder
-	tier = duchy
-	priority = 51
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+# 	flavourization_rules = {
+# 		top_liege = no
+# 		spouse_takes_title = no
+# 	}
+# }
+# duke_administrative_female_gondor = {
+# 	type = character
+# 	gender = female
+# 	special = holder
+# 	tier = duchy
+# 	priority = 51
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
 
-	flavourization_rules = {
-		top_liege = no
-		spouse_takes_title = no
-	}
-}
-duchy_administrative_gondor = {
-	type = title
-	tier = duchy
-	priority = 70
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
-}
-king_administrative_male_gondor = {
-	type = character
-	gender = male
-	special = holder
-	tier = kingdom
-	priority = 92
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+# 	flavourization_rules = {
+# 		top_liege = no
+# 		spouse_takes_title = no
+# 	}
+# }
+# duchy_administrative_gondor = {
+# 	type = title
+# 	tier = duchy
+# 	priority = 70
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
+# king_administrative_male_gondor = {
+# 	type = character
+# 	gender = male
+# 	special = holder
+# 	tier = kingdom
+# 	priority = 92
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
 
-	flavourization_rules = {
-		top_liege = no
-		spouse_takes_title = no
-	}
-}
-king_administrative_female_gondor = {
-	type = character
-	gender = female
-	special = holder
-	tier = kingdom
-	priority = 91
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
+# 	flavourization_rules = {
+# 		top_liege = no
+# 		spouse_takes_title = no
+# 	}
+# }
+# king_administrative_female_gondor = {
+# 	type = character
+# 	gender = female
+# 	special = holder
+# 	tier = kingdom
+# 	priority = 91
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
 
-	flavourization_rules = {
-		top_liege = no
-		spouse_takes_title = no
-	}
-}
-kingdom_administrative_gondor = {
-	type = title
-	tier = kingdom
-	priority = 91
-	governments = { administrative_government }
-	heritages = { heritage_dunedain }
-}
+# 	flavourization_rules = {
+# 		top_liege = no
+# 		spouse_takes_title = no
+# 	}
+# }
+# kingdom_administrative_gondor = {
+# 	type = title
+# 	tier = kingdom
+# 	priority = 91
+# 	governments = { administrative_government }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
 # Dúnedain
+
+county_feudal_dunedain = {
+	type = title
+	tier = county
+	heritages = { heritage_dunedain heritage_unified_adunaic }
+	priority = 100
+}
 
 count_dunedain_male = {
 	type = character
 	gender = male
 	special = holder
 	tier = county
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 40
 }
 count_dunedain_female = {
@@ -2342,15 +2323,15 @@ count_dunedain_female = {
 	gender = female
 	special = holder
 	tier = county
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 40
 }
 
 duchy_feudal_dunedain = {
 	type = title
 	tier = duchy
-	heritages = { heritage_dunedain }
-	priority = 50
+	heritages = { heritage_dunedain heritage_unified_adunaic }
+	priority = 100
 }
 
 duke_dunedain_male = {
@@ -2358,7 +2339,7 @@ duke_dunedain_male = {
 	gender = male
 	special = holder
 	tier = duchy
-	heritages = { heritage_dunedain  }
+	heritages = { heritage_dunedain heritage_unified_adunaic  }
 	priority = 50
 }
 
@@ -2367,21 +2348,21 @@ duke_dunedain_female = {
 	gender = female
 	special = holder
 	tier = duchy
-	heritages = { heritage_dunedain  }
+	heritages = { heritage_dunedain heritage_unified_adunaic  }
 	priority = 50
 }
 
 kingdom_dunedain = {
 	type = title
 	tier = kingdom
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 90
 }
 
 high_kingdom_dunedain = {
 	type = title
 	tier = empire
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 300
 }
 
@@ -2389,7 +2370,7 @@ high_king_dunedain = {
 	type = character
 	tier = empire
 	special = holder
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 300
 }
 
@@ -2397,7 +2378,7 @@ high_king_dunedain_female = {
 	type = character
 	tier = empire
 	special = holder
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 300
 }
 
@@ -2406,7 +2387,7 @@ high_king_dunedain_reunited_kingdom = {
 	tier = empire
 	special = holder
 	titles = { e_reunitedkingdom e_arnor }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 1200
 }
 
@@ -2416,7 +2397,7 @@ high_king_dunedain_reunited_kingdom_female = {
 	special = holder
 	gender = female
 	titles = { e_reunitedkingdom e_arnor }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 1200
 }
 
@@ -2425,7 +2406,7 @@ high_kingdom_dunedain_reunited_kingdom = {
 	tier = empire
 	special = holder
 	titles = { e_reunitedkingdom e_arnor }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 1000
 }
 
@@ -2434,7 +2415,7 @@ high_king_dunedain_numenor_in_exile = {
 	tier = empire
 	special = holder
 	titles = { e_numenor_in_exile }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 1200
 }
 
@@ -2444,16 +2425,14 @@ high_king_dunedain_numenor_in_exile_female = {
 	special = holder
 	gender = female
 	titles = { e_numenor_in_exile }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 1200
 }
 
 high_kingdom_numenor_in_exile = {
 	type = title
 	tier = empire
-	#special = holder
 	titles = { e_numenor_in_exile }
-	#heritages = { heritage_dunedain }
 	priority = 1200
 }
 
@@ -2462,7 +2441,7 @@ king_dunedain_male = {
 	gender = male
 	special = holder
 	tier = kingdom
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 90
 }
 
@@ -2471,7 +2450,7 @@ king_dunedain_female = {
 	gender = female
 	special = holder
 	tier = kingdom
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 90
 }
 
@@ -2480,7 +2459,7 @@ prince_dunedain_male = {
 	gender = male
 	special = ruler_child
 	tier = kingdom
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 40
 	flavourization_rules = { 
 		top_liege = no
@@ -2492,7 +2471,7 @@ prince_dunedain_female = {
 	gender = female
 	special = ruler_child
 	tier = kingdom
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 40
 	flavourization_rules = { 
 		top_liege = no
@@ -2508,7 +2487,7 @@ emperor_arthedain_male = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_arthedain }
 }
 
@@ -2521,7 +2500,7 @@ emperor_arthedain_female = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_arthedain }
 }
 
@@ -2533,7 +2512,7 @@ empire_arthedain = {
 		top_liege = no
 		only_holder = no
 	}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { e_arthedain }
 }
 
@@ -2558,8 +2537,7 @@ queen_mother_vassal_gondor = {
 	gender = female
 	special = queen_mother
 	tier = kingdom
-	##Quonton
-	heritages = { heritage_dunedain heritage_northern_adunaic  heritage_unified_adunaic }
+	heritages = { heritage_dunedain heritage_unified_adunaic heritage_northern_adunaic  }
 	priority = 90
 }
 
@@ -2568,7 +2546,7 @@ duke_feudal_male_dunedain_rangers = {
 	gender = male
 	special = holder
 	tier = duchy
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { d_northern_dunedain }
 	priority = 1000
 }
@@ -2578,7 +2556,7 @@ duke_feudal_female_dunedain_rangers = {
 	gender = female
 	special = holder
 	tier = duchy
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { d_northern_dunedain }
 	priority = 1000
 }
@@ -2591,7 +2569,7 @@ duchy_watch_on_mordor = {
 		only_holder = no
 	}
 	titles = { d_watch_on_mordor }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 1000
 }
 
@@ -2600,7 +2578,7 @@ duke_feudal_female_watch_on_mordor = {
 	gender = female
 	special = holder
 	tier = duchy
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { d_watch_on_mordor }
 	priority = 950
 }
@@ -2610,7 +2588,7 @@ duke_feudal_male_watch_on_mordor = {
 	gender = male
 	special = holder
 	tier = duchy
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	titles = { d_watch_on_mordor }
 	priority = 950
 }
@@ -2639,7 +2617,7 @@ kingdom_feudal_k_lebennin = {
 	type = title
 	tier = kingdom
 	titles = { k_lebennin k_pelargir }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 115
 	flavourization_rules = { 
 		top_liege = no
@@ -2657,7 +2635,7 @@ king_feudal_male_k_lebennin = {
 		only_holder = no
 	}
 	titles = { k_lebennin k_pelargir }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	flavourization_rules = { 
 		top_liege = no
 	}
@@ -2674,7 +2652,7 @@ king_feudal_female_k_lebennin = {
 		only_holder = yes
 	}
 	titles = { k_lebennin k_pelargir }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	flavourization_rules = { 
 		top_liege = no
 	}
@@ -2690,103 +2668,101 @@ king_feudal_female_k_lebennin_nonholder = {
 		only_holder = no
 	}
 	titles = { k_lebennin k_pelargir }
-	heritages = { heritage_dunedain }
-	flavourization_rules = { 
-		top_liege = no
-	}
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 }
 
-duchy_feudal_k_lebennin_coast = { 
-	type = title
-	tier = duchy
-	titles = { d_lebennivet d_pelargir }
-	priority = 90
-	heritages = { heritage_dunedain }
-}
-duchy_feudal_k_lebennin_noncoast = { 
-	type = title
-	tier = duchy
-	titles = {d_gilrain d_celosien }
-	priority = 90
-	heritages = { heritage_dunedain }
-}
+# All handled by custom loc on the normal Dunedain titles
+# duchy_feudal_k_lebennin_coast = { 
+# 	type = title
+# 	tier = duchy
+# 	titles = { d_lebennivet d_pelargir }
+# 	priority = 90
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
+# duchy_feudal_k_lebennin_noncoast = { 
+# 	type = title
+# 	tier = duchy
+# 	titles = {d_gilrain d_celosien }
+# 	priority = 90
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
-duke_feudal_male_k_lebennin_coast = { 
-	type = character
-	gender = male
-	special = holder
-	tier = duchy
-	priority = 90
-	flavourization_rules = { 
-		top_liege = no
-		only_holder = yes
-	}
-	titles = { d_lebennivet d_pelargir }
-	heritages = { heritage_dunedain }
-}
+# duke_feudal_male_k_lebennin_coast = { 
+# 	type = character
+# 	gender = male
+# 	special = holder
+# 	tier = duchy
+# 	priority = 90
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = yes
+# 	}
+# 	titles = { d_lebennivet d_pelargir }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
-duke_feudal_female_k_lebennin_coast = { 
-	type = character
-	gender = female
-	special = holder
-	tier = duchy
-	priority = 90
-	flavourization_rules = { 
-		top_liege = no
-		only_holder = yes
-	}
-	titles = { d_lebennivet d_pelargir }
-	heritages = { heritage_dunedain }
-}
+# duke_feudal_female_k_lebennin_coast = { 
+# 	type = character
+# 	gender = female
+# 	special = holder
+# 	tier = duchy
+# 	priority = 90
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = yes
+# 	}
+# 	titles = { d_lebennivet d_pelargir }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
-duke_feudal_male_k_lebennin_noncoast = { 
-	type = character
-	gender = male
-	special = holder
-	tier = duchy
-	priority = 90
-	flavourization_rules = { 
-		top_liege = no
-		only_holder = yes
-	}
-	titles = { d_celosien d_gilrain }
-	heritages = { heritage_dunedain }
-}
+# duke_feudal_male_k_lebennin_noncoast = { 
+# 	type = character
+# 	gender = male
+# 	special = holder
+# 	tier = duchy
+# 	priority = 90
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = yes
+# 	}
+# 	titles = { d_celosien d_gilrain }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
-duke_feudal_female_k_lebennin_noncoast = { 
-	type = character
-	gender = female
-	special = holder
-	tier = duchy
-	priority = 90
-	flavourization_rules = { 
-		top_liege = no
-		only_holder = yes
-	}
-	titles = { d_celosien d_gilrain }
-	heritages = { heritage_dunedain }
-}
+# duke_feudal_female_k_lebennin_noncoast = { 
+# 	type = character
+# 	gender = female
+# 	special = holder
+# 	tier = duchy
+# 	priority = 90
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = yes
+# 	}
+# 	titles = { d_celosien d_gilrain }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
-county_feudal_k_lebennin = { 
-	type = title
-	tier = county
-	titles = { c_pelargir c_landor c_calimir c_fanuilond c_linhir c_serni c_lindon c_ethir_anduin c_gilrain c_gilbin c_lameduin c_brethil c_orchaldor c_enedhir c_caragost c_tumladen }
-	priority = 90
-	heritages = { heritage_dunedain }
-}
+# county_feudal_k_lebennin = { 
+# 	type = title
+# 	tier = county
+# 	titles = { c_pelargir c_landor c_calimir c_fanuilond c_linhir c_serni c_lindon c_ethir_anduin c_gilrain c_gilbin c_lameduin c_brethil c_orchaldor c_enedhir c_caragost c_tumladen }
+# 	priority = 90
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
-count_feudal_k_lebennin = { 
-	type = character
-	special = holder
-	tier = county
-	priority = 90
-	flavourization_rules = { 
-		top_liege = no
-		only_holder = yes
-	}
-	titles = { c_pelargir c_landor c_calimir c_fanuilond c_linhir c_serni c_lindon c_ethir_anduin c_gilrain c_gilbin c_lameduin c_brethil c_orchaldor c_enedhir c_caragost c_tumladen }
-	heritages = { heritage_dunedain }
-}
+# count_feudal_k_lebennin = { 
+# 	type = character
+# 	special = holder
+# 	tier = county
+# 	priority = 90
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = yes
+# 	}
+# 	titles = { c_pelargir c_landor c_calimir c_fanuilond c_linhir c_serni c_lindon c_ethir_anduin c_gilrain c_gilbin c_lameduin c_brethil c_orchaldor c_enedhir c_caragost c_tumladen }
+# 	heritages = { heritage_dunedain heritage_unified_adunaic }
+# }
 
 prince_male_k_lebennin = { 
 	type = character
@@ -3125,7 +3101,7 @@ duchy_fleet_of_shadows = {
 		only_holder = no
 	}
 	titles = { d_fleet_of_shadows }
-	heritages = { heritage_bellakari }
+	heritages = { heritage_bellakari heritage_unified_adunaic }
 	priority = 1000
 }
 
@@ -3134,7 +3110,7 @@ duke_feudal_female_fleet_of_shadows = {
 	gender = female
 	special = holder
 	tier = duchy
-	heritages = { heritage_bellakari }
+	heritages = { heritage_bellakari heritage_unified_adunaic }
 	titles = { d_fleet_of_shadows }
 	priority = 950
 }
@@ -3144,7 +3120,7 @@ duke_feudal_male_fleet_of_shadows = {
 	gender = male
 	special = holder
 	tier = duchy
-	heritages = { heritage_bellakari }
+	heritages = { heritage_bellakari heritage_unified_adunaic }
 	titles = { d_fleet_of_shadows }
 	priority = 950
 }
@@ -3157,7 +3133,6 @@ kingdom_sacred_isles = {
 		only_holder = no
 	}
 	titles = { k_sacred_isles }
-	##Quonton
 	heritages = { heritage_bellakari heritage_unified_adunaic }
 	priority = 1000
 }
@@ -3167,7 +3142,6 @@ king_feudal_female_sacred_isles = {
 	gender = female
 	special = holder
 	tier = kingdom
-	##Quonton
 	heritages = { heritage_bellakari heritage_unified_adunaic }
 	titles = { k_sacred_isles }
 	priority = 950
@@ -3178,7 +3152,6 @@ king_feudal_male_sacred_isles = {
 	gender = male
 	special = holder
 	tier = kingdom
-	##Quonton
 	heritages = { heritage_bellakari heritage_unified_adunaic }
 	titles = { k_sacred_isles }
 	priority = 950
@@ -3215,7 +3188,6 @@ king_male_felayan = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
 	heritages = { heritage_bellakari heritage_unified_adunaic }
 	titles = { k_felaya }
 }
@@ -3229,7 +3201,6 @@ king_female_felayan = {
 		top_liege = no
 		only_holder = yes
 	}
-	##Quonton
 	heritages = { heritage_bellakari heritage_unified_adunaic }
 	titles = { k_felaya }
 }
@@ -3243,7 +3214,6 @@ king_female_felayan_nonholder = {
 		top_liege = no
 		only_holder = no
 	}
-	##Quonton
 	heritages = { heritage_bellakari heritage_unified_adunaic }
 	titles = { k_felaya }
 }
@@ -3554,14 +3524,14 @@ county_esgaroth = {
 }
 
 # Abrakhan #
-king_abrakhan = {
-	type = character
-	gender = male
-	special = holder
-	#tier >= kingdom
-	priority = 900
-	titles = { e_nafarat k_abrakhan k_darsalan }
-}
+#king_abrakhan = {
+#	type = character
+#	gender = male
+#	special = holder
+#	#tier >= kingdom
+#	priority = 900
+#	titles = { e_nafarat k_abrakhan k_darsalan }
+#}
 
 # Felaya #
 d_special_female_felaya = {
@@ -4213,7 +4183,7 @@ count_dwarf_female = {
 	gender = female
 	flavourization_rules = { 
 		top_liege = no
-		only_holder = yes
+		only_holder = no
 	}
 	special = holder
 	tier = county
@@ -4257,7 +4227,7 @@ duke_dwarf_female = {
 	gender = female
 	flavourization_rules = { 
 		top_liege = no
-		only_holder = yes
+		only_holder = no
 	}
 	special = holder
 	tier = duchy
@@ -4301,7 +4271,7 @@ king_dwarf_female = {
 	gender = female
 	flavourization_rules = { 
 		top_liege = no
-		only_holder = yes
+		only_holder = no
 	}
 	special = holder
 	tier = kingdom
@@ -4345,7 +4315,7 @@ emperor_dwarf_female = {
 	gender = female
 	flavourization_rules = { 
 		top_liege = no
-		only_holder = yes
+		only_holder = no
 	}
 	special = holder
 	tier = empire
@@ -4471,7 +4441,7 @@ emperor_dwarf_female_firebeards = {
 	special = holder
 	flavourization_rules = { 
 		top_liege = no
-		only_holder = yes
+		only_holder = no
 	}
 	tier = empire
 	heritages = {
@@ -4487,6 +4457,141 @@ emperor_dwarf_female_firebeards = {
 	priority = 125
 }
 
+# Broadbeams
+emperor_dwarf_male_broadbeams = {
+	type = character
+	gender = male
+	special = holder
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = yes
+	}
+	tier = empire
+	heritages = {
+		#heritage_khazad
+		#heritage_longbeard
+		#heritage_firebeard
+		heritage_broadbeam
+		#heritage_ironfist
+		#heritage_stiffbeard
+		#heritage_blacklock
+		#heritage_stonefoot
+	}
+	priority = 125
+}
+
+emperor_dwarf_female_broadbeams = {
+	type = character
+	gender = female
+	special = holder
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = no
+	}
+	tier = empire
+	heritages = {
+		#heritage_khazad
+		#heritage_longbeard
+		#heritage_firebeard
+		heritage_broadbeam
+		#heritage_ironfist
+		#heritage_stiffbeard
+		#heritage_blacklock
+		#heritage_stonefoot
+	}
+	priority = 125
+}
+
+# Stiffbeards
+emperor_dwarf_male_stiffbeards = {
+	type = character
+	gender = male
+	special = holder
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = yes
+	}
+	tier = empire
+	heritages = {
+		#heritage_khazad
+		#heritage_longbeard
+		#heritage_firebeard
+		#heritage_broadbeam
+		#heritage_ironfist
+		heritage_stiffbeard
+		#heritage_blacklock
+		#heritage_stonefoot
+	}
+	priority = 125
+}
+
+emperor_dwarf_female_stiffbeards = {
+	type = character
+	gender = female
+	special = holder
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = no
+	}
+	tier = empire
+	heritages = {
+		#heritage_khazad
+		#heritage_longbeard
+		#heritage_firebeard
+		#heritage_broadbeam
+		#heritage_ironfist
+		heritage_stiffbeard
+		#heritage_blacklock
+		#heritage_stonefoot
+	}
+	priority = 125
+}
+
+# Blacklocks
+emperor_dwarf_male_blacklocks = {
+	type = character
+	gender = male
+	special = holder
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = yes
+	}
+	tier = empire
+	heritages = {
+		#heritage_khazad
+		#heritage_longbeard
+		#heritage_firebeard
+		#heritage_broadbeam
+		#heritage_ironfist
+		#heritage_stiffbeard
+		heritage_blacklock
+		#heritage_stonefoot
+	}
+	priority = 125
+}
+
+emperor_dwarf_female_blacklocks = {
+	type = character
+	gender = female
+	special = holder
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = no
+	}
+	tier = empire
+	heritages = {
+		#heritage_khazad
+		#heritage_longbeard
+		#heritage_firebeard
+		#heritage_broadbeam
+		#heritage_ironfist
+		#heritage_stiffbeard
+		heritage_blacklock
+		#heritage_stonefoot
+	}
+	priority = 125
+}
+
 # Mount Dolmed
 
 mount_dolmed_dwarf_female = {
@@ -4494,7 +4599,7 @@ mount_dolmed_dwarf_female = {
 	gender = female
 	flavourization_rules = { 
 		top_liege = no
-		only_holder = yes
+		only_holder = no
 	}
 	special = holder
 	tier = duchy
@@ -4554,51 +4659,6 @@ mount_dolmed_dwarf = {
 		heritage_stonefoot
 	}
 	priority = 150
-}
-
-# Firebeards
-emperor_dwarf_male_broadbeams = {
-	type = character
-	gender = male
-	special = holder
-	flavourization_rules = { 
-		top_liege = no
-		only_holder = yes
-	}
-	tier = empire
-	heritages = {
-		#heritage_khazad
-		#heritage_longbeard
-		#heritage_firebeard
-		heritage_broadbeam
-		#heritage_ironfist
-		#heritage_stiffbeard
-		#heritage_blacklock
-		#heritage_stonefoot
-	}
-	priority = 125
-}
-
-emperor_dwarf_female_broadbeams = {
-	type = character
-	gender = female
-	special = holder
-	flavourization_rules = { 
-		top_liege = no
-		only_holder = yes
-	}
-	tier = empire
-	heritages = {
-		#heritage_khazad
-		#heritage_longbeard
-		#heritage_firebeard
-		heritage_broadbeam
-		#heritage_ironfist
-		#heritage_stiffbeard
-		#heritage_blacklock
-		#heritage_stonefoot
-	}
-	priority = 125
 }
 
 ### Easterling ###
@@ -4759,22 +4819,23 @@ king_dragon_knights = {
 		top_liege = no
 		only_holder = no
 	}
-	#heritages = { heritage_goblin heritage_orc }
+	heritages = { heritage_igath heritage_ioriag }
 	titles = { k_dragon_knights }
+	priority = 1000
 }
- kingdom_dragon_knights = {
+kingdom_dragon_knights = {
  	type = title
  	tier = kingdom
  	flavourization_rules = { 
 		top_liege = no
 		only_holder = yes
 	}
- 	#heritages = { heritage_goblin }
+	heritages = { heritage_igath heritage_ioriag }
  	titles = { k_dragon_knights}
  	priority = 1000
- }
+}
 
- count_vassal_dragon_knights_male = { 
+count_vassal_dragon_knights_male = { 
 	type = character
 	gender = male
 	special = holder
@@ -4785,8 +4846,8 @@ king_dragon_knights = {
 		only_holder = no
 	}
 	titles = { k_dragon_knights }
- }
- count_vassal_dragon_knights_female = { 
+}
+count_vassal_dragon_knights_female = { 
 	type = character
 	gender = female
 	special = holder
@@ -4797,8 +4858,8 @@ king_dragon_knights = {
 		only_holder = no
 	}
 	titles = { k_dragon_knights }
- }
- county_vassal_dragon_knights = { 
+}
+county_vassal_dragon_knights = { 
 	type = title
 	tier = county
 	titles = { e_golden_realm_rhun }
@@ -4820,7 +4881,7 @@ count_feudal_female_dunedain_rangers = {
 		only_holder = no
 	}
 	name_lists = { name_list_ranger }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 200
 }
 
@@ -4834,7 +4895,7 @@ count_feudal_male_dunedain_rangers = {
 		only_holder = no
 	}
 	name_lists = { name_list_ranger}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 200
 }
 
@@ -4846,7 +4907,7 @@ county_feudal_dunedain_rangers = {
 		only_holder = yes
 	}
 	name_lists = { name_list_ranger}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 200
 }
 
@@ -4860,7 +4921,7 @@ duke_feudal_male_dunedain_rangers_independant = {
 		only_holder = no
 	}
 	name_lists = { name_list_ranger }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 200
 }
 
@@ -4874,7 +4935,7 @@ duke_feudal_female_dunedain_rangers_independant = {
 		only_holder = no
 	}
 	name_lists = { name_list_ranger }
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 200
 }
 
@@ -4886,7 +4947,7 @@ duchy_feudal_dunedain_rangers_intependant = {
 		only_holder = yes
 	}
 	name_lists = { name_list_ranger}
-	heritages = { heritage_dunedain }
+	heritages = { heritage_dunedain heritage_unified_adunaic }
 	priority = 200
 }
 
@@ -5235,7 +5296,6 @@ duke_scarlet_triad = {
 		top_liege = no
 		only_holder = no
 	}
-	#heritages = { heritage_goblin heritage_orc }
 	titles = { d_scarlet_triad }
 }
 duchy_scarlet_triad = {
@@ -5246,7 +5306,6 @@ duchy_scarlet_triad = {
 		top_liege = no
 		only_holder = no
 	}
-	#heritages = { heritage_goblin heritage_orc }
 	titles = { d_scarlet_triad }
 }
 
@@ -5259,7 +5318,6 @@ emperor_sea_dragon_host = {
 		top_liege = no
 		only_holder = no
 	}
-	#heritages = { heritage_goblin heritage_orc }
 	titles = { e_sea_dragon_host }
 }
 empire_sea_dragon_host = {
@@ -5270,7 +5328,6 @@ empire_sea_dragon_host = {
 		top_liege = no
 		only_holder = no
 	}
-	#heritages = { heritage_goblin heritage_orc }
 	titles = { e_sea_dragon_host }
 }
 
@@ -5513,6 +5570,629 @@ duke_feudal_male_tharbad = {
 	priority = 950
 }
 
+### (Admin) Khy titles ### 
+# Currenty for everyone, streach goal is adding non-admin version
+# Generally gender-neutral
+
+baron_administrative_khy = {
+	type = character
+	special = holder
+	tier = barony
+	priority = 32
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+	
+	flavourization_rules = {
+		top_liege = yes
+		spouse_takes_title = no
+	}
+}
+baron_administrative_female_khy_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 31
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = yes
+		only_holder = no
+	}
+}
+count_administrative_khy = {
+	type = character
+	special = holder
+	tier = county
+	priority = 42
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+	
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+count_administrative_female_khy_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 41
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+county_administrative_khy = {
+	type = title
+	tier = county
+	priority = 100
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+}
+duke_administrative_khy = {
+	type = character
+	special = holder
+	tier = duchy
+	priority = 52
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+duke_administrative_female_khy_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 51
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+duchy_administrative_khy = {
+	type = title
+	tier = duchy
+	priority = 70
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+}
+king_administrative_khy = {
+	type = character
+	special = holder
+	tier = kingdom
+	priority = 110
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+king_administrative_female_khy_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 109
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+king_administrative_male_khy_heir = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	priority = 109
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+kingdom_administrative_khy = {
+	type = title
+	tier = kingdom
+	priority = 91
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+}
+emperor_administrative_khy = {
+	type = character
+	special = holder
+	tier = empire
+	priority = 1000
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+emperor_administrative_female_khy_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 500
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+emperor_administrative_male_khy_heir = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = empire
+	priority = 500
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+empire_administrative_khy = {
+	type = title
+	tier = empire
+	priority = 1000
+	# governments = { administrative_government }
+	heritages = { heritage_south_khailuza }
+}
+realm_marshal_khy = {
+	type = character
+	special = councillor
+	heritages = { heritage_south_khailuza }
+	titles = { e_khy }
+	flavourization_rules = { 
+		top_liege = no
+	}	
+	priority = 500
+	council_position = councillor_marshal
+}
+
+# Harshandatt
+
+baron_harshandatt = {
+	type = character
+	special = holder
+	tier = barony
+	priority = 32
+	heritages = { heritage_harshandatt }
+	
+	flavourization_rules = {
+		top_liege = yes
+		spouse_takes_title = no
+	}
+}
+baron_female_harshandatt_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 31
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = yes
+		only_holder = no
+	}
+}
+count_harshandatt = {
+	type = character
+	special = holder
+	tier = county
+	priority = 42
+	heritages = { heritage_harshandatt }
+	
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+count_female_harshandatt_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 41
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+county_harshandatt = {
+	type = title
+	tier = county
+	priority = 100
+	heritages = { heritage_harshandatt }
+}
+duke_harshandatt = {
+	type = character
+	special = holder
+	tier = duchy
+	priority = 52
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+duke_female_harshandatt_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 51
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+duchy_harshandatt = {
+	type = title
+	tier = duchy
+	priority = 70
+	heritages = { heritage_harshandatt }
+}
+king_harshandatt = {
+	type = character
+	special = holder
+	tier = kingdom
+	priority = 92
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+king_female_harshandatt_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 91
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+king_male_harshandatt_heir = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	priority = 91
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+kingdom_harshandatt = {
+	type = title
+	tier = kingdom
+	priority = 91
+	heritages = { heritage_harshandatt }
+}
+emperor_harshandatt = {
+	type = character
+	special = holder
+	tier = empire
+	priority = 1000
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+emperor_female_harshandatt_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 100
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+emperor_male_harshandatt_heir = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = empire
+	priority = 100
+	heritages = { heritage_harshandatt }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+empire_harshandatt = {
+	type = title
+	tier = empire
+	priority = 5000
+	heritages = { heritage_harshandatt }
+}
+
+# Sirayn
+
+baron_male_sirayn = {
+	type = character
+	gender = male
+	special = holder
+	tier = barony
+	priority = 32
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+	
+	flavourization_rules = {
+		top_liege = yes
+		spouse_takes_title = no
+	}
+}
+baron_female_sirayn = {
+	type = character
+	gender = female
+	special = holder
+	tier = barony
+	priority = 31
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = yes
+		only_holder = no
+	}
+}
+count_male_sirayn = {
+	type = character
+	gender = male
+	special = holder
+	tier = county
+	priority = 42
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+	
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+count_female_sirayn = {
+	type = character
+	gender = female
+	special = holder
+	tier = county
+	priority = 41
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+county_sirayn = {
+	type = title
+	tier = county
+	priority = 100
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+}
+duke_male_sirayn = {
+	type = character
+	gender = male
+	special = holder
+	tier = duchy
+	priority = 52
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+duke_female_sirayn = {
+	type = character
+	gender = female
+	special = holder
+	tier = duchy
+	priority = 51
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+duchy_sirayn = {
+	type = title
+	tier = duchy
+	priority = 70
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+}
+king_male_sirayn = {
+	type = character
+	gender = male
+	special = holder
+	tier = kingdom
+	priority = 92
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+king_female_sirayn = {
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 91
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+king_male_sirayn_heir = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = kingdom
+	priority = 91
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+kingdom_sirayn = {
+	type = title
+	tier = kingdom
+	priority = 91
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+}
+emperor_male_sirayn = {
+	type = character
+	gender = male
+	special = holder
+	tier = empire
+	priority = 1000
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		spouse_takes_title = no
+	}
+}
+emperor_female_sirayn = {
+	type = character
+	gender = female
+	special = holder
+	tier = empire
+	priority = 100
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+emperor_male_sirayn_heir = {
+	type = character
+	gender = male
+	special = ruler_child
+	tier = empire
+	priority = 100
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+
+	flavourization_rules = {
+		top_liege = no
+		only_holder = no
+	}
+}
+empire_sirayn = {
+	type = title
+	tier = empire
+	priority = 1000
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+}
+
+king_female_yom_avatar = {
+	type = character
+	gender = female
+	special = holder
+	tier = kingdom
+	priority = 999
+	heritages = {  heritage_old_sirayni heritage_new_sirayni }
+	titles = { k_avatar_of_yom }
+}
+
+# Shayn
+
+# duchy_lyneria_city = {
+# 	type = title
+# 	tier = duchy
+# 	priority = 400
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = no
+# 	}
+# 	governments = { oligarchy_government republic_government }
+# 	titles = { d_nymara d_murnak }
+# }
+
+# duchy_lyneria_grand_city = {
+# 	type = title
+# 	tier = duchy
+# 	priority = 400
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = no
+# 	}
+# 	governments = { oligarchy_government republic_government }
+# 	titles = { d_lyneria }
+# }
+
+# duchy_lyneria_twin_cities = {
+# 	type = title
+# 	tier = duchy
+# 	priority = 400
+# 	flavourization_rules = { 
+# 		top_liege = no
+# 		only_holder = no
+# 	}
+# 	governments = { oligarchy_government republic_government }
+# 	titles = { d_twincities }
+# }
+
+# Empire of Ormal 
+empire_ormal_thalassocracy = {
+	type = title
+	tier = empire
+	titles = { e_ormal_bay }
+	priority = 2000
+}
 ### WASTELANDS: OVERWRITING COUNTY AND CHARACTER TITLES TO ''
 
 # Overwrites kingdom name

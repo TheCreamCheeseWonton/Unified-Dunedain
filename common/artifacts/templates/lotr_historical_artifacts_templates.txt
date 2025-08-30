@@ -710,8 +710,9 @@ skull_earnur_template = {
 	can_benefit = {
 		or = {
 			has_faith = faith:lidless_eye
-			has_cultural_pillar = heritage_dunedain
-			has_cultural_tradition = tradition_new_numenor
+			##Quonton
+			culture = { has_cultural_pillar = heritage_dunedain }
+			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
 
@@ -1872,7 +1873,7 @@ gondor_relic_template = {
 		OR = {
 			faith_is_good = yes
 			culture = { has_cultural_pillar = heritage_dunedain }
-			has_cultural_tradition = tradition_new_numenor
+			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
 
@@ -1898,7 +1899,7 @@ dagger_westernesse_template = {
 		OR = {
 			faith_is_good = yes
 			culture = { has_cultural_pillar = heritage_dunedain }
-			has_cultural_tradition = tradition_new_numenor
+			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
 	
@@ -2235,7 +2236,7 @@ forestel_template = {
 	can_benefit = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_dunedain }
-			has_cultural_tradition = tradition_new_numenor
+			culture = { has_cultural_tradition = tradition_new_numenor }
 			lotr_northron_group_culture_trigger = yes
 		}
 	}
@@ -2255,7 +2256,7 @@ scroll_of_isildur_template = {
 	can_benefit = {
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
-			has_cultural_tradition = tradition_new_numenor
+			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
 
@@ -2291,7 +2292,7 @@ aldarion_erendis_template = {
 	can_benefit = {
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
-			has_cultural_tradition = tradition_new_numenor
+			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
 
@@ -2327,7 +2328,7 @@ narmacil_standard_template = {
 	can_benefit = {
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
-			has_cultural_tradition = tradition_new_numenor
+			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
 
@@ -2389,7 +2390,7 @@ laegrist_template = {
 	can_benefit = {
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
-			has_cultural_tradition = tradition_new_numenor
+			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
 	

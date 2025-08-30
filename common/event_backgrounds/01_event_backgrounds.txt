@@ -176,10 +176,38 @@
 # pivotal_chariots_win_green
 # pivotal_chariots_win_red
 # pivotal_chariots_win_white
-# pivotal_chariots_fail
+# pivotal_chariots_fail_blue
+# pivotal_chariots_fail_green
+# pivotal_chariots_fail_red
+# pivotal_chariots_fail_white
+
+### MPO ###
+# mpo_city_steppe
+# mpo_camp_steppe
+# mpo_tent_interior_mongol
+# mpo_campfire_steppe
+# mpo_steppe_evening
+# mpo_rural_village_asian
+# mpo_raid_burning_asian
+# mpo_hunt_steppe
+# mpo_temple_steppe
+# mpo_nomadic_throneroom
 
 ### ALLEY ###
 alley_night = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_campfire_steppe.dds"
+		environment = "environment_mpo_campfire_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_campfire_steppe"
+	}
+	
 	background = { #LotR Wood Elf
 		trigger = {
 			trigger_if = {
@@ -211,6 +239,18 @@ alley_night = {
 }
 
 alley_day = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_camp_steppe.dds"
+		environment = "environment_mpo_camp_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_camp_steppe"
+	}
 
 	background = { #LotR Wood Elf
 		trigger = {
@@ -283,6 +323,18 @@ alley_day = {
 
 ### ARMORY ###
 armory = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "mpo_tent_interior_mongol" 
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -312,12 +364,19 @@ battlefield = {
 				OR  = {
 					geographical_region = middleearth_west_gondor
 					geographical_region = middleearth_west_arnor
-					culture ?= { has_cultural_pillar = heritage_dunedain }
+					culture ?= { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					}
 				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/battlefield_dunedain.dds"
-		environment = "environment_event_battlefield"
+		environment = "environment_event_farms"
 		ambience = "event:/SFX/Events/Backgrounds/battlefield_gloomy"
 	}
 	
@@ -342,6 +401,32 @@ temple = {
 		environment = "environment_ep3_living_tent_interior"
 		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_living_tent_interior"
 	}
+	background = { # MPO - Tengri
+		trigger = {
+			# trigger_if = { #LotR
+			# 	limit = { exists = scope:bg_override_char }
+			# 	scope:bg_override_char = {
+			# 		OR = {
+			# 			government_has_flag = government_is_nomadic
+			# 			religion = religion:tengrism_religion
+			# 			religion = religion:magyar_religion
+			# 			religion = religion:siberian_religion
+			# 		}
+			# 	}
+			# }
+			# trigger_else = { #LotR
+				OR = {
+					government_has_flag = government_is_nomadic
+					# religion = religion:tengrism_religion
+					# religion = religion:magyar_religion
+					# religion = religion:siberian_religion
+				}
+			# }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_temple_steppe.dds"
+		environment = "environment_mpo_temple_steppe" 
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_temple_steppe"
+	}
 	# background = { # EP3 - Hagia Sophia for Byzantium #LotR
 	# 	trigger = {
 	# 		trigger_if = {
@@ -359,10 +444,16 @@ temple = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				#scope:bg_override_char = { religion = religion:zoroastrianism_religion }
-				scope:bg_override_char = { religion = religion:ormalbay_religion }
+				OR = {
+					location.culture ?= { has_building_gfx = iranian_building_gfx }
+					location ?= { geographical_region = middleearth_harad_bayoformal_khy }	
+				}
 			}
 			#trigger_else = { religion = religion:zoroastrianism_religion }
-			trigger_else = { religion = religion:ormalbay_religion }
+			OR = {
+				location.culture ?= { has_building_gfx = iranian_building_gfx }
+				location ?= { geographical_region = middleearth_harad_bayoformal_khy }	
+			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/fp3_temple.dds"
 		environment = "environment_event_fp3_temple"
@@ -379,8 +470,6 @@ temple = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic  }
 					}
 				}
 			}
@@ -391,8 +480,6 @@ temple = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari } 
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic  }
 				}
 			}
 		}
@@ -490,6 +577,21 @@ temple = {
 }
 
 temple_scope = {
+	background = { # MPO - Tengri
+		trigger = {
+			scope:background_temple_scope = {
+				OR = {
+					holder ?= { government_has_flag = government_is_nomadic }
+					# religion = religion:tengrism_religion
+					# religion = religion:magyar_religion
+					# religion = religion:siberian_religion
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_temple_steppe.dds"
+		environment = "environment_mpo_temple_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_temple_steppe"
+	}
 	# background = { # EP3 - Hagia Sophia for the Patriarch(s) #LotR
 	# 	trigger = {
 	# 		scope:background_temple_scope = {
@@ -506,7 +608,9 @@ temple_scope = {
 	# }
 	background = {	# FP3
 	# 	trigger = { scope:background_temple_scope.religion = religion:zoroastrianism_religion }
-		trigger = { scope:background_temple_scope.religion = religion:ormalbay_religion }
+		trigger = { 
+			scope:background_temple_scope.culture = { has_building_gfx = iranian_building_gfx }
+		}
 		reference = "gfx/interface/illustrations/event_scenes/fp3_temple.dds"
 		environment = "environment_event_fp3_temple"
 		ambience = "event:/DLC/FP2/SFX/Events/temple" 
@@ -518,8 +622,6 @@ temple_scope = {
 					has_cultural_pillar = heritage_northern_adunaic
 					has_cultural_pillar = heritage_bellakari
 					has_cultural_pillar = heritage_southern_adunaic
-					##Quonton
-					has_cultural_pillar = heritage_unified_adunaic
 				}
 			}
 		}
@@ -612,6 +714,18 @@ temple_generic = {
 
 ### CORRIDOR ###
 corridor_night = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_campfire_steppe.dds"
+		environment = "environment_mpo_campfire_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_campfire_steppe"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -652,8 +766,6 @@ corridor_night = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -665,8 +777,6 @@ corridor_night = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -728,6 +838,18 @@ corridor_night = {
 }
 
 corridor_day = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_camp_steppe.dds"
+		environment = "environment_mpo_camp_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_camp_steppe"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -744,9 +866,27 @@ corridor_day = {
 		trigger = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
-				scope:bg_override_char = { location.culture = { has_cultural_pillar = heritage_dunedain } }
+				scope:bg_override_char = { 
+					location.culture = {
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					} 
+				}
 			}
-			trigger_else = { location.culture = { has_cultural_pillar = heritage_dunedain } }
+			trigger_else = { 
+				location.culture = { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
+			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/corridor_dunedain.dds"
 		environment = "environment_frontend_mediterranean_main" 
@@ -777,8 +917,6 @@ corridor_day = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -791,8 +929,6 @@ corridor_day = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -856,6 +992,18 @@ corridor_day = {
 ### COUNCIL CHAMBER ###
 council_chamber = {
 	#Very common picture, uses study and relaxing room as fallback for non European parts of the world for now
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_camp_steppe.dds"
+		environment = "environment_mpo_camp_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_camp_steppe"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -881,8 +1029,6 @@ council_chamber = {
 	 						#has_graphical_mediterranean_culture_group_trigger = yes 
 							has_cultural_pillar = heritage_bellakari
 							has_cultural_pillar = heritage_northern_adunaic
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -896,8 +1042,6 @@ council_chamber = {
  						#has_graphical_mediterranean_culture_group_trigger = yes 
 						has_cultural_pillar = heritage_bellakari
 						has_cultural_pillar = heritage_northern_adunaic
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -961,6 +1105,18 @@ council_chamber = {
 
 ### COURTYARD ###
 courtyard = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_camp_steppe.dds"
+		environment = "environment_mpo_camp_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_camp_steppe"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -1029,8 +1185,6 @@ courtyard = {
 	 					#location = { geographical_region = world_europe_south_east }
 	 					#location = { geographical_region = world_europe_south_italy }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						location = { geographical_region = middleearth_west_gondor }
 						location = { geographical_region = middleearth_west_rhovanion_dalelands }
 						location = { geographical_region = middleearth_rhun_dorwinion }
@@ -1043,8 +1197,6 @@ courtyard = {
  					#location = { geographical_region = world_europe_south_east }
  					#location = { geographical_region = world_europe_south_italy }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					location = { geographical_region = middleearth_west_gondor }
 					location = { geographical_region = middleearth_west_rhovanion_dalelands }
 					location = { geographical_region = middleearth_rhun_dorwinion }
@@ -1155,8 +1307,6 @@ courtyard_location = {
 	 					#location = { geographical_region = world_europe_south_east }
 	 					#location = { geographical_region = world_europe_south_italy }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						location = { geographical_region = middleearth_west_gondor }
 						location = { geographical_region = middleearth_west_rhovanion_dalelands }
 						location = { geographical_region = middleearth_rhun_dorwinion }
@@ -1169,8 +1319,6 @@ courtyard_location = {
 	 					#location = { geographical_region = world_europe_south_east }
 	 					#location = { geographical_region = world_europe_south_italy }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						location = { geographical_region = middleearth_west_gondor }
 						location = { geographical_region = middleearth_west_rhovanion_dalelands }
 						location = { geographical_region = middleearth_rhun_dorwinion }
@@ -1257,8 +1405,6 @@ courtyard_scope = {
  					#location = { geographical_region = world_europe_south_east }
  					#location = { geographical_region = world_europe_south_italy }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					location = { geographical_region = middleearth_west_gondor }
 					location = { geographical_region = middleearth_west_rhovanion_dalelands }
 					location = { geographical_region = middleearth_rhun_dorwinion }
@@ -1297,6 +1443,19 @@ courtyard_scope = {
 
 ### DUNGEON ###
 dungeon = {
+	background = {	#Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+			
+		}
+		reference = "gfx/interface/illustrations/event_scenes/fp1_tribal_prison.dds"
+		environment = "environment_event_fp1_tribal_prison"
+		ambience = "event:/DLC/FP1/SFX/Events/event_prison"
+	}
 	background = {	#LAAMPs
 		trigger = {
 			trigger_if = {
@@ -1321,8 +1480,6 @@ dungeon = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -1333,8 +1490,6 @@ dungeon = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 			
@@ -1391,8 +1546,6 @@ dungeon_scope = {
 					capital_province.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					capital_province.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 					capital_province.culture ?= { has_cultural_pillar = heritage_bellakari }
-					##Quonton
-					capital_province.culture ?= { has_cultural_pillar = heritage_unified_adunaic  }
 				}
 			}
 		}
@@ -1501,6 +1654,7 @@ wilderness = {
 						OR = {
 							has_province_modifier = winter_normal_modifier
 							has_province_modifier = winter_harsh_modifier
+							root = { has_zud_season_in_county_trigger = { COUNTY = root.location.county } }
 						}
 						OR = {
 							graphical_wilderness_forest_trigger = yes
@@ -1514,6 +1668,7 @@ wilderness = {
 					OR = {
 						has_province_modifier = winter_normal_modifier
 						has_province_modifier = winter_harsh_modifier
+						root = { has_zud_season_in_county_trigger = { COUNTY = root.location.county } }
 					}
 					OR = {
 						graphical_wilderness_forest_trigger = yes
@@ -1702,7 +1857,7 @@ wilderness = {
 					location = {
 						graphical_wilderness_steppe_trigger = yes
 						OR = {
-							geographical_region = middleearth_haradwaith_far
+							geographical_region = middleearth_harad_far
 							geographical_region = middleearth_uttersouth
 						}
 					}
@@ -1712,7 +1867,7 @@ wilderness = {
 				location = {
 					graphical_wilderness_steppe_trigger = yes
 					OR = {
-						geographical_region = middleearth_haradwaith_far
+						geographical_region = middleearth_harad_far
 						geographical_region = middleearth_uttersouth
 					}
 				}
@@ -2116,7 +2271,7 @@ wilderness_scope = {
 			scope:background_wilderness_scope = {
 				graphical_wilderness_steppe_trigger = yes
 				OR = {
-					geographical_region = middleearth_haradwaith_far
+					geographical_region = middleearth_harad_far
 					geographical_region = middleearth_uttersouth
 				}
 			}
@@ -3053,7 +3208,7 @@ terrain = {
 					location = {
 						graphical_wilderness_steppe_trigger = yes
 						OR = {
-							geographical_region = middleearth_haradwaith_far
+							geographical_region = middleearth_harad_far
 							geographical_region = middleearth_uttersouth
 						}
 					}
@@ -3063,7 +3218,7 @@ terrain = {
 				location = {
 					graphical_wilderness_steppe_trigger = yes
 					OR = {
-						geographical_region = middleearth_haradwaith_far
+						geographical_region = middleearth_harad_far
 						geographical_region = middleearth_uttersouth
 					}
 				}
@@ -3656,9 +3811,9 @@ terrain_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/ep2_travel_mountains.dds"
-		environment = "environment_travel_mountain_settlement"
-		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
+		reference = "gfx/interface/illustrations/event_scenes/mpo_city_steppe.dds"
+		environment = "environment_mpo_city_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_city_steppe"
 	}
 	
 	background = { #LotR savanna
@@ -3666,7 +3821,7 @@ terrain_scope = {
 			scope:background_terrain_scope = {
 				graphical_wilderness_steppe_trigger = yes
 				OR = {
-					geographical_region = middleearth_haradwaith_far
+					geographical_region = middleearth_harad_far
 					geographical_region = middleearth_uttersouth
 				}
 			}
@@ -4006,7 +4161,7 @@ terrain_activity = {
 			scope:activity.activity_location ?= {
 				graphical_wilderness_steppe_trigger = yes
 				OR = {
-					geographical_region = middleearth_haradwaith_far
+					geographical_region = middleearth_harad_far
 					geographical_region = middleearth_uttersouth
 				}
 			}
@@ -4196,12 +4351,30 @@ terrain_travel = {
 	background = { # Hobbit Farmland, settled
 		trigger = {
 			location = {
-				terrain = farmlands
+				OR = {
+					terrain = farmlands
+					terrain = hills
+				}
 				exists = province_owner
 				culture ?= { is_hobbit_culture = yes }
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		environment = "environment_travel_farmlands"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+	background = { # Elven Farmland, settled
+		trigger = {
+			location = {
+				OR = {
+					terrain = farmlands
+					terrain = hills
+				}
+				exists = province_owner
+				culture ?= { is_elf_culture = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/elven_holding.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -4694,11 +4867,25 @@ docks = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					location.culture = { has_cultural_pillar = heritage_dunedain }
+					location.culture = { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					}
 				}
 			}
 			trigger_else = {
-				location.culture = { has_cultural_pillar = heritage_dunedain }
+				location.culture = {
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/docks_dunedain.dds"
@@ -4736,7 +4923,7 @@ docks = {
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/docks_elf.dds"
-		environment = "environment_event_docks"
+		environment = "environment_event_corridor"
 		ambience = "event:/SFX/Events/Backgrounds/docks_day"
 	}
 	
@@ -4804,6 +4991,26 @@ farmland = {
 
 ### FEAST ###
 feast = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else_if = {
+				limit = {
+					NOT = { exists = scope:activity }
+				}
+				government_has_flag = government_is_nomadic
+			}
+			trigger_else = {
+				scope:activity.activity_host ?= { government_has_flag = government_is_nomadic }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep2_feast_steppe.dds"
+		environment = "environment_steppe_feast"
+		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_steppe"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -4962,8 +5169,6 @@ feast = {
 						culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_bellakari }
-						##Quonton
-						culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						geographical_region = middleearth_west_gondor 
 					}
 				}
@@ -4975,8 +5180,6 @@ feast = {
 						culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_bellakari }
-						##Quonton
-						culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						geographical_region = middleearth_west_gondor 
 					}
 				}
@@ -5212,8 +5415,6 @@ feast_event = {
 					OR = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -5222,8 +5423,6 @@ feast_event = {
 				OR = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -5336,6 +5535,18 @@ feast_event = {
 
 ### GALLOWS ###
 gallows = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_campfire_steppe.dds"
+		environment = "environment_mpo_campfire_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_campfire_steppe"
+	}
 	background = {
 		reference = "gfx/interface/illustrations/event_scenes/gallows.dds"
 		environment = "environment_event_gallows"
@@ -5345,6 +5556,18 @@ gallows = {
 
 ### GARDEN ###
 garden = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_hunt_steppe.dds"
+		environment = "environment_mpo_hunt_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_hunt_steppe"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -5400,8 +5623,6 @@ garden = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -5412,8 +5633,6 @@ garden = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -5446,8 +5665,6 @@ garden_location = {
 				location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 				location.culture ?= { has_cultural_pillar = heritage_bellakari }
 				location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-				##Quonton
-				location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/fp2_garden.dds"
@@ -5472,7 +5689,48 @@ garden_location = {
 
 ### MARKET ###
 market = {
-
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location.county.holder ?= { government_has_flag = government_is_nomadic }
+				}
+			}
+			trigger_else = {
+				location.county.holder ?= { government_has_flag = government_is_nomadic }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_hunt_steppe.dds"
+		environment = "environment_mpo_hunt_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_hunt_steppe"
+	}
+	background = { # Asian
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location ?= {
+						OR = {
+							# geographical_region = world_steppe_east #LotR
+							culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+						}
+					}
+				}
+			}
+			trigger_else = {
+				location ?= {
+					OR = {
+						# geographical_region = world_steppe_east #LotR
+						culture ?= { has_graphical_steppe_culture_group_trigger = yes }
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_rural_village_asian.dds"
+		environment = "environment_mpo_rural_village_asian"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_rural_village_asian"
+	}
 	background = { #LotR Lorien
 		trigger = {
 			trigger_if = {
@@ -5541,11 +5799,25 @@ market = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					location.culture ?= { has_cultural_pillar = heritage_dunedain }
+					location.culture ?= { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					}
 				}
 			}
 			trigger_else = {					 
-				location.culture ?= { has_cultural_pillar = heritage_dunedain }
+				location.culture ?= {
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
@@ -5579,7 +5851,7 @@ market = {
 				}
 			}
 			trigger_else = {					 
-				location.culture ?= { is_orc = yes }
+				location.culture ?= { is_orc_culture = yes }
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
@@ -5600,8 +5872,6 @@ market = {
 							culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 							culture ?= { has_cultural_pillar = heritage_bellakari }
 							culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-							##Quonton
-							culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						}
 					}
 				}
@@ -5615,8 +5885,6 @@ market = {
 						culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_bellakari }
 						culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -5746,7 +6014,14 @@ market_scope = {
 	background = { #LotR Dúnedain
 		trigger = {
 			scope:background_market_scope = {					 
-				culture ?= { has_cultural_pillar = heritage_dunedain }
+				culture ?= { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
@@ -5786,8 +6061,6 @@ market_scope = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -5879,7 +6152,14 @@ market_activity = {
 	background = { #LotR Dúnedain
 		trigger = {
 			scope:activity.activity_location ?= {					 
-				culture ?= { has_cultural_pillar = heritage_dunedain }
+				culture ?= { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
@@ -5919,8 +6199,6 @@ market_activity = {
 					culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					culture ?= { has_cultural_pillar = heritage_bellakari }
 					culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -6009,6 +6287,32 @@ market_west = {
 
 ### BURNING BUILDING ###
 burning_building = {
+	background = { # East-Asian
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location.culture ?= {
+						OR = {
+							culture_has_east_asian_heritage_pillar_trigger = yes
+							has_graphical_steppe_culture_group_trigger = yes
+						}
+					}
+				}
+			}
+			trigger_else = {
+				location.culture ?= {
+					OR = {
+						culture_has_east_asian_heritage_pillar_trigger = yes
+						has_graphical_steppe_culture_group_trigger = yes
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_raid_burning_asian.dds"
+		environment = "environment_mpo_raid_burning_asian"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_raid_burning_asian"
+	}
 	# background = { # Byzantine/Greek #LotR
 	# 	trigger = {
 	# 		trigger_if = {
@@ -6042,6 +6346,18 @@ burning_building_west = {
 
 ### SITTING ROOM ###
 sitting_room = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = {	#Hobbit
 		trigger = {	
 			trigger_if = {
@@ -6085,8 +6401,6 @@ sitting_room = {
 						OR = {
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -6115,8 +6429,6 @@ sitting_room = {
 							# has_graphical_mediterranean_culture_group_trigger = yes 
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -6130,8 +6442,6 @@ sitting_room = {
 						# has_graphical_mediterranean_culture_group_trigger = yes 
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -6176,6 +6486,18 @@ sitting_room = {
 
 ### BEDCHAMBER ###
 bedchamber = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -6253,6 +6575,18 @@ bedchamber = {
 ### STUDY ###
 # Referenced in code, do not change the name
 study = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -6293,8 +6627,6 @@ study = {
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
 							has_cultural_pillar = heritage_southern_adunaic
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -6309,8 +6641,6 @@ study = {
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
 						has_cultural_pillar = heritage_southern_adunaic
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -6363,8 +6693,6 @@ study = {
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
 							has_cultural_pillar = heritage_southern_adunaic
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -6379,8 +6707,6 @@ study = {
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
 						has_cultural_pillar = heritage_southern_adunaic
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -6460,8 +6786,6 @@ location_study = {
 					has_cultural_pillar = heritage_northern_adunaic
 					has_cultural_pillar = heritage_bellakari
 					has_cultural_pillar = heritage_southern_adunaic
-					##Quonton
-					has_cultural_pillar = heritage_unified_adunaic
 				}
 			}
 		}
@@ -6495,8 +6819,6 @@ location_study = {
 					has_cultural_pillar = heritage_northern_adunaic
 					has_cultural_pillar = heritage_bellakari
 					has_cultural_pillar = heritage_southern_adunaic
-					##Quonton
-					has_cultural_pillar = heritage_unified_adunaic
 				}
 			}
 		}
@@ -6536,6 +6858,18 @@ location_study = {
 
 ## RELAXING ROOM ###
 relaxing_room = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -6577,8 +6911,6 @@ relaxing_room = {
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
 							has_cultural_pillar = heritage_southern_adunaic
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -6594,8 +6926,6 @@ relaxing_room = {
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
 						has_cultural_pillar = heritage_southern_adunaic
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -6618,8 +6948,6 @@ relaxing_room = {
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
 							has_cultural_pillar = heritage_southern_adunaic
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -6634,8 +6962,6 @@ relaxing_room = {
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
 						has_cultural_pillar = heritage_southern_adunaic
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -6702,8 +7028,6 @@ relaxing_room_scope = {
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
 						has_cultural_pillar = heritage_southern_adunaic
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -6724,8 +7048,6 @@ relaxing_room_scope = {
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
 						has_cultural_pillar = heritage_southern_adunaic
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -6760,6 +7082,18 @@ relaxing_room_scope = {
 
 ### PHYSICIAN'S STUDY ###
 physicians_study = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -6898,10 +7232,26 @@ tavern = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					location.culture ?= { has_cultural_pillar = heritage_dunedain }
+					location.culture ?= { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					}
 				}
 			}
-			trigger_else = { location.culture ?= { has_cultural_pillar = heritage_dunedain } }
+			trigger_else = { 
+				location.culture ?= { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
+			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
 		environment = "environment_event_tavern"
@@ -6934,6 +7284,20 @@ tavern = {
 		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
+	}
+	background = { #MENA Tavern
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char.location.county.holder ?= { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = {
+				location.county.holder ?= { government_has_flag = government_is_nomadic }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep2_feast_steppe.dds"
+		environment = "environment_steppe_feast"
+		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_steppe"
 	}
 	background = { #MENA Tavern
 		trigger = {
@@ -6980,6 +7344,60 @@ western_tavern = {
 
 ### THRONE ROOM ###
 throne_room = {
+	background = { # MPO - High Dominance
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					government_has_flag = government_is_nomadic
+					OR = {
+						has_realm_law = nomadic_authority_3
+						has_realm_law = nomadic_authority_4
+						has_realm_law = nomadic_authority_5
+						has_trait = greatest_of_khans
+					}
+				}
+			}
+			trigger_else = {
+				government_has_flag = government_is_nomadic
+				OR = {
+					has_realm_law = nomadic_authority_3
+					has_realm_law = nomadic_authority_4
+					has_realm_law = nomadic_authority_5
+					has_trait = greatest_of_khans
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/main_menu/mpo_frontend_nomad.dds"
+		environment = "environment_mpo_frontend_nomad_main"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_nomadic_throneroom"
+	}
+	background = { # MPO - Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					government_has_flag = government_is_nomadic
+					NOR = {
+						has_realm_law = nomadic_authority_4
+						has_realm_law = nomadic_authority_5
+						has_trait = greatest_of_khans
+					}
+				}
+			}
+			trigger_else = {
+				government_has_flag = government_is_nomadic
+				NOR = {
+					has_realm_law = nomadic_authority_4
+					has_realm_law = nomadic_authority_5
+					has_trait = greatest_of_khans
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -6997,10 +7415,26 @@ throne_room = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					location.culture ?= { has_cultural_pillar = heritage_dunedain } 
+					location.culture ?= { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					} 
 				}
 			}
-			trigger_else = { location.culture ?= { has_cultural_pillar = heritage_dunedain } }
+			trigger_else = { 
+				location.culture ?= {
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				} 
+			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/throneroom_dunedain.dds"
 		environment = "environment_event_fp2_temple"
@@ -7328,17 +7762,19 @@ throne_room = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					# OR = {
+					OR = {
 						location.culture ?= { has_building_gfx = iranian_building_gfx }
+						location ?= { geographical_region = middleearth_harad_bayoformal_khy }
 						# location ?= { geographical_region = world_persian_empire }
-					# }
+					}
 				}
 			}
 			trigger_else = {
-				# OR = {
+				OR = {
 					location.culture ?= { has_building_gfx = iranian_building_gfx }
+					location ?= { geographical_region = middleearth_harad_bayoformal_khy }	
 					# location ?= { geographical_region = world_persian_empire }
-				# }
+				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/fp3_throneroom.dds"
@@ -7357,8 +7793,6 @@ throne_room = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-						##Quonton
-						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -7369,8 +7803,6 @@ throne_room = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -7509,6 +7941,38 @@ throne_room = {
 }
 
 throne_room_scope = {
+	background = { # MPO - High Dominance
+		trigger = {
+			scope:background_throne_room_scope = {
+				government_has_flag = government_is_nomadic
+				OR = {
+					has_realm_law = nomadic_authority_3
+					has_realm_law = nomadic_authority_4
+					has_realm_law = nomadic_authority_5
+					has_trait = greatest_of_khans
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/main_menu/mpo_frontend_nomad.dds"
+		environment = "environment_mpo_frontend_nomad_main"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_nomadic_throneroom"
+	}
+	background = { # MPO - Nomads
+		trigger = {
+			scope:background_throne_room_scope = {
+				government_has_flag = government_is_nomadic
+				NOR = {
+					has_realm_law = nomadic_authority_3
+					has_realm_law = nomadic_authority_4
+					has_realm_law = nomadic_authority_5
+					has_trait = greatest_of_khans
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
 	background = { #LAAMPs
 		trigger = {
 			scope:background_throne_room_scope = { is_landless_adventurer = yes }
@@ -7519,7 +7983,16 @@ throne_room_scope = {
 	}
 	background = { #LotR Dúnedain
 		trigger = { 
-			scope:background_throne_room_scope = { culture ?= { has_cultural_pillar = heritage_dunedain } }
+			scope:background_throne_room_scope = { 
+				culture ?= { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				} 
+			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/throneroom_dunedain.dds"
 		environment = "environment_event_fp2_temple"
@@ -7849,6 +8322,30 @@ throne_room_west = {
 
 ### ARMY CAMP ###
 army_camp = {
+	background = { #Orcs
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { lotr_orc_buildings = yes }
+			}
+			trigger_else = { lotr_orc_buildings = yes }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		environment = "environment_event_battlefield"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_hunt_steppe.dds"
+		environment = "environment_mpo_hunt_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_hunt_steppe"
+	}
 	background = {
 		reference = "gfx/interface/illustrations/event_scenes/genericcamp.dds"
 		environment = "environment_event_genericcamp"
@@ -8087,6 +8584,26 @@ bp1_relaxing_room_mena = {
 }
 
 bp1_kitchen_western = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else_if = {
+				limit = {
+					NOT = { exists = scope:activity }
+				}
+				government_has_flag = government_is_nomadic
+			}
+			trigger_else = {
+				scope:activity.activity_host ?= { government_has_flag = government_is_nomadic }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep2_feast_steppe.dds"
+		environment = "environment_steppe_feast"
+		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_steppe"
+	}
 	background = { #LAAMPs
 		trigger = {
 			trigger_if = {
@@ -8136,6 +8653,18 @@ bp1_kitchen_western = {
 
 bp1_bonfire = {
 	background = {
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_campfire_steppe.dds"
+		environment = "environment_mpo_campfire_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_campfire_steppe"
+	}
+	background = {
 		reference = "gfx/interface/illustrations/event_scenes/bp1_bonfire.dds"
 		environment = "environment_event_bp1_bonfire" 
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
@@ -8159,6 +8688,26 @@ bp1_courtyard_mena = {
 }
 
 bp1_wine_cellar = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else_if = {
+				limit = {
+					NOT = { exists = scope:activity }
+				}
+				government_has_flag = government_is_nomadic
+			}
+			trigger_else = {
+				scope:activity.activity_host ?= { government_has_flag = government_is_nomadic }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/ep2_feast_steppe.dds"
+		environment = "environment_steppe_feast"
+		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_steppe"
+	}
 	background = {	#wine cellar
 		reference = "gfx/interface/illustrations/event_scenes/bp1_wine_cellar.dds"
 		environment = "environment_event_bp1_wine_cellar"
@@ -8507,8 +9056,6 @@ tour_arrival = {
 						has_cultural_pillar = heritage_southern_adunaic
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -8527,8 +9074,6 @@ tour_arrival = {
 						has_cultural_pillar = heritage_southern_adunaic
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -8938,16 +9483,57 @@ holy_site_generic = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					location.culture = { has_cultural_pillar = heritage_dunedain }
+					location.culture = { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					}
 				}
 			}
 			trigger_else = {
-				location.culture = { has_cultural_pillar = heritage_dunedain }
+				location.culture = { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_holysite_gondor.dds"
 		environment = "environment_ep3_holysite_orthodox"
 		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_orthodox_holy_site"
+	}
+	
+	background = { # MPO - Tengri
+		trigger = {
+			# trigger_if = { #LotR
+			# 	limit = { exists = scope:bg_override_char }
+			# 	scope:bg_override_char = {
+			# 		OR = {
+			# 			government_has_flag = government_is_nomadic
+			# 			religion = religion:tengrism_religion
+			# 			religion = religion:magyar_religion
+			# 			religion = religion:siberian_religion
+			# 		}
+			# 	}
+			# }
+			# trigger_else = { #LotR
+				OR = {
+					government_has_flag = government_is_nomadic
+					# religion = religion:tengrism_religion
+					# religion = religion:magyar_religion
+					# religion = religion:siberian_religion
+				}
+			# }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_temple_steppe.dds"
+		environment = "environment_mpo_temple_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_temple_steppe"
 	}
 
 	background = { #Zoroastrian generic holy site
@@ -9002,9 +9588,6 @@ holy_site_generic = {
 							# geographical_region = world_asia_minor
 							culture = { has_cultural_pillar = heritage_northern_adunaic }
 							culture = { has_cultural_pillar = heritage_bellakari }
-							##Quonton
-							culture = { has_cultural_pillar = heritage_unified_adunaic }
-
 						}
 					}
 				}
@@ -9023,9 +9606,6 @@ holy_site_generic = {
 						# geographical_region = world_asia_minor
 						culture = { has_cultural_pillar = heritage_northern_adunaic }
 						culture = { has_cultural_pillar = heritage_bellakari }
-						##Quonton
-						culture = { has_cultural_pillar = heritage_unified_adunaic }
-
 					}
 				}
 			}
@@ -9248,10 +9828,24 @@ holy_site_generic_scope = {
 			OR = {
 				AND = {
 					exists = scope:activity
-					scope:activity.activity_location.culture = { has_cultural_pillar = heritage_dunedain }
+					scope:activity.activity_location.culture = { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					}
 				}
 				# scope:holy_site_scope.religion ?= religion:zoroastrianism_religion
-				scope:holy_site_scope.culture = { has_cultural_pillar = heritage_dunedain }
+				scope:holy_site_scope.culture = { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_holysite_gondor.dds"
@@ -9286,8 +9880,6 @@ holy_site_generic_scope = {
 						OR = {
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
-							##Quonton
-							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 				}
@@ -9296,8 +9888,6 @@ holy_site_generic_scope = {
 					OR = {
 						has_cultural_pillar = heritage_northern_adunaic
 						has_cultural_pillar = heritage_bellakari
-						##Quonton
-						has_cultural_pillar = heritage_unified_adunaic
 					}
 				}
 			}
@@ -9740,6 +10330,24 @@ ep2_hunt_activity_camp = {
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
 
+	background = { # Jungle
+		trigger = {
+			scope:activity.activity_location = { graphical_wilderness_jungle_trigger = yes }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/bp1_jungle.dds"
+		environment = "environment_event_bp1_jungle"
+		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
+	}
+	
+	background = {
+		trigger = {
+			scope:activity.activity_host = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_hunt_steppe.dds"
+		environment = "environment_mpo_hunt_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_hunt_steppe"
+	}
+
 	background = { # Steppe
 		trigger = {
 			scope:activity.activity_location = { graphical_wilderness_steppe_trigger = yes }
@@ -9765,15 +10373,6 @@ ep2_hunt_activity_camp = {
 		reference = "gfx/interface/illustrations/event_scenes/desert.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_desert"
-	}
-
-	background = { # Jungle
-		trigger = {
-			scope:activity.activity_location = { graphical_wilderness_jungle_trigger = yes }
-		}
-		reference = "gfx/interface/illustrations/event_scenes/bp1_jungle.dds"
-		environment = "environment_event_bp1_jungle"
-		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
 
 	background = { # Drylands
@@ -10229,8 +10828,6 @@ ep2_involved_activity = {
 							# geographical_region = world_asia_minor
 							culture = { has_cultural_pillar = heritage_northern_adunaic }
 							culture = { has_cultural_pillar = heritage_bellakari }
-							##Quonton
-							culture = { has_cultural_pillar = heritage_unified_adunaic }
 						}
 					}
 				}
@@ -10247,8 +10844,6 @@ ep2_involved_activity = {
 						# geographical_region = world_asia_minor
 						culture = { has_cultural_pillar = heritage_northern_adunaic }
 						culture = { has_cultural_pillar = heritage_bellakari }
-						##Quonton
-						culture = { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -10408,13 +11003,13 @@ ep2_involved_activity = {
 				scope:bg_override_char = {
 					involved_activity ?= { has_activity_type = activity_feast }
 					# involved_activity.activity_location.culture ?= { has_graphical_mediterranean_culture_group_trigger = yes }
-					involved_activity.activity_location = { lotr_numenor_culture_trigger = yes }
+					involved_activity.activity_location = { lotr_has_numenorean_culture_trigger = yes }
 				}
 			}
 			trigger_else = {
 				involved_activity ?= { has_activity_type = activity_feast }
 				# involved_activity.activity_location.culture ?= { has_graphical_mediterranean_culture_group_trigger = yes }
-				involved_activity.activity_location = { lotr_numenor_culture_trigger = yes }
+				involved_activity.activity_location = { lotr_has_numenorean_culture_trigger = yes }
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_feast_byzantine.dds"
@@ -10911,8 +11506,6 @@ ep2_activity = {
 					# geographical_region = world_asia_minor
 					culture = { has_cultural_pillar = heritage_northern_adunaic }
 					culture = { has_cultural_pillar = heritage_bellakari }
-					##Quonton
-					culture = { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -11032,7 +11625,7 @@ ep2_activity = {
 			}
 			involved_activity ?= { has_activity_type = activity_feast }
 			# involved_activity.activity_location.culture ?= { has_graphical_mediterranean_culture_group_trigger = yes }
-			involved_activity.activity_location.culture ?= { lotr_numenor_culture_trigger = yes }
+			involved_activity.activity_location.culture ?= { lotr_has_numenorean_culture_trigger = yes }
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_feast_byzantine.dds"
 		environment = "environment_ep3_byzantine_feast"
@@ -11425,6 +12018,18 @@ ep2_village_festival = {
 
 # BP2 ###
 bp2_nursery = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/SFX/Events/Backgrounds/BP2/bp2_nursery"
+	}
 	background = { # a nursery for young children 
 		reference = "gfx/interface/illustrations/event_scenes/bp2_nursery.dds"
 		environment = "environment_bp2_nursery"
@@ -11433,6 +12038,18 @@ bp2_nursery = {
 }
 
 bp2_courtyard = {
+	background = { #Nomads
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = { government_has_flag = government_is_nomadic }
+			}
+			trigger_else = { government_has_flag = government_is_nomadic }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/mpo_camp_steppe.dds"
+		environment = "environment_mpo_camp_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_camp_steppe"
+	}
 	background = {
 		reference = "gfx/interface/illustrations/event_scenes/bp2_courtyard.dds"
 		environment = "environment_bp2_courtyard"
@@ -11467,7 +12084,7 @@ bp2_university = {
 							# has_cultural_pillar = heritage_byzantine
 							# has_cultural_pillar = heritage_caucasian
 						# }
-						lotr_numenor_culture_trigger = yes
+						lotr_has_numenorean_culture_trigger = yes
 					}
 				}
 			}
@@ -11477,7 +12094,7 @@ bp2_university = {
 						# has_cultural_pillar = heritage_byzantine
 						# has_cultural_pillar = heritage_caucasian
 					# }
-					lotr_numenor_culture_trigger = yes
+					lotr_has_numenorean_culture_trigger = yes
 				}
 			}
 		}
@@ -11546,7 +12163,7 @@ bp2_university_scope = {
 					# has_cultural_pillar = heritage_byzantine
 					# has_cultural_pillar = heritage_caucasian
 				# }
-				lotr_numenor_culture_trigger = yes
+				lotr_has_numenorean_culture_trigger = yes
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_medi_study.dds"
@@ -11875,8 +12492,6 @@ journey_activity_background = {
 						# has_building_or_higher = sofia_ohrid #LotR
 						culture = { has_cultural_pillar = heritage_northern_adunaic }
 						culture = { has_cultural_pillar = heritage_bellakari }
-						##Quonton
-						culture = { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -12265,9 +12880,33 @@ pivotal_chariots_win_white = {
 	}
 }
 
-pivotal_chariots_fail = {
+pivotal_chariots_fail_blue = {
 	background = {
-		reference = "gfx/interface/illustrations/tournament_contest_illustrations/chariots_fail.dds"
+		reference = "gfx/interface/illustrations/tournament_contest_illustrations/chariots_fail_blue.dds"
+		environment = "environment_event_genericcamp" 
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Moments/ep3_evn_eventmoment_chariot_race_pivotal_moment" 
+	}
+}
+
+pivotal_chariots_fail_green = {
+	background = {
+		reference = "gfx/interface/illustrations/tournament_contest_illustrations/chariots_fail_green.dds"
+		environment = "environment_event_genericcamp" 
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Moments/ep3_evn_eventmoment_chariot_race_pivotal_moment" 
+	}
+}
+
+pivotal_chariots_fail_red = {
+	background = {
+		reference = "gfx/interface/illustrations/tournament_contest_illustrations/chariots_fail_red.dds"
+		environment = "environment_event_genericcamp" 
+		ambience = "event:/DLC/EP3/SFX/Events/Event_Moments/ep3_evn_eventmoment_chariot_race_pivotal_moment" 
+	}
+}
+
+pivotal_chariots_fail_white = {
+	background = {
+		reference = "gfx/interface/illustrations/tournament_contest_illustrations/chariots_fail_white.dds"
 		environment = "environment_event_genericcamp" 
 		ambience = "event:/DLC/EP3/SFX/Events/Event_Moments/ep3_evn_eventmoment_chariot_race_pivotal_moment" 
 	}
@@ -12280,7 +12919,10 @@ terrain_settlement = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
 					location = {
-						terrain = farmlands
+						OR = {
+							terrain = farmlands
+							terrain = hills
+						}
 						exists = province_owner
 						culture ?= { is_hobbit_culture = yes }
 					}
@@ -12288,13 +12930,46 @@ terrain_settlement = {
 			}
 			trigger_else = {
 				location = {
-					terrain = farmlands
+					OR = {
+						terrain = farmlands
+						terrain = hills
+					}
 					exists = province_owner
 					culture ?= { is_hobbit_culture = yes }
 				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		environment = "environment_travel_farmlands"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+	background = { # Elven Farmland, settled
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location = {
+						OR = {
+							terrain = farmlands
+							terrain = hills
+						}
+						exists = province_owner
+						culture ?= { is_elf_culture = yes }
+					}
+				}
+			}
+			trigger_else = {
+				location = {
+					OR = {
+						terrain = farmlands
+						terrain = hills
+					}
+					exists = province_owner
+					culture ?= { is_elf_culture = yes }
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/elven_holding.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -12600,7 +13275,10 @@ terrain_settlement_no_owner = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
 					location = {
-						terrain = farmlands
+						OR = {
+							terrain = farmlands
+							terrain = hills
+						}
 						exists = province_owner
 						culture ?= { is_hobbit_culture = yes }
 					}
@@ -12608,13 +13286,46 @@ terrain_settlement_no_owner = {
 			}
 			trigger_else = {
 				location = {
-					terrain = farmlands
+					OR = {
+						terrain = farmlands
+						terrain = hills
+					}
 					exists = province_owner
 					culture ?= { is_hobbit_culture = yes }
 				}
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		environment = "environment_travel_farmlands"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+	background = { # Elven Farmland, settled
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location = {
+						OR = {
+							terrain = farmlands
+							terrain = hills
+						}
+						exists = province_owner
+						culture ?= { is_elf_culture = yes }
+					}
+				}
+			}
+			trigger_else = {
+				location = {
+					OR = {
+						terrain = farmlands
+						terrain = hills
+					}
+					exists = province_owner
+					culture ?= { is_elf_culture = yes }
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/elven_holding.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -13090,5 +13801,111 @@ bp3_coast = {
 		reference = "gfx/interface/illustrations/event_scenes/bp3_coast.dds"
 		environment = "environment_bp3_coast"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
+	}
+}
+
+### MPO ###
+mpo_camp_steppe = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_camp_steppe.dds"
+		environment = "environment_mpo_camp_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_camp_steppe"
+	}
+}
+
+mpo_city_steppe = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_city_steppe.dds"
+		environment = "environment_mpo_city_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_city_steppe"
+	}
+}
+
+mpo_campfire_steppe = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_campfire_steppe.dds"
+		environment = "environment_mpo_campfire_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_campfire_steppe"
+	}
+}
+
+mpo_tent_interior_mongol = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_tent_interior_mongol.dds"
+		environment = "environment_mpo_tent_interior_mongol"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_tent_interior_mongol"
+	}
+}
+
+mpo_steppe_evening = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_steppe_evening.dds"
+		environment = "environment_mpo_steppe_evening"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_steppe_evening"
+	}
+}
+
+mpo_rural_village_asian = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_rural_village_asian.dds"
+		environment = "environment_mpo_rural_village_asian"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_rural_village_asian"
+	}
+}
+
+mpo_raid_burning_asian = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_raid_burning_asian.dds"
+		environment = "environment_mpo_raid_burning_asian"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_raid_burning_asian"
+	}
+}
+
+mpo_hunt_steppe = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_hunt_steppe.dds"
+		environment = "environment_mpo_hunt_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_hunt_steppe"
+	}
+}
+
+mpo_temple_steppe = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/mpo_temple_steppe.dds"
+		environment = "environment_mpo_temple_steppe"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_temple_steppe"
+	}
+}
+
+mpo_travel_steppe = {
+	background = {
+		reference = "gfx/interface/illustrations/event_scenes/ep2_travel_steppe.dds"
+		environment = "environment_travel_steppe_settlement"
+		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
+	}
+}
+
+mpo_nomadic_throneroom = {
+	background = {
+		reference = "gfx/interface/illustrations/main_menu/mpo_frontend_nomad.dds"
+		environment = "environment_mpo_frontend_nomad_main"
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_nomadic_throneroom"
+	}
+}
+
+#### MPO Fullscreen Backgrounds ####
+mpo_fullscreen_the_great_steppe = {
+	background = {
+		reference = "gfx/interface/illustrations/event_story/mpo_steppe_region.dds"
+		environment = "environment_event_study_physician" # added because it is expected in events
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_steppe_region"
+	}
+}
+
+mpo_fullscreen_greatest_of_khans = {
+	background = {
+		reference = "gfx/interface/illustrations/event_story/mpo_greatest_of_khans.dds"
+		environment = "environment_event_study_physician" # added because it is expected in events
+		ambience = "event:/DLC/CE2/Events/Event_Images/mpo_greatest_of_khans"
 	}
 }

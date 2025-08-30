@@ -1,0 +1,1805 @@
+﻿namespace = arnor
+
+### ANGMAR START DATE ###
+
+## arnor.6010 - 3000 ==> Arthedain ##
+#  arnor.6010 - 1201: King Argeleb
+
+## arnor.6008 - 6000 ==> Cardolan
+#  arnor.6008 - 3201: King Tarvegil
+
+## arnor.6001 - 9000 ==> Rhudaur
+#  arnor.6009 - 7052: High Lord Mellondir II
+
+## arnor.2001 - 2999 ==> Struggle Flavor Events
+
+## arnor.9001 - 9999 ==> Hidden/Management events
+
+
+
+######################################################
+
+#################
+### ARTHEDAIN ###
+#################
+
+## King Argeleb ##
+
+arnor.1201 = { #Receive the refugees from Rhudaur
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.1201.t
+	desc = arnor.1201.desc
+	theme = war
+	override_background = {
+		reference = throne_room
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	right_portrait = {
+		character = scope:mellondir
+		animation = sadness
+	}
+	immediate = {
+		character:linemelosse33 = { save_scope_as = mellondir }
+		add_courtier = character:linemelosse33
+		add_courtier = character:linemelosse331
+		add_courtier = character:linemelosse3311
+		add_courtier = character:linemelosse3312
+		add_courtier = character:linemelosse34
+	}
+	option = { # Grant them the wilderness of Killarbrag
+		name = arnor.1201.a
+		custom_tooltip = event_arnor_1201_a
+		scope:mellondir = {
+			trigger_event = arnor.7051 # Mellondir travels to Killarbrag
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = arnor.1201.b # They'll remain at my court for now
+		custom_tooltip = event_arnor_1201_b
+		add_prestige = -50
+	}
+}
+
+#################
+### CARDOLAN ####
+#################
+
+## King Tarvegil ##
+
+arnor.3002 = { # Argeleb asks for fealty
+	type = letter_event
+	sender = scope:sender
+	opening = arnor.3002.opening
+	desc = arnor.3002.desc
+    
+    on_trigger_fail = { #Trigger invitation again if it was blocked because the character was handling another invitation
+		trigger_event = {
+			id = arnor.3002
+			days = 1
+		}
+	}
+
+    immediate = {
+		title:e_arthedain = {
+			copy_title_history = title:k_arthedain
+		}
+		title:k_arthedain.holder = {
+			save_scope_as = sender
+		}
+		ROOT = {
+			save_scope_as = recipient
+		}
+	}
+
+    option = {  # Swear fealty
+		name = arnor.3002.a
+        ai_chance = {
+            base = 50
+            modifier = {	# 100 if lore friendly
+            	add = 50
+            	has_game_rule = default_ai_behavior
+            }
+        }
+		
+		scope:sender = { #Argeleb gets empire title so he can vassalize a King
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = title_change
+				add_claim_on_loss = yes
+			}
+			title:e_arthedain = {
+				change_title_holder = {
+					holder = scope:sender
+					change = scope:title_change
+					take_baronies = yes
+				}	
+			}
+			resolve_title_and_vassal_change = scope:title_change
+		}
+		
+        scope:recipient = {
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:sender
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+
+    option = {  # Do not swear fealty
+		name = arnor.3002.b
+        
+        ai_chance = {
+            base = 50
+            modifier = {	# 0 if lore friendly
+            	add = -50
+            	has_game_rule = default_ai_behavior
+            }
+        }
+        scope:sender = {
+            add_pressed_claim = scope:recipient.primary_title
+        }
+        scope:recipient = { add_prestige = 150 }
+	}
+}
+
+arnor.3201 = { #Receive the refugees from Rhudaur
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.3201.t
+	desc = arnor.3201.desc
+	theme = war
+	override_background = {
+		reference = throne_room
+	}
+	left_portrait = {
+		character = root
+		animation = personality_compassionate
+	}
+	right_portrait = {
+		character = scope:mellondir
+		animation = sadness
+	}
+	immediate = {
+		character:linemelosse33 = { save_scope_as = mellondir }
+		add_courtier = character:linemelosse33
+		add_courtier = character:linemelosse331
+		add_courtier = character:linemelosse3311
+		add_courtier = character:linemelosse3312
+		add_courtier = character:linemelosse34
+	}
+	option = { # Grant them the castle of Dinach
+		name = arnor.3201.a
+		custom_tooltip = event_arnor_3201_a
+		scope:mellondir = {
+			trigger_event = arnor.7052 # Mellondir travels to Dinach
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = arnor.3201.b # They'll remain at my court for now
+		custom_tooltip = event_arnor_3201_b
+		add_prestige = -50
+	}
+}
+
+#################
+### RHUDAUR  ####
+#################
+
+#### High Lord Mellondir II ####
+
+arnor.7002 = { #Fight or Flight?
+    content_source = realms_dlc
+	type = character_event
+	title = arnor.7002.t
+	desc = arnor.7002.desc
+	window = visit_settlement_window
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_rational 
+	}
+
+	immediate = {
+		character:linebroccach = { save_scope_as = hwaldar }
+	}
+	
+	option = { #Stand and fight
+		add_prestige = 150
+		add_legitimacy = 50
+		name = arnor.7002.a
+		spawn_army = {
+			name = defiant_defenders
+			uses_supply = no
+			inheritable = yes
+			men_at_arms = {
+				type = dunedain_soldiers
+				stacks = 3
+				}
+			men_at_arms = {
+				type = dunedain_archers
+				stacks = 2
+				}
+			location = root.location
+		}
+		ai_chance = { #Canonically, Mellondir gets destroyed
+            base = 100
+        }
+		trigger_event = { #Ask again in two months since the war is likely to go badly
+			id = arnor.7022
+			days = 60
+		}
+	}
+	option = { #Flee to the West
+		name = arnor.7002.b
+		add_prestige = -150
+		add_piety = 50
+		trigger_event = {
+			id = arnor.7003 #Decide if you want to go to Arthedain or Cardolan
+			days = 1
+		}	
+	}
+	#option = { #Surrender to Hwaldar
+	#	add_prestige = -250
+	#	add_legitimacy = -50
+	#	add_piety = -100
+	#}
+}
+
+arnor.7022 = { #The war goes badly!
+    content_source = realms_dlc
+	type = character_event
+	title = arnor.7022.t
+	desc = arnor.7022.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = worry 
+	}
+	right_portrait = {
+		character = scope:hwaldar
+		animation = rage
+	}
+
+	immediate = {
+		character:linebroccach = { save_scope_as = hwaldar }
+	}
+	
+	option = { #We will not yield!
+		add_prestige = 250
+		add_legitimacy = 100
+		stress_impact = {
+			base = minor_stress_impact_gain
+		}
+		name = arnor.7022.a
+		spawn_army = { #Give every able-bodied man a sword!
+			name = last_reserves
+			uses_supply = no
+			inheritable = yes
+			men_at_arms = {
+				type = dunedain_soldiers
+				stacks = 2
+				}
+			men_at_arms = {
+				type = dunedain_archers
+				stacks = 1
+				}
+			location = root.location
+		}
+		ai_chance = {
+            base = 100 #He didn't back down in canon
+        }
+	}
+	option = { #Hope is lost. We must flee.
+		name = arnor.7022.b
+		custom_tooltip = arnor.7022.b.tt
+		add_prestige = -150
+		add_piety = 50
+		trigger_event = {
+			id = arnor.7003 #Decide where to flee to
+			days = 1
+		}	
+	}
+	
+	option = { #We shall roam these lands until we can return
+		name = arnor.7022.c
+		#add_prestige = minor_prestige_gain
+		trigger = { has_dlc_feature = roads_to_power }
+		save_scope_as = adventurer
+		custom_tooltip = become_landless_adventurer_decision_title_created_tt
+		hidden_effect_new_object = {
+			create_character = {
+				template = laamp_inheritor_template
+				culture = scope:hwaldar.capital_county.culture
+				faith = scope:hwaldar.capital_county.faith
+				dynasty = generate
+				location = root.capital_province
+				after_creation = {
+					save_scope_as = laamp_inheritor
+					add_character_flag = new_laamp_inheritor
+				}
+			}
+		}
+		create_landless_adventurer_title_tooltip_effect = yes
+		show_as_tooltip = {
+			add_prestige = medium_prestige_gain
+			add_character_modifier = {
+				modifier = ep3_voluntary_laamp_character_modifier
+				years = 5
+			}
+		}
+		trigger_event = ep3_laamps.0030
+		trigger_event = { id = arnor.7023 days = 1 }
+		trigger_event = { id = arnor.7024 days = 1 }
+		
+		add_pressed_claim = title:d_dor_en_egladil
+		
+	}
+}
+
+arnor.7023 = { #Transfer the new hillman in case Mellondir decides to become landless
+	hidden = yes
+	immediate = {	
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		title:d_dor_en_egladil.holder = {
+			change_liege = {
+				liege = title:k_rhudaur.holder
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change 
+		
+	}
+}
+
+arnor.7024 = {
+	content_source = realms_dlc
+	type = character_event
+	window = visit_settlement_window
+	title = arnor.7024.t
+	desc = arnor.7024.desc
+	theme = travel
+	left_portrait = {
+		character = root
+		animation = inspect_weapon
+	}
+	
+	immediate = {
+		root = {
+			create_maa_regiment = {
+				type = dunedain_soldiers
+				check_can_recruit = no
+				size = 2
+			}
+		}
+		create_maa_regiment = {
+			type = dunedain_archers
+		 	check_can_recruit = no
+		 	size = 2
+		}
+		
+		create_character = {
+			template = laamp_inheritor_template
+			culture = root.capital_county.culture
+			faith = root.capital_county.faith
+			diplomacy = 12
+			learning = 11
+			trait = blood_of_numenor_5
+			trait = diligent
+			trait = patient
+			trait = forgiving
+			dynasty = none
+			employer = root
+		}
+		
+		create_character = {
+			template = laamp_inheritor_template
+			culture = root.capital_county.culture
+			faith = root.capital_county.faith
+			trait = blood_of_numenor_5
+			trait = brave
+			trait = compassionate
+			trait = diligent
+			prowess = 12
+			martial = 11
+			dynasty = none
+			employer = root
+		}
+		
+		custom_tooltip = arnor.7024.tt
+	}
+	
+	option = { #We will defend Arnor
+		name = arnor.7024.a
+		add_prestige = medium_prestige_gain
+		add_gold = 50
+	}
+}
+	
+
+arnor.7003 = { #Flee to Arthedain or Cardolan
+    content_source = realms_dlc
+	type = character_event
+	title = arnor.7003.t
+	desc = arnor.7003.desc
+	theme = travel
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	immediate = {
+		character:lineofcaladir43 = { save_scope_as = Tarvegil }
+		
+		hidden_effect = { #give free caravan master
+			create_character = {
+				template = foreign_architect_template
+				employer = root
+				save_scope_as = caravan_master
+			}
+			if = {
+				limit = { NOT = { employs_court_position = travel_leader_court_position } }
+				appoint_court_position = {
+					recipient = scope:caravan_master
+					court_position = travel_leader_court_position
+				}
+			}
+		}
+	}
+	option = { #Go to Arthedain
+		name = arnor.7003.a
+		custom_tooltip = event_arnor_07003_a
+		set_variable = cannot_cancel_travel
+		start_travel_plan = { #Travel to Fornost
+			destination = title:c_fornost.title_province
+			on_arrival_event  = arnor.7004
+			return_trip = no
+			players_use_planner = no
+			on_arrival_destinations = none
+		}
+	}
+	option = { #Go to Cardolan
+		name = arnor.7003.b
+		custom_tooltip = event_arnor_07003_b
+		set_variable = cannot_cancel_travel
+		start_travel_plan = { #Travel to Thalion
+			destination = title:c_thalion.title_province
+			on_arrival_event  = arnor.7008
+			return_trip = no
+			players_use_planner = no
+			on_arrival_destinations = all
+		}
+	}
+}
+
+arnor.7004 = { #Arrive in Fornost, get granted land
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.7004.t
+	desc = arnor.7004.desc
+	theme = realm
+	trigger = { # Keep the event from (somehow) firing twice
+		NOT = {	has_character_flag = had_event_fornost_arrival }
+		NOT = { has_title = title:c_killarbrag }
+	}
+	override_background = {
+		reference = throne_room
+    }
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:argeleb
+		animation = personality_compassionate
+	}
+	
+	immediate = {
+		character:lineisildur18 = { save_scope_as = argeleb }
+		character:linebroccach = { save_scope_as = hwaldar }
+	}
+	option = { #get a border province, become vassal
+		name = arnor.7004.a
+		custom_tooltip = event_arnor_07004_a
+		add_character_flag = had_event_fornost_arrival
+		scope:argeleb = {
+			trigger_event = arnor.1201 #Argeleb considers your request
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = { #We shall roam these lands until we can return
+		name = arnor.7004.b
+		#add_prestige = minor_prestige_gain
+		trigger = { has_dlc_feature = roads_to_power }
+		save_scope_as = adventurer
+		#custom_tooltip = become_landless_adventurer_decision_title_created_tt
+		hidden_effect_new_object = {
+			create_character = {
+				template = laamp_inheritor_template
+				culture = scope:hwaldar.capital_county.culture
+				faith = scope:hwaldar.capital_county.faith
+				dynasty = generate
+				location = root.capital_province
+				after_creation = {
+					save_scope_as = laamp_inheritor
+					add_character_flag = new_laamp_inheritor
+				}
+			}
+		}
+		create_landless_adventurer_title_tooltip_effect = yes
+		show_as_tooltip = {
+			add_prestige = medium_prestige_gain
+			add_character_modifier = {
+				modifier = ep3_voluntary_laamp_character_modifier
+				years = 5
+			}
+		}
+		trigger_event = ep3_laamps.0030 #Landless intro event
+		trigger_event = { id = arnor.7023 days = 1 } #Titles in the Angle go to Hwaldar
+		trigger_event = { id = arnor.7012 days = 1 } #Move the camp to Fornost
+		trigger_event = { id = arnor.7024 days = 2 } #Get some MAA
+		
+		add_pressed_claim = title:d_dor_en_egladil
+		
+	}
+}
+
+arnor.7012 = {
+	hidden = yes
+	immediate = {
+		domicile = {
+			move_domicile = title:c_fornost.title_province
+		}
+	}
+}
+
+arnor.7051 = { #Set up for Mellondir's new home in Killarbrag
+	hidden = yes
+	immediate = {
+		trigger_event = arnor.7005 #Get Killarbrag
+		trigger_event = arnor.7006 #Swear fealty to Argeleb
+		trigger_event = arnor.7007 #Hwaldar takes titles in the Angle
+		set_variable = cannot_cancel_travel
+		start_travel_plan = { #Travel to Killarbrag
+			destination = title:c_killarbrag.title_province
+			on_arrival_event  = arnor.7011
+			return_trip = no
+			players_use_planner = no
+			on_arrival_destinations = none
+		}
+		hidden_effect = {
+			create_character = { #Get free caravan master
+				template = foreign_architect_template
+				employer = root
+				save_scope_as = caravan_master
+			}
+			if = {
+				limit = { NOT = { employs_court_position = travel_leader_court_position } }
+				appoint_court_position = {
+					recipient = scope:caravan_master
+					court_position = travel_leader_court_position
+				}
+			}
+		}
+	}
+}	
+
+arnor.7005 = { #hidden event to give Killarbrag to Mellondir
+	hidden = yes
+	immediate = {
+		character:linemelosse33 = { save_scope_as = mellondir }
+		
+		title:c_killarbrag = {
+			#change_government_type = feudal_government
+			set_coa = c_killarbrag
+		}
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = title_change
+			add_claim_on_loss = yes
+		}
+		province:4499 = { #preconstruct some buildings
+			set_holding_type = castle_holding
+			add_building = logging_camps_01
+			add_building = warrior_lodges_01
+		}
+		title:c_killarbrag = {
+			set_county_culture = scope:mellondir.culture
+			set_county_faith = scope:mellondir.faith
+			change_development_level = 5	
+			change_title_holder = {
+				holder = scope:mellondir
+				change = scope:title_change
+				take_baronies = yes
+			}	
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		
+		scope:mellondir = {
+			set_realm_capital = title:c_killarbrag
+		}
+	}
+}
+
+arnor.7006 = { #Hidden event, become Argeleb's vassal
+	hidden = yes
+	immediate = {
+		character:linemelosse33 = { save_scope_as = mellondir }
+		character:lineisildur18 = { save_scope_as = argeleb }
+		
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		change_liege = {
+			liege = scope:argeleb
+			change = scope:change
+		}
+		resolve_title_and_vassal_change = scope:change
+	}
+}
+
+arnor.7007 = { #Hidden event, Hwaldar takes titles in the Angle 
+	hidden = yes
+	immediate = {
+		character:linebroccach = { save_scope_as = hwaldar }
+		character:linearamir21 = { save_scope_as = duinfinn }
+		character:linedaurich28 = { save_scope_as = rhagangr }
+		
+		scope:hwaldar = {
+			trigger_event = rhudaur.2008 # Info event for Hwaldar, ending his invasion
+		}
+		
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = title_change
+			add_claim_on_loss = yes
+		}
+		title:d_dor_en_egladil = {
+			change_title_holder = {
+				holder = scope:hwaldar
+				change = scope:title_change
+				take_baronies = yes
+			}	
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = third_change
+			add_claim_on_loss = yes
+		}
+		title:c_naithgardh = {
+			change_title_holder = {
+				holder = scope:hwaldar
+				change = scope:third_change
+				take_baronies = yes
+			}	
+		}
+		resolve_title_and_vassal_change = scope:third_change
+		
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = fourth_change
+			add_claim_on_loss = yes
+		}
+		title:c_lim_dinenen = {
+			change_title_holder = {
+				holder = scope:hwaldar
+				change = scope:fourth_change
+				take_baronies = yes
+			}	
+		}
+		resolve_title_and_vassal_change = scope:fourth_change
+		
+		create_title_and_vassal_change = {
+			type = usurped
+			save_scope_as = fifth_change
+			add_claim_on_loss = yes
+		}
+		title:c_hargwaeron = {
+			change_title_holder = {
+				holder = scope:hwaldar
+				change = scope:fifth_change
+				take_baronies = yes
+			}	
+		}
+		resolve_title_and_vassal_change = scope:fifth_change
+		
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = liege_change
+			add_claim_on_loss = yes
+		}
+		scope:duinfinn = {
+			change_liege = {
+				liege = scope:hwaldar
+				change = scope:liege_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:liege_change
+		
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = second_liege_change
+			add_claim_on_loss = yes
+		}
+		scope:rhagangr = {
+			change_liege = {
+				liege = scope:hwaldar
+				change = scope:second_liege_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:second_liege_change
+
+	}
+}
+
+arnor.7008 = { #Arrive in Thalion, get granted land
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.7008.t
+	desc = arnor.7008.desc
+	theme = realm
+	override_background = {
+		reference = throne_room
+    }
+	
+	trigger = { # Keep the event from (somehow) firing twice
+		NOT = {	has_character_flag = had_event_thalion_arrival }
+		NOT = { has_title = title:c_dinach }
+	}
+	
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:Tarvegil
+		animation = personality_compassionate
+	}
+	immediate = {
+		character:lineofcaladir43 = { save_scope_as = Tarvegil }
+	}
+	option = { #get a border province, become vassal
+		name = arnor.7008.a
+		custom_tooltip = event_arnor_07008_b
+		add_character_flag = had_event_thalion_arrival
+		scope:Tarvegil = {
+			trigger_event = arnor.3201 #Tarvegil considers your request
+		}		
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = { #We shall roam these lands until we can return
+		name = arnor.7008.b
+		#add_prestige = minor_prestige_gain
+		trigger = { has_dlc_feature = roads_to_power }
+		save_scope_as = adventurer
+		#custom_tooltip = become_landless_adventurer_decision_title_created_tt
+		hidden_effect_new_object = {
+			create_character = {
+				template = laamp_inheritor_template
+				culture = scope:hwaldar.capital_county.culture
+				faith = scope:hwaldar.capital_county.faith
+				dynasty = generate
+				location = root.capital_province
+				after_creation = {
+					save_scope_as = laamp_inheritor
+					add_character_flag = new_laamp_inheritor
+				}
+			}
+		}
+		create_landless_adventurer_title_tooltip_effect = yes
+		show_as_tooltip = {
+			add_prestige = medium_prestige_gain
+			add_character_modifier = {
+				modifier = ep3_voluntary_laamp_character_modifier
+				years = 5
+			}
+		}
+		trigger_event = ep3_laamps.0030 #Landless intro event
+		trigger_event = { id = arnor.7023 days = 1 } #Titles are transfered to Hwaldar
+		trigger_event = { id = arnor.7013 days = 1 } #Move the camp to Thalion
+		trigger_event = { id = arnor.7024 days = 2 } #Get some MAA
+		
+		add_pressed_claim = title:d_dor_en_egladil
+		
+	}
+}
+
+arnor.7013 = {
+	hidden = yes
+	immediate = {
+		domicile = {
+			move_domicile = title:c_thalion.title_province
+		}
+	}
+}
+	
+arnor.7052 = { #Set up for Mellondir's new home in Dinach
+	hidden = yes
+	immediate = {
+		trigger_event = arnor.7009 #Get Dinach
+		trigger_event = arnor.7010 #Swear fealty to Tarvegil
+		trigger_event = arnor.7007 #Hwaldar takes titles in the Angle
+		set_variable = cannot_cancel_travel
+		start_travel_plan = { #Travel to Dinach
+			destination = title:c_dinach.title_province
+			on_arrival_event  = arnor.7011
+			return_trip = no
+			players_use_planner = no
+			on_arrival_destinations = none
+		}
+		hidden_effect = {
+			create_character = { #Get free caravan master
+				template = foreign_architect_template
+				employer = root
+				save_scope_as = caravan_master
+			}
+			if = {
+				limit = { NOT = { employs_court_position = travel_leader_court_position } }
+				appoint_court_position = {
+					recipient = scope:caravan_master
+					court_position = travel_leader_court_position
+				}
+			}
+		}
+	}
+}	
+	
+arnor.7009 = { #hidden event to give Dinach to Mellondir
+	hidden = yes
+	immediate = {
+		character:linemelosse33 = { save_scope_as = mellondir }
+		
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = title_change
+			add_claim_on_loss = yes
+		}
+		title:c_dinach = {
+			change_title_holder = {
+				holder = scope:mellondir
+				change = scope:title_change
+				take_baronies = yes
+			}	
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		
+		scope:mellondir = {
+			set_realm_capital = title:c_dinach
+		}
+	}
+}
+
+arnor.7010 = { #Hidden event, become Tarvegil's vassal
+	hidden = yes
+	immediate = {
+		character:linemelosse33 = { save_scope_as = mellondir }
+		character:lineofcaladir43 = { save_scope_as = Tarvegil }
+		
+		create_title_and_vassal_change = {
+			type = swear_fealty
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		change_liege = {
+			liege = scope:Tarvegil
+			change = scope:change
+		}
+		resolve_title_and_vassal_change = scope:change
+	}
+}
+
+arnor.7011 = { #Final event of 'fleeing to the west' path
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.7011.t
+	desc = arnor.7011.desc
+	theme = alliance
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	immediate = {
+		remove_variable = cannot_cancel_travel
+		character:linebroccach = { save_scope_as = hwaldar }
+		character:linemelosse33 = { save_scope_as = mellondir }
+		character:linemelosse34 = { save_scope_as = elian }
+		character:linemelosse331 = { save_scope_as = agarwaen }
+		character:linemelosse3311 = { save_scope_as = tirithon }
+		character:linemelosse3312 = { save_scope_as = amandis }
+		scope:mellondir = { #Making sure Mellondir's wife and kids end up at his new court
+			add_courtier = scope:elian
+			add_courtier = scope:agarwaen
+			add_courtier = scope:tirithon
+			add_courtier = scope:amandis
+		}
+	}
+	
+	option = { #I shall make ready for war to reclaim my birthright
+		name = arnor.7011.a
+		add_prestige = 50
+		spawn_army = {
+			name = reclaimers_of_egladil
+			uses_supply = no
+			inheritable = yes
+			men_at_arms = {
+				type = dunedain_soldiers
+				stacks = 3
+				}
+			men_at_arms = {
+				type = dunedain_archers
+				stacks = 2
+				}
+			location = root.location
+		}
+	}
+	option = { #I shall focus on rebuilding
+		name = arnor.7011.b
+		add_gold = 100
+		add_piety = 100
+		stress_impact = {
+			base = minor_stress_impact_loss
+		}
+	}
+}
+
+#### Enter/Leave Realm events ####
+
+arnor.9100 = { # Colonization of Tharbad
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.9100.t
+	desc = arnor.9100.desc
+	theme = diplomacy
+	trigger = { 
+		culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } } 
+		province:4537 = { has_holding_type = settlement_holding }
+	}
+	cooldown = { days = 3 }
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	option = { #We did it!
+		name = arnor.9100.a
+		add_prestige = minor_prestige_gain
+	}
+}
+
+### Fortification of weather hills
+
+arnor.1001 = { # Defenses strengthened
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.1001.t
+	desc = arnor.1001.desc
+	theme = martial
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	immediate = {
+		# add_character_flag = weather_hills_fortified
+	}
+	option = { # Fund them with a large sum
+		name = arnor.1001.a 
+		remove_short_term_gold = 600
+		title:c_amon_sul.title_province = {
+			add_building_if_possible = { BUILDING = hill_forts_04 } 
+			add_building_if_possible = { BUILDING = castle_03 }
+		}
+		title:c_arhud.title_province = {
+			add_building_if_possible = { BUILDING = hill_forts_03 } 
+			add_building_if_possible = { BUILDING = castle_02 }
+		}
+
+		ai_chance = {
+			base = 25
+		}
+	}
+	option = { # Fund them with a medium sum
+		name = arnor.1001.b 
+		remove_short_term_gold = 400
+		
+		title:c_amon_sul.title_province = {
+			add_building_if_possible = { BUILDING = hill_forts_03 } 
+			add_building_if_possible = { BUILDING = castle_03 }
+		}
+		title:c_arhud.title_province = {
+			add_building_if_possible = { BUILDING = hill_forts_02 } 
+		}
+
+		ai_chance = {
+			base = 50
+		}
+	}
+	option = { # Fund them with a minor sum
+		name = arnor.1001.c
+		remove_short_term_gold = 200
+		
+		title:c_amon_sul.title_province = {
+			add_building_if_possible = { BUILDING = hill_forts_03 } 
+		}
+		title:c_arhud.title_province = {
+			add_building_if_possible = { BUILDING = hill_forts_02 } 
+		}
+
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
+################################
+#### Struggle Flavor Events ####
+################################
+
+arnor.2001 = { ## Orc Raids
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.2001.t
+	desc = arnor.2001.desc
+	theme = war
+
+	right_portrait = {
+		character = root
+		animation = marshal
+	}
+	lower_left_portrait = {
+		character = scope:marshal
+		animation = marshal
+	}
+	
+	trigger = {
+		any_sub_realm_county = {
+			any_county_province = {
+				combined_building_level >= 5
+				geographical_region = custom_eriador
+			}
+				
+		}
+		game_start_date <= 5977.1.1
+	}
+	
+	override_background = {
+		reference = burning_building
+	}
+	
+	immediate = { 
+		
+		random_sub_realm_county = {
+			limit = {
+				any_county_province = {
+					combined_building_level >= 5
+				}
+			}
+			save_scope_as = disaster_county
+		}
+		
+		if = {
+			limit = { 
+				NOT = {
+					exists = root.cp:councillor_marshal
+				}
+			}
+			create_character = {
+				template = beautiful_peasant_character
+				employer = root
+				gender_female_chance = 25
+				save_scope_as = new_marshal
+			}
+			hidden_effect = {
+				assign_councillor_type = {
+					type = councillor_marshal
+					target = scope:new_marshal
+					remove_existing_councillor = no
+				}
+			}
+		}
+		root.cp:councillor_marshal = { save_scope_as = marshal }
+		
+	}
+
+	option = { 
+		name = arnor.2001.a
+		
+		duel = {
+			skill = martial
+			value = 10
+			40 = {
+				
+				scope:disaster_county = {
+					add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+					custom_tooltip = {
+						text = biulding_destroyed
+						random_county_province = {
+						limit = {
+							combined_building_level > 5
+						}
+						destroy_random_building_variable_effect = yes
+						
+						}
+						scope:raid_province = {
+							destroy_random_building_effect = yes
+						}
+					}
+					change_development_level = -2
+					
+				}
+			}
+			60 = {
+				scope:disaster_county = {
+					add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+				}
+				
+			}
+			20 = {
+				compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 3.5
+                    min = -49
+                }
+				add_prestige = minor_prestige_value
+			}
+		}
+		
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+	option = { 
+		name = arnor.2001.b
+		
+		scope:marshal = {
+			duel = {
+				skill = martial
+				value = 10
+				40 = {
+					
+					scope:disaster_county = {
+						add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+						custom_tooltip = {
+							text = biulding_destroyed
+							random_county_province = {
+							limit = {
+								combined_building_level > 5
+							}
+							destroy_random_building_variable_effect = yes
+						
+							}
+							scope:raid_province = {
+								destroy_random_building_effect = yes
+							}
+						}
+						change_development_level = -2
+					
+					}
+				}
+				60 = {
+					scope:disaster_county = {
+						add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+					}
+				
+				}
+				20 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+					}
+					add_prestige = minor_prestige_value
+				}
+			}
+		}
+		
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+	after = {
+		hidden_effect = {
+			random_list = {
+				95 = {
+						
+				}
+				5 = {
+					trigger_event = arnor.2003
+				}
+			}
+		}
+	}
+
+	
+}
+
+arnor.2002 = { ## Bandit raid
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.2002.t
+	desc = arnor.2002.desc
+	theme = war
+
+	right_portrait = {
+		character = root
+		animation = marshal
+	}
+	lower_left_portrait = {
+		character = scope:marshal
+		animation = marshal
+	}
+	
+	trigger = {
+		any_sub_realm_county = {
+			any_county_province = {
+				combined_building_level >= 5
+				geographical_region = custom_eriador
+			}
+				
+		}
+		game_start_date <= 5977.1.1
+	}
+	
+	override_background = {
+		reference = burning_building
+	}
+	
+	immediate = { 
+		
+		random_sub_realm_county = {
+			limit = {
+				any_county_province = {
+					combined_building_level >= 5
+				}
+			}
+			save_scope_as = disaster_county
+		}
+		
+		if = {
+			limit = { 
+				NOT = {
+					exists = root.cp:councillor_marshal
+				}
+			}
+			create_character = {
+				template = beautiful_peasant_character
+				employer = root
+				gender_female_chance = 25
+				save_scope_as = new_marshal
+			}
+			hidden_effect = {
+				assign_councillor_type = {
+					type = councillor_marshal
+					target = scope:new_marshal
+					remove_existing_councillor = no
+				}
+			}
+		}
+		root.cp:councillor_marshal = { save_scope_as = marshal }
+		
+	}
+
+	option = { 
+		name = arnor.2002.a
+		
+		duel = {
+			skill = martial
+			value = 10
+			30 = {
+				
+				scope:disaster_county = {
+					add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+					custom_tooltip = {
+						text = biulding_destroyed
+						random_county_province = {
+						limit = {
+							combined_building_level > 5
+						}
+						destroy_random_building_variable_effect = yes
+						
+						}
+						scope:raid_province = {
+							destroy_random_building_effect = yes
+						}
+					}
+					change_development_level = -2
+					
+				}
+				hidden_effect = {
+					random_list = {
+						95 = {
+						
+						}
+						5 = {
+							trigger_event = arnor.2003
+						}
+					}
+				}
+			}
+			60 = {
+				scope:disaster_county = {
+					add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+				}
+				hidden_effect = {
+					random_list = {
+						95 = {
+						
+						}
+						5 = {
+							trigger_event = arnor.2003
+						}
+					}
+				}
+			}
+			20 = {
+				compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 3.5
+                    min = -49
+                }
+				add_prestige = minor_prestige_value
+				hidden_effect = {
+					random_list = {
+						95 = {
+						
+						}
+						5 = {
+							trigger_event = arnor.2003
+						}
+					}
+				}
+			}
+		}
+		
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+	option = { 
+		name = arnor.2002.b
+		
+		scope:marshal = {
+			duel = {
+				skill = martial
+				value = 10
+				30 = {
+					
+					scope:disaster_county = {
+						add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+						custom_tooltip = {
+							text = biulding_destroyed
+							random_county_province = {
+							limit = {
+								combined_building_level > 5
+							}
+							destroy_random_building_variable_effect = yes
+						
+							}
+							scope:raid_province = {
+								destroy_random_building_effect = yes
+							}
+						}
+						change_development_level = -2
+					
+					}
+					hidden_effect = {
+						random_list = {
+							95 = {
+						
+							}
+							5 = {
+							trigger_event = arnor.2003
+							}
+						}
+					}
+				}
+				60 = {
+					scope:disaster_county = {
+						add_county_modifier = { modifier = recently_looted_modifier years = 1 }
+					}
+					hidden_effect = {
+						random_list = {
+							95 = {
+						
+							}
+							5 = {
+								trigger_event = arnor.2003
+							}
+						}
+					}
+				
+				}
+				20 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 3.5
+						min = -49
+					}
+					add_prestige = minor_prestige_value
+				}
+			}
+		}
+		
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	option = { 
+		name = arnor.2002.c
+		
+		remove_short_term_gold = major_gold_value
+		
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+}
+
+arnor.2003 = { ## The Shepard Boy
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.2003.t
+	desc = arnor.2003.desc
+	theme = war
+
+	
+	left_portrait = {
+		character = scope:orphan
+		animation = wailing
+	}
+	right_portrait = {
+		character = root
+		animation = personality_compassionate
+	}
+	
+	
+	
+	override_background = {
+		reference = burning_building
+	}
+	
+	immediate = { 
+		
+		create_character = {
+			location = root.location
+			culture = root.culture
+			faith = root.faith
+			gender_female_chance = 0
+			age = { 8 12 }
+			random_traits = yes
+			after_creation = {
+				set_to_lowborn = yes
+				
+				if = {
+					limit = {
+						culture = {
+							has_same_culture_heritage = culture:arnorian
+						}
+					}
+					random_list = {
+						20 = {
+							add_trait = blood_of_numenor_3
+						}
+						60 = {
+							add_trait = blood_of_numenor_4
+						}
+						20 = {
+							add_trait = blood_of_numenor_5
+						}
+					}
+				}
+				
+				
+				
+				random_list = {
+					33 = {
+						add_trait = beauty_good_1
+					}
+					33 = {
+						add_trait = intellect_good_1
+					}
+					33 = {
+						add_trait = physique_good_1
+					}
+				}
+			}
+			save_scope_as = orphan
+		}
+		
+	}
+
+	option = { 
+		name = arnor.2003.a
+		
+		stress_impact = {
+			compassionate = medium_stress_impact_loss
+			sadistic = medium_stress_impact_gain
+		}
+		add_courtier = scope:orphan
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+	option = { 
+		name = arnor.2003.b
+		
+		stress_impact = {
+			compassionate = medium_stress_impact_gain
+			sadistic = medium_stress_impact_loss
+		}
+		
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+	
+}
+
+arnor.2004 = { ## Peasents move to safer ground
+	content_source = realms_dlc
+	type = character_event
+	title = arnor.2004.t
+	desc = arnor.2004.desc
+	theme = stewardship_domain_focus
+	orphan = yes
+	
+	
+	right_portrait = {
+		character = root
+		animation = personality_compassionate
+	}
+	
+	
+	
+	override_background = {
+		reference = army_camp
+	}
+	
+	immediate = { 
+		random_sub_realm_county = {
+			limit = {
+				any_neighboring_county = {
+					any_county_province = {
+						has_holding_type = wastelands_holding
+					}
+				}
+				any_county_province = {
+					combined_building_level > 1
+				}
+			}
+			save_scope_as = county1
+		}
+		random_sub_realm_county = {
+			limit = {
+				NOT = {
+					any_neighboring_county = {
+						any_county_province = {
+							has_holding_type = wastelands_holding
+						}
+					}
+				}
+			}
+			save_scope_as = county2
+		}
+		
+	}
+
+	option = { 
+		name = arnor.2004.a
+		
+		random_list = {
+			50 = {
+				trigger = {
+					scope:county1 = {
+						development_level > 0
+					}
+				}
+				scope:county1 = {
+					change_development_level = -2
+				}
+				scope:county2 = {
+					change_development_level = 2
+				}
+			}
+			50 = {
+				trigger = {
+					scope:county1 = {
+						any_county_province = {
+							combined_building_level > 1
+						}
+					}
+				}
+				scope:county1 = {
+					custom_tooltip = {
+						text = biulding_destroyed_county_1
+						
+						random_county_province = {
+							limit = {
+								combined_building_level > 1
+							}
+							destroy_random_building_variable_effect = yes
+							destroy_random_building_effect = yes
+						}
+					}
+				}
+				scope:county2 = {
+					custom_tooltip = {
+						text = biulding_add_county_2
+						random_county_province = {
+							limit = {
+								has_holding = yes
+							}
+							save_scope_as = biuld_prov
+							add_random_building_variable_effect = yes
+							add_random_building_construct_effect = yes
+						}
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+	option = { 
+		name = arnor.2004.b
+		
+		
+		
+		
+		ai_chance = {
+			base = 0 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 100
+			}
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 70
+			}
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 50
+			}
+		}
+	}
+	
+	
+}

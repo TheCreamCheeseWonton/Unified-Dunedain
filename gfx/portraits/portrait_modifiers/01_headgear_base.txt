@@ -66,109 +66,587 @@ headgear = {
 			modifier = {
 				add = 200
  				portrait_rayan_clothing_trigger = yes
-				culture = {
-					OR = {
-						has_cultural_pillar = ethos_stoic						
-					}
-				}							
-			}			
+				scope:culture = culture:gai	
+			}
+			modifier = {
+				add = 200
+ 				portrait_south_haradrim_clothing_trigger = yes
+				scope:culture = culture:fariyin	
+			}
+			modifier = {
+				add = 200
+				scope:culture = culture:lynerian				
+ 				portrait_kirani_clothing_trigger = yes
+			}							
 		}
 	}
-	
-	## MAG ##
 
-	mag_commoners = {
+	## Elves ##
+
+	elven_commoners = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = mag_low_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
+				template = elven_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 80
+				OR = {
+					portrait_commoner_headgear_fallback_trigger = {
+						CULTURE_INPUT = elven
+					}
+					portrait_commoner_headgear_fallback_trigger = {
+						CULTURE_INPUT = lasgalendrim
+					}
+					portrait_commoner_headgear_fallback_trigger = {
+						CULTURE_INPUT = noldor
+					}
+					portrait_commoner_headgear_fallback_trigger = {
+						CULTURE_INPUT = sindar
+					}
+					portrait_commoner_headgear_fallback_trigger = {
+						CULTURE_INPUT = falathrim
+					}					
+				}
+			}	
+			modifier = {
+				add = 50
+				OR = {
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = elven
+					}
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = lasgalendrim
+					}
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = noldor
+					}
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = sindar
+					}
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = falathrim
+					}					
+				}
 			}
 		}
+	}
+
+	elven_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = elven_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = elven
+					}
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = lasgalendrim
+					}
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = noldor
+					}
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = sindar
+					}
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = falathrim
+					}					
+				}
+			}
+		}
+	}
+
+	elven_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = elven_high_headgear
+				range = { 0.01 0.39 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100 
+				OR = {
+					portrait_high_nobles_headgear_trigger = {
+						CULTURE_INPUT = elven
+					}
+					portrait_high_nobles_headgear_trigger = {
+						CULTURE_INPUT = lasgalendrim
+					}
+					portrait_high_nobles_headgear_trigger = {
+						CULTURE_INPUT = noldor
+					}
+					portrait_high_nobles_headgear_trigger = {
+						CULTURE_INPUT = sindar
+					}
+					portrait_high_nobles_headgear_trigger = {
+						CULTURE_INPUT = falathrim
+					}					
+				}
+			}	
+		}		
+	}
+
+	elven_royalty_base = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = elven_high_headgear
+				range = { 0.41 0.69 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				OR = {
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = elven
+					}
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = elven
+					}					
+				}
+			}
+		}
+	}
+	
+	elven_royalty_lasgalendrim = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = lotr_unique_headgear
+				range = { 0.0 0.01 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 1000
+				AND = {
+					scope:culture = culture:lasgalendrim
+					OR = {
+						has_primary_title = title:e_greenwood
+						has_primary_title = title:k_lasgalen
+					}
+					OR = {
+						any_character_artifact = { has_variable = crown_woodland_realm }
+						AND = {
+							this = character:lineoforopher1 #Oropher
+							game_start_date > 4026.1.1
+						}						
+					}
+				}
+			}
+		}
+	}	
+	
+	elven_royalty_noldor = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = elven_high_headgear
+				range = { 0.71 0.79 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				OR = {
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = noldor
+					}
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = noldor
+					}					
+				}
+			}
+		}
+	}
+
+	elven_royalty_sindar = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = elven_high_headgear
+				range = { 0.81 0.89 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				OR = {
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = sindar
+					}
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = sindar
+					}					
+				}
+			}
+		}
+	}
+
+	elven_royalty_falathrim = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = elven_high_headgear
+				range = { 0.91 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				OR = {
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = falathrim
+					}
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = falathrim
+					}					
+				}
+			}
+		}
+	}
+
+	#DWARVES#
+	
+	dwarf_low = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dwarf_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = mag
+                    CULTURE_INPUT = dwarf
                 }
 			}
 			modifier = {
 				add = 100
-                portrait_commoner_no_mayors_trigger = {
-                    CULTURE_INPUT = mag
-                }
+				OR = {
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = dwarf
+					}
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = dwarf
+					}
+				}	
 			}
 		}
 	}
-
-	mag_low_nobles = {
+	
+	dwarf_dukes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = mag_low_headgear
-				range = { 0.51 0.99 } # For the randomness to work correctly
+				template = dwarf_high_headgear
+				range = { 0.01 0.25 } # For the randomness to work correctly
 			}
-		}
+		}	
 		weight = {
 			base = 0
 			modifier = {
-				add = 100
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = mag
+				add = 100 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = dwarf
                 }
-			}
-		}
+			}	
+		}	
 	}
-
-	mag_high_nobles = {
+	
+	dwarf_eastern_dukes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = mag_high_headgear
+				template = dwarf_high_headgear
+				range = { 0.26 0.50 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 105		
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = dwarf
+                }
+				OR = {
+				scope:culture = culture:ironfists
+				scope:culture = culture:blacklocks 
+				scope:culture = culture:blacklocks_nargubraz
+				scope:culture = culture:stonefoots
+				}	
+			}	
+		}	
+	}	
+	
+	dwarf_royalty = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dwarf_high_headgear
+				range = { 0.51 0.59 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				OR = {
+                	portrait_royalty_trigger = {
+                    	CULTURE_INPUT = dwarf
+                	}
+                	portrait_imperial_trigger = {
+                   		CULTURE_INPUT = dwarf
+                	}
+				}
+			}
+		}
+	}
+	
+	dwarf_broadbeam_royalty = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dwarf_high_headgear
+				range = { 0.61 0.69 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+                		has_fp1_dlc_trigger = yes 				
+				scope:culture = culture:broadbeams	
+				OR = {
+                	portrait_royalty_trigger = {
+                    	CULTURE_INPUT = dwarf
+                	}
+                	portrait_imperial_trigger = {
+                   		CULTURE_INPUT = dwarf
+                	}
+				}
+			}
+		}
+	}
+
+	dwarf_firebeard_royalty = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dwarf_high_headgear
+				range = { 0.71 0.79 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+				scope:culture = culture:firebeards
+				OR = {
+                	portrait_royalty_trigger = {
+                    	CULTURE_INPUT = dwarf
+                	}
+                	portrait_imperial_trigger = {
+                   		CULTURE_INPUT = dwarf
+                	}
+				}
+			}
+		}
+	}
+	
+	dwarf_eastern_royalty = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dwarf_high_headgear
+				range = { 0.91 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 300
+                		has_fp1_dlc_trigger = yes 				
+				OR = {
+					scope:culture = culture:ironfists
+					scope:culture = culture:stiffbeards
+					scope:culture = culture:blacklocks
+					scope:culture = culture:blacklocks_nargubraz		
+				}
+				OR = {
+                	portrait_royalty_trigger = {
+                    	CULTURE_INPUT = dwarf
+                	}
+                	portrait_imperial_trigger = {
+                   		CULTURE_INPUT = dwarf
+                	}
+				}
+			}
+		}
+	}
+
+	dwarf_stonefoot_royalty = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dwarf_high_headgear
+				range = { 0.81 0.89 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 300
+				scope:culture = culture:stonefoots			
+				OR = {
+                	portrait_royalty_trigger = {
+                    	CULTURE_INPUT = dwarf
+                	}
+                	portrait_imperial_trigger = {
+                   		CULTURE_INPUT = dwarf
+                	}
+				}
+			}
+		}
+	}
+
+	## Numenorean ##
+
+	numenorean_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = numenorean_low_headgear
 				range = { 0.01 0.49 } # For the randomness to work correctly
 			}
-		}
+		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = mag
-                }   
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = numenorean
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = numenorean
+				}
 			}
 		}
 	}
 
-	mag_royalty = {
+	numenorean_counts = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = mag_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
+				template = numenorean_low_headgear
+				range = { 0.51 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep2_dlc_trigger = yes
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = numenorean
+                }
 			}
 		}
+	}
+
+	numenorean_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = numenorean_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep2_dlc_trigger = yes
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = numenorean
+                }
+			}	
+		}	
+	}
+
+	numenorean_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = numenorean_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
                 portrait_royalty_trigger = {
-                    CULTURE_INPUT = mag
+                    CULTURE_INPUT = numenorean
                 }   
 			}
 		}
 	}
 
-	mag_imperial = {
+	numenorean_emperors = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = mag_high_headgear
+				template = numenorean_high_headgear
 				range = { 0.76 0.99 } # For the randomness to work correctly
 			}
 		}	
@@ -176,79 +654,354 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
-                portrait_imperial_nobles_headgear_trigger = {
-                    CULTURE_INPUT = mag 
-                }
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = numenorean
+                }   
 			}
 		}
 	}
 
-	## Womaw ##
-
-	womaw_commoners = {
+	##Quonton
+	numenorean_emperors_spouce = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = no_headgear
-				range = { 0 1 }
+				template = numenorean_high_spouce_headgear
+				range = { 0.00 0.5 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = numenorean
+                }  
+				AND = {
+					exists = primary_spouse
+					OR = {
+						is_ruler = no
+						highest_held_title_tier = tier_barony
+					}
+					NOT = { highest_held_title_tier = tier_empire }
+					primary_spouse = {
+						OR = {
+							highest_held_title_tier = tier_empire
+							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
+						}
+						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
+						NOT = { government_has_flag = government_is_republic }
+					}
+				}
 			}
 		}
+	}
+	##End Quonton
+
+	##Arnorian##
+
+	arnorian_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = arnorian_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = womaw
+                    CULTURE_INPUT = arnorian
                 }
 			}
 			modifier = {
 				add = 100
-                portrait_commoner_clothing_trigger = {
-                    CULTURE_INPUT = womaw
-                }
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = arnorian
+				}
 			}
 		}
 	}
 
-	womaw_low_nobles = {
+	arnorian_counts = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = womaw_low_headgear
-				range = { 0 1 }
+				template = arnorian_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
 			}
-		}
+		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
                 portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = womaw
+                    CULTURE_INPUT = arnorian
                 }
 			}
 		}
-	}
+	}	
 
-	womaw_high_nobles = {
+	arnorian_dukes = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = womaw_low_headgear
-				range = { 0 1 }
+				template = arnorian_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
 			}
-		}
+		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
+                has_ep2_dlc_trigger = yes
                 portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = womaw
+                    CULTURE_INPUT = arnorian
+                }
+			}	
+		}	
+	}
+
+	arnorian_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = arnorian_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_dlc = "Garments of the Holy Roman Empire"
+				OR = {
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = arnorian
+					}
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = dunedain
+					}
+				}
+			}
+		}
+	}
+
+	arnorian_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = arnorian_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep1_dlc_trigger = yes
+				OR = {
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = arnorian
+					}
+					portrait_royalty_trigger = {
+						CULTURE_INPUT = dunedain
+					}
+				}
+			}
+		}	
+	}
+
+	##Dunedain##	
+	
+	dunedain_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dunedain_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = dunedain
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = dunedain
+				}
+			}
+		}
+	}
+
+	dunedain_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dunedain_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = dunedain
+                }
+			}
+		}
+	}	
+
+	dunedain_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dunedain_high_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = dunedain
+                }
+			}	
+		}	
+	}	
+	
+	##Uialedain##
+	
+	uialedain_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = uialedain_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = uialedain
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = uialedain
+				}
+			}
+		}
+	}
+
+	uialedain_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = uialedain_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = uialedain
+                }
+			}
+		}
+	}	
+
+	uialedain_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = uialedain_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = uialedain
+                }
+			}	
+		}	
+	}
+
+	uialedain_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = uialedain_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				AND = {
+					has_ep2_dlc_trigger = yes
+					has_dlc = "Garments of the Holy Roman Empire"
+				}
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = uialedain
                 }   
 			}
 		}
+	}
+
+	uialedain_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = uialedain_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				AND = {
+					has_ep2_dlc_trigger = yes
+					has_dlc = "Garments of the Holy Roman Empire"
+				}
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = uialedain
+                }   
+			}
+		}	
 	}
 
 	## GONDORIAN ##
@@ -259,7 +1012,7 @@ headgear = {
 				mode = add
 				gene = headgear
 				template = gondorian_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
+				range = { 0.01 0.25 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -285,7 +1038,7 @@ headgear = {
 				mode = add
 				gene = headgear
 				template = gondorian_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
+				range = { 0.26 0.50 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -305,7 +1058,7 @@ headgear = {
 				mode = add
 				gene = headgear
 				template = gondorian_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
+				range = { 0.51 0.99 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -365,7 +1118,7 @@ headgear = {
 				mode = add
 				gene = headgear
 				template = lotr_unique_headgear
-				range = { 0.30 0.31 }
+				range = { 0.27 0.28 }
 			}
 		}	
 		weight = {
@@ -395,7 +1148,7 @@ headgear = {
 		}
 	}
 
-	## Harondorim ##
+	## Harondorrim ##
 
 	harondorim_commoners = {
 		dna_modifiers = {
@@ -461,6 +1214,343 @@ headgear = {
                 }   
 			}
 		}
+	}
+
+	## Umbar ##
+
+	umbar_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = umbar_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep2_dlc_trigger = yes
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = umbar
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = umbar
+				}
+			}
+		}
+	}
+
+	umbar_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = umbar_high_headgear
+				range = { 0.01 0.24 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep2_dlc_trigger = yes
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = umbar
+                }
+			}
+		}
+	}	
+
+	umbar_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = umbar_high_headgear
+				range = { 0.26 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep2_dlc_trigger = yes 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = umbar
+                }
+			}	
+		}	
+	}
+
+	umbar_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = umbar_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = umbar
+                }   
+			}
+		}
+	}
+
+	umbar_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = umbar_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_ce1_dlc_trigger = yes
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = umbar
+                }   
+			}
+		}	
+	}
+
+	## Anbalukkhori ##
+
+	anbalukkhori_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anbalukkhori_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = anbalukkhori
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = anbalukkhori
+				}
+			}
+		}
+	}
+
+	anbalukkhori_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anbalukkhori_high_headgear
+				range = { 0.01 0.24 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes     
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = anbalukkhori
+                }
+			}
+		}
+	}
+
+	anbalukkhori_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anbalukkhori_high_headgear
+				range = { 0.26 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = anbalukkhori
+                }
+			}	
+		}	
+	}
+
+	anbalukkhori_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anbalukkhori_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = anbalukkhori
+                }   
+			}
+		}
+	}
+
+	anbalukkhori_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anbalukkhori_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = anbalukkhori
+                }   
+			}
+		}	
+	}
+
+	## Bellakari ##	
+
+	bellakari_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = bellakari_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = bellakari
+                }
+			}
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = bellakari
+				}
+			}
+		}
+	}
+
+	bellakari_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = bellakari_high_headgear
+				range = { 0.01 0.24 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = bellakari
+                }
+			}
+		}
+	}
+
+	bellakari_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = bellakari_high_headgear
+				range = { 0.26 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = bellakari
+                }
+			}	
+		}	
+	}
+
+	bellakari_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = bellakari_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = bellakari
+                }   
+			}
+		}
+	}
+
+	bellakari_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = bellakari_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_sp4_dlc_trigger = yes				
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = bellakari
+                }   
+			}
+		}	
 	}
 
 	## Rohirrim ##
@@ -551,99 +1641,6 @@ headgear = {
 		}
 	}
 
-	## Gwathiurim ##
-
-	gwathiurim_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dunlending_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-                portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = gwathiurim
-                }
-			}
-			modifier = {
-				add = 50
-				OR = {
-					portrait_commoner_clothing_trigger = {
-						CULTURE_INPUT = gwathiurim
-					}
-					portrait_low_nobles_clothing_trigger = {
-						CULTURE_INPUT = gwathiurim
-					}
-				}
-			}
-		}
-	}
-
-	gwathiurim_low_nobility = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dunlending_high_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = gwathiurim
-                }
-			}
-		}
-	}
-	
-	gwathiurim_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dunlending_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}		
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_royalty_trigger = {
-                    CULTURE_INPUT = gwathiurim
-                }   
-			}
-		}
-	}
-	
-	gwathiurim_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dunlending_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_imperial_trigger = {
-                    CULTURE_INPUT = gwathiurim
-                }   
-			}
-		}
-	}	
-
 	## Vale / Woodmen ##
 
 	woodmen_commoners = {
@@ -658,13 +1655,15 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
+                has_fp1_dlc_trigger = yes 				
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = vale_woodmen
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
+                has_fp1_dlc_trigger = yes 				
 				OR = {
 					portrait_commoner_clothing_trigger = {
 						CULTURE_INPUT = vale_woodmen
@@ -689,7 +1688,8 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100 
+				add = 100
+                has_fp1_dlc_trigger = yes 				
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = vale_woodmen
                 }
@@ -710,6 +1710,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_dlc_feature = couture_of_the_capets				
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = vale_woodmen
                 }   
@@ -730,13 +1731,14 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_dlc_feature = couture_of_the_capets					
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = vale_woodmen
                 }   
 			}
 		}
 	}
-	
+
 	## Dalemen ##
 
 	dalemen_commoners = {
@@ -751,13 +1753,13 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = dalemen
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = dalemen
 				}
@@ -778,6 +1780,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				highest_held_title_tier = tier_county				
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = dalemen
                 }
@@ -838,6 +1841,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_ep1_dlc_trigger = yes
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = dalemen
                 }   
@@ -845,7 +1849,7 @@ headgear = {
 		}
 	}
 	
-	##  Dorwionrim ##
+	##  Dorwinionrim ##
 
 	dorwinion_commoners = {
 		dna_modifiers = {
@@ -859,13 +1863,14 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
+				has_ce1_dlc_trigger = yes
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = dorwinion
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = dorwinion
 				}
@@ -886,6 +1891,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_dlc = "Garments of the Holy Roman Empire"
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = dorwinion
                 }
@@ -905,7 +1911,11 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100 
+				add = 100
+				AND = {
+					has_ce1_dlc_trigger = yes
+					has_dlc = "Garments of the Holy Roman Empire"
+				}		
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = dorwinion
                 }
@@ -953,327 +1963,341 @@ headgear = {
 		}		
 	}
 
-	bellakari_commoners = {
+	## Gwathiurim ##
+
+	gwathiurim_commoners = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = bellakari_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
+				template = dunlending_low_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
 			}
-		}	
+		}
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = bellakari
+                    CULTURE_INPUT = gwathiurim
                 }
 			}
 			modifier = {
-				add = 50
-				portrait_commoner_clothing_trigger = {
-					CULTURE_INPUT = bellakari
+				add = 100
+				OR = {
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = gwathiurim
+					}
 				}
 			}
 		}
 	}
-
-	bellakari_counts = {
+	
+	gwathiurim_low_nobility = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = bellakari_high_headgear
-				range = { 0.01 0.24 } # For the randomness to work correctly
+				template = dunlending_low_headgear
+				range = { 0.51 0.99 } # For the randomness to work correctly
 			}
 		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = bellakari
-                }
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = gwathiurim
+					}
 			}
 		}
-	}
+	}	
 
-	bellakari_dukes = {
+	gwathiurim_high_nobility = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = bellakari_high_headgear
-				range = { 0.26 0.49 } # For the randomness to work correctly
+				template = dunlending_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
 			}
 		}	
 		weight = {
 			base = 0
 			modifier = {
-				add = 100 
+				add = 100
                 portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = bellakari
+                    CULTURE_INPUT = gwathiurim
                 }
-			}	
-		}	
+			}
+		}
 	}
-
-	bellakari_kings = {
+	
+	gwathiurim_kings = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = bellakari_high_headgear
+				template = dunlending_high_headgear
 				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_royalty_trigger = {
-                    CULTURE_INPUT = bellakari
-                }   
-			}
-		}
-	}
-
-	bellakari_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = bellakari_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_imperial_trigger = {
-                    CULTURE_INPUT = bellakari
-                }   
-			}
-		}	
-	}
-
-	## Rayan ##
-
-	rayan_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = rayan_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-                portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = rayan
-                }
-			}
-			modifier = {
-				add = 50
-				portrait_commoner_clothing_trigger = {
-					CULTURE_INPUT = rayan
-				}
-			}
-		}
-	}
-
-	rayan_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = rayan_high_headgear
-				range = { 0.01 0.24 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = rayan
-                }
-			}
-		}
-	}
-
-	rayan_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = rayan_high_headgear
-				range = { 0.26 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100 
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = rayan
-                }
-			}	
-		}	
-	}
-
-	rayan_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = rayan_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_royalty_trigger = {
-                    CULTURE_INPUT = rayan
-                }   
-			}
-		}
-	}
-
-	rayan_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = rayan_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_imperial_trigger = {
-                    CULTURE_INPUT = rayan
-                }   
 			}
 		}		
+		weight = {
+			base = 0
+			modifier = {
+				add = 110
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = gwathiurim
+                }   
+			}
+		}
+	}
+	
+	gwathiurim_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = dunlending_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 110
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = gwathiurim
+                }   
+			}
+		}
+	}	
+
+	##Hobbits##
+		hobbit_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = hobbit_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                OR = {
+					portrait_commoner_headgear_fallback_trigger = {
+					CULTURE_INPUT = hobbit
+					}
+                    portrait_commoner_clothing_trigger = {
+                        CULTURE_INPUT = hobbit
+                    }
+                    portrait_low_nobles_clothing_trigger = {
+                        CULTURE_INPUT = hobbit
+                    }
+                    portrait_high_nobles_headgear_trigger = {
+                        CULTURE_INPUT = hobbit
+                    }
+                    portrait_royalty_trigger = {
+                        CULTURE_INPUT = hobbit
+                    }
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = hobbit
+					}
+                }
+			}	
+		}
+	}
+	
+	##Circumpolar##
+	circumpolar_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = circumpolar_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_cp4_dlc_trigger = yes
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = circumpolar
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = circumpolar
+				}
+			}
+		}
+	}
+	
+	circumpolar_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = circumpolar_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_cp4_dlc_trigger = yes
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = circumpolar
+                }
+			}
+		}
 	}
 
-	## Sirayni ##
+	circumpolar_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = circumpolar_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_cp4_dlc_trigger = yes
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = circumpolar
+                }
+			}	
+		}	
+	}
 
-	#sirayni_commoners = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = sirayni_low_headgear
-	#			range = { 0.01 0.49 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 80
-    #            portrait_commoner_headgear_fallback_trigger = {
-    #                CULTURE_INPUT = sirayni
-    #            }
-	#		}
-	#		modifier = {
-	#			add = 50
-	#			portrait_commoner_clothing_trigger = {
-	#				CULTURE_INPUT = sirayni
-	#			}
-	#		}
-	#	}
-	#}
-	#
-	#sirayni_counts = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = sirayni_low_headgear
-	#			range = { 0.51 0.99 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_low_nobles_clothing_trigger = {
-    #                CULTURE_INPUT = sirayni
-    #            }
-	#		}
-	#	}
-	#}
-	#
-	#sirayni_dukes = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = sirayni_high_headgear
-	#			range = { 0.01 0.49 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100 
-    #            portrait_high_nobles_headgear_trigger = {
-    #                CULTURE_INPUT = sirayni
-    #            }
-	#		}	
-	#	}	
-	#}
-	#
-	#sirayni_kings = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = sirayni_high_headgear
-	#			range = { 0.51 0.74 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_royalty_trigger = {
-    #                CULTURE_INPUT = sirayni
-    #            }   
-	#		}
-	#	}
-	#}
-	#
-	#sirayni_emperors = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = sirayni_high_headgear
-	#			range = { 0.76 0.99 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_imperial_trigger = {
-    #                CULTURE_INPUT = sirayni
-    #            }   
-	#		}
-	#	}	
-	#}	
+	circumpolar_kings_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = circumpolar_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_cp4_dlc_trigger = yes
+                OR = {
+                    portrait_royalty_trigger = {
+                        CULTURE_INPUT = circumpolar
+                    }
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = circumpolar
+					}
+                }
+			}
+		}
+	}
+	
+	##Angmarrim##
+	angmarrim_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = angmarrim_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = angmarrim
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = angmarrim
+				}
+			}
+		}
+	}
+	
+	angmarrim_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = angmarrim_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = angmarrim
+                }
+			}
+		}
+	}
+
+	angmarrim_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = angmarrim_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = angmarrim
+                }
+			}	
+		}
+	}
+
+	angmarrim_kings_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = angmarrim_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                OR = {
+                    portrait_royalty_trigger = {
+                        CULTURE_INPUT = angmarrim
+                    }
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = angmarrim
+					}
+                }
+			}
+		}
+	}	
 
 	## North Haradrim ##
 
@@ -1289,13 +2313,13 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = north_haradrim
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = north_haradrim
 				}
@@ -1356,6 +2380,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_ep1_dlc_trigger = yes
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = north_haradrim
                 }   
@@ -1397,13 +2422,13 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = south_haradrim
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = south_haradrim
 				}
@@ -1505,13 +2530,14 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
+				has_dlc = "Fashion of the Abbasid Court"					
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = east_haradrim
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = east_haradrim
 				}
@@ -1532,6 +2558,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_dlc = "Fashion of the Abbasid Court"					
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = east_haradrim
                 }
@@ -1551,7 +2578,8 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100 
+				add = 100
+				has_dlc = "Fashion of the Abbasid Court"					
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = east_haradrim
                 }
@@ -1572,6 +2600,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_dlc = "Fashion of the Abbasid Court"					
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = east_haradrim
                 }   
@@ -1592,6 +2621,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_dlc = "Fashion of the Abbasid Court"					
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = east_haradrim
                 }   
@@ -1599,6 +2629,114 @@ headgear = {
 		}	
 	}
 
+	## Rayan ##
+
+	rayan_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = rayan_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = rayan
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = rayan
+				}
+			}
+		}
+	}
+
+	rayan_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = rayan_high_headgear
+				range = { 0.01 0.24 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = rayan
+                }
+			}
+		}
+	}
+
+	rayan_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = rayan_high_headgear
+				range = { 0.26 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = rayan
+                }
+			}	
+		}	
+	}
+
+	rayan_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = rayan_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_sp4_dlc_trigger = yes
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = rayan
+                }   
+			}
+		}
+	}
+
+	rayan_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = rayan_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = rayan
+                }   
+			}
+		}		
+	}
 
 	## Nafarati ##
 
@@ -1614,13 +2752,13 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = nafarati
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = nafarati
 				}
@@ -1707,7 +2845,7 @@ headgear = {
 			}
 		}	
 	}
-	
+
 	## Mumakani ##
 
 	mumakani_commoners = {
@@ -1722,13 +2860,13 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = kirani
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = kirani
 				}
@@ -1741,7 +2879,7 @@ headgear = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = nafarati_high_headgear
+				template = mumakani_high_headgear
 				range = { 0.01 0.49 } # For the randomness to work correctly
 			}
 		}	
@@ -1789,6 +2927,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_ep1_dlc_trigger = yes
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = kirani
                 }   
@@ -1809,12 +2948,356 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_ep1_dlc_trigger = yes
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = kirani
                 }   
 			}
 		}
 	}	
+	
+	## MAG ##
+
+	mag_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = mag_low_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_afr_dlc_trigger = yes
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = mag
+                }
+			}
+			modifier = {
+				add = 100
+                portrait_commoner_no_mayors_trigger = {
+                    CULTURE_INPUT = mag
+                }
+			}
+		}
+	}
+
+	mag_low_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = mag_low_headgear
+				range = { 0.51 0.99 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_afr_dlc_trigger = yes				
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = mag
+                }
+			}
+		}
+	}
+
+	mag_high_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = mag_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_afr_dlc_trigger = yes				
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = mag
+                }   
+			}
+		}
+	}
+
+	mag_royalty = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = mag_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_afr_dlc_trigger = yes				
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = mag
+                }   
+			}
+		}
+	}
+
+	mag_imperial = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = mag_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				has_afr_dlc_trigger = yes				
+                portrait_imperial_nobles_headgear_trigger = {
+                    CULTURE_INPUT = mag 
+                }
+			}
+		}
+	}
+
+	## Pel ##
+
+	pel_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = pel_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = pel
+                }
+			}
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = pel
+				}
+			}
+		}
+	}
+
+	pel_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = pel_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = pel
+                }
+			}
+		}
+	}	
+
+	pel_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = pel_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = pel
+                }
+			}	
+		}	
+	}
+
+	pel_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = pel_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = pel
+                }   
+			}
+		}
+	}
+	
+	pel_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = pel_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = pel
+                }   
+			}
+		}	
+	}
+
+	## Thani_Hazad ##
+
+	thani_hazad_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = thani_hazad_low_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = thani_hazad
+                }
+			}
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = thani_hazad
+				}
+			}
+		}
+	}
+
+	thani_hazad_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = thani_hazad_high_headgear
+				range = { 0.01 0.24 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = thani_hazad
+                }
+			}
+		}
+	}	
+
+	thani_hazad_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = thani_hazad_high_headgear
+				range = { 0.26 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_fp2_dlc_trigger = yes 				
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = thani_hazad
+                }
+			}	
+		}	
+	}
+
+	thani_hazad_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = thani_hazad_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+				AND = {
+					has_fp2_dlc_trigger = yes
+					has_dlc_feature = couture_of_the_capets
+				}	
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = thani_hazad
+                }   
+			}
+		}
+	}
+
+	thani_hazad_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = thani_hazad_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = thani_hazad
+                }   
+			}
+		}	
+	}
 
 	## Variag ##
 
@@ -1830,13 +3313,13 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = variag
                 }
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = variag
 				}
@@ -1857,6 +3340,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+                has_fp3_dlc_trigger = yes				
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = variag
                 }
@@ -1876,7 +3360,8 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 100 
+				add = 100
+                has_fp3_dlc_trigger = yes				
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = variag
                 }
@@ -1897,6 +3382,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+                has_fp3_dlc_trigger = yes				
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = variag
                 }   
@@ -1917,13 +3403,14 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+                has_fp3_dlc_trigger = yes				
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = variag
                 }   
 			}
 		}	
 	}
-	
+
 	## Nurniag ##
 
 	nurniag_commoners = {
@@ -1938,7 +3425,7 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 90
+				add = 101
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = variag
                 }
@@ -1950,7 +3437,7 @@ headgear = {
 				}							
 			}
 			modifier = {
-				add = 60
+				add = 101
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = variag
 				}
@@ -1977,6 +3464,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+                has_fp3_dlc_trigger = yes				
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = variag
                 }
@@ -2002,7 +3490,8 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 101 
+				add = 101
+                has_fp3_dlc_trigger = yes				
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = variag
                 }
@@ -2029,6 +3518,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+                has_fp3_dlc_trigger = yes				
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = variag
                 }
@@ -2055,6 +3545,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+                has_fp3_dlc_trigger = yes				
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = variag
                 }
@@ -2067,222 +3558,6 @@ headgear = {
 			}
 		}	
 	}
-
-	## Khyan ##
-
-	#khyan_commoners = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = khyan_low_headgear
-	#			range = { 0 1 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 80
-    #            portrait_commoner_headgear_fallback_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }
-	#		}
-	#		modifier = {
-	#			add = 50
-	#			portrait_commoner_clothing_trigger = {
-	#				CULTURE_INPUT = khailuza
-	#			}
-	#		}
-	#	}
-	#}
-	#
-	#khyan_counts = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = khyan_high_headgear
-	#			range = { 0.01 0.49 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_low_nobles_clothing_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }
-	#		}
-	#	}
-	#}
-	#
-	#khyan_dukes = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = khyan_high_headgear
-	#			range = { 0.01 0.49 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100 
-    #            portrait_high_nobles_headgear_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }
-	#		}	
-	#	}	
-	#}
-	#
-	#khyan_kings = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = khyan_high_headgear
-	#			range = { 0.51 0.74 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_royalty_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }   
-	#		}
-	#	}
-	#}
-	#
-	#khyan_emperors = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = khyan_high_headgear
-	#			range = { 0.76 0.99 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_imperial_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }   
-	#		}
-	#	}	
-	#}
-	#
-	### Muranian ##
-	#
-	#muranian_commoners = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = muranian_low_headgear
-	#			range = { 0.01 0.49 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 80
-    #            portrait_commoner_headgear_fallback_trigger = {
-    #                CULTURE_INPUT = muranian
-    #            }
-	#		}
-	#		modifier = {
-	#			add = 50
-	#			portrait_commoner_clothing_trigger = {
-	#				CULTURE_INPUT = muranian
-	#			}
-	#		}
-	#	}
-	#}
-	#
-	#muranian_counts = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = muranian_low_headgear
-	#			range = { 0.51 0.99 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_low_nobles_clothing_trigger = {
-    #                CULTURE_INPUT = muranian
-    #            }
-	#		}
-	#	}
-	#}
-	#
-	#muranian_dukes = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = muranian_high_headgear
-	#			range = { 0.01 0.49 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100 
-    #            portrait_high_nobles_headgear_trigger = {
-    #                CULTURE_INPUT = muranian
-    #            }
-	#		}	
-	#	}	
-	#}
-	#
-	#muranian_kings = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = muranian_high_headgear
-	#			range = { 0.51 0.74 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_royalty_trigger = {
-    #                CULTURE_INPUT = muranian
-    #            }   
-	#		}
-	#	}
-	#}
-	#
-	#muranian_emperors = {
-	#	dna_modifiers = {
-	#		accessory = {
-	#			mode = add
-	#			gene = headgear
-	#			template = muranian_high_headgear
-	#			range = { 0.76 0.99 } # For the randomness to work correctly
-	#		}
-	#	}	
-	#	weight = {
-	#		base = 0
-	#		modifier = {
-	#			add = 100
-    #            portrait_imperial_trigger = {
-    #                CULTURE_INPUT = muranian
-    #            }   
-	#		}
-	#	}	
-	#}		
 
 	## Rhunnic ##
 
@@ -2298,7 +3573,8 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
+				has_pol_dlc_trigger = yes			
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2309,7 +3585,7 @@ headgear = {
 				}				
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = rhunnic
 				}
@@ -2335,6 +3611,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				has_pol_dlc_trigger = yes				
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2360,6 +3637,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				has_pol_dlc_trigger = yes				
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2385,6 +3663,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				has_pol_dlc_trigger = yes				
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2410,6 +3689,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				has_pol_dlc_trigger = yes				
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2434,7 +3714,8 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 80
+				add = 100
+				has_pol_dlc_trigger = yes				
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2445,7 +3726,7 @@ headgear = {
 				}					
 			}
 			modifier = {
-				add = 50
+				add = 100
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = rhunnic
 				}
@@ -2471,6 +3752,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_pol_dlc_trigger = yes				
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2496,6 +3778,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_pol_dlc_trigger = yes				
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2521,6 +3804,10 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				AND = {
+					has_sp4_dlc_trigger = yes
+					has_ep1_dlc_trigger = yes
+				}	
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = rhunnic
                 }   
@@ -2546,6 +3833,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
+				has_sp4_dlc_trigger = yes				
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = rhunnic
                 }   
@@ -2570,7 +3858,11 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 85
+				add = 101
+				AND = {
+					has_pol_dlc_trigger = yes
+					has_fp1_dlc_trigger = yes
+				}					
                 portrait_commoner_headgear_fallback_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2582,7 +3874,7 @@ headgear = {
 				}					
 			}
 			modifier = {
-				add = 55
+				add = 101
 				portrait_commoner_clothing_trigger = {
 					CULTURE_INPUT = rhunnic
 				}
@@ -2609,6 +3901,10 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				AND = {
+					has_pol_dlc_trigger = yes
+					has_fp1_dlc_trigger = yes
+				}							
                 portrait_low_nobles_clothing_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2635,6 +3931,10 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				AND = {
+					has_pol_dlc_trigger = yes
+					has_fp1_dlc_trigger = yes
+				}							
                 portrait_high_nobles_headgear_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2661,6 +3961,10 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				AND = {
+					has_sp4_dlc_trigger = yes
+					has_ep1_dlc_trigger = yes
+				}							
                 portrait_royalty_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2687,6 +3991,10 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 101
+				AND = {
+					has_sp4_dlc_trigger = yes
+					has_ep1_dlc_trigger = yes
+				}					
                 portrait_imperial_trigger = {
                     CULTURE_INPUT = rhunnic
                 }
@@ -2700,122 +4008,503 @@ headgear = {
 		}
 	}		
 
-	## Elves ##
+	## Khyan ##
 
-	thranduil = {
-		usage = game
-		dna_modifiers = {
-			accessory = {
-				mode = add	
-				gene = headgear
-				template = lotr_unique_headgear
-				range = { 0.0 0.01 } # For the randomness to work correctly
-			}
-		}
-		weight = {
-			base = 0
-			modifier = {
-				add = 1000
-				exists = character:lineoforopher3 #Thranduil
-				this = character:lineoforopher3 #Thranduil
-			}
-		}	
-	}
-
-	elven_commoners = {
+	khyan_commoners = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = elven_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-				OR = {
-					portrait_commoner_headgear_fallback_trigger = {
-						CULTURE_INPUT = elven
-					}
-					portrait_commoner_headgear_fallback_trigger = {
-						CULTURE_INPUT = lasgalendrim
-					}
-					portrait_commoner_headgear_fallback_trigger = {
-						CULTURE_INPUT = noldor
-					}
-					portrait_commoner_headgear_fallback_trigger = {
-						CULTURE_INPUT = sindar
-					}
-					portrait_commoner_headgear_fallback_trigger = {
-						CULTURE_INPUT = falathrim
-					}					
-				}
-			}	
-			modifier = {
-				add = 50
-				OR = {
-					portrait_commoner_clothing_trigger = {
-						CULTURE_INPUT = elven
-					}
-					portrait_commoner_clothing_trigger = {
-						CULTURE_INPUT = lasgalendrim
-					}
-					portrait_commoner_clothing_trigger = {
-						CULTURE_INPUT = noldor
-					}
-					portrait_commoner_clothing_trigger = {
-						CULTURE_INPUT = sindar
-					}
-					portrait_commoner_clothing_trigger = {
-						CULTURE_INPUT = falathrim
-					}					
-				}
-			}
-		}
-	}
-
-	elven_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = elven_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
+				template = khyan_low_headgear
+				range = { 0.75 1.0 } # For the randomness to work correctly
 			}
 		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
-				OR = {
-					portrait_low_nobles_clothing_trigger = {
-						CULTURE_INPUT = elven
-					}
-					portrait_low_nobles_clothing_trigger = {
-						CULTURE_INPUT = lasgalendrim
-					}
-					portrait_low_nobles_clothing_trigger = {
-						CULTURE_INPUT = noldor
-					}
-					portrait_low_nobles_clothing_trigger = {
-						CULTURE_INPUT = sindar
-					}
-					portrait_low_nobles_clothing_trigger = {
-						CULTURE_INPUT = falathrim
-					}					
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = khailuza
 				}
 			}
 		}
 	}
 
-	elven_dukes = {
+	khyan_counts = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = elven_high_headgear
+				template = khyan_low_headgear
+				range = { 0.75 1.0 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+			}
+		}
+	}
+
+	khyan_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_high_headgear
+				range = { 0.61 0.79 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+			}
+			modifier = {
+				add = 101
+				is_councillor = no
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = khailuza
+                }   
+			}
+			modifier = {
+				add = 101
+				is_councillor = no
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = khailuza
+                }   
+			}		
+			
+		}	
+	}
+
+	khyan_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_high_headgear
+				range = { 0.81 0.89 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+				highest_held_title_tier = tier_kingdom			
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = khailuza
+                }   
+			}
+			modifier = {
+				add = 101
+				is_councillor = yes
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = khailuza
+                }   
+			}
+		}
+	}
+
+	khyan_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_high_headgear
+				range = { 0.91 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+				highest_held_title_tier = tier_empire
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = khailuza
+                }   
+			}
+			modifier = {
+				add = 101
+				is_councillor = yes
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = khailuza
+                }   
+			}
+		}	
+	}
+	
+	clyan_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_low_headgear
+				range = { 0.01 0.25 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:clyan				
+			}
+			modifier = {
+				add = 101
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = khailuza
+				}
+				scope:culture = culture:clyan				
+			}
+		}
+	}
+	
+	anarikean_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anarikean_low_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+                has_ep2_dlc_trigger = yes				
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:anarikean				
+			}
+			modifier = {
+				add = 102
+                has_ep2_dlc_trigger = yes				
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = khailuza
+				}
+				scope:culture = culture:anarikean				
+			}
+		}
+	}
+
+	anarikean_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anarikean_low_headgear
+				range = { 0.50 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:anarikean				
+			}
+		}
+	}
+
+	anarikean_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anarikean_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+				has_dlc_feature = elegance_of_the_empire				
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:anarikean				
+			}	
+		}	
+	}
+
+	anarikean_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = anarikean_high_headgear
+				range = { 0.51 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 105
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:anarikean				
+			}
+		}
+	}	
+
+	clyan_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_low_headgear
+				range = { 0.01 0.25 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:clyan				
+			}
+		}
+	}
+
+	clyan_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_high_headgear
+				range = { 0.01 0.20 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:clyan				
+			}	
+		}	
+	}
+
+	bulchyadean_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_low_headgear
+				range = { 0.26 0.50 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:bulchyadean				
+			}
+			modifier = {
+				add = 101
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = khailuza
+				}
+				scope:culture = culture:bulchyadean				
+			}
+		}
+	}
+
+	bulchyadean_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_low_headgear
+				range = { 0.26 0.50 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:bulchyadean				
+			}
+		}
+	}
+
+	bulchyadean_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_high_headgear
+				range = { 0.21 0.40 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:bulchyadean				
+			}	
+		}	
+	}
+
+	ashanuri_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_low_headgear
+				range = { 0.51 0.75 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:ashanuri				
+			}
+			modifier = {
+				add = 101
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = khailuza
+				}
+				scope:culture = culture:ashanuri				
+			}
+		}
+	}
+
+	ashanuri_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_low_headgear
+				range = { 0.51 0.75 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:ashanuri				
+			}
+		}
+	}
+
+	ashanuri_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = khyan_high_headgear
+				range = { 0.41 0.60 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				scope:culture = culture:ashanuri				
+			}	
+		}	
+	}		
+
+	## Muranian ##
+
+	muranian_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = muranian_low_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = muranian
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = muranian
+				}
+			}
+		}
+	}
+
+	muranian_counts = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = muranian_low_headgear
+				range = { 0.51 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = muranian
+                }
+			}
+		}
+	}
+
+	muranian_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = muranian_high_headgear
 				range = { 0.01 0.49 } # For the randomness to work correctly
 			}
 		}	
@@ -2823,67 +4512,101 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100 
-				OR = {
-					portrait_high_nobles_headgear_trigger = {
-						CULTURE_INPUT = elven
-					}
-					portrait_high_nobles_headgear_trigger = {
-						CULTURE_INPUT = lasgalendrim
-					}
-					portrait_high_nobles_headgear_trigger = {
-						CULTURE_INPUT = noldor
-					}
-					portrait_high_nobles_headgear_trigger = {
-						CULTURE_INPUT = sindar
-					}
-					portrait_high_nobles_headgear_trigger = {
-						CULTURE_INPUT = falathrim
-					}					
-				}
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = muranian
+                }
 			}	
-		}		
+		}	
 	}
 
-	elven_kings = {
+	muranian_kings = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = elven_high_headgear
-				range = { 0.51 0.99 } # For the randomness to work correctly
+				template = muranian_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear_2
+				template = false_beard
+				range = { 0 1 } # For the randomness to work correctly
+			}			
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes				
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = muranian
+                }   
+			}
+		}
+	}
+
+	muranian_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = muranian_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = headgear_2
+				template = false_beard
+				range = { 0 1 } # For the randomness to work correctly
+			}					
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                has_ep3_dlc_trigger = yes				
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = muranian
+                }   
+			}
+		}	
+	}
+
+	## Sirayni ##
+
+	sirayni_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = sirayni_low_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
 			}
 		}	
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
-				OR = {
-					portrait_royalty_trigger = {
-						CULTURE_INPUT = elven
-					}
-					portrait_royalty_trigger = {
-						CULTURE_INPUT = lasgalendrim
-					}
-					portrait_royalty_trigger = {
-						CULTURE_INPUT = noldor
-					}
-					portrait_royalty_trigger = {
-						CULTURE_INPUT = sindar
-					}
-					portrait_royalty_trigger = {
-						CULTURE_INPUT = falathrim
-					}					
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = sirayni
+                }
+			}
+			modifier = {
+				add = 100
+				portrait_commoner_clothing_trigger = {
+					CULTURE_INPUT = sirayni
 				}
 			}
 		}
 	}
 
-	elven_emperors = {
+	sirayni_counts = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = elven_high_headgear
+				template = sirayni_low_headgear
 				range = { 0.51 0.99 } # For the randomness to work correctly
 			}
 		}	
@@ -2891,25 +4614,208 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 100
-				OR = {
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = elven
-					}
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = lasgalendrim
-					}
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = noldor
-					}
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = sindar
-					}
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = falathrim
-					}					
-				}
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = sirayni
+                }
 			}
-		}		
+		}
+	}
+
+	sirayni_dukes = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = sirayni_high_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 100 
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = sirayni
+                }
+			}
+			modifier = {
+				add = 101
+				is_councillor = no
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = sirayni
+                }   
+			}			
+		}	
+	}
+
+	sirayni_kings = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = sirayni_high_headgear
+				range = { 0.51 0.74 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+				highest_held_title_tier = tier_kingdom			
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = sirayni
+                }   
+			}
+			modifier = {
+				add = 101
+                has_ep1_dlc_trigger = yes				
+				is_councillor = yes
+                portrait_royalty_trigger = {
+                    CULTURE_INPUT = sirayni
+                }   
+			}
+			modifier = {
+				add = 101
+                has_ep1_dlc_trigger = yes				
+				is_councillor = no
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = sirayni
+                }   
+			}			
+		}
+	}
+
+	sirayni_emperors = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = sirayni_high_headgear
+				range = { 0.76 0.99 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 102
+                has_ep1_dlc_trigger = yes				
+				highest_held_title_tier = tier_empire
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = sirayni
+                }   
+			}
+			modifier = {
+				add = 101
+                has_ep1_dlc_trigger = yes				
+				is_female = yes
+				is_councillor = yes
+                portrait_imperial_trigger = {
+                    CULTURE_INPUT = sirayni
+                }   
+			}
+		}	
+	}
+
+	chennacatta_base = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}	
+		weight = {
+			base = 0
+			modifier = {
+				add = 101
+				OR = {
+					portrait_commoner_headgear_fallback_trigger = {
+					CULTURE_INPUT = sirayni
+					}
+					portrait_commoner_clothing_trigger = {
+						CULTURE_INPUT = sirayni
+					}
+					portrait_low_nobles_clothing_trigger = {
+						CULTURE_INPUT = sirayni
+					}
+					portrait_high_nobles_headgear_trigger = {
+						CULTURE_INPUT = sirayni
+					}
+				}
+				scope:culture = culture:chennacatti
+			}	
+		}	
+	}	
+
+	## Palisor (need to add) ##
+
+	## Womaw ##
+
+	womaw_commoners = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_commoner_headgear_fallback_trigger = {
+                    CULTURE_INPUT = womaw
+                }
+			}
+			modifier = {
+				add = 100
+                portrait_commoner_clothing_trigger = {
+                    CULTURE_INPUT = womaw
+                }
+			}
+		}
+	}
+
+	womaw_low_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = womaw_low_headgear
+				range = { 0 1 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_low_nobles_clothing_trigger = {
+                    CULTURE_INPUT = womaw
+                }
+			}
+		}
+	}
+
+	womaw_high_nobles = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = womaw_low_headgear
+				range = { 0 1 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 100
+                portrait_high_nobles_headgear_trigger = {
+                    CULTURE_INPUT = womaw
+                }   
+			}
+		}
 	}
 
 	## Nazgul ##
@@ -2928,7 +4834,7 @@ headgear = {
 			base = 0
 			modifier = {
 				add = 1000
-				has_trait = nazgul
+				is_nazgul = yes
 			}
 			modifier = {
 				add = 2000
@@ -2958,9 +4864,8 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 3000
-				exists = character:nazgul1 #Khamûl 2nd Nazgul "The Shadow of the East"
-				this = character:nazgul1 #Khamûl 2nd Nazgul "The Shadow of the East"
+				add = 1000
+				has_character_flag =  witchking
 			}
 		}	
 	}
@@ -2978,7 +4883,7 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 3000
+				add = 1000
 				exists = character:nazgul2 #Khamûl 2nd Nazgul "The Shadow of the East"
 				this = character:nazgul2 #Khamûl 2nd Nazgul "The Shadow of the East"
 			}
@@ -2998,7 +4903,7 @@ headgear = {
 		weight = {
 			base = 0
 			modifier = {
-				add = 3000
+				add = 1000
 				exists = character:nazgul3 #Golden King
 				this = character:nazgul3 #Golden King
 			}
@@ -3026,2161 +4931,6 @@ headgear = {
 		}	
 	}
 	
-	#DWARVES#
-	
-	dwarf_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dwarf_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-                portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = dwarf
-                }
-			}
-			modifier = {
-				add = 50
-				portrait_commoner_clothing_trigger = {
-					CULTURE_INPUT = dwarf
-				}
-			}
-		}
-	}
-	
-	dwarf_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dwarf_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100 
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = dwarf
-                }
-			}	
-		}	
-	}	
-
-	dwarf_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dwarf_high_headgear
-				range = { 0.01 0.39 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100 
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = dwarf
-                }
-			}	
-		}	
-	}
-	
-	dwarf_blacklock_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dwarf_high_headgear
-				range = { 0.41 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 101 
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = dwarf
-                }
-				culture = {
-					AND = {
-						has_cultural_pillar = heritage_blacklock
-					}
-				}				
-			}	
-		}	
-	}	
-
-	dwarf_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dwarf_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_royalty_trigger = {
-                    CULTURE_INPUT = dwarf
-                }   
-			}
-		}
-	}
-	
-	dwarf_blacklock_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dwarf_high_headgear
-				range = { 0.75 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 101
-                portrait_royalty_trigger = {
-                    CULTURE_INPUT = dwarf
-                }
-				culture = {
-					AND = {
-						has_cultural_pillar = heritage_blacklock
-					}
-				}						
-			}
-		}
-	}	
-	
-	dwarf_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dwarf_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_imperial_trigger = {
-                    CULTURE_INPUT = dwarf
-                }   
-			}
-		}
-	}	
-	
-
-	##Hobbits##
-		hobbit_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = hobbit_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                OR = {
-					portrait_commoner_headgear_fallback_trigger = {
-					CULTURE_INPUT = hobbit
-					}
-                    portrait_commoner_clothing_trigger = {
-                        CULTURE_INPUT = hobbit
-                    }
-                    portrait_low_nobles_clothing_trigger = {
-                        CULTURE_INPUT = hobbit
-                    }
-                    portrait_high_nobles_headgear_trigger = {
-                        CULTURE_INPUT = hobbit
-                    }
-                    portrait_royalty_trigger = {
-                        CULTURE_INPUT = hobbit
-                    }
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = hobbit
-					}
-                }
-			}	
-		}
-	}
-	
-	##Circumpolar##
-	circumpolar_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = circumpolar_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-                portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = circumpolar
-                }
-			}
-			modifier = {
-				add = 50
-				portrait_commoner_clothing_trigger = {
-					CULTURE_INPUT = circumpolar
-				}
-			}
-		}
-	}
-	
-	circumpolar_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = circumpolar_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = circumpolar
-                }
-			}
-		}
-	}
-
-	circumpolar_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = circumpolar_high_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100 
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = circumpolar
-                }
-			}	
-		}	
-	}
-
-	circumpolar_kings_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = circumpolar_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                OR = {
-                    portrait_royalty_trigger = {
-                        CULTURE_INPUT = circumpolar
-                    }
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = circumpolar
-					}
-                }
-			}
-		}
-	}
-	
-	##Angmarrim##
-	angmarrim_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = angmarrim_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-                portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = angmarrim
-                }
-			}
-			modifier = {
-				add = 50
-				portrait_commoner_clothing_trigger = {
-					CULTURE_INPUT = angmarrim
-				}
-			}
-		}
-	}
-	
-	angmarrim_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = angmarrim_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = angmarrim
-                }
-			}
-		}
-	}
-
-	angmarrim_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = angmarrim_high_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100 
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = angmarrim
-                }
-			}	
-		}
-	}
-
-	angmarrim_kings_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = angmarrim_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                OR = {
-                    portrait_royalty_trigger = {
-                        CULTURE_INPUT = angmarrim
-                    }
-					portrait_imperial_trigger = {
-						CULTURE_INPUT = angmarrim
-					}
-                }
-			}
-		}
-	}	
-
-	## Numenorean ##
-
-	numenorean_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = numenorean_low_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-                portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = numenorean
-                }
-			}
-			modifier = {
-				add = 50
-				portrait_commoner_clothing_trigger = {
-					CULTURE_INPUT = numenorean
-				}
-			}
-		}
-	}
-
-	numenorean_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = numenorean_low_headgear
-				range = { 0.51 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = numenorean
-                }
-			}
-		}
-	}
-
-	numenorean_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = numenorean_high_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100 
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = numenorean
-                }
-			}	
-		}	
-	}
-
-	numenorean_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = numenorean_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_royalty_trigger = {
-                    CULTURE_INPUT = numenorean
-                }   
-			}
-		}
-	}
-
-	numenorean_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = numenorean_emperor_headgear
-				range = { 1 0 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_imperial_trigger = {
-                    CULTURE_INPUT = numenorean
-                }   
-			}
-		}
-	}
-	
-	##Quonton
-	numenorean_emperors_spouce = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = numenorean_high_spouce_headgear
-				range = { 0.00 0.5 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_imperial_trigger = {
-                    CULTURE_INPUT = numenorean
-                }  
-				AND = {
-					exists = primary_spouse
-					OR = {
-						is_ruler = no
-						highest_held_title_tier = tier_barony
-					}
-					NOT = { highest_held_title_tier = tier_empire }
-					primary_spouse = {
-						OR = {
-							highest_held_title_tier = tier_empire
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-					}
-				}
-			}
-		}
-	}
-	##End Quonton
-
-	## Anbalukkhori ##
-
-	anbalukkhori_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = anbalukkhori_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 80
-                portrait_commoner_headgear_fallback_trigger = {
-                    CULTURE_INPUT = anbalukkhori
-                }
-			}
-			modifier = {
-				add = 50
-				portrait_commoner_clothing_trigger = {
-					CULTURE_INPUT = anbalukkhori
-				}
-			}
-		}
-	}
-
-	anbalukkhori_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = anbalukkhori_high_headgear
-				range = { 0.01 0.24 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_low_nobles_clothing_trigger = {
-                    CULTURE_INPUT = anbalukkhori
-                }
-			}
-		}
-	}
-
-	anbalukkhori_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = anbalukkhori_high_headgear
-				range = { 0.26 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100 
-                portrait_high_nobles_headgear_trigger = {
-                    CULTURE_INPUT = anbalukkhori
-                }
-			}	
-		}	
-	}
-
-	anbalukkhori_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = anbalukkhori_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_royalty_trigger = {
-                    CULTURE_INPUT = anbalukkhori
-                }   
-			}
-		}
-	}
-
-	anbalukkhori_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = anbalukkhori_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-                portrait_imperial_trigger = {
-                    CULTURE_INPUT = anbalukkhori
-                }   
-			}
-		}	
-	}
-	
-	## Umbar ##
-
-	umbar_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = umbar_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				has_trait = peasant_leader
-				OR = {
-					is_ruler = no
-					is_leading_faction_type = peasant_faction
-					AND = {
-						is_ruler = yes
-						is_landed = no
-						OR = {
-							government_has_flag = government_is_feudal
-							government_has_flag = government_is_clan
-							
-							government_has_flag = government_is_elven
-							
-						}
-					}
-				}
-				portrait_umbar_clothing_trigger = yes
-			}
-			modifier = {
-				add = 20
-				highest_held_title_tier < tier_county
-				NOR = {
-					AND = {
-						exists = primary_spouse
-						primary_spouse = {
-							highest_held_title_tier > tier_county
-						}
-					}
-					AND = {
-						government_has_flag = government_is_republic
-						primary_title.tier > 1
-					}
-					AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-				}
-				portrait_umbar_clothing_spouse_trigger = yes
-			}
-		}
-	}
-
-	umbar_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = umbar_high_headgear
-				range = { 0.01 0.24 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						highest_held_title_tier = tier_county
-						NOR = {
-							# has_dynasty = no
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 1
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						portrait_umbar_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							highest_held_title_tier = tier_county
-							NOR = {
-								# has_dynasty = no
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 1
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_umbar_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	umbar_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = umbar_high_headgear
-				range = { 0.26 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_duchy
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 2
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						portrait_umbar_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_duchy
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 2
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_umbar_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	umbar_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = umbar_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_kingdom
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_umbar_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_kingdom
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_umbar_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	umbar_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = umbar_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_empire
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_umbar_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_empire
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_umbar_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	## Thani_Hazad ##
-
-	thani_hazad_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = thani_hazad_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				has_trait = peasant_leader
-				OR = {
-					is_ruler = no
-					is_leading_faction_type = peasant_faction
-					AND = {
-						is_ruler = yes
-						is_landed = no
-						OR = {
-							government_has_flag = government_is_feudal
-							government_has_flag = government_is_clan
-							
-							government_has_flag = government_is_elven
-							
-						}
-					}
-				}
-				portrait_thani_hazad_clothing_trigger = yes
-			}
-			modifier = {
-				add = 20
-				highest_held_title_tier < tier_county
-				NOR = {
-					AND = {
-						exists = primary_spouse
-						primary_spouse = {
-							highest_held_title_tier > tier_county
-						}
-					}
-					AND = {
-						government_has_flag = government_is_republic
-						primary_title.tier > 1
-					}
-					AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-				}
-				portrait_thani_hazad_clothing_spouse_trigger = yes
-			}
-		}
-	}
-
-	thani_hazad_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = thani_hazad_high_headgear
-				range = { 0.01 0.24 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						highest_held_title_tier = tier_county
-						NOR = {
-							# has_dynasty = no
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 1
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						portrait_thani_hazad_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							highest_held_title_tier = tier_county
-							NOR = {
-								# has_dynasty = no
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 1
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_thani_hazad_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	thani_hazad_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = thani_hazad_high_headgear
-				range = { 0.26 0.49 } # For the randomness to work correctly
-			}
-		}			
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_duchy
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 2
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						portrait_thani_hazad_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_duchy
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 2
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_thani_hazad_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	thani_hazad_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = thani_hazad_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_kingdom
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_thani_hazad_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_kingdom
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_thani_hazad_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	thani_hazad_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = thani_hazad_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_empire
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_thani_hazad_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_empire
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_thani_hazad_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	##Arnorian##
-
-	arnorian_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = arnorian_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				has_trait = peasant_leader
-				OR = {
-					is_ruler = no
-					is_leading_faction_type = peasant_faction
-					AND = {
-						is_ruler = yes
-						is_landed = no
-						OR = {
-							government_has_flag = government_is_feudal
-							government_has_flag = government_is_clan
-							
-							government_has_flag = government_is_elven
-							
-						}
-					}
-				}
-				portrait_arnorian_clothing_trigger = yes
-			}
-			modifier = {
-				add = 20
-				highest_held_title_tier < tier_county
-				NOR = {
-					AND = {
-						exists = primary_spouse
-						primary_spouse = {
-							highest_held_title_tier > tier_county
-						}
-					}
-					AND = {
-						government_has_flag = government_is_republic
-						primary_title.tier > 1
-					}
-					AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-				}
-				portrait_arnorian_clothing_spouse_trigger = yes
-			}
-		}
-	}
-
-	arnorian_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = arnorian_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						highest_held_title_tier = tier_county
-						NOR = {
-							# has_dynasty = no
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 1
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							highest_held_title_tier = tier_county
-							NOR = {
-								# has_dynasty = no
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 1
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	arnorian_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = arnorian_high_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_duchy
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 2
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_duchy
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 2
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	arnorian_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = arnorian_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_kingdom
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_kingdom
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	arnorian_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = arnorian_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_empire
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_empire
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	##Uialdain##
-	
-	uialdain_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = uialdain_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				has_trait = peasant_leader
-				OR = {
-					is_ruler = no
-					is_leading_faction_type = peasant_faction
-					AND = {
-						is_ruler = yes
-						is_landed = no
-						OR = {
-							government_has_flag = government_is_feudal
-							government_has_flag = government_is_clan
-							
-							government_has_flag = government_is_elven
-							
-						}
-					}
-				}
-				portrait_arnorian_clothing_trigger = yes
-			}
-			modifier = {
-				add = 20
-				highest_held_title_tier < tier_county
-				NOR = {
-					AND = {
-						exists = primary_spouse
-						primary_spouse = {
-							highest_held_title_tier > tier_county
-						}
-					}
-					AND = {
-						government_has_flag = government_is_republic
-						primary_title.tier > 1
-					}
-					AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-				}
-				portrait_arnorian_clothing_spouse_trigger = yes
-			}
-		}
-	}
-
-	uialdain_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = uialdain_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						highest_held_title_tier = tier_county
-						NOR = {
-							# has_dynasty = no
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 1
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							highest_held_title_tier = tier_county
-							NOR = {
-								# has_dynasty = no
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 1
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	uialdain_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = uialdain_high_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_duchy
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 2
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_duchy
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 2
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	uialdain_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = arnorian_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_kingdom
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_kingdom
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-
-	uialdain_emperors = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = arnorian_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_empire
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_arnorian_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_empire
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_arnorian_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	## Pel ##
-
-	pel_commoners = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = pel_low_headgear
-				range = { 0 1 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				has_trait = peasant_leader
-				OR = {
-					is_ruler = no
-					is_leading_faction_type = peasant_faction
-					AND = {
-						is_ruler = yes
-						is_landed = no
-						OR = {
-							government_has_flag = government_is_feudal
-							government_has_flag = government_is_clan
-							
-							government_has_flag = government_is_elven
-							
-						}
-					}
-				}
-				portrait_pel_clothing_trigger = yes
-			}
-			modifier = {
-				add = 100
-				highest_held_title_tier < tier_county
-				NOR = {
-					AND = {
-						exists = primary_spouse
-						primary_spouse = {
-							highest_held_title_tier > tier_county
-						}
-					}
-					AND = {
-						government_has_flag = government_is_republic
-						primary_title.tier > 1
-					}
-					AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-				}
-				portrait_pel_clothing_spouse_trigger = yes
-			}
-			#modifier = {
-			#	add = -56 # Slightly lower if north african is valid
-			#	portrait_commoner_clothing_trigger = { 
-			#		CULTURE_INPUT = 
-			#	}
-			#}
-		}
-	}
-
-	pel_counts = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = pel_high_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						highest_held_title_tier = tier_county
-						NOR = {
-							# has_dynasty = no
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 1
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						portrait_pel_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							highest_held_title_tier = tier_county
-							NOR = {
-								# has_dynasty = no
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 1
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_pel_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-			#modifier = {
-			#	add = -36 # Slightly lower if north african is valid
-			#	portrait_commoner_clothing_trigger = { 
-			#		CULTURE_INPUT = 
-			#	}
-			#}
-		}
-	}
-
-	pel_dukes = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = pel_high_headgear
-				range = { 0.51 0.74 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_duchy
-							AND = {
-								government_has_flag = government_is_republic
-								primary_title.tier > 2
-							}
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						portrait_pel_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_duchy
-								AND = {
-									government_has_flag = government_is_republic
-									primary_title.tier > 2
-								}
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							portrait_pel_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-			#modifier = {
-			#	add = -36 # Slightly lower if north african is valid
-			#	portrait_commoner_clothing_trigger = { 
-			#		CULTURE_INPUT = 
-			#	}
-			#}
-		}
-	}
-	
-	pel_kings = {
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = headgear
-				template = pel_high_headgear
-				range = { 0.76 0.99 } # For the randomness to work correctly
-			}
-		}	
-		weight = {
-			base = 0
-			modifier = {
-				add = 100
-				NAND = {
-					has_trait = peasant_leader
-					OR = {
-						is_ruler = no
-						is_leading_faction_type = peasant_faction
-						AND = {
-							is_ruler = yes
-							is_landed = no
-							OR = {
-								government_has_flag = government_is_feudal
-								government_has_flag = government_is_clan
-								
-								government_has_flag = government_is_elven
-								
-							}
-						}
-					}
-				}
-				OR = {
-					AND = {
-						OR = {
-							highest_held_title_tier = tier_kingdom
-							AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-						}
-						NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-						NOT = { government_has_flag = government_is_republic }
-						portrait_pel_clothing_trigger = yes
-					}
-					AND = {
-						exists = primary_spouse
-						OR = {
-							is_ruler = no
-							highest_held_title_tier = tier_barony
-						}
-						primary_spouse = {
-							OR = {
-								highest_held_title_tier = tier_kingdom
-								AND = { is_ruler = yes government_has_flag = government_is_theocracy }
-							}
-							NOT = { AND = { is_ruler = yes government_has_flag = government_is_mercenary  } } # Blocked for mercenaries
-							NOT = { government_has_flag = government_is_republic }
-							portrait_pel_clothing_spouse_trigger = yes
-						}
-					}
-				}
-			}
-		}
-	}
 	## Northron - northern_proxy ##
 
 	northern_commoners = {
@@ -5278,8 +5028,8 @@ headgear = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = no_headgear
-				range = { 0 1 } # For the randomness to work correctly
+				template = dorwinion_low_headgear
+				range = { 0.01 0.79 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -5304,8 +5054,8 @@ headgear = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = no_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
+				template = dorwinion_low_headgear
+				range = { 0.01 0.79 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -5324,8 +5074,8 @@ headgear = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = no_headgear
-				range = { 0.01 0.49 } # For the randomness to work correctly
+				template = dorwinion_high_headgear
+				range = { 0.01 0.59 } # For the randomness to work correctly
 			}
 		}
 		weight = {
@@ -5344,7 +5094,7 @@ headgear = {
 			accessory = {
 				mode = add
 				gene = headgear
-				template = no_headgear
+				template = dorwinion_high_headgear
 				range = { 0.51 0.99 } # For the randomness to work correctly
 			}
 		}
@@ -5810,6 +5560,59 @@ headgear = {
 			}
 		}
 	}	
-}	
-	
-}	
+
+	## Goblins
+
+	maskbearer_goblin = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = goblin_headgear
+				range = { 0.01 0.49 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+            modifier = {
+                add = 125
+				scope:culture = culture:maskbearer_goblin				
+				OR = {
+					portrait_commoner_headgear_fallback_trigger = {
+					CULTURE_INPUT = goblin
+					}
+                    portrait_commoner_clothing_trigger = {
+                        CULTURE_INPUT = goblin
+                    }
+                    portrait_low_nobles_clothing_trigger = {
+                        CULTURE_INPUT = goblin
+                    }
+                    portrait_high_nobles_headgear_trigger = {
+                        CULTURE_INPUT = goblin
+                    }
+                    portrait_royalty_trigger = {
+                        CULTURE_INPUT = goblin
+                    }
+					portrait_imperial_trigger = {
+						CULTURE_INPUT = goblin
+					}
+				}
+            }
+		}
+	}
+
+	maskbearer_goblin_cursed = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = headgear
+				template = goblin_headgear
+				range = { 0.51 0.99 } # For the randomness to work correctly
+			}
+		}
+		outfit_tags = { goblin_mask_cursed }	
+		weight = {
+			base = 0
+		}
+	}
+}

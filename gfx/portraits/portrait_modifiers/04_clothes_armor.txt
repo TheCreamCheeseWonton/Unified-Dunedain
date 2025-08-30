@@ -74,9 +74,7 @@
             modifier = {
 				add = 200
 				portrait_wear_armor_trigger = yes
-				is_elf = yes				
  				exists = liege
-				highest_held_title_tier < tier_kingdom				
 				liege.culture = {
 					has_clothing_gfx = lasgalendrim_clothing_gfx
 				}			
@@ -103,7 +101,7 @@
 		weight = {
 			base = 0
 			modifier = {
-                add = 111
+                add = 500
                 highest_held_title_tier > tier_duchy
                 portrait_high_nobles_armor_trigger = { 
                     CULTURE_INPUT = lasgalendrim
@@ -138,12 +136,19 @@
             modifier = {
                add = 200
 				portrait_wear_armor_trigger = yes
-				is_elf = yes				
  				exists = liege				
 				liege.culture = {
 					has_clothing_gfx = sindar_clothing_gfx
 				}			
 			}
+            modifier = {
+               add = 200
+				portrait_wear_armor_trigger = yes
+ 				exists = liege				
+				liege.culture = {
+					has_clothing_gfx = falathrim_clothing_gfx
+				}			
+			}			
 		}
 	}	
 	
@@ -172,7 +177,6 @@
             modifier = {
                add = 200
 				portrait_wear_armor_trigger = yes
-				is_elf = yes				
  				exists = liege				
 				liege.culture = {
 					has_clothing_gfx = noldor_clothing_gfx
@@ -192,7 +196,14 @@
 				template = dwarf_war_steel
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { dwarf_war_steel_outfit }
 		weight = {
 			base = 0
 			modifier = {
@@ -212,7 +223,14 @@
 				template = dwarf_war_steel
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { dwarf_war_steel_outfit }
 		weight = {
 			base = 0
 			modifier = {
@@ -244,7 +262,14 @@
 				template = dwarf_war_gold
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { dwarf_war_gold_outfit }
 		weight = {
 			base = 0
 			modifier = {
@@ -263,7 +288,14 @@
 				template = dwarf_war_bronze
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { dwarf_war_bronze_outfit }
 		weight = {
 			base = 0
 			modifier = {
@@ -275,21 +307,33 @@
 		}
 	}
 	
-	dwarf_war_blacklock = {
+	dwarf_war_eastern = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
-				template = dwarf_war_blacklock
+				template = dwarf_war_eastern
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { dwarf_war_eastern_outfit }
 		weight = {
 			base = 0
 			modifier = {
                 add = 130
 				portrait_wear_armor_trigger = yes
-				culture = { has_cultural_pillar = heritage_blacklock }
+                OR = {
+				scope:culture = culture:ironfists
+				scope:culture = culture:blacklocks 
+				scope:culture = culture:blacklocks_nargubraz
+				scope:culture = culture:stonefoots
+				}
             }
 		}
 	}
@@ -305,8 +349,14 @@
 				##Quonton
                 accessory = male_clothes_golden_numenorean_war_01
             }
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
         }
-        outfit_tags = { military_outfit }
+        outfit_tags = { military_outfit numenorean_war_commoner }
         weight = {
             base = 0
             modifier = {
@@ -343,6 +393,12 @@
 				##Quonton
                 accessory = male_clothes_golden_numenorean_war_01
             }
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
         }
         outfit_tags = { military_outfit }
         weight = {
@@ -371,8 +427,14 @@
 				##Quonton
                 accessory = male_clothes_golden_numenorean_war_01
             }
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
         }
-        outfit_tags = { military_outfit }
+        outfit_tags = { military_outfit numenorean_war_prince black_numenorean_war_prince }
         weight = {
             base = 0
             modifier = {
@@ -400,7 +462,14 @@
 				template = arnorian_war_clothes
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { military_outfit arnor_war_commoner }
 		weight = {
 			base = 0
 			modifier = {
@@ -442,7 +511,14 @@
 				template = arnorian_war_clothes
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { military_outfit arnor_war_prince }
 		weight = {
 			base = 0
 			modifier = {
@@ -476,7 +552,8 @@
                 template = dunedain_ranger_cloak
  				range = { 0 1 }
 			}			
-		}	
+		}
+        outfit_tags = { military_outfit dunedain_ranger }
 		weight = {
 			base = 0
 			modifier = {
@@ -527,10 +604,11 @@
 			accessory = {
 				mode = add
 				gene = legwear
-                template = generic_legwear
+                template = dunedain_common_legwear
  				range = { 0 1 }
 			}						
-		}	
+		}
+        outfit_tags = { military_outfit dunedain_ranger }	
 		weight = {
 			base = 0
 			modifier = {
@@ -605,7 +683,7 @@
             accessory = {
                 mode = add
                 gene = clothes
-                template = uialdain_war_clothes
+                template = uialedain_war_clothes
 				range = { 0.0 0.49 } # For the randomness to work correctly
             }
         }   
@@ -615,10 +693,10 @@
                 add = 100
                 OR = {
                     portrait_commoner_armor_trigger = { 
-                        CULTURE_INPUT = uialdain
+                        CULTURE_INPUT = uialedain
                     }
                     portrait_low_nobles_armor_trigger = { 
-                        CULTURE_INPUT = uialdain
+                        CULTURE_INPUT = uialedain
                     }
                 }
                 has_ep2_dlc_trigger = yes
@@ -628,10 +706,10 @@
                 add = 21
                 OR = {
                     portrait_commoner_armor_in_army_trigger = { 
-                        CULTURE_INPUT = uialdain
+                        CULTURE_INPUT = uialedain
                     }
                     portrait_low_nobles_armor_in_army_trigger = { 
-                        CULTURE_INPUT = uialdain
+                        CULTURE_INPUT = uialedain
                     }
                 }
                 has_ep2_dlc_trigger = yes  
@@ -639,12 +717,12 @@
         }
     }
 
-    uialdain_war_high = {
+    uialedain_war_high = {
         dna_modifiers = {
             accessory = {
                 mode = add
                 gene = clothes
-                template = uialdain_war_clothes
+                template = uialedain_war_clothes
  				range = { 0.50 1.0 } # For the randomness to work correctly
             }
         }   
@@ -653,7 +731,7 @@
             modifier = {
                 add = 100
                 portrait_high_nobles_armor_trigger = {
-                    CULTURE_INPUT = uialdain
+                    CULTURE_INPUT = uialedain
                 }
                 has_ep2_dlc_trigger = yes
                 portrait_era2_armor_trigger = yes 
@@ -661,22 +739,23 @@
             modifier = {
                 add = 21
                 portrait_high_nobles_armor_in_army_trigger = {
-                    CULTURE_INPUT = uialdain
+                    CULTURE_INPUT = uialedain
                 }
                 has_ep2_dlc_trigger = yes  
             }
         }
-    }	
-	
-    gondorian_war = {
+    }
+
+    gondorian_war_low = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = clothes
 				template = gondorian_war_clothes
-				range = { 0.0 0.49 } # For the randomness to work correctly
+				range = { 0.01 0.24 } # For the randomness to work correctly
 			}
-		}	
+		}
+        outfit_tags = { military_outfit gondor_war_commoner }
 		weight = {
 			base = 0
 			modifier = {
@@ -689,19 +768,10 @@
                     portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = gondorian
                     }
-                    portrait_low_nobles_armor_trigger = { 
-                        CULTURE_INPUT = gondorian
-                    }
-                    portrait_high_nobles_armor_trigger = { 
-                        CULTURE_INPUT = gondorian
-                    }
                     portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = harondorim
                     }
                     portrait_low_nobles_armor_trigger = { 
-                        CULTURE_INPUT = harondorim
-                    }
-                    portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = harondorim
                     }
                 }
@@ -716,17 +786,65 @@
                     portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = gondorian
                     }
+					portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = harondorim
+                    }
                     portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = harondorim
+                    }
+                }
+            }
+		}
+	}	
+	
+    gondorian_war_high = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = gondorian_war_clothes
+				range = { 0.25 0.49 } # For the randomness to work correctly
+			}
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { military_outfit gondor_war_prince }
+		weight = {
+			base = 0
+			modifier = {
+                add = 100
+                NOR = {
+                    has_primary_title = title:e_gondor
+                    has_primary_title = title:e_castamir
+                }
+                OR = {
+                    portrait_low_nobles_armor_trigger = { 
                         CULTURE_INPUT = gondorian
                     }
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = gondorian
+                    }
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = harondorim
+                    }
+                }
+            }
+            modifier = {
+                add = 80        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                NOR = {
+                    has_primary_title = title:e_gondor
+                    has_primary_title = title:e_castamir
+                }
+                OR = {
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = gondorian
+                    }					
                     portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = gondorian
-                    }
-                    portrait_commoner_armor_in_army_trigger = { 
-                        CULTURE_INPUT = harondorim
-                    }
-                    portrait_low_nobles_armor_in_army_trigger = { 
-                        CULTURE_INPUT = harondorim
                     }
                     portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = harondorim
@@ -734,7 +852,6 @@
                 }
             }
 		}
-        outfit_tags = { gondor_war_prince }
 	}
 	
     gondorian_war_imperial = {
@@ -743,14 +860,24 @@
 				mode = add
 				gene = clothes
 				template = gondorian_war_clothes
-				range = { 0.5 1.0 } # For the randomness to work correctly
+				range = { 0.51 0.99 } # For the randomness to work correctly
 			}
-		}	
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
+		}
+        outfit_tags = { military_outfit gondor_war_imperial }
 		weight = {
 			base = 0
             modifier = {
-                add = 100
-                has_primary_title = title:e_gondor
+                add = 120
+				OR = {
+					has_primary_title = title:e_gondor
+					has_primary_title = title:e_reunitedkingdom
+				}	
                 OR = {
                     portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = gondorian
@@ -761,11 +888,17 @@
 					portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = dunedain
                     }
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = arnorian
+                    }					
                 }
             }
             modifier = {
                 add = 80        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-                has_primary_title = title:e_gondor
+				OR = {
+					has_primary_title = title:e_gondor
+					has_primary_title = title:e_reunitedkingdom
+				}	
                 OR = {
                     portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = gondorian
@@ -776,6 +909,9 @@
 					portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = dunedain
                     }
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = arnorian
+                    }							
                 }
             }
 		}
@@ -789,11 +925,13 @@
 				template = castamiri_war_clothes
 				range = { 0 1 } # For the randomness to work correctly
 			}
-		}	
+		}
+
 		weight = {
 			base = 0
 			modifier = {
 				add = 100
+                has_ep3_dlc_trigger = yes				
 				has_primary_title = title:e_castamir
                 OR = {
                     portrait_high_nobles_armor_trigger = { 
@@ -806,6 +944,7 @@
 			}
             modifier = {
                 add = 80        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_ep3_dlc_trigger = yes
                 has_primary_title = title:e_castamir
                 OR = {
                     portrait_high_nobles_armor_in_army_trigger = { 
@@ -827,11 +966,13 @@
                 template = umbarean_war_clothes
 				range = { 0.0 0.49 } # For the randomness to work correctly
             }
-        }   
+        }  
+         outfit_tags = { military_outfit umbar_war_commoner }
         weight = {
             base = 0
             modifier = {
                 add = 100
+                has_ep2_dlc_trigger = yes				
                OR = {
                     portrait_commoner_armor_trigger = {
                         CULTURE_INPUT = umbar
@@ -845,6 +986,7 @@
             }
             modifier = {
                 add = 21
+                has_ep2_dlc_trigger = yes				
 				OR = {
  					portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = umbar
@@ -864,7 +1006,7 @@
 				range = { 0.5 1.0 } # For the randomness to work correctly
             }
         }
-        outfit_tags = { military_outfit }
+        outfit_tags = { military_outfit umbar_war_prince }
         weight = {
             base = 0
             modifier = {
@@ -897,6 +1039,12 @@
                 template = anbalukkhori_war_clothes
 				range = { 0.0 0.49 } # For the randomness to work correctly
             }
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
         }
         outfit_tags = { military_outfit }
         weight = {
@@ -936,6 +1084,12 @@
                 template = anbalukkhori_war_clothes
 				range = { 0.5 1.0 } # For the randomness to work correctly
             }
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
         }
         outfit_tags = { military_outfit }
         weight = {
@@ -965,8 +1119,14 @@
                 template = bellakari_war_clothes
 				range = { 0.0 0.49 } # For the randomness to work correctly
             }
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
         }
-        outfit_tags = { military_outfit }
+        outfit_tags = { military_outfit bellakari_war_commoner }
         weight = {
             base = 0
             modifier = {
@@ -980,10 +1140,6 @@
                     }
                 }
                 has_ep3_dlc_trigger = yes
-                OR = {
-                    portrait_era3_armor_trigger = yes
-                    portrait_era4_armor_trigger = yes
-                }
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
@@ -996,10 +1152,6 @@
                     }
                 }
                 has_ep3_dlc_trigger = yes
-                OR = {
-                    portrait_era3_armor_trigger = yes
-                    portrait_era4_armor_trigger = yes
-                }
 			}	
             modifier = {
                add = 200
@@ -1021,8 +1173,14 @@
                 template = bellakari_war_clothes
 				range = { 0.5 1.0 } # For the randomness to work correctly
             }
+            accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 }
+			}
         }
-        outfit_tags = { military_outfit }
+        outfit_tags = { military_outfit bellakari_war_prince }
         weight = {
             base = 0
             modifier = {
@@ -1031,10 +1189,6 @@
                     CULTURE_INPUT = bellakari
                 }
                 has_ep3_dlc_trigger = yes
-                OR = {
-                    portrait_era3_armor_trigger = yes
-                    portrait_era4_armor_trigger = yes
-                }
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
@@ -1042,10 +1196,6 @@
                     CULTURE_INPUT = bellakari
                 }
                 has_ep3_dlc_trigger = yes
-                OR = {
-                    portrait_era3_armor_trigger = yes
-                    portrait_era4_armor_trigger = yes
-                }
             }
         }
     }
@@ -1070,7 +1220,13 @@
                     }
                     portrait_low_nobles_armor_trigger = { 
                         CULTURE_INPUT = gwathiurim
-                    }					
+                    }
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = hobbit
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = hobbit
+                    }							
                 }
 				NOT = { has_trait = skinchanger }				
             }
@@ -1082,9 +1238,14 @@
                     }
                     portrait_low_nobles_armor_trigger = { 
                         CULTURE_INPUT = gwathiurim
-                    }							
+                    }
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = hobbit
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = hobbit
+                    }								
                 }
-				NOT = { has_trait = skinchanger }				
             }
         }
     }
@@ -1106,7 +1267,10 @@
                 OR = {
  					portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = gwathiurim
-                    }					
+                    }
+ 					portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = hobbit
+                    }										
                 }
             }
             modifier = {
@@ -1114,7 +1278,10 @@
                 OR = {
  					portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = gwathiurim
-                    }						
+                    }
+ 					portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = hobbit
+                    }											
                 }
             }
         }
@@ -1275,7 +1442,7 @@
 				mode = add
 				gene = clothes
 				template = dorwinion_war_clothes
-				range = { 0.01 0.39 } # For the randomness to work correctly
+				range = { 0.01 0.19 } # For the randomness to work correctly
 			}
 			accessory = {
 				mode = add
@@ -1288,6 +1455,7 @@
 			base = 0
 			modifier = {
                 add = 100
+				has_dlc = "Garments of the Holy Roman Empire"				
 				NOT = { AND = { government_has_flag = government_is_mercenary  } }
                 OR = {
                     portrait_commoner_armor_trigger = { 
@@ -1320,7 +1488,7 @@
 				mode = add
 				gene = clothes
 				template = dorwinion_war_clothes
-				range = { 0.41 0.49 } # For the randomness to work correctly
+				range = { 0.20 0.49 } # For the randomness to work correctly
 			}
 			accessory = {
 				mode = add
@@ -1333,12 +1501,14 @@
 			base = 0
 			modifier = {
                 add = 101
+                has_ep2_dlc_trigger = yes				
                 portrait_high_nobles_armor_trigger = { 
                     CULTURE_INPUT = dorwinion
                 }
             }
             modifier = {
                 add = 80        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_ep2_dlc_trigger = yes
                 portrait_high_nobles_armor_in_army_trigger = { 
 					CULTURE_INPUT = dorwinion
                 }
@@ -1352,7 +1522,7 @@
 				mode = add
 				gene = clothes
 				template = dorwinion_war_clothes
-				range = { 0.51 1.0 } # For the randomness to work correctly
+				range = { 0.50 1.0 } # For the randomness to work correctly
 			}
 			accessory = {
 				mode = add
@@ -1365,6 +1535,7 @@
 			base = 0
 			modifier = {
                 add = 101
+				has_ep1_dlc_trigger = yes				
                 portrait_royalty_armor_trigger = { 
                     CULTURE_INPUT = dorwinion
                 }
@@ -1525,6 +1696,7 @@
             base = 0
             modifier = {
                 add = 100 # slightly stronger than northern war
+				has_cp4_dlc_trigger = yes				
                 OR = {
 					portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = circumpolar
@@ -1536,6 +1708,7 @@
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+				has_cp4_dlc_trigger = yes
                 OR = {
 					portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = circumpolar
@@ -1567,6 +1740,7 @@
             base = 0
             modifier = {
                 add = 101 # slightly stronger than northern war
+				has_cp4_dlc_trigger = yes				
                 OR = {
                     portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = circumpolar
@@ -1575,6 +1749,7 @@
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+				has_cp4_dlc_trigger = yes
                 OR = {
                     portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = circumpolar
@@ -1987,6 +2162,7 @@
             base = 0
             modifier = {
                 add = 100 # slightly stronger than mena war
+				has_afr_dlc_trigger = yes				
                 OR = {
                     portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = mag
@@ -2001,6 +2177,7 @@
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+				has_afr_dlc_trigger = yes
                 OR = {
                     portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = mag
@@ -2029,6 +2206,7 @@
             base = 0
             modifier = {
                 add = 100 # slightly stronger than western war
+                has_fp2_dlc_trigger = yes				
                 OR = {
                     portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = pel
@@ -2040,6 +2218,7 @@
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_fp2_dlc_trigger = yes
                 OR = {
                     portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = pel
@@ -2065,12 +2244,14 @@
             base = 0
             modifier = {
                 add = 100 # slightly stronger than western war
+                has_fp2_dlc_trigger = yes				
                 portrait_high_nobles_armor_trigger = {
                     CULTURE_INPUT = pel
                 }
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_fp2_dlc_trigger = yes
                 portrait_high_nobles_armor_in_army_trigger = {
                     CULTURE_INPUT = pel
                 }
@@ -2174,6 +2355,7 @@
             base = 0
             modifier = {
                 add = 100
+                has_fp3_dlc_trigger = yes				
                 OR = {
                     portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = variag
@@ -2185,6 +2367,7 @@
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_fp3_dlc_trigger = yes
                 OR = {
                     portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = variag
@@ -2239,6 +2422,7 @@
             base = 0
             modifier = {
                 add = 101 # slightly stronger than mena war
+                has_fp3_dlc_trigger = yes				
                 OR = {
 					portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = variag
@@ -2256,6 +2440,7 @@
             }
             modifier = {
                 add = 25        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_fp3_dlc_trigger = yes
                 OR = {
 					portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = variag
@@ -2324,7 +2509,7 @@
                 mode = add
                 gene = clothes
                 template = ioriag_war_clothes
-				range = { 0 1 } # For the randomness to work correctly 
+				range = { 0.01 0.50 } # For the randomness to work correctly 
             }
         }
         outfit_tags = { military_outfit }
@@ -2336,11 +2521,10 @@
                     portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = rhunnic
                     }
-                    portrait_low_nobles_armor_trigger = { 
-                        CULTURE_INPUT = rhunnic
-                    }
+					portrait_low_nobles_armor_trigger = {
+						CULTURE_INPUT = rhunnic
+					}					
                 }
-				has_ep2_dlc_trigger = yes					
 				NOT = { portrait_variag_clothing_trigger = yes }				
 				culture = {
 					AND = {
@@ -2354,11 +2538,10 @@
                     portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = rhunnic
                     }
-                    portrait_low_nobles_armor_in_army_trigger = { 
-                        CULTURE_INPUT = rhunnic
-                    }
+					portrait_low_nobles_armor_in_army_trigger = {
+						CULTURE_INPUT = rhunnic
+					}					
                 }
-               has_ep2_dlc_trigger = yes					
 				culture = {
 					AND = {
 						has_cultural_pillar = heritage_ioriag
@@ -2371,11 +2554,10 @@
                     portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = rhunnic
                     }
-                    portrait_low_nobles_armor_in_army_trigger = { 
-                        CULTURE_INPUT = rhunnic
-                    }
+					portrait_low_nobles_armor_in_army_trigger = {
+						CULTURE_INPUT = rhunnic
+					}					
                 }
-				has_ep2_dlc_trigger = yes				
 				exists = liege				
 				liege.culture = {
 					has_cultural_pillar = heritage_ioriag
@@ -2391,7 +2573,7 @@
                 mode = add
                 gene = clothes
                 template = ioriag_war_clothes
-				range = { 0 1 } # For the randomness to work correctly 
+				range = { 0.51 1.0 } # For the randomness to work correctly 
             }
         }
         outfit_tags = { military_outfit }
@@ -2399,9 +2581,11 @@
             base = 0
             modifier = {
                 add = 120
-                portrait_high_nobles_armor_trigger = {
-                    CULTURE_INPUT = rhunnic
-                }
+				OR = {
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = rhunnic
+                    }
+				}	
 				NOT = { portrait_variag_clothing_trigger = yes }
 				has_ep2_dlc_trigger = yes				
 				culture = {
@@ -2412,9 +2596,11 @@
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-                portrait_high_nobles_armor_in_army_trigger = {
-                    CULTURE_INPUT = rhunnic
-                }
+				OR = {
+                    portrait_high_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = rhunnic
+                    }
+				}					
 				has_ep2_dlc_trigger = yes				
 				culture = {
 					AND = {
@@ -2424,9 +2610,11 @@
             }
             modifier = { #So all soldiers in the army wear the same armor regardless of culture
                 add = 200           
-                portrait_high_nobles_armor_in_army_trigger = {
-                    CULTURE_INPUT = rhunnic
-                }
+				OR = {
+                    portrait_high_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = rhunnic
+                    }
+				}		
 				has_ep2_dlc_trigger = yes				
 				exists = liege				
 				liege.culture = {
@@ -2451,6 +2639,7 @@
             base = 0
             modifier = {
                 add = 120
+				has_pol_dlc_trigger = yes				
                 OR = {
                     portrait_commoner_armor_trigger = { 
                         CULTURE_INPUT = rhunnic
@@ -2470,6 +2659,7 @@
             }
             modifier = {
                 add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+				has_pol_dlc_trigger = yes
                 OR = {
                     portrait_commoner_armor_in_army_trigger = { 
                         CULTURE_INPUT = rhunnic
@@ -2490,161 +2680,274 @@
         }
     }
 
-    #khyan_war_low = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = khyan_war_clothes
-	#			range = { 0.0 0.39 } # For the randomness to work correctly   
-    #        }
-    #    }
-    #    outfit_tags = { military_outfit }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 101
-    #            OR = {
-    #                portrait_commoner_armor_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #                portrait_low_nobles_armor_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #            }
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            OR = {
-    #                portrait_commoner_armor_in_army_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #                portrait_low_nobles_armor_in_army_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #            }  
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #    }
-    #}
-	#
-    #khyan_war_high = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = khyan_war_clothes
-	#			range = { 0.40 0.79 } # For the randomness to work correctly  
-    #        }
-    #    }
-    #    outfit_tags = { military_outfit }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 101
-    #            portrait_high_nobles_armor_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            portrait_high_nobles_armor_in_army_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            } 
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #    }
-    #}
-	#
-    #bulchyadean_war_low = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = bulchyadean_war_clothes
-	#			range = { 0.0 0.09 } # For the randomness to work correctly   
-    #        }
-    #    }
-    #    outfit_tags = { military_outfit }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 60
-    #            OR = {
-    #                portrait_commoner_armor_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #                portrait_low_nobles_armor_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = ethos_bureaucratic
-	#				}
-	#			}						
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            OR = {
-    #                portrait_commoner_armor_in_army_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #                portrait_low_nobles_armor_in_army_trigger = { 
-    #                    CULTURE_INPUT = khailuza
-    #                }
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = ethos_bureaucratic
-	#				}
-	#			}						
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #    }
-    #}
-	#
-    #bulchyadean_war_high = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = bulchyadean_war_clothes
-	#			range = { 0.11 0.19 } # For the randomness to work correctly  
-    #        }
-    #    }
-    #    outfit_tags = { military_outfit }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 60
-    #            portrait_high_nobles_armor_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = ethos_bureaucratic
-	#				}
-	#			}						
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            portrait_high_nobles_armor_in_army_trigger = {
-    #                CULTURE_INPUT = khailuza
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = ethos_bureaucratic
-	#				}
-	#			}						
-    #            has_ep2_dlc_trigger = yes
-    #        }
-    #    }
-    #}	
+    khyan_war_low = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = khyan_war_clothes
+				range = { 0.0 0.39 } # For the randomness to work correctly   
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 101
+                OR = {
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                }
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                OR = {
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                }  
+            }
+        }
+    }
+
+    khyan_war_high = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = khyan_war_clothes
+				range = { 0.40 0.79 } # For the randomness to work correctly  
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 101
+                portrait_high_nobles_armor_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_high_nobles_armor_in_army_trigger = {
+                    CULTURE_INPUT = khailuza
+                } 
+             }
+        }
+    }
+	
+    bulchyadean_war_low = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = bulchyadean_war_clothes
+				range = { 0.0 0.09 } # For the randomness to work correctly   
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 102
+                OR = {
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_egalitarian
+					}
+				}						
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                OR = {
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_egalitarian
+					}
+				}						
+            }
+        }
+    }
+
+    bulchyadean_war_high = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = bulchyadean_war_clothes
+				range = { 0.11 0.19 } # For the randomness to work correctly  
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 102
+                portrait_high_nobles_armor_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_egalitarian
+					}
+				}						
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_high_nobles_armor_in_army_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_egalitarian
+					}
+				}						
+            }
+        }
+    }
+
+    anarikean_war_low = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = bulchyadean_war_clothes
+				range = { 0.21 0.29 } # For the randomness to work correctly   
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 102
+                OR = {
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_bureaucratic
+					}
+				}						
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                OR = {
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = khailuza
+                    }
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_bureaucratic
+					}
+				}						
+            }
+        }
+    }
+
+    anarikean_war_high = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = bulchyadean_war_clothes
+				range = { 0.31 0.39 } # For the randomness to work correctly  
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 102
+                portrait_high_nobles_armor_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_bureaucratic
+					}
+				}						
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_high_nobles_armor_in_army_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_bureaucratic
+					}
+				}						
+            }
+        }
+    }
+
+    anarikean_war_royalty = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = bulchyadean_war_clothes
+				range = { 0.50 1.0 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 120
+                portrait_royalty_armor_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_bureaucratic
+					}
+				}	
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_royalty_armor_in_army_trigger = {
+                    CULTURE_INPUT = khailuza
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = ethos_bureaucratic
+					}
+				}							
+            }
+        }
+    }	
 
     vulmaw_war = {
         dna_modifiers = {
@@ -2702,183 +3005,340 @@
     }	
 
     ## muranian ##
-    #muranian_war_low = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = muranian_war_clothes
- 	#			range = { 0.0 0.49 } # For the randomness to work correctly
-    #        }
-    #    }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 102
-    #            OR = {
-    #                portrait_commoner_armor_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #                portrait_low_nobles_armor_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = heritage_harshandatt
-	#				}
-	#			}						
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            OR = {
-    #                portrait_commoner_armor_in_army_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #                portrait_low_nobles_armor_in_army_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = heritage_harshandatt
-	#				}
-	#			}						
-    #        }
-    #    }		
-	#}
-	#
-    #muranian_war_high = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = muranian_war_clothes
- 	#			range = { 0.50 1.0 } # For the randomness to work correctly
-    #        }
-    #    }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 102
-    #            OR = {
-    #                portrait_high_nobles_armor_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #                portrait_high_nobles_armor_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = heritage_harshandatt
-	#				}
-	#			}						
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            OR = {
-    #                portrait_high_nobles_armor_in_army_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #                portrait_high_nobles_armor_in_army_trigger = {
-    #                    CULTURE_INPUT = muranian
-    #                }
-    #            }
-	#			culture = {
-	#				AND = {
-	#					has_cultural_pillar = heritage_harshandatt
-	#				}
-	#			}						
-    #        }
-    #    }		
-	#}
-	#
-    #sirayni_war_low = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = sirayni_war_clothes
-	#			range = { 0.0 0.49 } # For the randomness to work correctly
-    #        }
-    #    }
-    #    outfit_tags = { military_outfit }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 101
-    #            OR = {
-    #                portrait_commoner_armor_trigger = { 
-    #                    CULTURE_INPUT = sirayni
-    #                }
-    #                portrait_low_nobles_armor_trigger = { 
-    #                    CULTURE_INPUT = sirayni
-    #                }
-    #            }
-	#			culture = {
-	#				OR = {
-	#					has_cultural_pillar = heritage_new_sirayni
-	#				}
-	#			}								
-	#			
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            OR = {
-    #                portrait_commoner_armor_in_army_trigger = { 
-    #                    CULTURE_INPUT = sirayni
-    #                }
-    #                portrait_low_nobles_armor_in_army_trigger = { 
-    #                    CULTURE_INPUT = sirayni
-    #                }
-    #            }
-	#			culture = {
-	#				OR = {
-	#					has_cultural_pillar = heritage_new_sirayni
-	#				}
-	#			}								
-	#			
-    #        }
-    #    }
-    #}
-	#
-    #sirayni_war_high = {
-    #    dna_modifiers = {
-    #        accessory = {
-    #            mode = add
-    #            gene = clothes
-    #            template = sirayni_war_clothes
-	#			range = { 0.49 1.0 } # For the randomness to work correctly
-    #        }
-    #    }
-    #    outfit_tags = { military_outfit }
-    #    weight = {
-    #        base = 0
-    #        modifier = {
-    #            add = 50
-    #            portrait_high_nobles_armor_trigger = {
-    #                CULTURE_INPUT = sirayni
-    #            }
-	#			culture = {
-	#				OR = {
-	#					has_cultural_pillar = heritage_new_sirayni
-	#				}
-	#			}								
-    #        }
-    #        modifier = {
-    #            add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
-    #            portrait_high_nobles_armor_in_army_trigger = {
-    #                CULTURE_INPUT = sirayni
-    #            }
-	#			culture = {
-	#				OR = {
-	#					has_cultural_pillar = heritage_new_sirayni
-	#				}
-	#			}								
-    #        }
-    #    }
-    #}
+    muranian_war_low = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = muranian_war_clothes
+				range = { 0.0 0.24 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 120
+                OR = {
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = muranian
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = muranian
+                    }
+                }
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                OR = {
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = muranian
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = muranian
+                    }
+                }
+            }
+        }
+    }
+
+    muranian_war_high = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = muranian_war_clothes
+				range = { 0.25 0.49 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 120
+                portrait_high_nobles_armor_trigger = {
+                    CULTURE_INPUT = muranian
+                }
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_high_nobles_armor_in_army_trigger = {
+                    CULTURE_INPUT = muranian
+                }
+            }
+        }
+    }
+
+    muranian_war_royalty = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = muranian_war_clothes
+				range = { 0.50 1.0 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 120
+                portrait_royalty_armor_trigger = {
+                    CULTURE_INPUT = muranian
+                }
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_royalty_armor_in_army_trigger = {
+                    CULTURE_INPUT = muranian
+                }
+            }
+        }
+    }
+
+    sirayni_war_low = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = sirayni_war_clothes
+				range = { 0.0 0.49 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 101
+                OR = {
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                }
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_new_sirayni
+					}
+				}								
+				
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                OR = {
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                }
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_new_sirayni
+					}
+				}								
+				
+            }
+        }
+    }
+
+    sirayni_war_high = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = sirayni_war_clothes
+				range = { 0.49 1.0 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 102
+                portrait_high_nobles_armor_trigger = {
+                    CULTURE_INPUT = sirayni
+                }
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_new_sirayni
+					}
+				}								
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_high_nobles_armor_in_army_trigger = {
+                    CULTURE_INPUT = sirayni
+                }
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_new_sirayni
+					}
+				}								
+            }
+        }
+    }
+	
+    harani_war_low = {
+        dna_modifiers = { 
+            accessory = {
+                mode = add
+                gene = clothes
+                template = harani_war_clothes
+				range = { 0.0 0.49 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 102
+                OR = {
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                }
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_old_sirayni
+					}
+				}								
+				
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                OR = {
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = sirayni
+                    }
+                }
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_old_sirayni
+					}
+				}								
+				
+            }
+        }
+    }
+
+    harani_war_high = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = harani_war_clothes
+				range = { 0.49 1.0 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 103
+                portrait_high_nobles_armor_trigger = {
+                    CULTURE_INPUT = sirayni
+                }
+				culture = {
+					AND = {
+						has_cultural_pillar = heritage_old_sirayni
+					}
+				}								
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                portrait_high_nobles_armor_in_army_trigger = {
+                    CULTURE_INPUT = sirayni
+                }
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_old_sirayni
+					}
+				}								
+            }
+        }
+    }
+
+    lynerian_war_low = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = muranian_war_clothes
+				range = { 0.0 0.49 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 120
+                has_ep2_dlc_trigger = yes				
+				scope:culture = culture:lynerian				
+                OR = {
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = kirani
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = kirani
+                    }
+                }
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_ep2_dlc_trigger = yes
+				scope:culture = culture:lynerian
+                OR = {
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = kirani
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = kirani
+                    }
+                }
+            }
+        }
+    }
+
+    lynerian_war_high = {
+        dna_modifiers = {
+            accessory = {
+                mode = add
+                gene = clothes
+                template = muranian_war_clothes
+				range = { 0.51 0.99 } # For the randomness to work correctly
+            }
+        }
+        outfit_tags = { military_outfit }
+        weight = {
+            base = 0
+            modifier = {
+                add = 120
+                has_ep2_dlc_trigger = yes				
+				scope:culture = culture:lynerian				
+                portrait_high_nobles_armor_trigger = {
+                    CULTURE_INPUT = kirani 
+                }
+            }
+            modifier = {
+                add = 21        # So priests who are actively serving in a raised army as a commander or knight wear armor instead of priest robes
+                has_ep2_dlc_trigger = yes
+				scope:culture = culture:lynerian
+                portrait_high_nobles_armor_in_army_trigger = {
+                    CULTURE_INPUT = kirani 
+                }
+            }
+        }
+    }	
 
 	## Northron - northern_proxy ##
 

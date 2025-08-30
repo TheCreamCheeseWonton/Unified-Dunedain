@@ -560,6 +560,82 @@ heritage_thani_native = {
 	audio_parameter = mena
 }
 
+### START OF WIP BAY OF ORMAL APYSAIC HERITAGES ###
+
+heritage_elinse = {
+	type = heritage
+	parameters = {
+		heritage_group_apysaic = yes
+		heritage_family_haradrim = yes
+		is_human_heritage = yes
+	}
+	character_modifier  = {
+		halls_advantage = -10
+	}
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_elinse
+		}
+	}
+	audio_parameter = mena
+}
+
+heritage_harshandatt = {
+	type = heritage
+	parameters = {
+		heritage_group_apysaic = yes
+		heritage_family_haradrim = yes
+		is_human_heritage = yes
+	}
+	character_modifier  = {
+		halls_advantage = -10
+	}
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_harshandatt
+		}
+	}
+	audio_parameter = mena
+}
+
+heritage_old_sirayni = {
+	type = heritage
+	parameters = {
+		heritage_group_apysaic = yes
+		heritage_family_haradrim = yes
+		is_human_heritage = yes
+	}
+	character_modifier  = {
+		halls_advantage = -10
+	}
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_old_sirayni
+		}
+	}
+	audio_parameter = mena
+}
+
+heritage_new_sirayni = {
+	type = heritage
+	parameters = {
+		heritage_group_apysaic = yes
+		heritage_family_haradrim = yes
+		is_human_heritage = yes
+	}
+	character_modifier  = {
+		halls_advantage = -10
+	}
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_new_sirayni
+		}
+	}
+	audio_parameter = mena
+}
+
+### END OF WIP BAY OF ORMAL HERITAGES ###
+
 heritage_ioriag = {
 	type = heritage
 	parameters = {
@@ -650,6 +726,26 @@ heritage_magri = {
 	audio_parameter = mena
 }
 
+### START OF WIP BAY OF ORMAL MUMAKANI HERITAGES ###
+heritage_shayn = {
+	type = heritage
+	parameters = {
+		heritage_group_mumakani = yes
+		heritage_family_haradrim = yes
+		is_human_heritage = yes
+	}
+	character_modifier  = {
+		halls_advantage = -10
+	}
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_shayn
+		}
+	}
+	audio_parameter = mena
+}
+### END OF WIP BAY OF ORMAL MUMAKANI HERITAGES ###
+
 heritage_northern_adunaic = {
 	type = heritage
 	parameters = {
@@ -689,9 +785,32 @@ heritage_orc = {
 		mountains_travel_danger = mountains_medium_danger_reduction
 		hills_travel_danger = hills_medium_danger_reduction
 		
-		general_opinion = -25
+		general_opinion = -35	#-25 from heritage + -10 from Orcish Society
 		rf_eruhini_opinion = -500
+		
+		#Moved from Orcish Society
+		monthly_county_control_decline_factor = -0.2
+		vassal_opinion = -30 # An Orc Overlord can never rest easy
+		#general_opinion = -10 
+		
+		ai_honor = -40 # Orcs are not an honorable lot!
+		ai_war_chance = 1
+		ai_war_cooldown = -0.25
+		levy_size = 0.4 #0.15 from Orcish Society + 0.25 from Strength in Numbers
 	}
+	
+	#Parameters moved from Orcish Society
+	parameters = {
+		culture_can_raid_at_sea_even_if_feudal = yes
+		can_use_conquest_cbs = yes
+		cb_lower_prestige_level_requirement = yes
+		cheaper_cbs = yes
+		unlock_voluntary_laampdom = yes
+		more_likely_to_be_laamps = yes
+		can_recruit_halls_specialist = yes
+		murderers_are_prestigious_and_feared = yes
+	}
+	
 	culture_modifier = {
 		mercenary_count_mult = -10
 	}
@@ -724,8 +843,30 @@ heritage_goblin = { #juke note: boni should be adjusted later
 		mountains_travel_danger = mountains_medium_danger_reduction
 		hills_travel_danger = hills_medium_danger_reduction
 		
-		general_opinion = -25
+		general_opinion = -35	#-25 from heritage + -10 from Orcish Society
 		rf_eruhini_opinion = -500
+		
+		#Moved from Orcish Society
+		monthly_county_control_decline_factor = -0.2
+		vassal_opinion = -30 # An Orc Overlord can never rest easy
+		#general_opinion = -10 
+		
+		ai_honor = -40 # Orcs are not an honorable lot!
+		ai_war_chance = 1
+		ai_war_cooldown = -0.25
+		levy_size = 0.4 #0.15 from Orcish Society + 0.25 from Strength in Numbers
+	}
+	
+	#Parameters moved from Orcish Society
+	parameters = {
+		culture_can_raid_at_sea_even_if_feudal = yes
+		can_use_conquest_cbs = yes
+		cb_lower_prestige_level_requirement = yes
+		cheaper_cbs = yes
+		unlock_voluntary_laampdom = yes
+		more_likely_to_be_laamps = yes
+		can_recruit_halls_specialist = yes
+		murderers_are_prestigious_and_feared = yes
 	}
 	culture_modifier = {
 		mercenary_count_mult = -10
@@ -755,7 +896,23 @@ heritage_southern_adunaic = {
 	}
 	audio_parameter = european
 }
-
+heritage_eastern_adunaic = {
+	type = heritage
+	parameters = {
+		heritage_group_numenorean = yes
+		heritage_family_edain = yes
+		is_human_heritage = yes
+	}
+	character_modifier  = {
+		halls_advantage = -10
+	}
+	is_shown = {
+		heritage_is_shown_trigger = {
+			HERITAGE = heritage_eastern_adunaic
+		}
+	}
+	audio_parameter = european
+}
 heritage_troll = {
 	type = heritage
 	parameters = {
@@ -882,10 +1039,12 @@ heritage_longbeard = {
 	type = heritage
 
 	parameters = {
-		heritage_group_khazad = yes
+		heritage_group_western_khazad = yes
+		heritage_family_khazad = yes
 		can_use_mining_activity = yes
 		unlock_full_delving = yes
 		is_dwarf_heritage = yes
+		can_recruit_halls_specialist = yes
 	}
 
 	character_modifier = {
@@ -921,10 +1080,12 @@ heritage_firebeard = {
 	type = heritage
 
 	parameters = {
-		heritage_group_khazad = yes
+		heritage_group_western_khazad = yes
+		heritage_family_khazad = yes
 		can_use_mining_activity = yes
 		unlock_full_delving = yes
 		is_dwarf_heritage = yes
+		can_recruit_halls_specialist = yes
 	}
 
 	character_modifier = {
@@ -960,10 +1121,12 @@ heritage_broadbeam = {
 	type = heritage
 
 	parameters = {
-		heritage_group_khazad = yes
+		heritage_group_western_khazad = yes
+		heritage_family_khazad = yes
 		can_use_mining_activity = yes
 		unlock_full_delving = yes
 		is_dwarf_heritage = yes
+		can_recruit_halls_specialist = yes
 	}
 
 	character_modifier = {
@@ -999,10 +1162,12 @@ heritage_ironfist = {
 	type = heritage
 
 	parameters = {
-		heritage_group_khazad = yes
+		heritage_group_eastern_khazad = yes
+		heritage_family_khazad = yes
 		can_use_mining_activity = yes
 		unlock_full_delving = yes
 		is_dwarf_heritage = yes
+		can_recruit_halls_specialist = yes
 	}
 
 	character_modifier = {
@@ -1038,10 +1203,12 @@ heritage_stiffbeard = {
 	type = heritage
 
 	parameters = {
-		heritage_group_khazad = yes
+		heritage_group_eastern_khazad = yes
+		heritage_family_khazad = yes
 		can_use_mining_activity = yes
 		unlock_full_delving = yes
 		is_dwarf_heritage = yes
+		can_recruit_halls_specialist = yes
 	}
 
 	character_modifier = {
@@ -1077,10 +1244,12 @@ heritage_blacklock = {
 	type = heritage
 
 	parameters = {
-		heritage_group_khazad = yes
+		heritage_group_eastern_khazad = yes
+		heritage_family_khazad = yes
 		can_use_mining_activity = yes
 		unlock_full_delving = yes
 		is_dwarf_heritage = yes
+		can_recruit_halls_specialist = yes
 	}
 
 	character_modifier = {
@@ -1116,10 +1285,12 @@ heritage_stonefoot = {
 	type = heritage
 
 	parameters = {
-		heritage_group_khazad = yes
+		heritage_group_eastern_khazad = yes
+		heritage_family_khazad = yes
 		can_use_mining_activity = yes
 		unlock_full_delving = yes
 		is_dwarf_heritage = yes
+		can_recruit_halls_specialist = yes
 	}
 
 	character_modifier = {

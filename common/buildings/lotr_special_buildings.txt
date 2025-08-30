@@ -1429,12 +1429,13 @@ wonder_north_undeep_02 = {
 	can_construct = {
 		building_requirement_castle_city_church = { LEVEL = 02 }
 		scope:holder ?= {
-				##Quonton
-				OR = { 
-					culture = { has_cultural_pillar = heritage_dunedain }
-					culture = { has_cultural_tradition = tradition_new_numenor }
-				}
-				##End Quonton	
+			##Quonton
+			OR = { 
+				culture = { has_cultural_pillar = heritage_dunedain }
+				culture = { has_cultural_tradition = tradition_new_numenor }
+			}
+			##End Quonton	
+		}
 	}
 	province_modifier = {
 		fort_level = 2
@@ -4015,7 +4016,7 @@ wonder_cirith_ungol_02 = { # Orcish Cirith Ungol
 	levy = small_building_levy_tier_4
 	character_modifier = {
 		knight_limit = 1
-		knight_effectiveness_mult = 0.08
+		knight_effectiveness_mult = 0.04
 		army_maintenance_mult = -0.04
 	}
 
@@ -5429,7 +5430,7 @@ wonder_arminalethor_02 = {
 		scope:holder ?= {
 			culture = {
 				has_innovation = innovation_hoardings
-			##Quonton
+				##Quonton
 				OR = { 
 					has_cultural_pillar = heritage_northern_adunaic
 					has_cultural_pillar = heritage_southern_adunaic
@@ -6148,7 +6149,6 @@ wonder_coves_irtil = { #Coves of Irtîl
 			}
 		}	
 		##End Quonton
-	}
 	}
 	ai_value = {
 		base = 100
@@ -14742,12 +14742,11 @@ wonder_ardinak_02 = { # Ardinak - Rebuilt
 			OR = {
 				scope:holder.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 				scope:holder.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
-				#scope:holder.culture ?= { has_cultural_pillar = heritage_moriquendi }	
+				#scope:holder.culture ?= { has_cultural_pillar = heritage_moriquendi }	#Handled via decision
 				##Quonton
 				scope:holder.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				scope:holder.culture ?= { has_cultural_tradition = tradition_new_numenor }
 				##End Quonton
-				#Handled via decision
 			}
 		}
 		building_requirement_tribal = no

@@ -497,10 +497,12 @@
 	}
 	background = {
 		trigger = {
-			scope:host.location = {				
-				OR = { 
-					has_cultural_pillar = heritage_dunedain
-					has_cultural_tradition = tradition_new_numenor
+			scope:host.location = {		
+				culture = { 
+					OR = { 
+						has_cultural_pillar = heritage_dunedain
+						has_cultural_tradition = tradition_new_numenor
+					}
 				}
 			}
 		}
