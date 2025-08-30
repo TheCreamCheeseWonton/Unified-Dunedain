@@ -2514,7 +2514,7 @@ mundburgian_eored = {
 
 	can_recruit = {
 		any_held_title = { has_variable = founded_mundburgian_eored	}
-		NOT = { OR = { has_cultural_pillar = heritage_unified_adunaic has_cultural_tradition = tradition_new_numenor } }
+		NOT = { culture = { OR = { has_cultural_pillar = heritage_unified_adunaic has_cultural_tradition = tradition_new_numenor } } }
 	}
 
 	damage = 130

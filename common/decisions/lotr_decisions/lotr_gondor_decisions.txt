@@ -2497,7 +2497,7 @@ decision_reunify_numenor_culture = {
 				else_if = { 
 					limit = { has_trait = blood_of_numenor_2 }	
 					remove_trait = blood_of_numenor_2
-					add_trait = blood_of_numenor_8
+					add_trait = blood_of_numenor_10
 				}
 				else_if = { 
 					limit = { has_trait = blood_of_numenor_1 }	
@@ -2700,7 +2700,7 @@ decision_reunify_numenor_culture = {
 				else_if = { 
 					limit = { has_trait = blood_of_numenor_2 }	
 					remove_trait = blood_of_numenor_2
-					add_trait = blood_of_numenor_8
+					add_trait = blood_of_numenor_10
 				}
 				else_if = { 
 					limit = { has_trait = blood_of_numenor_1 }	
