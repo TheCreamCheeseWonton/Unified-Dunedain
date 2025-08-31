@@ -1254,6 +1254,7 @@ decision_search_orthanc = {
 		culture = { 
 			OR = { 
 				has_cultural_pillar = heritage_dunedain 
+				has_cultural_pillar = heritage_unified_adunaic
 				has_cultural_tradition = tradition_new_numenor
 			}	
 		}
