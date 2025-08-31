@@ -2188,7 +2188,7 @@ decision_reunify_dunedain = {
 		prestige_level >= 5
 		piety_level >= 4
 		completely_controls_region = custom_gondorian_heartlands
-		completely_controls_region = middleearth_west_arnor
+		completely_controls_region = custom_arnor_minus_shire
 	}
 	is_valid_showing_failures_only = {
 		is_imprisoned = no

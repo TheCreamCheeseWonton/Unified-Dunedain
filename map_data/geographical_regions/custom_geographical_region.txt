@@ -11,3 +11,17 @@
 		middleearth_harad_far_tulwang
 	}
 }
+
+custom_arnor_minus_shire = { 
+	duchies = {
+		### Arthedain
+		d_hyarromenya d_siragale d_sarn_athrad d_nan_turath d_tarmea d_norinanya d_eketya d_rammas_forn d_emyn_sul 
+		### Cardolan
+		d_dol_caladir d_ethir_gwathlo d_girithlin d_minhiriath d_dyr_maenason d_faerdor 
+		### Rhudaur
+		d_dor_en_egladil d_cameth_brin d_hithaeglir_forn d_hithaeglir_harad d_dol_tiriamon d_dyr_eldanaryon d_dul_glandagol 
+	}
+	counties = {
+		c_dol_daergorthad c_iarond c_andrath c_tyrn_harad c_glandagol
+	}
+}

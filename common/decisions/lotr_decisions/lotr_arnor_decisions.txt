@@ -926,6 +926,8 @@ decision_adopt_arnorian_culture = {
 	# IS_SHOWN
 	is_shown = {
 		culture = { any_parent_culture_or_above = { this = culture:arnorian } }
+		NOT = { culture = { any_parent_culture_or_above = { this = culture:new_dunedain } } }
+		NOT = { culture = { this = culture:new_dunedain } }
 		capital_province = { geographical_region = middleearth_west_arnor }
 	}
 

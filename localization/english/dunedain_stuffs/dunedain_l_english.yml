@@ -233,6 +233,7 @@
  decision_unify_pharazaini_county_custom:0 "All Northern Adûnâic, Southern Adûnâic, and non-Bellanarûd Bellakari [heritage|E] [counties|e]"
  decision_unify_adunai_own_all_aduanic_provinces:0 "You must own all Northern Adûnâic, Southern Adûnâic, and non-Bellanarûd Bellakari [heritage|E] [counties|e] in the [GetGeographicalRegion('special_nie_extra').GetName] [region|E]"
  special_nie_extra:0 "the Greater [numenorean|E] Colonies"
+ custom_arnor_minus_shire:0 "the [arnorian|E] Heartlands"
 
  decision_reunify_numenor_culture:0 "Restore a Númenórean Identity"
  decision_reunify_numenor_culture_desc:0 "Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the former [numenoreans|E] of [middleearth|E] have diverged. Separated by politics, religion, conflict, and sheer distance, the many Sons of [numenor|E] have long been divided. Now, with all of the old Númenórean Colonies under our rule, and the formation of Númenor-in-Exile, the Númenóreans are once again united!""
