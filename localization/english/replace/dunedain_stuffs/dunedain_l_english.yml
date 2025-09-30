@@ -505,7 +505,7 @@
  dunedain_identity.8.t: "The Binding of Gondor and the Mark"
  dunedain_identity.8.desc: "With the stroke of a pen, an event long thought impossible has come to pass. The realm of the Horse-lords, [rohan|E], and the Land of the White Tree, [gondor|E], are now united beneath the crown of [high_king_gondor.GetName]. The [rohirrim|E] and the [dunedain|E] march forward as brethren under a single banner, together a force so formidable that few could hope to stand against them. Once more, the forces of Evil find themselves on the retreat in the face of the might of the [west|E]."
  dunedain_identity.8.a: "All hail [high_king_gondor.GetName]!"
- dunedain_identity.8.b: "Two fall harder than one"
+ dunedain_identity.8.b: "No matter, the two fall more grievously than one."
  dunedain_identity.8.c: "Who cares about some wild horse-men?"
 
 

@@ -186,7 +186,7 @@ dunedain_identity.4 = { # Integrate Rohan
 				NOT = { has_game_rule = no_news }
 			}
 			every_player = { #Global News Announcement
-				trigger_event = news_event.0011
+				trigger_event = dunedain_identity.8
 			}
 		}
 	}
@@ -389,7 +389,7 @@ dunedain_identity.8 = {
 	title = dunedain_identity.8.t
 	desc = dunedain_identity.8.desc
 	theme = crown
-	override_background = { reference = eotheod }
+	override_background = { reference = rohan_fullscreen }
 	
 	immediate = { 
 		title:e_reunitedkingdom.holder = { save_scope_as = high_king_gondor }
