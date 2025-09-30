@@ -355,8 +355,6 @@ innovation_numenorean_warriors = {
 	custom = unlock_numenorean_soldiers_custom
 	custom = unlock_numenorean_pikemen
 	custom = unlock_numenorean_archers_custom
-	custom = unlock_numenorean_reformed_outriders
-	custom = unlock_numenorean_knights_custom
 	##End Quonton
 }
 
@@ -367,7 +365,7 @@ innovation_numenorean_warriors_custom = {
 	icon = @special_maa_02
 
 	potential = {
-		AND = { 
+		AND = {
 			has_cultural_pillar = heritage_dunedain
 			has_cultural_tradition = tradition_new_numenor
 		}
@@ -378,8 +376,8 @@ innovation_numenorean_warriors_custom = {
 	custom = unlock_numenorean_soldiers_custom
 	custom = unlock_numenorean_pikemen
 	custom = unlock_numenorean_archers_custom
-	custom = unlock_numenorean_reformed_outriders
 	custom = unlock_numenorean_knights_custom
+	custom = unlock_numenorean_reformed_outriders
 }
 
 innovation_numenorean_warriors_adunaic = {
@@ -399,8 +397,8 @@ innovation_numenorean_warriors_adunaic = {
 	custom = unlock_numenorean_soldiers_adunaic
 	custom = unlock_numenorean_pikemen_adunaic
 	custom = unlock_numenorean_archers_adunaic
-	custom = unlock_numenorean_reformed_outriders_adunaic
 	custom = unlock_numenorean_knights_adunaic
+	custom = unlock_numenorean_reformed_outriders_adunaic
 }
 ##End Quonton
 
@@ -415,11 +413,42 @@ innovation_dunedain_warriors = {
 			##Quonton
 			this = culture:new_dunedain
 		}
+		NOT = { 
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_reintroduce_steelbows
+			}
+		}
 	}
 	##Quonton
+	custom = unlock_dunedain_elites
 	custom = unlock_dunedain_marines
 	custom = unlock_dunedain_soldiers
 	custom = unlock_dunedain_archers
+	custom = unlock_dunedain_knights
+	custom = unlock_dunedain_reformed_rangers
+	custom = unlock_dunedain_reformed_wardens
+	custom = unlock_dunedain_reformed_outriders
+	##End Quonton
+}
+
+innovation_dunedain_warriors_steelbow = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		this = culture:new_dunedain
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_reintroduce_steelbows
+		}
+	}
+	##Quonton
+	custom = unlock_dunedain_elites
+	custom = unlock_dunedain_marines
+	custom = unlock_dunedain_soldiers
+	custom = unlock_dunedain_steelbow
 	custom = unlock_dunedain_knights
 	custom = unlock_dunedain_reformed_rangers
 	custom = unlock_dunedain_reformed_wardens
@@ -519,6 +548,7 @@ innovation_umbaredain_warfare = {
 	custom = unlock_umbaredain_infantry
 	custom = unlock_umbaredain_spearmen
 }
+
 innovation_dunedain_ranger_warfare = {
 	group = culture_group_regional
 	culture_era = culture_era_tribal
@@ -671,7 +701,7 @@ innovation_tulwangi_warfare = {
 
 	potential = {
 		OR = {
-			has_cultural_pillar = heritage_thani_native
+			#has_cultural_pillar = heritage_thani_native
 			has_cultural_pillar = heritage_tulwangi
 		}
 	}
@@ -747,6 +777,12 @@ innovation_conscripts_warfare = {
 			any_parent_culture_or_above = { this = culture:anbalukkhori }
 			this = culture:south_adunai_colonial
 			this = culture:tanturaki
+		}
+		##Quonton
+		NOT = {  
+			any_parent_culture_or_above = {
+				this = culture:kharadunaim
+			}
 		}
 	}
 
@@ -873,7 +909,6 @@ innovation_warriors_rhun = {
 
 	flag = global_maa
 }
-
 
 ### Harshandatt ###
 innovation_harshandatt_warfare = {
@@ -1055,6 +1090,46 @@ innovation_broadbeam_warfare = {
 	flag = global_maa
 }
 
+innovation_ironfist_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @lotr_special_maa_stiffbeards
+
+	potential = {
+		OR = {
+			#has_cultural_pillar = heritage_khazad
+			has_cultural_pillar = heritage_ironfist
+		}
+	}
+
+	custom = unlock_ironfist_skirmishers
+	custom = unlock_ironfist_crossbowmen
+	custom = unlock_ironfist_pikemen
+	custom = unlock_ironfist_heavy_infantry
+
+	flag = global_maa
+}
+
+innovation_stiffbeard_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @lotr_special_maa_stiffbeards
+
+	potential = {
+		OR = {
+			#has_cultural_pillar = heritage_khazad
+			has_cultural_pillar = heritage_stiffbeard
+		}
+	}
+
+	custom = unlock_stiffbeard_crossbowmen
+	custom = unlock_stiffbeard_skirmishers
+	custom = unlock_stiffbeard_pikemen
+	custom = unlock_stiffbeard_heavy_infantry
+
+	flag = global_maa
+}
+
 innovation_blacklock_warfare = {
 	group = culture_group_regional
 	culture_era = culture_era_tribal
@@ -1076,22 +1151,22 @@ innovation_blacklock_warfare = {
 	flag = global_maa
 }
 
-innovation_stiffbeard_warfare = {
+innovation_stonefoot_warfare = {
 	group = culture_group_regional
 	culture_era = culture_era_tribal
-	icon = @lotr_special_maa_stiffbeards
+	icon = @lotr_special_maa_blacklocks
 
 	potential = {
 		OR = {
 			#has_cultural_pillar = heritage_khazad
-			has_cultural_pillar = heritage_stiffbeard
+			has_cultural_pillar = heritage_stonefoot
 		}
 	}
 
-	custom = unlock_stiffbeard_crossbowmen
-	custom = unlock_stiffbeard_skirmishers
-	custom = unlock_stiffbeard_pikemen
-	custom = unlock_stiffbeard_heavy_infantry
+	custom = unlock_stonefoot_skirmishers
+	custom = unlock_stonefoot_crossbowmen
+	custom = unlock_stonefoot_pikemen
+	custom = unlock_stonefoot_heavy_infantry
 
 	flag = global_maa
 }

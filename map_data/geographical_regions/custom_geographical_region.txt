@@ -1,14 +1,42 @@
 ﻿special_nie_extra = { # The former Numenorean Colonies - United into one for trigger purposes
 	regions = {
-		custom_colonial_minhiriath
 		custom_gondorian_heartlands
 		middleearth_harad_near_umbar
-		middleearth_harad_far_bellakar
-		custom_anbalkumagan
-		custom_colonial_thani_hazad
-		middleearth_harad_near_harondor
-		middleearth_harad_near_harnen
-		middleearth_harad_far_tulwang
+		custom_arnorian_heartlands
+		special_region_haradwaith_harnen
+		special_pharazain
+		
+	}
+	duchies = { 
+		# k_enedhwaith
+		d_runnach d_nen_gwathlo d_angrast d_swanfell
+		# k_andrast
+		d_nan_enqui d_annulefnui 
+		# k_ray
+		d_dar d_sarwa d_suza_sumar d_suza_riy d_iunastiy d_briy_miyesec
+		d_riyeshara
+		# k_drel
+		d_metkharan
+		# k_tumag
+		d_aya_ugab
+		# k_usakan
+		d_modune d_okan
+		# k_tanturak
+		d_tanturak d_ardinak d_tam_wamo d_azra_zhe
+		#k_anarike
+		d_farazul d_rukhashan d_tanidar d_azrakhun d_thalimar d_urudhavar
+		# k_bulchyades
+		d_kandalar 
+		# k_sammar
+		d_high_lhud d_dashtaraz 
+		# k_harshandatt
+		d_darazir 
+		# k_kirmlesra
+		d_harina  		
+		# k_harondor
+		d_harfalas d_annun d_laergaladrin d_aegardh d_eredir
+		# k_cardolan
+		d_girithlin d_dol_caladir d_ethir_gwathlo
 	}
 }
 
@@ -23,5 +51,22 @@ custom_arnor_minus_shire = {
 	}
 	counties = {
 		c_dol_daergorthad c_iarond c_andrath c_tyrn_harad c_glandagol
+	}
+}
+
+custom_arnorian_ruins_reigion = {
+	regions = {
+		custom_arnorian_heartlands
+	}
+	duchies = {
+		d_dol_caladir d_dor_en_egladil d_cameth_brin
+	}
+}
+
+#Anorien Minus Druadan 
+middleearth_west_gondor_anorien_minus_druadan = {
+	duchies = {
+		# k_anorien
+		d_minas_tirith d_doranorien d_entyn_i_onodlo d_lossarnach d_gardhon_fuir
 	}
 }

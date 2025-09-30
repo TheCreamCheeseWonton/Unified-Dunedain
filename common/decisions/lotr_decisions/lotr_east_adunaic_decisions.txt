@@ -1,0 +1,183 @@
+﻿### East Adunaic Decisions ###
+
+decision_east_adunaic_revival = {#Form East Adunaic Culture
+	ai_check_interval = 60
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_set_sail.dds"
+	}
+	sort_order = 100
+	desc = decision_east_adunaic_revival_desc
+	selection_tooltip = decision_east_adunaic_revival_tt
+	confirm_text = decision_east_adunaic_revival_confirm
+
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		OR = {
+			faith.religion = religion:adunai_religion
+			faith.religion = religion:bellakari_religion
+			faith.religion = religion:dunedain_religion
+		}
+		culture = { this = culture:anarikean }
+		is_independent_ruler = yes
+		has_title = title:k_anarike
+		capital_province ?= {
+			geographical_region
+			= middleearth_harad_bayoformal
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		prestige_level >= 3
+		piety_level >= 3
+		OR = {
+			faith.religion = religion:adunai_religion
+			faith.religion = religion:bellakari_religion
+			faith.religion = religion:dunedain_religion
+		}
+		title:c_narikhar = {
+			faith = root.faith
+		}
+		title:c_inyaloni = {
+			faith = root.faith
+		}
+		is_independent_ruler = yes
+		completely_controls = title:k_anarike
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 1250
+			}
+			else = {
+				value = 1
+			}
+		}
+		piety = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 1750
+			}
+			else = {
+				value = 1
+			}
+		}
+		prestige = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 2000
+			}
+			else = {
+				value = 1
+			}
+		}
+	}
+
+
+	effect = {
+		title:c_narikhar = {
+			set_county_culture = culture:azralai
+		}
+		title:c_inyaloni = {
+			set_county_culture = culture:azralai
+		}
+		culture:azralai = {
+			culture:azralai = { save_temporary_scope_as = azralai_culture }
+			culture:anarikean = { save_temporary_scope_as = anarikean_culture }
+			# Needs to be above the 'custom_tooltip'
+			custom_tooltip = decision_east_adunaic_revival_get_innovations
+			hidden_effect = {
+				reset_culture_creation_date = yes
+				get_all_innovations_from = culture:anarikean
+				remove_innovation = innovation_khyan_warfare
+				add_innovation = innovation_numenorean_law
+				add_innovation = innovation_numenorean_architecture_01
+				add_innovation = innovation_lesser_numenorean_heritage
+				add_innovation = innovation_eastern_adunai_warfare
+			}
+		}
+		trigger_event = east_adunaic.0010  # Restore Eastern Adunaic flavour
+		# Convert your family
+		if = {
+			limit = { 
+				any_spouse = { 
+					is_landed = no 
+					faith = root.faith
+					culture = root.culture
+				} 
+			}
+			every_spouse = {
+				limit = {
+					is_landed = no
+					faith = root.faith
+					culture = root.culture
+				}
+				if = {
+					limit = {
+						culture != culture:azralai
+					}
+					set_culture = culture:azralai
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_close_family_member = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					faith = root.faith
+					culture = root.culture
+				}
+			}
+			every_close_family_member = {
+				limit = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					faith = root.faith
+					culture = root.culture
+				}
+				custom = all_unlanded_family_members
+				if = {
+					limit = {
+						culture != culture:azralai
+					}
+					set_culture = culture:azralai
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.culture != culture:azralai
+			}
+			set_culture = culture:azralai
+		}
+		add_legitimacy = 50
+		add_character_modifier = {
+			modifier = lotr_converting_anarike_modifier
+			years = 20 
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}

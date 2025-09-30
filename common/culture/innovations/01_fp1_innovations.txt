@@ -61,10 +61,17 @@ innovation_varangian_adventurers = {
 			}
 			# this = culture:umbarean
 			# this = culture:mardrukan
+			
 			this = culture:eotheod
 			this = culture:leofring
 			any_parent_culture_or_above = {
 				this = culture:leofring
+			}
+		}
+		##Quonton
+		NOT = {  
+			any_parent_culture_or_above = {
+				this = culture:kharadunaim
 			}
 		}
 		# NOT = { has_cultural_era_or_later = culture_era_early_medieval }
@@ -95,9 +102,9 @@ innovation_all_things = {
 		}
 	}
 	custom = unlocks_authority_cooldown_breaking
-
 	custom = more_belligerents
 	character_modifier = { tribal_government_vassal_opinion = 5 }
+
 	flag = global_regional
 	flag = tribal_era_regional
 }

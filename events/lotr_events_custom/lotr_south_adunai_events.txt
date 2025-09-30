@@ -1,0 +1,274 @@
+﻿
+namespace = south_adunai_events
+
+south_adunai_events.1 = { # Solidify Empire Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.1.t
+	desc = south_adunai_events.1.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = south_adunai_events.1.a
+	}
+}
+
+south_adunai_events.2 = { # Gimilzadan Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.2.t
+	desc = south_adunai_events.2.desc
+	theme = diplomacy
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	right_portrait = {
+		character = scope:linegimilzadan3
+		animation = personality_honorable
+	}
+	
+	option = {
+		name = south_adunai_events.2.a
+		add_short_term_gold = 350
+		root.dynasty = {
+			add_dynasty_prestige = 1150
+		}
+		add_prestige = 150
+	}
+}
+
+#south_adunai_events.3 = { # Gimilzadan Flavor 2
+#	content_source = realms_dlc 
+#	type = character_event
+#	title = south_adunai_events.3.t
+#	desc = south_adunai_events.3.desc
+#	theme = stewardship_domain_focus
+#	
+#	left_portrait = {
+#		character = root
+#		animation = personality_honorable
+#	}
+#	
+#	trigger = {
+#		character:linegimilzadan2 = {
+#			prestige >= 5000
+#		}
+#	}
+#
+#	#Reclaim Thani Hazad
+#	option = {
+#		name = south_adunai_events.3.a
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#	
+#	#Claim An Bambakugan Holy Warior
+#	option = {
+#		name = south_adunai_events.3.b
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#	
+#	#Claim Sarul Conqueror
+#	option = {
+#		name = south_adunai_events.3.c
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#	
+#	#My Own Path
+#	option = {
+#		name = south_adunai_events.3.d
+#		add_short_term_gold = 350
+#		root.dynasty = {
+#			add_dynasty_prestige = 1150
+#		}
+#	}
+#}
+
+south_adunai_events.4 = { # Tanturaki Reformation Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.4.t
+	desc = south_adunai_events.4.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = { #Be Tanturaki
+		name = south_adunai_events.4.a
+		trigger = { NOT = { culture = { has_cultural_pillar = heritage_unified_adunaic } } }
+		title:k_tanturak = { 
+			every_de_jure_county = {
+				if = { 
+					limit = { culture = { has_cultural_pillar = heritage_southern_adunaic } NOT = { OR = { title:c_sarul title:c_ardinak title:c_bata_an_sarul title:c_azra_zhe } } }
+					set_county_culture = culture:tanturaki
+				}
+			}
+		}
+		title:c_sarul = {
+			set_county_culture = culture:tanturaki
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		title:c_bata_an_sarul = {
+			set_county_culture = culture:tanturaki
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		title:c_azra_zhe = {
+			set_county_culture = culture:tanturaki
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		# Convert your family
+		if = {
+			limit = { 
+				any_spouse = { 
+					is_landed = no 
+					culture = root.culture
+				} 
+			}
+			every_spouse = {
+				limit = {
+					is_landed = no
+					culture = root.culture
+				}
+				if = {
+					limit = {
+						culture != culture:tanturaki
+					}
+					set_culture = culture:tanturaki
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_close_family_member = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = root.culture
+				}
+			}
+			every_close_family_member = {
+				limit = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = root.culture
+				}
+				custom = all_unlanded_family_members
+				if = {
+					limit = {
+						culture != culture:tanturaki
+					}
+					set_culture = culture:tanturaki
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.culture != culture:tanturaki
+			}
+			set_culture = culture:tanturaki
+		}
+		add_legitimacy = 50
+		add_character_modifier = {
+			modifier = lotr_converting_tanturak_modifier
+			years = 10
+		}
+	}
+	
+	option = { #Not be Tanturaki
+		name = south_adunai_events.4.b
+		trigger = { NOT = { culture = { has_cultural_pillar = heritage_unified_adunaic } } }
+		title:k_tanturak = { 
+			every_de_jure_county = {
+				if = { 
+					limit = { culture = { has_cultural_pillar = heritage_southern_adunaic } NOT = { OR = { title:c_sarul title:c_ardinak title:c_bata_an_sarul title:c_azra_zhe } } }
+					set_county_culture = culture:tanturaki
+				}
+			}
+		}
+		title:c_sarul = {
+			set_county_culture = culture:tanturaki
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		title:c_bata_an_sarul = {
+			set_county_culture = culture:tanturaki
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		title:c_azra_zhe = {
+			set_county_culture = culture:tanturaki
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		add_legitimacy = 50
+		add_character_modifier = {
+			modifier = lotr_converting_tanturak_modifier
+			years = 10
+		}
+	}
+	
+	option = { #Super not be Tanturaki
+		name = south_adunai_events.4.c
+		title:c_sarul = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		title:c_bata_an_sarul = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		title:c_azra_zhe = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_tanturak_county_modifier
+				years = 20
+			}
+		}
+		add_legitimacy = 50
+		add_character_modifier = {
+			modifier = lotr_converting_tanturak_modifier
+			years = 10
+		}
+	}
+}

@@ -329,7 +329,7 @@ pipe_of_radagast_template = {
 	# can this character benefit from the full modifiers of the artifact?
 	can_benefit = {
 		is_orc = no
-		is_undead = no
+		is_nazgul = no
 	}
 
 	# if a given character does not pass the "can_benefit" trigger then this modifier will be applied instead.
@@ -373,7 +373,7 @@ elessar_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -404,7 +404,7 @@ aranthel_and_ungoldagnir_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -426,7 +426,7 @@ hadhafang_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -448,7 +448,7 @@ silver_harp_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -471,7 +471,7 @@ silmaril_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -500,7 +500,7 @@ hyandolire_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 	
@@ -525,7 +525,7 @@ galadriel_phial_template = { # WIP
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 	can_benefit = {
@@ -567,7 +567,7 @@ orcrist_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -749,7 +749,7 @@ vasa_template = {
 morgul_blade_template = {
 	can_equip = {
 		OR = {
-			is_undead = yes
+			is_nazgul = yes
 			has_trait = sorcerer_1
 			has_trait = sorcerer_2
 			has_trait = sorcerer_3
@@ -866,7 +866,7 @@ sting_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 	
@@ -888,10 +888,13 @@ sting_template = {
 
 mithril_mail_template = {
 	can_equip = {
-		OR = { #Kid-sized
-			is_hobbit = yes
-			is_druedain = yes
-			NOT = { is_lotr_adult = yes }
+		custom_tooltip = {
+			text = artifact_is_kid_sized
+			OR = { #Kid-sized
+				is_hobbit = yes
+				is_druedain = yes
+				NOT = { is_lotr_adult = yes }
+			}
 		}
 	}
 
@@ -1084,7 +1087,7 @@ ring_barahir_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 	can_benefit = {
@@ -1818,7 +1821,7 @@ ny_cennacatt_tome_sorcery_template = {
 	# can this character benefit from the full modifiers of the artifact?
 	can_benefit = {
 		OR = {
-			is_undead = yes
+			is_nazgul = yes
 			has_trait = sorcerer_1
 			has_trait = sorcerer_2
 			has_trait = sorcerer_3
@@ -1873,6 +1876,7 @@ gondor_relic_template = {
 		OR = {
 			faith_is_good = yes
 			culture = { has_cultural_pillar = heritage_dunedain }
+			##Quonton
 			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
@@ -1890,7 +1894,7 @@ dagger_westernesse_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -1899,6 +1903,7 @@ dagger_westernesse_template = {
 		OR = {
 			faith_is_good = yes
 			culture = { has_cultural_pillar = heritage_dunedain }
+			##Quonton
 			culture = { has_cultural_tradition = tradition_new_numenor }
 		}
 	}
@@ -1916,7 +1921,7 @@ elven_relic_misc_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 
@@ -2115,7 +2120,7 @@ dramborleg_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 	can_benefit = {
@@ -2136,7 +2141,7 @@ anguirel_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 	can_benefit = {
@@ -2236,6 +2241,7 @@ forestel_template = {
 	can_benefit = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_dunedain }
+			##Quonton
 			culture = { has_cultural_tradition = tradition_new_numenor }
 			lotr_northron_group_culture_trigger = yes
 		}
@@ -2254,6 +2260,7 @@ scroll_of_isildur_template = {
 	}
 
 	can_benefit = {
+		##Quonton
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
 			culture = { has_cultural_tradition = tradition_new_numenor }
@@ -2290,6 +2297,7 @@ aldarion_erendis_template = {
 	}
 
 	can_benefit = {
+		##Quonton
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
 			culture = { has_cultural_tradition = tradition_new_numenor }
@@ -2326,6 +2334,7 @@ narmacil_standard_template = {
 		always = yes
 	}
 	can_benefit = {
+		##Quonton
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
 			culture = { has_cultural_tradition = tradition_new_numenor }
@@ -2388,6 +2397,7 @@ laegrist_template = {
 		always = yes
 	}
 	can_benefit = {
+		##Quonton
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
 			culture = { has_cultural_tradition = tradition_new_numenor }
@@ -2434,7 +2444,7 @@ galvorn_armour_template = {
 	can_equip = {
 		NOR = {
 			is_orc = yes
-			is_undead = yes
+			is_nazgul = yes
 		}
 	}
 	can_benefit = {

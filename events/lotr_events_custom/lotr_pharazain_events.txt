@@ -1,0 +1,303 @@
+﻿
+namespace = pharazain_events
+
+pharazain_events.1 = { # Solidify Empire Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.1.t
+	desc = pharazain_events.1.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = pharazain_events.1.a
+	}
+}
+
+pharazain_events.2 = { # Unify Culture Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.2.t
+	desc = pharazain_events.2.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = pharazain_events.2.a
+		trigger_event = pharazain_events.3   # Unify Adunaic Identity Flavor Language Question
+	}
+}
+
+pharazain_events.3 = { # Different Adunaic Question
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.3.t
+	desc = pharazain_events.3.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = {
+		name = pharazain_events.3.b
+		custom_tooltip = pharazaini_culture_identity_umbar
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic_umbar
+			}
+		}
+	}
+	
+	option = {
+		name = pharazain_events.3.c
+		custom_tooltip = pharazaini_culture_identity_bellakar
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic_bellakar
+			}
+		}
+	}
+	
+	option = {
+		name = pharazain_events.3.d
+		custom_tooltip = pharazaini_culture_identity_kharadunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_kharadunaic
+			}
+		}
+	}
+	
+	option = {
+		name = pharazain_events.3.e
+		custom_tooltip = pharazaini_culture_identity_westron
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_westron_south
+			}
+		}
+	}
+	
+	option = {
+		name = pharazain_events.3.a
+		custom_tooltip = pharazaini_culture_identity_adunaic
+		hidden_effect = {
+			culture:pharazaini_culture = {
+				set_culture_pillar = language_adunaic
+			}
+		}
+		remove_short_term_gold = 400
+	}
+}
+
+
+pharazain_events.4 = { # Tributary Ray Event
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.4.t
+	desc = pharazain_events.4.desc
+	theme = diplomacy
+	override_background = { reference = bp1_courtyard_indian }
+	
+	immediate = {
+		title:c_bozisha_dar.holder = { save_scope_as = bozisha_dar_holder  }
+	}
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	right_portrait = {
+		character = title:c_bozisha_dar.holder
+		animation = personality_cynical
+	}
+
+	option = { # Send over to Ray to accept
+		name = pharazain_events.4.a
+	}
+
+	after = {
+		title:c_bozisha_dar.holder = { 
+			trigger_event = {
+				id = pharazain_events.5
+				days = { 27 33 }
+			}
+		}
+	}
+}
+
+pharazain_events.5 = { # Event for Ray
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.5.t
+	desc = pharazain_events.5.desc
+	theme = diplomacy
+
+	override_background = { reference = bp1_courtyard_indian }
+	
+	immediate = {
+		title:e_pharazain.holder = { save_scope_as = pharazain_holder  }
+	}
+	
+	left_portrait = {
+		character = root
+		animation = stress
+	}
+
+	option = { # Become a trib of the Pharazain
+		name = pharazain_events.5.a
+		
+		start_tributary_interaction_effect = {
+			TRIBUTARY = root
+			SUZERAIN = title:e_pharazain.holder
+		}
+		
+		title:e_pharazain.holder = { 
+			trigger_event = {
+				id = pharazain_events.6
+				days = 1
+			}
+		}
+
+		ai_chance = {
+			base = 70
+			
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 0
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 0
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 10
+			}
+		}
+	}
+
+	option = { # Stay independent
+		name = pharazain_events.5.b
+
+		title:e_pharazain.holder = { 
+			trigger_event = {
+				id = pharazain_events.7
+				days = 30 
+			}
+		}
+
+		ai_chance = {
+			base = 35 # LotR: This should be tied to WotR mode.
+
+			modifier = { # Game Rule
+				has_game_rule = default_ai_behavior
+				add = 0
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = weighted_ai_behavior
+				add = 15
+			}
+
+			modifier = { # Game Rule
+				has_game_rule = random_ai_behavior
+				add = 30
+			}
+		}
+	}
+}
+
+pharazain_events.6 = { # Integrate Rohan
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.6.t
+	desc = pharazain_events.6.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	immediate = {
+		title:c_bozisha_dar.holder = { save_scope_as = bozisha_dar_holder  }
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	right_portrait = {
+		character = title:c_bozisha_dar.holder
+		animation = throne_room_bow_1
+	}
+
+
+	option = { # Yay Ray
+		name = pharazain_events.6.a
+		add_prestige = 600
+		dynasty = { add_dynasty_prestige = 600 }
+		add_legitimacy = 200
+	}
+}
+
+pharazain_events.7 = { # Integrate Rohan NOT
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.7.t
+	desc = pharazain_events.7.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+	
+	immediate = {
+		title:c_bozisha_dar.holder = { save_scope_as = bozisha_dar_holder  }
+		add_legitimacy = -200
+		add_prestige = -600
+	}
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	right_portrait = {
+		character = title:c_bozisha_dar.holder
+		animation = marshal_shield
+	}
+
+	option = { # Bleh Ray
+		name = pharazain_events.7.a
+		start_war = {
+			casus_belli = make_tributary_cb
+			target = title:c_bozisha_dar.holder
+			target_title = title:c_bozisha_dar
+		}
+		add_opinion = { 
+			modifier = warmonger_opinion
+			years = 40
+			target = title:c_bozisha_dar.holder
+		}
+	}
+
+	option = { # not worth it
+		name = pharazain_events.7.b
+		add_opinion = { 
+			modifier = warmonger_opinion
+			years = 20
+			target = title:c_bozisha_dar.holder
+		}
+	}
+}

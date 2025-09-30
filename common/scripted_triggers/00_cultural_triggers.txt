@@ -283,6 +283,7 @@ culture_has_skirmisher_maa = {
 		has_innovation = innovation_numenorean_warriors_custom
 		has_innovation = innovation_numenorean_warriors_adunaic
 		has_innovation = innovation_dunedain_warriors
+		has_innovation = innovation_dunedain_warriors_steelbow
 		##End Quonton
 		has_cultural_parameter = unlock_maa_hasharin
 		has_cultural_parameter = unlock_maa_corsair_warriors		
@@ -343,6 +344,7 @@ culture_has_heavy_infantry_maa = {
 		has_innovation = innovation_numenorean_warriors_custom
 		has_innovation = innovation_numenorean_warriors_adunaic
 		has_innovation = innovation_dunedain_warriors
+		has_innovation = innovation_dunedain_warriors_steelbow
 		##End Quonton
 		has_innovation = innovation_rayan_warfare
 		has_innovation = innovation_warriors_rhun
@@ -389,6 +391,7 @@ culture_has_pikemen_maa = { #I.e. Spearmen
 		has_innovation = innovation_numenorean_warriors_custom
 		has_innovation = innovation_numenorean_warriors_adunaic
 		has_innovation = innovation_dunedain_warriors
+		has_innovation = innovation_dunedain_warriors_steelbow
 		##End Quonton
 		has_cultural_parameter = unlock_maa_dale_pikes
 		has_cultural_parameter = unlock_maa_variag_pikemen
@@ -415,6 +418,7 @@ culture_has_light_cavalry_maa = {
 		has_innovation = innovation_numenorean_warriors_custom
 		has_innovation = innovation_numenorean_warriors_adunaic
 		has_innovation = innovation_dunedain_warriors
+		has_innovation = innovation_dunedain_warriors_steelbow
 		##End Quonton
 		has_cultural_parameter = unlock_maa_windriders_of_khand
 	 	has_cultural_parameter = unlock_maa_rhovanion_light_cavalry
@@ -429,7 +433,7 @@ culture_has_heavy_cavalry_maa = {
 	OR = {
 		has_innovation = innovation_knights_of_kharadune_warfare
 		has_innovation = innovation_warriors_rhun
-		has_innovation = innovation_numenorean_warriors
+		# has_innovation = innovation_numenorean_warriors # Numenoreans didn't use horses in war
 		has_innovation = innovation_haradrim_tradition
 		has_innovation = innovation_dark_servants
 		##Quonton
@@ -437,6 +441,7 @@ culture_has_heavy_cavalry_maa = {
 		has_innovation = innovation_numenorean_warriors_custom
 		has_innovation = innovation_numenorean_warriors_adunaic
 		has_innovation = innovation_dunedain_warriors
+		has_innovation = innovation_dunedain_warriors_steelbow
 		##End Quonton
 	 	has_cultural_parameter = unlock_maa_vintner_court_knights
 	 	has_cultural_parameter = unlock_maa_rhovanion_heavy_cavalry

@@ -1,0 +1,107 @@
+﻿create_artifact_arnorian_figurine_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_famed = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = arnorian_figurine_name
+		description = arnorian_figurine_description
+		type = pedestal
+		visuals = numenorean_figurine
+		template = general_unique_template
+		wealth = scope:wealth
+		quality = scope:quality
+		modifier = arnorian_figurine_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact ?= {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = numenorean_figurine 
+		save_scope_as = epic
+	}
+}
+
+create_artifact_arnorian_helm_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = arnorian_helm_name
+		description = arnorian_helm_description
+		type = helmet
+		visuals = numenorean_helm
+		template = general_unique_template
+		wealth = scope:wealth
+		quality = scope:quality
+		modifier = arnorian_helm_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact ?= {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = numenorean_helm 
+		save_scope_as = epic
+	}
+}
+
+create_artifact_arnorian_shield_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = arnorian_shield_name
+		description = arnorian_shield_description
+		type = wall_small
+		visuals = numenorean_shield
+		visuals_source = title:e_numenor
+		template = general_unique_template
+		wealth = scope:wealth
+		quality = scope:quality
+		modifier = arnorian_shield_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact ?= {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = numenorean_shield 
+		save_scope_as = epic
+	}
+}
+
+create_artifact_arnorian_steelbow_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = arnorian_steelbow_name
+		description = arnorian_steelbow_description
+		type = bow
+		visuals = numenorean_steelbow
+		wealth = scope:wealth
+		quality = scope:quality
+		modifier = arnorian_steelbow_modifier
+		save_scope_as = newly_created_artifact
+		decaying = yes
+	}
+
+	scope:newly_created_artifact ?= {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = numenorean_steelbow 
+		save_scope_as = epic
+	}
+}

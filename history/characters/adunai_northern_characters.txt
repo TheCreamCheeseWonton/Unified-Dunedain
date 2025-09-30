@@ -4964,7 +4964,7 @@ linebarazoncorsair42 = { # Arphazêl companion
     religion = faith_pharazon
     ##Quonton
 	culture = ar_adunaim_numenorean
-	
+
     sexuality = heterosexual
 
     trait = blood_of_numenor_2
@@ -10138,6 +10138,7 @@ linebarazoncorsair34 = {
     religion = faith_kings_men_castamir
     ##Quonton
 	culture = ar_adunaim_numenorean
+
     father = linebarazoncorsair32
     mother = linebarazoncorsair33
 
@@ -15280,8 +15281,8 @@ lineofbelphegor14 = {
 
 # Former Captains of Mardruak, defeated by Belphegor
 mardruakcaptain1 = { # mardruak pirate, former liege of belphegor, killed by belphegor
-    name	= U_U_ri_i_zi_i_r
-	dna		= mardruakcaptain1_dna
+    name = U_U_ri_i_zi_i_r
+	dna = mardruakcaptain1_dna
 
     religion = faith_corsair
     culture = mardrukan

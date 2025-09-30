@@ -1,0 +1,20 @@
+﻿namespace = east_adunaic
+##East Adunaic Events 
+#Quonton
+
+east_adunaic.0010 = { # Reform East Adunaic
+	content_source = realms_dlc
+	type = character_event
+	title = east_adunaic.0010.t
+	desc = east_adunaic.0010.desc
+	theme = diplomacy
+	
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = {
+		name = east_adunaic.0010.a
+	}	
+}

@@ -153,6 +153,8 @@
 			culture:south_adunai_colonial = { custom_tooltip = south_adunai_colonial_desc }
 			culture:tanturaki = { custom_tooltip = tanturaki_desc }
 			culture:east_adunai_colonial = { custom_tooltip = east_adunai_colonial_desc }
+			##Quonton
+			culture:azralai = { custom_tooltip = azralai_desc }
 			
 			# Northron
 			culture:northron = { custom_tooltip = northron_desc }

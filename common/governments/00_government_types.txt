@@ -361,6 +361,31 @@ administrative_government = {
 	color = { 72 6 92 }
 }
 
+republic_government = {
+	primary_holding = city_holding
+	valid_holdings = { castle_holding }
+	required_county_holdings = { city_holding castle_holding church_holding }
+
+	government_rules = {
+		inherit_from_dynastic_government = no
+	}
+
+	ai = {
+		arrange_marriage = no
+		use_goals = no
+		use_scripted_guis = no
+		perform_religious_reformation = no
+		use_legends = no
+	}
+
+	vassal_contract_group = republic_vassal
+
+	# Use flags instead of has_government for moddability if possible (i.e., wherever not visible to the player).
+	flag = government_is_republic
+	flag = government_is_settled
+	color = hsv{ 0.00 1.00 0.98 }
+}
+
 ### Brief: landless_adventurer_government
 # Default landless adventurer government
 #

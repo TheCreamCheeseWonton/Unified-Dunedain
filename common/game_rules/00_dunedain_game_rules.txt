@@ -1,0 +1,95 @@
+﻿#wotr = {
+#	default = default_wotr
+#
+#	default_wotr = {
+#
+#	}
+#	
+#	random_wotr = {
+#
+#	}
+#}
+
+
+
+dunedain_bon_rule = {
+	default = default_bon
+
+	categories = {
+		realms tweaks
+	}
+
+	default_bon = {
+
+	}
+
+	lore_accurate_bon = {
+
+	}
+	
+	half_bon = {
+
+	}
+	
+}
+
+non_sauron_evil_strength_rule = {
+	default = default_evil_strength
+	
+	categories = {
+		realms historicity ai
+	}
+	
+	weakened_evil_strength = {
+	
+	}
+	
+	default_evil_strength = {
+	
+	}
+	
+	strong_evil_strength = {
+	
+	}
+	
+	very_strong_evil_strength = {
+	
+	}
+	
+	apocalyptic_evil_strength = {
+	
+	}
+	
+}
+
+is_dominion_evil_rule = {
+	default = no_they_arent
+	
+	categories = {
+		realms historicity ai
+	}
+	
+	no_they_arent = {
+	
+	}
+	
+	yes_they_are = {
+	
+	}
+}
+
+enable_harder_to_colonize = {
+	default = harder_to_colonize
+	
+	categories = {
+		realms historicity ai
+	}
+	
+	harder_to_colonize = {
+	
+	}
+	
+	no_harder_to_colonize = {
+	
+	}
+}

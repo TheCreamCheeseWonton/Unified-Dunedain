@@ -1,0 +1,370 @@
+﻿#yearly_global_pulse = { on_actions = { dunedain_yearly_global_pulse } }
+#lotr_five_year_everyone_pulse = { on_actions = { dunedain_five_year_everyone_pulse } }
+ccu_startup = { on_actions = { dunedain_on_game_start } }
+on_death = { on_actions = { dunedain_on_death } }
+on_vassal_gained = { on_actions = { dunedain_on_vassal_gained } }
+on_vassal_change = { on_actions = { dunedain_on_vassal_change } }
+on_faith_conversion = { on_actions = { dunedain_on_faith_conversion } }
+
+dunedain_on_game_start = {
+	effect = {
+		##Quonton
+		evil_strength_gamerule_buffs = yes
+		
+		##Barrow Wights
+		province:4645 = { remove_building = ghosts }
+		province:4645 = { add_building = barrow_wights }
+		
+		##Ost in Edhil
+		province:4351 = { remove_building = ghosts_eregion }
+		province:4351 = { add_building = ghosts_ost_in_edhil }
+		
+		##Carach Angren
+		province:616 = { add_special_building = wonder_carach_angren }
+
+		##Bad Arnorian Ruins
+		province:4415 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		province:4714 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		province:4718 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		province:4752 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		province:4770 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		province:4537 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		province:4532 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		province:4556 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }
+		
+		##Arnorian Ruins
+		every_province = {
+			limit = { 
+				is_wastelands = yes
+				is_county_capital = yes
+				geographical_region = custom_arnorian_ruins_reigion
+				NOT = { has_building = ruins_of_arnor_bad }
+			}
+			add_province_modifier = { modifier = util_wasteland_3 days = 0 }
+			add_building = ruins_of_arnor
+		}
+		province:4609 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor } }
+		province:4775 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor } }
+		province:4778 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor } }
+	}
+}
+
+#dunedain_yearly_global_pulse = {
+#	effect = {
+#		##Quonton
+#		evil_strength_gamerule_buffs = yes
+#	}
+#}
+
+dunedain_on_vassal_gained = {
+	effect = {
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = no_they_arent
+				is_independent_ruler = yes 
+				religion = { is_in_family = rf_forcesofevil }
+				NOT = {
+					OR = { 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = yes_they_are
+				is_independent_ruler = yes
+				OR = { 
+					religion = { is_in_family = rf_forcesofevil } 
+					faith = { has_doctrine = doctrine_dominion_of_the_dark }
+				}
+				NOT = {
+					OR = { 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+	}
+}
+
+dunedain_on_vassal_change = {
+	effect = {
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = no_they_arent
+				is_independent_ruler = yes 
+				religion = { is_in_family = rf_forcesofevil }
+				NOT = {
+					OR = { 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = yes_they_are
+				is_independent_ruler = yes
+				OR = { 
+					religion = { is_in_family = rf_forcesofevil } 
+					faith = { has_doctrine = doctrine_dominion_of_the_dark }
+				}
+				NOT = {
+					OR = { 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+	}
+}
+
+dunedain_on_faith_conversion = {
+	effect = {
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = no_they_arent
+				is_independent_ruler = yes 
+				religion = { is_in_family = rf_forcesofevil }
+				NOT = {
+					OR = { 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = yes_they_are
+				is_independent_ruler = yes
+				OR = { 
+					religion = { is_in_family = rf_forcesofevil } 
+					faith = { has_doctrine = doctrine_dominion_of_the_dark }
+				}
+				NOT = {
+					OR = { 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = no_they_arent
+				is_independent_ruler = yes 
+				NOT = { religion = { is_in_family = rf_forcesofevil } } 
+				OR = {
+					has_character_modifier = evil_weakened_modifier
+					has_character_modifier = evil_strengthened_1_modifier
+					has_character_modifier = evil_strengthened_2_modifier
+					has_character_modifier = evil_strengthened_3_modifier
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { remove_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { remove_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { remove_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { remove_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = yes_they_are
+				is_independent_ruler = yes
+				NOT = { 
+					OR = { 
+						religion = { is_in_family = rf_forcesofevil } 
+						faith = { has_doctrine = doctrine_dominion_of_the_dark }
+					}
+				}
+				OR = { 
+					has_character_modifier = evil_weakened_modifier
+					has_character_modifier = evil_strengthened_1_modifier
+					has_character_modifier = evil_strengthened_2_modifier
+					has_character_modifier = evil_strengthened_3_modifier
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { remove_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { remove_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { remove_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { remove_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+	}
+}
+
+dunedain_on_death = {
+	effect = {
+		if = { #if building Armenolos, character's heir gains modifier
+			limit = {
+				OR = { 
+					has_character_modifier = custom_building_construction_special_character1
+					has_character_modifier = custom_building_construction_special_character2
+					has_character_modifier = custom_building_construction_special_character3
+				}
+			}
+			if = {
+				limit = {
+					has_character_modifier = custom_building_construction_special_character3
+				}
+				player_heir = {
+					add_character_modifier = custom_building_construction_special_character3
+				}
+			}
+			if = {
+				limit = {
+					has_character_modifier = custom_building_construction_special_character2
+				}
+				player_heir = {
+					add_character_modifier = custom_building_construction_special_character2
+				}
+			}
+			if = {
+				limit = {
+					has_character_modifier = custom_building_construction_special_character1
+				}
+				player_heir = {
+					add_character_modifier = custom_building_construction_special_character1
+				}
+			}		
+		}
+		if = {
+			limit = {
+				OR = { 
+					has_character_modifier = evil_weakened_modifier
+					has_character_modifier = evil_strengthened_1_modifier
+					has_character_modifier = evil_strengthened_2_modifier
+					has_character_modifier = evil_strengthened_3_modifier
+				}
+			}
+			if = {
+				limit = {
+					has_character_modifier = evil_weakened_modifier
+				}
+				player_heir = {
+					add_character_modifier = evil_weakened_modifier
+				}
+			}
+			if = {
+				limit = {
+					has_character_modifier = evil_strengthened_1_modifier
+				}
+				player_heir = {
+					add_character_modifier = evil_strengthened_1_modifier
+				}
+			}
+			if = {
+				limit = {
+					has_character_modifier = evil_strengthened_2_modifier
+				}
+				player_heir = {
+					add_character_modifier = evil_strengthened_2_modifier
+				}
+			}		
+			if = {
+				limit = {
+					has_character_modifier = evil_strengthened_3_modifier
+				}
+				player_heir = {
+					add_character_modifier = evil_strengthened_3_modifier
+				}
+			}
+		}
+	}
+}

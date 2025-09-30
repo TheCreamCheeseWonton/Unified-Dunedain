@@ -348,6 +348,7 @@ decision_castamir_claim = {
 			}
 			add_piety_level = -1
 		}
+
 		trigger_event = {
 			id = umbar.1000
 		}
@@ -1208,6 +1209,7 @@ decision_unite_the_sacred_isles = {
 		# }
 	}
 }
+
 decision_continue_adventure_arphazel = { ### Regain lost story contracts ~ Arphazêl ###
 	sort_order = 100
 	title = decision_continue_adventure_eradan
@@ -1343,4 +1345,483 @@ decision_continue_adventure_arphazel = { ### Regain lost story contracts ~ Arpha
 	ai_goal = yes
 	ai_potential = { always = yes }
 	ai_will_do = { base = 100 }
+}
+
+##Quonton
+
+decision_adunaic_revival_mirlond = {#Restore Adunaic
+	ai_check_interval = 60
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_set_sail.dds"
+	}
+	sort_order = 100
+	desc = decision_adunaic_revival_mirlond_desc
+	selection_tooltip = decision_adunaic_revival_mirlond_tt
+	confirm_text = decision_adunaic_revival_mirlond_confirm
+
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		OR = {
+			has_title = title:c_mirlond
+			has_title = title:k_mirlond
+		}
+		OR = {
+			faith.religion = religion:adunai_religion
+			culture = {	has_cultural_pillar = heritage_northern_adunaic }
+			culture = {	has_cultural_pillar = heritage_unified_adunaic }
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_adunaic_revival_mirlond
+			}
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		prestige_level >= 2
+		piety_level >= 2
+		is_independent_ruler = yes
+		has_title = title:d_forethir
+		title:c_mirlond = {
+			faith = root.faith
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		piety = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 500
+			}
+			else = {
+				value = 1
+			}
+		}
+		prestige = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 750
+			}
+			else = {
+				value = 1
+			}
+		}
+	}
+
+
+	effect = {
+		title:c_mirlond = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_mirlond_county_modifier
+				years = 20
+			}
+		}
+		add_character_modifier = {
+			modifier = lotr_converting_mirlond_modifier
+			years = 10
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_adunaic_revival_mirlond
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
+decision_adunaic_revival_ramlond = {#Restore Adunaic
+	ai_check_interval = 60
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_set_sail.dds"
+	}
+	sort_order = 100
+	desc = decision_adunaic_revival_ramlond_desc
+	selection_tooltip = decision_adunaic_revival_ramlond_tt
+	confirm_text = decision_adunaic_revival_ramlond_confirm
+
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		OR = {
+			has_title = title:c_ramlond
+			has_title = title:k_mirlond
+		}
+		OR = {
+			faith.religion = religion:adunai_religion
+			culture = {	has_cultural_pillar = heritage_northern_adunaic }
+			culture = {	has_cultural_pillar = heritage_unified_adunaic }
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_adunaic_revival_ramlond
+			}
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		prestige_level >= 2
+		piety_level >= 2
+		is_independent_ruler = yes
+		has_title = title:d_ramlond
+		title:c_ramlond = {
+			faith = root.faith
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		piety = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 500
+			}
+			else = {
+				value = 1
+			}
+		}
+		prestige = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 750
+			}
+			else = {
+				value = 1
+			}
+		}
+	}
+
+
+	effect = {
+		title:c_ramlond = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_ramlond_county_modifier
+				years = 20
+			}
+		}
+		add_character_modifier = {
+			modifier = lotr_converting_ramlond_modifier
+			years = 10
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_adunaic_revival_ramlond
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
+decision_adunaizization_of_greater_umbar = {#Restore Adunaic
+	ai_check_interval = 60
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_set_sail.dds"
+	}
+	sort_order = 100
+	desc = decision_adunaizization_of_greater_umbar_desc
+	selection_tooltip = decision_adunaizization_of_greater_umbar_tt
+	confirm_text = decision_adunaizization_of_greater_umbar_confirm
+
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		completely_controls = title:k_umbar
+		OR = {
+			has_title = title:e_umbar
+			has_title = title:e_pharazain
+			has_title = title:e_adunaim
+			has_title = title:e_numenor_in_exile
+			has_title = title:e_numenor_colonies
+		}
+		OR = {
+			culture = {	has_cultural_pillar = heritage_northern_adunaic }
+			culture = {	has_cultural_pillar = heritage_unified_adunaic }
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_adunaic_revival_greater_umbar
+			}
+		}
+	}
+
+	is_valid = {
+		is_adult = yes
+		prestige_level >= 3
+		piety_level >= 3
+		is_independent_ruler = yes
+		title:c_caldur = {
+			faith = root.faith
+		}
+		title:c_ardumir = {
+			faith = root.faith
+		}
+		title:c_maros = {
+			faith = root.faith
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 750
+			}
+			else = {
+				value = 1
+			}
+		}
+		piety = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 1000
+			}
+			else = {
+				value = 1
+			}
+		}
+		prestige = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 1750
+			}
+			else = {
+				value = 1
+			}
+		}
+	}
+
+
+	effect = {
+		title:c_caldur = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_greater_umbar_county_modifier
+				years = 20
+			}
+		}
+		title:c_ardumir = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_greater_umbar_county_modifier
+				years = 20
+			}
+		}
+		title:c_maros = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_greater_umbar_county_modifier
+				years = 20
+			}
+		}
+		add_character_modifier = {
+			modifier = lotr_converting_greater_umbar_modifier
+			years = 10
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_adunaic_revival_greater_umbar
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
+decision_dunedainization_of_umbar = {#Restore Umbardain
+	ai_check_interval = 60
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_set_sail.dds"
+	}
+	sort_order = 100
+	desc = decision_dunedainization_of_umbar_desc
+	selection_tooltip = decision_dunedainization_of_umbar_tt
+	confirm_text = decision_dunedainization_of_umbar_confirm
+
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		any_realm_county = { 
+			culture = {	has_cultural_pillar = heritage_northern_adunaic }
+		}
+		culture = {	has_cultural_pillar = heritage_dunedain }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_dunedain_revival_umbar
+			}
+		}	
+	}
+
+	is_valid = {
+		completely_controls_region = middleearth_harad_near_umbar
+		is_adult = yes
+		prestige_level >= 4
+		piety_level >= 4
+		is_independent_ruler = yes
+		title:c_umbar = {
+			faith = root.faith
+		}
+		custom_tooltip = {
+			text = "decision_all_umbarean_provinces"
+			any_realm_county = {
+				count = number_of_north_adunaic_culture_provinces
+				culture = { has_cultural_pillar = heritage_northern_adunaic }
+				any_county_province = { geographical_region = special_nie_extra }
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 750
+			}
+			else = {
+				value = 1
+			}
+		}
+		piety = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 1000
+			}
+			else = {
+				value = 1
+			}
+		}
+		prestige = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 1750
+			}
+			else = {
+				value = 1
+			}
+		}
+	}
+
+
+	effect = {
+		culture:umbaredain = { save_temporary_scope_as = umbaredain_culture }
+		custom_tooltip = decision_convert_umbar_dunedain_gondorian
+		if = { 
+			limit = { NOT = { OR = { culture = { this = culture:new_numenorean } culture = { this = culture:new_dunedain } } } }
+			custom_tooltip = decision_convert_umbar_dunedain_umbaredain
+			custom_tooltip = decision_convert_umbar_dunedain_umbaredain_modifier
+		}
+		else = { 
+			custom_tooltip = decision_convert_umbar_dunedain_dunedain
+			custom_tooltip = decision_convert_umbar_dunedain_umbaredain_modifier
+		}
+		add_character_modifier = {
+			modifier = lotr_converting_umbaredain_modifier
+			years = 10
+		}
+		hidden_effect = { 
+			every_county = {
+				limit = { culture = { has_cultural_pillar = heritage_northern_adunaic } }
+				if = { 
+					limit = { NOT = { OR = { culture = { this = culture:new_numenorean } culture = { this = culture:new_dunedain } } } }
+					set_county_culture = culture:umbaredain
+					set_county_faith = root.faith
+					add_county_modifier = {
+						modifier = lotr_converting_umbaredain_county_modifier
+						years = 25
+					}
+				}
+				else = { 
+					set_county_culture = root.culture
+					set_county_faith = root.faith
+					add_county_modifier = {
+						modifier = lotr_converting_umbaredain_county_modifier
+						years = 25
+					}
+				}
+			}
+			every_county = {
+				limit = { OR = { culture = { this = culture:gondorian } culture = { this = culture:belfalathrim }  culture = { this = culture:orodbedhrim } } any_county_province = { geographical_region = middleearth_harad_near_umbar }}
+				set_county_culture = culture:umbaredain
+			}
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_dunedain_revival_umbar
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 50
+	}
 }

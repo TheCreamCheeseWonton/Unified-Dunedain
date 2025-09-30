@@ -376,15 +376,53 @@ wonder_dunharrow_03 = { #Dunharrow Bastion
 	}
 }
 
-# City of Aldburg #
-wonder_calemmanc_01 = {
-	type_icon = "icon_structure_hadrians_wall.dds"
-	flag = fully_upgraded	
+##Quonton
+##City of Calemmanc
+wonder_calemmanc_00 = {
+	type_icon = "icon_wonder_aldburg.dds"
 	construction_time = slow_construction_time
 	cost_prestige = normal_building_tier_4_cost
 	cost_gold = normal_building_tier_4_cost
 	can_construct = {
 		building_requirement_castle_city_church = { LEVEL = 01 }
+		culture = {
+			has_innovation = innovation_motte
+		}
+	}
+	
+	max_garrison = good_building_max_garrison_tier_4
+	province_modifier = {
+		defender_holding_advantage = 5
+		fort_level = 6
+		supply_limit_mult = 0.15
+	}
+	county_modifier = {
+		monthly_county_control_growth_factor = 0.1
+		levy_size = 0.2
+	}
+	character_modifier = { 
+		monthly_prestige = 0.1
+		men_at_arms_maintenance = -0.05
+	}
+	is_enabled = {
+		scope:holder ?= {
+			culture = { has_cultural_pillar = heritage_hadorim }
+		}	
+	}
+	next_building = wonder_calemmanc_01
+	type = special
+	flag = travel_point_of_interest_diplomatic
+	ai_value = {
+		base = 100
+	}
+}
+wonder_calemmanc_01 = {
+	type_icon = "icon_structure_hadrians_wall.dds"
+	flag = fully_upgraded	
+	construction_time = slow_construction_time
+	cost_gold = 1500
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 02 }
 		culture = {
 			has_innovation = innovation_motte
 		}
@@ -398,7 +436,41 @@ wonder_calemmanc_01 = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.1
-		levy_size = 0.2
+	}
+	
+	next_building = wonder_calemmanc_02
+	type = special
+	flag = travel_point_of_interest_diplomatic
+	ai_value = {
+		base = 100
+	}
+}
+
+wonder_calemmanc_02 = {
+	type_icon = "icon_structure_hadrians_wall.dds"
+	flag = fully_upgraded	
+	construction_time = very_slow_construction_time
+	cost_gold = 2500
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 03 }
+		culture = {
+			has_innovation = innovation_motte
+		}
+	}
+	
+	max_garrison = good_building_max_garrison_tier_4
+	province_modifier = {
+		defender_holding_advantage = good_building_fort_level_tier_3 #slight more for Numenorean city
+		fort_level = 7
+		tax_mult = 0.25
+		supply_limit_mult = 0.20
+		stationed_heavy_cavalry_damage_mult = 0.10
+		stationed_light_cavalry_damage_mult = 0.10
+	}
+	county_modifier = {
+		development_growth_factor = 0.1
+		monthly_county_control_growth_factor = 0.1
+		levy_size = 0.1
 	}
 	
 	type = special
@@ -407,6 +479,9 @@ wonder_calemmanc_01 = {
 		base = 100
 	}
 }
+
+
+# City of Aldburg #
 wonder_aldburg_01 = {
 	type_icon = "icon_wonder_aldburg.dds"
 	construction_time = slow_construction_time
@@ -2649,11 +2724,22 @@ wonder_minas_ithil_03 = { #Cleansed Minas Ithil
 		name = "wonder_minas_ithil_mesh"
 	}
 
-	construction_time = very_slow_construction_time
+	construction_time = extremely_slow_construction_time
 	effect_desc = explore_history_cost_discount_max_desc
 	cost_gold = 1500
+	
 	can_construct = {
 		building_requirement_castle_city_church = { LEVEL = 03 }
+		##Quonton
+		custom_description = {
+			text = not_morgul_corrupted
+			title:c_minas_ithil = {
+				NOT = {
+					has_county_modifier = fading_morgul_corruption_modifier
+				}
+			}
+		}
+		##End Quonton
 		scope:holder ?= {
 			culture = {
 				has_innovation = innovation_hoardings
@@ -4034,7 +4120,9 @@ wonder_cirith_ungol_01 = { # Original Cirith Ungol
 			}
 		}
 	}
-
+	province_modifier = { 
+		fort_level = 1
+	}
 	levy = small_building_levy_tier_4
 	character_modifier = {
 		knight_limit = 1
@@ -4061,6 +4149,10 @@ wonder_cirith_ungol_02 = { # Orcish Cirith Ungol
 	can_construct = {
 		building_requirement_castle_city_church = { LEVEL = 01 }
 		scope:holder ?= { lotr_orc_buildings = yes }
+	}
+	
+	province_modifier = { 
+		fort_level = 1
 	}
 	
 	levy = small_building_levy_tier_4
@@ -4095,7 +4187,11 @@ wonder_cirith_ungol_03 = { # Reclaimed Cirith Ungol
 		}
 		scope:holder ?= { lotr_orc_buildings = no }
 	}
-
+	
+	province_modifier = { 
+		fort_level = 1
+	}
+	
 	levy = small_building_levy_tier_4
 	character_modifier = {
 		knight_limit = 1
@@ -4424,6 +4520,38 @@ wonder_morannon = {
 		levy_reinforcement_rate = 0.4
 	}
 	
+	ai_value = {
+		base = 100
+	}
+	type = special
+	flag = travel_point_of_interest_martial
+}	
+
+wonder_carach_angren = {
+	type_icon = "icon_structure_alamut_castle.dds"
+	construction_time = slow_construction_time
+	cost_gold = 1000
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 02 }
+	}
+	county_modifier = {
+		fort_level = 4
+		defender_holding_advantage = good_building_fort_level_tier_3
+	}
+
+	character_modifier = {
+		knight_effectiveness_mult = 0.04
+	}
+
+	province_modifier = {
+		levy_reinforcement_rate = 0.10
+	}
+	
+	#is_enabled = {
+	#	scope:holder ?= {
+	#		faith_is_good = no
+	#	}
+	#}
 	ai_value = {
 		base = 100
 	}
@@ -6152,7 +6280,7 @@ wonder_rophazan_mines = {
 	type_icon = "icon_building_quarries.dds"
 	flag = fully_upgraded
 	construction_time = very_slow_construction_time
-	cost_gold = 900
+	cost_gold = 1000
 	can_construct_potential = {
 		building_requirement_tribal = no
 	}
@@ -6166,6 +6294,39 @@ wonder_rophazan_mines = {
 	province_modifier = {
 		development_growth_factor = -0.1 # Mining complex isn't conductive to development
 		monthly_income = special_mine_building_tax_tier_3
+	}
+	
+	ai_value = {
+		base = 100
+	}
+	type = special
+	flag = travel_point_of_interest_martial
+	next_building = wonder_rophazan_mines_01
+}
+
+wonder_rophazan_mines_01 = {
+	type_icon = "icon_building_quarries.dds"
+	flag = fully_upgraded
+	construction_time = very_slow_construction_time
+	cost_gold = 7500
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	can_construct = {
+		scope:holder.culture ?= {
+			OR = {
+				has_innovation = innovation_hoardings
+			}
+		}
+	}
+	province_modifier = {
+		development_growth_factor = -0.33 # Mining complex isn't conductive to development
+		monthly_income = special_mine_building_tax_tier_7
+	}
+	
+	county_holder_character_modifier = {
+		monthly_income_mult = 0.05
+		build_speed = -0.1
 	}
 	
 	ai_value = {
@@ -6278,7 +6439,7 @@ wonder_shipyards_nykkea = { #Shipyards of Nykkea
 }
 
 # Arch of Ciryandur #
-wonder_arch_ciryandur = { #Arch of Ciryandur
+wonder_arch_ciryandur = { #Arch of Ciryandur lv1
 	type_icon = "icon_structure_the_arch_of_ciryandur.dds"
 	flag = fully_upgraded	
 	construction_time = slow_construction_time
@@ -6306,10 +6467,47 @@ wonder_arch_ciryandur = { #Arch of Ciryandur
 	}
 	type = special
 	flag = travel_point_of_interest_wonder
+	next_building = wonder_arch_ciryandur_01
+}
+
+wonder_arch_ciryandur_01 = { #Arch of Ciryandur lv2
+	type_icon = "icon_structure_the_arch_of_ciryandur.dds"
+	flag = fully_upgraded	
+	construction_time = slow_construction_time
+	cost_gold = 2500
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 02 }
+		scope:holder ?= {
+		}
+	}
+	province_modifier = {
+		tax_mult = 0.1
+		levy_size = 0.2
+		supply_limit_mult = 0.25
+	}
+	character_modifier = {
+		monthly_prestige = 0.5
+		same_culture_opinion = 10
+		cultural_head_fascination_mult = 0.05
+	}
+	is_enabled = {
+		##Quonton
+		OR = { 
+			scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+			scope:holder.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
+			scope:holder.culture ?= { has_cultural_tradition = tradition_new_numenor }
+		}
+		##End Quonton
+	}
+	ai_value = {
+		base = 100
+	}
+	type = special
+	flag = travel_point_of_interest_wonder
 }
 
 # Great Haven of Korlea #
-wonder_haven_korlea = { #Great Haven of Korlea
+wonder_haven_korlea = { #Great Haven of Korlea lv1
 	type_icon = "icon_structure_doges_palace.dds"
 	flag = fully_upgraded	
 	construction_time = slow_construction_time
@@ -6324,9 +6522,9 @@ wonder_haven_korlea = { #Great Haven of Korlea
 		}
 	}
 	province_modifier = {
-		tax_mult = 0.2
+		tax_mult = 0.1
 		levy_size = 0.1
-		supply_limit_mult = 0.2
+		supply_limit_mult = 0.25
 	}
 	character_modifier = {
 		embarkation_cost_mult = -0.25
@@ -6339,9 +6537,82 @@ wonder_haven_korlea = { #Great Haven of Korlea
 	}
 	type = special
 	flag = travel_point_of_interest_economic
+	next_building = wonder_haven_korlea_01
 }
 
-# Pillar of Ûrêzâyaneth #
+wonder_haven_korlea_01 = { #Great Haven of Korlea lv2
+	type_icon = "icon_structure_doges_palace.dds"
+	flag = fully_upgraded	
+	construction_time = slow_construction_time
+	effect_desc = {
+		desc = explore_history_cost_discount_medium_desc
+		desc = sailing_activity_cost_discount_major_desc
+	}
+	cost_gold = 2000
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 02 }
+		scope:holder ?= {
+		}
+	}
+	province_modifier = {
+		tax_mult = 0.15
+		levy_size = 0.2
+		supply_limit_mult = 0.5
+		fort_level = 5
+		defender_holding_advantage = good_building_fort_level_tier_3
+	}
+	character_modifier = {
+		embarkation_cost_mult = -0.25
+		monthly_influence_mult = 0.05
+	}
+	#is_enabled = {
+	#	scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+	#}
+	ai_value = {
+		base = 100
+	}
+	type = special
+	flag = travel_point_of_interest_economic
+	next_building = wonder_haven_korlea_02
+}
+
+wonder_haven_korlea_02 = { #Great Haven of Korlea lv3
+	type_icon = "icon_structure_doges_palace.dds"
+	flag = fully_upgraded	
+	construction_time = very_slow_construction_time
+	effect_desc = {
+		desc = explore_history_cost_discount_medium_desc
+		desc = sailing_activity_cost_discount_major_desc
+	}
+	cost_gold = 2750
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 03 }
+		scope:holder ?= {
+		}
+	}
+	province_modifier = {
+		tax_mult = 0.2
+		levy_size = 0.5
+		supply_limit_mult = 0.8
+		fort_level = 5
+		defender_holding_advantage = good_building_fort_level_tier_3
+	}
+	character_modifier = {
+		embarkation_cost_mult = -0.25
+		monthly_influence_mult = 0.1
+		monthly_dynasty_prestige_mult = 0.1
+	}
+	#is_enabled = {
+	#	scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+	#}
+	ai_value = {
+		base = 100
+	}
+	type = special
+	flag = travel_point_of_interest_economic
+}
+
+# Pillar of Ûrêzâyaneth # lv1
 wonder_pillar_urez = { #Pillar of Ûrêzâyaneth
 	type_icon = "icon_wonder_pillar_of_urezayaneth.dds"
 	flag = fully_upgraded	
@@ -6357,6 +6628,49 @@ wonder_pillar_urez = { #Pillar of Ûrêzâyaneth
 		monthly_prestige = 0.2
 		men_at_arms_maintenance = -0.1
 	}
+	is_enabled = {
+		##Quonton
+		OR = { 
+			scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+			scope:holder.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
+			scope:holder.culture ?= { has_cultural_tradition = tradition_new_numenor }
+		}
+		##End Quonton
+	}
+	ai_value = {
+		base = 100
+	}
+	type = special
+	flag = travel_point_of_interest_wonder
+	next_building = wonder_pillar_urez_01
+}
+
+wonder_pillar_urez_01 = { #Pillar of Ûrêzâyaneth lv2
+	type_icon = "icon_wonder_pillar_of_urezayaneth.dds"
+	flag = fully_upgraded	
+	construction_time = slow_construction_time
+	cost_gold = 4500
+	can_construct = {
+		building_requirement_castle_city_church = { LEVEL = 02 }
+		scope:holder ?= {
+		}
+		province:1807 = { has_building_or_higher = wonder_rophazan_mines }
+	}
+	character_modifier = {
+		monthly_piety = 0.5 # Made in respect to Manwe
+		monthly_prestige = 0.75
+		men_at_arms_maintenance = -0.1
+		domain_tax_same_faith_mult = 0.05
+		prestige_level_impact_mult = 0.1
+	}
+	
+	county_modifier = {
+		tax_mult = 0.3
+		levy_size = 0.2
+		supply_limit_mult = 0.5
+		development_growth_factor = 0.1
+	}
+	
 	is_enabled = {
 		##Quonton
 		OR = { 
@@ -12559,6 +12873,7 @@ wonder_belegost_broken = { # Belegost (Broadbeam Capital)
 	character_modifier = {
 		monthly_prestige = 0.25
 		stress_gain_mult = 0.1
+		monthly_crafting_lifestyle_xp_gain_mult = 0.10
 	}
 
 	is_enabled = {
@@ -12590,10 +12905,11 @@ wonder_belegost_rebuilt = { # Belegost (Broadbeam Capital)
 		stationed_heavy_infantry_toughness_mult = 0.5
 	}
 	county_modifier = {
-		development_growth = 0.3
+		development_growth = 0.2
 	}
 	character_modifier = {
 		monthly_prestige = 1
+		monthly_crafting_lifestyle_xp_gain_mult = 0.30
 	}
 
 	# Make feasts cost less?
@@ -12631,12 +12947,13 @@ wonder_belegost_reborn = { # Belegost (Broadbeam Capital)
 		fort_level = 3
 	}
 	county_modifier = {
-		development_growth = 0.8
+		development_growth = 0.4
 	}
 	character_modifier = {
 		monthly_prestige = 2
 		same_culture_opinion = 20
 		stress_loss_mult = 0.1
+		monthly_crafting_lifestyle_xp_gain_mult = 0.50
 	}
 
 	is_enabled = {
@@ -12672,6 +12989,7 @@ wonder_nogrod_broken = { # Nogrod (Firebeard Capital)
 	character_modifier = {
 		stress_gain_mult = 0.1
 		monthly_prestige = 0.25
+		monthly_crafting_lifestyle_xp_gain_mult = 0.10
 	}
 
 
@@ -12703,10 +13021,11 @@ wonder_nogrod_rebuilt = { # Nogrod (Firebeard Capital)
 		monthly_income = 3.5
 	}
 	county_modifier = {
-		development_growth = 0.4
+		development_growth = 0.2
 	}
 	character_modifier = {
 		monthly_prestige = 1
+		monthly_crafting_lifestyle_xp_gain_mult = 0.30
 	}
 
 	is_enabled = {
@@ -12738,17 +13057,18 @@ wonder_nogrod_reborn = { # Nogrod (Firebeard Capital)
 	province_modifier = {
 		supply_limit_mult = 0.5
 		monthly_income = 5
-		stationed_monster_damage_mult = 1.5
-		stationed_monster_toughness_mult = 1.5
+		stationed_heavy_infantry_damage_mult = 1.5
+		stationed_heavy_infantry_toughness_mult = 1.5
 		fort_level = 3
 	}
 	county_modifier = {
-		development_growth = 0.8
+		development_growth = 0.4
 	}
 	character_modifier = {
 		stress_loss_mult = 0.1
 		monthly_prestige = 2
 		same_culture_opinion = 20
+		monthly_crafting_lifestyle_xp_gain_mult = 0.50
 	}
 
 	is_enabled = {
@@ -15539,6 +15859,7 @@ wonder_krythan = { #Krythan - Garden-Fortress of the Tayb
 wonder_tarnet_barzain = { #Tarnet Barzain - Holy Oasis in Poa
 	flag = fully_upgraded
 	type_icon = "icon_structure_nalanda.dds"
+	effect_desc = tarnet_barzain_effect_desc
 
 	cost_gold = 1500
 	construction_time = slow_construction_time
@@ -15551,6 +15872,12 @@ wonder_tarnet_barzain = { #Tarnet Barzain - Holy Oasis in Poa
 		culture = {
 			has_innovation = innovation_hoardings
 		}	
+	}
+
+	is_enabled = {
+		scope:holder.faith = {
+			has_doctrine = tenet_sirayn_syncretism
+		}
 	}
 
 	ai_value = {

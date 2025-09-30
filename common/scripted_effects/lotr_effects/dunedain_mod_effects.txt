@@ -1,0 +1,70 @@
+﻿### DUNEDAIN MOD EFFECTS ###
+evil_strength_gamerule_buffs = {
+	if = {
+		limit = { has_game_rule = no_they_arent }
+		every_independent_ruler = { 
+			limit = { 
+				religion = { is_in_family = rf_forcesofevil } 
+				NOT = {
+					has_character_modifier = evil_weakened_modifier
+					has_character_modifier = evil_strengthened_1_modifier
+					has_character_modifier = evil_strengthened_2_modifier
+					has_character_modifier = evil_strengthened_3_modifier
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+	}
+	else = {
+		every_independent_ruler = {  
+			limit = { 
+				OR = { 
+					religion = { is_in_family = rf_forcesofevil } 
+					faith = { has_doctrine = doctrine_dominion_of_the_dark }
+				}
+				NOT = {
+					has_character_modifier = evil_weakened_modifier
+					has_character_modifier = evil_strengthened_1_modifier
+					has_character_modifier = evil_strengthened_2_modifier
+					has_character_modifier = evil_strengthened_3_modifier
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+	}	
+}
+
+lotr_upgrade_settlement_holding_one_level = {
+
+	scope:obstacle_province = { 
+		if = {
+			limit = { has_building = settlement_01 }
+			add_building = settlement_02
+		}
+		else_if = {
+			limit = { has_building = settlement_02 }
+			add_building = settlement_03
+		}
+		else = { 
+			scope:obstacle_province = { change_development_level = 0.5 }
+		}
+	}
+}

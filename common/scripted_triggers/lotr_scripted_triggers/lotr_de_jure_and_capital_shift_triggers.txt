@@ -512,6 +512,8 @@ show_harondor_trigger = {
 	}
 }
 show_harnendor_trigger = {
+	##Quonton
+	NOT = { has_primary_title = title:e_pharazain } 
 	OR = {
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -702,10 +704,7 @@ show_eregion_trigger = {
 
 ##Quonton
 show_haruzan_trigger = {
-	OR = { 
-		has_primary_title = title:e_pharazain 
-		has_primary_title = title:e_numenor_in_exile
-	}
+	has_primary_title = title:e_numenor_in_exile
 	NOT = {
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -725,9 +724,14 @@ show_haruzan_trigger = {
 }
 
 show_narak_trigger = {
+	has_primary_title = title:e_numenor_in_exile
 	OR = { 
-		has_primary_title = title:e_pharazain 
-		has_primary_title = title:e_numenor_in_exile
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
 	}
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -748,9 +752,14 @@ show_narak_trigger = {
 }
 
 show_tedja_trigger = {
+	has_primary_title = title:e_numenor_in_exile
 	OR = { 
-		has_primary_title = title:e_pharazain 
-		has_primary_title = title:e_numenor_in_exile
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
 	}
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -775,6 +784,14 @@ show_qarsa_trigger = {
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
 	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
+	}
 	NOT = {
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -797,6 +814,14 @@ show_aukar_trigger = {
 	OR = { 
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
+	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
 	}
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -821,6 +846,14 @@ show_ray_trigger = {
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
 	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
+	}
 	NOT = {
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -843,6 +876,14 @@ show_raishoul_trigger = {
 	OR = { 
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
+	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
 	}
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -867,6 +908,14 @@ show_zajantak_trigger = {
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
 	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
+	}
 	NOT = {
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -889,6 +938,14 @@ show_mag_trigger = {
 	OR = { 
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
+	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
 	}
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -913,6 +970,14 @@ show_tumag_trigger = {
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
 	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
+	}
 	NOT = {
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -935,6 +1000,14 @@ show_usakan_trigger = {
 	OR = { 
 		has_primary_title = title:e_pharazain 
 		has_primary_title = title:e_numenor_in_exile
+	}
+	OR = { 
+		has_trait = conqueror
+		has_trait = lunatic_1
+		has_trait = lunatic_genetic
+		has_trait = possessed_1
+		has_trait = possessed_genetic
+		has_doctrine = tenet_adunaic_birthright
 	}
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -965,6 +1038,25 @@ show_tanturak_trigger = {
 		}
 	}
 	title:k_tanturak.empire = {
+		NOR = {
+			this = title:e_gondor_steward
+			this = title:e_gondor
+			this = title:e_castamir
+			this = title:e_numenor_in_exile
+			this = title:e_reunitedkingdom
+			this = title:e_pharazain
+		}
+	}
+}
+show_anarike_trigger = {
+	has_primary_title = title:e_numenor_in_exile
+	NOT = {
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_integrate_anarike
+		}
+	}
+	title:k_anarike.empire = {
 		NOR = {
 			this = title:e_gondor_steward
 			this = title:e_gondor

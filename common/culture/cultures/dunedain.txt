@@ -44,7 +44,7 @@ numenorean = {
 	name_list = name_list_dunedain
 	
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
-	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
+	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
 	##Quonton
 	unit_gfx = { numenorean_unit_gfx }
@@ -79,7 +79,7 @@ new_numenorean = {
 	name_list = name_list_dunedain
 	
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
-	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
+	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
 	unit_gfx = { dunedain_unit_gfx }
 	
@@ -111,7 +111,7 @@ new_dunedain = {
 	name_list = name_list_dunedain
 	
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
-	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
+	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
 	unit_gfx = { dunedain_unit_gfx }
 	
@@ -182,7 +182,7 @@ belfalathrim = {
 	
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
-	clothing_gfx = { gondorian_clothing_gfx }
+	clothing_gfx = { belfalathrim_clothing_gfx }
 	unit_gfx = { dunedain_unit_gfx }
 	
 	ethnicities = {
@@ -338,34 +338,6 @@ dunedain_ranger = { # For the Dúnedain of Arnor after the fall of Fornost and t
 # 		3 = gondorian_ethnicity
 # 	}
 # }
-#amrodrim = {
-#	color = { 75 80 100 } #amroth_grey
-#	created = 5501.1.1
-#	parents = { belfalathrim sindar }
-#	
-#	ethos = ethos_courtly
-#	heritage = heritage_dunedain
-#	language = language_sindarin
-#	martial_custom = martial_custom_male_only
-#	traditions = {
-#		tradition_mende_anduya
-#		tradition_faith_bound
-#		tradition_tales_of_great_deeds
-#		tradition_belfalathrim_chivalry
-#		tradition_horse_breeder
-#	}
-#	
-#	name_list = name_list_dunedain
-#	
-#	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
-#	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
-#	clothing_gfx = { gondorian_clothing_gfx }
-#	unit_gfx = { dunedain_unit_gfx }
-#	
-#	ethnicities = {
-#		1 = amrodrim_ethnicity
-#	}
-#}
 
 harondorim = {
 	color = { 85 148 149 }
@@ -531,7 +503,6 @@ caledhrim = { # The people of Calenardhon, descended from a mix of the local Dae
 	
 	ethnicities = { # mixed Daen and Gondorian ethnicites
 		50 = gondorian_ethnicity
-		15 = dunlending_ethnicity
 		15 = dunlending_ethnicity
 		10 = caucasian_northern_brown_hair
 		10 = caucasian_northern_dark_hair

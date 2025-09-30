@@ -1182,7 +1182,6 @@ kingdom_thani_hazad = {
 	flavourization_rules = { 
 		top_liege = yes
 		only_holder = yes
-	
 	}
 	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_tulwangi heritage_thani_native }
 	faiths = { faith_thani_hazad faith_gimileth }

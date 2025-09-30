@@ -246,6 +246,7 @@ throne = {
 		trigger = {
 			exists = capital_county
 			capital_county.culture = {
+				##Quonton
 				OR = { 
 					has_cultural_pillar = heritage_dunedain
 					has_cultural_tradition = tradition_new_numenor
@@ -1207,8 +1208,83 @@ banner = {
 wall_shield = {
 	icon = "artifact_wall_shield.dds"
 	default_type = wall_small
+
+	####################################################################################
+	### LOTR - Placed at the top so that LotR specific assets trump generic ones  ######
+	####################################################################################
+
 	asset = {
 		trigger = {
+			OR = {
+				artifact_should_use_gfx_type_longbeard_and_stiffbeard_trigger = yes
+				artifact_should_use_gfx_type_firebeard_trigger = yes
+				artifact_should_use_gfx_type_ironfist_trigger = yes
+				artifact_should_use_gfx_type_blacklock_trigger = yes
+				artifact_should_use_gfx_type_stonefoot_trigger = yes
+			}
+		}
+		reference = erebor_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = gondorian_unit } }
+		reference = gondor_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = orcish_unit } }
+		reference = orc_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = mongol_unit } }
+		reference = easterling_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = rohirrim_unit } }
+		reference = rohan_shield_01_entity
+	}
+	asset = {
+		trigger = { 
+			NOT = { artifact_should_use_gfx_type_trigger = { TYPE = rohirrim_unit } }
+			artifact_should_use_gfx_type_trigger = { TYPE = northern_unit } }
+		reference = northron_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = urukhai_unit } }
+		reference = isengard_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = adunaic_unit } }
+		reference = numenor_shield_02_entity
+	}
+	asset = {
+		trigger = {
+			artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
+			artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+		} 
+		reference = noldor_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit } }
+		reference = noldor_shield_02_entity
+	}
+
+	######################
+	###### VANILLA  ######
+	######################
+
+	asset = {
+		trigger = {
+			NOR = {
+				artifact_should_use_gfx_type_trigger = { TYPE = orcish_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = mongol_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = rohirrim_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = northern_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = urukhai_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = gondorian_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = adunaic_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+			}
 			OR = {
 				artifact_should_use_gfx_type_trigger = { TYPE = western_building }
 				artifact_should_use_gfx_type_trigger = { TYPE = norse_building }
@@ -1220,6 +1296,18 @@ wall_shield = {
 	}
 	asset = {
 		trigger = {
+			NOR = {
+				artifact_should_use_gfx_type_trigger = { TYPE = orcish_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = mongol_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = rohirrim_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = northern_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = urukhai_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = gondorian_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = adunaic_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+			}
 			OR = {
 				artifact_should_use_gfx_type_trigger = { TYPE = mena_building }
 				artifact_should_use_gfx_type_trigger = { TYPE = iranian_building }
@@ -1229,15 +1317,106 @@ wall_shield = {
 		reference = ep1_mena_shield_01_a_entity
 	}
 	asset = {
-		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = indian_building } }
+		trigger = {
+			NOR = {
+				artifact_should_use_gfx_type_trigger = { TYPE = orcish_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = mongol_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = rohirrim_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = northern_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = urukhai_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = gondorian_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = adunaic_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+			}
+		artifact_should_use_gfx_type_trigger = { TYPE = indian_building } }
 		reference = ep1_indian_shield_01_a_entity
 	}
+
 }
 
 wall_shield_medi = {
 	icon = "artifact_wall_shield.dds"
 	default_type = wall_big
-	asset = ep1_mediterranean_shield_01_a_entity
+
+	######################################################################################
+	### LOTR - Placed at the top so that LotR specific assets trump generic ones ######
+	######################################################################################
+
+	asset = {
+		trigger = {
+			OR = {
+				artifact_should_use_gfx_type_longbeard_and_stiffbeard_trigger = yes
+				artifact_should_use_gfx_type_firebeard_trigger = yes
+				artifact_should_use_gfx_type_ironfist_trigger = yes
+				artifact_should_use_gfx_type_blacklock_trigger = yes
+				artifact_should_use_gfx_type_stonefoot_trigger = yes
+			}
+		}
+		reference = erebor_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = orcish_unit } }
+		reference = orc_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = mongol_unit } }
+		reference = easterling_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = rohirrim_unit } }
+		reference = rohan_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = northern_unit } }
+		reference = northron_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = urukhai_unit } }
+		reference = isengard_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = gondorian_unit } }
+		reference = numenor_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = adunaic_unit } }
+		reference = numenor_shield_02_entity
+	}
+	asset = {
+		trigger = { 
+			artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
+			artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+		}
+		reference = noldor_shield_01_entity
+	}
+	asset = {
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit } }
+		reference = noldor_shield_02_entity
+	}
+
+	######################
+	###### VANILLA  ######
+	######################
+
+	asset = {
+		trigger = { 
+			NOR = {
+				artifact_should_use_gfx_type_trigger = { TYPE = orcish_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = mongol_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = rohirrim_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = northern_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = urukhai_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = gondorian_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = adunaic_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+			}
+		}
+		reference = ep1_mediterranean_shield_01_a_entity
+	}
 }
 
 animal_trophy = {
@@ -1652,6 +1831,7 @@ book = {
 	icon = {
 		trigger =  {
 			scope:owner ?= {
+				##Quonton
 				OR = { 
 					culture = { has_cultural_pillar = heritage_dunedain }
 					has_cultural_tradition = tradition_new_numenor
@@ -3213,6 +3393,7 @@ crown_court = {
 	asset = {
 		trigger = {
 			scope:owner = {
+				##Quonton
 				OR = { 
 					culture = { has_cultural_pillar = heritage_dunedain }
 					culture = { has_cultural_tradition = tradition_new_numenor }
@@ -3226,6 +3407,7 @@ crown_court = {
 	asset = {
 		trigger = {
 			scope:owner = {
+				##Quonton
 				OR = { 
 					culture = { has_cultural_pillar = heritage_dunedain }
 					culture = { has_cultural_tradition = tradition_new_numenor }

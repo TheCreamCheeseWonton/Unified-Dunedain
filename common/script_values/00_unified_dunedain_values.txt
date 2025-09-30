@@ -21,3 +21,13 @@ number_of_adunaic_culture_provinces = {
         add = 1
     }
 }
+
+number_of_north_adunaic_culture_provinces = {
+    value = 0
+    every_county_in_region = {
+        region = special_nie_extra
+        limit = { 
+            culture = { has_cultural_pillar = heritage_northern_adunaic }
+        }
+        add = 1
+    }

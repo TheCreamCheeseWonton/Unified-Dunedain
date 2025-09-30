@@ -22,8 +22,9 @@
 
 # Special Ar-Adunaim title MAA
 narunaru_royal_guard = { # Royal Guards of the Ar-Adunaim
-	can_recruit =  { primary_title = title:e_adunaim}	
+	can_recruit =  { primary_title = title:e_adunaim }	
 	type = pikemen	
+
 	damage = 60
 	toughness = 75
 	pursuit = 0
@@ -63,7 +64,7 @@ narunaru_royal_guard = { # Royal Guards of the Ar-Adunaim
 }
 
 adunaim_armsmen = { # Adûnâim Armsmen
-	can_recruit =  { primary_title = title:e_adunaim  }	
+	can_recruit =  { primary_title = title:e_adunaim }
 	type = heavy_infantry
 	damage = 40
 	toughness = 26
@@ -101,12 +102,13 @@ adunaim_armsmen = { # Adûnâim Armsmen
 
 # Castamiri MAA
 adunakhori = { # Heavy Shock Infantry,
-	can_recruit = {
+	can_recruit = { 
 		dynasty = dynasty:dynasty_kamal
 		NOT = { is_gondor = yes }
 		highest_held_title_tier >= tier_kingdom
 	}
 	type = heavy_infantry
+	
 	damage = 70
 	toughness = 64
 	pursuit = 0
@@ -385,9 +387,8 @@ adunaic_skirmishers = {
 		}
 	}	
 	type = skirmishers			
-	damage = 35
-	toughness = 20
-	pursuit = 10
+	damage = 20
+	toughness = 16
 	screen = 20
 	
 	terrain_bonus = {
@@ -410,9 +411,9 @@ adunaic_skirmishers = {
 		harsh_winter = { damage = -5 toughness = -4 }
 	}
 
-	buy_cost = { gold = 60 }
-	low_maintenance_cost = { gold = 0.20 }
-	high_maintenance_cost = { gold = 0.55 }
+	buy_cost = { gold = 55 }
+	low_maintenance_cost = { gold = 0.18 }
+	high_maintenance_cost = { gold = 0.54 }
 	provision_cost = @provisions_cost_infantry_cheap
 	
 	stack = 100
@@ -433,17 +434,20 @@ adunaic_soldiers = { # Heavy Shock Infantry
 		}
 	}	
 	type = heavy_infantry
-	damage = 75
-	toughness = 65
+	damage = 60
+	toughness = 60
 	pursuit = 0
-	screen = 35
+	screen = 20
 	
 	terrain_bonus = {
-		farmlands = { damage = 20 toughness = 10 }
-		plains = { damage = 15 toughness = 5 }
-		hills = { damage = 10 toughness = 5 }
-		red_desert = { damage = 10 toughness = 5 }
-		forest = { damage = 10 toughness = 5 }
+		volcanic_plains = { damage = 10 toughness = 5 }
+		farmlands = { damage = 20 toughness = 10 pursuit = 10 screen = 10 }
+		hills = { damage = 10 toughness = 6 }
+		red_desert = { damage = 10 toughness = 6 }
+		plains = { damage = 15 toughness = 6 }
+		forest = { damage = 10 toughness = 6 }
+		desert = { damage = -16 toughness = -6 }
+		dune_sea = { damage = -16 toughness = -6 }
 	}
 	
 	counters = {
@@ -456,13 +460,13 @@ adunaic_soldiers = { # Heavy Shock Infantry
 		normal_winter = { damage = -5 toughness = -5 }
 		harsh_winter = { damage = -10 toughness = -10 }
 	}
-
-	buy_cost = { gold = 200 }
+	
+	buy_cost = { gold = 112 }
 	low_maintenance_cost = { gold = 0.5 }
 	high_maintenance_cost = { gold = 1.5 }
 	provision_cost = @provisions_cost_infantry_expensive
 	
-	stack = 50
+	stack = 75
 
 	allowed_in_hired_troops = no
 	ai_quality = { value = @cultural_maa_extra_ai_score }
@@ -486,16 +490,17 @@ adunaic_elites = { # Heavy Shock Infantry
 	}	
 	type = heavy_infantry
 	damage = 100
-	toughness = 120
+	toughness = 100
 	pursuit = 0
 	screen = 40
 	
 	terrain_bonus = {
-		farmlands = { damage = 20 toughness = 10 }
-		plains = { damage = 15 toughness = 5 }
-		hills = { damage = 10 toughness = 5 }
-		red_desert = { damage = 10 toughness = 5 }
-		forest = { damage = 10 toughness = 5 }
+		volcanic_plains = { damage = 10 toughness = 5 }
+		farmlands = { damage = 20 toughness = 10 pursuit = 10 screen = 10 }
+		hills = { damage = 10 toughness = 6 }
+		red_desert = { damage = 10 toughness = 6 }
+		plains = { damage = 15 toughness = 6 }
+		forest = { damage = 10 toughness = 6 }
 	}
 	
 	counters = {
@@ -505,9 +510,9 @@ adunaic_elites = { # Heavy Shock Infantry
 		monster = 1
 	}
 
-	buy_cost = { gold = 320 }
-	low_maintenance_cost = { gold = 1.5 }
-	high_maintenance_cost = { gold = 3.5 }
+	buy_cost = { gold = 300 }
+	low_maintenance_cost = { gold = 0.8 }
+	high_maintenance_cost = { gold = 2.4 }
 	provision_cost = @provisions_cost_infantry_expensive
 	
 	stack = 50
@@ -530,18 +535,18 @@ adunaic_spearmen = {
 		}
 	}	
 	type = pikemen		
-	damage = 70
-	toughness = 75
+	damage = 60
+	toughness = 60
 	pursuit = 0
-	screen = 40
+	screen = 10
 	
 	terrain_bonus = {
 		mountains = { damage = 10 toughness = 30 }
 		desert_mountains = { damage = 10 toughness = 30 }
 		hills = { damage = 5 toughness = 25 }
 		red_desert = { damage = 5 toughness = 25 }
-		plains = { damage = 5 toughness = 15 }
-		farmlands = { damage = 5 toughness = 15 }
+		plains = { damage = 6 toughness = 15 pursuit = 6 }
+		farmlands = { damage = 10 toughness = 15 pursuit = 10 }
 		desert = { damage = -10 toughness = -10 }
 		dune_sea = { damage = -20 toughness = -20 }
 	}
@@ -551,6 +556,7 @@ adunaic_spearmen = {
 		heavy_cavalry = 1
 		camel_cavalry = 1
 		elephant_cavalry = 1
+		pikemen = 1
 	}
 
 	winter_bonus = {
@@ -558,12 +564,12 @@ adunaic_spearmen = {
 		harsh_winter = { damage = -20 toughness = -20 }
 	}
 
-	buy_cost = { gold = 125 }
-	low_maintenance_cost = { gold = 0.40 }
-	high_maintenance_cost = { gold = 1.10 }
+	buy_cost = { gold = 105 }
+	low_maintenance_cost = { gold = 0.4 }
+	high_maintenance_cost = { gold = 1.2 }
 	provision_cost = @provisions_cost_infantry_moderate
 	
-	stack = 50
+	stack = 75
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	allowed_in_hired_troops = no
 	icon = narunaru_royal_guard
@@ -612,7 +618,7 @@ adunic_steelbowmen = {
 	
 	holy_order_fallback = no
 	
-	stack = 50
+	stack = 75
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = abrazanim_warbows
 }
@@ -626,8 +632,8 @@ knights_of_the_adunai = {
 	provision_cost = @provisions_cost_cavalry_bankrupting
 
 	stack = 50
-	damage = 180
-	toughness = 70
+	damage = 135
+	toughness = 52
 	pursuit = 30
 	screen = 15
 

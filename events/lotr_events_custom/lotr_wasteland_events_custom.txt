@@ -1,0 +1,627 @@
+﻿namespace = wastelands_custom
+
+# Arnorian Ruins - BLOCKER CLEARANCE
+wastelands_custom.001 = { #Hidden Bandit Camp
+	content_source = realms_dlc
+	type = character_event
+	title = wastelands_custom.001.t
+	desc = wastelands_custom.001.desc
+	theme = battle
+	override_background = {
+		reference = eregion_ruins
+	}
+
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+
+	
+	right_portrait = {
+		character = scope:soldier
+		animation = aggressive_sword
+	}
+
+	immediate = {
+        create_character = {
+            template = honorable_soldier_character
+            culture = root.culture
+            faith = root.faith
+			location = scope:obstacle_province
+			gender_female_chance = 0
+            save_scope_as = soldier
+        }
+	}
+	
+	option = { # Bribe the Bandits to Leave
+		name = wastelands_custom.001.a
+		skill = diplomacy
+		duel = {
+			skill = diplomacy 
+			value = 10
+			30 = { 
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+					min = -10
+				}
+				desc = wastelands_custom.001.a.duel_success
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.001.success.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							if = {
+								limit = { has_building = ruins_of_arnor_bad_cleared }
+								remove_building = ruins_of_arnor_bad_cleared
+							}
+							else = { 
+								remove_building = ruins_of_arnor_cleared
+							}
+						}
+					}
+					
+					add_prestige = minor_prestige_gain
+					remove_short_term_gold = 60
+				}
+			}
+			30 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2
+					min = -25
+				}
+				desc = wastelands_custom.001.a.duel_failure
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.001.failure.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							if = {
+								limit = { has_building = ruins_of_arnor_bad_cleared }
+								remove_building = ruins_of_arnor_bad_cleared
+								add_to_global_variable_list = {
+									name = unavailable_unique_decisions
+									target = flag:province_is_bad_arnor_ruins
+								}
+							}
+							else = { 
+								remove_building = ruins_of_arnor_cleared
+							}
+						}
+					}
+					if = { 
+						limit = { 
+							is_target_in_global_variable_list = {
+								name = unavailable_unique_decisions
+								target = flag:province_is_bad_arnor_ruins
+							}
+						}
+						scope:obstacle_province = { add_building = ruins_of_arnor_bad }
+						scope:obstacle_province = { add_building = bandits }
+						add_prestige = minor_prestige_loss
+						remove_list_global_variable = {
+							name = unavailable_unique_decisions
+							target = flag:province_is_bad_arnor_ruins
+						}
+					}
+					else = { 
+						scope:obstacle_province = { add_building = ruins_of_arnor }
+						scope:obstacle_province = { add_building = bandits }
+						add_prestige = minor_prestige_loss
+					}
+					remove_short_term_gold = 60
+				}
+			}
+		}
+	}
+
+	option = { # Rally a Force and Assault the Bandit Camp
+		name = wastelands_custom.001.b
+		skill = martial
+		duel = {
+			skill = martial 
+			value = 10
+			30 = { 
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+					min = -10
+				}
+				desc = wastelands_custom.001.b.duel_success
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.001.success.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							if = {
+								limit = { has_building = ruins_of_arnor_bad_cleared }
+								remove_building = ruins_of_arnor_bad_cleared
+							}
+							else = { 
+								remove_building = ruins_of_arnor_cleared
+							}
+						}
+					}
+					
+					add_short_term_gold = 50
+					add_prestige = medium_prestige_gain
+				}
+			}
+			30 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2
+					min = -25
+				}
+				desc = wastelands_custom.001.b.duel_failure
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.001.failure.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							if = {
+								limit = { has_building = ruins_of_arnor_bad_cleared }
+								remove_building = ruins_of_arnor_bad_cleared
+								add_to_global_variable_list = {
+									name = unavailable_unique_decisions
+									target = flag:province_is_bad_arnor_ruins
+								}
+							}
+							else = { 
+								remove_building = ruins_of_arnor_cleared
+							}
+						}
+					}
+					if = { 
+						limit = { 
+							is_target_in_global_variable_list = {
+								name = unavailable_unique_decisions
+								target = flag:province_is_bad_arnor_ruins
+							}
+						}
+						scope:obstacle_province = { add_building = ruins_of_arnor_bad }
+						scope:obstacle_province = { add_building = bandits }
+						add_prestige = medium_prestige_loss
+						remove_list_global_variable = {
+							name = unavailable_unique_decisions
+							target = flag:province_is_bad_arnor_ruins
+						}
+						increase_wounds_effect = { REASON = fight }
+					}
+					else = { 
+						scope:obstacle_province = { add_building = ruins_of_arnor }
+						scope:obstacle_province = { add_building = bandits }
+						add_prestige = medium_prestige_loss
+						increase_wounds_effect = { REASON = fight }
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Leave!
+		name = wastelands_custom.001.c
+		hidden_effect = {
+			scope:obstacle_province = { 
+				if = {
+					limit = { has_building = ruins_of_arnor_bad_cleared }
+					remove_building = ruins_of_arnor_bad_cleared
+					add_to_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:province_is_bad_arnor_ruins
+					}
+				}
+				else = { 
+					remove_building = ruins_of_arnor_cleared
+				}
+			}			
+		}
+		scope:obstacle_province = { 
+			if = { 
+				limit = { 
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:province_is_bad_arnor_ruins
+					}
+				}
+				scope:obstacle_province = { add_building = ruins_of_arnor_bad }
+				scope:obstacle_province = { add_building = bandits }
+				remove_list_global_variable = {
+					name = unavailable_unique_decisions
+					target = flag:province_is_bad_arnor_ruins
+				}
+			}
+			else = { 
+				scope:obstacle_province = { add_building = ruins_of_arnor }
+				scope:obstacle_province = { add_building = bandits }
+			}
+		}			
+		
+		make_settlement_county_wilderness = {
+			COUNTY = scope:obstacle_province.county
+		}
+	}
+
+	after = {
+        scope:soldier = {
+            silent_disappearance_effect = yes
+        }
+    }
+}
+
+wastelands_custom.002 = { #Reusing Old Structures
+	content_source = realms_dlc
+	type = character_event
+	title = wastelands_custom.002.t
+	desc = wastelands_custom.002.desc
+	theme = stewardship
+	override_background = {
+		reference = eregion_ruins
+	}
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	right_portrait = {
+		character = scope:steward
+		animation = personality_honorable
+	}
+
+	immediate = {
+		cp:councillor_steward = {
+			save_scope_as = steward
+		}
+	}
+	
+	option = { # Invest Heavily in the Project
+		name = wastelands_custom.002.a
+		hidden_effect = {
+			scope:obstacle_province = { 
+				if = {
+					limit = { has_building = ruins_of_arnor_bad_cleared }
+					remove_building = ruins_of_arnor_bad_cleared
+				}
+				else = { 
+					remove_building = ruins_of_arnor_cleared
+				}
+			}
+		}	
+		scope:obstacle_province.county = { change_development_progress = 100 }
+		lotr_upgrade_settlement_holding_one_level = yes
+		remove_short_term_gold = 180
+	}
+	
+	option = { # Invest Only a Little Bit
+		name = wastelands_custom.002.b
+		hidden_effect = {
+			scope:obstacle_province = { 
+				if = {
+					limit = { has_building = ruins_of_arnor_bad_cleared }
+					remove_building = ruins_of_arnor_bad_cleared
+				}
+				else = { 
+					remove_building = ruins_of_arnor_cleared
+				}
+			}
+		}	
+		scope:obstacle_province.county = { change_development_progress = 80 }
+		remove_short_term_gold = 80
+	}
+	
+	option = { # Raid Ruins and Take all of Worth
+		name = wastelands_custom.002.c
+		hidden_effect = {
+			scope:obstacle_province = { 
+				if = {
+					limit = { has_building = ruins_of_arnor_bad_cleared }
+					remove_building = ruins_of_arnor_bad_cleared
+				}
+				else = { 
+					remove_building = ruins_of_arnor_cleared
+				}
+			}
+		}	
+		add_short_term_gold = 60
+	}
+}
+
+wastelands_custom.003 = { # Artifacts of old
+	content_source = realms_dlc
+	type = character_event
+	title = wastelands_custom.003.t
+	desc = wastelands_custom.003.desc
+	theme = faith
+	override_background = {
+		reference = eregion_ruins
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	
+	right_portrait = {
+		character = scope:colonist
+		animation = personality_greedy
+	}
+
+	immediate = {
+        create_character = {
+            template = local_artisan_template
+            culture = root.culture
+            faith = root.faith
+			location = scope:obstacle_province
+            gender_female_chance = 50
+            save_scope_as = colonist
+        }
+	}
+	
+	option = { # Study the artifacts carefully
+		name = wastelands_custom.003.a
+		skill = learning
+		duel = {
+			skill = learning 
+			value = 14
+			30 = { 
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+					min = -10
+				}
+				desc = wastelands_custom.003.a.duel_success
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.a.success.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							if = {
+								limit = { has_building = ruins_of_arnor_bad_cleared }
+								remove_building = ruins_of_arnor_bad_cleared
+							}
+							else = { 
+								remove_building = ruins_of_arnor_cleared
+							}
+						}
+					}
+					
+					add_learning_skill = 1
+				}
+			}
+			30 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2
+					min = -25
+				}
+				desc = wastelands_custom.003.a.duel_failure
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.a.success.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							if = {
+								limit = { has_building = ruins_of_arnor_bad_cleared }
+								remove_building = ruins_of_arnor_bad_cleared
+							}
+							else = { 
+								remove_building = ruins_of_arnor_cleared
+							}
+						}
+					}
+					
+					add_stress = medium_stress_gain
+				}
+			}
+		}
+	}
+
+	option = { # Let Colonists Have Them
+		name = wastelands_custom.003.b
+		hidden_effect = {
+			scope:obstacle_province = { 
+				if = {
+					limit = { has_building = ruins_of_arnor_bad_cleared }
+					remove_building = ruins_of_arnor_bad_cleared
+				}
+				else = { 
+					remove_building = ruins_of_arnor_cleared
+				}
+			}
+		}
+		scope:obstacle_province = { 
+			add_province_modifier = { 
+				modifier = happy_colonists_arnor
+				years = 25
+			}
+		}
+	}
+	
+	option = { # Confiscate the artifact
+		name = wastelands_custom.003.c
+		hidden_effect = {
+			scope:obstacle_province = { 
+				if = {
+					limit = { has_building = ruins_of_arnor_bad_cleared }
+					remove_building = ruins_of_arnor_bad_cleared
+				}
+				else = { 
+					remove_building = ruins_of_arnor_cleared
+				}
+			}
+		}
+		random_list = {
+			2 = {
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.c.success.toast.t
+					create_artifact_arnorian_figurine_effect = { OWNER = root }
+				}
+			}
+			2 = {
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.c.success.toast.t
+					create_artifact_arnorian_helm_effect = { OWNER = root }
+				}
+			}
+			2 = {
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.c.success.toast.t
+					create_artifact_arnorian_shield_effect = { OWNER = root }
+				}
+			}
+			1 = {
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.c.success.toast.t
+					create_artifact_arnorian_steelbow_effect = { OWNER = root }
+				}
+			}
+			1 = {
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.c.success.toast.t
+					create_artifact_dagger_westernesse_effect = { OWNER = root }
+				}
+			}
+			1 = {
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.c.success.toast.t
+					create_artifact_ranger_star_effect = { OWNER = root }
+				}
+			}
+		}
+	}
+
+	after = {
+        scope:colonist = {
+            silent_disappearance_effect = yes
+        }
+    }
+}
+
+wastelands_custom.004 = { #Clearing Barrow Wights
+	content_source = realms_dlc
+	type = character_event
+	title = wastelands_custom.004.t
+	desc = wastelands_custom.004.desc
+	theme = battle
+	
+	override_background = { reference = barrow }
+
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+
+	
+	right_portrait = {
+		character = scope:knight
+		animation = aggressive_sword
+	}
+	
+	lower_center_portrait = {
+		character = scope:hooked_character
+	}
+
+	immediate = {
+		if = {
+			limit = { 
+				any_knight = { 
+					is_ai = yes
+					count > 0
+				}
+			}
+			ordered_knight = {
+				limit = { is_ai = yes }
+				order_by = prowess
+				save_scope_as = knight
+			}
+		}
+		if = {
+			limit = { 
+				any_hooked_character = { 
+					is_ai = yes
+					count > 0
+				}
+			}
+			ordered_hooked_character = {
+				limit = { is_ai = yes }
+				order_by = prowess
+				save_scope_as = hooked_character
+			}
+		}
+	}
+	
+	option = { # Rally a Force and Cleanse the Barrow Downs
+		name = wastelands_custom.004.a
+		skill = martial
+		duel = {
+			skill = martial 
+			value = 10
+			30 = { 
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+					min = -10
+				}
+				desc = wastelands_custom.004.a.duel_success
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.004.success.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							remove_building = barrow_wights_cleared
+						}			
+					}
+					add_prestige = major_prestige_gain
+					add_piety = major_piety_gain
+				}
+			}
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2
+					min = -25
+				}
+				desc = wastelands_custom.004.a.duel_failure
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.004.failure.toast.t
+					hidden_effect = {
+						scope:obstacle_province = { 
+							remove_building = barrow_wights_cleared
+						}			
+					}
+					scope:obstacle_province = { 
+						scope:obstacle_province = { add_building = barrow_wights }
+					}	
+					add_piety = medium_piety_loss
+					increase_wounds_effect = { REASON = fight }
+				}
+			}
+		}
+	}
+
+	option = { # Leave!
+		name = wastelands_custom.004.b
+		hidden_effect = {
+			scope:obstacle_province = { 
+				remove_building = barrow_wights_cleared
+			}			
+		}
+		scope:obstacle_province = { 
+			scope:obstacle_province = { add_building = barrow_wights }
+		}			
+		
+		make_settlement_county_wilderness = {
+			COUNTY = scope:obstacle_province.county
+		}
+	}
+}

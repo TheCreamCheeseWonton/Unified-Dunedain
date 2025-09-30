@@ -1,0 +1,30 @@
+﻿arnorian_figurine_modifier = {
+    monthly_dynasty_prestige_mult = 0.03
+    monthly_prestige = 0.4
+    court_grandeur_baseline_add = 3
+    monthly_piety = 0.3
+}
+
+arnorian_helm_modifier = {
+    negate_prowess_penalty_add = 14
+    monthly_prestige = 0.25
+    knight_effectiveness_mult = 0.04
+	monthly_dynasty_prestige_mult = 0.06
+    tolerance_advantage_mod = 4
+    knight_effectiveness_mult = 0.08
+}
+
+arnorian_shield_modifier = {
+    monthly_dynasty_prestige_mult = 0.06
+    monthly_prestige = 0.25
+    court_grandeur_baseline_add = 3
+    heavy_infantry_toughness_mult = 0.06
+}
+
+arnorian_steelbow_modifier = {
+    prowess_no_portrait = 18
+    monthly_prestige = 0.25
+	monthly_dynasty_prestige_mult = 0.04
+    archers_damage_mult = 0.1    
+    archers_toughness_mult = 0.1
+}

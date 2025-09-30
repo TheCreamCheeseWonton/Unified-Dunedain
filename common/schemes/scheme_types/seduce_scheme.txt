@@ -140,7 +140,6 @@
 		scope:owner = {
 			is_adult = yes
 		}
-
 		scope:target = {
 			is_adult = yes
 		}
@@ -204,6 +203,7 @@
 				has_trait = cannot_marry
 			}
 		}
+		
 		# One of you is imprisoned
 		is_imprisoned = no
 		scope:target = {
@@ -217,6 +217,7 @@
 				in_diplomatic_range = scope:owner
 			}
 		}
+
 		#LoTR: Cannot seduce mythical beings!
 		scope:target = { 
 			NOR = {
@@ -285,7 +286,7 @@
 	# Base Chances
 	base_success_chance = {
 		base = 0
-		
+
 		# LotR - Children of the Father Dynasty Perk
 		modifier = {
 			add = 10
@@ -297,6 +298,7 @@
 				has_same_culture_heritage = scope:target.culture 
 			}
 		}
+
 		scheme_type_skill_success_chance_modifier = { SKILL = INTRIGUE }
 		
 		# Countermeasures.
@@ -465,7 +467,6 @@
 			scope:owner.location = scope:owner.liege.location
 			add = -20
 		}
-
 		modifier = {
 			desc = scheme_family_widow_seduce_romance
 			scope:owner ?= {
@@ -473,6 +474,8 @@
 			}
 			add = 20
 		}
+
+
 		#TARGET#
 
 		#Lustful/hedonist

@@ -37,3 +37,162 @@ custom_add_cultural_acceptance_gain_for_nie = {
 	icon = byzantine_eagle_positive
 	cultural_head_acceptance_gain_mult = 0.25
 }
+
+lotr_converting_mirlond_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	opinion_of_different_culture = -5
+	county_opinion_add = -10
+}
+
+lotr_converting_mirlond_county_modifier = {
+	icon = family_negative
+	county_opinion_add = -25
+	monthly_county_control_decline_add = -0.1
+}
+
+lotr_converting_ramlond_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	opinion_of_different_culture = -5
+	county_opinion_add = -10
+}
+
+lotr_converting_ramlond_county_modifier = {
+	icon = family_negative
+	county_opinion_add = -25
+	monthly_county_control_decline_add = -0.1
+}
+
+lotr_converting_greater_umbar_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	opinion_of_different_culture = -10
+	county_opinion_add = -15
+}
+
+lotr_converting_greater_umbar_county_modifier = {
+	icon = family_negative
+	county_opinion_add = -25
+	monthly_county_control_decline_add = -0.1
+}
+
+lotr_converting_umbaredain_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	opinion_of_different_culture = -5
+	county_opinion_add = -5
+}
+
+lotr_converting_umbaredain_county_modifier = {
+	icon = family_negative
+	county_opinion_add = -33
+	monthly_county_control_decline_add = -0.1
+}
+
+lotr_converting_tanturak_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	opinion_of_same_culture = 10
+	opinion_of_different_culture = -10
+	county_opinion_add = -5
+}
+
+lotr_converting_tanturak_county_modifier = {
+	icon = family_negative
+	county_opinion_add = -50
+	monthly_county_control_decline_add = -0.25
+	development_growth_factor = 0.1
+}
+
+lotr_converting_anarike_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	opinion_of_different_culture = -10
+	county_opinion_add = -20
+}
+
+util_wasteland_3 = {
+	icon = rock_positive 
+	building_slot_add = 1
+}
+
+happy_colonists_arnor = {
+	icon = family_positive 
+	development_growth_factor = 0.05
+	county_opinion_add = 25
+}
+
+#Harder To Colonize
+custom_harder_to_colonize_elven = { 
+	icon = county_modifier_development_negative
+	development_growth_factor = -0.8
+	build_speed = 1.0
+	build_gold_cost = 1.0
+}
+
+custom_harder_to_colonize_dwarven = { 
+	icon = county_modifier_development_negative
+	development_growth_factor = -0.5
+	build_speed = 0.75
+	build_gold_cost = 0.75
+}
+
+custom_harder_to_colonize_dunedain = { 
+	icon = county_modifier_development_negative
+	development_growth_factor = -0.2
+	build_speed = 0.25
+	build_gold_cost = 0.25
+}
+
+### EVIL STRENGTH MODIFIERS ###
+
+evil_weakened_modifier = {
+	icon = martial_negative
+	monthly_income_mult = -0.15
+	levy_maintenance = 0.15
+	men_at_arms_maintenance = 0.15
+}
+
+evil_strengthened_1_modifier = {
+	icon = martial_positive
+	martial = 2
+	monthly_income = 5
+	levy_maintenance = -0.1
+	men_at_arms_maintenance = -0.1
+	levy_size = 0.5
+	maa_toughness_mult = 0.1
+	maa_damage_mult = 0.2
+	siege_weapon_siege_value_mult = 0.25
+	knight_effectiveness_mult = 0.25
+}
+
+evil_strengthened_2_modifier = {
+	icon = martial_positive
+	martial = 4
+	monthly_income = 10
+	levy_maintenance = -0.2
+	men_at_arms_maintenance = -0.2
+	men_at_arms_cap = 1
+	men_at_arms_limit = 5
+	levy_size = 1
+	maa_toughness_mult = 0.2
+	maa_damage_mult = 0.4
+	siege_weapon_siege_value_mult = 0.5
+	knight_effectiveness_mult = 0.5
+}
+
+evil_strengthened_3_modifier = {
+	icon = martial_positive
+	martial = 6
+	monthly_income = 15
+	levy_maintenance = -0.3
+	men_at_arms_maintenance = -0.3
+	men_at_arms_cap = 2
+	men_at_arms_limit = 10
+	levy_size = 1.5
+	maa_toughness_mult = 0.3
+	maa_damage_mult = 0.6
+	siege_weapon_siege_value_mult = 0.75
+	knight_effectiveness_mult = 0.75
+}

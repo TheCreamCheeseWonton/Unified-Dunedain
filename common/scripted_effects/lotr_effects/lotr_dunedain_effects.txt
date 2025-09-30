@@ -605,8 +605,37 @@ reclaim_royal_lineage_effect = {
 }
 
 add_blood_of_numenor_effect = {
-	# Level 10
+	##Quonton
 	if = {
+		limit = { 
+			has_game_rule = default_bon 
+			culture ?= {
+				OR = {
+					this = culture:new_numenorean_adunaic
+					this = culture:new_numenorean
+					any_parent_culture_or_above = { this = culture:new_numenorean_adunaic }
+					any_parent_culture_or_above = { this = culture:new_numenorean }
+				}
+			}
+		}
+		add_trait = blood_of_numenor_4
+	}
+	else_if = {
+		limit = {
+			has_game_rule = half_bon 
+			culture ?= {
+				OR = {
+					this = culture:new_numenorean_adunaic
+					this = culture:new_numenorean
+					any_parent_culture_or_above = { this = culture:new_numenorean_adunaic }
+					any_parent_culture_or_above = { this = culture:new_numenorean }
+				}
+			}
+		}
+		add_trait = blood_of_numenor_2
+	}
+	##End Quonton
+	else_if = {
 		limit = {
 			current_year < 4894
 			culture ?= {

@@ -1,0 +1,10 @@
+﻿lotr_numenorean_legacy_track = {
+	is_shown = {
+		dynasty = {
+			OR = {
+				dynast.culture = { has_cultural_parameter = heritage_group_numenorean }
+				has_dynasty_perk = lotr_numenorean_legacy_1
+			}
+		}
+	}
+}

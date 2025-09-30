@@ -378,6 +378,8 @@ gondor.0305 = { # The Princedom of Ithilien
 
 	option = { #The Stewards shall henceforth be Princes
 		name = gondor.0305.a
+		#Quonton
+		custom_tooltip = decision_move_capital_emyn_arnen_later_take_back
 		scope:steward_of_gondor = {
 			add_opinion = {
 				modifier = pleased_opinion
