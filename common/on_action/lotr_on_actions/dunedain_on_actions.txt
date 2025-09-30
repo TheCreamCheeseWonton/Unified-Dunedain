@@ -1,4 +1,4 @@
-﻿#yearly_global_pulse = { on_actions = { dunedain_yearly_global_pulse } }
+﻿yearly_global_pulse = { on_actions = { dunedain_yearly_global_pulse } }
 #lotr_five_year_everyone_pulse = { on_actions = { dunedain_five_year_everyone_pulse } }
 ccu_startup = { on_actions = { dunedain_on_game_start } }
 on_death = { on_actions = { dunedain_on_death } }
@@ -55,6 +55,24 @@ dunedain_on_game_start = {
 #		evil_strength_gamerule_buffs = yes
 #	}
 #}
+
+dunedain_yearly_global_pulse = { 
+	effect = { 
+		every_county ?= {
+			limit = { 
+				OR = { 
+					has_county_modifier = custom_harder_to_colonize_elven
+					has_county_modifier = custom_harder_to_colonize_dwarven
+					has_county_modifier = custom_harder_to_colonize_dunedain
+				}
+				is_wastelands = no
+			}
+			remove_county_modifier = custom_harder_to_colonize_elven
+			remove_county_modifier = custom_harder_to_colonize_dwarven
+			remove_county_modifier = custom_harder_to_colonize_dunedain
+		}
+	}
+}
 
 dunedain_on_vassal_gained = {
 	effect = {

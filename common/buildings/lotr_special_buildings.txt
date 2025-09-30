@@ -473,6 +473,10 @@ wonder_calemmanc_02 = {
 		levy_size = 0.1
 	}
 	
+	on_complete = {
+		title:k_wastelands.holder = { trigger_event = { id = dunedain_identity.10 years = { 10 25 } } }
+	}
+	
 	type = special
 	flag = travel_point_of_interest_diplomatic
 	ai_value = {

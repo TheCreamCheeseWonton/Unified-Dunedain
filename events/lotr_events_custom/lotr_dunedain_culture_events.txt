@@ -414,3 +414,369 @@ dunedain_identity.8 = {
 		}
 	}
 }
+
+dunedain_identity.9 = { # Eothedain Spawn Event
+	content_source = realms_dlc
+	type = character_event
+	title = dunedain_identity.9.t
+	desc = dunedain_identity.9.desc
+	theme = culture_change
+	override_background = { reference = edoras }
+
+	immediate = { 
+		title:k_rohan.holder = { save_temporary_scope_as = rohan_holder }
+		culture:eothedain = {
+			culture:eothedain = { save_temporary_scope_as = eothedain_culture }
+			culture:gondorian = { save_temporary_scope_as = gondorian_culture }
+			culture:rohirrim = { save_temporary_scope_as = rohirrim_culture }
+			hidden_effect = {
+				reset_culture_creation_date = yes
+				get_all_innovations_from = culture:eothedain
+				get_all_innovations_from = culture:gondorian
+				get_all_innovations_from = culture:rohirrim
+			}
+		}
+	}
+	
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+
+	option = {
+		name = dunedain_identity.9.a #For Effected, Switch Culture
+		culture:eothedain = { save_temporary_scope_as = eothedain_culture }
+		trigger = { 
+			OR = { 
+				has_title = title:k_rohan
+				has_title = title:c_westweald
+				has_title = title:c_aldburg
+				has_title = title:c_fenmark
+			}
+			NOT = {
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_reunify_dunedain
+				}
+			}
+		}
+		title:c_westweald = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		title:c_aldburg = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		title:c_fenmark = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		custom_tooltip = dunedain_identity_eothedain_tooltip 
+		hidden_effect = { 
+			every_county = {
+				limit = { culture = { has_cultural_pillar = heritage_dunedain  } any_county_province = { geographical_region = middleearth_west_rohan }}
+				set_county_culture = culture:eothedain
+			}
+		}
+		# Convert your family
+		if = {
+			limit = { 
+				any_spouse = { 
+					is_landed = no 
+					culture = root.culture
+				} 
+			}
+			every_spouse = {
+				limit = {
+					is_landed = no
+					culture = root.culture
+				}
+				if = {
+					limit = {
+						culture != culture:eothedain
+					}
+					set_culture = culture:eothedain
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_close_family_member = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = root.culture
+				}
+			}
+			every_close_family_member = {
+				limit = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = root.culture
+				}
+				custom = all_unlanded_family_members
+				if = {
+					limit = {
+						culture != culture:eothedain
+					}
+					set_culture = culture:eothedain
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.culture != culture:eothedain
+			}
+			set_culture = culture:eothedain
+		}
+		ai_chance = {
+			base = 70 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				culture = { has_cultural_pillar = heritage_dunedain }
+				add = 100
+			}
+		}
+	}
+	option = {
+		name = dunedain_identity.9.b #For Effected, not Switch Culture
+		culture:eothedain = { save_temporary_scope_as = eothedain_culture }
+		trigger = {  
+			OR = { 
+				has_title = title:k_rohan
+				has_title = title:c_westweald
+				has_title = title:c_aldburg
+				has_title = title:c_fenmark
+			}
+			NOT = {
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_reunify_dunedain
+				}
+			}
+		}
+		title:c_westweald = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		title:c_aldburg = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		title:c_fenmark = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		custom_tooltip = dunedain_identity_eothedain_tooltip 
+		hidden_effect = { 
+			every_county = {
+				limit = { culture = { has_cultural_pillar = heritage_dunedain  } any_county_province = { geographical_region = middleearth_west_rohan }}
+				set_county_culture = culture:eothedain
+			}
+		}
+		ai_chance = {
+			base = 30 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				culture = { has_cultural_pillar = heritage_dunedain }
+				add = -100
+			}
+		}
+	}
+	option = {
+		name = dunedain_identity.9.c #For not Effected
+		culture:eothedain = { save_temporary_scope_as = eothedain_culture }
+		trigger = { 
+			NOT = { 
+				OR = { 
+					has_title = title:k_rohan
+					has_title = title:c_westweald
+					has_title = title:c_aldburg
+					has_title = title:c_fenmark
+				}
+			}
+			NOT = {
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_reunify_dunedain
+				}
+			}
+		}
+		title:c_westweald = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		title:c_aldburg = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		title:c_fenmark = { # convert relevent provinces
+			set_county_culture = culture:eothedain
+		}
+		custom_tooltip = dunedain_identity_eothedain_tooltip 
+		hidden_effect = { 
+			every_county = {
+				limit = { culture = { has_cultural_pillar = heritage_dunedain  } any_county_province = { geographical_region = middleearth_west_rohan }}
+				set_county_culture = culture:eothedain
+			}
+		}
+	}
+	
+	option = {
+		name = dunedain_identity.9.d #For Effected, Switch Culture
+		trigger = { 
+			OR = { 
+				has_title = title:k_rohan
+				has_title = title:c_westweald
+				has_title = title:c_aldburg
+				has_title = title:c_fenmark
+			}
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_reunify_dunedain
+			}
+		}
+		title:c_westweald = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		title:c_aldburg = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		title:c_fenmark = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		# Convert your family
+		if = {
+			limit = { 
+				any_spouse = { 
+					is_landed = no 
+					culture = root.culture
+				} 
+			}
+			every_spouse = {
+				limit = {
+					is_landed = no
+					culture = root.culture
+				}
+				if = {
+					limit = {
+						culture != culture:new_dunedain
+					}
+					set_culture = culture:new_dunedain
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_close_family_member = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = root.culture
+				}
+			}
+			every_close_family_member = {
+				limit = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = root.culture
+				}
+				custom = all_unlanded_family_members
+				if = {
+					limit = {
+						culture != culture:new_dunedain
+					}
+					set_culture = culture:new_dunedain
+				}
+			}
+		}
+		if = {
+			limit = {
+				root.culture != culture:new_dunedain
+			}
+			set_culture = culture:new_dunedain
+		}
+		ai_chance = {
+			base = 70 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				culture = { has_cultural_pillar = heritage_dunedain }
+				add = 100
+			}
+		}
+	}
+	option = {
+		name = dunedain_identity.9.e #For Effected, not Switch Culture
+		trigger = {  
+			OR = { 
+				has_title = title:k_rohan
+				has_title = title:c_westweald
+				has_title = title:c_aldburg
+				has_title = title:c_fenmark
+			}
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_reunify_dunedain
+			}
+		}
+		title:c_westweald = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		title:c_aldburg = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		title:c_fenmark = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		ai_chance = {
+			base = 30 # LotR: This should be tied to WotR mode.
+			modifier = { # Game Rule
+				culture = { has_cultural_pillar = heritage_dunedain }
+				add = -100
+			}
+		}
+	}
+	option = {
+		name = dunedain_identity.9.f #For not Effected
+		trigger = { 
+			NOT = { 
+				OR = { 
+					has_title = title:k_rohan
+					has_title = title:c_westweald
+					has_title = title:c_aldburg
+					has_title = title:c_fenmark
+				}
+			}
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_reunify_dunedain
+			}
+		}
+		title:c_westweald = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		title:c_aldburg = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+		title:c_fenmark = { # convert relevent provinces
+			set_county_culture = culture:new_dunedain
+		}
+	}
+}
+
+dunedain_identity.10 = { # Eothedain Spawn Event Dummy
+	content_source = realms_dlc
+	type = character_event
+	hidden = yes
+	
+	immediate = { 
+		every_ruler = { 
+			limit = { 
+				OR = { 
+					has_title = title:k_rohan
+					has_title = title:c_westweald
+					has_title = title:c_aldburg
+					has_title = title:c_fenmark
+					any_vassal = { 
+						OR = { 
+							has_title = title:k_rohan
+							has_title = title:c_westweald
+							has_title = title:c_aldburg
+							has_title = title:c_fenmark
+						}
+					}
+				}
+			}
+			trigger_event = dunedain_identity.9
+		}
+	}
+	
+}

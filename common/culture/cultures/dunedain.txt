@@ -511,3 +511,36 @@ caledhrim = { # The people of Calenardhon, descended from a mix of the local Dae
 		5 = numenorean_ethnicity
 	}
 }
+
+eothedain = {
+	color = { 25 112 87 } 
+	created = 7000.1.1 # Doesn't Exist at game start
+	parents = { gondorian rohirrim }
+	
+	ethos = ethos_stoic
+	heritage = heritage_dunedain
+	language = language_westron
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_mende_anduya
+		tradition_gondorian_legacy
+		tradition_pastoralists
+		tradition_modest
+		tradition_horse_breeder
+		tradition_riders_of_the_mark
+	}
+	
+	name_list = name_list_dunedain
+	
+	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
+	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
+	clothing_gfx = { gondorian_clothing_gfx }
+	unit_gfx = { dunedain_unit_gfx }
+	
+	ethnicities = {
+		1 = numenorean_ethnicity
+		1 = gondorian_ethnicity
+		3 = rohirrim_ethnicity
+	}
+}
