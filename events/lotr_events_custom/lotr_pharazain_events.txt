@@ -50,13 +50,13 @@ pharazain_events.3 = { # Different Adunaic Question
 		character = root
 		animation = personality_honorable
 	}
-
+	
 	option = {
 		name = pharazain_events.3.b
-		custom_tooltip = pharazaini_culture_identity_umbar
+		custom_tooltip = pharazaini_culture_identity_new
 		hidden_effect = {
 			culture:pharazaini_culture = {
-				set_culture_pillar = language_adunaic_umbar
+				set_culture_pillar = language_pharazunaic
 			}
 		}
 	}
@@ -77,16 +77,6 @@ pharazain_events.3 = { # Different Adunaic Question
 		hidden_effect = {
 			culture:pharazaini_culture = {
 				set_culture_pillar = language_kharadunaic
-			}
-		}
-	}
-	
-	option = {
-		name = pharazain_events.3.e
-		custom_tooltip = pharazaini_culture_identity_westron
-		hidden_effect = {
-			culture:pharazaini_culture = {
-				set_culture_pillar = language_westron_south
 			}
 		}
 	}

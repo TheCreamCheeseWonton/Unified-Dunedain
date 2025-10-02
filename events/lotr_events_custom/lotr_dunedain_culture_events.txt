@@ -424,7 +424,6 @@ dunedain_identity.9 = { # Eothedain Spawn Event
 	override_background = { reference = edoras }
 
 	immediate = { 
-		title:k_rohan.holder = { save_temporary_scope_as = rohan_holder }
 		culture:eothedain = {
 			culture:eothedain = { save_temporary_scope_as = eothedain_culture }
 			culture:gondorian = { save_temporary_scope_as = gondorian_culture }

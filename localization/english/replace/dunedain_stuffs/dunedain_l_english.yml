@@ -101,7 +101,10 @@
  pharazaini_culture_collective_noun: "Pharazâini"
  pharazaini_culture_prefix: "Pharazâinic"
  pharazaini_culture_ethnicity: "Pharazâinic"
- pharazaini_culture_desc: "#size:15    The Pharazâini, or 'People of the Golden Lands', refer to the [culture|E] that has developed in the Lands of [umbar|E], [bellakar|E], [anbalkumagan|E], and [thanihazad|E] since the unification of the former southern [numenorean|E] colonies. While the lands of the Pharazâini are more distant and disunified than those of their northern [dunedain|E] cousins, the [adunaic|E] peoples of the south hold onto their ancient [numenorean|E] heritage with a much firmer grasp, and won't allow their sacred traditions to fall out of favor. Interestingly, the unification of the disparate [adunaic|E] realms of the south has led the Pharazâini to become less depraved than many of their forefathers.\n\nThe Pharazâini believe that their noble heritage gives them a right to rule over lesser peoples, but this should be done with some echo of the original [numenorean|E] mission to educate and aid the benighted natives.#"
+ pharazaini_culture_desc: "#size:15    The Pharazâini, or 'People of the Golden Lands', refer to the [culture|E] that has developed in the Lands of [bellakar|E], [anbalkumagan|E], and [thanihazad|E] since the unification of the former southern [numenorean|E] colonies. While the lands of the Pharazâini are more distant and disunified than those of their northern [dunedain|E] cousins, the [adunaic|E] peoples of the south hold onto their ancient [numenorean|E] heritage with a much firmer grasp, and won't allow their sacred traditions to fall out of favor. Interestingly, the unification of the disparate [adunaic|E] realms of the south has led the Pharazâini to become less depraved than many of their forefathers.\n\nThe Pharazâini believe that their noble heritage gives them a right to rule over lesser peoples, but this should be done with some echo of the original [numenorean|E] mission to educate and aid the benighted natives.#"
+
+ language_pharazunaic_name: "Pharazûnâic"
+ language_pharazunaic_desc: "Golden [adunaic|E] is the dialect of [adunaic|E] spoken in Pharazâin, the “Golden Lands,” encompassing the former realms of [bellakar|E] and [thanihazad|E]. It is a highly conservative branch of [adunaic|E], deriving much of its form from Kharadûnaic, the most traditional variant of the tongue. When this dialect first took shape, a fusion of Kharadûnaic and Belladûnaic, it was discovered that many [haradrim|E]-influenced words in Belladûnaic had no true equivalents in any [adunaic|E] language. To preserve the purity of their speech and reject all non-[adunaic|E] influences, new [adunaic|E] words were created to replace these foreign terms."
 
  new_numenorean: "Cîr Númenórean"
  new_numenorean_ethnicity: "Cîr Númenórean"
@@ -134,11 +137,11 @@
  azralai_ethnicity: "Azralâi"
  azralai_desc: "#size:15    For the first time in an age, Anarike is once more home to the [adunai|E]. Though many may question our heritage, or doubt the truth of our claim as heirs of [numenor|E], we pay them no heed. We have rekindled the flame of our ancient culture, and we are proud. Our people speak [adunaic|E] in their homes, scholars write in the script of our forefathers, and traders from across Ormal walk the harbors built with the craft and methods of [westernesse|E]. The culture of [numenor|E] lives again in Anarike. Though shaped in part by our neighbors of Khy, we stand now, and forever, as the true [adunai|E] of the East."
 
- eothedain: "Eothedain"
- eothedain_collective_noun: "Eothedain"
- eothedain_prefix: "Eothedain"
- eothedain_ethnicity: "Eothedain"
- eothedain_desc: "#size:15    Formed from [dunedain|E] settlers who made their home in [calenardhon|E] and the native [rohirrim|E], the Eothedain are a singular fusion of two proud cultures. They have embraced the legacy of [rohan|E], preserving its traditions, songs, and celebrations, while never forgetting their [gondorian|E] roots, evident in their dress and the architecture they favor, drawn from the [southernkingdom|E].\n\nRenowned as great Horse-lords in their own right, the Eothedain are unmatched among the [dunedain|E] in horsemanship. Many claim that a single Eothedain and their steed are worth three [gondorian|E] horsemen. Proud of their blended heritage, this noble people may prove your staunchest ally, or your most unyielding foe."
+ eothedain: "Rohonedain "
+ eothedain_collective_noun: "Rohonedain"
+ eothedain_prefix: "Rohonedain"
+ eothedain_ethnicity: "Rohonedain"
+ eothedain_desc: "#size:15    Formed from [dunedain|E] settlers who made their home in [calenardhon|E] and the native [rohirrim|E], the Rohonedain are a singular fusion of two proud cultures. They have embraced the legacy of [rohan|E], preserving its traditions, songs, and celebrations, while never forgetting their [gondorian|E] roots, evident in their dress and the architecture they favor, drawn from the [southernkingdom|E].\n\nRenowned as great Horse-lords in their own right, the Rohonedain are unmatched among the [dunedain|E] in horsemanship. Many claim that a single Rohonedain and their steed are worth three [gondorian|E] horsemen. Proud of their blended heritage, this noble people may prove your staunchest ally, or your most unyielding foe."
 
  ##Traditions
  tradition_unified_dunedain_name: "A Unified Dúnedain"
@@ -161,6 +164,19 @@
 
  tradition_azralai_name: "Legacy of the Eastern Fleet"
  tradition_azralai_desc: "The Eastern Fleet was once anchored here in Anarike, its proud ships calling these shores home. For many, life was lived upon the waves, for others, it was spent in the drydocks, tending the havens, or working the fields to supply the Fleet’s unceasing hunger for provisions and trade. Though the great sails of the Fleet have long since vanished beyond the horizon, their legacy endures. The Sea still shapes the soul of Anarike, its rhythms, its labors, and its dreams. Exploration, seafaring, and commerce remain the lifeblood of the Eastern [adunai|E], echoing the days when the tide itself bore the will of [numenor|E]."
+
+ tradition_bellakarani_sophistication_name: "Bellakarani Sophistication"
+ tradition_bellakarani_sophistication_desc: "In the early days of [bellakar|E], the Golden Colony stood as the heart of [numenorean|E] colonization and courtly life upon the continent. Though not as thoroughly settled as the lands of the League of Pelargir to the north, [bellakar|E], owing to its central position in [middleearth|E], quickly rose in importance, opulence, and prestige. Courtly traditions and intricate rivalries soon flourished, and the palaces of Ûrêzâyan and Korlea became premier centers of wealth and grandeur among the [numenorean|E] colonies. The Bellakarani lands gained renown as places where the most sumptuous feasts were laid and the finest wines poured, privileges reserved only for those of the highest rank.\n\nThis culture of refinement and high station endured the [akallabeth|E], though greatly diminished, surviving within many of the Kingdom’s great cities, above all in Korlea. Those who outlasted the [downfall|E] labored tirelessly to preserve the façade of [numenorean|E] strength and dignity. Yet as the long years of the [thirdage|E] wore on, that façade crumbled piece by piece. Now it is only the Bellakarani of Korlea who cling to these ancient traditions, long abandoned elsewhere in [bellakar|E]."
+
+ tradition_bellekar_succession_name: "Êrukhôr's Law"
+ tradition_bellekar_succession_desc: "Before his untimely death, Êrukhôr fundamentally and irrevocably altered the laws of [bellakar|E]. Desiring that his sister inherit the throne rather than an [anbalkumagan|E] pretender, he advanced his case by invoking ancient [numenorean|E] law, the precedent set by Tar-Aldarion of [numenor|E], and the traditions of matriarchy among the [haradrim|E]. From these examples he argued that women should be permitted to inherit the crown.\n\nThrough a series of councils with the lords of [bellakar|E], Êrukhôr succeeded in enacting sweeping changes to [bellakari|E] succession law. Women were not only allowed to claim the throne, but were also declared equal in right to their male counterparts. This decision stunned the kingdom and plunged it into a succession crisis.\n\nYet in the centuries since, what came to be known as Êrukhôr's Law has been broadly accepted by both nobles and commoners alike. While many lesser titles within the realm still cling to traditions of male preference, the crown of [bellakar|E] itself, along with several other principal lordships, now fully abides by his reform."
+
+ tradition_bellakarean_soldiers_name: "Reforms of Zimrêbal"
+ tradition_bellakarean_soldiers_desc: "[zimrebal_long|E], the first King of [bellakar|E] and founder of the Tumakveh, fundamentally reshaped the Kingdom’s military apparatus. During the crisis of the First Tedjin Invasion, he introduced a series of sweeping reforms to the administration and levying of the [bellakari|E] host, measures later remembered collectively as the Reforms of Zimrêbal.\n\nThese reforms centralized authority over the disparate forces of the former [numenorean|E] colony, stripping power from the individual cities and placing it instead in the hands of the King and the bureaucracy of Nîlûlondê. Zimrêbal also invested heavily in the arms industry, established professional divisions, and devised new methods of recruitment, seeking to forge a force that was disciplined, standardized, and adaptable.\n\nThe reforms proved widely successful. They enabled [bellakar|E] to secure victory in the First Tedjin Invasion and remain, in large part, the foundation of [bellakar|E]’s military to this day. Thanks to them, the Kingdom enjoys far greater fighting capacity and can draw upon its provinces with much greater ease."
+
+ #Replaces base desc
+ tradition_bellakarean_cities_desc: "The cities of [bellakar|E] are many, each bearing its own proud history and heritage. Golden Ûrêzâyan to Proud Korlea, from the Silver Jewel of Nîlûlondê to Pious Hazaj Tollin, every city holds its own character and laws reaching back to the [secondage|E], and each jealously guards its own interests. A strong tradition of legal, cultural, and political autonomy is deeply woven into the very fabric of the Bellakarean ethos."
+ culture_parameter_capital_castles_more_like_cities: "[castle_holdings|E] of this culture have reduced [fort_level|E], but give higher [taxes|E] and [levies|E] in Farmlands and Floodplains"
 
 
  ##Innovations 
@@ -514,14 +530,14 @@
  dunedain_identity.8.b: "No matter, the two fall more grievously than one."
  dunedain_identity.8.c: "Who cares about some wild horse-men?"
 
- dunedain_identity.9.t: "The Emergence of the Eothedain"
- dunedain_identity.9.desc: "The [dunedain|E] have ruled the former Kingdom of [rohan|E] for many years, and the integration of this province has gone smoothly. The [rohirrim|E], long allies of [gondor|E], have accepted our rule, and the prosperity brought under our banner has allowed them to grow wealthier than they ever dreamed. Many families of the [dunedain|E] have since settled in the region, establishing themselves along the northern [gondorian|E] frontier. Now, as the first generations born in [calenardhon|E] come of age, a remarkable phenomenon is taking shape. In the areas with the greatest number of settlers, a new culture is emerging, one that blends the traditions, customs, and ideals of both [dunedain|E] and [rohirrim|E]. These people are proud [dunedain|E] of [calenardhon|E], calling the province their homeland, yet they also honor their [rohirrim|E] heritage and the legacy of [rohan|E]. \n\nWhat should be our response to this ongoing incident?"
- dunedain_identity.9.a: "My home is Calenardhon, and I am of the Eothedain."
+ dunedain_identity.9.t: "The Emergence of the Rohonedain"
+ dunedain_identity.9.desc: "The [dunedain|E] have ruled the former Kingdom of [rohan|E] for many years, and the integration of this province has gone smoothly. The [rohirrim|E], long allies of [gondor|E], have accepted our rule, and the prosperity brought under our banner has allowed them to grow wealthier than they ever dreamed. Many families of the [dunedain|E] have since settled in the region, establishing themselves along the northern [gondorian|E] frontier.\n\nNow, as the first generations born in [calenardhon|E] come of age, a remarkable phenomenon is taking shape. In the areas with the greatest number of settlers, a new culture is emerging, one that blends the traditions, customs, and ideals of both [dunedain|E] and the [rohirrim|E]. These people are proud [dunedain|E] of [calenardhon|E], calling the province their homeland, yet they also honor their [rohirrim|E] heritage and the legacy of [rohan|E]. \n\nWhat should be our response to this ongoing incident?"
+ dunedain_identity.9.a: "My home is Calenardhon, and I am of the Rohonedain."
  dunedain_identity.9.b: "Never will I abandon my traditions!"
- dunedain_identity.9.c: "A welcome change, one that should help [rohan_holder.GetFirstName] strengthen their rule."
+ dunedain_identity.9.c: "A welcome change, one that should strengthen [dunedain|E] rule."
  dunedain_identity.9.d: "My home is Calenardhon, and I am of the Dunedain"
  dunedain_identity.9.e: "Never will I abandon my traditions!"
- dunedain_identity.9.f: "A welcome change, one that should help [rohan_holder.GetFirstName] strengthen their rule."
+ dunedain_identity.9.f: "A welcome change, one that should strengthen [dunedain|E] rule."
  dunedain_identity_eothedain_tooltip: "All [dunedain|E] [heritage|E] [counties|E] in [GetGeographicalRegion('middleearth_west_rohan').GetName] will be converted to the #V [eothedain_culture.GetName]#! [culture|E]"
 
 
@@ -541,26 +557,24 @@
 ##\n\n #VNote!#bold For #TÂrûgimil#! to prove his worth he must gain atleast 5000 [prestige|E].
 
  pharazain_events.1.t: "Union of The Adûnâi"
- pharazain_events.1.desc: "Today, we renew our vows and reaffirm our commitment to an undivided and indivisible union.\n\nSince the proclamation, the Golden Dominion has functioned in a primarily administrative role that struggled to coordinate the efforts of the many disparate realms of the [adunai|E], but our tireless work has yielded fruits.\n\nA profound change has already occurred. The people of [umbar|E], [bellakar|E], [anbalkumagan|E], and [thanihazad|E] all identify with [GetTitleByKey('e_pharazain').GetNameNoTier]. And the reconstruction efforts have mostly concluded, with all our cities reclaimed and repopulated with true [adunaic|E] peoples.\n\nFrom north in [GetTitleByKey('c_umbar').GetNameNoTier], to the riches of [GetTitleByKey('c_nilulonde').GetNameNoTier], to all the way down south in [GetTitleByKey('c_mispir').GetNameNoTier], the people recognize all as one realm. After centuries of division and strife, all the lands of the [adunai|E] have been united under one King!"
-  pharazain_events.1.a: "North and South, one and the same."
+ pharazain_events.1.desc: "Today, we renew our vows and reaffirm our commitment to an undivided and indivisible union.\n\nSince the proclamation, the Golden Dominion has functioned in a primarily administrative role that struggled to coordinate the efforts of the many disparate realms of the [adunai|E], but our tireless work has yielded fruits.\n\nA profound change has already occurred. The people of [bellakar|E], [anbalkumagan|E], and [thanihazad|E] all identify with [GetTitleByKey('e_pharazain').GetNameNoTier]. And the reconstruction efforts have mostly concluded, with all our cities reclaimed and repopulated with true [adunaic|E] peoples.\n\nFrom north in [GetTitleByKey('c_umbar').GetNameNoTier], to the riches of [GetTitleByKey('c_nilulonde').GetNameNoTier], to all the way down south in [GetTitleByKey('c_mispir').GetNameNoTier], the people recognize all as one realm. After centuries of division and strife, all the lands of the [adunai|E] have been united under one King!"
+  pharazain_events.1.a: "The Golden Lands, one and the same."
 
  pharazain_events.2.t: "Sons of Anadûnê"
  pharazain_events.2.desc: "For too long have the [adunai|E] of these lands remained divided, their ancient bonds broken by time and circumstance. With the mending of the once-sundered realms, we stand ready to reclaim our glorious ancestry!\n\nUnited by our heritage, we embrace our shared legacy as descendants of [numenor|E], from whom the [bloodofnumenor|E] flows.\n\nTogether, as one people united in purpose and destiny, let this be the age where the spirit of [numenor|E] rises anew for generations yet unborn to marvel at and emulate."
  pharazain_events.2.a: "Today marks the restoration of our Adûnâic heritage."
 
  pharazain_events.3.t: "The Language Question"
- pharazain_events.3.desc: "Now that the [adunai|E] have been reunited, a question has arisen on what language our people will use, with there being many different voices in the matter. Some wish for us to revive the language of our [numenorean|E] forefathers, High Adûnâic, which has been dead since not long after the [akallabeth|E]. The many different modern [adunai|E] wish for us to use their dialect of [adunaic|E], and abandon all the rest to create one true [adunaic|E] language. And more [faithful|E] noobles in [umbar|E] wish to adopt Southron, to closen relations to [gondor|E] and the [dunedain|E] of the north. Which of these languages should we use?"
+ pharazain_events.3.desc: "Now that the [adunai|E] have been reunited, a question has arisen on what language our people will use, with there being many different voices in the matter. Some wish for us to revive the language of our [numenorean|E] forefathers, High Adûnâic, which has been dead since not long after the [akallabeth|E]. The many different modern [adunai|E] wish for us to use their dialect of [adunaic|E], and abandon all the rest to create one true [adunaic|E] language. At last, some within our nation propose the creation of a new [adunaic|E] tongue, one that shows no favor to any people within our borders. Which of these languages should we use?"
  pharazain_events.3.a: "High Adûnâic, language of our [numenorean|E] forefathers, shall be our language!"
- pharazain_events.3.b: "Umbarean Adûnâic, language of the [umbar|E] [kingsmen|E], shall be our language!"
+ pharazain_events.3.b: "Pharazûnâic, a new language of both [bellakar|E] and [thanihazad|E], shall be our language!"
  pharazain_events.3.c: "Belladûnâic, language of the [faithful|E] of [bellakar|E], shall be our language!"
  pharazain_events.3.d: "Kharadûnâic, language of the proud people of [thanihazad|E], shall be our language!"
- pharazain_events.3.e: "Southron, language of the [faithful|E] of [umbar|E], shall be our language!"
 
  pharazaini_culture_identity_adunaic: "The [adunai|E] shall adopt High Adûnâic as its day-to-day tongue"
- pharazaini_culture_identity_umbar: "The [adunai|E] shall adopt Umbarean Adûnâic as its day-to-day tongue"
  pharazaini_culture_identity_bellakar: "The [adunai|E] shall adopt Belladûnâic as its day-to-day tongue"
  pharazaini_culture_identity_kharadunaic: "The [adunai|E] shall adopt Kharadûnâic as its day-to-day tongue"
- pharazaini_culture_identity_westron: "The [adunai|E] shall adopt Southron as its day-to-day tongue"
+ pharazaini_culture_identity_new: "The [adunai|E] shall adopt Pharazûnâic as its day-to-day tongue"
 
  numenor_identity.1.t: "The Language Question" 
  numenor_identity.1.desc: "Now that the [numenoreans|E] have been reunited, a question has arisen on what language we should use. The people of [gondor|E] request that we use Westron as the Cîr Númenórean language. The [dunedain|E] and many other groups in the north calls to use [sindarin|E], as was custom for the [faithful|E] [numenoreans|E]. A third group, quite small in number, wishes for us to use High [elven|E] [quenya|E] as our language. A final, fourth group, mainly from the southern coasts, calls to use [adunaic|E], the old original language of [numenor|E]. What language should we use?"

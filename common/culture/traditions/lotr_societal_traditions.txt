@@ -320,7 +320,10 @@ tradition_mende_anduya = { #Dúnedain insularity
 
 	can_pick = {
 		NOT = { 
-			lotr_culture_has_adunaic_supremacy_tradition = yes
+			OR = { 
+				lotr_culture_has_adunaic_supremacy_tradition = yes
+				has_cultural_tradition = tradition_bellakarani_sophistication
+			}
 		}
 		trigger_if = { #LotR
             limit = {

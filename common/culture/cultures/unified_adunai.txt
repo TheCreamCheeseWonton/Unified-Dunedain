@@ -1,7 +1,7 @@
 ﻿pharazaini_culture = {
-	color = { 215 175 55 }
+	color = { 165 125 25 }
 	created = 7000.1.1 # Doesn't Exist at game start
-	parents = { black_numenorean south_adunai_colonial }
+	parents = { bellakarani south_adunai_colonial }
 
 	ethos = ethos_bureaucratic
 	heritage = heritage_unified_adunaic

@@ -1167,6 +1167,7 @@ tradition_equal_inheritance = {
 		#	has_cultural_tradition = tradition_nubian_warrior_queens
 		#	has_cultural_tradition = tradition_nubian_warrior_kings
 		#}
+		NOT = { has_cultural_tradition = tradition_bellekar_succession }
 		trigger_if = { #LotR
             limit = {
                 scope:replacing ?= culture_tradition:tradition_variag_succession
@@ -2354,6 +2355,7 @@ tradition_parochialism = {
 		#	}
 		#}
 		#NOT = { has_cultural_tradition = tradition_republican_legacy }
+		NOT = { has_cultural_tradition = tradition_bellakarean_cities }
 		custom_tooltip = {
 			text = cultrad_not_nomadic_government_type
 			scope:character = {
