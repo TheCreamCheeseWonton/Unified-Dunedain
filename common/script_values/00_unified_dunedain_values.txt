@@ -22,6 +22,17 @@ number_of_adunaic_culture_provinces = {
     }
 }
 
+number_of_south_bellakar_adunaic_culture_provinces = {
+    value = 0
+    every_county_in_region = {
+        region = special_nie_extra
+        limit = { 
+            my_south_bellakar_adunaic_culture_trigger = yes
+        }
+        add = 1
+    }
+}
+
 number_of_north_adunaic_culture_provinces = {
     value = 0
     every_county_in_region = {

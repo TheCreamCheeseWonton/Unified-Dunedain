@@ -205,6 +205,7 @@ innovation_lords_of_the_westlands = { # Rewards for a resurgent Dunedain
 	}
 	
 	flag = global_regional
+		culture_era = culture_era_late_medieval
 	flag = late_medieval_era_regional	
 }
 
@@ -471,4 +472,59 @@ innovation_namalo = {
 
 	flag = global_regional
 	flag = high_medieval_era_regional
+}
+
+##Quonton
+innovation_adunai_administration_feudal = {
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+	icon = @numenorean_law
+
+	#can_progress = { #Unlocked by event.
+	#	custom_description = {
+	#		text = "innovation_unlocked_by_decision_trigger"
+	#		always = no
+	#	}
+	#}
+
+	potential = {
+		always = no
+	}
+
+	character_modifier = {
+		domain_limit = 1
+		vassal_limit = 60
+		vassal_tax_contribution_mult = 0.1
+		vassal_levy_contribution_mult = 0.1
+	}
+
+	flag = global_regional
+	flag = late_medieval_era_regional	
+}
+
+innovation_adunai_administration_admin = {
+	group = culture_group_regional
+	culture_era = culture_era_late_medieval
+	icon = @numenorean_law
+
+	#can_progress = { #Unlocked by event.
+	#	custom_description = {
+	#		text = "innovation_unlocked_by_decision_trigger"
+	#		always = no
+	#	}
+	#}
+
+	potential = {
+		always = no
+	}
+
+	character_modifier = {
+		domain_limit = 1
+		men_at_arms_cap = 1
+		men_at_arms_limit = 2
+		army_maintenance_mult = 0.5
+	}
+
+	flag = global_regional
+	flag = late_medieval_era_regional	
 }

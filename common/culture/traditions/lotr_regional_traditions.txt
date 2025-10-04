@@ -3721,7 +3721,6 @@ tradition_bellakarean_soldiers = {
 	parameters = {
 		unlock_maa_bellakarani_phalanx = yes
 		unlock_maa_bellakaze_outriders = yes
-		unlock_maa_bellanarud_auxiliaries = yes
 		next_level_barracks = yes
 		formation_fighting_strategist = yes
 	}
@@ -3872,6 +3871,7 @@ tradition_bellakarean_cities = {
 	}
 	
 	parameters = {
+		unlock_maa_bellanarud_auxiliaries = yes
 		capital_castles_more_like_cities = yes
 		can_make_oligarch_vassals = yes
 		republican_vassals_pay_more = yes

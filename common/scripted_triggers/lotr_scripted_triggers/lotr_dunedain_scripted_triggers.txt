@@ -8,3 +8,671 @@
         }
     }                
 }
+
+my_south_bellakar_adunaic_culture_trigger = {
+    OR = {
+        culture = { has_cultural_pillar = heritage_southern_adunaic }
+        AND = { 
+            culture = { has_cultural_pillar = heritage_bellakari }
+            NOT = { culture = { this = culture:bellanarud } }
+        }
+    }                
+}
+
+##separatism Triggers
+#Shows
+show_pharazain_separatism_not_delt_with_bellazen = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_bellazen
+		}
+	}
+}
+
+show_pharazain_separatism_not_delt_with_nilulonde = { 
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_nilulonde
+		}
+	}
+}
+
+show_pharazain_separatism_not_delt_with_felaya = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_felaya
+		}
+	}
+}
+show_pharazain_separatism_not_delt_with_mardruak = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_mardruak
+		}
+	}
+}
+show_pharazain_separatism_not_delt_with_tulwang = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_tulwang
+		}
+	}
+}
+show_pharazain_separatism_not_delt_with_an_balkumagan = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_an_balkumagan
+		}
+	}
+}
+show_pharazain_separatism_not_delt_with_kharadune = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_kharadune
+		}
+	}
+}
+show_pharazain_separatism_not_delt_with_gimilthani = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_gimilthani
+		}
+	}
+}
+show_pharazain_separatism_not_delt_with_zimrathani = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_zimrathani
+		}
+	}
+}
+show_pharazain_separatism_not_delt_with_pel = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_been_delt_with_pel
+		}
+	}
+}
+show_pharazain_separatism_delt_with = { 
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_pel
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_zimrathani
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_gimilthani
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_kharadune
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_an_balkumagan
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_tulwang
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_mardruak
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_felaya
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_nilulonde
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:separatism_has_been_delt_with_bellazen
+	}
+}
+
+#Valids
+valid_pharazain_separatism_not_delt_with_bellazen = {
+	completely_controls = title:k_bellazen
+	reserved_gold >= 250
+}
+
+valid_pharazain_separatism_not_delt_with_nilulonde = { 
+	completely_controls = title:k_nilulonde
+	reserved_gold >= 250
+}
+
+valid_pharazain_separatism_not_delt_with_felaya = {
+	completely_controls = title:k_felaya
+	reserved_gold >= 250
+}
+valid_pharazain_separatism_not_delt_with_mardruak = {
+	completely_controls = title:k_mardruak
+	reserved_gold >= 250
+
+}
+valid_pharazain_separatism_not_delt_with_tulwang = {
+	completely_controls = title:k_tulwang
+	reserved_gold >= 250
+
+}
+valid_pharazain_separatism_not_delt_with_an_balkumagan = {
+	completely_controls = title:k_an_balkumagan 
+	reserved_gold >= 250
+}
+valid_pharazain_separatism_not_delt_with_kharadune = {
+	completely_controls = title:k_kharadune
+	reserved_gold >= 250
+}
+valid_pharazain_separatism_not_delt_with_gimilthani = {
+	completely_controls = title:k_gimilthani
+	reserved_gold >= 250
+}
+valid_pharazain_separatism_not_delt_with_zimrathani = {
+	completely_controls = title:k_zimrathani
+	reserved_gold >= 250
+}
+valid_pharazain_separatism_not_delt_with_pel = {
+	completely_controls = title:k_pel
+	reserved_gold >= 250
+}
+
+valid_pharazain_separatism_delt_with = { 
+	custom_tooltip = { 
+	text = "valid_pharazain_separatism_delt_with_tt"
+		NOT = { 
+			any_realm_county = { 
+				has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+			}
+		}
+	}
+}
+
+##Integration Triggers
+#Shows
+show_pharazain_integration_not_delt_with_bellazen = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_bellazen
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_nilulonde = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_nilulonde
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_felaya = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_felaya
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_mardruak = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_mardruak
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_tulwang = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_tulwang
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_an_balkumagan = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_an_balkumagan
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_kharadune = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_kharadune 
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_gimilthani = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_gimilthani
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_zimrathani = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_zimrathani
+		}
+	}
+}
+
+show_pharazain_integration_not_delt_with_pel = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:integration_has_been_delt_with_pel
+		}
+	}
+}
+
+show_pharazain_integration_delt_with = {
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_bellazen
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_nilulonde
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_felaya
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_mardruak
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_tulwang
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_an_balkumagan
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_kharadune
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_gimilthani
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_zimrathani
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:integration_has_been_delt_with_pel
+	}
+}
+
+#Valids
+valid_pharazain_integration_not_delt_with_bellazen = {
+	completely_controls = title:k_bellazen
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_bellazen_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_bellazen
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_bellazen_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_bellazen
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+
+valid_pharazain_integration_not_delt_with_nilulonde = { 
+	completely_controls = title:k_nilulonde
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_nilulonde_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_nilulonde
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_nilulonde_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_nilulonde
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+
+valid_pharazain_integration_not_delt_with_felaya = {
+	completely_controls = title:k_felaya
+	reserved_gold >= 250
+		custom_tooltip = {
+		text = "no_separatism_in_felaya_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_felaya
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_felaya_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_felaya
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+valid_pharazain_integration_not_delt_with_mardruak = {
+	completely_controls = title:k_mardruak
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_mardruak_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_mardruak
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_mardruak_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_mardruak
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+valid_pharazain_integration_not_delt_with_tulwang = {
+	completely_controls = title:k_tulwang
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_tulwang_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_tulwang
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_tulwang_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_tulwang
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+valid_pharazain_integration_not_delt_with_an_balkumagan = {
+	completely_controls = title:k_an_balkumagan 
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_an_balkumagan_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_an_balkumagan 
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_an_balkumagan_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_an_balkumagan 
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+valid_pharazain_integration_not_delt_with_kharadune = {
+	completely_controls = title:k_kharadune
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_kharadune_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_kharadune
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_kharadune_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_kharadune
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+valid_pharazain_integration_not_delt_with_gimilthani = {
+	completely_controls = title:k_gimilthani
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_gimilthani_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_gimilthani
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_gimilthani_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_gimilthani
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+valid_pharazain_integration_not_delt_with_zimrathani = {
+	completely_controls = title:k_zimrathani
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_zimrathani_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_zimrathani
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_zimrathani_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_zimrathani
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+valid_pharazain_integration_not_delt_with_pel = {
+	completely_controls = title:k_pel
+	reserved_gold >= 500
+	custom_tooltip = {
+		text = "no_separatism_in_pel_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_pel
+				OR = { 
+					has_county_modifier = lotr_pharazain_fighting_separatism_county_modifier
+					has_county_modifier = lotr_pharazain_separatism_county_modifier
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		text = "no_integration_in_pel_tt"
+		NOT = { 
+			any_county_in_region  = { 
+				region = special_k_pel
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+
+valid_pharazain_integration_delt_with = { 
+	custom_tooltip = { 
+	text = "valid_pharazain_integration_delt_with_tt"
+		NOT = { 
+			any_realm_county = { 
+				has_county_modifier = lotr_pharazain_integration_county_modifier
+			}
+		}
+	}
+}
+
+##Administration Triggers
+#Shows
+show_domain_administration = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:domain_administration_reformed
+		}
+	}
+}
+
+show_military_administration = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:military_administration_reformed
+		}
+	}
+}
+
+show_tax_administration = {
+	NOT = { 
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:tax_administration_reformed
+		}
+	}
+}
+
+show_done_administration = {
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:domain_administration_reformed
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:military_administration_reformed
+	}
+	is_target_in_global_variable_list = {
+		name = unavailable_unique_decisions
+		target = flag:tax_administration_reformed
+	}
+}
+
+
+vassal_will_become_admin_pharazain = {
+	#This trigger picks out vassals that automatically convert to Admin.
+	#We convert vassals that are:
+	#Clan or Feudal
+	#De Jure part of the Empire
+	#Have the State Faith
+	#Aren't rivals of the admin liege
+	#Dukes and above must like the main liege at least a little.
+
+	primary_title = {
+		OR = { 
+			target_is_de_jure_liege_or_above = title:e_pharazain
+			target_is_de_jure_liege_or_above = title:e_thani_hazad
+			target_is_de_jure_liege_or_above = title:e_bellakar
+			target_is_de_jure_liege_or_above = title:e_thon_an_kharlokh
+			target_is_de_jure_liege_or_above = title:k_tulwang
+		}
+	}
+	NOR = { #We convert only clan and feudal vassals in this decision
+		government_has_flag = government_is_theocracy 
+		government_has_flag = government_is_republic
+		government_has_flag = government_is_landless_adventurer
+		government_has_flag = government_is_tribal
+		government_has_flag = government_is_administrative
+	}
+	faith = scope:administrative_liege.faith #The future state faith
+	lotr_can_become_admin_gov = yes #LOTR
+}

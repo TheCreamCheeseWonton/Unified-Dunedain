@@ -70,3 +70,110 @@ middleearth_west_gondor_anorien_minus_druadan = {
 		d_minas_tirith d_doranorien d_entyn_i_onodlo d_lossarnach d_gardhon_fuir
 	}
 }
+
+#Sepratism
+special_k_mardruak = { 
+	duchies = { 
+		# k_mardruak
+		d_nykkea d_narik_zadan d_khasmanakor d_zimrenzil d_khibilkadar d_dhajran
+	}
+}
+
+special_k_felaya = {
+	duchies = { 
+		# k_felaya
+		d_hazaj_tollin d_kes_ebb d_rothurush d_hulja d_adazayin d_urudath
+	}
+}
+
+special_k_bellazen = { 
+	duchies = { 
+		# k_bellazen
+		d_korlea d_sulaj_dar d_dejka d_har_shulam d_urid_an_abar d_urezayan d_urud_dakal
+		d_ajesfa d_shakal
+	}
+}
+
+special_k_nilulonde = {
+	duchies = { 
+		# k_nilulonde
+		d_nilulonde d_arbatan d_siresani d_esmer d_narduvi d_auz_udil
+	}
+}
+
+special_k_tulwang = {
+	duchies = { 
+		# k_tulwang
+		d_kanjar d_khorsaj d_tulwa d_bishra d_tulija d_ashatur
+	}
+}
+
+special_k_an_balkumagan = {
+	duchies = { 
+		# k_an_balkumagan
+		d_aruzayan d_urithani d_nardubarim d_benthani d_velashar d_dobaraka d_sakya
+	}
+}
+
+special_k_zimrathani = {
+	duchies = { 
+		# k_zimrathani
+		d_mispir d_zayanuri d_alsarias d_karasalas
+		# k_drel
+		d_gimileth
+	}
+}
+
+special_k_gimilthani = {
+	duchies = { 
+		# k_gimilthani
+		d_kor_bawiba d_mikrazor d_gimilurush
+	}
+}
+
+special_k_kharadune = {
+	duchies = { 
+		# k_kharadune
+		d_inzilloni d_rotharana d_azarideth d_holzoreth d_azgathani
+	}
+}
+
+special_k_pel = {
+	duchies = { 
+		# k_pel
+		d_pel d_barasi d_oshwari d_shanwo
+	}
+}
+
+
+special_pharazain = { # The vague area of 'Pharazain'
+	duchies = { 
+		# e_umbar
+			# k_mardruak
+			d_nykkea d_narik_zadan d_khasmanakor d_zimrenzil d_khibilkadar d_dhajran
+		# e_bellakar
+			# k_felaya
+			d_hazaj_tollin d_kes_ebb d_rothurush d_hulja d_adazayin d_urudath
+			# k_bellazen
+			d_korlea d_sulaj_dar d_dejka d_har_shulam d_urid_an_abar d_urezayan d_urud_dakal
+			d_ajesfa d_shakal
+			# k_nilulonde
+			d_nilulonde d_arbatan d_siresani d_esmer d_narduvi d_auz_udil
+		# e_bozisha_miraz
+			# k_tulwang
+			d_kanjar d_khorsaj d_tulwa d_bishra d_tulija d_ashatur
+		# e_thani_hazad
+			# k_an_balkumagan
+			d_aruzayan d_urithani d_nardubarim d_benthani d_velashar d_dobaraka d_sakya
+			# k_zimrathani
+			d_mispir d_zayanuri d_alsarias d_karasalas
+			# k_drel
+			d_gimileth
+			# k_gimilthani
+			d_kor_bawiba d_mikrazor d_gimilurush
+			# k_kharadune
+			d_inzilloni d_rotharana d_azarideth d_holzoreth d_azgathani
+			# k_pel
+			d_pel d_barasi d_oshwari d_shanwo
+	}
+}

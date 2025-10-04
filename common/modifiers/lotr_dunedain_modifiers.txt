@@ -141,6 +141,123 @@ grain_anbalkumagan_providers_county_modifier = {
 	tax_mult = 0.2
 }
 
+##Pharazain Rework
+lotr_pharazain_separatism_county_modifier = {
+	icon = family_negative
+	county_opinion_add = -50
+	monthly_county_control_decline_add = -0.1
+	monthly_county_control_growth_factor = -0.1
+	development_growth_factor = -0.2
+	development_decline = -0.2
+	tax_mult = -0.2
+	levy_size = -0.1
+}
+
+lotr_pharazain_fighting_separatism_county_modifier = {
+	icon = family_negative  
+	county_opinion_add = -75
+	monthly_county_control_growth_factor = -0.1
+	development_growth_factor = -0.5
+	development_decline = -0.5
+	tax_mult = -0.4
+	levy_size = -0.6
+}
+
+lotr_shattered_control_county_modifier = {
+	icon = county_modifier_control_negative
+	monthly_county_control_decline_add = -0.2
+	monthly_county_control_growth_factor = -0.25
+	tax_mult = -0.4
+	levy_size = -0.2
+}
+
+lotr_fighting_separatism_character_modifier = { 
+	icon = martial_negative 
+	monthly_county_control_growth_factor = -0.1	
+	opinion_of_different_culture = -10
+	county_opinion_add = -20
+	tax_mult = -0.3
+	levy_size = -0.3
+	development_decline = -0.1
+	monthly_legitimacy_add = -0.2
+}
+
+lotr_broken_domain_admin_character_modifier = { 
+	icon = county_modifier_corruption_negative  
+	domain_limit = -2
+	vassal_limit = -40
+	mercenary_hire_cost_mult = 0.5
+}
+
+lotr_broken_domain_admin_getting_better_character_modifier = { 
+	icon = county_modifier_corruption_positive  
+	domain_limit = -3
+	vassal_limit = -40
+	mercenary_hire_cost_mult = 0.8
+}
+
+lotr_broken_military_admin_character_modifier = { 
+	icon = prowess_negative  
+	knight_limit = -4
+	men_at_arms_limit = -4
+	men_at_arms_cap = -2
+	levy_size = -0.5
+	army_maintenance_mult = 0.5
+}
+
+lotr_broken_military_admin_getting_better_character_modifier = { 
+	icon = prowess_positive  
+	knight_limit = -5
+	men_at_arms_limit = -5
+	men_at_arms_cap = -3
+	levy_size = -0.75 
+	army_maintenance_mult = 0.75
+}
+
+lotr_broken_tax_admin_character_modifier = { 
+	icon = economy_negative  
+	tax_mult = -0.4
+	vassal_tax_contribution_mult = -0.6
+}
+
+lotr_broken_tax_admin_getting_better_character_modifier = { 
+	icon = economy_positive 
+	tax_mult = -0.6
+	vassal_tax_contribution_mult = -0.8
+}
+
+lotr_admin_into_admin_character_modifier = {
+	icon = prestige_positive  
+	domain_limit = -1
+	tax_mult = -0.1
+	levy_size = -0.1
+}
+
+lotr_admin_into_faudal_character_modifier = {
+	icon = prestige_positive  
+	domain_limit = -1
+	tax_mult = -0.1
+	levy_size = -0.1
+}
+
+lotr_pharazain_integration_county_modifier = { 
+	icon = county_modifier_control_positive  
+	monthly_county_control_growth_add = 0.1
+	monthly_county_control_growth_factor = 0.1
+	tax_mult = -0.6
+	levy_size = -0.4
+}
+
+lotr_integration_complete_character_modifier = { 
+	icon = county_modifier_control_positive  
+	county_opinion_add = 10
+	dread_baseline_add = 25
+	stewardship = 2
+	stewardship_per_prestige_level = 1
+	monthly_county_control_growth_factor = 0.25
+}
+
+
 #Harder To Colonize
 custom_harder_to_colonize_elven = { 
 	icon = county_modifier_development_negative

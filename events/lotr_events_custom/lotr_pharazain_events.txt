@@ -16,6 +16,14 @@ pharazain_events.1 = { # Solidify Empire Flavor
 
 	option = {
 		name = pharazain_events.1.a
+		if = { # Can only gain these rewards once! No farming the decision
+			limit = {
+				NOT = { has_character_flag = pharazain_reunited_1 }
+			}
+			add_prestige = 400
+			dynasty = { add_dynasty_prestige = 1250 }
+			add_character_flag = pharazain_reunited_1
+		}
 	}
 }
 
@@ -35,6 +43,12 @@ pharazain_events.2 = { # Unify Culture Flavor
 	option = {
 		name = pharazain_events.2.a
 		trigger_event = pharazain_events.3   # Unify Adunaic Identity Flavor Language Question
+		if = { # Can only gain these rewards once! No farming the decision
+			limit = {
+				NOT = { has_character_flag = pharazain_reunited }
+			}
+			dynasty = { add_dynasty_prestige = 500 }
+		}
 	}
 }
 
@@ -254,7 +268,7 @@ pharazain_events.7 = { # Integrate Rohan NOT
 	
 	immediate = {
 		title:c_bozisha_dar.holder = { save_scope_as = bozisha_dar_holder  }
-		add_legitimacy = -200
+		add_legitimacy = -600
 		add_prestige = -600
 	}
 	
@@ -312,8 +326,376 @@ pharazain_events.8 = {
 			type = grain_dole_memory
 		}
 	}
-
+	
 	option = {
 		name = pharazain_events.8.a
+	}
+}
+
+##Start separatism
+pharazain_events.9 = {
+	type = character_event
+	title = pharazain_events.9.t
+	desc = pharazain_events.9.desc
+	theme = war
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+	immediate = { 
+		play_sound_effect = "event:/DLC/CE2/UI/Notifications/ce2_ui_notifications_migration_negative"
+	}
+
+	option = {
+		name = pharazain_events.9.a
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_started
+		}
+		custom_tooltip = pharazain_cause_separatism_tt_start
+		custom_tooltip = pharazain_cause_separatism_tt_start_2
+		hidden_effect = { 
+			pharazain_cause_separatism_effect = yes
+			every_county_in_region  = { 
+				region = special_pharazain
+				add_county_modifier = lotr_shattered_control_county_modifier
+			}
+		}
+		add_character_modifier = lotr_fighting_separatism_character_modifier
+		add_character_modifier = lotr_broken_domain_admin_character_modifier
+		add_character_modifier = lotr_broken_military_admin_character_modifier
+		add_character_modifier = lotr_broken_tax_admin_character_modifier
+		if = {
+			limit = { # Major News
+				NOT = { has_game_rule = no_news }
+			}
+			every_player = { #Global News Announcement
+				trigger_event = pharazain_events.16
+			}
+		}
+		
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {1 5}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {3 7}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {5 9}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {9 14}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {11 16}
+		}
+	}
+}
+
+#After conquering land
+pharazain_events.10 = {
+	type = character_event
+	title = pharazain_events.10.t
+	desc = pharazain_events.10.desc
+	theme = battle
+	override_background = { reference = battlefield }
+	
+	trigger = { 
+		has_title = title:e_pharazain
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_started
+		}
+		title:e_pharazain.holder = {
+			any_vassal = {
+				culture = { 
+					NOT = { has_same_culture_heritage = title:e_pharazain.holder.culture }
+				}
+				opinion = {
+					target = title:e_pharazain.holder
+					value <= 10
+				}
+			}
+		}
+	}
+
+	left_portrait = {
+		character = root
+		animation = disbelief
+	}
+	immediate = {
+		title:e_pharazain = { save_scope_as = pharazain_title }
+		scope:pharazain_title.holder ?= { save_scope_as = high_king_of_pharazain }
+		#scope:pharazain_title.holder.culture ?= { save_scope_as = high_king_of_pharazain_culture }
+
+		scope:high_king_of_pharazain = {
+			random_vassal = {
+				limit = {
+					culture = { 
+						NOT = { has_same_culture_heritage = title:e_pharazain.holder.culture }
+					}
+					opinion = {
+						target = title:e_pharazain.holder
+						value <= 10
+					}
+				}
+				save_scope_as = leader_of_rebellion
+			}
+		}
+	}
+
+	option = { # (fight against rebelious/religious people)
+		name = pharazain_events.10.a
+
+		scope:leader_of_rebellion = {
+			start_war = {
+				casus_belli = independence_war
+				target = scope:high_king_of_pharazain
+				target_title = scope:high_king_of_pharazain.primary_title
+			}
+			every_character_war = {
+				limit = { using_cb = independence_war } # In-case the random head of the attackers has other wars hes currently engaged in
+				save_scope_as = war_against_pharazain
+			}
+			spawn_army = {
+				name = bp2_yearly_6203_army_name
+				levies = 600
+				men_at_arms = {
+					type = light_footmen
+					stacks = 2
+				}
+				inheritable = no
+				uses_supply = no
+				location = scope:leader_of_rebellion.capital_province
+			}
+		}
+	}
+}
+
+#Separatism Done
+pharazain_events.11 = {
+	type = character_event
+	title = pharazain_events.11.t
+	desc = pharazain_events.11.desc
+	theme = battle
+	override_background = { reference = battlefield }
+
+	left_portrait = {
+		character = root
+		animation = war_over_win
+	}
+
+	option = {
+		name = pharazain_events.11.a
+		remove_character_modifier = lotr_fighting_separatism_character_modifier
+	}
+}
+
+#Integration Done
+pharazain_events.12 = {
+	type = character_event
+	title = pharazain_events.12.t
+	desc = pharazain_events.12.desc
+	theme = stewardship
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = pharazain_events.12.a
+		add_character_modifier = lotr_integration_complete_character_modifier
+		if = { 
+			limit = { NOT = { has_realm_law = crown_authority_3 } }
+			title:e_pharazain.holder = {
+				add_realm_law_skip_effects = crown_authority_3
+			}
+		}
+	}
+}
+
+##Reform Admin, either admin gov or feudal
+pharazain_events.13 = {
+	type = character_event
+	title = pharazain_events.13.t
+	desc = pharazain_events.13.desc
+	theme = realm
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	##Admin
+	option = {
+		name = pharazain_events.13.a
+		custom_tooltip = once_done_you_get_buffed_admin_tt
+		hidden_effect = { 
+			add_character_modifier = { modifier = lotr_admin_into_admin_character_modifier years = 10 }
+			trigger_event = { id = pharazain_events.14 years = 10 }
+		}
+	}
+	
+	##Feudal
+	option = {
+		name = pharazain_events.13.b
+		custom_tooltip = once_done_you_get_buffed_feudal_tt
+		hidden_effect = { 
+			add_character_modifier = { modifier = lotr_admin_into_faudal_character_modifier years = 10 }
+			trigger_event = { id = pharazain_events.15 years = 10 }
+		}
+	}
+}
+
+pharazain_events.14 = {
+	type = character_event
+	title = pharazain_events.14.t
+	desc = pharazain_events.14.desc
+	theme = emperor
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	##Adopt Admin
+	option = {
+		name = pharazain_events.14.a
+		root.culture = {
+			add_innovation = innovation_adunai_administration_admin
+		}
+		if = { 
+			limit = { NOT = { has_government = administrative_government } }
+			save_scope_as = actor
+			convert_to_administrative_from_feudalism_effect_pharazain = yes
+			if = {
+				limit = {
+					is_independent_ruler = yes
+				}
+				add_legitimacy_effect = { LEGITIMACY = admin_convert_legitimacy_value } #One Time Legitimacy Boost
+			}
+			trigger_event = ep3_decisions_event.4060 #Also sends information event to human vassals
+			#Letter event for the vassals
+			hidden_effect = {
+				if = {
+					limit = {
+						is_ai = no
+					}
+					add_achievement_global_variable_effect = {
+						VARIABLE = achieved_epic_paperwork_achievement
+						VALUE = yes
+					}
+				}
+				# if = { #LotR
+				# 	limit = {
+				# 		is_ai = no
+				# 		religion = religion:islam_religion
+				# 		has_title = title:k_rum
+				# 		OR = {
+				# 			has_title = title:c_byzantion
+				# 			any_sub_realm_title = {
+				# 				this = title:c_byzantion
+				# 			}
+				# 		}
+				# 	}
+				# 	add_achievement_global_variable_effect = {
+				# 		VARIABLE = finished_new_management_achievement
+				# 		VALUE = yes
+				# 	}
+				# }
+				if = { 
+					limit = { 
+						OR = {
+							culture = { has_cultural_parameter = gender_equal_inheritance }
+							#culture = { has_innovation = innovation_visigothic_codes }
+							faith = { has_doctrine = doctrine_gender_equal }
+							AND = { #Culture is female dominated but religion is male dominated
+								faith = { has_doctrine = doctrine_gender_male_dominated }
+								culture = { has_cultural_parameter = female_only_inheritance }
+							}
+							AND = { #Culture is male dominated but faith is female dominated
+								faith = { has_doctrine = doctrine_gender_female_dominated }
+								NOT = { culture = { has_cultural_parameter = female_only_inheritance } }
+							}
+						}
+					}
+					title:e_pharazain.holder = {
+						add_realm_law_skip_effects = equal_law
+					}
+				}
+			}
+			if = { 
+				limit = { NOT = { has_realm_law = imperial_bureaucracy_2 } }
+				title:e_pharazain.holder = {
+					add_realm_law_skip_effects = imperial_bureaucracy_2
+				}
+			}
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_reformed_admin_complete
+		
+		}
+	}
+}
+
+pharazain_events.15 = {
+	type = character_event
+	title = pharazain_events.15.t
+	desc = pharazain_events.15.desc
+	theme = realm
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	##Adopt Feudal
+	option = {
+		name = pharazain_events.15.a
+		root.culture = {
+			add_innovation = innovation_adunai_administration_feudal
+		}
+		if = { 
+			limit = { NOT = { has_realm_law = crown_authority_3 } }
+			title:e_pharazain.holder = {
+				add_realm_law_skip_effects = crown_authority_3
+			}
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_reformed_admin_complete
+		}
+	}
+}
+
+pharazain_events.16 = {
+	content_source = realms_dlc
+	type = character_event
+	window = fullscreen_event
+	title = pharazain_events.16.t
+	desc = pharazain_events.16.desc
+	theme = crown
+	override_background = { reference = harad_desert }
+	
+	immediate = { 
+		title:e_pharazain.holder = { save_scope_as = high_king_pharazain }
+		play_music_cue = lotr_cue_adunai
+	}
+	option = { 
+		name = pharazain_events.16.a # Pharazain Knife Edge
 	}
 }
