@@ -18,26 +18,6 @@
  building_wonder_anonarmenlos_03: "Númen Mindon"
  building_wonder_anonarmenlos_03_desc: "The Númen Mindon, or 'Western Great Tower' is on the archipelago's tallest point on the westernmost island. This soaring tower reaches into the very heavens and peers outwards towards the western seas, towards [meneltarma|E]. Here is taught the history of [numenor|E], of the corruption and wicked hate that infected the hearts of the [numenoreans|E], and of their eventual fait in the [akallabeth|E]. A somber place of lore, remembrance, and teaching, the wardens of Númen Mindon dedicate themselves to duty, ensuring that the painful events at the end of the [secondage|E] never again come to pass."
 
- building_wonder_rophazan_mines_01: "White Gold Rivers of Rôphazan"
- building_wonder_rophazan_mines_01_desc: "Deep beneath the mountains of [bellakar|E], near the very roots of the Earth, lie rivers of white gold. Seemingly endless veins of ore, taller than a man and thicker than a wagon. Towering shafts and mighty mechanisms draw the riches of the Bellazen Mountains to the surface, where they are refined and crafted into trinkets and jewelry of extraordinary worth."
-
- building_wonder_arch_ciryandur_01: "Restored City of Hazaj Tollin"
- building_wonder_arch_ciryandur_01_desc: "Since the [akallabeth|E], Hazaj Tollin has stood as a shadow of its former self. Much of the city was devastated by the great waves that followed the [downfallofnumenor|E]. Though a new settlement rose from the efforts of the survivors, the splendor of Hazaj Tollin, with her radiant twin towers and sea-lanterns, was lost to the sea.\n\nBut now, that time of mourning draws to an end. Substantial funding has been secured to rebuild the ancient city in her pre-[akallabeth|E] likeness. Though Hazaj Tollin may never again reach the heights of her golden age, we shall not forget her memory. Instead, we will strive to raise a city worthy of her legacy, a beacon to rival the greatness that once was."
-
- building_wonder_haven_korlea_01: "Fortified Great Haven of Korlea"
- building_wonder_haven_korlea_01_desc: "Abandoned and in ruins since the [akallabeth|E], the great fortresses of Korlea have now been rebuilt. Originally constructed by the [kingsmen|E] of [numenor|E] as their principal stronghold in [bellakar|E], the mighty citadels of Korlea once served as both the bureaucratic heart and a towering symbol of royal authority over the land.\n\nBut with the [downfall|E], much of these proud fortifications crumbled, their once-impervious [numenorean|E] walls sinking into the sea, just as the island realm itself was lost.\n\nNow, however, the need for such defenses has returned. Upon those ancient foundations, we have begun to raise anew the Fortified Haven. With it, we shall project even greater naval power across the [bayoftulwang|E], and shield the city behind it from all manner of threats that would seek to harm [bellakar|E]."
-
- building_wonder_haven_korlea_02: "Great City of Korlea"
- building_wonder_haven_korlea_02_desc: "The city of Korlea was all but destroyed in the wake of the [downfall|E], her people perishing as the waves claimed both land and life. Though the survivors succeeded in founding a new city upon the ruins, Korlea has, until now, never truly rivaled the splendor of her pre-[akallabeth|E] glory.\n\nYet through unwavering effort, generous patronage, and countless works of labor, that tide has turned. Today, Korlea once again stands as one of, if not the, principal city of [bellakar|E]. Her mighty walls, regal palaces, and sprawling neighborhoods have set modern Korlea on a path not merely to equal, but to surpass, the grandeur of the Korlea of the [secondage|E]."
-
- building_wonder_pillar_urez_01: "White Gold City of Ûrêzâyaneth"
- building_wonder_pillar_urez_01_desc: "Ûrêzâyaneth was once the wealthiest city in all of [bellakar|E], its prosperity drawn from the gleaming veins of white gold mined in the Bellazen Mountains and traded throughout the vast [numenorean|E] Colonial Empire. Its towers shimmered with gilded brilliance, their walls sheathed in the lustrous sheen of that rare metal, and its rooftops sparkled with white gold shingles that caught the light like a sea of stars. Known as the Jewel of the [bellakari|E] Coast, Ûrêzâyaneth was said by many to be among the most breathtaking creations of the entire [numenorean|E] Empire. But all splendor is fragile in the face of wrath. With the [akallabeth|E], and the fury of the sea, that golden dream came to ruin.\n\nÛrêzâyaneth cannot remain a dim shadow of her former glory. She must be reborn, not in mourning, but in triumph, rebuilt in the image of her wondrous past.\n\nAnd so she has been. With the reopening of the Rôphazan Mines, vast new investment, and the gathering of the greatest engineers, architects, and artisans in all of [middleearth|E], the vision of old Ûrêzâyaneth has become reality once more. Now, the city blazes in the setting sun like a flame upon the shores of [greatsea|E], radiating a beauty and brilliance nearly unmatched anywhere in [ardaconcept|E]. The [adunai|E] of Ûrêzâyaneth, and of all [bellakar|E], take immense pride in their White Gold City, now rightfully called the most beautiful city of [men|E]."
- 
- building_type_wonder_carach_angren: "Carach Angren"
- building_type_wonder_carach_angren_desc: "$building_wonder_carach_angren_desc$"
- building_wonder_carach_angren: "Carach Angren"
- building_wonder_carach_angren_desc: "Carach Angren is the heavily fortified passage between Udûn and Gorgoroth. A vast stronghold of forts, towers, and an unyielding wall that seals all passage in and out. It is second only to the Black Gate in the strength of its defenses in [mordor|E]. First raised by [sauroncharacter|E] during the [warlastalliance|E], Carach Angren has since been held by both the forces of Good and Evil to bar their foes, and it is likely to serve that grim purpose for many years yet to come."
-
  ##Blockers
  building_type_ruins_of_arnor: "Arnorian Ruins"
  building_type_ruins_of_arnor_desc: "$building_ruins_of_arnor_desc$"
@@ -54,21 +34,6 @@
  building_ruins_of_arnor_bad_cleared: "Quarter Rebuilt"
  building_ruins_of_arnor_bad_cleared_desc: "While attempting to fully restore the vast sea of ruins in these lands would be a fool’s errand, select quarters of particular value have been rebuilt to a habitable state, ready for colonists to move in and continue the reclamation of [arnor|E].\n\n#V Clearing [colonisation_blockers|E] allows your settlement to upgrade.#!"
 
-
- building_type_barrow_wights: "Barrow-wights"
- building_type_barrow_wights_desc: "$building_barrow_wights_desc$"
- building_barrow_wights: "Barrow-wights"
- building_barrow_wights_desc: "Barrow-wights strike terror into the hearts of even the bravest of [men|E]. These fell spirits haunt the Barrow-downs, tormenting and slaying all who dare trespass within their domain."
- building_barrow_wights_cleared: "Barrow-downs, Cleansed"
- building_barrow_wights_cleared_desc: "Through great acts of heroism, the Barrow-downs have been purged of their fell spirits. Once more, the [men|E] of [eriador|E] may walk these hallowed grounds in safety.\n\n#V Clearing [colonisation_blockers|E] allows your settlement to upgrade.#!"
-
- building_type_ghosts_ost_in_edhil: "Ruins of Ost-in-Edhil"
- building_type_ghosts_ost_in_edhil_desc: "$building_ghosts_ost_in_edhil$"
- building_ghosts_ost_in_edhil: "Ruins of Ost-in-Edhil"
- building_ghosts_ost_in_edhil_desc: "Destroyed in the [waroftheelvesandsauron|E], the ruins of Ost-in-Edhil still, millennia later, bear the scars of their fall. The dead streets, lined with hollow yet hauntingly intact homes, seem to watch you with unseen eyes from every shadow. Once a proud city of the [elves|E], it was cast down by [sauroncharacter|E], and now its ruins are haunted by the spirits of those who perished here. Souls unable to depart, bound forever by the torment they endured."
- building_ghosts_ost_in_edhil_cleared: "Purified Ruins of Eregion"
- building_ghosts_ost_in_edhil_cleared_desc: "Through the work of soothsayers, holy men, and other rites, the spirits that dwelled in Ost-in-Edhil have finally been put to rest. The city of [celebrimbor|E] can finally be at peace.\n\n#V Clearing [colonisation_blockers|E] allows your settlement to upgrade.#!"
- 
  building_type_wonder_calemmanc_00: "Calemmanc"
  building_type_wonder_calemmanc_00_desc: "Calemmanc, [gondorian|E] provincial capital of Calenmîr, is the “Green Jewel” of [gondor|E]. It rises on the edge of [calenardhon|E]’s plains where the Mitheithel winds through oaks and wild meadows. Built of pale limestone, its walls turn emerald after rain as moss and lichen take hold. Four corner towers, each named for an ancient Gondorian house, stand watch over the surrounding fields, their shadows stretching across the pale courtyard when dusk falls."
  building_wonder_calemmanc_00: "Fortified Town of Aldburg"
@@ -164,20 +129,6 @@
 
  tradition_azralai_name: "Legacy of the Eastern Fleet"
  tradition_azralai_desc: "The Eastern Fleet was once anchored here in Anarike, its proud ships calling these shores home. For many, life was lived upon the waves, for others, it was spent in the drydocks, tending the havens, or working the fields to supply the Fleet’s unceasing hunger for provisions and trade. Though the great sails of the Fleet have long since vanished beyond the horizon, their legacy endures. The Sea still shapes the soul of Anarike, its rhythms, its labors, and its dreams. Exploration, seafaring, and commerce remain the lifeblood of the Eastern [adunai|E], echoing the days when the tide itself bore the will of [numenor|E]."
-
- tradition_bellakarani_sophistication_name: "Bellakarani Sophistication"
- tradition_bellakarani_sophistication_desc: "In the early days of [bellakar|E], the Golden Colony stood as the heart of [numenorean|E] colonization and courtly life upon the continent. Though not as thoroughly settled as the lands of the League of Pelargir to the north, [bellakar|E], owing to its central position in [middleearth|E], quickly rose in importance, opulence, and prestige. Courtly traditions and intricate rivalries soon flourished, and the palaces of Ûrêzâyan and Korlea became premier centers of wealth and grandeur among the [numenorean|E] colonies. The Bellakarani lands gained renown as places where the most sumptuous feasts were laid and the finest wines poured, privileges reserved only for those of the highest rank.\n\nThis culture of refinement and high station endured the [akallabeth|E], though greatly diminished, surviving within many of the Kingdom’s great cities, above all in Korlea. Those who outlasted the [downfall|E] labored tirelessly to preserve the façade of [numenorean|E] strength and dignity. Yet as the long years of the [thirdage|E] wore on, that façade crumbled piece by piece. Now it is only the Bellakarani of Korlea who cling to these ancient traditions, long abandoned elsewhere in [bellakar|E]."
-
- tradition_bellekar_succession_name: "Êrukhôr's Law"
- tradition_bellekar_succession_desc: "Before his untimely death, Êrukhôr fundamentally and irrevocably altered the laws of [bellakar|E]. Desiring that his sister inherit the throne rather than an [anbalkumagan|E] pretender, he advanced his case by invoking ancient [numenorean|E] law, the precedent set by Tar-Aldarion of [numenor|E], and the traditions of matriarchy among the [haradrim|E]. From these examples he argued that women should be permitted to inherit the crown.\n\nThrough a series of councils with the lords of [bellakar|E], Êrukhôr succeeded in enacting sweeping changes to [bellakari|E] succession law. Women were not only allowed to claim the throne, but were also declared equal in right to their male counterparts. This decision stunned the kingdom and plunged it into a succession crisis.\n\nYet in the centuries since, what came to be known as Êrukhôr's Law has been broadly accepted by both nobles and commoners alike. While many lesser titles within the realm still cling to traditions of male preference, the crown of [bellakar|E] itself, along with several other principal lordships, now fully abides by his reform."
-
- tradition_bellakarean_soldiers_name: "Reforms of Zimrêbal"
- tradition_bellakarean_soldiers_desc: "[zimrebal_long|E], the first King of [bellakar|E] and founder of the Tumakveh, fundamentally reshaped the Kingdom’s military apparatus. During the crisis of the First Tedjin Invasion, he introduced a series of sweeping reforms to the administration and levying of the [bellakari|E] host, measures later remembered collectively as the Reforms of Zimrêbal.\n\nThese reforms centralized authority over the disparate forces of the former [numenorean|E] colony, stripping power from the individual cities and placing it instead in the hands of the King and the bureaucracy of Nîlûlondê. Zimrêbal also invested heavily in the arms industry, established professional divisions, and devised new methods of recruitment, seeking to forge a force that was disciplined, standardized, and adaptable.\n\nThe reforms proved widely successful. They enabled [bellakar|E] to secure victory in the First Tedjin Invasion and remain, in large part, the foundation of [bellakar|E]’s military to this day. Thanks to them, the Kingdom enjoys far greater fighting capacity and can draw upon its provinces with much greater ease."
-
- #Replaces base desc
- tradition_bellakarean_cities_desc: "The cities of [bellakar|E] are many, each bearing its own proud history and heritage. Golden Ûrêzâyan to Proud Korlea, from the Silver Jewel of Nîlûlondê to Pious Hazaj Tollin, every city holds its own character and laws reaching back to the [secondage|E], and each jealously guards its own interests. A strong tradition of legal, cultural, and political autonomy is deeply woven into the very fabric of the Bellakarean ethos."
- culture_parameter_capital_castles_more_like_cities: "[castle_holdings|E] of this culture have reduced [fort_level|E], but give higher [taxes|E] and [levies|E] in Farmlands and Floodplains"
-
 
  ##Innovations 
  innovation_lords_of_the_golden_lands: "Lords of the Golden Lands"
@@ -484,30 +435,6 @@
  decision_bozisha_dar_tributary_tooltip: "Bôzisha-Dâr and all of [ray|E] shall remember their pledge"
  decision_bozisha_dar_tributary_confirm: "Bôzisha-Dâr will again be a [tributary|E] of the [adunai|E]"
  decision_bozisha_dar_tributary_tt: "We will dispatch envoys to [GetTitleByKey('c_bozisha_dar').GetNameNoTier] reminding them of their ancient, yet binding pact."
-
- #Grain Dole
- anbalkumagan_grain_dole_decision: "Reinstate the Pharaz an-Dâira"
- anbalkumagan_grain_dole_decision_desc: "In the years before the [downfallofnumenor|E], [ciryatanore|E] served as the great breadbasket of the [numenorean|E] empire, yielding vast harvests of grain to sustain the island. In those days, the people of [numenor|E] partook of the Pharaz an-Dâira, the 'Gold of the Earth': the regular distributions of free or price-controlled bread. This noble tradition was cast aside when the worship of the [valargods|E] was outlawed, and it perished altogether in the [akallabeth|E]. Yet it is remembered still, and any ruler bold enough to restore it would surely win the hearts of the common folk."
- anbalkumagan_grain_dole_decision_tooltip: "Introduce bread distributions to the people of the capital"
- anbalkumagan_grain_dole_decision_confirm: "Open the granaries!"
- enough_granaries_in_anbalkumagan: "At least 3 counties in the region of [GetGeographicalRegion('custom_anbalkumagan').GetName] have built [GetBuilding('cereal_fields_05').GetName] or higher"
- MODIFIER_DEFINITION_VALUE_PER_ANBALKUMGAN_GRANARY: " \t#weak Increase per [GetBuilding('cereal_fields_05').GetName] built in [GetGeographicalRegion('custom_anbalkumagan').GetName]#!"
- MODIFIER_DEFINITION_MAIN_DESC_PER_ANBALKUMGAN_GRANARY: "This modifier increases per [GetBuilding('cereal_fields_05').GetName] built in [GetGeographicalRegion('custom_anbalkumagan').GetName] ($MULTIPLIER|+=0$), Maxes out at #V 10#!"
- grain_dole_already_active_anbalkumagan: "The Pharaz an-Dâira is already active!"
- unlocked_grain_dole_anbalkumagan: "Renewing the Pharaz an-Dâira is cheaper"
- pharazain_events.8.t: "The Pharaz an-Dâira"
- pharazain_events.8.desc: "The people have every reason to celebrate as the ancient and beloved tradition of the Pharaz an-Dâira returns to [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip]!\n\nOur capital will be the greatest in all the world thanks to #EMP my#! efforts, [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] receives a constant flow of cheap grain from [GetGeographicalRegion('custom_anbalkumagan').GetName], just like it did centuries ago.\n\nAnd as the ancient poet aptly said, all we need to keep the common people happy is bread and games!"
- pharazain_events.8.a: "Let them eat bread!"
- reconfirm_anbalkumagan_grain_dole_decision: "Reconfirm the Pharaz an-Dâira"
- reconfirm_anbalkumagan_grain_dole_decision_desc: "After its formal reintroduction, the citizens of [ROOT.Char.GetCapitalLocation.GetTitle.GetNameNoTierNoTooltip] have grown accustomed to the luxuries offered by the Pharaz an-Dâira — the regular distributions of free or price-controlled bread. It is a powerful instrument in the hands of any Emperor to ensure their people's productivity and their own popularity."
- reconfirm_anbalkumagan_grain_dole_decision_tooltip: "Reconfirm the bread distributions to the people of the capital"
- reconfirm_anbalkumagan_grain_dole_decision_confirm: "$reinstitute_grain_dole_decision_confirm$"
- reconfirm_anbalkumagan_grain_dole_decision_tt: "Pharaz an-Dâira Reconfirmed"
-
- grain_anbalkumagan_providers_county_modifier: "Granary of Pharazâin"
- grain_anbalkumagan_providers_county_modifier_desc: "The Pharaz an-Dâira in the capital depends on this area producing and exporting massive amounts of cheap grain through an advanced network of traders, shippers, manifacturers, and even speculators."
- bread_and_circuses_anbalkumagan_county_modifier: "Pharaz an-Dâira"
- bread_and_circuses_anbalkumagan_county_modifier_desc: "The Pharaz an-Dâira is active: all citizens are entitled to regular distributions of free bread sponsored by the Emperor."
 
  ##Pharazain Separatism Decisions
  #Separatism
@@ -961,15 +888,6 @@
  wastelands_custom.003.b: "Allow the colonists to keep their treasure."
  wastelands_custom.003.c: "These items are Arnor's history, and thus must be kept safe."
  wastelands_custom.003.c.success.toast.t: "The artifacts are collected"
-
- wastelands_custom.004.t: "[obstacle_province.GetName]: Cleansing the Barrow-downs"
- wastelands_custom.004.desc: "Since the fall of [arnor|E], the Barrow-downs, once among the most hallowed sites of the [dunedain|E], have lain in shadow, haunted by the Barrow-wights sent forth by the [witchkingshort|E]. These fell spirits strike terror into even the bravest of hearts, and for long millennia they have barred our people from the tombs of our forefathers.\n\nBut no longer! I shall muster a mighty host of the [dunedain|E] and march to this most sacred ground, to cleanse it of the evils that dwell there. The battle ahead will be perilous, for such creatures are formidable foes, but it is a struggle we must endure if ever we are to reclaim [arnor|E]."
- wastelands_custom.004.a: "Dúnedain of Arnor, stand against these fell spirits!"
- wastelands_custom.004.a.duel_success: "Your men slay the Barrow-wights"
- wastelands_custom.004.a.duel_failure: "Your men are driven back by the Barrow-wights"
- wastelands_custom.004.success.toast.t: "The Barrow-wights are slain!"
- wastelands_custom.004.failure.toast.t: "Your men break in terror and flee"
- wastelands_custom.004.b: "Abandon the effort, there is no hope against such evil"
 
  ##Bozisha Dar Trib Event Chain 
  pharazain_events.4.t: "Envoys to Bôzisha-Dâr"

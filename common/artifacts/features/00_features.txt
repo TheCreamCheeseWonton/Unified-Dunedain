@@ -7079,6 +7079,15 @@
 		weight = 1
 	}
 	
+	book_topic_arud_tumakveh = {
+		group = book_topic
+		trigger = {
+			exists = scope:owner.var:book_artifact_topic
+			scope:owner.var:book_artifact_topic = flag:arud_tumakveh
+		}
+		weight = 1
+	}
+	
 	book_topic_castamir = {
 		group = book_topic
 		trigger = {

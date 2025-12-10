@@ -12,10 +12,9 @@
 		}
 		has_dlc_feature = tours_and_tournaments
 		has_dlc_feature = advanced_activities
-		is_sauron = no #LotR
-		is_nazgul = no #LotR
+
 		is_istari = no #LotR
-		is_in_valinor = no #LotR
+		lotr_can_do_activity = yes # LOTR
 		#Every other activity must be blocked until an uncrowned AI crowns themselves
 		trigger_if = {
 			limit = {
@@ -1248,7 +1247,6 @@
 						OR = {
 							terrain = mallorn_forest
 							terrain = deep_forest
-							terrain = myrtle_forest
 							terrain = forest
 						}
 					}
@@ -1301,7 +1299,6 @@
 						OR = {
 							terrain = mallorn_forest
 							terrain = deep_forest
-							terrain = myrtle_forest
 							terrain = forest
 						}
 					}
@@ -1423,7 +1420,6 @@
 						OR = {
 							terrain = mallorn_forest
 							terrain = deep_forest
-							terrain = myrtle_forest
 							terrain = forest
 						}
 					}
@@ -1462,7 +1458,6 @@
 						OR = {
 							terrain = mallorn_forest
 							terrain = deep_forest
-							terrain = myrtle_forest
 							terrain = forest
 						}
 					}
@@ -2664,7 +2659,6 @@
 								has_cultural_pillar = heritage_northron
 								##Quonton
 								has_cultural_tradition = tradition_new_numenor
-								
 							}
 						}
 					}

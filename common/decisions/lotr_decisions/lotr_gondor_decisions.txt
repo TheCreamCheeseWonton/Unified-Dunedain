@@ -31,6 +31,7 @@ decision_gondor_regnal_names = {
 		OR = { 
 			has_title = title:e_gondor
 			has_title = title:e_reunitedkingdom
+			has_title = title:e_castamir
 		}
 		##End Quonton
 		##Quonton - Women should be able to too
@@ -38,6 +39,7 @@ decision_gondor_regnal_names = {
 		NOT = {
 			has_character_flag = has_regnal_name
 		}
+		NOT = { has_character_flag = is_aragorn }
 	}
 	
 	is_valid_showing_failures_only = {
@@ -1650,7 +1652,7 @@ decision_calenardhon_claim = {
 
 	is_valid = {
 		is_independent_ruler = yes
-		completely_controls_region = middleearth_west_gondor_easternfiefdoms # You need to border Rohan
+		completely_controls = title:k_anorien # You need to border Rohan
 		# prestige_level >= very_high_prestige_level
 		OR = {
 			is_gondor = yes
@@ -2328,20 +2330,7 @@ decision_reunify_dunedain = {
 	
 	# EFFECT 
 	effect = {
-		if = { # Last King of the Elder Days | Achievement
-			limit = { 
-				is_ai = no
-				NOT = { exists = global_var:lotr_achievement_26 }
-				realms_achievements_enabled = yes
-				root = character:lineisildur42
-				age < 151
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:decision_destroy_mordor
-				}
-			}
-			set_global_variable = lotr_achievement_26
-		}
+		lotr_achievement_26_effect = yes
 		##Quonton
 		culture:new_dunedain = {
 			culture:new_dunedain = { save_temporary_scope_as = dunedain_culture }
@@ -5836,7 +5825,7 @@ decision_restore_defeated_gondor = {
 		faith_is_good = yes
 
 		NAND = { # Do not show while another liberation war is ongoing
-            title:e_mordor.holder = { has_character_flag = attacked_in_gondor_liberation }
+            title:c_minas_tirith.holder.top_liege = { has_character_flag = attacked_in_gondor_liberation }
 			any_ruler = { has_character_flag = liberating_gondor }
 		}
 		
@@ -5986,7 +5975,7 @@ decision_join_gondor_liberation = {
 	is_valid = {
 		custom_tooltip = {
 			text = decision_join_gondor_liberation_tt
-			title:e_mordor.holder = { has_character_flag = attacked_in_gondor_liberation }
+			title:c_minas_tirith.holder.top_liege = { has_character_flag = attacked_in_gondor_liberation }
 			any_ruler = { has_character_flag = liberating_gondor }
 		}
 		custom_tooltip = {

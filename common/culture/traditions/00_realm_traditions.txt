@@ -1167,7 +1167,6 @@ tradition_equal_inheritance = {
 		#	has_cultural_tradition = tradition_nubian_warrior_queens
 		#	has_cultural_tradition = tradition_nubian_warrior_kings
 		#}
-		NOT = { has_cultural_tradition = tradition_bellekar_succession }
 		trigger_if = { #LotR
             limit = {
                 scope:replacing ?= culture_tradition:tradition_variag_succession
@@ -2355,7 +2354,6 @@ tradition_parochialism = {
 		#	}
 		#}
 		#NOT = { has_cultural_tradition = tradition_republican_legacy }
-		NOT = { has_cultural_tradition = tradition_bellakarean_cities }
 		custom_tooltip = {
 			text = cultrad_not_nomadic_government_type
 			scope:character = {
@@ -2605,14 +2603,14 @@ tradition_staunch_traditionalists = {
 	}
 	can_pick = {
 		NOT = {
-		has_cultural_tradition = tradition_fp3_fierce_independence
+			has_cultural_tradition = tradition_fp3_fierce_independence
 		}
 		NOT = { 
 			has_cultural_tradition = tradition_blacknumenorean_legacy
 			has_cultural_tradition = tradition_kharadunai 
 			##Quonton
 			has_cultural_tradition = tradition_unified_adunaic 
-			}
+		}
 		trigger_if = { #LotR
             limit = {
                 scope:replacing ?= culture_tradition:tradition_variag_succession
@@ -3805,7 +3803,7 @@ tradition_ancient_miners = {
 	
 	parameters = {
 		ancient_miners_quarries_building_bonuses = yes
-		can_build_quarries_in_hills = yes
+		can_build_quarries_everywhere = yes 		# actually can be built everywhere
 	}
 	
 	cost = {

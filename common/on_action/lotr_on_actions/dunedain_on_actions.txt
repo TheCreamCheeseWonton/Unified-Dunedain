@@ -31,17 +31,6 @@ dunedain_on_game_start = {
 	effect = {
 		##Quonton
 		evil_strength_gamerule_buffs = yes
-		
-		##Barrow Wights
-		province:4645 = { remove_building = ghosts }
-		province:4645 = { add_building = barrow_wights }
-		
-		##Ost in Edhil
-		province:4351 = { remove_building = ghosts_eregion }
-		province:4351 = { add_building = ghosts_ost_in_edhil }
-		
-		##Carach Angren
-		province:616 = { add_special_building = wonder_carach_angren }
 
 		##Bad Arnorian Ruins
 		province:4415 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }

@@ -767,6 +767,7 @@ gondor.6001 = { # Morannon reconquered
 	title = gondor.6001.t
 	desc = gondor.6001.desc
 	theme = war
+	##Quonton
 	trigger = { culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } } } #Should only trigger for Dúnedain
 	cooldown = { days = 3 }
 	left_portrait = {
@@ -790,6 +791,7 @@ gondor.6002 = { # Fall of Minas Tirith
 		reference = grond
 	}
 	trigger = { 
+		##Quonton
 		culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } } #Should only trigger for Dúnedain
 		NOT = { has_character_flag = try_rotk }
 	} 
@@ -811,6 +813,7 @@ gondor.6003 = { # Minas Tirith reclaimed
 	title = gondor.6003.t
 	desc = gondor.6003.desc
 	theme = gondor
+	##Quonton
 	trigger = { culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } } } #Should only trigger for Dúnedain
 	cooldown = { days = 3 }
 	override_background = {
@@ -834,6 +837,7 @@ gondor.6004 = { # Conquest of Umbar
 	desc = gondor.6004.desc
 	theme = war
 	override_background = { reference = docks_adunai }
+	##Quonton
 	trigger = { culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } } } #Should only trigger for Dúnedain
 	cooldown = { days = 3 }
 	left_portrait = {
@@ -853,6 +857,7 @@ gondor.6005 = { # Conquest of Isengard
 	title = gondor.6005.t
 	desc = gondor.6005.desc
 	theme = war
+	##Quonton
 	trigger = { culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } } } #Should only trigger for Dúnedain
 	cooldown = { days = 3 }
 	left_portrait = {

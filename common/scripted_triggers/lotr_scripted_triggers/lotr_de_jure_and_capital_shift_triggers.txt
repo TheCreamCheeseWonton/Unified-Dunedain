@@ -208,7 +208,6 @@ show_khorsaj_capital_trigger = {
 show_tol_uialgaer_capital_trigger = {
 	NOT = { primary_title.title_capital_county = title:c_tol_uialgaer }
 	#completely_controls = title:c_tol_uialgaer
-
 	OR = {
 		has_primary_title = title:e_umbar
 		##Quonton

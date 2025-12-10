@@ -978,6 +978,7 @@ arnor.9100 = { # Colonization of Tharbad
 	desc = arnor.9100.desc
 	theme = diplomacy
 	trigger = { 
+		##Quonton
 		culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } } 
 		province:4537 = { has_holding_type = settlement_holding }
 	}

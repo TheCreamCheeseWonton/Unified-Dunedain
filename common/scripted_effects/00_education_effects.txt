@@ -2376,6 +2376,22 @@ cultural_traditions_education_boost_effect = {
 			}
 		}
 	}
+	##Quonton
+	#if = {
+	#	limit = {
+	#		culture = {
+	#			has_cultural_parameter = martial_education_worse_outcomes
+	#		}
+	#		has_focus = education_martial
+	#		exists = var:education_martial_variable
+	#		var:education_martial_variable > 0
+	#	}
+	#
+	#	change_variable = {
+	#		name = education_martial_variable
+	#		add = -1
+	#	}
+	#}
 }
 
 court_tutor_education_boost_effect = {

@@ -306,32 +306,6 @@ pharazain_events.7 = { # Integrate Rohan NOT
 	}
 }
 
-pharazain_events.8 = {
-	type = character_event
-	title = pharazain_events.8.t
-	desc = pharazain_events.8.desc
-	theme = emperor
-	override_background = { reference = bp1_courtyard_indian }
-
-	left_portrait = {
-		character = root
-		animation = war_over_win
-	}
-
-	immediate = {
-		show_as_tooltip = {
-			reinstitute_grain_dole_decision_effect_anbalkumagan = yes
-		}
-		create_character_memory = {
-			type = grain_dole_memory
-		}
-	}
-	
-	option = {
-		name = pharazain_events.8.a
-	}
-}
-
 ##Start separatism
 pharazain_events.9 = {
 	type = character_event

@@ -6167,31 +6167,32 @@ c_kadar_an_ninroth = {
 }
 
 
+
 ## Kingdom of Drel
 k_drel = {
 	159.1.1 = {
-		holder = lineofmaglasul1
+		holder = lineofmeglasul1
 	}
 	3039.11.14 = {
-		holder = lineofmaglasul3
+		holder = lineofmeglasul3
 	}
 }
 
 # Duchy of Chelayana
 d_chelayana = {
 	159.1.1 = {
-		holder = lineofmaglasul1
+		holder = lineofmeglasul1
 	}
 	3039.11.14 = {
-		holder = lineofmaglasul3
+		holder = lineofmeglasul3
 	}
 }
 c_ainglad = {
 	159.1.1 = {
-		holder = lineofmaglasul1
+		holder = lineofmeglasul1
 	}
 	3039.11.14 = {
-		holder = lineofmaglasul3
+		holder = lineofmeglasul3
 	}
 	3770.1.1 = {
 		change_development_level = 15
@@ -6199,10 +6200,10 @@ c_ainglad = {
 }
 c_elenka = {
 	159.1.1 = {
-		holder = lineofmaglasul1
+		holder = lineofmeglasul1
 	}
 	3039.11.14 = {
-		holder = lineofmaglasul3
+		holder = lineofmeglasul3
 	}
 	3770.1.1 = {
 		change_development_level = 12
@@ -6210,10 +6211,10 @@ c_elenka = {
 }
 c_ornekara = {
 	159.1.1 = {
-		holder = lineofmaglasul1
+		holder = lineofmeglasul1
 	}
 	3039.11.14 = {
-		holder = lineofmaglasul3
+		holder = lineofmeglasul3
 	}
 	3770.1.1 = {
 		change_development_level = 8
@@ -6221,10 +6222,10 @@ c_ornekara = {
 }
 c_alabgarda = {
 	159.1.1 = {
-		holder = lineofmaglasul1
+		holder = lineofmeglasul1
 	}
 	3039.11.14 = {
-		holder = lineofmaglasul3
+		holder = lineofmeglasul3
 	}
 	3770.1.1 = {
 		change_development_level = 9
