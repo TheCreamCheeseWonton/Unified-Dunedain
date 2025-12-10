@@ -6424,12 +6424,10 @@ wonder_arch_ciryandur = { #Arch of Ciryandur
 	is_enabled = {
 		#Quonton
 		OR = { 
-			scope:holder.culture ?= { 
-				has_cultural_pillar = heritage_bellakari 
-				has_cultural_pillar = heritage_unified_adunaic 
-				has_cultural_tradition = tradition_new_numenor 
-			}
-		} 
+			scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+			scope:holder.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
+			scope:holder.culture ?= { has_cultural_tradition = tradition_new_numenor }
+		}
 		#End Quonton
 	}
 	ai_value = {
@@ -6491,11 +6489,9 @@ wonder_pillar_urez = { #Pillar of Ûrêzâyaneth
 	is_enabled = {
 		#Quonton
 		OR = { 
-			scope:holder.culture ?= { 
-				has_cultural_pillar = heritage_bellakari 
-				has_cultural_pillar = heritage_unified_adunaic 
-				has_cultural_tradition = tradition_new_numenor 
-			}
+			scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+			scope:holder.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
+			scope:holder.culture ?= { has_cultural_tradition = tradition_new_numenor }
 		} 
 		#End Quonton
 	}
