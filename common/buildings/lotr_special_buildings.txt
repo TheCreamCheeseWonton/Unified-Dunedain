@@ -3740,7 +3740,12 @@ wonder_citadel_cairos_03 = { # Rebuilt by Turgon
 		building_requirement_castle_city_church = { LEVEL = 02 }
 		culture = {
 			has_innovation = innovation_hoardings
-			has_cultural_pillar = heritage_dunedain
+			##Quonton
+			OR = { 
+				has_cultural_pillar = heritage_dunedain
+				has_cultural_tradition = tradition_new_numenor
+			}
+			##End Quonton
 		}
 	}
 	province_modifier = {
@@ -6417,7 +6422,15 @@ wonder_arch_ciryandur = { #Arch of Ciryandur
 		same_culture_opinion = 5
 	}
 	is_enabled = {
-		scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+		#Quonton
+		OR = { 
+			scope:holder.culture ?= { 
+				has_cultural_pillar = heritage_bellakari 
+				has_cultural_pillar = heritage_unified_adunaic 
+				has_cultural_tradition = tradition_new_numenor 
+			}
+		} 
+		#End Quonton
 	}
 	ai_value = {
 		base = 100
@@ -6476,7 +6489,15 @@ wonder_pillar_urez = { #Pillar of Ûrêzâyaneth
 		men_at_arms_maintenance = -0.1
 	}
 	is_enabled = {
-		scope:holder.culture ?= { has_cultural_pillar = heritage_bellakari }
+		#Quonton
+		OR = { 
+			scope:holder.culture ?= { 
+				has_cultural_pillar = heritage_bellakari 
+				has_cultural_pillar = heritage_unified_adunaic 
+				has_cultural_tradition = tradition_new_numenor 
+			}
+		} 
+		#End Quonton
 	}
 	ai_value = {
 		base = 100
