@@ -32,6 +32,8 @@ evil_strength_gamerule_buffs = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -78,6 +80,8 @@ evil_strength_gamerule_buffs = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 

@@ -116,6 +116,8 @@ dunedain_on_vassal_gained = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -165,6 +167,8 @@ dunedain_on_vassal_gained = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -218,6 +222,8 @@ dunedain_on_vassal_change = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -267,6 +273,8 @@ dunedain_on_vassal_change = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -318,6 +326,8 @@ dunedain_on_faith_conversion = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -367,6 +377,8 @@ dunedain_on_faith_conversion = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -411,6 +423,8 @@ dunedain_on_faith_conversion = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
@@ -460,6 +474,8 @@ dunedain_on_faith_conversion = {
 						this = character:nazgul1
 						this = character:lineofafalku11a 
 						this = character:lineofdulgu31 
+						this = character:lineofgoblinking1 
+						this = character:lineoftharzog1 
 					}
 				}
 			} 
