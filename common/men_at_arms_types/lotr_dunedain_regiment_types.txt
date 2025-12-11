@@ -1884,11 +1884,15 @@ dunedain_marines = { #represents Dunedain maritime traditions and mainly there f
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
+			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_dunedain_warriors }
+				OR = { 
+					location.culture ?= { has_innovation = innovation_dunedain_warriors }
+					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
+				}
 			}
 		}
 	}
@@ -1933,11 +1937,15 @@ dunedain_soldiers = {
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
+			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_dunedain_warriors }
+				OR = { 
+					location.culture ?= { has_innovation = innovation_dunedain_warriors }
+					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
+				}
 			}
 		}
 	}
@@ -1972,11 +1980,15 @@ dunedain_reformed_wardens = { # Spear wielding rangers
 	can_recruit = { 
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
+			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_dunedain_warriors }
+				OR = { 
+					location.culture ?= { has_innovation = innovation_dunedain_warriors }
+					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
+				}
 			}
 		}
 	}
@@ -2120,11 +2132,15 @@ dunedain_knights = {
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
+			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_dunedain_warriors }
+				OR = { 
+					location.culture ?= { has_innovation = innovation_dunedain_warriors }
+					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
+				}
 			}
 		}
 	}
@@ -2170,15 +2186,16 @@ dunedain_knights = {
 dunedain_elites = {
 	can_recruit = { 
 		OR = {
-			AND = {
-				culture = { has_innovation = innovation_dunedain_warriors }
-				highest_held_title_tier >= tier_kingdom
-			}
+			culture = { has_innovation = innovation_dunedain_warriors }
+			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_dunedain_warriors }
+				OR = { 
+					location.culture ?= { has_innovation = innovation_dunedain_warriors }
+					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
+				}
 			}
 		}
 	}
@@ -2214,15 +2231,16 @@ dunedain_elites = {
 dunedain_reformed_rangers = { #Longbowmen with increased damage and screen, bonus in forest
 	can_recruit = { 
 		OR = {
-			AND = {
-				culture = { has_innovation = innovation_dunedain_warriors }
-				highest_held_title_tier >= tier_kingdom
-			}
+			culture = { has_innovation = innovation_dunedain_warriors }
+			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_dunedain_warriors }
+				OR = { 
+					location.culture ?= { has_innovation = innovation_dunedain_warriors }
+					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
+				}
 			}
 		}
 	}
@@ -2268,15 +2286,16 @@ dunedain_reformed_outriders = {
 	type = light_cavalry
 	can_recruit = { 
 		OR = {
-			AND = {
-				culture = { has_innovation = innovation_dunedain_warriors }
-				highest_held_title_tier >= tier_kingdom
-			}
+			culture = { has_innovation = innovation_dunedain_warriors }
+			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_dunedain_warriors }
+				OR = { 
+					location.culture ?= { has_innovation = innovation_dunedain_warriors }
+					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
+				}
 			}
 		}
 	}

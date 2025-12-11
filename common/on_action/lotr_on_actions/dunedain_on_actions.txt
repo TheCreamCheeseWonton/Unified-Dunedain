@@ -103,7 +103,20 @@ dunedain_on_vassal_gained = {
 					}
 				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {
@@ -131,8 +144,28 @@ dunedain_on_vassal_gained = {
 						has_character_modifier = evil_strengthened_3_modifier
 					}
 				}
+				NOT = {
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {
@@ -164,8 +197,28 @@ dunedain_on_vassal_change = {
 						has_character_modifier = evil_strengthened_3_modifier
 					}
 				}
+				NOT = {
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {
@@ -193,8 +246,28 @@ dunedain_on_vassal_change = {
 						has_character_modifier = evil_strengthened_3_modifier
 					}
 				}
+				NOT = {
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {
@@ -224,8 +297,28 @@ dunedain_on_faith_conversion = {
 						has_character_modifier = evil_strengthened_3_modifier
 					}
 				}
+				NOT = {
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {
@@ -253,8 +346,28 @@ dunedain_on_faith_conversion = {
 						has_character_modifier = evil_strengthened_3_modifier
 					}
 				}
+				NOT = {
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {
@@ -277,8 +390,28 @@ dunedain_on_faith_conversion = {
 					has_character_modifier = evil_strengthened_2_modifier
 					has_character_modifier = evil_strengthened_3_modifier
 				}
+				OR = {
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {
@@ -306,8 +439,28 @@ dunedain_on_faith_conversion = {
 					has_character_modifier = evil_strengthened_2_modifier
 					has_character_modifier = evil_strengthened_3_modifier
 				}
+				OR = {
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
 				NOT = { 
-					this = character:lineofsauron 
+					OR = { 
+						this = character:lineofsauron 
+						this = character:lineofdulgu44
+						this = character:lineoflavrajyatante21 
+						this = character:lineofafalku15 
+						this = character:vangarisofkhand
+						this = character:lineofazog10 
+						this = character:lineofazog6 
+						this = character:nazgul2 
+						this = character:lineofazog1
+						this = character:nazgul1
+						this = character:lineofafalku11a 
+						this = character:lineofdulgu31 
+					}
 				}
 			} 
 			switch = {

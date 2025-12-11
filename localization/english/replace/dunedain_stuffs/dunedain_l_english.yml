@@ -102,11 +102,11 @@
  azralai_ethnicity: "Azralâi"
  azralai_desc: "#size:15    For the first time in an age, Anarike is once more home to the [adunai|E]. Though many may question our heritage, or doubt the truth of our claim as heirs of [numenor|E], we pay them no heed. We have rekindled the flame of our ancient culture, and we are proud. Our people speak [adunaic|E] in their homes, scholars write in the script of our forefathers, and traders from across Ormal walk the harbors built with the craft and methods of [westernesse|E]. The culture of [numenor|E] lives again in Anarike. Though shaped in part by our neighbors of Khy, we stand now, and forever, as the true [adunai|E] of the East."
 
- eothedain: "Rohonedain "
- eothedain_collective_noun: "Rohonedain"
- eothedain_prefix: "Rohonedain"
- eothedain_ethnicity: "Rohonedain"
- eothedain_desc: "#size:15    Formed from [dunedain|E] settlers who made their home in [calenardhon|E] and the native [rohirrim|E], the Rohonedain are a singular fusion of two proud cultures. They have embraced the legacy of [rohan|E], preserving its traditions, songs, and celebrations, while never forgetting their [gondorian|E] roots, evident in their dress and the architecture they favor, drawn from the [southernkingdom|E].\n\nRenowned as great Horse-lords in their own right, the Rohonedain are unmatched among the [dunedain|E] in horsemanship. Many claim that a single Rohonedain and their steed are worth three [gondorian|E] horsemen. Proud of their blended heritage, this noble people may prove your staunchest ally, or your most unyielding foe."
+ eothedain: "Rohanedain"
+ eothedain_collective_noun: "Rohanedain"
+ eothedain_prefix: "Rohanedain"
+ eothedain_ethnicity: "Rohanedain"
+ eothedain_desc: "#size:15    Formed from [dunedain|E] settlers who made their home in [calenardhon|E] and the native [rohirrim|E], the Rohanedain are a singular fusion of two proud cultures. They have embraced the legacy of [rohan|E], preserving its traditions, songs, and celebrations, while never forgetting their [gondorian|E] roots, evident in their dress and the architecture they favor, drawn from the [southernkingdom|E].\n\nRenowned as great Horse-lords in their own right, the Rohanedain are unmatched among the [dunedain|E] in horsemanship. Many claim that a single Rohanedain and their steed are worth three [gondorian|E] horsemen. Proud of their blended heritage, this noble people may prove your staunchest ally, or your most unyielding foe."
 
  ##Traditions
  tradition_unified_dunedain_name: "A Unified Dúnedain"
@@ -764,9 +764,9 @@
  dunedain_identity.8.b: "No matter, the two fall more grievously than one."
  dunedain_identity.8.c: "Who cares about some wild horse-men?"
 
- dunedain_identity.9.t: "The Emergence of the Rohonedain"
+ dunedain_identity.9.t: "The Emergence of the Rohanedain"
  dunedain_identity.9.desc: "The [dunedain|E] have ruled the former Kingdom of [rohan|E] for many years, and the integration of this province has gone smoothly. The [rohirrim|E], long allies of [gondor|E], have accepted our rule, and the prosperity brought under our banner has allowed them to grow wealthier than they ever dreamed. Many families of the [dunedain|E] have since settled in the region, establishing themselves along the northern [gondorian|E] frontier.\n\nNow, as the first generations born in [calenardhon|E] come of age, a remarkable phenomenon is taking shape. In the areas with the greatest number of settlers, a new culture is emerging, one that blends the traditions, customs, and ideals of both [dunedain|E] and the [rohirrim|E]. These people are proud [dunedain|E] of [calenardhon|E], calling the province their homeland, yet they also honor their [rohirrim|E] heritage and the legacy of [rohan|E]. \n\nWhat should be our response to this ongoing incident?"
- dunedain_identity.9.a: "My home is Calenardhon, and I am of the Rohonedain."
+ dunedain_identity.9.a: "My home is Calenardhon, and I am of the Rohanedain."
  dunedain_identity.9.b: "Never will I abandon my traditions!"
  dunedain_identity.9.c: "A welcome change, one that should strengthen [dunedain|E] rule."
  dunedain_identity.9.d: "My home is Calenardhon, and I am of the Dunedain"
