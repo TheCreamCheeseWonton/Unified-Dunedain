@@ -1454,12 +1454,14 @@ numenorean_elites_custom = {
 		elephant_cavalry = 1
 	}
 	
-	buy_cost = { gold = 320 }
-	low_maintenance_cost = { gold = 1 }
-	high_maintenance_cost = { gold = 3 }
+	buy_cost = { gold = 700 }
+	low_maintenance_cost = { gold = 1.8 }
+	high_maintenance_cost = { gold = 4.4 }
 	provision_cost = @provisions_cost_cavalry_expensive
 	
 	stack = 50
+	
+	max_regiments = 1
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = golden_numenorean
 }
@@ -1819,14 +1821,14 @@ numenorean_elites_adunaic = {
 		elephant_cavalry = 1
 	}
 	
-	buy_cost = { gold = 320 }
-	low_maintenance_cost = { gold = 1 }
-	high_maintenance_cost = { gold = 3 }
+	buy_cost = { gold = 700 }
+	low_maintenance_cost = { gold = 1.8 }
+	high_maintenance_cost = { gold = 4.4 }
 	provision_cost = @provisions_cost_cavalry_expensive
-
-	max_regiments = 1
 	
 	stack = 50
+	
+	max_regiments = 1
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = golden_numenorean
 }
@@ -2217,12 +2219,14 @@ dunedain_elites = {
 		elephant_cavalry = 1
 	}
 	
-	buy_cost = { gold = 300 }
-	low_maintenance_cost = { gold = 0.8 }
-	high_maintenance_cost = { gold = 2.4 }
+	buy_cost = { gold = 500 }
+	low_maintenance_cost = { gold = 1.2 }
+	high_maintenance_cost = { gold = 3.4 }
 	provision_cost = @provisions_cost_infantry_expensive
 	
 	stack = 50
+	
+	max_regiments = 1
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = citadel_guard
 }

@@ -510,12 +510,14 @@ adunaic_elites = { # Heavy Shock Infantry
 		monster = 1
 	}
 
-	buy_cost = { gold = 300 }
-	low_maintenance_cost = { gold = 0.8 }
-	high_maintenance_cost = { gold = 2.4 }
+	buy_cost = { gold = 500 }
+	low_maintenance_cost = { gold = 1.2 }
+	high_maintenance_cost = { gold = 3.4 }
 	provision_cost = @provisions_cost_infantry_expensive
 	
 	stack = 50
+	
+	max_regiments = 1
 
 	allowed_in_hired_troops = no
 	ai_quality = { value = @cultural_maa_extra_ai_score }
