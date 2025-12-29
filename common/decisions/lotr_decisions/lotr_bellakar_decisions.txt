@@ -2216,6 +2216,8 @@ decision_unify_adunai = {
 			culture:mardrukan = { save_temporary_scope_as = mardrukan_culture }
 			culture:anbalukkhori = { save_temporary_scope_as = anbalukkhori_culture }
 			culture:kharadunaim = { save_temporary_scope_as = kharadunaim_culture }
+			culture:kharatakhori = { save_temporary_scope_as = kharatakhori_culture }
+			culture:tanturaki = { save_temporary_scope_as = tanturaki_culture }
 			# Needs to be above the 'custom_tooltip'
 			custom_tooltip = decision_unify_pharazaini_get_innovations
 			hidden_effect = {
@@ -2226,6 +2228,8 @@ decision_unify_adunai = {
 				get_all_innovations_from = culture:mardrukan
 				get_all_innovations_from = culture:anbalukkhori
 				get_all_innovations_from = culture:kharadunaim
+				get_all_innovations_from = culture:kharatakhori
+				get_all_innovations_from = culture:tanturaki
 				remove_innovation = innovation_lesser_numenorean_heritage
 				remove_innovation = innovation_varangian_adventurers
 				remove_innovation = innovation_northern_adunai_warfare

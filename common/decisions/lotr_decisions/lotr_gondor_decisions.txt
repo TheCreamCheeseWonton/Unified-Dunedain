@@ -2481,6 +2481,11 @@ decision_reunify_numenor_culture = {
 			NOT = { culture = { this = culture:bellanarud } }
 		}
 		
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_unify_southern_adunai
+		}
+		
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
@@ -2601,6 +2606,8 @@ decision_reunify_numenor_culture = {
 				culture:mardrukan = { save_temporary_scope_as = mardrukan_culture }
 				culture:numenorean  = { save_temporary_scope_as = numenorean_culture }
 				culture:kharadunaim  = { save_temporary_scope_as = kharadunaim_culture }
+				culture:kharatakhori = { save_temporary_scope_as = kharatakhori_culture }
+				culture:tanturaki = { save_temporary_scope_as = tanturaki_culture }
 				culture:pharazaini_culture  = { save_temporary_scope_as = pharazaini_culture_culture }
 				# Needs to be above the 'custom_tooltip'
 				custom_tooltip = decision_reunify_numenor_culture_get_innovations
@@ -2620,6 +2627,8 @@ decision_reunify_numenor_culture = {
 					get_all_innovations_from = culture:numenorean 
 					get_all_innovations_from = culture:kharadunaim 
 					get_all_innovations_from = culture:pharazaini_culture
+					get_all_innovations_from = culture:kharatakhori
+					get_all_innovations_from = culture:tanturaki
 					culture:new_numenorean = {
 						add_innovation = innovation_lords_of_the_westlands
 						add_innovation = innovation_lords_of_the_golden_lands
