@@ -186,7 +186,7 @@
 
  #control_of_pharazain_dunedain_full_desc: "You must control at least #V 90%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
 
- control_percentage_of_pharazain_dunedain_desc: "You must control at least #V 95%#! of the [counties|E] of the [GetTitleByKey('e_pharazain').GetName]"
+ control_percentage_of_pharazain_dunedain_desc: "You must control at least #V 95%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
 
  control_of_pharazain_dunedain_desc: "You must control at least #V 70%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
 

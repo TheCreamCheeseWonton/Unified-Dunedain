@@ -2010,11 +2010,16 @@ decision_solidify_pharazain = {
 		#completely_controls = special_pharazain
 		custom_tooltip = {
 			text = control_percentage_of_pharazain_dunedain_desc
-			title:e_pharazain = {
-				any_de_jure_county = {
-					percent > 0.95
-					holder.top_liege = root
+			any_county_in_region = {
+				region = special_pharazain
+				OR = {
+					holder = {
+						is_vassal_or_below_of = root
+					}
+					holder = root
 				}
+				##Quonton
+				percent >= 0.95
 			}
 		}
 		custom_tooltip = {
