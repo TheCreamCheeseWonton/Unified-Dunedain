@@ -1816,7 +1816,7 @@ decision_pharazain_reform_administration = {
 
 	decision_group_type = realms_in_exile_major
 
-	cooldown = { years = 7.5 }
+	cooldown = { years = 5 }
 
 	is_shown = {
 		is_landed = yes
