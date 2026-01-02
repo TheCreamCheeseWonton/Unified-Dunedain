@@ -1834,7 +1834,7 @@ book = {
 				##Quonton
 				OR = { 
 					culture = { has_cultural_pillar = heritage_dunedain }
-					has_cultural_tradition = tradition_new_numenor
+					culture = { has_cultural_tradition = tradition_new_numenor }
 					is_elf = yes
 				}
 			}
