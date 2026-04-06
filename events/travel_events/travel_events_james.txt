@@ -52,24 +52,7 @@ travel_events.4000 = {
 	title = travel_events.4000.t
 	desc = {
 		desc = travel_events.4000.desc.intro
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					root.current_travel_plan = {
-						#travel_plan_progress < 0.5 TODO_CD_EP2, this doesn't work yet
-					}
-				}
 				desc = travel_events.4000.desc.mid.long_to_go
-			}
-			triggered_desc = {
-				trigger = {
-					root.current_travel_plan = {
-						#travel_plan_progress >= 0.5 TODO_CD_EP2, this doesn't work yet
-					}
-				}
-				desc = travel_events.4000.desc.mid.travelled_far
-			}
-		}
 		desc = travel_events.4000.desc.outro
 	}
 	theme = travel
@@ -102,6 +85,9 @@ travel_events.4000 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = mystic_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:mystic_scope = {
@@ -298,23 +284,10 @@ travel_events.4000 = {
 			}
 		}
 	}
-	#Get rid of the mystic if they have not been recruited or killed
+	
 	after = {
-		if = {
-			limit = {
-				NOT = {
-					scope:mystic_scope = { is_courtier_of = root }
-				}
-				scope:mystic_scope = { is_alive = yes }
-			}
 			scope:mystic_scope = {
-				if = {
-					limit = {
-						root = { is_ai = yes }
-					}
-					silent_disappearance_effect = yes
-				}
-			}
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -339,6 +312,10 @@ travel_events.4001 = {
 			group = travel_events.4001
 			match = 0.25
 		}
+		NOR = {
+			religion = { is_in_family = rf_eastern }
+			religion = { is_in_family = rf_sinitic }
+		} 
 		is_available_travelling = yes # Even children were viewed to have been chosen by God and all that
 		is_landed = yes
 		is_location_valid_for_travel_event_on_land = yes
@@ -353,6 +330,9 @@ travel_events.4001 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = loyal_fan_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:loyal_fan_scope = {
@@ -465,23 +445,10 @@ travel_events.4001 = {
 			}
 		}
 	}
-	#Get rid of the fan if they have not been recruited or killed
+	
 	after = {
-		if = {
-			limit = {
-				NOT = {
-					scope:loyal_fan_scope = { is_courtier_of = root }
-				}
-				scope:loyal_fan_scope = { is_alive = yes }
-			}
 			scope:loyal_fan_scope = {
-				if = {
-					limit = {
-						root = { is_ai = yes }
-					}
-					silent_disappearance_effect = yes
-				}
-			}
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -531,8 +498,7 @@ travel_events.4002 = {
 	weight_multiplier = {
 		base = 1
 		modifier = {
-			exists = involved_activity
-			involved_activity = {
+			involved_activity ?= {
 				has_activity_type = activity_pilgrimage
 			}
 			add = -0.5
@@ -555,14 +521,17 @@ travel_events.4002 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = local_beauty_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 	}
 	# Take them as your lover
 	option = {
 		name = travel_events.4002.a
 		trigger = {
-			NOT = { is_elf = yes }
-			cannot_be_killed = no
+			NOT = { is_elf = yes } #LotR
+			cannot_be_killed = no #LotR
 			OR = {
 				allowed_concubines = no
 				allowed_more_concubines = no
@@ -574,6 +543,7 @@ travel_events.4002 = {
 			can_set_relation_lover_trigger = {
 				CHARACTER = scope:local_beauty_scope
 			}
+			lotr_can_recruit = { CHARACTER = scope:local_beauty_scope } #LotR
 		}
 		add_courtier = scope:local_beauty_scope
 		root.current_travel_plan = {
@@ -733,6 +703,11 @@ travel_events.4002 = {
 			}
 		}
 	}
+	after = {
+		scope:local_beauty_scope = {
+			silent_disappearance_ai_if_created_effect = yes
+		}
+	}
 }
 
 # Juke note: Reflavored for Corsairs
@@ -831,7 +806,7 @@ travel_events.4003 = {
 				exists = county #Is this on land and in the landed title structure.
 				county = {
 					holder = { in_diplomatic_range = root }
-					any_county_province = { is_coastal = yes }
+					has_coastal_province = yes
 					# culture = { has_innovation = innovation_longboats } #LotR
 					faith = { has_doctrine_parameter = faith_can_raid }
 					OR = {
@@ -881,7 +856,7 @@ travel_events.4003 = {
 						exists = county #Not at sea, not an impassable
 						county = {
 							holder = { in_diplomatic_range = root }
-							any_county_province = { is_coastal = yes }
+							has_coastal_province = yes
 							# culture = { has_innovation = innovation_longboats } #LotR
 							faith = { has_doctrine_parameter = faith_can_raid }
 						}
@@ -898,6 +873,9 @@ travel_events.4003 = {
 				faith = scope:pirate_county_scope.faith
 				#Set up the scope
 				save_scope_as = viking_scope
+				after_creation = {
+					add_character_flag = created
+				}
 			}
 		}
 		else_if = {
@@ -910,7 +888,7 @@ travel_events.4003 = {
 						exists = county #Not at sea, not an impassable
 						county = {
 							holder = { in_diplomatic_range = root }
-							any_county_province = { is_coastal = yes }
+							has_coastal_province = yes
 							# culture = { has_cultural_pillar = heritage_berber } #LotR
 							#OR = {
 							#	culture = culture:umbarean
@@ -934,6 +912,9 @@ travel_events.4003 = {
 				faith = scope:pirate_county_scope.faith
 				#Set up the scope
 				save_scope_as = viking_scope
+				after_creation = {
+					add_character_flag = created
+				}
 			}
 			scope:viking_scope = {
 				add_trait = lifestyle_mariner
@@ -963,6 +944,9 @@ travel_events.4003 = {
 				faith = root.faith
 				#Set up the scope
 				save_scope_as = viking_scope
+				after_creation = {
+					add_character_flag = created
+				}
 			}
 			scope:viking_scope = {
 				add_trait = lifestyle_mariner
@@ -1310,9 +1294,8 @@ travel_events.4003 = {
 			base = 100
 			modifier = {
 				factor = 0
-				OR = {
 					has_trait = greedy
-				}
+
 			}
 			modifier = {
 				factor = 0
@@ -1320,25 +1303,10 @@ travel_events.4003 = {
 			}
 		}
 	}
+	
 	after = {
-		hidden_effect = {
-			if = {
-				limit = {
-					NOT = {
-						scope:viking_scope = { is_courtier_of = root }
-					}
-					scope:viking_scope = { is_alive = yes }
-					is_alive = no # Allow the player to get revenge if they were killed by the viking
-				}
 				scope:viking_scope = {
-					if = {
-						limit = {
-							root = { is_ai = yes }
-						}
-						silent_disappearance_effect = yes
-					}
-				}
-			}
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -1393,6 +1361,9 @@ travel_events.4004 = {
 			faith = scope:fishermen_county_scope.faith
 			#Set up the scope
 			save_scope_as = fisherman_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 	}
 	# Negotiate for some food
@@ -1503,6 +1474,11 @@ travel_events.4004 = {
 			base = 50
 		}
 	}
+	after = {
+		scope:fisherman_scope = {
+			silent_disappearance_ai_if_created_effect = yes
+		}
+	}
 }
 
 # Encounter a caravan of merchants at sea
@@ -1597,6 +1573,9 @@ travel_events.4005 = {
 				faith = scope:merchant_base_scope.faith
 				#Set up the scope
 				save_scope_as = merchant_character_scope
+				after_creation = {
+					add_character_flag = created
+				}
 			}
 			scope:merchant_character_scope = {
 				random_list = {
@@ -1852,7 +1831,7 @@ travel_events.4005 = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = { scope:merchant_artifact_scope.artifact_owner = root }
+					scope:merchant_artifact_scope.artifact_owner != root
 				}
 				destroy_artifact = scope:merchant_artifact_scope
 			}
@@ -2070,7 +2049,7 @@ travel_events.4007 = {
 				current_travel_plan = {
 					random_entourage_character = {
 						limit = {
-							NOT = { this = root }
+							this != root
 							cannot_be_killed = no #lotr
 						}
 						weight = {
@@ -2538,6 +2517,9 @@ travel_events.4011 = {
 			faith = scope:nearby_coast_scope.faith
 			#Set up the scope
 			save_scope_as = castaway_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 	}
 	# Help them to shore
@@ -2590,24 +2572,10 @@ travel_events.4011 = {
 			compassionate = massive_stress_impact_gain
 		}
 	}
+	
 	after = {
-		hidden_effect = {
-			if = {
-				limit = {
-					NOT = {
-						scope:castaway_scope = { is_courtier_of = root }
-					}
-					scope:castaway_scope = { is_alive = yes }
-				}
 				scope:castaway_scope = {
-					if = {
-						limit = {
-							root = { is_ai = yes }
-						}
-						silent_disappearance_effect = yes
-					}
-				}
-			}
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -2640,6 +2608,12 @@ travel_events.4012 = {
 			culture = { same_race_culture = { TARGET = root.culture } }
 			culture != culture:wastelands
 		}
+		trigger_if = {
+			limit = {
+				is_ai = yes
+			}
+			highest_held_title_tier >= tier_kingdom
+		}
 		cannot_be_killed = no
 	}
 	immediate = {
@@ -2662,7 +2636,7 @@ travel_events.4012 = {
 				# They are feral, they learned very basic language from your party
 				if = {
 					limit = {
-						NOT = { culture = root.culture }
+						culture != root.culture
 						NOT = {
 							culture = {
 								has_same_culture_language = root.culture #Even if the child is from another culture they might speak the same language
@@ -2674,7 +2648,7 @@ travel_events.4012 = {
 				}
 				else_if = {
 					limit = {
-						NOT = { culture = root.culture }
+						culture != root.culture
 					}
 					set_culture = root.culture #For consistency we will set the culture even if it already speaks the same language.
 				}
@@ -2878,10 +2852,22 @@ travel_events.4013 = {
 			limit = {
 				exists = dynasty
 				dynasty.dynast = root
+				NOT = {
+					culture = {
+						has_cultural_tradition = tradition_tgp_japanese_houses
+					}
+				}
 			}
 			dynasty = { add_dynasty_prestige = major_dynasty_prestige_loss }
 		}
-		else = {
+		else_if = {
+			limit = {
+				NOT = {
+					culture = {
+						has_cultural_tradition = tradition_tgp_japanese_houses
+					}
+				}
+			}				
 			add_prestige = massive_prestige_loss
 		}
 		if = {
@@ -3076,11 +3062,11 @@ travel_events.4015 = {
 			NOT = { knows_language_of_culture = root.location.county.culture }
 		}
 		NOT = { culture = { has_same_culture_language = root.location.county.culture } }
-		NOT = {
+		NOT = { #LotR
 			is_orc = yes
 			location = { NOT = { is_orc = yes } }
 		}
-		NOT = {
+		NOT = { #LotR
 			NOT = { is_orc = yes }
 			location = { is_orc = yes }
 		}
@@ -3120,7 +3106,6 @@ travel_events.4015 = {
 				send_interface_toast = {
 					title = travel.got_lost
 					left_icon = root
-					#TODO_CD_EP2 this looks empty in the send_interface_toast - missing DELAY_TRAVEL_PLAN effect?
 					current_travel_plan = {
 						delay_travel_plan = {
 							weeks = 1
@@ -3392,7 +3377,7 @@ travel_events.4017 = {
 		is_location_valid_for_travel_event_on_land = yes
 		root.location = {
 			county = {
-				NOT = { culture = root.capital_county.culture }
+				culture != root.capital_county.culture
 				culture = { 
 					has_cultural_tradition = tradition_swords_for_hire
 					has_cultural_tradition = tradition_ep3_audacious_cadets
@@ -3416,6 +3401,9 @@ travel_events.4017 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = warrior_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:warrior_scope = {
@@ -3580,6 +3568,7 @@ travel_events.4017 = {
 		hidden_effect = {
 			scope:warrior_scope = {
 				remove_character_flag = single_combat_duel_armor
+				silent_disappearance_ai_if_created_effect = yes
 			}
 		}
 	}
@@ -3620,8 +3609,8 @@ travel_events.4018 = {
 		is_location_valid_for_travel_event_on_land = yes
 		location = {
 			county = {
-				NOT = { culture = root.capital_county.culture }
-				NOT = { faith = root.faith }
+				culture != root.capital_county.culture
+				faith.religion != root.faith.religion
 				OR = {
 					faith = { has_doctrine_parameter = mendicant_preachers_conversion_active }
 					culture = { has_cultural_tradition = tradition_mendicant_mystics }
@@ -3637,8 +3626,51 @@ travel_events.4018 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = mystic_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 	}
+
+	# Have them burned
+	option = {
+		name = travel_events.4018.d
+		trigger = {
+			OR = {
+				has_trait = sadistic
+				has_trait = callous
+				has_trait = zealous
+			}
+		}
+		trait = sadistic
+		trait = callous
+		trait = zealous
+		scope:mystic_scope = {
+			death = {
+				killer = root
+				death_reason = death_burned_witch
+			}
+		}
+		stress_impact = {
+			sadistic = medium_stress_impact_loss
+			callous = medium_stress_impact_loss
+			zealous = minor_stress_impact_loss
+			compassionate = major_stress_impact_gain
+			just = major_stress_impact_gain
+			calm = major_stress_impact_gain
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				factor = 100
+				OR = {
+					has_trait = sadistic
+					has_trait = callous
+				}
+			}
+		}
+	}
+	
 	# Debate me in the arena of facts and logic
 	option = {
 		name = travel_events.4018.a
@@ -3664,8 +3696,11 @@ travel_events.4018 = {
 				send_interface_toast = {
 					title = travel.debate_lost
 					left_icon = root
-					add_piety = minor_piety_loss
-					add_stress = minor_stress_gain
+					add_prestige = miniscule_prestige_loss
+					add_courtier = scope:mystic_scope
+					root.current_travel_plan = {
+						add_companion = scope:mystic_scope
+					}
 				}
 			}
 		}
@@ -3688,11 +3723,7 @@ travel_events.4018 = {
 	# They do make some good points...
 	option = {
 		name = travel_events.4018.b
-		trigger = {
-			has_trait = cynical
-		}
 		add_piety = major_piety_loss
-		add_piety_level = -1
 		set_character_faith = scope:mystic_scope.faith
 		if = {
 			limit = {
@@ -3706,6 +3737,12 @@ travel_events.4018 = {
 						scope:loyal_fan_scope = { is_orc = yes }
 					}
 				}
+			}
+			if = {
+				limit = { 
+					scope:mystic_scope.faith = { has_doctrine = doctrine_monotheist }
+				}
+				custom_description_no_bullet = { text = mandala_monotheist_warning_tt }
 			}
 			add_courtier = scope:mystic_scope
 			root.current_travel_plan = {
@@ -3741,53 +3778,10 @@ travel_events.4018 = {
 			base = 100
 		}
 	}
-
-	# Have them burned
-	option = {
-		name = travel_events.4018.d
-		scope:mystic_scope = {
-			death = {
-				killer = root
-				death_reason = death_burned_witch
-			}
-		}
-		stress_impact = {
-			sadistic = medium_stress_impact_loss
-			callous = medium_stress_impact_loss
-			zealous = minor_stress_impact_loss
-			compassionate = major_stress_impact_gain
-			just = major_stress_impact_gain
-			calm = major_stress_impact_gain
-		}
-		ai_chance = {
-			base = 100
-			modifier = {
-				factor = 0
-				OR = {
-					has_trait = compassionate
-					has_trait = just
-					has_trait = calm
-				}
-			}
-		}
-	}
-	#Get rid of the mystic if they have not been recruited or killed
+	
 	after = {
-		if = {
-			limit = {
-				NOT = {
-					scope:mystic_scope = { is_courtier_of = root }
-				}
-				scope:mystic_scope = { is_alive = yes }
-			}
-			scope:mystic_scope = {
-				if = {
-					limit = {
-						root = { is_ai = yes }
-					}
-					silent_disappearance_effect = yes
-				}
-			}
+		scope:mystic_scope = {
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -3819,11 +3813,15 @@ travel_events.4019 = {
 		location = {
 			has_holding = yes
 		}
-		NOT = { location.culture = root.culture }
+		NOT = {
+			location.culture = {
+				has_same_culture_heritage = root.culture
+			}
+		}
 		current_travel_plan = {
 			any_entourage_character = {
 				is_physically_able_ai_adult = yes
-				NOT = { this = root }
+				this != root
 			}
 		}
 	}
@@ -3842,7 +3840,7 @@ travel_events.4019 = {
 			random_entourage_character = {
 				limit = {
 					is_physically_able_ai_adult = yes
-					NOT = { this = root }
+					this != root
 				}
 				weight = {
 					base = 1
@@ -3998,7 +3996,7 @@ travel_events.4020 = {
 		is_location_valid_for_travel_event_on_land = yes
 		location = {
 			county = {
-				NOT = { faith = root.faith }
+				faith.religion != root.faith.religion
 				culture = { has_cultural_tradition = tradition_zealous_people }
 			}
 		}
@@ -4012,6 +4010,9 @@ travel_events.4020 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = strong_believer_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		select_local_animal_effect = { TYPE = prowling } # Save scope to limit possible animals: any/big/small/dangerous/harmless/prowling
 	}
@@ -4124,19 +4125,10 @@ travel_events.4020 = {
 			}
 		}
 	}
+	
 	after = {
-		if = {
-			limit = {
-				scope:strong_believer_scope = { is_alive = yes }
-			}
-			scope:strong_believer_scope = {
-				if = {
-					limit = {
-						root = { is_ai = yes }
-					}
-					silent_disappearance_effect = yes
-				}
-			}
+		scope:strong_believer_scope = {
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -4218,6 +4210,9 @@ travel_events.4021 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = sacrificed_person_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		if = {
 			limit = {
@@ -4250,6 +4245,7 @@ travel_events.4021 = {
 	# Buy the sacrifice as your servant
 	option = {
 		name = travel_events.4021.b
+		trigger = { lotr_can_recruit = { CHARACTER = scope:sacrificed_person_scope } }
 		remove_short_term_gold = medium_gold_value
 		add_courtier = scope:sacrificed_person_scope
 		root.current_travel_plan = {
@@ -4369,6 +4365,7 @@ travel_events.4021 = {
 	after = {
 		scope:sacrificed_person_scope ?= {
 			remove_character_flag = is_naked
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -4408,7 +4405,7 @@ travel_events.4022 = {
 		is_location_valid_for_travel_event_on_land = yes
 		location = {
 			county = {
-				NOT = { faith = root.faith }
+				faith != root.faith
 				faith = { has_doctrine_parameter = believes_in_harmony_with_nature_invisible }
 			}
 		}
@@ -4519,9 +4516,7 @@ travel_events.4022 = {
 							limit = {
 								liege ?= {
 									faith = root.location.county.faith
-									NOT = {
-										this = root.location.county.holder
-									}
+									this != root.location.county.holder
 								}
 							}
 							liege = {
@@ -4611,7 +4606,7 @@ travel_events.4022 = {
 		}
 		if = {
 			limit = {
-				NOT = { root.location.culture = root.culture }
+				root.location.culture != root.culture
 			}
 			root.culture = {
 				change_cultural_acceptance = {
@@ -4689,7 +4684,7 @@ travel_events.4023 = {
 		is_location_valid_for_travel_event_on_land = yes
 		location.county.holder.top_liege ?= {
 			religion = root.religion
-			NOT = { faith = root.faith } # This shouldn't happen for Icelandic Catholics visiting Catholic Jerusalem
+			faith != root.faith # This shouldn't happen for Icelandic Catholics visiting Catholic Jerusalem
 			NOT = { in_diplomatic_range = root }
 			# They must be "surrounded" by other religions
 			save_temporary_scope_as = location_top_liege
@@ -4702,7 +4697,7 @@ travel_events.4023 = {
 			any_neighboring_top_liege_realm = {
 				count > 3
 				holder = {
-					NOT = { religion = scope:location_top_liege.religion }
+					religion != scope:location_top_liege.religion
 				}
 			}
 		}
@@ -4886,7 +4881,7 @@ travel_events.4024 = {
 		name = travel_events.4024.b
 		trigger = {
 			# This should be true anyway, but just in case
-			NOT = { faith = scope:foreign_visitor.faith }
+			faith != scope:foreign_visitor.faith
 		}
 		show_as_tooltip = {
 			duel = {
@@ -5055,7 +5050,7 @@ travel_events.4025 = {
 		every_neighboring_and_across_water_top_liege_realm = {
 			custom = travel_events.4025.different_religion_neighbors_and_vassals
 			limit = {
-				NOT = { holder.religion = root.religion }
+				holder.religion != root.religion
 			}
 			holder = {
 				add_opinion = {
@@ -5069,7 +5064,7 @@ travel_events.4025 = {
 		hidden_effect = {
 			every_vassal = {
 				limit = {
-					NOT = { religion = root.religion }
+					religion != root.religion
 				}
 				add_opinion = {
 					modifier = insult_opinion
@@ -5459,6 +5454,9 @@ travel_events.4029 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = brainless_character
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:brainless_character = {
@@ -5559,6 +5557,11 @@ travel_events.4029 = {
 					has_trait = just
 				}
 			}
+		}
+	}
+	after = {
+		scope:brainless_character = {
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -5758,7 +5761,7 @@ travel_events.4031 = {
 		is_available_travelling = yes
         is_playable_character = yes
 		is_location_valid_for_travel_event_on_land = yes
-		NOT = { location.culture = culture:wastelands }
+		is_valid_for_east_asian_events_trigger = no
 	}
 	immediate = {
 		wayfarer_storyteller_fame_effect = { VALUE = roaming_reward_fame_small }
@@ -5769,6 +5772,9 @@ travel_events.4031 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = heartless_knight_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:heartless_knight_scope = {
@@ -5941,24 +5947,7 @@ travel_events.4031 = {
 		hidden_effect = {
 			scope:heartless_knight_scope = {
 				remove_character_flag = single_combat_duel_armor
-			}
-			if = {
-				limit = {
-					is_ai = yes
-					scope:heartless_knight_scope = {
-						NOT = {
-							is_courtier_of = root
-						}
-					}
-				}
-				scope:heartless_knight_scope = {
-					if = {
-						limit = {
-							root = { is_ai = yes }
-						}
-						silent_disappearance_effect = yes
-					}
-				}
+				silent_disappearance_ai_if_created_effect = yes
 			}
 		}
 	}
@@ -5990,7 +5979,7 @@ travel_events.4032 = {
 		is_location_valid_for_travel_event_on_land = yes
 		current_travel_plan = {
 			any_entourage_character = {
-				NOT = { this = root }
+				this != root
 				is_ai = yes
 				#is_adult = yes
 				is_lotr_adult = yes
@@ -6003,6 +5992,7 @@ travel_events.4032 = {
 		wayfarer_storyteller_fame_effect = { VALUE = roaming_reward_fame_high }
 		hidden_effect = {
 			select_local_animal_effect = { TYPE = prowling } # Save scope to limit possible animals: any/big/small/dangerous/harmless/prowling
+			# LOTR Modified
 			create_character = {
 				template = cowardly_knight
 				location = root.location
@@ -6010,6 +6000,9 @@ travel_events.4032 = {
 				faith = root.location.county.faith
 				#Set up the scope
 				save_scope_as = cowardly_knight_scope
+				after_creation = {
+					add_character_flag = created
+				}
 			}
 			scope:cowardly_knight_scope ?= {
 				give_nickname = nick_the_craven
@@ -6023,7 +6016,7 @@ travel_events.4032 = {
 				ordered_entourage_character = {
 					order_by = prowess
 					limit = {
-						NOT = { this = root }
+						this != root
 						is_ai = yes
 						#is_adult = yes
 						is_lotr_adult = yes
@@ -6051,8 +6044,7 @@ travel_events.4032 = {
 					}
 					if = {
 						limit = {
-							exists = accolade
-							accolade = { is_accolade_active = yes }
+							accolade ?= { is_accolade_active = yes }
 						}
 						accolade = { add_glory = minor_glory_gain }
 					}
@@ -6071,8 +6063,7 @@ travel_events.4032 = {
 					}
 					if = {
 						limit = {
-							exists = accolade
-							accolade = { is_accolade_active = yes }
+							accolade ?= { is_accolade_active = yes }
 						}
 						accolade = { add_glory = minor_glory_gain }
 					}
@@ -6247,6 +6238,11 @@ travel_events.4032 = {
 			}
 		}
 	}
+	after = {
+		scope:cowardly_knight_scope = {
+			silent_disappearance_ai_if_created_effect = yes
+		}
+	}
 }
 
 # A witch who strangely isn't being burned
@@ -6306,6 +6302,9 @@ travel_events.4033 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = witch_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:witch_scope = {
@@ -6333,9 +6332,12 @@ travel_events.4033 = {
 						set_character_faith = root.faith
 						remove_trait = witch
 					}
-					add_courtier = scope:witch_scope
-					root.current_travel_plan = {
-						add_companion = scope:witch_scope
+					if = { #LotR - making sure that witch is recruitable
+						limit = { lotr_can_recruit = { CHARACTER = scope:witch_scope } }
+						add_courtier = scope:witch_scope
+						root.current_travel_plan = {
+							add_companion = scope:witch_scope
+						}
 					}
 				}
 			}
@@ -6390,7 +6392,7 @@ travel_events.4033 = {
 				has_trait = fickle
 				has_trait = arbitrary
 			}
-			scope:witch_scope = { lotr_can_recruit_in_laamp = yes }
+			lotr_can_recruit = { CHARACTER = scope:witch_scope }
 		}
 		give_witch_secret_or_trait_effect = yes
 		add_piety = medium_piety_loss
@@ -6508,23 +6510,10 @@ travel_events.4033 = {
 			}
 		}
 	}
-	#Get rid of the mystic if they have not been recruited or killed
+	
 	after = {
-		if = {
-			limit = {
-				NOT = {
-					scope:witch_scope = { is_courtier_of = root }
-				}
-				scope:witch_scope = { is_alive = yes }
-			}
 			scope:witch_scope = {
-				if = {
-					limit = {
-						root = { is_ai = yes }
-					}
-					silent_disappearance_effect = yes
-				}
-			}
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -6691,6 +6680,9 @@ travel_events.4035 = {
 			faith = root.location.county.faith
 			#Set up the scope
 			save_scope_as = zealous_priest_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:zealous_priest_scope = {
@@ -6946,23 +6938,10 @@ travel_events.4035 = {
 			}
 		}
 	}
-	#Get rid of the mystic if they have not been recruited or killed
+	
 	after = {
-		if = {
-			limit = {
-				NOT = {
-					scope:zealous_priest_scope = { is_courtier_of = root }
-				}
-				scope:zealous_priest_scope = { is_alive = yes }
-			}
 			scope:zealous_priest_scope = {
-				if = {
-					limit = {
-						root = { is_ai = yes }
-					}
-					silent_disappearance_effect = yes
-				}
-			}
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -7002,6 +6981,9 @@ travel_events.4036 = {
 			faith = root.location.faith
 			#Set up the scope
 			save_scope_as = merchant_character_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		root.location.kingdom = { save_scope_as = kingdom_scope }
 		scope:merchant_character_scope = {
@@ -7243,7 +7225,7 @@ travel_events.4036 = {
 		hidden_effect = {
 			if = {
 				limit = {
-					NOT = { scope:merchant_artifact_scope.artifact_owner = root }
+					scope:merchant_artifact_scope.artifact_owner != root
 				}
 				destroy_artifact = scope:merchant_artifact_scope
 			}
@@ -7311,6 +7293,9 @@ travel_events.4037 = {
 			faith = root.location.faith
 			#Set up the scope
 			save_scope_as = fanboy_character_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 	}
 	# Ah, let me teach you all about our lord and savior
@@ -7453,22 +7438,10 @@ travel_events.4037 = {
 			}
 		}
 	}
+	
 	after = {
-		hidden_effect = {
-			if = {
-				limit = {
-					is_ai = yes
-					NOT = { scope:fanboy_character_scope = { is_courtier_of = root } }
-				}
 				scope:fanboy_character_scope = {
-					if = {
-						limit = {
-							root = { is_ai = yes }
-						}
-						silent_disappearance_effect = yes
-					}
-				}
-			}
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }
@@ -7499,7 +7472,7 @@ travel_events.4038 = {
 			barony = { has_wrong_holding_type = no }
 			# Make sure you don't bother player lay clergy characters
 			barony.holder = { is_ai = yes }
-			NOT = { barony.holder = root }
+			barony.holder != root
 		}
 		# OR = { #LotR
 			# AND = {
@@ -7792,6 +7765,9 @@ travel_events.4040 = {
 			faith = root.location.faith
 			#Set up the scope
 			save_scope_as = fanboy_character_scope
+			after_creation = {
+				add_character_flag = created
+			}
 		}
 		hidden_effect = {
 			scope:fanboy_character_scope = {
@@ -7831,8 +7807,8 @@ travel_events.4040 = {
 		custom_tooltip = learn_language_with_bonus_tt
 		hidden_effect = {
 			random_scheme = {
+				type = learn_language
 				limit = {
-					scheme_type = learn_language
 					scheme_target_character = scope:fanboy_character_scope
 				}
 				add_scheme_modifier = { type = xenophile_bonus_modifier }
@@ -7853,6 +7829,11 @@ travel_events.4040 = {
 					has_trait = arrogant
 				}
 			}
+		}
+	}
+	after = {
+		scope:fanboy_character_scope = {
+			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
 }

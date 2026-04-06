@@ -1,9 +1,9 @@
 ﻿east_adunai_colonial = {
 	color = { 145 99 15 }
-	created = 2430.1.1 # Splits into Colonial cultures as the Numenorean Empire rises
+	created = 2432.1.1 # Splits into Colonial cultures as the Numenorean Empire rises
 	parents = { numenorean }
 
-	history_loc_override = numenorean_colonists_history_loc # Generic
+	history_loc_override = east_adunai_colonial_history_loc
 	
 	ethos = ethos_stoic
 	heritage = heritage_eastern_adunaic
@@ -14,7 +14,11 @@
 		tradition_azralai
 		tradition_seafaring
 		tradition_maritime_mercantilism
-		tradition_culture_blending 
+	}
+	dlc_tradition = {
+		trait = tradition_culture_blending
+		requires_dlc_flag = hybridize_culture
+		fallback = tradition_xenophilic
 	}
 	
 	name_list = name_list_south_adunaic
@@ -23,6 +27,8 @@
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
 	unit_gfx = { eastern_unit_gfx }
+	house_coa_frame = house_frame_04
+	dynasty_coa_frame = house_frame_04
 	
 	ethnicities = {
 		1 = black_numenorean_ethnicity
@@ -56,6 +62,8 @@ azralai = {
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
 	unit_gfx = { eastern_unit_gfx }
+	house_coa_frame = house_frame_04
+	dynasty_coa_frame = house_frame_04
 	
 	ethnicities = {
 		1 = khyan_ethnicity

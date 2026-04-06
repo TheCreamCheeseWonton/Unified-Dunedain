@@ -1005,9 +1005,10 @@
 	holding = wastelands_holding
 	buildings = {
 	    flooded_lands
-		bandits
+		pirate_remnants
 	}
 	6900.1.1 = {
+		#Quonton
 		culture = ar_adunaim_numenorean
 		religion = faith_pharazon
 		holding = castle_holding
@@ -1015,6 +1016,15 @@
 		buildings = {
 			castle_01
 			military_camps_01
+		}
+	}
+	7040.7.1 = { # Population wiped from the island in a freak storm
+		culture = wastelands
+		religion = faith_wastelands_pagan
+		holding = wastelands_holding
+		buildings = {
+		    flooded_lands
+			pirate_remnants
 		}
 	}
 }

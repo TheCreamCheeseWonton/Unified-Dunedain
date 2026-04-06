@@ -7,11 +7,7 @@ dynasty_kamal = {
 	culture = umbarean
 	motto = dynn_kamal_motto
 }
-dynasty_calmacilcorsair = {
-	name = "dynn_calmacil"
-	culture = umbarean
-	motto = dynn_calmacil_motto
-}
+
 dynasty_aglarbalak = {
 	name = "dynn_aglarbalak"
 	culture = "umbarean"
@@ -113,6 +109,11 @@ dynasty_erukhath = {
 	name = "dynn_erukhath"
 	culture = "umbarean"
 	motto = dynn_erukhath_motto
+}
+dynasty_romendilion = {
+	name = "dynn_romendilion"
+	culture = "umbarean"
+	motto = dynn_romendilion_motto
 }
 dynasty_sarekori = {
 	name = "dynn_sarekori"

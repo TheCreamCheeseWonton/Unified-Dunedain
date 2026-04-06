@@ -1,12 +1,18 @@
 ﻿### Bellakar Decisions ###
-
 decision_reclaim_mardruak = {
 	title = decision_reclaim_mardruak
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_harad_07.dds"
+		reference = gfx/interface/illustrations/decisions/decision_harad_07.dds
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -25,7 +31,8 @@ decision_reclaim_mardruak = {
 		is_landed = yes
 		OR = {
 			has_title = title:e_bellakar
-			has_title = title:e_pharazain
+			has_title = title:h_pharazain
+			has_title = title:h_numenor_in_exile
 		}
 		OR = {
 			completely_controls = title:k_felaya
@@ -40,9 +47,8 @@ decision_reclaim_mardruak = {
 				target = flag:reclaim_mardruak_decision
 			}
 		}
-		NOR = { # In case its integraded elsehow
+		NOT = { # In case its integraded elsehow
 			title:k_mardruak.empire = title:e_bellakar
-			title:k_mardruak.empire = title:e_pharazain
 		}
 	}
 	is_valid = {
@@ -83,20 +89,27 @@ decision_reclaim_mardruak = {
 	}
 }
 
-decision_bellakar_felayan_rapprochement = {
-	title = decision_bellakar_felayan_rapprochement
+decision_bellakar_felayan_rapproachement = {
+	title = decision_bellakar_felayan_rapproachement
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+		reference = gfx/interface/illustrations/decisions/decision_realm.dds
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
 	ai_potential = {
 		always = yes
 	}
 
-	selection_tooltip = decision_bellakar_felayan_rapprochement_tooltip
-	desc = decision_bellakar_felayan_rapprochement_desc
-	confirm_text = decision_bellakar_felayan_rapprochement_confirm
+	selection_tooltip = decision_bellakar_felayan_rapproachement_tooltip
+	desc = decision_bellakar_felayan_rapproachement_desc
+	confirm_text = decision_bellakar_felayan_rapproachement_confirm
 	
 	decision_group_type = realms_in_exile_major
 	
@@ -183,13 +196,13 @@ decision_bellakar_felayan_rapprochement = {
 			target = flag:bellakar_felayan_rapprochement
 		}
 		save_scope_as = bellakarruler
-		character:lineoftumakveh51 = {
+		character:lineoftumakveh65 = {
 			save_scope_as = amrozir
 		}
-		character:lineoftumakveh65 = {
+		character:lineoftumakveh80 = {
 			save_scope_as = masrakayan
 		}
-		character:lineofvatrathor12 = {
+		character:lineofvatrathor11 = {
 			save_scope_as = zimrubel
 		}
 		if = {
@@ -211,18 +224,137 @@ decision_bellakar_felayan_rapprochement = {
 	}
 }
 
+decision_bellakar_vassalise_izindubeth = {
+	title = decision_bellakar_vassalise_izindubeth
+	picture = {
+		reference = gfx/interface/illustrations/decisions/decision_realm.dds
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
+	ai_potential = {
+		always = yes
+	}
+
+	selection_tooltip = decision_bellakar_vassalise_izindubeth_tooltip
+	desc = decision_bellakar_vassalise_izindubeth_desc
+	confirm_text = decision_bellakar_vassalise_izindubeth_confirm
+	
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		current_year >= 6000
+		culture = {
+			has_cultural_pillar = heritage_bellakari
+		}
+		OR = {
+			has_title = title:e_bellakar
+			has_title = title:h_pharazain
+		}
+		OR = {
+			has_title = title:k_felaya
+			any_vassal = {
+				has_title = title:k_felaya
+			}
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:bellakar_vassalise_izindubeth
+			}
+		}
+	}
+	is_valid = {
+		OR = {
+			faith = faith:faith_infinite_wisdom
+			faith = faith:faith_path_of_wisdom
+		}
+		OR = {
+			faith = faith:faith_path_of_wisdom
+			has_perk = diplomat_perk
+			is_allied_to = title:k_izindizanda_eruhinim.holder
+			title:k_izindizanda_eruhinim.holder = {
+				is_tributary_of_suzerain_or_above = root
+			}
+
+		}
+		trigger_if = {
+			# Make it a bit easier for AI
+			limit = {
+				is_ai = yes
+			}
+			title:k_izindizanda_eruhinim.holder = {
+				opinion = {
+					target = title:e_bellakar.holder
+					value >= 85
+				}
+			}
+			piety_level >= 4
+		}
+		trigger_else = {
+			title:k_izindizanda_eruhinim.holder = {
+				opinion = {
+					target = title:e_bellakar.holder
+					value >= 95
+				}
+			}
+			piety_level >= 5
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	effect = {
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		title:k_izindizanda_eruhinim.holder = {
+			change_liege = {
+				liege = root
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:bellakar_vassalise_izindubeth
+		}
+		trigger_event = bellakar.0302
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
 ## The Korlean League ##
 decision_restore_korlean_league = {
 	title = decision_restore_korlean_league_title
 	picture = {
-		reference = "gfx/interface/illustrations/event_scenes/docks_adunai.dds"
+		reference = gfx/interface/illustrations/event_scenes/docks_adunai.dds
 	}
 
-	ai_goal = no
 	ai_potential = {
 		always = yes
 	}
-	ai_check_interval = 0
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
 
 	selection_tooltip = decision_restore_korlean_league_tooltip
 	desc = decision_restore_korlean_league_desc
@@ -328,15 +460,13 @@ decision_restore_korlean_league = {
 decision_proclaim_pharazain = {
 	title = decision_proclaim_pharazain
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_adunai_01.dds"
+		reference = gfx/interface/illustrations/decisions/decision_adunai_02.dds
 	}
 	
-	ai_goal = yes
+	ai_check_interval = 6
 	ai_potential = {
 		always = yes
 	}
-	
-	sort_order = 100
 
 	selection_tooltip = decision_proclaim_pharazain_tooltip
 	desc = decision_proclaim_pharazain_desc
@@ -352,15 +482,8 @@ decision_proclaim_pharazain = {
 			}
 		}
 		is_landed = yes
-		culture = {
-			OR = {
-				##Quonton
-				has_cultural_pillar = heritage_southern_adunaic
-				has_cultural_pillar = heritage_bellakari
-				has_cultural_pillar = heritage_unified_adunaic
-				##End Quonton
-			}
-		}
+		lotr_has_southern_numenorean_culture_trigger = yes
+		# highest_held_title_tier >= tier_empire # Make it easier to see ~~Aerien - Ahistorical endgame decisions should be somewhat hidden - Trig
 		any_county_in_region = {
 			region = special_pharazain
 			OR = {
@@ -372,12 +495,10 @@ decision_proclaim_pharazain = {
 			##Quonton
 			percent >= 0.5
 		}
-		
 	}
 	is_valid = {
 		prestige_level >= 4
 		piety_level >= 4
-		#completely_controls = special_pharazain
 		custom_tooltip = {
 			##Quonton
 			text = control_of_pharazain_dunedain_desc
@@ -392,11 +513,6 @@ decision_proclaim_pharazain = {
 				##Quonton
 				percent >= 0.7
 			}
-		}
-		OR = {
-			has_primary_title = title:e_bellakar
-			has_primary_title = title:e_thani_hazad
-			has_primary_title = title:e_thon_an_kharlokh
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -470,14 +586,14 @@ decision_proclaim_pharazain = {
 			save_scope_as = title_change
 			add_claim_on_loss = yes
 		}
-		title:e_pharazain = {
+		title:h_pharazain = {
 			change_title_holder = {
 				holder = root
 				change = scope:title_change
 			}
 		}
 		resolve_title_and_vassal_change = scope:title_change
-		set_primary_title_to = title:e_pharazain
+		set_primary_title_to = title:h_pharazain
 		
 
 		add_to_global_variable_list = {
@@ -506,7 +622,7 @@ decision_proclaim_pharazain = {
 						}
 					}
 				}
-				title:e_pharazain.holder = {
+				title:h_pharazain.holder = {
 					add_realm_law_skip_effects = equal_law
 				}
 			}
@@ -548,7 +664,7 @@ decision_deal_with_pharazain_separatism = {
 
 	is_shown = {
 		is_landed = yes
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 
 		highest_held_title_tier >= tier_empire
 		
@@ -586,7 +702,7 @@ decision_deal_with_pharazain_separatism = {
 	}
 	
 	is_valid = {
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 		custom_tooltip = decision_deal_with_pharazain_separatism_not_no_more_separatism_tt
 		OR = {
 			trigger_if = {
@@ -1187,7 +1303,7 @@ decision_integrate_pharazain_province = {
 
 	is_shown = {
 		is_landed = yes
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 
 		highest_held_title_tier >= tier_empire
 		
@@ -1225,7 +1341,7 @@ decision_integrate_pharazain_province = {
 	}
 	
 	is_valid = {
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 		custom_tooltip = decision_deal_with_pharazain_integration_no_more_tt
 		OR = {
 			trigger_if = {
@@ -1820,7 +1936,7 @@ decision_pharazain_reform_administration = {
 
 	is_shown = {
 		is_landed = yes
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 
 		highest_held_title_tier >= tier_empire
 		
@@ -1851,7 +1967,7 @@ decision_pharazain_reform_administration = {
 	}
 	
 	is_valid = {
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 		reserved_gold >= 2500
 	}
 	
@@ -1987,7 +2103,7 @@ decision_solidify_pharazain = {
 
 	# IS_SHOWN
 	is_shown = {
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 
 		highest_held_title_tier >= tier_empire
 		
@@ -2055,86 +2171,8 @@ decision_solidify_pharazain = {
 		give_nickname = nick_pharazain_golden
 		custom_tooltip = decision_solidify_pharazain_tt
 		
-		every_county_in_region = { # Works
-			region = special_pharazain
-			add_to_list = pharazain_counties
-		}
-		hidden_effect = { 
-			every_kingdom = {
-				limit = {
-					OR = {
-						any_de_jure_county = {
-							count > 0
-							is_in_list = pharazain_counties
-						}
-						empire ?= title:e_bellakar
-					}
-				}
-				set_de_jure_liege_title = title:e_pharazain
-			}
-			if = {
-				limit = {
-					exists = title:e_bellakar.holder
-				}
-				title:e_bellakar.holder = {
-					destroy_title = title:e_bellakar
-				}
-			}
-
-			# End Thani Struggle if ongoing
-			if = {
-				limit = {
-					exists = struggle:thani_hazad_struggle
-				}
-				custom_tooltip = numenor_in_exile_thani_struggle_tt
-				hidden_effect = {
-					struggle:thani_hazad_struggle ?= {
-						every_involved_ruler = {
-							send_interface_toast = {
-								type = event_toast_effect_neutral
-								title = numenor_in_exile_thani_struggle_toast
-								left_icon = scope:founder
-								custom_tooltip = numenor_in_exile_thani_struggle_toast_desc
-								if = {
-									limit = {
-										has_trait = balan_lai_member
-									}
-									remove_trait = balan_lai_member
-								}
-								if = {
-									limit = {
-										has_title = title:d_balan_lai_leader
-									}
-									destroy_title = title:d_balan_lai_leader
-								}
-							}
-						}
-						every_interloper_ruler = {
-							send_interface_toast = {
-								type = event_toast_effect_neutral
-								title = numenor_in_exile_thani_struggle_toast
-								left_icon = scope:founder
-								custom_tooltip = numenor_in_exile_thani_struggle_toast_desc
-							}
-						}
-					}
-					struggle:thani_hazad_struggle ?= {
-						end_struggle = yes
-					}
-				}
-			}
-		}
-
-		hidden_effect = {
-			if = {
-				limit = {
-					exists = title:d_balan_lai_leader.holder
-				}
-				title:d_balan_lai_leader.holder = { destroy_title = title:d_balan_lai_leader }
-			}
-			every_balan_lai_member = { remove_trait = balan_lai_member }
-		}
 		trigger_event = pharazain_events.1 # Solidify Empire Flavor
+		form_pharazain_effect = yes
 
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -2164,7 +2202,7 @@ decision_unify_adunai = {
 
 	# IS_SHOWN
 	is_shown = {
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 
 		highest_held_title_tier >= tier_empire
 		
@@ -2307,7 +2345,7 @@ decision_bozisha_dar_tributary = {
 
 	# IS_SHOWN
 	is_shown = {
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 
 		highest_held_title_tier >= tier_empire
 		
@@ -2499,10 +2537,10 @@ decision_unify_southern_adunai = {
 decision_found_tedjin_confederacy = {
 	title = decision_found_tedjin_confederacy
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_horse_race.dds"
+		reference =gfx/interface/illustrations/decisions/decision_horse_race.dds
 	}
 	
-	ai_goal = yes
+	ai_check_interval = 6
 	ai_potential = {
 		always = yes
 	}
@@ -2763,10 +2801,17 @@ decision_found_tedjin_confederacy = {
 decision_refound_qadjajar = {
 	title = decision_refound_qadjajar
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_horse_race.dds"
+		reference =gfx/interface/illustrations/decisions/decision_horse_race.dds
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 24
+		kingdom = 24
+		empire = 24
+		hegemony = 0
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -2778,7 +2823,7 @@ decision_refound_qadjajar = {
 	decision_group_type = realms_in_exile_major
 	
 	is_shown = {
-		current_year >= 4974		# Qadjajar destroyed
+		current_year >= 4974 # Qadjajar destroyed
 		culture = {
 			has_cultural_pillar = heritage_tedjin
 		}
@@ -2794,24 +2839,14 @@ decision_refound_qadjajar = {
 	}
 	is_valid = {
 		completely_controls = title:k_mardruak
-		trigger_if = {
-			limit = {
-				NOT = {
-					is_target_in_global_variable_list = {
-						name = unavailable_unique_decisions
-						target = flag:option_a
-					}
-				}
-			}
-			completely_controls = title:k_felaya			#juke note: moved felaya to this decision
-		}
-		trigger_else = {
-			completely_controls = title:d_hazaj_tollin
-			completely_controls = title:d_adazayin
-			completely_controls = title:d_rothurush
-			completely_controls = title:d_kes_ebb
-			completely_controls = title:d_hulja
-		}
+		completely_controls = title:k_felaya #juke note: moved felaya to this decision
+		# trigger_else = {
+			# completely_controls = title:d_hazaj_tollin
+			# completely_controls = title:d_adazayin
+			# completely_controls = title:d_rothurush
+			# completely_controls = title:d_kes_ebb
+			# completely_controls = title:d_hulja
+		# }
 	}
 	
 	is_valid_showing_failures_only = {
@@ -2904,10 +2939,10 @@ decision_refound_qadjajar = {
 decision_declare_greater_qadjajar = {
 	title = decision_declare_greater_qadjajar
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_harad_04.dds"
+		reference =gfx/interface/illustrations/decisions/decision_harad_04.dds
 	}
 	
-	ai_goal = yes
+	ai_check_interval = 6
 	ai_potential = {
 		always = yes
 	}
@@ -2961,7 +2996,7 @@ decision_declare_greater_qadjajar = {
 			set_global_variable = lotr_achievement_78
 		}
 		title:e_tedjin = {
-			set_title_name = "e_greater_tedjin_name"
+			set_title_name =e_greater_tedjin_name
 		}
 		add_prestige_level = 2
 		add_piety_level = 1
@@ -3041,10 +3076,17 @@ decision_declare_greater_qadjajar = {
 decision_faithful_tedjin_kingdom = {
 	title = decision_faithful_tedjin_kingdom
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_harad_04.dds"
+		reference =gfx/interface/illustrations/decisions/decision_harad_04.dds
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 24
+		empire = 24
+		hegemony = 0
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -3141,6 +3183,9 @@ decision_faithful_tedjin_kingdom = {
 				trigger_event = news_event.0002
 			}
 		}
+		
+		# Effect on elven hope
+		add_elven_hope_global_effect = { VALUE = medium_elven_hope_gain HOPE_EFFECT = effect_elven_hope_global_evil_decreased }
 	}
 
 	ai_will_do = {
@@ -3154,7 +3199,14 @@ decision_greater_faithful_tedjin_kingdom = {
 		reference = "gfx/interface/illustrations/decisions/decision_harad_04.dds"
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 24
+		empire = 24
+		hegemony = 24
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -3282,6 +3334,8 @@ decision_greater_faithful_tedjin_kingdom = {
 				trigger_event = news_event.0003
 			}
 		}
+		# Effect on elven hope
+		add_elven_hope_global_effect = { VALUE = major_elven_hope_gain HOPE_EFFECT = effect_elven_hope_global_evil_decreased }
 	}
 
 	ai_will_do = {
@@ -3289,8 +3343,7 @@ decision_greater_faithful_tedjin_kingdom = {
 	}
 }
 
-##### End of Tedjin decsions ######
-
+##### Bellakar Decisions ######
 decision_bellakar_x_gondor = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_arnor_01.dds"
@@ -3306,11 +3359,11 @@ decision_bellakar_x_gondor = {
 	is_shown = {
 		OR = {
 			has_title = title:e_bellakar
-			has_title = title:e_pharazain
+			has_title = title:h_pharazain
 		}
 		NOT = {
 			has_title = title:e_gondor
-			has_title = title:e_reunitedkingdom
+			has_title = title:h_reunited_kingdom
 		}
 		faith_is_good = yes
 		OR = {
@@ -3319,12 +3372,12 @@ decision_bellakar_x_gondor = {
 				in_diplomatic_range = title:e_gondor.holder
 			}
 			AND = {
-				exists = title:e_reunitedkingdom.holder
+				exists = title:h_reunited_kingdom.holder
 				is_target_in_global_variable_list = {
 					name = unavailable_unique_decisions
 					target = flag:decision_solidify_reunited_kingdom
 				}
-				in_diplomatic_range = title:e_reunitedkingdom.holder
+				in_diplomatic_range = title:h_reunited_kingdom.holder
 			}
 		}
 		dynasty = dynasty:dynasty_tumakveh
@@ -3340,14 +3393,14 @@ decision_bellakar_x_gondor = {
 		}
 		trigger_if = {
 			limit = {
-				exists = title:e_reunitedkingdom.holder
+				exists = title:h_reunited_kingdom.holder
 				is_target_in_global_variable_list = {
 					name = unavailable_unique_decisions
 					target = flag:decision_solidify_reunited_kingdom
 				}
 			}
 			NOT = {
-				is_allied_to = title:e_reunitedkingdom.holder
+				is_allied_to = title:h_reunited_kingdom.holder
 			}
 		}
 		trigger_else = {
@@ -3368,16 +3421,16 @@ decision_bellakar_x_gondor = {
 		sauron_is_alive = yes
 		trigger_if = {
 			limit = {
-				exists = title:e_reunitedkingdom.holder
+				exists = title:h_reunited_kingdom.holder
 				is_target_in_global_variable_list = {
 					name = unavailable_unique_decisions
 					target = flag:decision_solidify_reunited_kingdom
 				}
 			}
-			title:e_reunitedkingdom.holder = {
+			title:h_reunited_kingdom.holder = {
 				faith_is_good = yes
 				OR = {
-					dynasty = dynasty:dynasty_elros
+					# dynasty = dynasty:dynasty_elros
 					dynasty = dynasty:dynasty_elendil
 					dynasty = dynasty:dynasty_anarion
 				}
@@ -3387,7 +3440,7 @@ decision_bellakar_x_gondor = {
 			title:e_gondor.holder = {
 				faith_is_good = yes
 				OR = {
-					dynasty = dynasty:dynasty_elros
+					# dynasty = dynasty:dynasty_elros
 					dynasty = dynasty:dynasty_elendil
 					dynasty = dynasty:dynasty_anarion
 				}
@@ -3403,12 +3456,20 @@ decision_bellakar_x_gondor = {
 		}
 		custom_tooltip = {
 			text = decision_bellakar_x_gondor_custom_tooltip_b
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:bellakar_felayan_rapprochement
+			OR = {
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:bellakar_felayan_rapprochement
+				}
+				# In case you do it not via the decision
+				has_title = title:k_felaya
+				any_vassal_or_below = {
+					has_title = title:k_felaya
+				}
+				completely_controls = title:k_felaya
 			}
 			##Quonton
-			has_title = title:e_pharazain
+			has_title = title:h_pharazain
 		}
 	}
 
@@ -3426,13 +3487,13 @@ decision_bellakar_x_gondor = {
 		}
 		if = {
 			limit = {
-				exists = title:e_reunitedkingdom.holder
+				exists = title:h_reunited_kingdom.holder
 				is_target_in_global_variable_list = {
 					name = unavailable_unique_decisions
 					target = flag:decision_solidify_reunited_kingdom
 				}
 			}
-			title:e_reunitedkingdom.holder = {
+			title:h_reunited_kingdom.holder = {
 				trigger_event = {
 					id = bellakar.0250
 					days = { 15 30 }
@@ -3450,7 +3511,14 @@ decision_bellakar_x_gondor = {
 	}
 
 	# AI
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -3459,6 +3527,197 @@ decision_bellakar_x_gondor = {
 	}
 }
 
+decision_tame_desert = {
+	title = decision_tame_desert
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_tame_desert.dds"
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
+	ai_potential = {
+		always = yes
+	}
+
+	selection_tooltip = decision_tame_desert_tooltip
+	desc = decision_tame_desert_desc
+	confirm_text = decision_tame_desert_confirm
+	
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		culture = {
+			has_cultural_pillar = heritage_bellakari
+		}
+		is_landed = yes
+		
+	    has_title = title:e_bellakar
+			
+		completely_controls = title:k_mardruak
+		
+		any_county_in_region = {
+			region = special_region_west_dune_sea
+			OR = {
+				holder = {
+					is_vassal_or_below_of = root
+				}
+				holder = root
+			}
+			percent >= 0.2
+		}
+
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:tame_desert_decision
+			}
+		}
+		
+	}
+	is_valid = {
+		completely_controls = title:k_tedja
+		completely_controls = title:k_qarsa
+		completely_controls = title:k_aukar
+		custom_tooltip = {
+			text =  conversion_west_dune_sea_desc
+			any_county_in_region = {
+				region = special_region_west_dune_sea
+				percent >= 0.50
+				faith = root.faith
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	effect = {
+		custom_tooltip = tame_desert_effects_tt
+		title:k_tedja = {
+			if = {
+				limit = {
+					NOT = {
+						empire = title:e_bellakar
+					}
+				}
+				set_de_jure_liege_title = title:e_bellakar
+			}
+		}
+		
+		title:k_qarsa = {
+			if = {
+				limit = {
+					NOT = {
+						empire = title:e_bellakar
+					}
+				}
+				set_de_jure_liege_title = title:e_bellakar
+			}
+		}
+		
+		title:k_aukar = {
+			if = {
+				limit = {
+					NOT = {
+						empire = title:e_bellakar
+					}
+				}
+				set_de_jure_liege_title = title:e_bellakar
+			}
+		}
+		
+		give_nickname = nick_sand_lord
+		
+		hidden_effect = {
+			every_sub_realm_county = {
+			limit = {
+					kingdom = title:k_tedja
+					tier = tier_county
+				}
+				
+				
+				if = {
+					limit = {
+						NOT = { culture = root.culture }
+					}
+					
+					random = {
+						chance = 25
+						set_county_culture = culture:bellanarud
+						set_county_faith = root.faith
+					}
+				}
+			}
+		
+			every_sub_realm_county = {
+			limit = {
+					kingdom = title:k_qarsa
+					tier = tier_county
+				}
+				
+				
+				if = {
+					limit = {
+						NOT = { culture = root.culture }
+					}
+					
+					random = {
+						chance = 25
+						set_county_culture = culture:bellanarud
+						set_county_faith = root.faith
+					}
+				}
+			}
+
+			every_sub_realm_county = {
+			limit = {
+					kingdom = title:k_aukar
+					tier = tier_county
+				}
+				
+				
+				if = {
+					limit = {
+						NOT = { culture = root.culture }
+					}
+					
+					random = {
+						chance = 25
+						set_county_culture = culture:bellanarud
+						set_county_faith = root.faith
+					}
+				}
+			}
+		if = {
+			limit = {
+				# Major News
+				NOT = {
+					has_game_rule = no_news
+				}
+			}
+			every_player = { #Global News Announcement
+				trigger_event = news_event.0066
+			}
+		}
+		
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:tame_desert_decision
+		}
+		
+		save_scope_as = desert_tamer
+		
+	}
+}
 
 ### Minor Flavor Decisions ###
 decision_lotr_adopt_cat = {
@@ -3519,7 +3778,15 @@ decision_lotr_adopt_cat = {
 		piety = medium_piety_value
 	}
 
-	ai_check_interval = 60
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 60
+		kingdom = 60
+		empire = 36
+		hegemony = 60
+	}
 	
 	ai_potential = {
 		# Has enough gold.
@@ -3532,7 +3799,7 @@ decision_lotr_adopt_cat = {
 	}
 
 	ai_will_do = {
-		base = 100
+		base = 50
 		# You're richer.
 		modifier = {
 			add = 50
@@ -3542,5 +3809,610 @@ decision_lotr_adopt_cat = {
 			add = 50
 			short_term_gold >= monumental_gold_value
 		}
+	}
+}
+
+# Study Syncretic Texts Decision
+decision_kathasaptha_manuscript = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_culture.dds" }
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 48
+		duchy = 48
+		kingdom = 48
+		empire = 48
+		hegemony = 48
+	}
+	decision_group_type = realms_in_exile_minor
+	cooldown = { days = 3650 } 
+
+	desc = decision_kathasaptha_manuscript_desc
+	selection_tooltip = decision_kathasaptha_manuscript_tooltip
+
+	is_shown = {
+		#is_landed_or_landless_administrative = yes
+		is_playable_character = yes
+		faith = { has_doctrine = tenet_bellakari_syncretism }
+	}
+	
+	is_valid = {
+		faith = { has_doctrine = tenet_bellakari_syncretism }
+	}
+	
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+
+
+	widget = {
+		gui = "decision_view_widget_decision_kathasaptha_manuscript"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "kathasaptha_manuscript_PICK_TYPE"
+		#show_from_start = yes
+		
+		### Kathasaptha
+		item = {
+			value = kathasaptha_manuscript_kathasaptha
+			current_description = kathasaptha_manuscript_kathasaptha_desc
+			localization = kathasaptha_manuscript_kathasaptha_name
+			icon = "gfx/interface/icons/court_position_types/court_tutor_court_position.dds"
+			is_shown = { lotr_show_manuscript_kathasaptha_trigger = yes }
+			ai_chance = {
+				value = 15
+				if = {
+					limit = {
+						religion = religion:bellakari_religion
+					}
+					add = 15
+				}
+			}
+		}
+		
+		### Kat-Polozay
+		item = {
+			value = kathasaptha_manuscript_katpolozay
+			current_description = kathasaptha_manuscript_katpolozay_desc
+			localization = kathasaptha_manuscript_katpolozay_name
+			icon = "gfx/interface/icons/court_position_types/master_bard_camp_officer.dds"
+			is_shown = { lotr_show_manuscript_katpolozay_trigger = yes }
+			ai_chance = {
+				value = 15
+				if = {
+					limit = {
+						religion = religion:far_harad_religion
+					}
+					add = 15
+				}
+			}
+		}
+		
+		### Ure’n Avale
+		item = {
+			value = kathasaptha_manuscript_urenanvale
+			current_description = kathasaptha_manuscript_urenanvale_desc
+			localization = kathasaptha_manuscript_urenanvale_name
+			icon = "gfx/interface/icons/court_position_types/camp_priest_camp_officer.dds"
+			is_shown = { lotr_show_manuscript_urenanvale_trigger = yes }
+			ai_chance = {
+				value = 10
+				if = {
+					limit = {
+						religion = religion:bellakari_religion
+					}
+					add = 10
+				}
+			}
+		}
+		
+		### Bozish-Kolir
+		item = {
+			value = kathasaptha_manuscript_bozishkolir
+			current_description = kathasaptha_manuscript_bozishkolir_desc
+			localization = kathasaptha_manuscript_bozishkolir_name
+			icon = "gfx/interface/icons/court_position_types/chronicler_court_position.dds"
+			is_shown = { lotr_show_manuscript_bozishkolir_trigger = yes }
+			ai_chance = {
+				value = 15
+			}
+		}
+		
+		### Gatar-Azay
+		item = {
+			value = kathasaptha_manuscript_gatarazay
+			current_description = kathasaptha_manuscript_gatarazay_desc
+			localization = kathasaptha_manuscript_gatarazay_name
+			icon = "gfx/interface/icons/court_position_types/court_poet_court_position.dds"
+			is_shown = { lotr_show_manuscript_gatarazay_trigger = yes }
+			ai_chance = {
+				value = 10
+				if = {
+					limit = {
+						religion = religion:far_harad_religion
+					}
+					add = 10
+				}
+			}
+		}
+		
+		### The Missing Mountain
+		item = {
+			value = kathasaptha_manuscript_missingmountain
+			current_description = kathasaptha_manuscript_missingmountain_desc
+			localization = kathasaptha_manuscript_missingmountain_name
+			icon = "gfx/interface/icons/court_position_types/cave_hermit_court_position.dds"
+			is_shown = { lotr_show_manuscript_missingmountain_trigger = yes }
+			ai_chance = {
+				value = 5
+				if = {
+					limit = {
+						religion = religion:bellakari_religion
+					}
+					add = 10
+				}
+			}
+		}
+		
+		### Emissaries in Nature
+		item = {
+			value = kathasaptha_manuscript_emissariesinnature
+			current_description = kathasaptha_manuscript_emissariesinnature_desc
+			localization = kathasaptha_manuscript_emissariesinnature_name
+			icon = "gfx/interface/icons/court_position_types/camelry_captain_camp_officer.dds"
+			is_shown = { lotr_show_manuscript_emissariesinnature_trigger = yes }
+			ai_chance = {
+				value = 5
+				if = {
+					limit = {
+						religion = religion:far_harad_religion
+					}
+					add = 10
+				}
+			}
+		}
+		
+		### Scolding the Flames
+		item = {
+			value = kathasaptha_manuscript_scoldingtheflames
+			current_description = kathasaptha_manuscript_scoldingtheflames_desc
+			localization = kathasaptha_manuscript_scoldingtheflames_name
+			icon = "gfx/interface/icons/court_position_types/cultural_emissary_court_position.dds"
+			is_shown = { lotr_show_manuscript_scoldingtheflames_trigger = yes }
+			ai_chance = {
+				value = 5
+				if = {
+					limit = {
+						religion = religion:far_harad_religion
+					}
+					add = 10
+				}
+				if = {
+					limit = {
+						faith_is_good = yes
+					}
+					add = 5
+				}
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = decision_kathasaptha_manuscript_effect_tooltip_1
+		custom_tooltip = decision_kathasaptha_manuscript_effect_tooltip_2
+		# Not sure why AI can't pick one option or another
+		if = {
+			limit = { is_ai = yes }
+			random_list = {
+				15 = {
+					trigger = { lotr_show_manuscript_kathasaptha_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:kathasaptha
+						days = 730 # Precaution in case it doesn't go away
+					}
+					modifier = {
+						religion = religion:bellakari_religion
+						add = 15
+					}
+				}
+				15 = {
+					trigger = { lotr_show_manuscript_katpolozay_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:katpolozay
+						days = 730 # Precaution in case it doesn't go away
+					}
+					modifier = {
+						religion = religion:far_harad_religion
+						add = 15
+					}
+				}
+				10 = {
+					trigger = { lotr_show_manuscript_urenanvale_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:urenanvale
+						days = 730 # Precaution in case it doesn't go away
+					}
+					modifier = {
+						religion = religion:bellakari_religion
+						add = 10
+					}
+				}
+				15 = {
+					trigger = { lotr_show_manuscript_bozishkolir_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:bozishkolir
+						days = 730 # Precaution in case it doesn't go away
+					}
+				}
+				10 = {
+					trigger = { lotr_show_manuscript_gatarazay_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:gatarazay
+						days = 730 # Precaution in case it doesn't go away
+					}
+					modifier = {
+						religion = religion:far_harad_religion
+						add = 10
+					}
+				}
+				5 = {
+					trigger = { lotr_show_manuscript_missingmountain_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:missingmountain
+						days = 730 # Precaution in case it doesn't go away
+					}
+					modifier = {
+						religion = religion:bellakari_religion
+						add = 10
+					}
+				}
+				5 = {
+					trigger = { lotr_show_manuscript_emissariesinnature_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:emissariesinnature
+						days = 730 # Precaution in case it doesn't go away
+					}
+					modifier = {
+						religion = religion:far_harad_religion
+						add = 10
+					}
+				}
+				5 = {
+					trigger = { lotr_show_manuscript_scoldingtheflames_trigger = yes }
+					set_variable = {
+						name = kathasaptha_manuscript_type
+						value = flag:scoldingtheflames
+						days = 730 # Precaution in case it doesn't go away
+					}
+					modifier = {
+						religion = religion:far_harad_religion
+						add = 10
+					}
+					modifier = {
+						faith_is_good = yes
+						add = 5
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_kathasaptha = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:kathasaptha
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_katpolozay = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:katpolozay
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_urenanvale = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:urenanvale
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_bozishkolir = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:bozishkolir
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_gatarazay = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:gatarazay
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_missingmountain = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:missingmountain
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_emissariesinnature = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:emissariesinnature
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		else_if = {
+			limit = {
+				scope:kathasaptha_manuscript_scoldingtheflames = yes
+			}
+			set_variable = {
+				name = kathasaptha_manuscript_type
+				value = flag:scoldingtheflames
+				days = 730 # Precaution in case it doesn't go away
+			}
+		}
+		trigger_event = kathasaptha.0050
+	}
+
+	cost = {
+		gold = kathasaptha_manuscripts_minor_gold_value # Will depend
+		prestige = medium_prestige_value
+	}
+	
+	ai_potential = {
+		short_term_gold > kathasaptha_manuscripts_minor_gold_value
+		any_character_artifact = { #Dont wanna spam ai inventories
+			count < 3
+			artifact_slot_type = journal
+		}
+	}
+
+	ai_will_do = {
+		base = 25
+		modifier = {
+			add = -15
+			has_trait = cynical
+		}
+		modifier = {
+			add = 5
+			has_trait = zealous
+		}
+		modifier = {
+			add = -20
+			has_trait = lazy
+		}
+		modifier = {
+			add = 5
+			has_trait = diligent
+		}
+		modifier = {
+			add = 10
+			OR = {
+				has_trait = education_learning
+				government_has_flag = government_is_theocracy
+			}
+		}
+		modifier = {
+			add = -15
+			any_equipped_character_artifact = {
+				artifact_slot_type = journal
+			}
+		}
+	}
+}
+
+##Grain dole for Bellakar/Thani Hazad after they take over ambambukan, copy of base decision
+anbalkumagan_grain_dole_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/ep3_decision_hold_triumph.dds"
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
+	sort_order = 40
+
+	desc = anbalkumagan_grain_dole_decision_desc
+	selection_tooltip = anbalkumagan_grain_dole_decision_tooltip
+	decision_group_type = realms_in_exile_major
+
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+
+		# Empire tier Numenorean in the south, who isn't from AB itself
+		highest_held_title_tier >= tier_empire
+		NOT = { capital_province = { geographical_region = custom_anbalkumagan } } # This isn't strange for AB.
+		capital_province = { geographical_region = special_pharazain }
+		lotr_has_numenorean_culture_trigger = yes
+
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:anbalkumagan_grain_dole_decision
+			}
+		}
+	}
+
+	is_valid = {
+		# completely_controls = title:d_korlea # Should work for any capital.
+		completely_controls_region = custom_anbalkumagan
+		custom_tooltip = {
+			text = enough_granaries_in_anbalkumagan
+			any_county_in_region = {
+				region = custom_anbalkumagan
+				count >= 3
+				any_county_province = {
+					has_building_or_higher = cereal_fields_05
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		NOT = { exists = involved_activity }
+		is_imprisoned = no
+		custom_tooltip = {
+			NOT = {
+				capital_county = { has_county_modifier = bread_and_circuses_anbalkumagan_county_modifier }
+			}
+			text = grain_dole_already_active_anbalkumagan
+		}
+	}
+
+	cost = {
+		gold = grain_dole_cost
+	}
+
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:anbalkumagan_grain_dole_decision
+		}
+		trigger_event = bellakar.3000 
+		reinstitute_grain_dole_decision_effect_anbalkumagan = yes
+	}
+
+	ai_potential = {
+		OR = {
+			has_title = title:e_bellakar
+			has_title = title:e_thani_hazad
+			has_title = title:h_pharazain
+			has_title = title:h_numenor_in_exile
+		}
+	}
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+reconfirm_anbalkumagan_grain_dole_decision = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_spend_money.dds"
+	}
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 60
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
+	sort_order = 90
+
+	desc = reconfirm_anbalkumagan_grain_dole_decision_desc
+	selection_tooltip = reconfirm_anbalkumagan_grain_dole_decision_tooltip
+	decision_group_type = realms_in_exile_major
+
+	is_shown = {
+		has_ep3_dlc_trigger = yes
+
+		# Empire tier Numenorean in the south, who isn't from AB itself
+		highest_held_title_tier >= tier_empire
+		NOT = { capital_province = { geographical_region = custom_anbalkumagan } } # This isn't strange for AB.
+		capital_province = { geographical_region = special_pharazain }
+		lotr_has_numenorean_culture_trigger = yes
+
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:anbalkumagan_grain_dole_decision
+		}
+	}
+
+	is_valid = {
+		# completely_controls = title:d_korlea
+		completely_controls_region = custom_anbalkumagan
+		custom_tooltip = {
+			text = enough_granaries_in_anbalkumagan
+			any_county_in_region = {
+				region = custom_anbalkumagan
+				count >= 3
+				any_county_province = {
+					has_building_or_higher = cereal_fields_05
+				}
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		NOT = { exists = involved_activity }
+		is_imprisoned = no
+		custom_tooltip = {
+			NOT = {
+				capital_county = { has_county_modifier = bread_and_circuses_anbalkumagan_county_modifier }
+			}
+			text = grain_dole_already_active
+		}
+	}
+
+	cost = {
+		gold = {
+			value = grain_dole_cost
+			multiply = {
+				value = 0.5
+				desc = unlocked_grain_dole_anbalkumagan
+			}
+		}
+	}
+
+	effect = {
+		send_interface_message = {
+			type = event_title_good
+			title = reconfirm_anbalkumagan_grain_dole_decision_tt
+			right_icon = root
+			reinstitute_grain_dole_decision_effect_anbalkumagan = yes
+		}
+	}
+
+	ai_potential = {
+		OR = {
+			has_title = title:e_bellakar
+			has_title = title:e_thani_hazad
+			has_title = title:h_pharazain
+			has_title = title:h_numenor_in_exile
+		}
+		capital_county = { has_variable = unlocked_grain_dole_anbalkumagan }
+	}
+
+	ai_will_do = {
+		base = 100
 	}
 }

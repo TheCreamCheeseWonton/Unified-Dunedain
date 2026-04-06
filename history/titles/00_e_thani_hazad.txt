@@ -146,6 +146,17 @@ k_an_balkumagan = {
 	6494.6.25 = { # Submission of An-Balkumagan
 		holder = lineofanballukkhorohin18
 		liege = e_thon_an_kharlokh
+		effect = {
+			holder = {
+				vassal_contract_set_obligation_level = { type = feudal_government_levies level = 4 }
+				vassal_contract_set_obligation_level = { type = feudal_government_taxes level = 4 }
+				#vassal_contract_set_obligation_level = { type = special_contract level = 1 }
+				vassal_contract_set_obligation_level = { type = coinage_rights level = 1 }
+				vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 }
+				vassal_contract_set_obligation_level = { type = council_rights level = 1 }
+				vassal_contract_set_obligation_level = { type = war_declaration_rights level = 1 }
+			}
+		}
 	}
 	6501.12.3 = {
 		holder = lineofanballukkhorohin19
@@ -5033,7 +5044,7 @@ c_zairanak = {
 d_mispir = {
 	3770.1.1 = {
 		holder = linemispir1
-		government = oligarchy_government
+		government = oligarchy_government	
 	}
 	3902.8.21 = {
 		holder = linemispir2
@@ -5098,6 +5109,7 @@ d_mispir = {
 	# Modern Mayors
     6859.11.6 = {
 		holder = linekadarei1
+		succession_laws = { oligarchic_elective_succession_law }
 	}
     6920.4.18 = {
 		holder = linekadarei3
@@ -5176,6 +5188,7 @@ c_mispir = {
 	# Modern Mayors
     6859.11.6 = {
 		holder = linekadarei1
+		succession_laws = { oligarchic_elective_succession_law }
 	}
     6920.4.18 = {
 		holder = linekadarei3
@@ -5239,6 +5252,17 @@ b_tharazarul = {
     }
 }
 b_baladursalan = {
+	#Zaradan Political Dynasty
+    6649.11.17 = {
+        holder = lineofzaradancadet3 #Agandua
+    }
+    6731.4.3 = {
+        holder = lineofzaradancadet7 #Afanusi
+    }
+    6825.10.25 = {
+        holder = lineofzaradancadet13 #Abrasimi
+    }
+
 	# Modern Mayors
 	6903.3.17 = {
         holder = linebaladon1 #Nimrube_e_n
@@ -5416,7 +5440,12 @@ c_arurabad = {
     }
     6766.6.13 = {
         holder = linebalkazim9 #U_U_ri_i_zi_i_r
-		liege = d_alsarias		
+		liege = d_alsarias
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}		
     }
     6798.2.16 = {
         holder = linebalkazim11 #Avalo_o_zi_i_r 
@@ -5448,6 +5477,11 @@ c_baranagath = {
 	6578.9.17 = {
         holder = linebalkazim1 #Izindabe_e_n 
 		liege = d_zayanuri
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
     }
     6619.10.4 = {
         holder = linebalkazim3 #Azruzu_u_r 
@@ -5480,6 +5514,11 @@ c_baranagath = {
     6970.1.1 = { # Local Vassal
         holder = linedyeni1
 		liege = d_zayanuri
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
     }
     7004.4.2 = {
         holder = linedyeni3
@@ -5495,6 +5534,11 @@ c_mikurideluk = {
 	6578.9.17 = {
         holder = linebalkazim1 #Izindabe_e_n 
 		liege = d_zayanuri
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
     }
     6619.10.4 = {
         holder = linebalkazim3 #Azruzu_u_r 
@@ -6167,7 +6211,6 @@ c_kadar_an_ninroth = {
 }
 
 
-
 ## Kingdom of Drel
 k_drel = {
 	159.1.1 = {
@@ -6225,7 +6268,8 @@ c_alabgarda = {
 		holder = lineofmeglasul1
 	}
 	3039.11.14 = {
-		holder = lineofmeglasul3
+		holder = lineofarculas1
+		liege = k_drel
 	}
 	3770.1.1 = {
 		change_development_level = 9
@@ -7310,6 +7354,11 @@ c_gulurath = {
     6767.11.25 = {
         holder = linebalisar15 #Tragiyi
 		liege = d_gimileth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
     }
     6799.6.16 = {
         holder = linebalisar17 #Zora_a_n
@@ -7655,6 +7704,11 @@ c_mujua = {
 	6532.12.1 = {
         holder = lineofagathohincadetlw1 # Zabatha_a_nardu
 		liege = k_pel
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
     }
 	6631.2.15 = {
         holder = lineofagathohincadetlw2 # U_U_ri_i_nardu
@@ -7676,6 +7730,12 @@ c_mujua = {
 	6864.6.10 = {
         holder = lineofinigi1 #Nanzegwa
 		liege = k_pel
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+			}
+		}
     }
     6934.3.6 = {
         holder = lineofinigi3 #Ushe
@@ -7697,6 +7757,12 @@ c_kwawiri = {
 	6732.5.16 = {
         holder = lineoflagbeback4 #Anuli
 		liege = k_pel
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+			}
+		}
     }
 	6801.11.13 = {
         holder = lineoflagbeback3 #Ifema
@@ -7727,6 +7793,12 @@ c_omutano = {
     6682.6.10 = {
         holder = lineofodindiLW1 #Deba_a_ra
 		liege = k_pel
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+			}
+		}
     }
     6764.5.22 = {
         holder = lineofodindiLW3 #Zayey
@@ -7760,6 +7832,18 @@ c_mokuba = {
     6542.12.26 = {
         holder = lineofemibiLW1 #Ze_e_na
 		liege = k_pel
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder.top_liege != holder
+				}
+				holder = {
+					vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+					vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+				}
+			}
+		}
     }
     6607.8.27 = {
         holder = lineofemibiLW3 #Yehudith
@@ -7851,7 +7935,13 @@ c_kwazuru = {
 	}
     6682.6.8 = {
         holder = lineofojasowoLW1 #Kyetika_a_nd
-		liege = k_pel		
+		liege = k_pel	
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+			}
+		}	
     }
     6745.10.18 = {
         holder = lineofojasowo1
@@ -7888,6 +7978,12 @@ c_ojua = {
     6611.7.16 = {
         holder = lineofarogweLW1 #Krouko
 		liege = k_pel
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+			}
+		}
     }
     6675.11.27 = {
         holder = lineofarogweLW3 #Da_a_riyko
@@ -7930,6 +8026,12 @@ c_bwakuta = {
     6602.9.28 = {
         holder = lineofjinibiLW1 #Qe_e_nath
 		liege = k_pel
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+			}
+		}
     }
     6652.8.6 = {
         holder = lineofjinibiLW3 #Qa_a_rne_e_n
@@ -7967,7 +8069,20 @@ c_bwakuta = {
 d_barasi = {
 	6561.3.13 = {
         holder = lineofnyere1 # Nyére
+		government = oligarchy_government
+		succession_laws = { oligarchic_elective_succession_law }
 		liege = k_pel
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder.top_liege != holder
+				}
+				holder = {
+					vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				}
+			}
+		}
     }
 	6623.3.12 = {
         holder = lineofnyere2 # Nanzegwa
@@ -8023,6 +8138,7 @@ c_shalala = {
 	6561.3.13 = {
         holder = lineofnyere1 # Nyére
 		government = oligarchy_government
+		succession_laws = { oligarchic_elective_succession_law }
     }
 	6623.3.12 = {
         holder = lineofnyere2 # Nanzegwa
@@ -8060,6 +8176,7 @@ c_kwambiri = {
 	6561.3.13 = {
         holder = lineofnyere1 # Nyére
 		government = oligarchy_government
+		succession_laws = { oligarchic_elective_succession_law }
     }
 	6623.3.12 = {
         holder = lineofnyere2 # Nanzegwa
@@ -8194,6 +8311,17 @@ c_majidodo = {
 	6620.12.1 = {
         holder = lineofobimaji1 # Obibmaje
 		liege = k_pel
+		effect = { #Lotr Tribal Contract
+			if = {
+				limit = {
+					exists = holder
+					holder.top_liege != holder
+				}
+				holder = {
+					vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				}
+			}
+		}
     }
 	6689.3.13 = {
         holder = lineofobimaji2 # Olabode
@@ -8218,6 +8346,18 @@ c_obishamba = {
 	}
 	6620.12.1 = {
         holder = lineofobimaji1 # Obibmaje
+		liege = k_pel
+		effect = { #Lotr Tribal Contract
+			if = {
+				limit = {
+					exists = holder
+					holder.top_liege != holder
+				}
+				holder = {
+					vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				}
+			}
+		}
     }
 	6689.3.13 = {
         holder = lineofobimaji2 # Olabode
@@ -8227,7 +8367,6 @@ c_obishamba = {
     }
 	6741.4.18 = {
         holder = lineofobimaji4 # Majik_ul
-		liege = k_pel
     }
 	6798.1.16 = {
         holder = lineofobimaji5 # Obibmaje II
@@ -8881,6 +9020,11 @@ c_khorphazan = {
     6783.6.23 = {
         holder = linezabathanid3 #Arnuzi_i_l
 		liege = k_gimilthani
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
     }
     6865.10.14 = {
         holder = linezabathanid5 #Arnubalakha_a_n 
@@ -9037,6 +9181,11 @@ c_ninegatan = {
     6756.1.2 = {
         holder = linemurazorhin3 #Zadnazi_i_r
 		liege = k_gimilthani
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
     }
     6804.1.13 = {
         holder = linemurazorhin5 #Be_e_lzagar 
@@ -9242,6 +9391,11 @@ c_kalabanad = {
 	5345.9.13 = {
 		holder = linegimilurush35
 		liege = d_azarideth
+		effect = { 
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
 	}
 	5451.5.4 = {
 		holder = linegimilurush36
@@ -9379,6 +9533,11 @@ c_nashun = {
 	5347.4.17 = {
 		holder = linegimilurush20
 		liege = k_gimilthani
+		effect = { 
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
 	}
 	5449.6.21  = {
 		holder = linegimilurush22
@@ -9522,6 +9681,11 @@ c_gulzur = {
 	5347.4.17 = {
 		holder = linegimilurush20
 		liege = k_gimilthani
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
 	}
 	5449.6.21  = {
 		holder = linegimilurush22
@@ -9609,6 +9773,11 @@ c_gulzur = {
 	6980.12.12 = {
         holder = lineoruni1
 		liege = k_gimilthani
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
     }
     7027.12.1 = {
         holder = lineoruni5
@@ -9670,6 +9839,11 @@ c_khasharun = {
 	5347.4.17 = {
 		holder = linegimilurush20
 		liege = k_gimilthani
+		effect = { 
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
 	}
 	5449.6.21  = {
 		holder = linegimilurush22
@@ -9755,6 +9929,11 @@ c_khasharun = {
 	7029.2.19 = {
 		holder = lineofawon1
 		liege = k_gimilthani
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
 	}
 }
 c_izmathar = {
@@ -9816,6 +9995,11 @@ c_izmathar = {
 	5345.9.13 = {
 		holder = linegimilurush35
 		liege = d_azarideth
+		effect = { 
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
 	}
 	5451.5.4 = {
 		holder = linegimilurush36
@@ -9897,6 +10081,11 @@ c_izmathar = {
 	6984.9.26 = {
         holder = lineurwon1
 		liege = d_azarideth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
     }
     7069.10.25 = {
         holder = lineurwon3
@@ -10418,6 +10607,11 @@ c_anatharik = {
 	6736.1.1 = {
 		holder = lineofinzillonitwo1
 		liege = d_inzilloni
+		effect = { 
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
 	}
 	6810.1.1 = {
 		holder = lineinzillonitwo2
@@ -11010,10 +11204,15 @@ c_azarideth = {
 c_zoluran = {
 	3770.1.1 = {
 		change_development_level = 6
-		}
+	}
 	6781.1.1 = {
 		holder = sedericharacterazar65
 		liege = d_azarideth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
 	}
 	6836.8.11 = {
 		holder = sedericharactertwo22
@@ -11045,6 +11244,11 @@ c_thazlo = {
 	6781.1.1 = {
 		holder = sedericharacterazar65
 		liege = d_azarideth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
 	}
 	6836.8.11 = {
 		holder = sedericharactertwo22
@@ -11426,6 +11630,11 @@ c_tharonbal = {
 	6762.11.9 = {
 		holder = sedericharacterazar64
 		liege = d_azarideth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
 	}
 	6795.6.28 = {
 		holder = sedericharacterazar67
@@ -12047,6 +12256,11 @@ c_sazaran = {
 	6759.1.4 = {
 		holder = sedericharacterthree28
 		liege = d_holzoreth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
 	}
 	6789.12.3 = {
 		holder = sedericharacterthree34
@@ -12147,6 +12361,11 @@ c_azulan = {
 	6783.2.1 = {
 		holder = sedericharacterfive2
 		liege = d_holzoreth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+			}
+		}
 	}
 	6818.11.11 = {
 		holder = sedericharacterfive4
@@ -12554,6 +12773,7 @@ c_aganarukh = {
 	}
 	6748.4.18 = {
         holder = northguardian7
+		government = feudal_government
     }
 	6800.8.19 = {
         holder = northguardian6
@@ -12561,6 +12781,12 @@ c_aganarukh = {
 	6843.9.2 = {
 		holder = sedericharacterfour1
 		liege = d_holzoreth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 3 }
+			}
+		}
 	}
 	6880.7.14 = {
 		holder = sedericharacterfour3
@@ -12607,14 +12833,22 @@ c_anaduniakho = {
 	7021.8.12 = {
 		holder = lineofburkkharat1
 		liege = d_holzoreth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				vassal_contract_set_obligation_level = { type = special_contract level = 3 }
+			}
+		}
 	}
 }
 c_dolgunai = {
 	3770.1.1 = {
-		change_development_level = 3
+		change_development_level = 4
+		government = feudal_government
 	}
 	6731.3.17 = {
 		holder = sedericharacterprefour2
+
 		liege = d_holzoreth
 	}
 	6809.3.19 = {
@@ -12664,6 +12898,11 @@ c_zayanaglar = {
 	6940.12.11 = {
         holder = northguardian3
 		liege = d_holzoreth
+		effect = { 
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
     }
 	6967.3.2 = {
         holder = northguardian2

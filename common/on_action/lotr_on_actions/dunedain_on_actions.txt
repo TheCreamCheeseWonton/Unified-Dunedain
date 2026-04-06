@@ -8,7 +8,7 @@ lotr_yearly_playable_pulse = { on_actions = { pharazain_events }}
 
 pharazain_events = {
 	trigger = {
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:separatism_has_started

@@ -14,7 +14,6 @@ numenoreanblood.1000 = { #Check for dead character
 				NOT = { this = root }
 				##Quonton
 				culture = { OR = { has_cultural_pillar = heritage_dunedain has_cultural_tradition = tradition_new_numenor } }
-				# any_child = { count > 0 }
 			}
 			trigger_event = numenoreanblood.1001
 				
@@ -43,7 +42,23 @@ numenoreanblood.1001 = { #Widow event for widow
 	content_source = realms_dlc
 	type = character_event
 	title = numenoreanblood.1001.t
-	desc = numenoreanblood.1001.desc
+	desc = {
+		desc = numenoreanblood.1001.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					any_child = { count > 0 }
+				}
+				desc = numenoreanblood.1001.desc.child
+			}
+			triggered_desc = {
+				trigger = {
+					NOT = { any_child = { count > 0 } }
+				}
+				desc = numenoreanblood.1001.desc.childless
+			}
+		}
+	}
 	theme = unfriendly
 	left_portrait = {
 		character = root
@@ -84,7 +99,12 @@ numenoreanblood.1001 = { #Widow event for widow
 	}
 	option = { # I will find another
 		name = numenoreanblood.1001.b
-		add_piety_level = -1
+		if = { # Only loose devotion if you already have kids
+			limit = {
+				NOT = { any_child = { count > 0 } }
+			}
+			add_piety_level = -1
+		}
 		add_character_modifier = refused_widowhood_modifier
 		stress_impact = {
 			chaste = major_stress_impact_gain
@@ -522,6 +542,18 @@ numenoreanblood.0001 = {
 					}						
 					add = -8
 				}		
+				modifier = {
+					scope:real_father = {
+						has_trait = kidnapper
+					}						
+					add = -24
+				}
+				modifier = {
+					scope:mother = {
+						has_trait = kidnapper
+					}						
+					add = -24
+				}
 				modifier = {
 					scope:real_father = {
 						any_secret = { secret_type = secret_deviant }
@@ -1047,6 +1079,18 @@ numenoreanblood.0001 = {
 						has_trait = drunkard
 					}						
 					add = 8
+				}
+				modifier = {
+					scope:real_father = {
+						has_trait = kidnapper
+					}						
+					add = 24
+				}
+				modifier = {
+					scope:mother = {
+						has_trait = kidnapper
+					}						
+					add = 24
 				}
 				modifier = {
 					scope:real_father = {
@@ -1619,6 +1663,18 @@ numenoreanblood.0001 = {
 						has_trait = drunkard
 					}						
 					add = -4
+				}
+				modifier = {
+					scope:real_father = {
+						has_trait = kidnapper
+					}						
+					add = -12
+				}
+				modifier = {
+					scope:mother = {
+						has_trait = kidnapper
+					}						
+					add = -12
 				}
 				modifier = {
 					scope:real_father = {
@@ -2323,6 +2379,18 @@ numenoreanblood.0001 = {
 					}						
 					add = 4
 				}	
+				modifier = {
+					scope:real_father = {
+						has_trait = kidnapper
+					}						
+					add = 24
+				}
+				modifier = {
+					scope:mother = {
+						has_trait = kidnapper
+					}						
+					add = 24
+				}
 				modifier = {
 					scope:real_father = {
 						any_secret = { secret_type = secret_deviant }

@@ -419,7 +419,7 @@ convert_to_administrative_from_feudalism_effect_pharazain = {
 					any_held_title = { is_noble_family_title = yes }
 				}
 			}
-			create_noble_family_effect = yes
+			create_noble_family_effect = { GOVERNMENT_GIVER = this }
 		}
 	}
 

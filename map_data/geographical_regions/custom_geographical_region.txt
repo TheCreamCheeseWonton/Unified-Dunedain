@@ -50,7 +50,7 @@ custom_arnor_minus_shire = {
 		d_dor_en_egladil d_cameth_brin d_hithaeglir_forn d_hithaeglir_harad d_dol_tiriamon d_dyr_eldanaryon d_dul_glandagol 
 	}
 	counties = {
-		c_dol_daergorthad c_iarond c_andrath c_tyrn_harad c_glandagol
+		c_iarond c_andrath c_glandagol c_pinnath_charn c_tyrn_gorthad
 	}
 }
 

@@ -186,8 +186,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = saruman_hair
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_02
 			}
 			accessory = {
 				mode = add
@@ -249,6 +249,12 @@
 				gene = headgear
 				template = wam_light_headgears
 				value = 0  # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = boots_legwear
+				accessory = male_boots_dragon_prince01
 			}
 			accessory = {
 				mode = add
@@ -323,7 +329,7 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = hobbit_war_headgear
+				template = eriador_war_headgear
 				accessory = male_headgear_secular_fp2_iberian_christian_common_01
 			}
 			accessory = {
@@ -826,8 +832,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofingwe3
-				this = character:lineofingwe3
+				exists = character:lineofingwe2
+				this = character:lineofingwe2
 			}
 		}
 	}
@@ -851,8 +857,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofingwe7
-				this = character:lineofingwe7
+				exists = character:lineofingwe4
+				this = character:lineofingwe4
 			}
 		}
 	}
@@ -954,6 +960,31 @@
 				exists = this
 				exists = character:lineofcirdan
 				this = character:lineofcirdan
+			}
+		}
+	}
+	voronwe_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofaranwe2
+				this = character:lineofaranwe2
 			}
 		}
 	}
@@ -1087,8 +1118,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofingwe5
-				this = character:lineofingwe5
+				exists = character:lineofingwe3
+				this = character:lineofingwe3
 			}
 		}
 	}	
@@ -1164,8 +1195,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoffingolfin4
-				this = character:lineoffingolfin4
+				exists = character:lineoffingolfin3
+				this = character:lineoffingolfin3
 			}
 		}
 	}
@@ -1249,7 +1280,7 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = rhunnic_hairstyles_straight
+				template = all_hairstyles_straight
 				accessory = am_fp1_hair_combo_d2
 			}
 			accessory = {
@@ -1323,8 +1354,8 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = barbershop_headgear_lotr
-				accessory = male_headgear_elven_nobility_03	
+				template = elven_high_headgear
+				accessory = male_headgear_elven_nobility_03
 			}			
 		}   
 		weight = {
@@ -1533,8 +1564,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoffingolfin5
-				this = character:lineoffingolfin5
+				exists = character:lineoffingolfin4
+				this = character:lineoffingolfin4
 			}
 		}
 	}
@@ -1558,8 +1589,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoffingolfin8
-				this = character:lineoffingolfin8
+				exists = character:lineoffingolfin7
+				this = character:lineoffingolfin7
 			}
 		}
 	}
@@ -1735,8 +1766,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoffingolfin6
-				this = character:lineoffingolfin6
+				exists = character:lineoffingolfin5
+				this = character:lineoffingolfin5
 			}
 		}
 	}
@@ -1761,8 +1792,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoffingolfin3
-				this = character:lineoffingolfin3
+				exists = character:lineofmalantur11
+				this = character:lineofmalantur11
 			}
 		}
 	}
@@ -1781,14 +1812,21 @@
 				template = all_beards
 				value = 0.0
 			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = no_legwear
+				value = 0.0
+				type = female				 
+			}			
 		}   
 		weight = {
 			base = 0
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoffingolfin7
-				this = character:lineoffingolfin7
+				exists = character:lineoffingolfin6
+				this = character:lineoffingolfin6
 			}
 		}
 	}
@@ -1812,8 +1850,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoffingolfin9
-				this = character:lineoffingolfin9
+				exists = character:lineoffingolfin8
+				this = character:lineoffingolfin8
 			}
 		}
 	}
@@ -1837,6 +1875,12 @@
 				template = elven_high_headgear
 				accessory = male_headgear_elven_nobility_01
 			}
+			accessory = {
+				mode = add
+				gene = clothes
+				template = noldor_high_clothes
+				accessory = male_clothes_elrond_01
+			}				
 		}   
 		weight = {
 			base = 0
@@ -1845,6 +1889,45 @@
 				exists = this
 				exists = character:lineofelrond1
 				this = character:lineofelrond1
+				game_start_date >= 4032.1.1
+			}
+		}
+	}
+	elrond_WATLA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = elven_high_headgear
+				accessory = male_headgear_elven_nobility_01
+			}
+			accessory = {
+				mode = add
+				gene = clothes
+				template = noldor_high_clothes
+				accessory = male_clothes_elrond_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofelrond1
+				this = character:lineofelrond1
+				game_start_date < 4032.1.1
 			}
 		}
 	}
@@ -2090,8 +2173,8 @@
 			accessory = {
 				mode = add
 				gene = clothes
-				template = falathrim_high_clothes
-				accessory = female_clothes_falathrim_nobility_01_high
+				template = noldor_high_clothes
+				accessory = female_clothes_secular_crownlands_dress_galadriel
 				type = female				 
 			}
 			accessory = {
@@ -2773,6 +2856,83 @@
 			}
 		}
 	}
+	alassiel_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = high_elvish_hairstyles_no_dlc
+				accessory = female_hair_custom_12
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoflanthir2
+				this = character:lineoflanthir2
+			}
+		}
+	}
+	carangileth_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_43
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoflanthir3
+				this = character:lineoflanthir3
+			}
+		}
+	}
+	aramagor_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_11
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoflanthir4
+				this = character:lineoflanthir4
+			}
+		}
+	}
 	elros_mirkwood_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -2798,20 +2958,19 @@
 			}
 		}
 	}
-	lothetari_portrait = { 
+	gwendil_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = female_hair_fp1_02
-				type = female
+				accessory = m_hair_fp3_iranian_01
 			}
 			accessory = {
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_mena_04
+				value = 0.0
 			}
 		}   
 		weight = {
@@ -2819,8 +2978,34 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:elroswife
-				this = character:elroswife
+				exists = character:lineofgwendil3
+				this = character:lineofgwendil3
+			}
+		}
+	}
+	melleth_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = female_hair_fp1_05
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofgwendil4
+				this = character:lineofgwendil4
 			}
 		}
 	}
@@ -3001,6 +3186,132 @@
 			}
 		}
 	}
+	eltariel_armor_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = female_hair_western_05
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = stealth_headgear
+				accessory = female_clothes_situational_western_stealth_hood_01
+				type = female
+			}			
+			accessory = {
+				mode = add
+				gene = clothes
+				template = elven_war_high_clothes
+				accessory = f_clothes_noldor_war_valinor
+				type = female				
+			}
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = elven_war_cloaks_moriquendi
+				accessory = female_cloaks_elven_war_moriquendi
+				type = female				
+			}						
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 9999
+                #portrait_wear_armor_trigger = yes
+				exists = this
+				exists = character:lineofeltariel
+				this = character:lineofeltariel
+			}
+		}
+	}
+	rumilien_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_43
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofrumilien
+				this = character:lineofrumilien
+			}
+		}
+	}			
+	mirwen_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_19
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmirwen
+				this = character:lineofmirwen
+			}
+		}
+	}	
+	cuilebeth_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_08
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofcuilebeth
+				this = character:lineofcuilebeth
+			}
+		}
+	}				 
 	glorfindel_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -3081,8 +3392,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = saruman_hair
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_02
 			}
 			accessory = {
 				mode = add
@@ -3261,8 +3572,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = saruman_hair
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_02
 			}
 			accessory = {
 				mode = add
@@ -3322,7 +3633,7 @@
 				template = all_beards
 				value = 0.0 
 			}
-		}   
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -3333,7 +3644,6 @@
 			}
 		}
 	}
-	
 	therail_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -3349,7 +3659,7 @@
 				template = all_beards
 				value = 0.0
 			}
-		}   
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -3360,13 +3670,38 @@
 			}
 		}
 	}
-	shelepinn_portrait = { #Queen of the Kinn-Lai in 3000TA
+	tainalann_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_15
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0 
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftainalann1
+				this = character:lineoftainalann1
+			}
+		}
+	}
+	tivpai_portrait = { # Queen Consort of the Whole of the Kinn-lai
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = female_hair_western_05
+				accessory = female_hair_western_10
 				type = female
 			}
 			accessory = {
@@ -3375,7 +3710,33 @@
 				template = all_beards
 				value = 0.0
 			}
-		}   
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftainalann2
+				this = character:lineoftainalann2
+			}
+		}
+	}
+	shelepinn_portrait = { # Queen of the Western Kinn-lai
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = female_hair_indian_02
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -3383,6 +3744,56 @@
 				exists = this
 				exists = character:lineoftainalann3
 				this = character:lineoftainalann3
+			}
+		}
+	}
+	tulanal_portrait = { # First King of the Eastern Kinn-lai
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0 
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftainalann5
+				this = character:lineoftainalann5
+			}
+		}
+	}
+	dalavin_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles_straight
+				accessory = am_fp1_hair_combo_d2
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0 
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftainalann10
+				this = character:lineoftainalann10
 			}
 		}
 	}
@@ -3400,7 +3811,7 @@
 				template = all_beards
 				value = 0.0 
 			}
-		}   
+		}
 		weight = {
 			base = 0
 			modifier = {
@@ -3411,7 +3822,7 @@
 			}
 		}
 	}
-	astaldlai_portrait = { 
+	astald_portrait = { 
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -3425,14 +3836,14 @@
 				template = all_beards
 				value = 0.0 
 			}
-		}   
+		}
 		weight = {
 			base = 0
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofastaldlai1
-				this = character:lineofastaldlai1
+				exists = character:lineofastald1
+				this = character:lineofastald1
 			}
 		}
 	}
@@ -4000,9 +4411,9 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = barbershop_headgear_lotr
-				accessory = male_headgear_elven_nobility_01
-			}						
+				template = western_dwarf_low_headgear
+				accessory = male_headgear_secular_byzantine_common_01
+			}					
 		}   
 		weight = {
 			base = 0
@@ -4209,7 +4620,7 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = dwarf_low_headgear
+				template = western_dwarf_low_headgear
 				accessory = male_headgear_secular_byzantine_common_01
 			}					
 		}   
@@ -4224,6 +4635,110 @@
 		}
 	}
 
+	gorin_brother_of_durin_IV_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin45a
+				this = character:lineofdurin45a
+			}
+		}
+	}
+
+	buri_son_of_durin_IV_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_01
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin46a
+				this = character:lineofdurin46a
+			}
+		}
+	}
+
+	borin_son_of_durin_IV_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin46
+				this = character:lineofdurin46
+			}
+		}
+	}
+
+	westri_father_of_durin_V_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_01
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin58
+				this = character:lineofdurin58
+			}
+		}
+	}
+	
 	nain_I_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -4255,14 +4770,20 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = male_hair_fp1_08
+				template = mountain_orc_hairstyles
+				accessory = male_hair_fp1_05
 			}
 			accessory = {
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_indian_03
+				accessory = male_beard_fp1_05
+			}
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 } # For the randomness to work correctly
 			}				
 		}   
 		weight = {
@@ -4328,6 +4849,1086 @@
 		}
 	}
 
+	gloin_son_of_thorin_I_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin76
+				this = character:lineofdurin76
+			}
+		}
+	}
+
+	oin_father_of_nain_II_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin77
+				this = character:lineofdurin77
+			}
+		}
+	}
+
+	wegdrasil_the_woodcutter_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofwegdrasil1
+				this = character:lineofwegdrasil1
+			}
+		}
+	}
+
+	heri_of_kheledul_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuni31
+				this = character:lineofuni31
+			}
+		}
+	}
+
+	iwaldi_of_isrujul_abad_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_07
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofatrub81
+				this = character:lineofatrub81
+			}
+		}
+	}
+
+	skirfir_of_zirin_ashmur_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_15
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzabdith82
+				this = character:lineofzabdith82
+			}
+		}
+	}
+
+	berling_of_durins_anvil_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftherrel71
+				this = character:lineoftherrel71
+			}
+		}
+	}
+
+	gud_of_barukkizdin_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_09
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoffalna50
+				this = character:lineoffalna50
+			}
+		}
+	}
+
+	westri_of_basn_junud_egam_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_05
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofhunduzir47
+				this = character:lineofhunduzir47
+			}
+		}
+	}
+
+	thuror_II_of_enad_agmal_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmorthain74
+				this = character:lineofmorthain74
+			}
+		}
+	}
+
+	moin_III_of_tagakhgershad_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmazdul91
+				this = character:lineofmazdul91
+			}
+		}
+	}
+
+	telchar_of_fahamgathol_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_15
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_indian_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofufham_ashamur18
+				this = character:lineofufham_ashamur18
+			}
+		}
+	}
+
+	anar_bilbo_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofanarbilbo
+				this = character:lineofanarbilbo
+			}
+		}
+	}
+
+	hannar_bilbo_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofhannarbilbo
+				this = character:lineofhannarbilbo
+			}
+		}
+	}
+
+	nar_bilbo_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofnarbilbo
+				this = character:lineofnarbilbo
+			}
+		}
+	}
+
+	lofar_bilbo_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoflofarbilbo
+				this = character:lineoflofarbilbo
+			}
+		}
+	}
+
+	buin_son_of_dwalin_V_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin73
+				this = character:lineofdwalin73
+			}
+		}
+	}
+
+	farin_II_of_intukagla_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_07
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofhor34
+				this = character:lineofhor34
+			}
+		}
+	}
+
+	atwar_of_dronun_dum_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdelingur35
+				this = character:lineofdelingur35
+			}
+		}
+	}
+
+	nali_of_barak_shatur_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_03
+			}
+			accessory = {
+				mode = add	
+				gene = headgear
+				template = western_dwarf_low_headgear
+				accessory = male_headgear_epe_western_dwarf_lo_nob_03
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftheklel48
+				this = character:lineoftheklel48
+			}
+		}
+	}
+
+	vogur_II_of_abkhuz_buzra_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbravesoul91
+				this = character:lineofbravesoul91
+			}
+		}
+	}
+
+	mondul_of_ibriz_idzab_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_saruman
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmorthain84
+				this = character:lineofmorthain84
+			}
+		}
+	}
+
+	lofar_of_bundushathur_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linefrolni23
+				this = character:linefrolni23
+			}
+		}
+	}
+
+	buri_of_barazinbar_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linemithur21
+				this = character:linemithur21
+			}
+		}
+	}
+
+	wigur_of_central_halls_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_indian_03
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linegrosi23
+				this = character:linegrosi23
+			}
+		}
+	}
+
+	falar_of_etharul_nula_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linemarin21
+				this = character:linemarin21
+			}
+		}
+	}
+
+	fain_of_sigin_dum_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_01
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linebrogur21
+				this = character:linebrogur21
+			}
+		}
+	}
+
+	ginar_of_east_hall_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linemardin19
+				this = character:linemardin19
+			}
+		}
+	}
+
+	an_of_chamber_of_mazarbul_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linedrar19
+				this = character:linedrar19
+			}
+		}
+	}
+
+	eikur_of_gairurakhanin_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linesamar27
+				this = character:linesamar27
+			}
+		}
+	}
+
+	heri_II_of_jazargund_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_11
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_indian_03
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linebrogni25
+				this = character:linebrogni25
+			}
+		}
+	}
+
+	nithi_II_of_west_hall_ROA_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_sp4_mena_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linethorak19
+				this = character:linethorak19
+			}
+		}
+	}
+
+	kifur_braveheart_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbraveheart1
+				this = character:lineofbraveheart1
+			}
+		}
+	}
+
+	busa_wife_of_kifur_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_41
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = dwarven_beards
+				accessory = female_beard_western_07
+				type = female
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbraveheart2
+				this = character:lineofbraveheart2
+			}
+		}
+	}
+
+	urkam_son_of_kifur_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbraveheart3
+				this = character:lineofbraveheart3
+			}
+		}
+	}
+
+	khuntar_son_of_kifur_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_christian_03
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbraveheart4
+				this = character:lineofbraveheart4
+			}
+		}
+	}
+
+	gloin_of_mekhem_ursel_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofstonewall52
+				this = character:lineofstonewall52
+			}
+		}
+	}
+
+	northri_of_amakh_arasi_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_indian_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofubraz23
+				this = character:lineofubraz23
+			}
+		}
+	}
+
+	thuror_of_athak_zirin_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofhersarbinshmur84
+				this = character:lineofhersarbinshmur84
+			}
+		}
+	}
+
+	farin_of_agzarasi_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_01
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofidagazay49
+				this = character:lineofidagazay49
+			}
+		}
+	}
+
+	grimur_of_rasinut_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles_wavy
+				accessory = mesohair_northern_01b
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofarsan52
+				this = character:lineofarsan52
+			}
+		}
+	}
+
 	gamilzirak_portrait = { # Based on art piece from 'Gamil Zirak' by Lída Holubová https://tolkiengateway.net/wiki/Gamil_Zirak
 		dna_modifiers = {
 			accessory = {
@@ -4345,7 +5946,7 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = dwarf_low_headgear
+				template = western_dwarf_low_headgear
 				accessory = male_headgear_secular_byzantine_common_01
 			}					
 		}   
@@ -4459,6 +6060,110 @@
 		}
 	}
 
+	thrur_IV_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri27
+				this = character:lineofuri27
+			}
+		}
+	}
+
+	forwi_father_of_uri_VI_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri85
+				this = character:lineofuri85
+			}
+		}
+	}
+
+	forwi_father_of_uri_VI_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri85
+				this = character:lineofuri85
+			}
+		}
+	}
+
+	hanar_brother_of_uri_VI_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_06
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri88
+				this = character:lineofuri88
+			}
+		}
+	}
+
 	frain_son_of_uri_VI_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -4511,19 +6216,45 @@
 		}
 	}
 
+	althor_son_of_nivar_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri118
+				this = character:lineofuri118
+			}
+		}
+	}
+
 	farli_son_of_frain_portrait = { 
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = male_hair_mena_02
+				accessory = male_hair_northern_02
 			}
 			accessory = {
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_northern_02
+				accessory = male_beard_fp2_iberian_muslim_01
 			}				
 		}    
 		weight = {
@@ -4559,6 +6290,110 @@
 				exists = this
 				exists = character:lineofuri67
 				this = character:lineofuri67
+			}
+		}
+	}
+
+	an_of_ibriz_garan_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_rtt_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkhathzaibriz92
+				this = character:lineofkhathzaibriz92
+			}
+		}
+	}
+
+	khathza_of_ibriz_garan_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_christian_03
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkhathzaibriz95
+				this = character:lineofkhathzaibriz95
+			}
+		}
+	}
+
+	khathza_of_the_last_alliance_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkhathzaibriz53a
+				this = character:lineofkhathzaibriz53a
+			}
+		}
+	}
+
+	bari_of_the_last_alliance_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_05
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}				
+		}    
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri45c
+				this = character:lineofuri45c
 			}
 		}
 	}
@@ -4735,7 +6570,7 @@
 		}
 	}
 
-	nyrathur_brother_of_uri_VI_portrait = { 
+	nivar_brother_of_uri_VI_portrait = { 
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -4767,7 +6602,7 @@
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = female_hair_fp1_05
+				accessory = female_hair_mena_02
 				type = female
 			}
 		}   
@@ -4782,7 +6617,163 @@
 		}
 	}
 
-	zabad_portrait = { # Zabad the Jewelwright of the Stonefoots, founder of the Jeweller's Guild
+	drus_father_of_bavor_III_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_sub_saharan_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbavor16
+				this = character:lineofbavor16
+			}
+		}
+	}
+
+	glem_portrait = { # Glêm, Stonefoot king who receives Stonefoot Ring of Power
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_sub_saharan_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbavor26
+				this = character:lineofbavor26
+			}
+		}
+	}
+
+	druhar_the_north_hammer_portrait = { # Drûhar the North-Hammer
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbavor20
+				this = character:lineofbavor20
+			}
+		}
+	}
+
+	malan_IV_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbavor42
+				this = character:lineofbavor42
+			}
+		}
+	}
+
+	ghur_the_gargantuan_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_06
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbavor52
+				this = character:lineofbavor52
+			}
+		}
+	}
+
+	malan_V_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbavor84
+				this = character:lineofbavor84
+			}
+		}
+	}
+
+	zabad_the_jewelwright_portrait = { # Zabad the Jewelwright of the Stonefoots, founder of the Jeweller's Guild
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -4799,7 +6790,7 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = dwarf_low_headgear
+				template = southern_dwarf_low_headgear
 				accessory = male_headgear_secular_byzantine_common_01
 			}					
 		}   
@@ -4814,7 +6805,7 @@
 		}
 	}
 
-	bhofor_portrait = { # Bhofor the Bridgemaster
+	bhofor_the_bridgemaster_portrait = { # Bhofor the Bridgemaster
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -4831,7 +6822,7 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = dwarf_low_headgear
+				template = southern_dwarf_low_headgear
 				accessory = male_headgear_secular_byzantine_common_01
 			}					
 		}   
@@ -4842,6 +6833,38 @@
 				exists = this
 				exists = character:lineofbhofor
 				this = character:lineofbhofor
+			}
+		}
+	}
+
+	shisen_the_sampler_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_rtt_01
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 0.0
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofshisen
+				this = character:lineofshisen
 			}
 		}
 	}
@@ -4863,8 +6886,14 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = dwarf_low_headgear
+				template = eastern_dwarf_low_headgear
 				accessory = male_headgear_secular_byzantine_common_01
+			}	
+			accessory = {
+				mode = add
+				gene = clothes
+				template = eastern_dwarf_high_clothes
+				accessory = m_clothes_eastern_dwarf_high_nob_01
 			}					
 		}   
 		weight = {
@@ -4982,6 +7011,32 @@
 		}
 	}
 
+	dhaon_II_portrait = { # Receives the Blacklock Ring of Power
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthrar35
+				this = character:lineofthrar35
+			}
+		}
+	}
+
 	fulla_VII_flamehand_portrait = { # Fulla VII Flamehand, father of Thrar IV and creater of the Dumsuhersar artifact
 		dna_modifiers = {
 			accessory = {
@@ -5008,19 +7063,123 @@
 		}
 	}
 
-	ron_portrait = { # Rôn the Exile, first Lord of the Axes of Nargubraz
+	bhralli_of_nargubraz_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = male_hair_western_09
+				accessory = male_hair_mena_02
 			}
 			accessory = {
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_sub_saharan_03
+				accessory = male_beard_western_06
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:secondlineofthrar33
+				this = character:secondlineofthrar33
+			}
+		}
+	}
+
+	druhin_II_father_of_thrar_V_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_03
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:thirdlineofthrar57
+				this = character:thirdlineofthrar57
+			}
+		}
+	}
+
+	khodul_X_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_06
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkhodul61
+				this = character:lineofkhodul61
+			}
+		}
+	}
+
+	khodul_XI_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_06
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkhodul65
+				this = character:lineofkhodul65
+			}
+		}
+	}
+
+	ron_the_exile_portrait = { # Rôn the Exile, first Lord of the Axes of Nargubraz
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
 			}				
 		}   
 		weight = {
@@ -5030,6 +7189,79 @@
 				exists = this
 				exists = character:lineofbarukodlig1
 				this = character:lineofbarukodlig1
+			}
+		}
+	}
+
+	rhanzi_son_of_ron_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbarukodlig3
+				this = character:lineofbarukodlig3
+			}
+		}
+	}
+
+	gorovod_the_goblinslayer_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}				
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofgorovod3
+				this = character:lineofgorovod3
+			}
+		}
+	}
+
+	ghumis_sister_of_gorovod_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = f_hair_fp3_iranian_01
+				type = female
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofgorovod4
+				this = character:lineofgorovod4
 			}
 		}
 	}
@@ -5138,6 +7370,27 @@
 		}
 	}
 
+	bais_daughter_of_bohur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_41
+				type = female
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbarukodlig3
+				this = character:lineofbarukodlig3
+			}
+		}
+	}
+
 	druhin_I_the_magnificent_portrait = {
 		dna_modifiers = {
 			accessory = {
@@ -5196,7 +7449,39 @@
 		}
 	}
 
-	regin_portrait = { # Regin the Ram-Rider who first discovered how to tame the goats of the Iron Hills
+	adunaphazor_of_agarizlumul_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = barbershop_all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_03
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 0.0
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofvarakh73
+				this = character:lineofvarakh73
+			}
+		}
+	}
+
+	regin_the_ram_rider_portrait = { # Regin the Ram-Rider who first discovered how to tame the goats of the Iron Hills
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -5218,6 +7503,58 @@
 				exists = this
 				exists = character:lineofregin
 				this = character:lineofregin
+			}
+		}
+	}
+
+	tordis_wife_of_regin_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_07
+			}		
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbori35a
+				this = character:lineofbori35a
+			}
+		}
+	}
+
+	narin_III_of_azanulinbar_dum_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}			
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofnarin35
+				this = character:lineofnarin35
 			}
 		}
 	}
@@ -5269,6 +7606,64 @@
 		}
 	}
 
+	fragur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri1
+				this = character:lineofuri1
+			}
+		}
+	}
+
+	thuror_son_of_fragur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_rtt_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}	
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 0.0
+			}		
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri3a
+				this = character:lineofuri3a
+			}
+		}
+	}
+
 	naugladur_portrait = { # Based on art piece from "Naugladur of Nogrod" https://www.pinterest.com/pin/lord-of-the-rings--421719952614596298/
 		dna_modifiers = {
 			accessory = {
@@ -5312,7 +7707,7 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = dwarf_low_headgear
+				template = western_dwarf_low_headgear
 				accessory = male_headgear_secular_byzantine_common_01
 			}
 		}   
@@ -5344,7 +7739,7 @@
 	            mode = add
 	            gene = clothes
 	            template = religious_clothes_northern
-	            range = { 0.01 0.04 }
+	            range = { 0.06 0.09 }
 	        }
 		}   
 		weight = {
@@ -5358,7 +7753,7 @@
 		}
 	}
 
-	eldran_III_portrait = { # Eldran I, the First Greybeard
+	eldran_III_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -5370,13 +7765,13 @@
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = m_beard_ep2_western_02
+				accessory = male_beard_fp1_04
 			}
 			accessory = {
 	            mode = add
 	            gene = clothes
 	            template = religious_clothes_northern
-	            range = { 0.01 0.03 }
+	            range = { 0.06 0.09 }
 	        }
 		}   
 		weight = {
@@ -5386,6 +7781,32 @@
 				exists = this
 				exists = character:lineofeldran65
 				this = character:lineofeldran65
+			}
+		}
+	}
+
+	nain_X_of_akhtathol_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofnain43
+				this = character:lineofnain43
 			}
 		}
 	}
@@ -5421,8 +7842,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = moria_orc_hairstyles
-				accessory = meso_hair_steppe_02b
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_christian_03
 			}
 			accessory = {
 				mode = add
@@ -5448,13 +7869,13 @@
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = male_hair_western_04
+				accessory = male_hair_fp1_05
 			}
 			accessory = {
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_northern_02
+				accessory = male_beard_northern_03
 			}
 		}   
 		weight = {
@@ -5494,7 +7915,33 @@
 		}
 	}
 
-	ginar_portrait = { # Ginar, WOTR Ruler of Tumnogoth Iaur in the Blue Mountains
+	anar_of_house_gorin_portrait = { # Khathza-zul Longbeard in Ibriz-Garan
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linegorin18
+				this = character:linegorin18
+			}
+		}
+	}
+
+	ginar_of_tumnogoth_iaur_portrait = { # Ginar, WOTR Ruler of Tumnogoth Iaur in the Blue Mountains
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -5542,6 +7989,32 @@
 				exists = this
 				exists = character:lineofdurin2
 				this = character:lineofdurin2
+			}
+		}
+	}
+
+	farin_I_son_of_borin_I_portrait = { # Farin I son of Borin I and grandson of Durin the Deathless, forms the Alliance of Dwarves and Men with the Dwergwine
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin3
+				this = character:lineofdurin3
 			}
 		}
 	}
@@ -5692,8 +8165,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = no_hairstyles
-				accessory = bald
+				template = all_hairstyles
+				accessory = male_hair_dwarf_half_bald
 			}
 			accessory = {
 				mode = add
@@ -5743,7 +8216,7 @@
 			}
 		}
 	}
-	dain_II_portrait = { 
+	dain_II_WOTR_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -5768,12 +8241,41 @@
 			base = 0
 			modifier = {
 				add = 999
+				highest_held_title_tier >= tier_kingdom
 				exists = this
 				exists = character:lineofdurin90
 				this = character:lineofdurin90
 			}
 		}
 	}
+
+	dain_II_LW_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				highest_held_title_tier < tier_kingdom
+				exists = this
+				exists = character:lineofdurin90
+				this = character:lineofdurin90
+			}
+		}
+	}
+
 	borin_son_of_nain_II_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -5979,7 +8481,7 @@
 			}
 		}
 	}
-	duri_son_of_bori_portrait = { 
+	buri_son_of_bori_portrait = { 
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -6166,6 +8668,31 @@
 			}
 		}
 	}
+	farin_father_of_fili_and_kili_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_07
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftheklel60brother
+				this = character:lineoftheklel60brother
+			}
+		}
+	}
 	thorin_II_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -6281,6 +8808,12 @@
 				template = all_beards
 				accessory = male_beard_indian_03
 			}
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = no_cloak
+				range = { 0 1 } # For the randomness to work correctly
+			}
 		}   
 		weight = {
 			base = 0
@@ -6330,6 +8863,12 @@
 				gene = beards
 				template = all_beards
 				accessory = male_beard_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
 			}
 		}   
 		weight = {
@@ -6484,7 +9023,7 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = barbershop_all_hairstyles
+				template = all_hairstyles
 				accessory = male_hair_fp1_09
 			}
 			accessory = {
@@ -6536,8 +9075,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofloni1
-				this = character:lineofloni1
+				exists = character:lineofloni5
+				this = character:lineofloni5
 			}
 		}
 	}
@@ -6546,7 +9085,7 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = barbershop_all_hairstyles
+				template = all_hairstyles
 				accessory = male_hair_fp1_09
 			}
 			accessory = {
@@ -6743,8 +9282,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = male_hair_northern_02
+				template = barbershop_lotr_hairstyles
+				accessory = male_hair_custom_02
 			}
 			accessory = {
 				mode = add
@@ -6814,6 +9353,81 @@
 			}
 		}
 	}
+	bori_son_of_bari_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_indian_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbifurfather
+				this = character:lineofbifurfather
+			}
+		}
+	}
+	brogur_son_of_bari_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbomfurfather
+				this = character:lineofbomfurfather
+			}
+		}
+	}
+	bari_bibomfur_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbibomfur
+				this = character:lineofbibomfur
+			}
+		}
+	}
 	farin_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -6828,6 +9442,12 @@
 				template = all_beards
 				accessory = male_beard_northern_02
 			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
 		}   
 		weight = {
 			base = 0
@@ -6836,6 +9456,93 @@
 				exists = this
 				exists = character:lineofnorin2
 				this = character:lineofnorin2
+			}
+		}
+	}
+	norin_father_of_farin_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofnorin1
+				this = character:lineofnorin1
+			}
+		}
+	}
+	stali_portrait = { # Stali the Hewer from LOTRO
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_valyrian_braid_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = western_dwarf_low_headgear
+				accessory = male_headgear_secular_byzantine_common_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofstali
+				this = character:lineofstali
+			}
+		}
+	}
+	eskil_portrait = { # Eskil Bloodthumb from LOTRO
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = western_dwarf_low_headgear
+				accessory = male_headgear_secular_byzantine_common_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofeskil2
+				this = character:lineofeskil2
 			}
 		}
 	}
@@ -6885,8 +9592,86 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofbravesoul1
-				this = character:lineofbravesoul1
+				exists = character:lineofbravesoul11
+				this = character:lineofbravesoul11
+			}
+		}
+	}
+
+	bogi_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_09
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbravesoul17
+				this = character:lineofbravesoul17
+			}
+		}
+	}
+
+	boic_I_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_christian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbravesoul19
+				this = character:lineofbravesoul19
+			}
+		}
+	}
+
+	borin_VII_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdurin62
+				this = character:lineofdurin62
 			}
 		}
 	}
@@ -6943,6 +9728,168 @@
 		}
 	}
 
+	wili_ally_of_loni_the_turncoat_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofurdak23
+				this = character:lineofurdak23
+			}
+		}
+	}
+
+	uni_I_the_river_seeker_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_15
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuni19
+				this = character:lineofuni19
+			}
+		}
+	}
+
+	dolgur_II_of_azanulinbar_dum_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofgruni11
+				this = character:lineofgruni11
+			}
+		}
+	}
+
+	fulan_of_enad_agmal_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmorthain61
+				this = character:lineofmorthain61
+			}
+		}
+	}
+
+	vighar_roadwalker_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linewili5
+				this = character:linewili5
+			}
+		}
+	}
+
+	vighar_roadwalker_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linewili5
+				this = character:linewili5
+			}
+		}
+	}
+
 	### Balin's Expedition
 	balfor_portrait = { # Balfor by Jaguaism
 		dna_modifiers = {
@@ -6966,6 +9913,68 @@
 				exists = this
 				exists = character:lineofbalfor9
 				this = character:lineofbalfor9
+			}
+		}
+	}
+	bafur_son_of_balfor_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbalfor11
+				this = character:lineofbalfor11
+			}
+		}
+	}
+	dolgar_son_of_balfor_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_05
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbalfor12
+				this = character:lineofbalfor12
 			}
 		}
 	}
@@ -7023,6 +10032,32 @@
 		}
 	}
 
+	moin_son_of_oin_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofuri127
+				this = character:lineofuri127
+			}
+		}
+	}
+
 	## Blacklocks ##
 	axe_that_walks_portrait = {
 		dna_modifiers = {
@@ -7058,7 +10093,7 @@
 
 
 	## Broadbeams ##
-	brokkr_portrait = {
+	brokkur_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
@@ -7084,19 +10119,425 @@
 		}
 	}
 
+	brunin_brother_of_brokkur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin96
+				this = character:lineofdwalin96
+			}
+		}
+	}
+
+	anar_II_father_of_brokkur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_08
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin89
+				this = character:lineofdwalin89
+			}
+		}
+	}
+
+	buri_son_of_brokkur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_07
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin93
+				this = character:lineofdwalin93
+			}
+		}
+	}
+
+	turgon_son_of_brokkur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin93a
+				this = character:lineofdwalin93a
+			}
+		}
+	}
+
+	bethiel_daughter_of_brokkur_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_11
+				type = female
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin94
+				this = character:lineofdwalin94
+			}
+		}
+	}
+
+	dari_LW_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_indian_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin85
+				this = character:lineofdwalin85
+			}
+		}
+	}
+
+	dagur_brother_of_dari_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin87
+				this = character:lineofdwalin87
+			}
+		}
+	}
+
+	buin_son_of_buri_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdwalin103
+				this = character:lineofdwalin103
+			}
+		}
+	}
+
+	theleus_son_of_sindri_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri0a
+				this = character:lineofsindri0a
+			}
+		}
+	}
+
+	thris_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = female_hair_fp2_iberian_muslim_01
+				type = female
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri0csister
+				this = character:lineofsindri0csister
+			}
+		}
+	}
+
+	threvor_brother_of_thris_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri0c
+				this = character:lineofsindri0c
+			}
+		}
+	}
+
+	thromel_brother_of_thris_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri0cbrother1
+				this = character:lineofsindri0cbrother1
+			}
+		}
+	}
+
+	theleus_brother_of_thris_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_05
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri0cbrother2
+				this = character:lineofsindri0cbrother2
+			}
+		}
+	}
+
+	rhugi_grandfather_of_sindri_III_portrait = { # Rhugî, grandfather of Sindri III, receives the Ironfist Ring of Power
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_valyrian_braid_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_04
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri29
+				this = character:lineofsindri29
+			}
+		}
+	}
+
+	threlin_I_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri37
+				this = character:lineofsindri37
+			}
+		}
+	}
+
+	threlin_II_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri52
+				this = character:lineofsindri52
+			}
+		}
+	}
+
 	orn_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = male_hair_mountain_orc_01
+				accessory = male_hair_northern_01
 			}
 			accessory = {
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_fp1_03
+				accessory = male_beard_fp1_05
 			}
 		}   
 		weight = {
@@ -7115,14 +10556,14 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = moria_orc_hairstyles
-				accessory = meso_hair_steppe_02b
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_02
 			}
 			accessory = {
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_fp1_03
+				accessory = m_beard_fp3_iranian_01
 			}
 		}   
 		weight = {
@@ -7132,6 +10573,84 @@
 				exists = this
 				exists = character:lineofsindri104
 				this = character:lineofsindri104
+			}
+		}
+	}
+
+	bohur_son_of_buldin_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri106
+				this = character:lineofsindri106
+			}
+		}
+	}
+
+	bhelen_son_of_buldin_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_fp3_iranian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri107
+				this = character:lineofsindri107
+			}
+		}
+	}
+
+	akul_father_of_sindri_V_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri74
+				this = character:lineofsindri74
 			}
 		}
 	}
@@ -7162,6 +10681,630 @@
 		}
 	}
 
+	hurm_brother_of_sindri_V_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsindri92
+				this = character:lineofsindri92
+			}
+		}
+	}
+
+	thuan_son_of_thulin_I_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_indian_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin0a
+				this = character:lineofthulin0a
+			}
+		}
+	}
+
+	thalan_of_kheled_dum_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin0cbrother
+				this = character:lineofthulin0cbrother
+			}
+		}
+	}
+
+	thanul_brother_of_thulin_II_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin16
+				this = character:lineofthulin16
+			}
+		}
+	}
+
+	thuan_I_son_of_thulin_II_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_indian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin7
+				this = character:lineofthulin7
+			}
+		}
+	}
+
+	thunin_I_son_of_thulin_II_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:secondlineofthulin1
+				this = character:secondlineofthulin1
+			}
+		}
+	}
+
+	shirran_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_07
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin105
+				this = character:lineofthulin105
+			}
+		}
+	}
+
+	ovan_grandson_of_thulin_IV_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin75
+				this = character:lineofthulin75
+			}
+		}
+	}
+
+	orag_grandson_of_thulin_IV_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin75a
+				this = character:lineofthulin75a
+			}
+		}
+	}
+
+	thuan_V_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_christian_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin113
+				this = character:lineofthulin113
+			}
+		}
+	}
+
+	whomar_I_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin56
+				this = character:lineofthulin56
+			}
+		}
+	}
+
+	whomar_II_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthulin115
+				this = character:lineofthulin115
+			}
+		}
+	}
+
+	snail_founder_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_05
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsnail1
+				this = character:lineofsnail1
+			}
+		}
+	}
+
+	gudmund_of_caverns_of_farewell_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_christian_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsnail57
+				this = character:lineofsnail57
+			}
+		}
+	}
+
+	dagfin_of_mekhem_nad_hanad_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofsnail88
+				this = character:lineofsnail88
+			}
+		}
+	}
+
+	kreyir_III_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkreyir9
+				this = character:lineofkreyir9
+			}
+		}
+	}
+
+	zorzir_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_03
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkreyir11
+				this = character:lineofkreyir11
+			}
+		}
+	}
+
+	varakh_of_zorzirs_expedition_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_01
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofvarakh101
+				this = character:lineofvarakh101
+			}
+		}
+	}
+
+	thanul_of_zorzirs_expedition_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_03
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofthanul83
+				this = character:lineofthanul83
+			}
+		}
+	}
+
+	urezagar_of_zorzirs_expedition_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_northern_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep3_byzantine_03
+			}	
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbruni18
+				this = character:lineofbruni18
+			}
+		}
+	}
+
+	emulha_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = moria_orc_hairstyles
+				accessory = meso_hair_steppe_02b
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkreyir18
+				this = character:lineofkreyir18
+			}
+		}
+	}
+
+	ramdin_VI_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_sub_saharan_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoframdin25
+				this = character:lineoframdin25
+			}
+		}
+	}
+
+	zirak_IV_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzirak77
+				this = character:lineofzirak77
+			}
+		}
+	}
+
+	shirvanshah_south_axe_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofburkkharat1
+				this = character:lineofburkkharat1
+			}
+		}
+	}
+
 	belzagar_portrait = {
 		dna_modifiers = {
 			accessory = {
@@ -7182,8 +11325,86 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofbruni7
-				this = character:lineofbruni7
+				exists = character:lineofbruni9
+				this = character:lineofbruni9
+			}
+		}
+	}
+
+	urduzir_ROA_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep2_western_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:thirdlineofthrar63
+				this = character:thirdlineofthrar63
+			}
+		}
+	}
+
+	belzagar_LW_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp1_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_fp3_iranian_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:thirdlineofthrar83
+				this = character:thirdlineofthrar83
+			}
+		}
+	}
+
+	zasan_father_of_adunabar_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_northern_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:thirdlineofthrar85
+				this = character:thirdlineofthrar85
 			}
 		}
 	}
@@ -7210,6 +11431,84 @@
 				exists = this
 				exists = character:thirdlineofthrar87
 				this = character:thirdlineofthrar87
+			}
+		}
+	}
+
+	godrathor_son_of_adunabar_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_fp2_iberian_muslim_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:thirdlineofthrar89
+				this = character:thirdlineofthrar89
+			}
+		}
+	}
+
+	balkuthor_son_of_adunabar_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_christian_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:thirdlineofthrar92
+				this = character:thirdlineofthrar92
+			}
+		}
+	}
+
+	manan_son_of_balkuthor_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:thirdlineofthrar98
+				this = character:thirdlineofthrar98
 			}
 		}
 	}
@@ -7520,11 +11819,17 @@
 				template = no_headgear
 				range = { 0 1 } # For the randomness to work correctly
 			}
+			accessory = {
+				mode = add	
+				gene = legwear
+				template = goblin_legwear
+				accessory = male_legwear_uruk_beserker_1
+			}			
 		}   
 		weight = {
 			base = 0
 			modifier = {
-				add = 999
+				add = 9999
 				exists = this
 				exists = character:lineofgollum3
 				this = character:lineofgollum3
@@ -7706,8 +12011,16 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofelros28
-				this = character:lineofelros28
+				OR = {
+					AND = {
+						exists = character:lineofelros28
+						this = character:lineofelros28
+					}
+					trigger_if = {
+						limit = { this = { is_landed = yes } } #Pharazon reborn will always be landed, and if not, he should be dead
+						has_variable = pharazon_reborn #When Pharazon invades
+					}
+				}
 			}
 		}
 	}
@@ -7729,9 +12042,8 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = numenorean_high_headgear
-				##Quonton
-				accessory = male_headgear_golden_numenorean_crown1
+				template = lotr_unique_headgear
+				accessory = male_headgear_aragorn_crown
 			}
 			accessory = {
 				mode = add	
@@ -7784,9 +12096,8 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = numenorean_high_headgear
-				##Quonton
-				accessory = male_headgear_golden_numenorean_crown1
+				template = lotr_unique_headgear
+				accessory = male_headgear_aragorn_crown
 			}
 			accessory = {
 				mode = add	
@@ -7819,6 +12130,119 @@
 		}
 	}
 
+	lothetari_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = female_hair_fp1_02
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:elroswife
+				this = character:elroswife
+			}
+		}
+	}
+
+	erendis_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_11
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofbeleth3
+				this = character:lineofbeleth3
+			}
+		}
+	}
+
+	amandil_nobeard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofelatan19
+				this = character:lineofelatan19
+				has_game_rule = dunedain_beards_canon
+			}
+		}
+	}
+	amandil_beard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			morph = {
+				mode = replace
+				gene = gene_body_hair
+				template = body_hair_sparse
+				value = 0.1
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofelatan19
+				this = character:lineofelatan19
+				NOT = { has_game_rule = dunedain_beards_canon }
+			}
+		}
+	}
+
 	elendil_nobeard_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -7845,7 +12269,6 @@
 			}
 		}
 	}
-
 	elendil_beard_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -7958,6 +12381,71 @@
 		}
 	}
 
+	valandil_beard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_18
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			morph = {
+				mode = replace
+				gene = gene_body_hair
+				template = body_hair_sparse
+				value = 0.2
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineisildur4
+				this = character:lineisildur4
+				NOT = { has_game_rule = dunedain_beards_canon }
+			}
+		}
+	}
+	valandil_nobeard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_18
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			morph = {
+				mode = replace
+				gene = gene_body_hair
+				template = body_hair_sparse
+				value = 0.1
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineisildur4
+				this = character:lineisildur4
+				has_game_rule = dunedain_beards_canon
+			}
+		}
+	}
+
 	anarion_beard_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -7984,7 +12472,6 @@
 			}
 		}
 	}
-
 	anarion_nobeard_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -8007,6 +12494,136 @@
 				exists = this
 				exists = character:lineofanarion1
 				this = character:lineofanarion1
+				has_game_rule = dunedain_beards_canon
+			}
+		}
+	}
+
+	meneldil_beard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp1_02
+			}
+			morph = {
+				mode = replace
+				gene = gene_body_hair
+				template = body_hair_sparse
+				value = 0.4
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofanarion5
+				this = character:lineofanarion5
+				NOT = { has_game_rule = dunedain_beards_canon }
+			}
+		}
+	}
+	meneldil_nobeard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_04
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			morph = {
+				mode = replace
+				gene = gene_body_hair
+				template = body_hair_sparse
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofanarion5
+				this = character:lineofanarion5
+				has_game_rule = dunedain_beards_canon
+			}
+		}
+	}
+
+	cemendur_beard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_15
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep3_byzantine_02
+			}
+			morph = {
+				mode = replace
+				gene = gene_body_hair
+				template = body_hair_sparse
+				value = 0.4
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofanarion7
+				this = character:lineofanarion7
+				NOT = { has_game_rule = dunedain_beards_canon }
+			}
+		}
+	}
+	cemendur_nobeard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_15
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			morph = {
+				mode = replace
+				gene = gene_body_hair
+				template = body_hair_sparse
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofanarion7
+				this = character:lineofanarion7
 				has_game_rule = dunedain_beards_canon
 			}
 		}
@@ -8088,7 +12705,6 @@
 				gene = hairstyles
 				template = all_hairstyles
 				accessory = m_hair_fp3_iranian_03
-				type = male
 			}
 			accessory = {
 				mode = add
@@ -8114,7 +12730,6 @@
 				gene = hairstyles
 				template = all_hairstyles
 				accessory = male_hair_fp1_07
-				type = male
 			}
 			accessory = {
 				mode = add
@@ -8177,7 +12792,7 @@
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = female_hair_northern_01
+				accessory = female_hair_northern_02
 				type = female
 			}
 		}   
@@ -8211,13 +12826,32 @@
 			}
 		}
 	}
+	ohtardil_roquendilioni_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_byzantine_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofroquendil18
+				this = character:lineofroquendil18
+			}
+		}
+	}
 	eleniel_roquendilioni_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add
 				gene = hairstyles
 				template = agot_hairstyles
-				accessory = female_hair_custom_01
+				accessory = female_hair_custom_27
 				type = female
 			}
 		}   
@@ -8237,7 +12871,7 @@
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = female_hair_western_02
+				accessory = female_hair_fp2_iberian_christian_01
 				type = female
 			}
 		}   
@@ -8479,7 +13113,6 @@
 				gene = hairstyles
 				template = high_elvish_hairstyles
 				accessory = male_hair_custom_06
-				type = male
 			}
 		}   
 		weight = {
@@ -8505,7 +13138,6 @@
 				gene = hairstyles
 				template = all_hairstyles
 				accessory = male_hair_fp2_iberian_muslim_01
-				type = male
 			}
 		}   
 		weight = {
@@ -8531,7 +13163,6 @@
 				gene = hairstyles
 				template = no_hairstyles
 				accessory = bald
-				type = male
 			}
 		}   
 		weight = {
@@ -10254,8 +14885,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = agot_hairstyles
-				accessory = male_hair_custom_08
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_04
 			}
 			accessory = {
 				mode = add
@@ -10337,7 +14968,7 @@
 				mode = add
 				gene = beards
 				template = all_beards
-				accessory = male_beard_western_02
+				value = 0.0
 			}
 		}   
 		weight = {
@@ -11099,12 +15730,6 @@
 				gene = beards
 				template = all_beards
 				accessory = male_beard_indian_02
-			}
-			accessory = {
-				mode = add
-				gene = headgear
-				template = dale_high_headgear
-				accessory = male_northern_norse_3_noble_circlet_02
 			}
 			accessory = {
 				mode = add	
@@ -11906,6 +16531,56 @@
 			}
 		}
 	}
+	aldawini_dwarf_friend_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_mena_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofgundemar1
+				this = character:lineofgundemar1
+			}
+		}
+	} 
+	fastreda_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = mountain_orc_hairstyles
+				accessory = male_hair_fp1_08
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep3_byzantine_04
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofolmondo9
+				this = character:lineofolmondo9
+			}
+		}
+	}
 	beorn_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -12456,6 +17131,57 @@
 			}
 		}
 	}
+	hawin_wife_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = female_hair_western_09
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkoldana99
+				this = character:lineofkoldana99
+			}
+		}
+	}
+	bladorthin_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_byzantine_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkoldana100
+				this = character:lineofkoldana100
+			}
+		}
+	}
 	irkenwin_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -12481,6 +17207,37 @@
 			}
 		}
 	} 
+	ermengar_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep2_western_01
+			}
+			accessory = {
+                mode = add
+                gene = beards
+                template = all_beards
+                accessory = male_beard_fp2_iberian_christian_02
+            }
+			accessory = {
+				mode = add	
+				gene = headgear
+				template = dorwinion_high_headgear
+				accessory = m_headgear_sec_pol_high_nob_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineathareik9
+				this = character:lineathareik9
+			}
+		}
+	}
 	bard_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -12503,6 +17260,32 @@
 				exists = this
 				exists = character:lineofdale46
 				this = character:lineofdale46
+			}
+		}
+	}
+	freja_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_21
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdale50
+				this = character:lineofdale50
 			}
 		}
 	}
@@ -12537,7 +17320,7 @@
 				mode = add
 				gene = hairstyles
 				template = agot_hairstyles
-				accessory = female_hair_custom_27
+				accessory = female_hair_custom_02
 				type = female
 			}
 			accessory = {
@@ -12564,6 +17347,31 @@
 			}
 		}
 	}
+	brand_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = barbershop_all_hairstyles
+				accessory = male_hair_mena_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdale52
+				this = character:lineofdale52
+			}
+		}
+	}
 	syanna_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -12587,6 +17395,62 @@
 				exists = this
 				exists = character:lineofdale53
 				this = character:lineofdale53
+			}
+		}
+	}
+	malloc_portrait = { # Malloc (The Hobbit, 2003)
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				value = 0.1
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmalloc
+				this = character:lineofmalloc
+			}
+		}
+	}
+	corwin_portrait = { # Corwin (The Hobbit, 2003)
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_western_09
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofcorwin3
+				this = character:lineofcorwin3
 			}
 		}
 	}
@@ -12937,8 +17801,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:linecaradoc6
-				this = character:linecaradoc6
+				exists = character:lineofcaradoc7
+				this = character:lineofcaradoc7
 			}
 		}
 	}
@@ -13089,8 +17953,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = agot_hairstyles
-				accessory = female_hair_custom_24
+				template = all_hairstyles
+				accessory = female_hair_fp1_01
 				type = female
 			}
 		}   
@@ -13231,6 +18095,32 @@
 			}
 		}
 	}
+	cassimir_lw_portrait = {
+		dna_modifiers = {		
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep3_byzantine_02
+			}																		
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofcassimir33
+				this = character:lineofcassimir33
+			}
+		}		
+	}
+
 	cassimir_portrait = { 
 		dna_modifiers = {
 			#accessory = {
@@ -13345,6 +18235,31 @@
 			}
 		}
 	}
+	elekurluz_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_fp2_iberian_muslim_02
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofcalmacil15
+				this = character:lineofcalmacil15
+			}
+		}
+	}
 	prince_eruhil_portrait = {
 		dna_modifiers = {
 			accessory = {
@@ -13352,7 +18267,6 @@
 				gene = hairstyles
 				template = all_hairstyles
 				accessory = male_hair_byzantine_02
-				type = male
 			}
 			accessory = {
 				mode = add
@@ -13366,8 +18280,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh96
-				this = character:lineoftumakveh96
+				exists = character:lineoftumakveh153
+				this = character:lineoftumakveh153
 			}
 		}
 	}
@@ -13378,7 +18292,6 @@
 				gene = hairstyles
 				template = all_hairstyles
 				accessory = male_hair_western_03
-				type = male
 			}
 			accessory = {
 				mode = add
@@ -13392,8 +18305,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh97
-				this = character:lineoftumakveh97
+				exists = character:lineoftumakveh154
+				this = character:lineoftumakveh154
 			}
 		}
 	}
@@ -13547,8 +18460,7 @@
 				mode = add	
 				gene = legwear
 				template = adunai_war_legwear
-				##Quonton
-				accessory = male_legwear_golden_numenorean_war_01
+				accessory = m_legwear_sec_ep3_byzantine_war_nobility_01_lo
 			}
 			accessory = {
 				mode = add	
@@ -13817,8 +18729,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofmulphazgan3
-				this = character:lineofmulphazgan3
+				exists = character:lineofmulphazgan2
+				this = character:lineofmulphazgan2
 			}
 		}
 	}
@@ -13836,8 +18748,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh81
-				this = character:lineoftumakveh81
+				exists = character:lineoftumakveh125
+				this = character:lineoftumakveh125
 			}
 		}
 	}
@@ -13861,8 +18773,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh82
-				this = character:lineoftumakveh82
+				exists = character:lineoftumakveh134
+				this = character:lineoftumakveh134
 			}
 		}
 	}
@@ -13887,8 +18799,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh85
-				this = character:lineoftumakveh85
+				exists = character:lineoftumakveh143
+				this = character:lineoftumakveh143
 			}
 		}
 	}
@@ -13912,8 +18824,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh83
-				this = character:lineoftumakveh83
+				exists = character:lineoftumakveh135
+				this = character:lineoftumakveh135
 			}
 		}
 	}
@@ -13932,8 +18844,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh84
-				this = character:lineoftumakveh84
+				exists = character:lineoftumakveh136
+				this = character:lineoftumakveh136
 			}
 		}
 	}
@@ -14019,6 +18931,58 @@
 			}
 		}
 	}
+	abaruzor_azulhin_beard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_byzantine_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep3_byzantine_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofazruben7
+				this = character:lineofazruben7
+				NOT = { has_game_rule = dunedain_beards_canon }
+			}
+		}
+	}
+	abaruzor_azulhin_nobeard_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_byzantine_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofazruben7
+				this = character:lineofazruben7
+				has_game_rule = dunedain_beards_canon
+			}
+		}
+	}
 	adunaphazor_dulguzagar_lw_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -14092,6 +19056,31 @@
 				exists = this
 				exists = character:lineofdulgu45
 				this = character:lineofdulgu45
+			}
+		}
+	}
+	pharazon_dulgu_stormhost_wotr_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = male_hair_custom_06
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdulgu46
+				this = character:lineofdulgu46
 			}
 		}
 	}
@@ -14521,8 +19510,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineoftumakveh33
-				this = character:lineoftumakveh33
+				exists = character:lineoftumakveh45
+				this = character:lineoftumakveh45
 			}
 		}
 	}
@@ -14661,12 +19650,12 @@
 				template = all_beards
 				value = 0.0
 			}
-			accessory = {
-				mode = add
-				gene = headgear
-				template = all_lotr_headgear
-				value = 0.141
-			}
+			#accessory = { #need to re-add accessory, template changed
+			#	mode = add
+			#	gene = headgear
+			#	template = all_lotr_headgear
+			#	value = 0.141
+			#}
 		}   
 		weight = {
 			base = 0
@@ -14702,6 +19691,31 @@
 				exists = this
 				exists = character:lineofhuz189
 				this = character:lineofhuz189
+			}
+		}
+	}
+	zhamik_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_indian_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_indian_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzhamian3
+				this = character:lineofzhamian3
 			}
 		}
 	}
@@ -14907,6 +19921,31 @@
 			}
 		}
 	}
+	mardrash_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_indian_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = womaw_beards
+				accessory = japanese_beard_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:ovathaVIII
+				this = character:ovathaVIII
+			}
+		}
+	}
 	valathmir_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -14979,8 +20018,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofkhadnom4
-				this = character:lineofkhadnom4
+				exists = character:lineofkhadnom5
+				this = character:lineofkhadnom5
 			}
 		}
 	}
@@ -15046,7 +20085,7 @@
 				mode = add
 				gene = hairstyles
 				template = all_hairstyles
-				accessory = female_hair_steppe_01
+				accessory = f_hair_fp3_iranian_02_common
 				type = female
 			}
 			accessory = {
@@ -15061,8 +20100,8 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofremerodsimpchar2
-				this = character:lineofremerodsimpchar2
+				exists = character:lineofgjoradka5
+				this = character:lineofgjoradka5
 			}
 		}
 	}
@@ -15438,6 +20477,87 @@
 		}
 	}
 	
+	valrynal_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = m_beard_ep3_byzantine_04
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:solardynasty25
+				this = character:solardynasty25
+			}
+		}
+	}
+	zatanka_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_04
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = elven_common_legwear
+				accessory = female_legwear_secular_western_common_01
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = clothes
+				template = lynerian_high_clothes
+				accessory = female_clothes_lynerian_03_low
+				type = female
+			}			
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzantaka1
+				this = character:lineofzantaka1
+			}
+		}
+	}
+	
+	melynak_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = barbershop_lotr_hairstyles
+				accessory = female_hair_custom_16
+				type = female
+			} 
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzantaka2
+				this = character:lineofzantaka2
+			}
+		}
+	}		
+	
 	### ORC ###	
 	azog_portrait = { 
 		dna_modifiers = {
@@ -15766,6 +20886,12 @@
 			}
 			accessory = {
 				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}					
+			accessory = {
+				mode = add
 				gene = beards
 				template = all_beards
 				value = 0.0
@@ -15811,8 +20937,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = saruman_hair
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_02
 			}
 			accessory = {
 				mode = add
@@ -16106,6 +21232,12 @@
 				template = uruk_loincloth
 				accessory = male_legwear_uruk_beserker_2
 			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = no_legwear
+				value = 0.0
+			}	
 		}
 		weight = {
 			base = 0
@@ -16152,15 +21284,9 @@
 			}
 			accessory = {
 				mode = add	
-				gene = headgear
-				template = dorwinion_war_headgear
-				accessory = m_headgear_sec_western_war_nob_01
-			}
-			accessory = {
-				mode = add	
 				gene = legwear
-				template = mercenary_plate_legwear
-				accessory = male_legwear_secular_plate_war_01
+				template = moria_orc_legwear
+				accessory = male_legwear_orc_war_01
 			}
 		}
 		weight = {
@@ -16211,14 +21337,27 @@
 			}
 		}	
 	}
-	gorkil_portrait = {
+	krugbit_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add	
 				gene = headgear
-				template = dwarf_high_headgear
-				accessory = male_headgear_secular_fp1_royalty_01
+				template = religious_headgear
+				accessory = male_headgear_religious_monk_01
 			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkrugbit
+				this = character:lineofkrugbit
+			}
+		}	
+	}
+	gorkil_portrait = {
+		dna_modifiers = {
 			accessory = {
 				mode = add	
 				gene = cloaks
@@ -16236,13 +21375,13 @@
 			}
 		}	
 	}
-	lineofdwindlingtown1_portrait = {
+	ozag_portrait = {
 		dna_modifiers = {
 			accessory = {
 				mode = add	
-				gene = cloaks
-				template = fp1_cloak
-				accessory = male_furs_secular_fp1_nobility_02
+				gene = headgear
+				template = religious_headgear
+				accessory = m_cloaks_sec_ep2_mena_dark_01
 			}
 		}
 		weight = {
@@ -16250,11 +21389,11 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:lineofdwindlingtown1
-				this = character:lineofdwindlingtown1
+				exists = character:lineofzukarok10
+				this = character:lineofzukarok10
 			}
 		}	
-	}
+	}	
 	lineofdwindlingtown2_portrait = {
 		dna_modifiers = {
 			accessory = {
@@ -16279,8 +21418,8 @@
 			accessory = {
 				mode = add	
 				gene = headgear
-				template = dwarf_low_headgear
-				accessory = male_Cuman_Hat_03
+				template = western_dwarf_low_headgear
+				accessory = male_headgear_epe_western_dwarf_lo_nob_03
 			}
 			accessory = {
 				mode = add	
@@ -16301,12 +21440,6 @@
 	}
 	linegreatgoblinlw1_portrait = {
 		dna_modifiers = {
-			accessory = {
-				mode = add	
-				gene = headgear
-				template = dwarf_high_headgear
-				accessory = male_headgear_secular_fp1_royalty_01
-			}
 			accessory = {
 				mode = add	
 				gene = cloaks
@@ -16734,6 +21867,12 @@
 				template = mountain_orc_hairstyles
 				accessory = male_hair_uruk_01
 			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}					
 		}
 		weight = {
 			base = 0
@@ -16778,6 +21917,12 @@
 				template = all_hairstyles
 				accessory = m_hair_fp3_iranian_01
 			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}					
 		}
 		weight = {
 			base = 0
@@ -16832,8 +21977,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = saruman_hair
+				template = agot_hairstyles
+				accessory = male_valyrian_loose_hair_02
 			}
 			accessory = {
 				mode = add
@@ -16891,8 +22036,13 @@
 			modifier = {
 				add = 999
 				exists = this
-				exists = character:isengardlurtz
-				this = character:isengardlurtz
+				OR = {
+					AND = {
+						exists = character:isengardlurtz
+						this = character:isengardlurtz
+					}
+					has_character_flag = is_isengardlurtz	
+				}
 			}
 		}
 	}
@@ -17028,6 +22178,31 @@
 				this = character:angmarorc2
 			}
 		}
+	}
+	bludbag_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add	
+				gene = clothes
+				template = goblin_armor
+				accessory = male_clothes_goblin_armor_01
+			}
+			accessory = {
+				mode = add	
+				gene = special_clothing_accessory
+				template = uruk_loincloth
+				value = 0.0
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoflughasya23
+				this = character:lineoflughasya23
+			}
+		}	
 	}
 	amirith_portrait = {
 		dna_modifiers = {
@@ -17837,8 +23012,8 @@
 		dna_modifiers = {
 			accessory = {
 				mode = add
-				gene = headgear
-				template = all_lotr_headgear
+				gene = unassigned_headgear
+				template = unassigned_headgear_all
 				accessory = male_headgear_sauron_01
 			}
 		}   
@@ -17920,6 +23095,110 @@
 				this = character:linegeanmar9
 			}
 		}
+	}
+	shank_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = mordor_orc_hairstyles
+				accessory = m_hair_fp4_mena_02_bald
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = uruk_war_headgear
+				accessory = m_headgear_ccp5_orc_war_nob_01_com_coif
+			}
+			accessory = {
+				mode = add	
+				gene = clothes
+				template = mountain_orc_clothes
+				accessory = male_clothes_secular_riekling_01
+			}			
+			accessory = {
+				mode = add	
+				gene = special_clothing_accessory
+				template = uruk_loincloth
+				accessory = male_legwear_uruk_beserker_1
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = moria_orc_legwear
+				accessory = male_legwear_goblin_armor_02
+			}
+			morph = {
+				mode = add
+				gene = gene_hunchbacked
+				template = hunchbacked					
+				range = { 0.006 0.007 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:waroftherohirrim_orc_shank
+				this = character:waroftherohirrim_orc_shank
+			}
+		}
+	}	
+	wrot_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+			accessory = {
+				mode = add	
+				gene = clothes
+				template = no_clothes
+				accessory = male_clothes_secular_western_nudity_01
+			}			
+			accessory = {
+				mode = add	
+				gene = special_clothing_accessory
+				template = uruk_loincloth
+				accessory = male_legwear_uruk_beserker_2
+			}
+			accessory = {
+				mode = add
+				gene = legwear
+				template = moria_orc_legwear
+				accessory = male_legwear_goblin_armor_02
+			}
+			accessory = {
+				mode = add
+				gene = misc_accessories
+				template = iron_bracelet
+				accessory = iron_bracelets
+			}
+			morph = {
+				mode = add
+				gene = gene_hunchbacked
+				template = hunchbacked					
+				range = { 0.008 0.009 }
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:waroftherohirrim_orc_wrot
+				this = character:waroftherohirrim_orc_wrot
+			}
+		}	
 	}	
 	guin_portrait = { 
 		dna_modifiers = {
@@ -18058,7 +23337,6 @@
 				gene = hairstyles
 				template = all_hairstyles
 				accessory = male_hair_northern_01
-				type = male
 			}
 		}   
 		weight = {
@@ -18078,7 +23356,6 @@
 				gene = hairstyles
 				template = all_hairstyles
 				accessory = male_hair_western_03
-				type = male
 			}
 			accessory = {
 				mode = add
@@ -18117,31 +23394,6 @@
 			}
 		}
 	}
-	eradan_wotn_portrait = { # Eradan from War in the North
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = hairstyles
-				template = agot_hairstyles
-				accessory = male_hair_custom_08
-			}
-			accessory = {
-				mode = add
-				gene = beards
-				template = all_beards
-				value = 0.0
-			}
-		}   
-		weight = {
-			base = 0
-			modifier = {
-				add = 999
-				exists = this
-				exists = character:linecalinyar8
-				this = character:linecalinyar8
-			}
-		}
-	}	
 	arunaru_portrait = { 
 		dna_modifiers = {
 			accessory = {
@@ -18204,8 +23456,8 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = agot_hairstyles
-				accessory = male_hair_custom_11
+				template = all_hairstyles
+				accessory = m_hair_ep3_byzantine_04
 			}
 			accessory = {
 				mode = add
@@ -18252,6 +23504,57 @@
 				exists = this
 				exists = character:dolamroth19
 				this = character:dolamroth19
+			}
+		}
+	}
+	beren_imlothiath_lw_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_mena_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineimloth30
+				this = character:lineimloth30
+			}
+		}
+	}
+	silmarien_imlothiath_lw_portrait = {
+		dna_modifiers = {
+			accessory = {
+			    mode = add
+			    gene = hairstyles
+			    template = agot_hairstyles
+			    accessory = female_hair_custom_27
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineimloth30sister
+				this = character:lineimloth30sister
 			}
 		}
 	}
@@ -18429,8 +23732,8 @@
 			accessory = {
 				mode = add
 				gene = headgear
-				template = muranian_high_headgear
-				accessory = male_non_islamic_iranian_bulb_01_high_color
+				template = muranian_low_headgear
+				accessory = male_non_islamic_iranian_bulb_02_low
 			}			
 		}   
 		weight = {
@@ -18571,6 +23874,517 @@
 				exists = this
 				exists = character:lineaelenhi19
 				this = character:lineaelenhi19
+			}
+		}
+	}
+	nendur_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_byzantine_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzeltron
+				this = character:lineofzeltron
+			}
+		}
+	}
+	thu_firespeaker_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = barbershop_all_hairstyles
+				accessory = male_hair_mesofp1_09
+			}
+            accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+			accessory = {
+				mode = add
+				gene = headgear
+				template = no_headgear
+				range = { 0 1 } # For the randomness to work correctly
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofarghash1
+				this = character:lineofarghash1
+			}
+		}
+	}	
+
+	### MUMAKANI ###
+	amav_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_sub_saharan_01
+			}
+            accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				OR = {
+					AND = {
+						exists = character:lineofamav1
+						this = character:lineofamav1
+					}
+					trigger_if = {
+						limit = { this = { is_landed = yes } } #Amav reborn will always be landed, and if not, he should be dead
+						has_variable = amav_reborn #When Amav invades
+					}
+				}
+			}
+		}
+	}
+	sandamal_125_wotr_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_sub_saharan_03
+			}
+            accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmamakil125
+				this = character:lineofmamakil125
+			}
+		}
+	}
+	jimala_dogoakam_wotr_portrait = {
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = no_hairstyles
+				accessory = bald
+			}
+            accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_western_05
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofdogoakam2
+				this = character:lineofdogoakam2
+			}
+		}
+	}
+	
+	ataraka_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = male_hair_sub_saharan_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = mumakani_beards_curly
+				accessory = m_beard_ep3_byzantine_01
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkoronandeinitial
+				this = character:lineofkoronandeinitial
+			}
+		}
+	}
+
+	marak_mbam_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = mumakani_afro
+				accessory = male_hair_custom_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory = male_beard_sub_saharan_03
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofenakynim21
+				this = character:lineofenakynim21
+			}
+		}
+	}
+
+	aykaafar_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = shayn_hairstyles_curly
+				accessory = m_hair_fp4_mena_01_bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofmuumaim45
+				this = character:lineofmuumaim45
+			}
+		}
+	}
+
+	maavethe_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = shayn_hairstyles_curly
+				accessory = male_hair_sub_saharan_01
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				accessory =	m_beard_ep3_byzantine_04			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzaandaoveim22
+				this = character:lineofzaandaoveim22
+			}
+		}
+	}
+
+	neembam_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = shayn_hairstyles_curly
+				accessory = male_hair_mena_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = mumakani_beards_straight
+				accessory =	male_beard_sub_saharan_03			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofzaandaoveim28
+				this = character:lineofzaandaoveim28
+			}
+		}
+	}
+
+	kaloyaar_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = shayn_hairstyles_curly
+				accessory = female_hair_custom_40
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofenakynim35
+				this = character:lineofenakynim35
+			}
+		}
+	}
+
+	lysiove_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = shayn_hairstyles_curly
+				accessory = m_hair_fp4_mena_01_bald
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = mumakani_beards_curly
+				accessory =	m_beard_ep3_byzantine_01			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftahmoyaaim36
+				this = character:lineoftahmoyaaim36
+			}
+		}
+	}
+
+	keeam_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = mumakani_afro
+				accessory = male_hair_sub_saharan_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = mumakani_beards_curly
+				accessory =	m_beard_ep3_byzantine_01			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofkikim7
+				this = character:lineofkikim7
+			}
+		}
+	}
+
+	aykaafak_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = shayn_hairstyles_curly
+				accessory = female_hair_fp2_iberian_muslim_02_common
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofamba11
+				this = character:lineofamba11
+			}
+		}
+	}
+	
+	voonook_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = ambason_hairstyles_wavy
+				accessory = f_hair_sp4_mena_01
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofamba13
+				this = character:lineofamba13
+			}
+		}
+	}	
+
+	olyaenar_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = shayn_hairstyles_curly
+				accessory = male_hair_custom_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = mumakani_beards_curly
+				accessory =	male_beard_sub_saharan_01			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofshiibaim31
+				this = character:lineofshiibaim31
+			}
+		}
+	}
+
+	bainburakan_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = mumakani_afro
+				accessory = male_hair_western_03
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineofburakanplaceholder
+				this = character:lineofburakanplaceholder
+			}
+		}
+	}
+
+	lineoftusetoriplaceholder_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = mumakani_afro
+				accessory = male_hair_sub_saharan_02
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = mumakani_beards_straight
+				accessory =	m_beard_ep3_byzantine_01			
+			}
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftusetoriplaceholder
+				this = character:lineoftusetoriplaceholder
+			}
+		}
+	}	
+
+	### Khyan ### i couldnt find a single Khyan modifier so i am putting this here
+	
+	serfraz_tirdahan_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_41
+				type = female
+			}
+			accessory = {
+				mode = add
+				gene = beards
+				template = all_beards
+				value = 0.0
+			}		
+		}   
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:lineoftirdahan9
+				this = character:lineoftirdahan9
 			}
 		}
 	}

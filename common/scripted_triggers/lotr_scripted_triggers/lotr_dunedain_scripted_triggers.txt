@@ -659,7 +659,7 @@ vassal_will_become_admin_pharazain = {
 
 	primary_title = {
 		OR = { 
-			target_is_de_jure_liege_or_above = title:e_pharazain
+			target_is_de_jure_liege_or_above = title:h_pharazain
 			target_is_de_jure_liege_or_above = title:e_thani_hazad
 			target_is_de_jure_liege_or_above = title:e_bellakar
 			target_is_de_jure_liege_or_above = title:e_thon_an_kharlokh

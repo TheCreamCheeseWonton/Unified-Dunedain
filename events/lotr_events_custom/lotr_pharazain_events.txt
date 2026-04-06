@@ -45,7 +45,7 @@ pharazain_events.2 = { # Unify Culture Flavor
 		trigger_event = pharazain_events.3   # Unify Adunaic Identity Flavor Language Question
 		if = { # Can only gain these rewards once! No farming the decision
 			limit = {
-				NOT = { has_character_flag = pharazain_reunited }
+				NOT = { has_character_flag = pharazain_reunited_1 }
 			}
 			dynasty = { add_dynasty_prestige = 500 }
 		}
@@ -153,7 +153,7 @@ pharazain_events.5 = { # Event for Ray
 	override_background = { reference = bp1_courtyard_indian }
 	
 	immediate = {
-		title:e_pharazain.holder = { save_scope_as = pharazain_holder  }
+		title:h_pharazain.holder = { save_scope_as = pharazain_holder  }
 	}
 	
 	left_portrait = {
@@ -166,10 +166,10 @@ pharazain_events.5 = { # Event for Ray
 		
 		start_tributary_interaction_effect = {
 			TRIBUTARY = root
-			SUZERAIN = title:e_pharazain.holder
+			SUZERAIN = title:h_pharazain.holder
 		}
 		
-		title:e_pharazain.holder = { 
+		title:h_pharazain.holder = { 
 			trigger_event = {
 				id = pharazain_events.6
 				days = 1
@@ -199,7 +199,7 @@ pharazain_events.5 = { # Event for Ray
 	option = { # Stay independent
 		name = pharazain_events.5.b
 
-		title:e_pharazain.holder = { 
+		title:h_pharazain.holder = { 
 			trigger_event = {
 				id = pharazain_events.7
 				days = 30 
@@ -383,21 +383,21 @@ pharazain_events.10 = {
 	override_background = { reference = battlefield }
 	
 	trigger = { 
-		has_title = title:e_pharazain
+		has_title = title:h_pharazain
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:separatism_has_started
 		}
-		title:e_pharazain.holder = {
+		title:h_pharazain.holder = {
 			any_vassal = {
 				culture = { 
-					NOT = { has_same_culture_heritage = title:e_pharazain.holder.culture }
+					NOT = { has_same_culture_heritage = title:h_pharazain.holder.culture }
 				}
 				any_held_title = {
 					tier >= tier_duchy
 				}
 				opinion = {
-					target = title:e_pharazain.holder
+					target = title:h_pharazain.holder
 					value <= 10
 				}
 			}
@@ -409,7 +409,7 @@ pharazain_events.10 = {
 		animation = disbelief
 	}
 	immediate = {
-		title:e_pharazain = { save_scope_as = pharazain_title }
+		title:h_pharazain = { save_scope_as = pharazain_title }
 		scope:pharazain_title.holder ?= { save_scope_as = high_king_of_pharazain }
 		#scope:pharazain_title.holder.culture ?= { save_scope_as = high_king_of_pharazain_culture }
 
@@ -417,13 +417,13 @@ pharazain_events.10 = {
 			random_vassal = {
 				limit = {
 					culture = { 
-						NOT = { has_same_culture_heritage = title:e_pharazain.holder.culture }
+						NOT = { has_same_culture_heritage = title:h_pharazain.holder.culture }
 					}
 					any_held_title = {
 						tier >= tier_duchy
 					}
 					opinion = {
-						target = title:e_pharazain.holder
+						target = title:h_pharazain.holder
 						value <= 10
 					}
 				}
@@ -497,7 +497,7 @@ pharazain_events.12 = {
 		add_character_modifier = lotr_integration_complete_character_modifier
 		if = { 
 			limit = { NOT = { has_realm_law = crown_authority_3 } }
-			title:e_pharazain.holder = {
+			title:h_pharazain.holder = {
 				add_realm_law_skip_effects = crown_authority_3
 			}
 		}
@@ -621,14 +621,14 @@ pharazain_events.14 = {
 							}
 						}
 					}
-					title:e_pharazain.holder = {
+					title:h_pharazain.holder = {
 						add_realm_law_skip_effects = equal_law
 					}
 				}
 			}
 			if = { 
 				limit = { NOT = { has_realm_law = imperial_bureaucracy_2 } }
-				title:e_pharazain.holder = {
+				title:h_pharazain.holder = {
 					add_realm_law_skip_effects = imperial_bureaucracy_2
 				}
 			}
@@ -656,7 +656,7 @@ pharazain_events.15 = {
 		}
 		if = { 
 			limit = { NOT = { has_realm_law = crown_authority_3 } }
-			title:e_pharazain.holder = {
+			title:h_pharazain.holder = {
 				add_realm_law_skip_effects = crown_authority_3
 			}
 		}
@@ -673,7 +673,7 @@ pharazain_events.16 = {
 	override_background = { reference = harad_desert }
 	
 	immediate = { 
-		title:e_pharazain.holder = { save_scope_as = high_king_pharazain }
+		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
 		play_music_cue = lotr_cue_adunai
 	}
 	option = { 

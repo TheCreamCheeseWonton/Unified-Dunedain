@@ -51,15 +51,15 @@ dunedain_identity.2 = { # Integrate Rohan
 	immediate = {
 		if = {
 			limit = {
-				exists = title:e_reunitedkingdom.holder
+				exists = title:h_reunited_kingdom.holder
 			}
-			title:e_reunitedkingdom = { save_scope_as = gondor_title }
+			title:h_reunited_kingdom = { save_scope_as = gondor_title }
 		}
 		else_if = {
 			limit = {
-				exists = title:e_numenor_in_exile.holder
+				exists = title:h_numenor_in_exile.holder
 			}
-			title:e_numenor_in_exile = { save_scope_as = gondor_title }
+			title:h_numenor_in_exile = { save_scope_as = gondor_title }
 		}
 		else = {
 			title:e_gondor = { save_scope_as = gondor_title }
@@ -101,12 +101,12 @@ dunedain_identity.3 = { # Event for Rohan
 	immediate = {
 		if = {
 			limit = {
-				exists = title:e_reunitedkingdom.holder
+				exists = title:h_reunited_kingdom.holder
 			}
-			title:e_reunitedkingdom = { save_scope_as = gondor_title }
+			title:h_reunited_kingdom = { save_scope_as = gondor_title }
 		}
 		else = {
-			title:e_numenor_in_exile = { save_scope_as = gondor_title }
+			title:h_numenor_in_exile = { save_scope_as = gondor_title }
 		}
 		title:k_rohan.holder = { save_scope_as = rohan_title }
 		scope:gondor_title.holder = { save_scope_as = high_king_of_gondor }
@@ -233,12 +233,12 @@ dunedain_identity.6 = { # Retake Minas Ithil Flavor
 	immediate = {
 		if = {
 			limit = {
-				exists = title:e_reunitedkingdom.holder
+				exists = title:h_reunited_kingdom.holder
 			}
-			title:e_reunitedkingdom = { save_scope_as = gondor_title }
+			title:h_reunited_kingdom = { save_scope_as = gondor_title }
 		}
 		else = {
-			title:e_numenor_in_exile = { save_scope_as = gondor_title }
+			title:h_numenor_in_exile = { save_scope_as = gondor_title }
 		}
 		title:k_rohan.holder = { save_scope_as = rohan_title }
 		scope:gondor_title.holder = { save_scope_as = high_king_of_gondor }
@@ -392,7 +392,7 @@ dunedain_identity.8 = {
 	override_background = { reference = rohan_fullscreen }
 	
 	immediate = { 
-		title:e_reunitedkingdom.holder = { save_scope_as = high_king_gondor }
+		title:h_reunited_kingdom.holder = { save_scope_as = high_king_gondor }
 		play_music_cue = lotr_cue_RoK 
 	}
 	option = { 
