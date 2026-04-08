@@ -391,11 +391,37 @@
 				index = 16
 				male = {
 					##dukes				
-					1 = male_headgear_castamiri_crown			
+					25 = empty
+					25 = m_headgear_sec_ep2_western_era1_nob_01
+					##royalty
+					25 = m_headgear_sec_ep2_western_era1_roy_01
+					##imperial
+					25 = male_headgear_castamiri_crown			
 				}
 				female = {
 					##dukes						
-					1 = female_headgear_castamiri_crown					
+					25 = empty
+					25 = f_headgear_sec_ep2_western_era1_hi_nob_01
+					##royalty					
+					25 = f_headgear_sec_ep2_western_era1_roy_01
+					##imperial					
+					25 = female_headgear_castamiri_crown					
+				}
+				boy = male
+				girl = female
+			}
+			##End Quonton
+			
+			##Quonton
+			numenorean_high_spouce_headgear = {
+				index = 224
+				male = {
+					1 = m_headgear_sec_ep2_western_era1_roy_01
+					1 = m_headgear_sec_ep2_western_era1_imp_01	
+				}
+				female = {
+					1 = f_headgear_sec_ep2_western_era1_roy_01
+					1 = f_headgear_sec_ep2_western_era1_roy_01		
 				}
 				boy = male
 				girl = female
