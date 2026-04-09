@@ -1194,10 +1194,10 @@ numenorean_marines = { #represents Dunedain maritime traditions and mainly there
 	}
 	type = skirmishers
 	
-	damage = 46
-	toughness = 18
+	damage = 48
+	toughness = 38
 	pursuit = 20
-	screen = 20
+	screen = 25
 	
 	terrain_bonus = {
 		farmlands = { damage = 6 toughness = 4 }
@@ -1227,7 +1227,7 @@ numenorean_marines = { #represents Dunedain maritime traditions and mainly there
 
 	allowed_in_hired_troops = no
 	
-	stack = 100
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = numenorean_elites
 }
@@ -1249,7 +1249,7 @@ numenorean_soldiers_custom = {
 		}
 	}
 
-	damage = 74
+	damage = 80
 	toughness = 85
 	pursuit = 5
 	screen = 50
@@ -1279,7 +1279,7 @@ numenorean_soldiers_custom = {
 	high_maintenance_cost = { gold = 2.7 }
 	provision_cost = @provisions_cost_cavalry_expensive
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = numenorean_soldiers
 }
@@ -1301,10 +1301,10 @@ numenorean_archers_custom = {
 		}
 	}
 	
-	damage = 100
-	toughness = 70
-	pursuit = 50
-	screen = 60
+	damage = 92
+	toughness = 52
+	pursuit = 32
+	screen = 25
 	
 	terrain_bonus = {
 		hills = { damage = 12 toughness = 12 screen = 15 }
@@ -1339,7 +1339,7 @@ numenorean_archers_custom = {
 	high_maintenance_cost = { gold = 2.4 }
 	provision_cost = @provisions_cost_cavalry_expensive
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = numenorean_archers
 }
@@ -1395,8 +1395,8 @@ numenorean_knights_custom = {
 	
 	damage = 150
 	toughness = 62
-	pursuit = 40
-	screen = 40
+	pursuit = 50
+	screen = 32
 	
 	terrain_bonus = {
 		plains = { damage = 30 toughness = 30 }
@@ -1436,9 +1436,9 @@ numenorean_knights_custom = {
 numenorean_pikemen = {
 	type = pikemen
 	
-	damage = 65
-	toughness = 65
-	pursuit = 0
+	damage = 58
+	toughness = 70
+	pursuit = 10
 	screen = 45
 	
 	terrain_bonus = {
@@ -1479,7 +1479,7 @@ numenorean_pikemen = {
 		}
 	}
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = culture_ai_weight_pikemen }
 	icon = ephalzagar_an_adunai
 }
@@ -1501,10 +1501,10 @@ numenorean_elites_custom = {
 		}
 	}
 
-	damage = 110
-	toughness = 115
-	pursuit = 8
-	screen = 60
+	damage = 120
+	toughness = 125
+	pursuit = 10
+	screen = 68
 	
 	terrain_bonus = {
 		volcanic_plains = { damage = 10 toughness = 5 }
@@ -1600,9 +1600,10 @@ numenorean_marines_adunaic = { #represents Dunedain maritime traditions and main
 	}
 	type = skirmishers
 	
-	damage = 28
-	toughness = 24
-	screen = 24
+	damage = 48
+	toughness = 32
+	pursuit = 20
+	screen = 25
 	
 	terrain_bonus = {
 		farmlands = { damage = 6 toughness = 4 }
@@ -1631,7 +1632,7 @@ numenorean_marines_adunaic = { #represents Dunedain maritime traditions and main
 
 	allowed_in_hired_troops = no
 	
-	stack = 100
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = numenorean_elites
 }
@@ -1652,7 +1653,7 @@ numenorean_soldiers_adunaic = {
 		}
 	}
 
-	damage = 74
+	damage = 80
 	toughness = 85
 	pursuit = 5
 	screen = 50
@@ -1682,7 +1683,7 @@ numenorean_soldiers_adunaic = {
 	high_maintenance_cost = { gold = 2.7 }
 	provision_cost = @provisions_cost_cavalry_expensive
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = numenorean_soldiers
 }
@@ -1703,10 +1704,10 @@ numenorean_archers_adunaic = {
 		}
 	}
 	
-	damage = 100
-	toughness = 70
-	pursuit = 50
-	screen = 60
+	damage = 92
+	toughness = 52
+	pursuit = 32
+	screen = 25
 	
 	terrain_bonus = {
 		hills = { damage = 12 toughness = 12 screen = 15 }
@@ -1741,7 +1742,7 @@ numenorean_archers_adunaic = {
 	high_maintenance_cost = { gold = 2.4 }
 	provision_cost = @provisions_cost_cavalry_expensive
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = numenorean_archers 
 }
@@ -1764,8 +1765,8 @@ numenorean_knights_adunaic = {
 	
 	damage = 150
 	toughness = 62
-	pursuit = 40
-	screen = 40
+	pursuit = 50
+	screen = 32
 	
 	terrain_bonus = {
 		plains = { damage = 30 toughness = 30 }
@@ -1805,9 +1806,9 @@ numenorean_knights_adunaic = {
 numenorean_pikemen_adunaic = {
 	type = pikemen
 	
-	damage = 65
-	toughness = 65
-	pursuit = 0
+	damage = 58
+	toughness = 70
+	pursuit = 10
 	screen = 45
 	
 	terrain_bonus = {
@@ -1847,7 +1848,7 @@ numenorean_pikemen_adunaic = {
 		}
 	}
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = culture_ai_weight_pikemen }
 	icon = ephalzagar_an_adunai
 }
@@ -1868,10 +1869,10 @@ numenorean_elites_adunaic = {
 		}
 	}
 
-	damage = 110
-	toughness = 115
-	pursuit = 8
-	screen = 60
+	damage = 120
+	toughness = 125
+	pursuit = 10
+	screen = 68
 	
 	terrain_bonus = {
 		volcanic_plains = { damage = 10 toughness = 5 }
@@ -1970,10 +1971,11 @@ numenorean_soldiers = {
 			}
 		}
 	}
-
-	damage = 50
+	
+	##Quonton buffed to match new numenorean
+	damage = 58
 	toughness = 70
-	pursuit = 0
+	pursuit = 10
 	screen = 45
 	
 	terrain_bonus = {
@@ -1996,7 +1998,8 @@ numenorean_soldiers = {
 	high_maintenance_cost = { gold = 2.76 }
 	provision_cost = @provisions_cost_infantry_expensive
 	
-	stack = 80
+	##Buffed so hes a bigger challenge
+	stack = 100
 	ai_quality = { value = 500 }
 	icon = numenorean_soldiers
 }
@@ -2019,10 +2022,11 @@ numenorean_archers = {
 		}
 	}
 	
-	damage = 75
-	toughness = 30
-	pursuit = 20
-	screen = 10
+	##Quonton buffed to match new numenorean
+	damage = 92
+	toughness = 52
+	pursuit = 32
+	screen = 25
 	
 	terrain_bonus = {
 		plains = { damage = 23 toughness = 9 pursuit = 3 screen = 2 }
@@ -2044,7 +2048,8 @@ numenorean_archers = {
 	high_maintenance_cost = { gold = 2.18 }
 	provision_cost = @provisions_cost_infantry_expensive
 	
-	stack = 80
+	##Buffed so hes a bigger challenge
+	stack = 100
 	ai_quality = { value = 500 }
 	icon = numenorean_archers
 }
@@ -2065,10 +2070,11 @@ numenorean_marines = {
 		}
 	}
 
+	##Quonton buffed to match new numenorean
 	damage = 48
-	toughness = 28
-	pursuit = 18
-	screen = 20
+	toughness = 32
+	pursuit = 20
+	screen = 25
 
 	terrain_bonus = {
 		wetlands = { damage = 32 toughness = 19 pursuit = 6 screen = 7 }
@@ -2087,7 +2093,8 @@ numenorean_marines = {
 	high_maintenance_cost = { gold = 1.3 }
 	provision_cost = @provisions_cost_infantry_moderate
 	
-	stack = 80
+	##Buffed so hes a bigger challenge
+	stack = 100
 	ai_quality = { value = 500 }
 	icon = numenorean_soldiers
 }
@@ -2229,11 +2236,12 @@ numenorean_elites = {
 			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
 		}
 	}
-
-	damage = 80
-	toughness = 55
-	pursuit = 0
-	screen = 25
+	
+	##Quonton buffed to match new numenorean
+	damage = 120
+	toughness = 125
+	pursuit = 10
+	screen = 68
 	
 	counters = {
 		pikemen = 2
@@ -2245,7 +2253,8 @@ numenorean_elites = {
 	high_maintenance_cost = { gold = 3.46 }
 	provision_cost = @provisions_cost_infantry_bankrupting
 
-	stack = 80
+	##Buffed so hes a bigger challenge
+	stack = 100
 	ai_quality = { value = 500 }
 	icon = numenorean_elites
 }
@@ -2271,8 +2280,8 @@ dunedain_marines = { #represents Dunedain maritime traditions and mainly there f
 	}
 	type = skirmishers
 	
-	damage = 24
-	toughness = 20
+	damage = 36
+	toughness = 28
 	screen = 20
 	
 	terrain_bonus = {
@@ -2326,7 +2335,7 @@ dunedain_soldiers = {
 	damage = 60
 	toughness = 65
 	pursuit = 5
-	screen = 40
+	screen = 30
 	
 	counters = {
 		monster = 1
@@ -2343,7 +2352,7 @@ dunedain_soldiers = {
 	high_maintenance_cost = { gold = 2.4 }
 	provision_cost = @provisions_cost_infantry_moderate
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = arnorian_soldiers
 }
@@ -2366,9 +2375,9 @@ dunedain_reformed_wardens = { # Spear wielding rangers
 		}
 	}
 
-	damage = 60
+	damage = 50
 	toughness = 60
-	pursuit = 0
+	pursuit = 10
 	screen = 40
 	
 	terrain_bonus = {
@@ -2394,7 +2403,7 @@ dunedain_reformed_wardens = { # Spear wielding rangers
 
 	allowed_in_hired_troops = no
 
-	stack = 75
+	stack = 80
 	ai_quality = { value = 75}
 	icon = wardens_of_annuminas
 }
@@ -2444,7 +2453,7 @@ dunedain_archers = {
 	high_maintenance_cost = { gold = 2.4 }
 	provision_cost = @provisions_cost_infantry_moderate
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = arnorian_bowmen
 }
@@ -2465,9 +2474,9 @@ dunedain_steelbow = {
 	}
 	
 	damage = 90
-	toughness = 35
+	toughness = 36
 	pursuit = 15
-	screen = 5
+	screen = 10
 	
 	terrain_bonus = {
 		hills = { damage = 12 toughness = 12 screen = 15 }
@@ -2494,7 +2503,7 @@ dunedain_steelbow = {
 	high_maintenance_cost = { gold = 2.4 }
 	provision_cost = @provisions_cost_infantry_moderate
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = arnorian_bowmen
 }
@@ -2519,8 +2528,8 @@ dunedain_knights = {
 	}
 	
 	damage = 135
-	toughness = 52
-	pursuit = 30
+	toughness = 60
+	pursuit = 50
 	screen = 30
 	
 	terrain_bonus = {
@@ -2622,7 +2631,7 @@ dunedain_reformed_rangers = { #Longbowmen with increased damage and screen, bonu
 
 	type = archers
 	
-	damage = 84
+	damage = 90
 	toughness = 60
 	pursuit = 40
 	screen = 50

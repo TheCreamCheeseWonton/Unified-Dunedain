@@ -2724,6 +2724,8 @@ decision_reunify_numenor_culture = {
 						remove_innovation = innovation_southern_adunai_warfare
 						remove_innovation = innovation_knights_of_kharadune_warfare
 						remove_innovation = innovation_conscripts_warfare
+						remove_innovation = innovation_bellakari_warfare
+						remove_innovation = innovation_mardrukan_warfare
 					}
 				}
 			}
@@ -3036,6 +3038,8 @@ decision_reunify_numenor_culture = {
 						remove_innovation = innovation_southern_adunai_warfare
 						remove_innovation = innovation_knights_of_kharadune_warfare
 						remove_innovation = innovation_conscripts_warfare
+						remove_innovation = innovation_bellakari_warfare
+						remove_innovation = innovation_mardrukan_warfare
 					}
 				}
 			}
@@ -4439,7 +4443,7 @@ decision_new_capital = {
 		}
 		item = {	# Khorsaj
 			value = new_capital_khorsaj
-			localization = decision_new_capital.tt.new_capital_khorsaj
+			localization = decision_new_capital.tt.new_capital_khorsaj_custom
 			icon = "gfx/interface/icons/message_feed/titles.dds"
 			is_shown = { show_khorsaj_capital_trigger = yes }
 			is_valid = { valid_khorsaj_capital_trigger = yes }
@@ -4733,7 +4737,7 @@ decision_restore_gondor_province = {
 				}
 				desc = decision_restore_gondor_province.adunaic
 			}
-			##End Quonton
+			#End Quonton
 			desc = decision_restore_gondor_province.numenorean
 		}
 
@@ -4751,29 +4755,7 @@ decision_restore_gondor_province = {
 	is_shown = {
 		is_landed = yes
 		highest_held_title_tier >= tier_empire
-		OR = {
-			#is_gondor = yes
-			has_title = title:e_gondor_steward
-			has_title = title:e_gondor
-			has_title = title:e_castamir
-			has_title = title:h_numenor_in_exile
-			AND = {
-				has_title = title:h_reunited_kingdom
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:decision_solidify_reunited_kingdom
-				}
-			}
-			##Quonton
-			AND = {
-				has_title = title:h_pharazain
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:decision_solidify_pharazain
-				}
-			}
-			##End Quonton
-		}
+
 		OR = { # Ensures at least one option is still available
 			show_harondor_trigger = yes
 			show_harnendor_trigger = yes
@@ -4793,9 +4775,7 @@ decision_restore_gondor_province = {
 			show_raishoul_trigger = yes
 			show_zajantak_trigger = yes
 			show_mag_trigger = yes
-			show_tumag_trigger = yes
 			show_usakan_trigger = yes
-			show_tanturak_trigger = yes
 			show_anarike_trigger = yes
 			##End Quonton
 		}
@@ -4820,6 +4800,18 @@ decision_restore_gondor_province = {
 					}
 				}
 			}
+			##Quonton
+			custom_tooltip = {
+				text = pharazain_solidified
+				AND = {
+					has_title = title:h_pharazain
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:decision_solidify_pharazain
+					}
+				}
+			}
+			##End Quonton
 		}
 		OR = {
 			trigger_if = { # Harondor
@@ -4896,19 +4888,11 @@ decision_restore_gondor_province = {
 			}
 			trigger_if = { # Mag - Pharazain/NiE Only
 				limit = { show_mag_trigger = yes }
-				completely_controls = title:k_mag
-			}
-			trigger_if = { # Tumag - Pharazain/NiE Only
-				limit = { show_tumag_trigger = yes }
-				completely_controls = title:k_tumag
+				completely_controls = title:e_mag_tumag
 			}
 			trigger_if = { # Usakan - Pharazain/NiE Only
 				limit = { show_usakan_trigger = yes }
-				completely_controls = title:k_usakan
-			}
-			trigger_if = { # Tanturak - Pharazain/NiE Only
-				limit = { show_tanturak_trigger = yes }
-				completely_controls = title:k_tanturak
+				completely_controls = title:e_usakan
 			}
 			trigger_if = { # Anarike - NiE Only
 				limit = { show_anarike_trigger = yes }
@@ -5160,20 +5144,7 @@ decision_restore_gondor_province = {
 			icon = "gfx/interface/icons/message_feed/adventurer.dds"
 			is_shown = { show_mag_trigger = yes }
 			is_valid = {
-				completely_controls = title:k_mag
-			}
-			ai_chance = {
-				value = 100
-			}
-		}
-		item = {	# Tumag		- Pharazain/NiE Only
-			value = reintegrate_province_tumag
-			current_description = decision_restore_gondor_province.tt.tumag_desc
-			localization = decision_restore_gondor_province.tt.tumag_desc
-			icon = "gfx/interface/icons/message_feed/banner.dds"
-			is_shown = { show_tumag_trigger = yes }
-			is_valid = {
-				completely_controls = title:k_tumag
+				completely_controls = title:e_mag_tumag
 			}
 			ai_chance = {
 				value = 100
@@ -5186,20 +5157,7 @@ decision_restore_gondor_province = {
 			icon = "gfx/interface/icons/message_feed/artifact.dds"
 			is_shown = { show_usakan_trigger = yes }
 			is_valid = {
-				completely_controls = title:k_usakan
-			}
-			ai_chance = {
-				value = 100
-			}
-		}
-		item = {	# Tanturak		- Pharazain/NiE Only
-			value = reintegrate_province_tanturak
-			current_description = decision_restore_gondor_province.tt.tanturak_desc
-			localization = decision_restore_gondor_province.tt.tanturak_desc
-			icon = "gfx/interface/icons/message_feed/administration.dds"
-			is_shown = { show_tanturak_trigger = yes }
-			is_valid = {
-				completely_controls = title:k_tanturak
+				completely_controls = title:e_usakan
 			}
 			ai_chance = {
 				value = 100
@@ -5500,15 +5458,13 @@ decision_restore_gondor_province = {
 		}
 		
 		##Quonton
-		else_if = {	# Haruzan		- Pharazain/NiE Only
+		else_if = {	# Haruzan		- NiE Only
 			limit = {
 				scope:reintegrate_province_haruzan = yes
 			}
 			custom_tooltip = integrate_haruzan_decision
 			root = { save_scope_as = new_ruler }
-			title:k_haruzan = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_haruzan = { set_de_jure_liege_title = title:e_gondor }
 			title:k_haruzan = {
 				change_development_level = 2
 			}
@@ -5517,15 +5473,13 @@ decision_restore_gondor_province = {
 				target = flag:decision_integrate_haruzan
 			}
 		}
-		else_if = {	# Narak		- Pharazain/NiE Only
+		else_if = {	# Narak		- NiE Only
 			limit = {
 				scope:reintegrate_province_narak = yes
 			}
 			custom_tooltip = integrate_narak_decision
 			root = { save_scope_as = new_ruler }
-			title:k_narak = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_narak = { set_de_jure_liege_title = title:e_gondor }
 			title:k_narak = {
 				change_development_level = 2
 			}
@@ -5540,9 +5494,7 @@ decision_restore_gondor_province = {
 			}
 			custom_tooltip = integrate_tedja_decision
 			root = { save_scope_as = new_ruler }
-			title:k_tedja = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_tedja = { set_de_jure_liege_title = title:e_bellakar }
 			title:k_tedja = {
 				change_development_level = 2
 			}
@@ -5557,9 +5509,7 @@ decision_restore_gondor_province = {
 			}
 			custom_tooltip = integrate_qarsa_decision
 			root = { save_scope_as = new_ruler }
-			title:k_qarsa = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_qarsa = { set_de_jure_liege_title = title:e_bellakar }
 			title:k_qarsa = {
 				change_development_level = 2
 			}
@@ -5574,9 +5524,7 @@ decision_restore_gondor_province = {
 			}
 			custom_tooltip = integrate_aukar_decision
 			root = { save_scope_as = new_ruler }
-			title:k_aukar = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_aukar = { set_de_jure_liege_title = title:e_bellakar }
 			title:k_aukar = {
 				change_development_level = 2
 			}
@@ -5591,9 +5539,7 @@ decision_restore_gondor_province = {
 			}
 			custom_tooltip = integrate_ray_decision
 			root = { save_scope_as = new_ruler }
-			title:k_ray = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_ray = { set_de_jure_liege_title = title:e_bellakar }
 			title:k_ray = {
 				change_development_level = 2
 			}
@@ -5608,9 +5554,7 @@ decision_restore_gondor_province = {
 			}
 			custom_tooltip = integrate_raishoul_decision
 			root = { save_scope_as = new_ruler }
-			title:k_raishoul = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_raishoul = { set_de_jure_liege_title = title:e_thani_hazad }
 			title:k_raishoul = {
 				change_development_level = 2
 			}
@@ -5625,9 +5569,7 @@ decision_restore_gondor_province = {
 			}
 			custom_tooltip = integrate_zajantak_decision
 			root = { save_scope_as = new_ruler }
-			title:k_zajantak = {
-				set_appropriate_de_jure_liege = yes
-			}
+			title:k_zajantak = { set_de_jure_liege_title = title:e_thani_hazad }
 			title:k_zajantak = {
 				change_development_level = 2
 			}
@@ -5636,38 +5578,25 @@ decision_restore_gondor_province = {
 				target = flag:decision_integrate_zajantak
 			}
 		}
-		else_if = {	# Mag		- Pharazain/NiE Only
+		else_if = {	# Mag&Tumag		- Pharazain/NiE Only
 			limit = {
 				scope:reintegrate_province_mag = yes
 			}
 			custom_tooltip = integrate_mag_decision
 			root = { save_scope_as = new_ruler }
-			title:k_mag = {
-				set_appropriate_de_jure_liege = yes
+			if = {
+				limit = { has_title = title:h_numenor_in_exile }
+				title:e_mag_tumag = { set_de_jure_liege_title = title:h_numenor_in_exile }
 			}
-			title:k_mag = {
+			else = {
+				title:e_mag_tumag = { set_de_jure_liege_title = title:h_pharazain }
+			}
+			title:e_mag_tumag = {
 				change_development_level = 2
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:decision_integrate_mag
-			}
-		}
-		else_if = {	# Tumag		- Pharazain/NiE Only
-			limit = {
-				scope:reintegrate_province_tumag = yes
-			}
-			custom_tooltip = integrate_tumag_decision
-			root = { save_scope_as = new_ruler }
-			title:k_tumag = {
-				set_appropriate_de_jure_liege = yes
-			}
-			title:k_tumag = {
-				change_development_level = 2
-			}
-			add_to_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:decision_integrate_tumag
 			}
 		}
 		else_if = {	# Usakan		- Pharazain/NiE Only
@@ -5676,10 +5605,14 @@ decision_restore_gondor_province = {
 			}
 			custom_tooltip = integrate_usakan_decision
 			root = { save_scope_as = new_ruler }
-			title:k_usakan = {
-				set_appropriate_de_jure_liege = yes
+			if = {
+				limit = { has_title = title:h_numenor_in_exile }
+				title:e_usakan = { set_de_jure_liege_title = title:h_numenor_in_exile }
 			}
-			title:k_usakan = {
+			else = {
+				title:e_usakan = { set_de_jure_liege_title = title:h_pharazain }
+			}
+			title:e_usakan = {
 				change_development_level = 2
 			}
 			add_to_global_variable_list = {
@@ -5687,23 +5620,6 @@ decision_restore_gondor_province = {
 				target = flag:decision_integrate_usakan
 			}
 		}
-		else_if = {	# Tanturak		- Pharazain/NiE Only
-			limit = {
-				scope:reintegrate_province_tanturak = yes
-			}
-			custom_tooltip = integrate_tanturak_decision
-			root = { save_scope_as = new_ruler }
-			title:k_tanturak = {
-				set_appropriate_de_jure_liege = yes
-			}
-			title:k_tanturak = {
-				change_development_level = 2
-			}
-			add_to_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:decision_integrate_tanturak
-			}
-		}	
 		else_if = {	# Anarike		- NiE Only
 			limit = {
 				scope:reintegrate_province_anarike = yes
@@ -7102,7 +7018,14 @@ decision_bellakar_unification = { # Vassalize Bellakar After defeating Sauron
 	is_shown = {
 		has_title = title:h_reunited_kingdom
 		faith_is_good = yes
-		culture = { has_cultural_pillar = heritage_dunedain }		
+		##Quonton
+		culture ?= { 
+			OR = { 
+				has_cultural_pillar = heritage_dunedain
+				has_cultural_tradition = tradition_new_numenor						
+			}
+		}	
+		##End Quonton
 		NOR = {
 			has_title = title:h_pharazain
 			has_title = title:h_numenor_in_exile

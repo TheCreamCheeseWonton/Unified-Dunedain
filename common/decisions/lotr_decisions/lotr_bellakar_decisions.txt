@@ -26,7 +26,11 @@ decision_reclaim_mardruak = {
 	is_shown = {
 		current_year >= 5630		# After it becomes dejure Umbar
 		culture = {
-			has_cultural_pillar = heritage_bellakari
+			##Quonton
+			OR = { 
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
 		}
 		is_landed = yes
 		OR = {
@@ -116,7 +120,11 @@ decision_bellakar_felayan_rapproachement = {
 	is_shown = {
 		current_year >= 6000
 		culture = {
-			has_cultural_pillar = heritage_bellakari
+			##Quonton
+			OR = { 
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
 		}
 		has_title = title:e_bellakar
 		title:k_felaya.holder = {
@@ -251,7 +259,11 @@ decision_bellakar_vassalise_izindubeth = {
 	is_shown = {
 		current_year >= 6000
 		culture = {
-			has_cultural_pillar = heritage_bellakari
+			##Quonton
+			OR = { 
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
 		}
 		OR = {
 			has_title = title:e_bellakar
@@ -511,7 +523,7 @@ decision_proclaim_pharazain = {
 					holder = root
 				}
 				##Quonton
-				percent >= 0.7
+				percent >= 0.9
 			}
 		}
 	}
@@ -568,16 +580,22 @@ decision_proclaim_pharazain = {
 				target = flag:separatism_has_been_delt_with_an_balkumagan
 			}
 		}
-		if = { # Make it Phara-Rain | Achievement
-			limit = {
-				NOT = {
-					exists = global_var:lotr_achievement_67
-				}
-				is_ai = no
-				realms_achievements_enabled = yes
-				has_primary_title = title:e_bellakar
+		else_if = { 
+			limit = { 
+				has_primary_title = title:e_anbalkumagan
 			}
-			set_global_variable = lotr_achievement_67
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:separatism_has_been_delt_with_tulwang
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:separatism_has_been_delt_with_an_balkumagan
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:separatism_has_been_delt_with_kharadune
+			}
 		}
 		save_scope_as = founder
 		#Create the title and make it primary
@@ -2274,6 +2292,8 @@ decision_unify_adunai = {
 				remove_innovation = innovation_southern_adunai_warfare
 				remove_innovation = innovation_knights_of_kharadune_warfare
 				remove_innovation = innovation_conscripts_warfare
+				remove_innovation = innovation_bellakari_warfare
+				remove_innovation = innovation_mardrukan_warfare
 			}
 		}
 		trigger_event = pharazain_events.2   # Unify Adunaic Identity Flavor
@@ -2347,8 +2367,6 @@ decision_bozisha_dar_tributary = {
 	is_shown = {
 		has_title = title:h_pharazain
 
-		highest_held_title_tier >= tier_empire
-		
 		NOT = { has_title = title:c_bozisha_dar }
 		NOT = { has_title = title:k_ray }
 		exists = title:c_bozisha_dar.holder
@@ -3467,9 +3485,9 @@ decision_bellakar_x_gondor = {
 					has_title = title:k_felaya
 				}
 				completely_controls = title:k_felaya
+				##Quonton
+				has_title = title:h_pharazain
 			}
-			##Quonton
-			has_title = title:h_pharazain
 		}
 	}
 
@@ -3553,7 +3571,11 @@ decision_tame_desert = {
 	
 	is_shown = {
 		culture = {
-			has_cultural_pillar = heritage_bellakari
+			##Quonton
+			OR = {	
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
 		}
 		is_landed = yes
 		

@@ -751,7 +751,7 @@ skull_earnur_template = {
 
 	# can this character benefit from the full modifiers of the artifact?
 	can_benefit = {
-		or = {
+		OR = {
 			has_faith = faith:lidless_eye
 			##Quonton
 			culture = { has_cultural_pillar = heritage_dunedain }
@@ -1925,6 +1925,8 @@ crown_of_imrazor_II_template = {
 	can_benefit = {
 		OR = {
 			culture = { has_cultural_pillar = heritage_southern_adunaic }
+			##Quonton
+			culture = { has_cultural_pillar = heritage_unified_adunaic }
 			has_title = title:e_thani_hazad
 			has_title = title:h_pharazain
 			has_title = title:h_numenor_in_exile

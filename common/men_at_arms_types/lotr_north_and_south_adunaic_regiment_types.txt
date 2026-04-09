@@ -627,8 +627,8 @@ adunaic_skirmishers = {
 		}
 	}	
 	type = skirmishers			
-	damage = 20
-	toughness = 16
+	damage = 36
+	toughness = 28
 	screen = 20
 	
 	terrain_bonus = {
@@ -675,9 +675,9 @@ adunaic_soldiers = { # Heavy Shock Infantry
 	}	
 	type = heavy_infantry
 	damage = 60
-	toughness = 60
-	pursuit = 0
-	screen = 20
+	toughness = 65
+	pursuit = 5
+	screen = 30
 	
 	terrain_bonus = {
 		volcanic_plains = { damage = 10 toughness = 5 }
@@ -706,115 +706,11 @@ adunaic_soldiers = { # Heavy Shock Infantry
 	high_maintenance_cost = { gold = 1.5 }
 	provision_cost = @provisions_cost_infantry_expensive
 	
-	stack = 75
+	stack = 80
 
 	allowed_in_hired_troops = no
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = adunakhori
-}
-
-adunaic_elites = { # Heavy Shock Infantry
-	can_recruit = { 
-		OR = {
-			AND = {
-				culture = { has_innovation = innovation_unified_adunai_warfare }
-				highest_held_title_tier >= tier_kingdom
-			}
-			AND = {
-				is_human = yes
-				is_landless_adventurer = yes
-				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_unified_adunai_warfare }
-			}
-		}
-	}	
-	type = heavy_infantry
-	damage = 100
-	toughness = 100
-	pursuit = 0
-	screen = 40
-	
-	terrain_bonus = {
-		volcanic_plains = { damage = 10 toughness = 5 }
-		farmlands = { damage = 20 toughness = 10 pursuit = 10 screen = 10 }
-		hills = { damage = 10 toughness = 6 }
-		red_desert = { damage = 10 toughness = 6 }
-		plains = { damage = 15 toughness = 6 }
-		forest = { damage = 10 toughness = 6 }
-	}
-	
-	counters = {
-		skirmishers = 2
-		heavy_infantry = 1
-		pikemen = 1
-		monster = 1
-	}
-
-	buy_cost = { gold = 500 }
-	low_maintenance_cost = { gold = 1.2 }
-	high_maintenance_cost = { gold = 3.4 }
-	provision_cost = @provisions_cost_infantry_expensive
-	
-	stack = 50
-	
-	max_regiments = 1
-
-	allowed_in_hired_troops = no
-	ai_quality = { value = @cultural_maa_extra_ai_score }
-	icon = golden_numenorean
-}
-
-adunaic_spearmen = {
-	can_recruit = { 
-		OR = {
-			culture = { has_innovation = innovation_unified_adunai_warfare }
-			AND = {
-				is_human = yes
-				is_landless_adventurer = yes
-				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_unified_adunai_warfare }
-			}
-		}
-	}	
-	type = pikemen		
-	damage = 60
-	toughness = 60
-	pursuit = 0
-	screen = 10
-	
-	terrain_bonus = {
-		mountains = { damage = 10 toughness = 30 }
-		desert_mountains = { damage = 10 toughness = 30 }
-		hills = { damage = 5 toughness = 25 }
-		red_desert = { damage = 5 toughness = 25 }
-		plains = { damage = 6 toughness = 15 pursuit = 6 }
-		farmlands = { damage = 10 toughness = 15 pursuit = 10 }
-		desert = { damage = -10 toughness = -10 }
-		dune_sea = { damage = -20 toughness = -20 }
-	}
-	
-	counters = {
-		light_cavalry = 2
-		heavy_cavalry = 1
-		camel_cavalry = 1
-		elephant_cavalry = 1
-		pikemen = 1
-	}
-
-	winter_bonus = {
-		normal_winter = { damage = -10 toughness = -10 }
-		harsh_winter = { damage = -20 toughness = -20 }
-	}
-
-	buy_cost = { gold = 105 }
-	low_maintenance_cost = { gold = 0.4 }
-	high_maintenance_cost = { gold = 1.2 }
-	provision_cost = @provisions_cost_infantry_moderate
-	
-	stack = 75
-	ai_quality = { value = @cultural_maa_extra_ai_score }
-	allowed_in_hired_troops = no
-	icon = narunaru_royal_guard
 }
 
 adunic_steelbowmen = { 
@@ -832,8 +728,8 @@ adunic_steelbowmen = {
 	type = archers
 	
 	damage = 90
-	toughness = 35
-	pursuit = 10
+	toughness = 36
+	pursuit = 15
 	screen = 10
 	
 	terrain_bonus = {
@@ -860,7 +756,7 @@ adunic_steelbowmen = {
 	
 	holy_order_fallback = no
 	
-	stack = 75
+	stack = 80
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = abrazanim_warbows
 }
@@ -875,9 +771,9 @@ knights_of_the_adunai = {
 
 	stack = 50
 	damage = 135
-	toughness = 52
-	pursuit = 30
-	screen = 15
+	toughness = 60
+	pursuit = 50
+	screen = 30
 
 	counters = {
 		heavy_infantry = 1
@@ -917,5 +813,110 @@ knights_of_the_adunai = {
 	
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = knights_of_kharadune
+}
+
+
+adunaic_spearmen = {
+	can_recruit = { 
+		OR = {
+			culture = { has_innovation = innovation_unified_adunai_warfare }
+			AND = {
+				is_human = yes
+				is_landless_adventurer = yes
+				has_perk = planned_cultivation_perk
+				location.culture ?= { has_innovation = innovation_unified_adunai_warfare }
+			}
+		}
+	}	
+	type = pikemen		
+	damage = 50
+	toughness = 60
+	pursuit = 10
+	screen = 10
+	
+	terrain_bonus = {
+		mountains = { damage = 10 toughness = 30 }
+		desert_mountains = { damage = 10 toughness = 30 }
+		hills = { damage = 5 toughness = 25 }
+		red_desert = { damage = 5 toughness = 25 }
+		plains = { damage = 6 toughness = 15 pursuit = 6 }
+		farmlands = { damage = 10 toughness = 15 pursuit = 10 }
+		desert = { damage = -10 toughness = -10 }
+		dune_sea = { damage = -20 toughness = -20 }
+	}
+	
+	counters = {
+		light_cavalry = 2
+		heavy_cavalry = 1
+		camel_cavalry = 1
+		elephant_cavalry = 1
+		pikemen = 1
+	}
+
+	winter_bonus = {
+		normal_winter = { damage = -10 toughness = -10 }
+		harsh_winter = { damage = -20 toughness = -20 }
+	}
+
+	buy_cost = { gold = 105 }
+	low_maintenance_cost = { gold = 0.4 }
+	high_maintenance_cost = { gold = 1.2 }
+	provision_cost = @provisions_cost_infantry_moderate
+	
+	stack = 80
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	allowed_in_hired_troops = no
+	icon = narunaru_royal_guard
+}
+
+adunaic_elites = { # Heavy Shock Infantry
+	can_recruit = { 
+		OR = {
+			AND = {
+				culture = { has_innovation = innovation_unified_adunai_warfare }
+				highest_held_title_tier >= tier_kingdom
+			}
+			AND = {
+				is_human = yes
+				is_landless_adventurer = yes
+				has_perk = planned_cultivation_perk
+				location.culture ?= { has_innovation = innovation_unified_adunai_warfare }
+			}
+		}
+	}	
+	type = heavy_infantry
+	damage = 100
+	toughness = 105
+	pursuit = 6
+	screen = 40
+	
+	terrain_bonus = {
+		volcanic_plains = { damage = 10 toughness = 5 }
+		farmlands = { damage = 20 toughness = 10 pursuit = 10 screen = 10 }
+		hills = { damage = 10 toughness = 6 }
+		red_desert = { damage = 10 toughness = 6 }
+		plains = { damage = 15 toughness = 6 }
+		forest = { damage = 10 toughness = 6 }
+	}
+	
+	counters = {
+		skirmishers = 2
+		heavy_infantry = 1
+		pikemen = 1
+		monster = 1
+	}
+
+	buy_cost = { gold = 500 }
+	low_maintenance_cost = { gold = 1.2 }
+	high_maintenance_cost = { gold = 3.4 }
+	provision_cost = @provisions_cost_infantry_expensive
+	
+	stack = 50
+	
+	max_regiments = 1
+
+	allowed_in_hired_troops = no
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	icon = golden_numenorean
 }
 ##End Quonton

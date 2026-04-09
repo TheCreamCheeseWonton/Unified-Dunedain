@@ -382,9 +382,17 @@ decision_integrate_tulwang = {
 		is_landed = yes
 		OR = {
 			has_title = title:e_thani_hazad
-			# has_title = title:h_pharazain # Pharazain gets Tulwang by default.
+			has_title = title:h_pharazain # Pharazain gets Tulwang by default. ##Lies
 			has_title = title:h_numenor_in_exile
 		}
+		##Quonton - Cant do it if youve already done it
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:anbalkumagan_empire
+			}
+		}
+		##End Quonton
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions

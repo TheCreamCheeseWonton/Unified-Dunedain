@@ -76,12 +76,14 @@ lotr_has_graphical_steppe_culture_group_trigger = {
 }
 
 lotr_has_graphical_iberian_culture_group_trigger = {
+	##Quonton
 	OR = {
 		has_cultural_pillar = heritage_southern_adunaic
 		has_cultural_pillar = heritage_northern_adunaic
 		has_cultural_pillar = heritage_bellakari
 		has_cultural_pillar = heritage_unified_adunaic 
 	}
+	##End Quonton
 }
 
 lotr_has_graphical_iranian_culture_group_trigger = {

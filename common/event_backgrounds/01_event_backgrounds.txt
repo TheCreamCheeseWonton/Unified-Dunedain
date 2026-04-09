@@ -771,6 +771,8 @@ temple = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+						##Quonton
+						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -781,6 +783,8 @@ temple = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari } 
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+					##Quonton
+					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -1060,6 +1064,8 @@ temple_scope = {
 					has_cultural_pillar = heritage_northern_adunaic
 					has_cultural_pillar = heritage_bellakari
 					has_cultural_pillar = heritage_southern_adunaic
+					##Quonton
+					has_cultural_pillar = heritage_unified_adunaic
 				}
 			}
 		}
@@ -1267,6 +1273,8 @@ corridor_night = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+						##Quonton
+						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 					NOT = {
 						government_has_flag = government_is_tribal
@@ -1284,6 +1292,8 @@ corridor_night = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+					##Quonton
+					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 				NOT = {
 					government_has_flag = government_is_tribal
@@ -1486,6 +1496,8 @@ corridor_day = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+						##Quonton
+						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 					NOT = {
 						government_has_flag = government_is_tribal
@@ -1504,6 +1516,8 @@ corridor_day = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+					##Quonton
+					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 				NOT = {
 					government_has_flag = government_is_tribal
@@ -1707,6 +1721,8 @@ council_chamber = {
 								#has_graphical_mediterranean_culture_group_trigger = yes 
 								has_cultural_pillar = heritage_bellakari
 								has_cultural_pillar = heritage_northern_adunaic
+								##Quonton
+								has_cultural_pillar = heritage_unified_adunaic
 							}
 						}
 						location ?= { steppe_building_gfx_use_mediterranean_trigger = yes }
@@ -1723,6 +1739,8 @@ council_chamber = {
 							#has_graphical_mediterranean_culture_group_trigger = yes 
 							has_cultural_pillar = heritage_bellakari
 							has_cultural_pillar = heritage_northern_adunaic
+							##Quonton
+							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 					location ?= { steppe_building_gfx_use_mediterranean_trigger = yes }
@@ -2124,6 +2142,8 @@ courtyard = {
 						#location = { geographical_region = world_europe_west_iberia }
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
+						##Quonton
+						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -2133,6 +2153,8 @@ courtyard = {
 					#location = { geographical_region = world_europe_west_iberia }
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
+					##Quonton
+					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -2568,6 +2590,8 @@ courtyard_location = {
 						#location = { geographical_region = world_europe_west_iberia }
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
+						##Quonton
+						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -2577,6 +2601,8 @@ courtyard_location = {
 					#location = { geographical_region = world_europe_west_iberia }
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
+					##Quonton
+					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -2711,6 +2737,8 @@ courtyard_scope = {
 				#location = { geographical_region = world_europe_west_iberia }
 				location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 				location.culture ?= { has_cultural_pillar = heritage_bellakari }
+				##Quonton
+				location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/fp2_courtyard.dds"
@@ -2838,6 +2866,8 @@ dungeon = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
+						##Quonton
+						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -2850,6 +2880,8 @@ dungeon = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
+					##Quonton
+					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 			
@@ -2891,6 +2923,8 @@ dungeon_scope = {
 					capital_province.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					capital_province.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 					capital_province.culture ?= { has_cultural_pillar = heritage_bellakari }
+					##Quonton
+					capital_province.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -6676,6 +6710,8 @@ feast = {
 						culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_bellakari }
+						##Quonton
+						culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -6691,6 +6727,8 @@ feast = {
 						culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_bellakari }
+						##Quonton
+						culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -7014,6 +7052,8 @@ feast_event = {
 							culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 							culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 							culture ?= { has_cultural_pillar = heritage_bellakari }
+							##Quonton
+							culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						}
 					}
 				}
@@ -7025,6 +7065,8 @@ feast_event = {
 						culture ?= { has_cultural_pillar = heritage_southern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_bellakari }
+						##Quonton
+						culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -7522,6 +7564,8 @@ garden = {
 						location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						location.culture ?= { has_cultural_pillar = heritage_bellakari }
 						location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+						##Quonton
+						location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -7538,6 +7582,8 @@ garden = {
 					location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					location.culture ?= { has_cultural_pillar = heritage_bellakari }
 					location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+					##Quonton
+					location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -7895,6 +7941,8 @@ garden_location = {
 				location.culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 				location.culture ?= { has_cultural_pillar = heritage_bellakari }
 				location.culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+				##Quonton
+				location.culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/fp2_garden.dds"
@@ -8316,6 +8364,8 @@ market = {
 							culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 							culture ?= { has_cultural_pillar = heritage_bellakari }
 							culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+							##Quonton
+							culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 						}
 					}
 				}
@@ -8330,6 +8380,8 @@ market = {
 						culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 						culture ?= { has_cultural_pillar = heritage_bellakari }
 						culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+						##Quonton
+						culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
 			}
@@ -8643,6 +8695,8 @@ market_scope = {
 					culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					culture ?= { has_cultural_pillar = heritage_bellakari }
 					culture ?= { has_cultural_pillar = heritage_southern_adunaic }
+					##Quonton
+					culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -9181,6 +9235,8 @@ sitting_room = {
 							OR = {
 								has_cultural_pillar = heritage_northern_adunaic
 								has_cultural_pillar = heritage_bellakari
+								##Quonton
+								has_cultural_pillar = heritage_unified_adunaic
 							}
 						}
 						location ?= {
@@ -9197,6 +9253,8 @@ sitting_room = {
 						OR = {
 							has_cultural_pillar = heritage_northern_adunaic
 							has_cultural_pillar = heritage_bellakari
+							##Quonton
+							has_cultural_pillar = heritage_unified_adunaic
 						}
 					}
 					location ?= {
@@ -10519,10 +10577,26 @@ tavern = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					location.culture ?= { has_cultural_pillar = heritage_dunedain }
+					location.culture ?= { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					} 
 				}
 			}
-			trigger_else = { location.culture ?= { has_cultural_pillar = heritage_dunedain } }
+			trigger_else = { 
+				location.culture ?= { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				}  
+			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
 		environment = "environment_event_tavern"
@@ -14936,11 +15010,25 @@ holy_site_unique = {
 			trigger_if = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
-					location.culture = { has_cultural_pillar = heritage_dunedain }
+					location.culture ?= { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					} 
 				}
 			}
 			trigger_else = {
-				location.culture = { has_cultural_pillar = heritage_dunedain }
+				location.culture ?= { 
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				} 
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_holysite_gondor.dds"
@@ -16477,12 +16565,26 @@ ep2_involved_activity = {
 				limit = { exists = scope:bg_override_char }
 				scope:bg_override_char = {
 					involved_activity ?= { has_activity_type = activity_pilgrimage }
-					involved_activity.activity_location.culture = { has_cultural_pillar = heritage_dunedain }
+					involved_activity.activity_location.culture = { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					}
 				}
 			}
 			trigger_else = {
 				involved_activity ?= { has_activity_type = activity_pilgrimage }
-				involved_activity.activity_location.culture = { has_cultural_pillar = heritage_dunedain }
+				involved_activity.activity_location.culture = {
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				} 
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_holysite_gondor.dds"
@@ -17298,7 +17400,14 @@ ep2_activity = {
 				
 			}
 			scope:activity ?= { has_activity_type = activity_pilgrimage }
-			scope:activity.activity_location.culture = { has_cultural_pillar = heritage_dunedain }
+			scope:activity.activity_location.culture = {
+					##Quonton
+					OR = { 
+						has_cultural_pillar = heritage_dunedain 
+						has_cultural_tradition = tradition_new_numenor
+					}
+					##End Quonton
+				} 
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_holysite_gondor.dds"
 		environment = "environment_ep3_holysite_orthodox"
@@ -20728,7 +20837,16 @@ coronation_activity_background = {
 		trigger = {
 			involved_activity ?= {
 				activity_location = { NOT = { has_holding_type = church_holding } }
-				activity_host = { culture ?= { has_cultural_pillar = heritage_dunedain } }
+				activity_host = { 
+					culture ?= { 
+						##Quonton
+						OR = { 
+							has_cultural_pillar = heritage_dunedain 
+							has_cultural_tradition = tradition_new_numenor
+						}
+						##End Quonton
+					} 
+				}
 				has_current_phase = coronation_phase_coronation
 			}
 		}

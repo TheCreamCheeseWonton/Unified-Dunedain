@@ -47,6 +47,7 @@ innovation_unified_adunai_warfare = {
 	potential = {
 		has_cultural_pillar = heritage_unified_adunaic
 		NOT = { has_cultural_tradition = tradition_new_numenor }
+		NOT = { has_innovation =  innovation_numenorean_warriors_adunaic }
 	}
 
 	custom = unlock_adunaic_skirmishers

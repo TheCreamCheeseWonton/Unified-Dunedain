@@ -371,7 +371,12 @@ artifact_use_dalish_unit_visuals_trigger = {
 
 artifact_use_gondorian_unit_visuals_trigger = {
 	exists = culture
-	culture = { has_cultural_pillar = heritage_dunedain }
+	##Quonton
+	OR = { 
+		culture = { has_cultural_pillar = heritage_dunedain }
+		culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
+	##End Quonton
 }
 
 artifact_use_orcish_unit_visuals_trigger = {

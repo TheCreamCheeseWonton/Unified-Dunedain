@@ -188,7 +188,7 @@
 
  control_percentage_of_pharazain_dunedain_desc: "You must control at least #V 95%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
 
- control_of_pharazain_dunedain_desc: "You must control at least #V 70%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
+ control_of_pharazain_dunedain_desc: "You must control at least #V 90%#! of the [counties|E] of the [GetGeographicalRegion('special_pharazain').GetName] [region|E]"
 
  control_of_thani_hazad_dunedain_full_desc: "You must control at least #V 90%#! of the [counties|E] of both the [GetGeographicalRegion('custom_mannish_thani_hazad').GetName] and [GetGeographicalRegion('custom_anbalkumagan').GetName] [regions|E]"
  
@@ -317,6 +317,7 @@
  decision_solidify_pharazain_confirm: "The Adûnâi shall stand united till the end of days!"
  decision_solidify_pharazain_tooltip: "The homelands of the Adûnâi shall never again be sundered!"
  decision_solidify_pharazain_tt: "The [GetTitleByKey('h_pharazain').GetName] becomes [de_jure|E] liege of all [kingdom|E] [titles|E] within the [GetGeographicalRegion('special_pharazain').GetName]."
+ pharazain_solidified: "You hold and have solidified the [GetTitleByKey('h_pharazain').GetName] [title|E]"
 
  decision_unify_adunai: "Restore a Unified Adûnâic Identity"
  decision_unify_adunai_desc: "Since the [akallabeth|E] sundered the many colonies of [numenor|E], the different realms of our forefathers split apart and developed wildly different cultures. From [umbar|E] and the ever vengeful [kingsmen|E], [bellakar|E] and their egalitarian [faithful|E], [anbalkumagan|E] and their endless depravity, and [thanihazad|E] and the machinations of the [balan_lai|E]. All have developed their own distinct cultures, shaped by their long histories and the many trials and outside influences they have faced. Yet all have ever been fundamentally kingdoms of the [adunai|E], and proud of their high heritage. With the proclamation and solidification of [GetTitleByKey('h_pharazain').GetNameNoTier], the boundaries which once divided the [adunai|E] have fallen, and our people for the first time since the golden age of [numenor|E] have been united beneath a single crown. It will require much work to bring cultures long sundered under one roof once more, but given time and effort, even the diversity of the [adunaic|E] peoples might once more be made one."
@@ -957,80 +958,71 @@
  decision_new_capital.tt.new_capital_uruloni: "[GetTitleByKey('c_uruloni').GetNameNoTier]" 
  new_capital_uruloni_tooltip: "Ûrulôni is an old and great city. Overlooking the lower suburb of Ûrulômik, Ûrulôni is truly of [numenorean|E] make, emulating the old architecture of Ondostar."
 
+ decision_new_capital.tt.new_capital_khorsaj_custom: "[GetTitleByKey('c_khorsaj').GetNameNoTier]"
+ new_capital_khorsaj_custom_tooltip: "Khorsâj is a great fortress of the [adunai|E] of the south and the traditional capital of the Stormhost. It lies central in the [bayoftulwang|E] and has served as a bastion against the unruly natives for many centuries."
+
  ##Restore Province Loc
  decision_restore_gondor_province.adunaic: "Restore Adûnâic Province"
 
  decision_restore_gondor_province.tt.haruzan_desc: "[GetTitleByKey('k_haruzan').GetNameNoTier]"
  decision_restore_gondor_province.tt.haruzan: ""
- reintegrate_province_haruzan_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_haruzan').GetNameNoTier]#! #!\n\nIn the days of [numenor|E], [GetTitleByKey('k_haruzan').GetNameNoTier], then known as Ninezayan, was a proud province of the great [numenorean|E] Colonial Empire. Since the [akallabeth|E], it has long remained beyond the reach of the [adunai|E]. But now, with the province at last fully claimed, the time has come to restore the lordship of Ninezayan in the name of the [adunai|E]"
+ reintegrate_province_haruzan_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_haruzan').GetNameNoTier]#! #!\n\nIn the days of [numenor|E], [GetTitleByKey('k_haruzan').GetNameNoTier], then known as Ninezayan, was a proud province of the great [numenorean|E] Colonial Empire. Since the [akallabeth|E], it has long remained beyond the reach of the [adunai|E]. But now, with the province at last fully claimed, the time has come to restore the lordship of Ninezayan in the name of the [adunai|E]"
  reintegrate_province_haruzan_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_haruzan').GetNameNoTier]" #unused
  integrate_haruzan_decision: "The ancient lands of [GetTitleByKey('k_haruzan').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.narak_desc: "[GetTitleByKey('k_narak').GetNameNoTier]"
  decision_restore_gondor_province.tt.narak: ""
- reintegrate_province_narak_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_narak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Narak has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Narak is a rightful land of the [adunai|E]!"
+ reintegrate_province_narak_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_narak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Narak has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Narak is a rightful land of the [adunai|E]!"
  reintegrate_province_narak_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_narak').GetNameNoTier]" #unused
  integrate_narak_decision: "The ancient lands of [GetTitleByKey('k_narak').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.tedja_desc: "[GetTitleByKey('k_tedja').GetNameNoTier]"
  decision_restore_gondor_province.tt.tedja: ""
- reintegrate_province_tedja_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_tedja').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tedja has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Tedja is a rightful land of the [adunai|E]!"
+ reintegrate_province_tedja_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_tedja').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tedja has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Tedja is a rightful land of the [adunai|E]!"
  reintegrate_province_tedja_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_tedja').GetNameNoTier]" #unused
  integrate_tedja_decision: "The ancient lands of [GetTitleByKey('k_tedja').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.qarsa_desc: "[GetTitleByKey('k_qarsa').GetNameNoTier]"
  decision_restore_gondor_province.tt.qarsa: ""
- reintegrate_province_qarsa_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_qarsa').GetNameNoTier]#! #!\n\nFor many generations, the Province of Qarsa has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Qarsa is a rightful land of the [adunai|E]!"
+ reintegrate_province_qarsa_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_qarsa').GetNameNoTier]#! #!\n\nFor many generations, the Province of Qarsa has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Qarsa is a rightful land of the [adunai|E]!"
  reintegrate_province_qarsa_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_qarsa').GetNameNoTier]" #unused
  integrate_qarsa_decision: "The ancient lands of [GetTitleByKey('k_qarsa').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.aukar_desc: "[GetTitleByKey('k_aukar').GetNameNoTier]"
  decision_restore_gondor_province.tt.aukar: ""
- reintegrate_province_aukar_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_aukar').GetNameNoTier]#! #!\n\nFor many generations, the Province of Aukar has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Aukar is a rightful land of the [adunai|E]!"
+ reintegrate_province_aukar_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_aukar').GetNameNoTier]#! #!\n\nFor many generations, the Province of Aukar has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Aukar is a rightful land of the [adunai|E]!"
  reintegrate_province_aukar_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_aukar').GetNameNoTier]" #unused
  integrate_aukar_decision: "The ancient lands of [GetTitleByKey('k_aukar').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.ray_desc: "[GetTitleByKey('k_ray').GetNameNoTier]"
  decision_restore_gondor_province.tt.ray: ""
- reintegrate_province_ray_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_ray').GetNameNoTier]#! #!\n\nFor many generations, the Province of Ray has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Ray is a rightful land of the [adunai|E]!"
+ reintegrate_province_ray_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_ray').GetNameNoTier]#! #!\n\nFor many generations, the Province of Ray has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Ray is a rightful land of the [adunai|E]!"
  reintegrate_province_ray_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_ray').GetNameNoTier]" #unused
  integrate_ray_decision: "The ancient lands of [GetTitleByKey('k_ray').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.raishoul_desc: "[GetTitleByKey('k_raishoul').GetNameNoTier]"
  decision_restore_gondor_province.tt.raishoul: ""
- reintegrate_province_raishoul_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_raishoul').GetNameNoTier]#! #!\n\nFor many generations, the Province of Raishoul has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Raishoul is a rightful land of the [adunai|E]!"
+ reintegrate_province_raishoul_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_raishoul').GetNameNoTier]#! #!\n\nFor many generations, the Province of Raishoul has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Raishoul is a rightful land of the [adunai|E]!"
  reintegrate_province_raishoul_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_raishoul').GetNameNoTier]" #unused
  integrate_raishoul_decision: "The ancient lands of [GetTitleByKey('k_raishoul').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.zajantak_desc: "[GetTitleByKey('k_zajantak').GetNameNoTier]"
  decision_restore_gondor_province.tt.zajantak: ""
- reintegrate_province_zajantak_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_zajantak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Zajantak has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Zajantak is a rightful land of the [adunai|E]!"
+ reintegrate_province_zajantak_tooltip: "#T #V Conquer the Long Desired Province of [GetTitleByKey('k_zajantak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Zajantak has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Zajantak is a rightful land of the [adunai|E]!"
  reintegrate_province_zajantak_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_zajantak').GetNameNoTier]" #unused
  integrate_zajantak_decision: "The ancient lands of [GetTitleByKey('k_zajantak').GetNameNoTier] will become de-jure part of your realm"
 
- decision_restore_gondor_province.tt.mag_desc: "[GetTitleByKey('k_mag').GetNameNoTier]"
+ decision_restore_gondor_province.tt.mag_desc: "[GetTitleByKey('e_mag_tumag').GetNameNoTier]"
  decision_restore_gondor_province.tt.mag: ""
- reintegrate_province_mag_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_mag').GetNameNoTier]#! #!\n\nFor many generations, the Province of Mag has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Mag is a rightful land of the [adunai|E]!"
- reintegrate_province_mag_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_mag').GetNameNoTier]" #unused
- integrate_mag_decision: "The ancient lands of [GetTitleByKey('k_mag').GetNameNoTier] will become de-jure part of your realm"
+ reintegrate_province_mag_tooltip: "#T #V Conquer the Long Desired Provinces of [GetTitleByKey('e_mag_tumag').GetNameNoTier]#! #!\n\nFor the many years since the [akallabeth|E], the lands of Mag and Tûmag has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to claim these lands as ours and set in stone that Mag and Tûmag are rightfully lands of the [adunai|E]!"
+ reintegrate_province_mag_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('e_mag_tumag').GetNameNoTier]" #unused
+ integrate_mag_decision: "The ancient lands of [GetTitleByKey('e_mag_tumag').GetNameNoTier] will become de-jure part of your realm"
 
- decision_restore_gondor_province.tt.tumag_desc: "[GetTitleByKey('k_tumag').GetNameNoTier]"
- decision_restore_gondor_province.tt.tumag: ""
- reintegrate_province_tumag_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_tumag').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tumag has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Tumag is a rightful land of the [adunai|E]!"
- reintegrate_province_tumag_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_tumag').GetNameNoTier]" #unused
- integrate_tumag_decision: "The ancient lands of [GetTitleByKey('k_tumag').GetNameNoTier] will become de-jure part of your realm"
-
- decision_restore_gondor_province.tt.usakan_desc: "[GetTitleByKey('k_usakan').GetNameNoTier]"
+ decision_restore_gondor_province.tt.usakan_desc: "[GetTitleByKey('e_usakan').GetNameNoTier]"
  decision_restore_gondor_province.tt.usakan: ""
- reintegrate_province_usakan_tooltip: "#T #V Conquer the Long-Wanted Province of [GetTitleByKey('k_usakan').GetNameNoTier]#! #!\n\nFor many generations, the Province of Usakan has been just beyond the [adunai|E]'s reach. With the province at last fully claimed, it is time to end the debate once for all and set in stone that Usakan is a rightful land of the [adunai|E]!"
- reintegrate_province_usakan_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_usakan').GetNameNoTier]" #unused
- integrate_usakan_decision: "The ancient lands of [GetTitleByKey('k_usakan').GetNameNoTier] will become de-jure part of your realm"
-
- decision_restore_gondor_province.tt.tanturak_desc: "[GetTitleByKey('k_tanturak').GetNameNoTier]"
- decision_restore_gondor_province.tt.tanturak: ""
- reintegrate_province_tanturak_tooltip: "#T #V Conquer the Long Lost Province of [GetTitleByKey('k_tanturak').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tantûrak lay abandoned by its former [black_numenorean|E] masters. Since the fall of Sarûl, it remained beyond the reach of the [adunai|E]. But now, with the province fully reclaimed, the time has come to restore the realm of an-Zigûr and show the world that Tantûrak rightfully belongs to the [adunai|E]!"
- reintegrate_province_tanturak_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('k_tanturak').GetNameNoTier]" #unused
- integrate_tanturak_decision: "The ancient lands of [GetTitleByKey('k_tanturak').GetNameNoTier] will become de-jure part of your realm"
+ reintegrate_province_usakan_tooltip: "#T #V Conquer the Long Lost Province of [GetTitleByKey('e_usakan').GetNameNoTier]#! #!\n\nFor many generations, the Province of Tantûrak lay abandoned by its former [black_numenorean|E] masters. Since the fall of Sarûl, it remained beyond the reach of the [adunai|E]. But now, with the province fully reclaimed, the time has come to restore the realm of an-Zigûr and show the world that Tantûrak rightfully belongs to the [adunai|E]!"
+ reintegrate_province_usakan_valid: "You must fully control the Long-Contested Province of [GetTitleByKey('e_usakan').GetNameNoTier]" #unused
+ integrate_usakan_decision: "The ancient lands of [GetTitleByKey('e_usakan').GetNameNoTier] will become de-jure part of your realm"
 
  decision_restore_gondor_province.tt.anarike_desc: "[GetTitleByKey('k_anarike').GetNameNoTier]"
  decision_restore_gondor_province.tt.anarike: ""
