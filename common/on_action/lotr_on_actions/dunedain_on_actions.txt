@@ -5,6 +5,325 @@ on_vassal_gained = { on_actions = { dunedain_on_vassal_gained } }
 on_vassal_change = { on_actions = { dunedain_on_vassal_change } }
 on_faith_conversion = { on_actions = { dunedain_on_faith_conversion } }
 lotr_yearly_playable_pulse = { on_actions = { pharazain_events }}
+on_title_gain = { on_actions = { ud_bellakar_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan ud_thani_hazad_conquered_bellakar ud_thani_hazad_conquered_an_balkumagan ud_an_balkumagan_conquered_bellakar ud_an_balkumagan_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan_good ud_thani_hazad_conquered_an_balkumagan_good} }
+
+ud_bellakar_conquered_thani_hazad = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_bellakar_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				has_primary_title = title:e_thani_hazad
+				any_county_in_region = {
+					region = middleearth_harad_far_bellakar
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_bellakar_conquered_event
+			}
+			trigger_event = { id = pharazain_events.21 delayed = yes }
+		}
+	}
+}
+
+ud_bellakar_conquered_an_balkumagan = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_bellakar_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				faith = { has_doctrine = tenet_adunaic_birthright }
+				OR = {
+					has_primary_title = title:e_thon_an_kharlokh
+					has_primary_title = title:e_anbalkumagan
+				}
+				any_county_in_region = {
+					region = middleearth_harad_far_bellakar
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_bellakar_conquered_event
+			}
+			trigger_event = { id = pharazain_events.19 delayed = yes }
+		}
+	}
+}
+
+ud_thani_hazad_conquered_bellakar = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_thani_hazad_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				has_primary_title = title:e_bellakar
+				any_county_in_region = {
+					region = custom_mannish_thani_hazad
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_thani_hazad_conquered_event
+			}
+			trigger_event = { id = pharazain_events.18  delayed = yes }
+		}
+	}
+}
+
+ud_thani_hazad_conquered_an_balkumagan = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_thani_hazad_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				faith = { has_doctrine = tenet_adunaic_birthright }
+				OR = {
+					has_primary_title = title:e_thon_an_kharlokh
+					has_primary_title = title:e_anbalkumagan
+				}
+				any_county_in_region = {
+					region = custom_mannish_thani_hazad
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_thani_hazad_conquered_event
+			}
+			trigger_event = { id = pharazain_events.20  delayed = yes }
+		}
+	}
+}
+
+ud_an_balkumagan_conquered_bellakar = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_an_balkumagan_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				has_primary_title = title:e_bellakar
+				any_county_in_region = {
+					region = special_k_an_balkumagan
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+				any_county_in_region = {
+					region = special_k_tulwang
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_an_balkumagan_conquered_event
+			}
+			trigger_event = { id = pharazain_events.17  delayed = yes }
+		}
+	}
+}
+
+ud_an_balkumagan_conquered_thani_hazad = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_an_balkumagan_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				has_primary_title = title:e_thani_hazad
+				any_county_in_region = {
+					region = special_k_an_balkumagan
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+				any_county_in_region = {
+					region = special_k_tulwang
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_an_balkumagan_conquered_event
+			}
+			trigger_event = { id = pharazain_events.22  delayed = yes }
+		}
+	}
+}
+
+ud_bellakar_conquered_an_balkumagan_good = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_bellakar_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+				OR = {
+					has_primary_title = title:e_thon_an_kharlokh
+					has_primary_title = title:e_anbalkumagan
+				}
+				any_county_in_region = {
+					region = middleearth_harad_far_bellakar
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_bellakar_conquered_event
+			}
+			trigger_event = { id = pharazain_events.23 delayed = yes }
+		}
+	}
+}
+
+ud_thani_hazad_conquered_an_balkumagan_good = {
+	trigger = {
+		scope:transfer_type = flag:conquest
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_thani_hazad_conquered_event
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+				OR = {
+					has_primary_title = title:e_thon_an_kharlokh
+					has_primary_title = title:e_anbalkumagan
+				}
+				any_county_in_region = {
+					region = custom_mannish_thani_hazad
+					OR = {
+						holder = {
+							is_vassal_or_below_of = root
+						}
+						holder = root
+					}
+					##Quonton
+					percent >= 0.8
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_thani_hazad_conquered_event
+			}
+			trigger_event = { id = pharazain_events.24  delayed = yes }
+		}
+	}
+}
 
 pharazain_events = {
 	trigger = {

@@ -314,3 +314,82 @@ evil_strengthened_3_modifier = {
 	siege_weapon_siege_value_mult = 0.75
 	knight_effectiveness_mult = 0.75
 }
+
+custom_bellakar_conquer_modifier = { 
+	icon = martial_negative
+	levy_size = -0.1
+	levy_reinforcement_rate = -0.1
+}
+
+custom_bellakar_conquer_adunai_modifier = {
+	icon = outdoors_negative
+	county_opinion_add = -25
+	development_growth_factor = -0.1
+	tax_mult = -0.1
+	levy_size = -0.05
+}
+
+custom_an_balkumagan_conquer_modifier = { 
+	icon = martial_negative
+	levy_size = -0.2
+	levy_reinforcement_rate = -0.1
+}
+
+custom_an_balkumagan_conquer_province_modifier = {
+	icon = outdoors_negative
+	county_opinion_add = -25
+	development_growth_factor = -0.1
+	tax_mult = -0.1
+	levy_size = -0.05
+}
+
+custom_an_balkumagan_conquer_adunai_modifier = {
+	icon = outdoors_negative
+	county_opinion_add = -25
+	development_growth_factor = -0.1
+	tax_mult = -0.1
+	levy_size = -0.05
+}
+
+custom_an_balkumagan_enslave_native_modifier = {
+	icon = county_modifier_development_negative
+	county_opinion_add = -50
+	development_growth_factor = -0.25
+	tax_mult = -0.25
+	levy_size = -0.5
+}
+
+custom_an_balkumagan_enslave_buff_modifier = {
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.1
+	tax_mult = 0.1
+	build_speed = -0.1
+	build_gold_cost = -0.1
+}
+
+custom_thani_hazad_conquer_province_modifier = {
+	icon = outdoors_negative
+	county_opinion_add = -25
+	development_growth_factor = -0.1
+	tax_mult = -0.1
+	levy_size = -0.05
+}
+
+custom_ud_conquer_modifier = { 
+	icon = martial_negative
+	levy_size = -0.2
+	levy_reinforcement_rate = -0.1
+}
+
+custom_ud_conquer_modifier_1 = { 
+	icon = martial_negative
+	levy_size = -0.5
+	levy_reinforcement_rate = -0.3
+	tax_mult = -0.1
+}
+
+pharazain_revolt_modifier = {
+	icon = martial_positive
+	additional_fort_level = 10
+	garrison_size = 2
+}

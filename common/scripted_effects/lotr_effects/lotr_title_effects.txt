@@ -120,62 +120,63 @@ form_pharazain_effect = { # Effects for proclaim_pharazain_decision
 		set_de_jure_liege_title = title:h_pharazain
 	}
 
-	# End Thani Struggle if ongoing
-	if = {
-		limit = {
-			exists = struggle:thani_hazad_struggle
-		}
-		custom_tooltip = numenor_in_exile_thani_struggle_tt
-		hidden_effect = {
-			struggle:thani_hazad_struggle ?= {
-				every_involved_ruler = {
-					send_interface_toast = {
-						type = event_toast_effect_neutral
-						title = numenor_in_exile_thani_struggle_toast
-						left_icon = scope:founder
-						custom_tooltip = numenor_in_exile_thani_struggle_toast_desc
-						if = {
-							limit = {
-								has_trait = balan_lai_member
-							}
-							remove_trait = balan_lai_member
-						}
-						if = {
-							limit = {
-								has_title = title:d_balan_lai_leader
-							}
-							destroy_title = title:d_balan_lai_leader
-						}
-					}
-				}
-				every_interloper_ruler = {
-					send_interface_toast = {
-						type = event_toast_effect_neutral
-						title = numenor_in_exile_thani_struggle_toast
-						left_icon = scope:founder
-						custom_tooltip = numenor_in_exile_thani_struggle_toast_desc
-					}
-				}
-			}
-			struggle:thani_hazad_struggle ?= {
-				end_struggle = yes
-			}
-		}
-	}
-
-	hidden_effect = {
-		random_confederation = {
-			limit = { has_variable = balan_lai_confederation }
-			every_confederation_member = { remove_trait = balan_lai_member }
-			disband_confederation = yes
-		}
-		if = {
-			limit = {
-				exists = title:d_balan_lai_leader.holder
-			}
-			title:d_balan_lai_leader.holder = { destroy_title = title:d_balan_lai_leader }
-		}
-	}
+	##Quonton
+	## End Thani Struggle if ongoing
+	#if = {
+	#	limit = {
+	#		exists = struggle:thani_hazad_struggle
+	#	}
+	#	custom_tooltip = numenor_in_exile_thani_struggle_tt
+	#	hidden_effect = {
+	#		struggle:thani_hazad_struggle ?= {
+	#			every_involved_ruler = {
+	#				send_interface_toast = {
+	#					type = event_toast_effect_neutral
+	#					title = numenor_in_exile_thani_struggle_toast
+	#					left_icon = scope:founder
+	#					custom_tooltip = numenor_in_exile_thani_struggle_toast_desc
+	#					if = {
+	#						limit = {
+	#							has_trait = balan_lai_member
+	#						}
+	#						remove_trait = balan_lai_member
+	#					}
+	#					if = {
+	#						limit = {
+	#							has_title = title:d_balan_lai_leader
+	#						}
+	#						destroy_title = title:d_balan_lai_leader
+	#					}
+	#				}
+	#			}
+	#			every_interloper_ruler = {
+	#				send_interface_toast = {
+	#					type = event_toast_effect_neutral
+	#					title = numenor_in_exile_thani_struggle_toast
+	#					left_icon = scope:founder
+	#				}
+	#			}
+	#		}
+	#		struggle:thani_hazad_struggle ?= {
+	#			end_struggle = yes
+	#		}
+	#	}
+	#}
+	#
+	#hidden_effect = {
+	#	random_confederation = {
+	#		limit = { has_variable = balan_lai_confederation }
+	#		every_confederation_member = { remove_trait = balan_lai_member }
+	#		disband_confederation = yes
+	#	}
+	#	if = {
+	#		limit = {
+	#			exists = title:d_balan_lai_leader.holder
+	#		}
+	#		title:d_balan_lai_leader.holder = { destroy_title = title:d_balan_lai_leader }
+	#	}
+	#}
+	##End Quonton
 }
 
 lotr_create_hegemony_effect = { # Makes a hegemony from scratch

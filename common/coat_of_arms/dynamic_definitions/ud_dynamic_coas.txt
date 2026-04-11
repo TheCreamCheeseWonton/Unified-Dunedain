@@ -1,0 +1,12 @@
+﻿# Pharazain
+
+h_pharazain = {
+	item = {
+		trigger = {has_global_variable = anbalkumagan_pharazain}
+		coat_of_arms = h_pharazain_an_balkumagan
+	}
+	item = {
+		trigger = {has_global_variable = thani_hazad_pharazain}
+		coat_of_arms = h_pharazain_thani_hazad
+	}
+}

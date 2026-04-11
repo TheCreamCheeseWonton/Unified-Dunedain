@@ -4755,7 +4755,29 @@ decision_restore_gondor_province = {
 	is_shown = {
 		is_landed = yes
 		highest_held_title_tier >= tier_empire
-
+		OR = {
+			#is_gondor = yes
+			has_title = title:e_gondor_steward
+			has_title = title:e_gondor
+			has_title = title:e_castamir
+			has_title = title:h_numenor_in_exile
+			AND = {
+				has_title = title:h_reunited_kingdom
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_solidify_reunited_kingdom
+				}
+			}
+			##Quonton
+			AND = {
+				has_title = title:h_pharazain
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_solidify_pharazain
+				}
+			}
+			##End Quonton
+		}
 		OR = { # Ensures at least one option is still available
 			show_harondor_trigger = yes
 			show_harnendor_trigger = yes

@@ -310,7 +310,36 @@ pharazain_events.7 = { # Integrate Rohan NOT
 pharazain_events.9 = {
 	type = character_event
 	title = pharazain_events.9.t
-	desc = pharazain_events.9.desc
+	desc = {
+		random_valid = {
+    		triggered_desc = {
+      			trigger = {
+        			has_global_variable = anbalkumagan_pharazain
+					faith = { has_doctrine = tenet_adunaic_birthright }
+      			}
+      			desc = pharazain_events.9.desc1
+    		}
+    		triggered_desc = {
+      			trigger = {
+        			has_global_variable = thani_hazad_pharazain
+      			}
+      			desc = pharazain_events.9.desc2
+    		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = bellakar_pharazain
+      			}
+      			desc = pharazain_events.9.desc3
+    		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = anbalkumagan_pharazain
+					NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+      			}
+      			desc = pharazain_events.9.desc4
+    		}
+  		}
+	}
 	theme = war
 	override_background = { reference = bp1_courtyard_indian }
 
@@ -325,51 +354,35 @@ pharazain_events.9 = {
 
 	option = {
 		name = pharazain_events.9.a
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:separatism_has_started
+		#trigger = { 
+		#	has_global_variable = bellakar_pharazain
+		#}
+		sunset_invasion_general_effect = {
+			GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
+			GRAB_LANDING_COUNTY_EFFECT = bellakar_civil_war_grab_landing_county
+			REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_bellakar_character
+			INVASION_LANDING_EFFECT = bellakar_civil_war_landing_effect
+			START_INVASION_WAR_EFFECT = bellakar_civil_war_start_invasion_war
 		}
-		custom_tooltip = pharazain_cause_separatism_tt_start
-		custom_tooltip = pharazain_cause_separatism_tt_start_2
-		hidden_effect = { 
-			pharazain_cause_separatism_effect = yes
-			every_county_in_region  = { 
-				region = special_pharazain
-				add_county_modifier = lotr_shattered_control_county_modifier
-			}
+	}
+	option = {
+		name = pharazain_events.9.b
+		trigger = { 
+			has_global_variable = anbalkumagan_pharazain
+			faith = { has_doctrine = tenet_adunaic_birthright }
 		}
-		add_character_modifier = lotr_fighting_separatism_character_modifier
-		add_character_modifier = lotr_broken_domain_admin_character_modifier
-		add_character_modifier = lotr_broken_military_admin_character_modifier
-		add_character_modifier = lotr_broken_tax_admin_character_modifier
-		if = {
-			limit = { # Major News
-				NOT = { has_game_rule = no_news }
-			}
-			every_player = { #Global News Announcement
-				trigger_event = pharazain_events.16
-			}
+	}
+	option = {
+		name = pharazain_events.9.c
+		trigger = { 
+			has_global_variable = anbalkumagan_pharazain
+			NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
 		}
-		
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {1 5}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {3 7}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {5 9}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {9 14}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {11 16}
+	}
+	option = {
+		name = pharazain_events.9.d
+		trigger = { 
+			has_global_variable = thani_hazad_pharazain
 		}
 	}
 }
@@ -678,5 +691,590 @@ pharazain_events.16 = {
 	}
 	option = { 
 		name = pharazain_events.16.a # Pharazain Knife Edge
+	}
+}
+
+##Conquer Events Pre Formation
+##Bellakar
+pharazain_events.17 = { #Bellakar conquers An-Balkumagan
+	type = character_event
+	title = pharazain_events.17.t
+	desc = pharazain_events.17.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+
+	option = { 
+		name = pharazain_events.17.a # Spend Money and get no debuffs
+		remove_reserved_gold = 250
+		add_character_modifier = { modifier = custom_bellakar_conquer_modifier years = 5 }
+	}
+	option = { 
+		name = pharazain_events.17.b # Spend no Money and get debuffs to adunai provinces
+		every_sub_realm_county = {
+			custom = decision_bellakar_conquer_no_pay_an_balkumagan
+			limit = {
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+				OR = { 
+					title_province = { geographical_region = special_k_an_balkumagan }
+					title_province = { geographical_region = special_k_tulwang }
+				}
+			}
+			add_county_modifier = { modifier = custom_bellakar_conquer_adunai_modifier years = 10 }
+		}
+	}
+}
+
+pharazain_events.18 = { #Bellakar conquers Thani-Hazad
+	type = character_event
+	title = pharazain_events.18.t
+	desc = pharazain_events.18.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+	
+	option = { 
+		name = pharazain_events.18.a # Spend Money and get no debuffs
+		remove_reserved_gold = 250
+		add_character_modifier = { modifier = custom_bellakar_conquer_modifier years = 5 }
+				every_sub_realm_county = {
+			custom = decision_bellakar_conquer_no_pay_thani_hazad
+			limit = {
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+				title_province = { geographical_region = custom_mannish_thani_hazad }
+			}
+			add_county_modifier = { modifier = custom_bellakar_conquer_adunai_modifier years = 10 }
+		}
+	}
+	option = { 
+		name = pharazain_events.18.a # Spend no Money and get debuffs to adunai provinces  # Spend Money and get no debuffs
+		every_sub_realm_county = {
+			custom = decision_bellakar_conquer_no_pay_thani_hazad
+			limit = {
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+				title_province = { geographical_region = custom_mannish_thani_hazad }
+			}
+			add_county_modifier = { modifier = custom_bellakar_conquer_adunai_modifier years = 10 }
+		}
+	}
+}
+
+##An-Balkumagan
+pharazain_events.19 = { #An-Balkumagan conquers Bellakar
+	type = character_event
+	title = pharazain_events.19.t
+	desc = pharazain_events.19.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+
+	option = { 
+		name = pharazain_events.19.a # Spend Money and get debuffs to non-adunaic provinces and buffs to your provinces
+		remove_reserved_gold = 400
+		add_character_modifier = { modifier = custom_an_balkumagan_conquer_modifier years = 5 }
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_take_slaves_bellakar
+			limit = { 
+				NOT = { culture = { has_cultural_pillar = heritage_southern_adunaic } }
+				NOT = { culture = { this = culture:bellakarani } }
+				NOT = { culture = { this = culture:bellakaze } }
+				NOT = { culture = { this = culture:felayan } }
+				title_province = { geographical_region = middleearth_harad_far_bellakar }
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_enslave_native_modifier years = 10 }
+			change_development_progress_with_overflow = -300
+		}	
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_take_slaves_bellakar_upset
+			limit = {
+				OR = { 
+					culture = { this = culture:bellakarani } 
+					culture = { this = culture:bellakaze } 
+					culture = { this = culture:felayan } 
+				}
+				title_province = { geographical_region = middleearth_harad_far_bellakar }
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_conquer_adunai_modifier years = 5 }
+		}
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_take_slaves_back_home_bellakar
+			limit = {
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+				OR = { 
+					title_province = { geographical_region = special_k_an_balkumagan }
+					title_province = { geographical_region = special_k_tulwang }
+				}
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_enslave_buff_modifier years = 10 }
+			change_development_progress_with_overflow = 150
+		}
+	}
+	option = { 
+		name = pharazain_events.19.b # Spend no Money and get debuffs to all provinces in region
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_conquer_no_pay_bellakar
+			limit = {
+				culture = { NOT = { has_cultural_pillar = heritage_southern_adunaic } }
+				title_province = { geographical_region = middleearth_harad_far_bellakar }
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_conquer_province_modifier years = 10 }
+		}
+	}
+}
+
+pharazain_events.20 = { #An-Balkumagan conquers Thani-Hazad
+	type = character_event
+	title = pharazain_events.20.t
+	desc = pharazain_events.20.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+	
+	option = { 
+		name = pharazain_events.20.a # Spend Money and get debuffs to non-adunaic provinces and buffs to your provinces
+		remove_reserved_gold = 400
+		add_character_modifier = { modifier = custom_an_balkumagan_conquer_modifier years = 5 }
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_take_slaves_thani_hazad
+			limit = { 
+				NOT = { 
+					culture = { has_cultural_pillar = heritage_southern_adunaic } 
+					culture = { this = culture:kharadunaim } 
+				}
+				title_province = { geographical_region = custom_mannish_thani_hazad }
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_enslave_native_modifier years = 10 }
+			change_development_progress_with_overflow = -300
+		}	
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_take_slaves_thani_hazad_upset
+			limit = {
+				culture = { this = culture:kharadunaim }
+				title_province = { geographical_region = custom_mannish_thani_hazad }
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_conquer_adunai_modifier years = 5 }
+		}
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_take_slaves_back_home_thani_hazad
+			limit = {
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+				NOT = { culture = { this = culture:kharadunaim } }
+				OR = { 
+					title_province = { geographical_region = special_k_an_balkumagan }
+					title_province = { geographical_region = special_k_tulwang }
+				}
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_enslave_buff_modifier years = 10 }
+			change_development_progress_with_overflow = 150
+		}
+	}
+	option = { 
+		name = pharazain_events.20.b # Spend no Money and get debuffs to all provinces in region
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_conquer_no_pay_thani_hazad
+			limit = {
+				OR = { 
+					culture = { NOT = { has_cultural_pillar = heritage_southern_adunaic } }
+					culture = { this = culture:kharadunaim } 
+				}
+				title_province = { geographical_region = custom_mannish_thani_hazad }
+			}
+			add_county_modifier = { modifier = custom_an_balkumagan_conquer_province_modifier years = 10 }
+		}
+	}
+}
+
+##Thani-Hazad
+pharazain_events.21 = { #Thani-Hazad conquers Bellakar
+	type = character_event
+	title = pharazain_events.21.t
+	desc = pharazain_events.21.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = celebrate_sword
+	}
+
+	option = { 
+		name = pharazain_events.21.a # Spend extra Money too all vassals in region and get increased opinion with them
+		remove_short_term_gold = 500
+		every_vassal_or_below = {
+			custom = decision_thani_hazad_vassal_friends_bellakar
+			limit = { capital_province = { geographical_region = middleearth_harad_far_bellakar } }
+			add_short_term_gold = 50
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 25
+			}
+		}
+	}
+	option = { 
+		name = pharazain_events.21.b # Spend no Money and get debuffs to all provinces in region
+		every_sub_realm_county = {
+			custom = decision_thani_hazad_conquer_no_pay_bellakar
+			limit = {
+				OR = { 
+					NOT = { culture = { this = culture:kharadunaim } }
+					NOT = { culture = { this = culture:kharatakhori } }
+				}
+				title_province = { geographical_region = middleearth_harad_far_bellakar }
+			}
+			add_county_modifier = { modifier = custom_thani_hazad_conquer_province_modifier years = 10 }
+		}
+	}
+}
+
+pharazain_events.22 = { #Thani-Hazad conquers An-Balkumagan
+	type = character_event
+	title = pharazain_events.22.t
+	desc = pharazain_events.22.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = celebrate_sword
+	}
+	
+	option = { 
+		name = pharazain_events.22.a # Spend extra Money too all vassals in region and get increased opinion with them
+		remove_short_term_gold = 500
+		every_vassal_or_below = {
+			custom = decision_thani_hazad_vassal_friends_an_balkumagan
+			limit = {
+				OR = { 
+					capital_province = { geographical_region = special_k_an_balkumagan }
+					capital_province = { geographical_region = special_k_tulwang }
+				}
+			}
+			add_short_term_gold = 50
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 25
+			}
+		}
+	}
+	option = { 
+		name = pharazain_events.22.b # Spend no Money and get debuffs to all provinces in region
+		every_sub_realm_county = {
+			custom = decision_thani_hazad_conquer_no_pay_an_balkumagan
+			limit = {
+				OR = { 
+					NOT = { culture = { this = culture:kharadunaim } }
+					NOT = { culture = { this = culture:kharatakhori } }
+				}
+				OR = { 
+					title_province = { geographical_region = special_k_an_balkumagan }
+					title_province = { geographical_region = special_k_tulwang }
+				}
+			}
+			add_county_modifier = { modifier = custom_thani_hazad_conquer_province_modifier years = 10 }
+		}
+	}
+}
+
+##Good An-Balkumagan
+pharazain_events.23 = { #An-Balkumagan conquers Bellakar Good
+	type = character_event
+	title = pharazain_events.23.t
+	desc = pharazain_events.23.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = celebrate_sword
+	}
+
+	option = { 
+		name = pharazain_events.23.a # Spend Money and get no debuffs
+		remove_reserved_gold = 250
+		add_character_modifier = { modifier = custom_bellakar_conquer_modifier years = 5 }
+	}
+	option = { 
+		name = pharazain_events.23.b # Spend no Money and get debuffs to adunai provinces
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_conquer_no_pay_bellakar_good
+			limit = {
+				OR = { 
+					culture = { this = culture:bellakarani } 
+					culture = { this = culture:bellakaze } 
+					culture = { this = culture:felayan } 
+				}
+				title_province = { geographical_region = middleearth_harad_far_bellakar }
+			}
+			add_county_modifier = { modifier = custom_bellakar_conquer_adunai_modifier years = 10 }
+		}
+	}
+}
+
+pharazain_events.24 = { #An-Balkumagan conquers Thani-Hazad Good
+	type = character_event
+	title = pharazain_events.24.t
+	desc = pharazain_events.24.desc
+	theme = war
+	
+	override_background = { 
+		reference = battlefield
+	}
+	
+	left_portrait = {
+		character = root
+		animation = celebrate_sword
+	}
+	
+	option = { 
+		name = pharazain_events.24.a # Spend Money and get no debuffs
+		remove_reserved_gold = 250
+		add_character_modifier = { modifier = custom_bellakar_conquer_modifier years = 5 }
+	}
+	option = { 
+		name = pharazain_events.24.b # Spend no Money and get debuffs to adunai provinces
+		trigger = { 
+			any_sub_realm_county = {
+				culture = { this = culture:kharadunaim } 
+				title_province = { geographical_region = custom_mannish_thani_hazad }
+			}
+		}
+		every_sub_realm_county = {
+			custom = decision_an_balkumagan_conquer_no_pay_thani_hazad_good
+			limit = {
+				culture = { this = culture:kharadunaim } 
+				title_province = { geographical_region = custom_mannish_thani_hazad }
+			}
+			add_county_modifier = { modifier = custom_bellakar_conquer_adunai_modifier years = 10 }
+		}
+	}
+}
+
+pharazain_events.25 = { #Separatism Warning
+	type = character_event
+	title = pharazain_events.25.t
+	desc = {
+		random_valid = {
+    		triggered_desc = {
+      			trigger = {
+        			has_global_variable = anbalkumagan_pharazain
+					faith = { has_doctrine = tenet_adunaic_birthright }
+      			}
+      			desc = pharazain_events.25.desc1
+    		}
+    		triggered_desc = {
+      			trigger = {
+        			has_global_variable = thani_hazad_pharazain
+      			}
+      			desc = pharazain_events.25.desc2
+    		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = bellakar_pharazain
+      			}
+      			desc = pharazain_events.25.desc3
+    		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = anbalkumagan_pharazain
+					NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+      			}
+      			desc = pharazain_events.25.desc4
+    		}
+  		}
+	}
+	theme = stewardship
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	option = { 
+		name = pharazain_events.25.a # Spend Money and put CV off
+		remove_reserved_gold = 500
+		add_character_modifier = { modifier = custom_ud_conquer_modifier_1 years = 5 }
+		##Start separatism
+		trigger_event = {
+			id = pharazain_events.9
+			years = { 5 10 }
+		}
+		trigger_event = {
+			id = pharazain_events.26
+			months = { 6 18 }
+		}
+	}
+	option = { 
+		name = pharazain_events.25.a # Spend Money and put cv off less
+		remove_reserved_gold = 250
+		add_character_modifier = { modifier = custom_ud_conquer_modifier years = 5 }
+		##Start separatism
+		trigger_event = {
+			id = pharazain_events.9
+			years = { 3 8 }
+		}
+		trigger_event = {
+			id = pharazain_events.26
+			months = { 6 18 }
+		}
+	}
+	option = { 
+		name = pharazain_events.25.c # Spend no Money and get debuffs to adunai provinces
+		##Start separatism
+		trigger_event = {
+			id = pharazain_events.9
+			years = { 2 4 }
+		}
+		trigger_event = {
+			id = pharazain_events.26
+			months = { 6 18 }
+		}
+	}
+}
+
+pharazain_events.26 = { #Separatism Warning 2, everythings good dont worrrrryyyyyyy
+	type = character_event
+	title = pharazain_events.26.t
+	desc = pharazain_events.26.desc
+	theme = stewardship
+	
+	left_portrait = {
+		character = root
+		animation = paranoia
+	}
+	
+	option = { 
+		name = pharazain_events.26.a # Spend Money and put CV off
+		add_stress = minor_stress_impact_gain
+		stress_impact = {
+			diligent = minor_stress_impact_gain
+			craven = minor_stress_impact_gain
+			paranoid = major_stress_impact_gain
+		}
+	}
+}
+
+##Start separatism
+pharazain_events.27 = {
+	type = character_event
+	title = pharazain_events.27.t
+	desc = pharazain_events.27.desc
+	theme = war
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+	immediate = { 
+		play_sound_effect = "event:/DLC/CE2/UI/Notifications/ce2_ui_notifications_migration_negative"
+	}
+
+	option = {
+		name = pharazain_events.27.a
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_started
+		}
+		custom_tooltip = pharazain_cause_separatism_tt_start
+		custom_tooltip = pharazain_cause_separatism_tt_start_2
+		hidden_effect = { 
+			pharazain_cause_separatism_effect = yes
+			every_county_in_region  = { 
+				region = special_pharazain
+				add_county_modifier = lotr_shattered_control_county_modifier
+			}
+		}
+		add_character_modifier = lotr_fighting_separatism_character_modifier
+		add_character_modifier = lotr_broken_domain_admin_character_modifier
+		add_character_modifier = lotr_broken_military_admin_character_modifier
+		add_character_modifier = lotr_broken_tax_admin_character_modifier
+		if = {
+			limit = { # Major News
+				NOT = { has_game_rule = no_news }
+			}
+			every_player = { #Global News Announcement
+				trigger_event = pharazain_events.16
+			}
+		}
+		
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {1 5}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {3 7}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {5 9}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {9 14}
+		}
+		trigger_event = { 
+			id = pharazain_events.10
+			years = {11 16}
+		}
+	}
+}
+
+##Revolts succede 
+pharazain_events.28 = {
+	content_source = realms_dlc
+	type = character_event
+	window = fullscreen_event
+	title = pharazain_events.28.t
+	desc = pharazain_events.28.desc
+	theme = crown
+	override_background = { reference = harad_desert }
+	
+	immediate = { 
+		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
+		play_music_cue = lotr_cue_adunai
+	}
+	option = { 
+		name = pharazain_events.28.a # Pharazain Knife Edge
 	}
 }
