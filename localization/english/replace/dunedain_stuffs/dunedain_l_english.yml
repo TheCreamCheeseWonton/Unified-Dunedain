@@ -626,6 +626,11 @@
  pharazain_events.9.c: "How could this happen..."
  pharazain_events.9.d: "How could this happen..."
 
+ remove_all_previous_modifiers: ""
+ bellakar_revolts: ""
+ thani_hazad_revolts: ""
+ anbalkumagan_revolts: ""
+
  pharazain_events.26.t: "Despair and Rebelion"
  pharazain_events.26.desc: "Last night, while the rest of [GetTitleByKey('h_pharazain').GetNameNoTier] slept, a single spark of rebellion ignited the powderkeg that had long been smoldering beneath my rule. By dawn, countless cities across the realm had descended into chaos, as commoners and traitors alike rose up against those still loyal to my rule. \n\nA simmering hatred for [GetTitleByKey('h_pharazain').GetNameNoTier] had quietly taken root in the hearts of many of my people, largely hidden from the eyes of the nobility. Where I had believed I ruled a united dominion, they saw only a foreign power imposed upon their lives, not a protector, not a unifier, but an oppressor. \n\nI awoke to find my proud kingdom ablaze. Anarchy and revolt spread unchecked through every province beyond my core strongholds. The royal court lies in disarray, my armies are overstretched and disorganized, governance has all but collapsed, and tax collectors are slain before they can even reach their posts. The realm itself teeters on the brink, no longer functioning as a kingdom should.\n\n#V The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has begun.#!"
  pharazain_events.26.a: "How could this happen..."
@@ -750,12 +755,14 @@
  landing_of_pharazon_host_modifier_desc: "This county has been fortified with thousands of [bellakari|E] defenders"
 
  ##CBs
- INVADE_BELLAKAR_CV_WAR_NAME: "The Bellakari Revolt"
- invade_bellakar_cv_cb: "The Bellakari Revolt"
+ PHARAZAIN_CV_WAR_NAME: "The Pharazâin Civil War"
+ pharazain_cv_war_cb: "The Pharazâin Civil War"
  bellakar_invasion: "They rose in defense of their homeland."
 
  ##Misc
  bellakar_revolt_army_name: "The Bellakari Host"
+ thani_hazad_revolt_army_name: "The Thani Hazad Host"
+ anbalkumagan_revolt_army_name: "The Anbalûkkhôri Host"
  innovation_adunai_administration_feudal: "Adûnâic Feudal Structure"
  innovation_adunai_administration_feudal_desc: "Through the trials and tribulations of the [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War, the [adunai|E] of the south endured great hardship and devastation. Yet from the fire they rose like a phoenix from the ashes, and the Golden Dominion emerged with newfound wisdom in statecraft and stability. \n\nAmong the greatest legacies of this struggle was the reformed [adunaic|E] Feudal Structure, which greatly enhanced the lords' ability to govern effectively, ushering in an age of prosperity for all under the [GetTitleByKey('h_pharazain').GetName]."
 

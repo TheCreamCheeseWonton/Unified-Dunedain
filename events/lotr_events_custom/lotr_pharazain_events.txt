@@ -350,6 +350,23 @@ pharazain_events.9 = {
 	
 	immediate = { 
 		play_sound_effect = "event:/DLC/CE2/UI/Notifications/ce2_ui_notifications_migration_negative"
+		##Remove all modifiers before CV Starts
+		custom_tooltip = remove_all_previous_modifiers
+		hidden_effect = { 
+			every_county = {
+				remove_county_modifier = custom_bellakar_conquer_adunai_modifier  
+				remove_county_modifier = custom_an_balkumagan_conquer_province_modifier 
+				remove_county_modifier = custom_an_balkumagan_conquer_adunai_modifier 
+				remove_county_modifier = custom_an_balkumagan_enslave_native_modifier 
+				remove_county_modifier = custom_an_balkumagan_enslave_buff_modifier
+				remove_county_modifier = custom_thani_hazad_conquer_province_modifier 
+			}
+			remove_character_modifier = custom_ud_conquer_modifier 
+			remove_character_modifier = custom_ud_conquer_modifier_1 
+			remove_character_modifier = custom_an_balkumagan_conquer_modifier 
+			remove_character_modifier = custom_bellakar_conquer_modifier
+		}
+		
 	}
 
 	option = {
@@ -357,12 +374,23 @@ pharazain_events.9 = {
 		#trigger = { 
 		#	has_global_variable = bellakar_pharazain
 		#}
-		sunset_invasion_general_effect = {
-			GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
-			GRAB_LANDING_COUNTY_EFFECT = bellakar_civil_war_grab_landing_county
-			REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_bellakar_character
-			INVASION_LANDING_EFFECT = bellakar_civil_war_landing_effect
-			START_INVASION_WAR_EFFECT = bellakar_civil_war_start_invasion_war
+		custom_tooltip = bellakar_revolts
+		custom_tooltip = thani_hazad_revolts
+		hidden_effect = { 
+			sunset_invasion_general_effect = { #Bellakar
+				GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_bellakar_character
+				GRAB_LANDING_COUNTY_EFFECT = bellakar_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = bellakar_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = bellakar_civil_war_start_invasion_war
+			}
+			sunset_invasion_general_effect = { #Thani-Hazad
+				GEOGRAPHICAL_REGION = custom_mannish_thani_hazad
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_thani_hazad_character
+				GRAB_LANDING_COUNTY_EFFECT = thani_hazad_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = thani_hazad_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = thani_hazad_civil_war_start_invasion_war
+			}
 		}
 	}
 	option = {
@@ -413,6 +441,7 @@ pharazain_events.10 = {
 					target = title:h_pharazain.holder
 					value <= 10
 				}
+				is_imprisoned = no
 			}
 		}
 	}

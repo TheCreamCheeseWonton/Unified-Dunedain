@@ -1,4 +1,4 @@
-﻿lotr_bellakar_revolt_invasion_cb = {
+﻿lotr_pharazain_revolt_invasion_cb = {
 	group = conquest
 
 	white_peace_possible = no
@@ -24,9 +24,9 @@
 	attacker_allies_inherit = yes
 	defender_allies_inherit = yes
 
-	war_name = "INVADE_BELLAKAR_CV_WAR_NAME"
-	war_name_base = "INVADE_BELLAKAR_CV_WAR_NAME"
-	cb_name = "invade_bellakar_cv_cb"
+	war_name = "PHARAZAIN_CV_WAR_NAME"
+	war_name_base = "INVADE_PHARAZAIN_CV_WAR_NAME"
+	cb_name = "pharazain_cv_war_cb"
 
 	interface_priority = 79
 
@@ -84,12 +84,82 @@
 			add_claim_on_loss = yes
 		}
 
+		scope:attacker = { accolade_attacker_war_end_glory_gain_low_effect = yes }
+
+		create_title_and_vassal_change = {
+			type = conquest
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+
+		# EP3 Laamp possibility warning
+		scope:defender = { ep3_war_loss_adventurer_tt_effect = yes }
+
+		# go through the dejure hierarchy under target titles, transfer titles with same or worse tolerance holders (their religion equaly or less tolerated than the defender's),
+		# take the holder as vassal otherwise and don't go deeper
 		every_in_list = {
 			list = target_titles
 			custom_tooltip = CONQUEST_CB_TITLE
+			every_in_de_jure_hierarchy = {
+				continue = {
+					OR = {
+						NOT = {
+							exists = holder
+						}
+						NOT = {
+							holder = {
+								target_is_liege_or_above = scope:defender
+							}
+						}
+						AND = {
+							holder = {
+								is_at_war_as_attacker = yes
+							}
+							holder = {
+								OR = {
+									this = scope:defender
+									target_is_liege_or_above = scope:defender
+								}
+							}
+						}
+					}
+					tier > tier_county
+				}
+				limit = {
+					tier = tier_county
+					holder ?= {
+						OR = {
+							this = scope:defender
+							target_is_liege_or_above = scope:defender
+						}
+					}
+				}
 
-			conquest_cb_title_transfer = {
-				RELIGIOUS_WAR = no
+				if = {
+					limit = {
+						OR = {
+							holder = {
+								is_at_war_as_defender = yes
+							}
+							holder.primary_title.tier >= scope:attacker.primary_title.tier
+						}
+					}
+					add_to_temporary_list = titles_taken
+				}
+				else = {
+					holder = {
+						add_to_temporary_list = vassals_taken
+					}
+				}
+			}
+		}
+
+		every_in_list = {
+			list = titles_taken
+			change_title_holder = {
+				holder = scope:attacker
+				change = scope:change
+				take_baronies = yes
 			}
 		}
 
@@ -100,34 +170,27 @@
 				change = scope:change
 			}
 		}
-		
-		every_in_list = {
-			list = titles_taken
-			change_title_holder = {
-				holder = scope:attacker
-				change = scope:change
-				take_baronies = yes
-			}
-		}
-
-
-		#title:e_bellakar = {
-         #   every_in_de_jure_hierarchy = {
-                #limit = {
-                  #  holder ?= { NOT = { is_orc = yes } }
-                 #   holder.top_liege ?= scope:defender
-				#	tier >= tier_county
-              #  }
-             #   change_title_holder_include_vassals = {
-            #        holder = scope:attacker
-           #         change = scope:change
-          #      }
-         #   }
-        #}
-
-		
 
 		resolve_title_and_vassal_change = scope:change
+		
+		scope:defender = {
+			every_character_war = {
+				limit = { is_attacker = scope:attacker } 
+				every_war_defender = {
+					limit = { is_imprisoned = no is_independent_ruler = no }
+					hidden_effect = {
+						hard_imprison_character_effect = {
+							TARGET = this
+							IMPRISONER = scope:attacker
+						}
+						reverse_add_opinion = {
+							target = scope:attacker
+							modifier = vassal_lost_faction_revolt_war
+						}
+					}
+				}
+			}
+		}
 
 		# Prestige Progress for the Attacker
 		every_in_list = {
@@ -136,6 +199,8 @@
 				add_prestige_experience = medium_prestige_value
 			}
 		}
+		
+		
 
 		# Allies on both sides get full prestige value for helping in the war, based on their war participation.
 		modify_allies_of_participants_fame_values = {
@@ -262,6 +327,25 @@
 			WINNER_ALLY_FAME_SCALE = 1
 			LOSER_ALLY_FAME_SCALE = 1
 		}
+		
+		scope:attacker = { # Imprison any war participant that participated
+			every_character_war = {
+				limit = {
+					is_defender = scope:defender
+				}
+				every_war_attacker = {
+					limit = {
+						is_imprisoned = no
+					}
+					hidden_effect = {
+						hard_imprison_character_effect = {
+							TARGET = this
+							IMPRISONER = scope:defender
+						}
+					}
+				}
+			}
+		}
 
 		add_truce_attacker_defeat_effect = yes
 
@@ -273,7 +357,8 @@
 		# EP3: note gold gained from military assistance/join war contracts and their war contribution threshold
 		laamp_as_mercenary_payout_tooltip_effect = yes
 		
-		civil_war_defender_loses_initial_revolt_war_effect = yes
-		scope:attacker = { silent_disappearance_effect = yes }
+		civil_war_defender_loses_initial_revolt_war_effect = {
+			PROVINCE_MODIFIER = pharazain_revolt_modifier
+		}
 	}
 }
