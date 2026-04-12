@@ -382,7 +382,7 @@ decision_integrate_tulwang = {
 		is_landed = yes
 		OR = {
 			has_title = title:e_thani_hazad
-			has_title = title:h_pharazain # Pharazain gets Tulwang by default. ##Lies
+			#has_title = title:h_pharazain # Pharazain gets Tulwang by default.
 			has_title = title:h_numenor_in_exile
 		}
 		##Quonton - Cant do it if youve already done it

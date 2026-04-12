@@ -4,7 +4,7 @@ on_death = { on_actions = { dunedain_on_death } }
 on_vassal_gained = { on_actions = { dunedain_on_vassal_gained } }
 on_vassal_change = { on_actions = { dunedain_on_vassal_change } }
 on_faith_conversion = { on_actions = { dunedain_on_faith_conversion } }
-lotr_yearly_playable_pulse = { on_actions = { pharazain_events }}
+#lotr_yearly_playable_pulse = { on_actions = { pharazain_events }}
 on_title_gain = { on_actions = { ud_bellakar_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan ud_thani_hazad_conquered_bellakar ud_thani_hazad_conquered_an_balkumagan ud_an_balkumagan_conquered_bellakar ud_an_balkumagan_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan_good ud_thani_hazad_conquered_an_balkumagan_good} }
 
 ud_bellakar_conquered_thani_hazad = {
@@ -325,26 +325,26 @@ ud_thani_hazad_conquered_an_balkumagan_good = {
 	}
 }
 
-pharazain_events = {
-	trigger = {
-		has_title = title:h_pharazain
-		is_target_in_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:separatism_has_started
-		}
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:decision_separatism_is_finished
-			}
-		}
-	}
-
-	random_events = {
-		chance_to_happen = 33
-		33 = pharazain_events.10
-	}
-}
+#pharazain_events = {
+#	trigger = {
+#		has_title = title:h_pharazain
+#		is_target_in_global_variable_list = {
+#			name = unavailable_unique_decisions
+#			target = flag:separatism_has_started
+#		}
+#		NOT = {
+#			is_target_in_global_variable_list = {
+#				name = unavailable_unique_decisions
+#				target = flag:decision_separatism_is_finished
+#			}
+#		}
+#	}
+#
+#	random_events = {
+#		chance_to_happen = 33
+#		33 = pharazain_events.10
+#	}
+#}
 
 dunedain_on_game_start = {
 	effect = {

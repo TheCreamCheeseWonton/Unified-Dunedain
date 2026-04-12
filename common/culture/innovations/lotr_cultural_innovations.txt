@@ -198,14 +198,19 @@ innovation_lords_of_the_westlands = { # Rewards for a resurgent Dunedain
 	}
 
 	character_modifier = {
-		army_maintenance_mult = -0.25
-		army_damage_mult = 0.25
-		army_toughness_mult = 0.25
-		men_at_arms_maintenance = -0.25
+		#army_maintenance_mult = -0.25
+		army_damage_mult = 0.2
+		army_toughness_mult = 0.2
+		monthly_lifestyle_xp_gain_mult = 0.05
+		knight_effectiveness_mult = 0.1
+		coastal_advantage = 2
+		health = 0.25
+		epidemic_resistance = 10
+		#men_at_arms_maintenance = -0.25
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.3
+		development_growth_factor = 0.1
 	}
 	
 	flag = global_regional
@@ -223,14 +228,19 @@ innovation_lords_of_the_golden_lands = { # Rewards for a resurgent Adunai
 	}
 
 	character_modifier = {
-		army_maintenance_mult = -0.25
-		army_damage_mult = 0.25
-		army_toughness_mult = 0.25
-		men_at_arms_maintenance = -0.25
+		#army_maintenance_mult = -0.25
+		army_damage_mult = 0.2
+		army_toughness_mult = 0.2
+		monthly_lifestyle_xp_gain_mult = 0.05
+		knight_effectiveness_mult = 0.1
+		coastal_advantage = 2
+		health = 0.25
+		epidemic_resistance = 10
+		#men_at_arms_maintenance = -0.25
 	}
 
 	county_modifier = {
-		development_growth_factor = 0.3
+		development_growth_factor = 0.1
 	}
 	
 	flag = global_regional

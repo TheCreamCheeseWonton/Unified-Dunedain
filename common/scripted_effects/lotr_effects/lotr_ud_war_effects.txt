@@ -127,7 +127,7 @@ civil_war_spawn_thani_hazad_character= {
 	scope:thani_hazad_revolter = { save_scope_as = invader_char }
 }
 
-civil_war_spawn_anballukhor_character= {
+civil_war_spawn_anbalkumagan_character = {
 
 	create_character = { ### Anballukhor Revolter
 		age = 37
@@ -164,7 +164,24 @@ civil_war_spawn_anballukhor_character= {
 	scope:anballukhor_revolter = { save_scope_as = invader_char }
 }
 
-civil_war_defender_loses_initial_revolt_war_effect = {
+civil_war_defender_looses_initial_revolt_war_effect = {
+	if = {
+		limit = { # Major News
+			NOT = { has_game_rule = no_news } 
+			scope:defender = {
+				has_title = title:h_pharazain
+			}
+		}
+		every_player = { #Global News Announcement
+			trigger_event = pharazain_events.28
+		}
+	}
+	scope:attacker = {
+		destroy_title = title:h_pharazain
+	}
+}
+
+civil_war_defender_wins_initial_revolt_war_effect = {
 	scope:attacker = {
 		every_held_county = {
 			add_to_list = transfer_titles
@@ -184,12 +201,28 @@ civil_war_defender_loses_initial_revolt_war_effect = {
 			change = scope:change
 		}
 	}
-	resolve_title_and_vassal_change = scope:change
-	scope:landing_county = {
+	scope:attacker.capital_county = {
 		every_county_province = {
 			remove_province_modifier = $PROVINCE_MODIFIER$
 		}
 	}
+	if = { 
+		limit = { 
+			scope:defender = { 
+				NOT = { 
+					any_character_war = { 
+						using_cb = lotr_pharazain_revolt_invasion_cb 
+					}
+				}
+			}
+		}
+		trigger_event = { 
+			id = pharazain_events.27
+			delayed = yes
+		}
+	}
+		
+	resolve_title_and_vassal_change = scope:change
 }
 
 ud_civil_war_general_landing_effect = {
@@ -197,7 +230,7 @@ ud_civil_war_general_landing_effect = {
 		type = returned
 		save_scope_as = change
 	}
-	scope:landing_county = {
+	scope:landing_county ?= {
 		change_title_holder = {
 			holder = scope:invader_char
 			change = scope:change
@@ -214,7 +247,7 @@ ud_civil_war_general_landing_effect = {
 	#		set_holding_type = castle_holding
 	#	}
 	#}
-	scope:landing_county = {
+	scope:landing_county ?= {
 		every_county_province = {
 
 			add_province_modifier = {
@@ -223,10 +256,10 @@ ud_civil_war_general_landing_effect = {
 			}
 		}
 	}
-
+	
 	if = {
-		limit = { scope:invader_char.top_liege != scope:invader_char }
-		scope:invader_char = {
+		limit ?= { scope:invader_char.top_liege != scope:invader_char }
+		scope:invader_char ?= {
 			create_title_and_vassal_change = {
 				type = independency
 				save_scope_as = independent_change
@@ -243,11 +276,9 @@ ud_civil_war_general_landing_effect = {
 		scope:invader_char = { change_government = $GOVERNMENT$ }
 	}
 
-	scope:invader_char = { get_title = $TITLE_TO_SPAWN_WITH$ }
-
+	scope:invader_char ?= { get_title = $TITLE_TO_SPAWN_WITH$ }
+	
 	scope:invader_char = {
-		add_piety_level = 2
-		add_prestige_level = 2
 		if = {
 			limit = { is_landed = yes }
 			add_legitimacy = 3000
@@ -333,7 +364,7 @@ ud_civil_war_general_landing_effect = {
 	}
 
 	bellakar_civil_war_start_invasion_war = {
-		scope:invader_char = {
+		scope:invader_char ?= {
 			start_war = {
 				cb = lotr_pharazain_revolt_invasion_cb
 				target = title:h_pharazain.holder
@@ -346,31 +377,31 @@ ud_civil_war_general_landing_effect = {
 		}
 		if = {
 			limit = { 
-				NOT = { title:c_phurunin.holder = { culture = scope:invader_char.culture } }
+				NOT = { title:c_phurunin.holder ?= { culture = scope:invader_char.culture } }
 			}
 			scope:invader_char = { get_title = title:c_kelanara }
 		}
 		if = {
 			limit = { 
-				NOT = { title:c_phurunin.holder = { culture = scope:invader_char.culture } }
+				NOT = { title:c_phurunin.holder ?= { culture = scope:invader_char.culture } }
 			}
 			scope:invader_char = { get_title = title:c_kalleth }
 		}
 		if = {
 			limit = { 
-				NOT = { title:c_phurunin.holder = { culture = scope:invader_char.culture } }
+				NOT = { title:c_phurunin.holder ?= { culture = scope:invader_char.culture } }
 			}
 			scope:invader_char = { get_title = title:c_adunen }
 		}
 		if = {
 			limit = { 
-				NOT = { title:c_phurunin.holder = { culture = scope:invader_char.culture } }
+				NOT = { title:c_phurunin.holder ?= { culture = scope:invader_char.culture } }
 			}
 			scope:invader_char = { get_title = title:c_koyren }
 		}
 		if = {
 			limit = { 
-				NOT = { title:c_phurunin.holder = { culture = scope:invader_char.culture } }
+				NOT = { title:c_phurunin.holder ?= { culture = scope:invader_char.culture } }
 			}
 			scope:invader_char = { get_title = title:c_phurunin }
 		}
@@ -396,7 +427,8 @@ ud_civil_war_general_landing_effect = {
 						culture = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
-					} 
+						is_at_war_with = title:h_pharazain.holder
+					}
 				}
 				holder = { is_wastelands = no }
 				is_wastelands = no
@@ -434,6 +466,8 @@ ud_civil_war_general_landing_effect = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
 					}
+					NOT = { any_war_ally = { this = title:h_pharazain.holder } }
+					NOT = { is_at_war_with = title:h_pharazain.holder }
 				}
 				holder = { is_wastelands = no }
 				is_wastelands = no
@@ -506,7 +540,11 @@ ud_civil_war_general_landing_effect = {
 			start_war = {
 				cb = lotr_pharazain_revolt_invasion_cb
 				target = title:h_pharazain.holder
-				target_title = title:e_thani_hazad
+				target_title = title:k_drel
+				target_title = title:k_pel
+				target_title = title:k_zimrathani
+				target_title = title:k_gimilthani
+				target_title = title:k_kharadune
 			}
 
 			civil_war_thani_hazad_add_same_culture_subjects_as_attackers_and_defenders_effect = { GEOGRAPHICAL_REGION = custom_mannish_thani_hazad }
@@ -559,6 +597,7 @@ ud_civil_war_general_landing_effect = {
 						culture = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
+						is_at_war_with = title:h_pharazain.holder
 					} 
 				}
 				holder = { is_wastelands = no }
@@ -597,6 +636,193 @@ ud_civil_war_general_landing_effect = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
 					}
+					NOT = { any_war_ally = { this = title:h_pharazain.holder } }
+					NOT = { is_at_war_with = title:h_pharazain.holder }
+				}
+				holder = { is_wastelands = no }
+				is_wastelands = no
+			}
+			holder = { add_to_list = call_to_invasion_war_attacker_side }
+		}
+
+		every_in_list = {
+			list = call_to_invasion_war_attacker_side
+			save_temporary_scope_as = curr_char
+			scope:invader_char = {
+				every_character_war = {
+					limit = { NOT = { is_attacker = scope:curr_char } }
+					add_defender = scope:curr_char
+				}
+			}
+		}
+	}
+	
+###############################################################
+### Anballukhor Invasion Sub-effects (indented for readability) ###
+###############################################################
+
+	anbalkumagan_civil_war_grab_landing_county = {
+		title:c_tariketh_an_kharat = { save_scope_as = landing_county }
+	}
+
+	anbalkumagan_civil_war_landing_effect = {
+		ud_civil_war_general_landing_effect = {
+			GOVERNMENT = feudal_government
+			TITLE_TO_SPAWN_WITH = title:e_thon_an_kharlokh
+			#LANDING_COUNTY_FAITH = faith:faith_eldar
+			#LANDING_COUNTY_CULTURE = culture:noldor
+			PROVINCE_MODIFIER = pharazain_revolt_modifier
+		}
+
+		anbalkumagan_civil_war_host_effect = yes
+
+	}
+
+	anbalkumagan_civil_war_host_effect = {
+		
+		### Army ###
+		spawn_army = {
+			levies = 2000
+			men_at_arms = {
+				type = indentured_conscripts
+				stacks = 52
+			}
+			men_at_arms = {
+				type = zagar_an_adunai
+				stacks = 20
+			}
+			men_at_arms = {
+				type = ephalzagar_an_adunai
+				stacks = 24
+			}
+			location = scope:landing_county.title_province
+			origin = scope:landing_county.title_province
+			inheritable = yes
+			uses_supply = no
+			name = anbalkumagan_revolt_army_name
+		}
+
+		#sunset_invasion_general_variables_effect = yes
+	}
+
+	anbalkumagan_civil_war_start_invasion_war = {
+		scope:invader_char ?= {
+			start_war = {
+				cb = lotr_pharazain_revolt_invasion_cb
+				target = title:h_pharazain.holder
+				target_title = title:k_tulwang
+				target_title = title:k_an_balkumagan
+			}
+
+			civil_war_anbalkumagan_add_same_culture_subjects_as_attackers_and_defenders_effect = { GEOGRAPHICAL_REGION = custom_anbalkumagan_sirayn }
+
+			#create_story = story_conqueror
+		}
+		if = {
+			limit = { 
+				NOT = { title:c_adazan.holder ?= { culture = scope:invader_char.culture } }
+			}
+			scope:invader_char = { get_title = title:c_adazan }
+		}
+		if = {
+			limit = { 
+				NOT = { title:c_theru.holder ?= { culture = scope:invader_char.culture } }
+			}
+			scope:invader_char = { get_title = title:c_theru }
+		}
+		if = {
+			limit = { 
+				NOT = { title:c_thadath.holder ?= { culture = scope:invader_char.culture } }
+			}
+			scope:invader_char = { get_title = title:c_thadath }
+		}
+		if = {
+			limit = { 
+				NOT = { title:c_zunen.holder ?= { culture = scope:invader_char.culture } }
+			}
+			scope:invader_char = { get_title = title:c_zunen }
+		}
+		if = {
+			limit = { 
+				NOT = { title:c_adunazain.holder ?= { culture = scope:invader_char.culture } }
+			}
+			scope:invader_char = { get_title = title:c_adunazain }
+		}
+		if = {
+			limit = { 
+				NOT = { title:c_logakhi.holder ?= { culture = scope:invader_char.culture } }
+			}
+			scope:invader_char = { get_title = title:c_logakhi }
+		}
+		if = {
+			limit = { 
+				NOT = { title:c_theran.holder ?= { culture = scope:invader_char.culture } }
+			}
+			scope:invader_char = { get_title = title:c_theran }
+		}
+	}
+
+
+	civil_war_anbalkumagan_add_same_culture_subjects_as_attackers_and_defenders_effect = {
+		### Add same culture rulers as defenders ###
+		every_county_in_region = {
+			region = $GEOGRAPHICAL_REGION$
+			limit = { 
+				OR = {
+					holder.top_liege = title:h_pharazain.holder
+					holder.suzerain ?= title:h_pharazain.holder
+					holder.top_liege.suzerain ?= title:h_pharazain.holder
+				}
+				holder = {
+					NOR = {
+						culture = title:h_pharazain.holder.culture 
+						has_relation_best_friend = title:h_pharazain.holder
+						has_relation_friend = title:h_pharazain.holder 
+						is_allied_to = title:h_pharazain.holder
+						culture = {
+							cultural_acceptance = { target = root.culture value > 40 }
+						}
+						is_at_war_with = title:h_pharazain.holder
+					}
+				}
+				holder = { is_wastelands = no }
+				is_wastelands = no
+			}
+			holder = { add_to_list = call_to_invasion_war_defender_side }
+		}
+
+		every_in_list = {
+			list = call_to_invasion_war_defender_side
+			save_temporary_scope_as = curr_char
+			scope:invader_char = {
+				every_character_war = {
+					add_attacker = scope:curr_char
+				}
+			}
+		}
+
+		
+		### Add opposite same culture as defender rulers as defenders ###
+		every_county_in_region = {
+			region = $GEOGRAPHICAL_REGION$
+			limit = { 
+				OR = {
+					holder.top_liege = title:h_pharazain.holder
+					holder.suzerain ?= title:h_pharazain.holder
+					holder.top_liege.suzerain ?= title:h_pharazain.holder
+				}
+				holder = {
+					OR = { 
+						culture = title:h_pharazain.holder.culture 
+						has_relation_best_friend = title:h_pharazain.holder
+						has_relation_friend = title:h_pharazain.holder 
+						is_allied_to = title:h_pharazain.holder
+						culture = {
+							cultural_acceptance = { target = root.culture value > 40 }
+						}
+					}
+					NOT = { any_war_ally = { this = title:h_pharazain.holder } }
+					NOT = { is_at_war_with = title:h_pharazain.holder }
 				}
 				holder = { is_wastelands = no }
 				is_wastelands = no

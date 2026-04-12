@@ -352,6 +352,7 @@ pharazain_events.9 = {
 		play_sound_effect = "event:/DLC/CE2/UI/Notifications/ce2_ui_notifications_migration_negative"
 		##Remove all modifiers before CV Starts
 		custom_tooltip = remove_all_previous_modifiers
+		custom_tooltip = remove_all_non_pharazain_vassals
 		hidden_effect = { 
 			every_county = {
 				remove_county_modifier = custom_bellakar_conquer_adunai_modifier  
@@ -365,6 +366,18 @@ pharazain_events.9 = {
 			remove_character_modifier = custom_ud_conquer_modifier_1 
 			remove_character_modifier = custom_an_balkumagan_conquer_modifier 
 			remove_character_modifier = custom_bellakar_conquer_modifier
+			every_vassal = {
+				limit = { NOT = { capital_province = { geographical_region = special_pharazain } } }
+				create_title_and_vassal_change = {
+					type = independency
+					save_scope_as = change
+					add_claim_on_loss = no
+				}
+
+				becomes_independent = { change = scope:change }
+				resolve_title_and_vassal_change = scope:change
+			}
+				
 		}
 		
 	}
@@ -376,7 +389,38 @@ pharazain_events.9 = {
 		#}
 		custom_tooltip = bellakar_revolts
 		custom_tooltip = thani_hazad_revolts
-		hidden_effect = { 
+		hidden_effect_new_object = { 
+			sunset_invasion_general_effect = { #An-Balkumagan
+				GEOGRAPHICAL_REGION = custom_anbalkumagan_sirayn
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_anbalkumagan_character
+				GRAB_LANDING_COUNTY_EFFECT = anbalkumagan_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = anbalkumagan_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = anbalkumagan_civil_war_start_invasion_war
+			}
+			sunset_invasion_general_effect = { #Thani-Hazad
+				GEOGRAPHICAL_REGION = custom_mannish_thani_hazad
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_thani_hazad_character
+				GRAB_LANDING_COUNTY_EFFECT = thani_hazad_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = thani_hazad_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = thani_hazad_civil_war_start_invasion_war
+			}
+		}
+		if = {
+			limit = { # Major News
+				NOT = { has_game_rule = no_news }
+			}
+			every_player = { #Global News Announcement
+				trigger_event = pharazain_events.16
+			}
+		}
+	}
+	option = {
+		name = pharazain_events.9.b
+		trigger = { 
+			has_global_variable = anbalkumagan_pharazain
+			faith = { has_doctrine = tenet_adunaic_birthright }
+		}
+		hidden_effect_new_object = { 
 			sunset_invasion_general_effect = { #Bellakar
 				GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
 				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_bellakar_character
@@ -392,12 +436,13 @@ pharazain_events.9 = {
 				START_INVASION_WAR_EFFECT = thani_hazad_civil_war_start_invasion_war
 			}
 		}
-	}
-	option = {
-		name = pharazain_events.9.b
-		trigger = { 
-			has_global_variable = anbalkumagan_pharazain
-			faith = { has_doctrine = tenet_adunaic_birthright }
+		if = {
+			limit = { # Major News
+				NOT = { has_game_rule = no_news }
+			}
+			every_player = { #Global News Announcement
+				trigger_event = pharazain_events.16
+			}
 		}
 	}
 	option = {
@@ -406,11 +451,59 @@ pharazain_events.9 = {
 			has_global_variable = anbalkumagan_pharazain
 			NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
 		}
+		hidden_effect_new_object = { 
+			sunset_invasion_general_effect = { #Bellakar
+				GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_bellakar_character
+				GRAB_LANDING_COUNTY_EFFECT = bellakar_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = bellakar_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = bellakar_civil_war_start_invasion_war
+			}
+			sunset_invasion_general_effect = { #Thani-Hazad
+				GEOGRAPHICAL_REGION = custom_mannish_thani_hazad
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_thani_hazad_character
+				GRAB_LANDING_COUNTY_EFFECT = thani_hazad_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = thani_hazad_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = thani_hazad_civil_war_start_invasion_war
+			}
+		}
+		if = {
+			limit = { # Major News
+				NOT = { has_game_rule = no_news }
+			}
+			every_player = { #Global News Announcement
+				trigger_event = pharazain_events.16
+			}
+		}
 	}
 	option = {
 		name = pharazain_events.9.d
 		trigger = { 
 			has_global_variable = thani_hazad_pharazain
+		}
+		hidden_effect_new_object = { 
+			sunset_invasion_general_effect = { #An-Balkumagan
+				GEOGRAPHICAL_REGION = custom_anbalkumagan_sirayn
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_anbalkumagan_character
+				GRAB_LANDING_COUNTY_EFFECT = anbalkumagan_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = anbalkumagan_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = anbalkumagan_civil_war_start_invasion_war
+			}
+			sunset_invasion_general_effect = { #Bellakar
+				GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_bellakar_character
+				GRAB_LANDING_COUNTY_EFFECT = bellakar_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = bellakar_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = bellakar_civil_war_start_invasion_war
+			}
+		}
+		if = {
+			limit = { # Major News
+				NOT = { has_game_rule = no_news }
+			}
+			every_player = { #Global News Announcement
+				trigger_event = pharazain_events.16
+			}
 		}
 	}
 }
@@ -442,6 +535,7 @@ pharazain_events.10 = {
 					value <= 10
 				}
 				is_imprisoned = no
+				current_military_strength >= root.current_military_strength
 			}
 		}
 	}
@@ -716,7 +810,6 @@ pharazain_events.16 = {
 	
 	immediate = { 
 		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
-		play_music_cue = lotr_cue_adunai
 	}
 	option = { 
 		name = pharazain_events.16.a # Pharazain Knife Edge
@@ -1257,39 +1350,31 @@ pharazain_events.27 = {
 		add_character_modifier = lotr_broken_domain_admin_character_modifier
 		add_character_modifier = lotr_broken_military_admin_character_modifier
 		add_character_modifier = lotr_broken_tax_admin_character_modifier
-		if = {
-			limit = { # Major News
-				NOT = { has_game_rule = no_news }
-			}
-			every_player = { #Global News Announcement
-				trigger_event = pharazain_events.16
-			}
-		}
 		
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {1 5}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {3 7}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {5 9}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {9 14}
-		}
-		trigger_event = { 
-			id = pharazain_events.10
-			years = {11 16}
-		}
+		#trigger_event = { 
+		#	id = pharazain_events.10
+		#	years = {1 5}
+		#}
+		#trigger_event = { 
+		#	id = pharazain_events.10
+		#	years = {3 7}
+		#}
+		#trigger_event = { 
+		#	id = pharazain_events.10
+		#	years = {5 9}
+		#}
+		#trigger_event = { 
+		#	id = pharazain_events.10
+		#	years = {9 14}
+		#}
+		#trigger_event = { 
+		#	id = pharazain_events.10
+		#	years = {11 16}
+		#}
 	}
 }
 
-##Revolts succede 
+##Revolts Succeeded
 pharazain_events.28 = {
 	content_source = realms_dlc
 	type = character_event
@@ -1297,13 +1382,31 @@ pharazain_events.28 = {
 	title = pharazain_events.28.t
 	desc = pharazain_events.28.desc
 	theme = crown
-	override_background = { reference = harad_desert }
+	override_background = { reference = pharazain_fullscreen. }
 	
 	immediate = { 
 		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
-		play_music_cue = lotr_cue_adunai
 	}
 	option = { 
-		name = pharazain_events.28.a # Pharazain Knife Edge
+		name = pharazain_events.28.a # Pharazain IS DED
 	}
 }
+
+##Revolts Fail 
+pharazain_events.29 = {
+	content_source = realms_dlc
+	type = character_event
+	window = fullscreen_event
+	title = pharazain_events.29.t
+	desc = pharazain_events.29.desc
+	theme = crown
+	override_background = { reference = pharazain_fullscreen. }
+	
+	immediate = { 
+		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
+	}
+	option = { 
+		name = pharazain_events.29.a # Pharazain IS SAVED
+	}
+}
+

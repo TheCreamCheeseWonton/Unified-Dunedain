@@ -526,6 +526,70 @@ decision_proclaim_pharazain = {
 				percent >= 0.9
 			}
 		}
+		custom_tooltip = {
+			##Quonton
+			text = control_of_pharazain_dunedain_kingdom_title_desc
+			OR = { 
+				has_title = title:k_mardruak
+				any_vassal_or_below = {
+					has_title = title:k_mardruak
+				}
+			}
+			OR = { 
+				has_title = title:k_felaya
+				any_vassal_or_below = {
+					has_title = title:k_felaya
+				}
+			}
+			OR = { 
+				has_title = title:k_bellazen
+				any_vassal_or_below = {
+					has_title = title:k_bellazen
+				}
+			}
+			OR = { 
+				has_title = title:k_nilulonde
+				any_vassal_or_below = {
+					has_title = title:k_nilulonde
+				}
+			}
+			OR = { 
+				has_title = title:k_tulwang
+				any_vassal_or_below = {
+					has_title = title:k_tulwang
+				}
+			}
+			OR = { 
+				has_title = title:k_an_balkumagan
+				any_vassal_or_below = {
+					has_title = title:k_an_balkumagan
+				}
+			}
+			OR = {
+				has_title = title:k_kharadune
+				any_vassal_or_below = {
+					has_title = title:k_kharadune
+				}
+			}
+			OR = { 
+				has_title = title:k_gimilthani
+				any_vassal_or_below = {
+					has_title = title:k_gimilthani
+				}
+			}
+			OR = { 
+				has_title = title:k_zimrathani
+				any_vassal_or_below = {
+					has_title = title:k_zimrathani
+				}
+			}
+			OR = { 
+				has_title = title:k_pel
+				any_vassal_or_below = {
+					has_title = title:k_pel
+				}
+			}
+		}
 	}
 	is_valid_showing_failures_only = {
 		is_imprisoned = no
@@ -533,6 +597,48 @@ decision_proclaim_pharazain = {
 		is_at_war = no
 	}
 	effect = {
+		title:k_mardruak = {
+			if = {
+				limit = {
+					NOT = {
+						empire = title:e_bellakar
+					}
+				}
+				set_de_jure_liege_title = title:e_bellakar
+			}
+		}
+		title:k_tulwang = {
+			if = {
+				limit = {
+					NOT = {
+						empire = title:e_thani_hazad
+					}
+					NOT = { 
+						title:k_an_balkumagan = {
+							NOT = {
+								empire = title:e_thani_hazad
+							}
+						}
+					}
+				}
+				set_de_jure_liege_title = title:e_thani_hazad
+			}
+			else_if = { 
+				limit = {
+					NOT = {
+						empire = title:e_thon_an_kharlokh
+					}
+					title:k_an_balkumagan = {
+						empire = title:e_thon_an_kharlokh
+					}
+				}
+				set_de_jure_liege_title = title:e_thon_an_kharlokh
+			}
+			else = { 
+				set_de_jure_liege_title = title:e_anbalkumagan
+			}
+				
+		}
 		if = { 
 			limit = { 
 				has_primary_title = title:e_bellakar
@@ -628,6 +734,36 @@ decision_proclaim_pharazain = {
 		}
 		
 		hidden_effect = { 
+			title:c_sulatha = {
+				if = {
+					limit = {
+						NOT = {
+							kingdom = title:k_tulwang
+						}
+					}
+					set_de_jure_liege_title = title:k_tulwang
+				}
+			}
+			title:c_yoeha = {
+				if = {
+					limit = {
+						NOT = {
+							kingdom = title:k_tulwang
+						}
+					}
+					set_de_jure_liege_title = title:k_tulwang
+				}
+			}
+			title:c_aldodish = {
+				if = {
+					limit = {
+						NOT = {
+							kingdom = title:k_tulwang
+						}
+					}
+					set_de_jure_liege_title = title:k_tulwang
+				}
+			}
 			if = { 
 				limit = { 
 					OR = {
@@ -1338,6 +1474,14 @@ decision_deal_with_pharazain_separatism = {
 						name = unavailable_unique_decisions
 						target = flag:decision_separatism_is_finished
 					}
+				}
+			}
+			if = {
+				limit = { # Major News
+					NOT = { has_game_rule = no_news } 
+				}
+				every_player = { #Global News Announcement
+					trigger_event = pharazain_events.29
 				}
 			}
 		}
@@ -2214,7 +2358,7 @@ decision_solidify_pharazain = {
 					holder = root
 				}
 				##Quonton
-				percent >= 0.95
+				percent >= 1.0
 			}
 		}
 		custom_tooltip = {
