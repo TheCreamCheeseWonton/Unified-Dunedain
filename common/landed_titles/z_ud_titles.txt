@@ -1,0 +1,164 @@
+﻿d_cinta_toina = {
+	color = { 103 177 212 }
+	#landless = yes
+	destroy_on_succession = no
+	can_be_named_after_dynasty = no
+	no_automatic_claims = yes
+	de_jure_drift_disabled = no
+
+	capital = c_baranagath
+}
+
+	d_suza_sumar = {
+			color = { 30 133 80 }
+			
+			cultural_names = {
+				name_list_nandorin = cn_suza_sumar_quenya
+				name_list_elven = cn_suza_sumar_quenya
+			}
+
+			capital = c_pred
+
+			c_pred = {
+				color = { 1 150 91 }
+
+				b_pred = {
+					province = 2142
+
+					color = { 206 135 73 }
+
+				}
+
+				b_benu = {
+					province = 2141
+
+					color = { 238 216 64 }
+
+				}
+
+			}
+
+			c_qhan_vuzo = {
+				color = { 49 122 71 }
+
+				b_whun = {
+					province = 2138
+
+					color = { 192 218 72 }
+
+				}
+
+				b_vana_zhun = {
+					province = 2139
+
+					color = { 170 38 109 }
+
+				}
+
+				b_duvi_vhun = {
+					province = 2140
+
+					color = { 185 101 229 }
+
+				}
+
+			}
+
+			c_madi_khon = {
+				color = { 39 145 98 }
+
+				b_zhuna = {
+					province = 2143
+
+					color = { 30 65 92 }
+
+				}
+
+				b_zama_dhon = {
+					province = 2144
+
+					color = { 123 73 149 }
+
+				}
+
+				b_movi = {
+					province = 2145
+
+					color = { 65 161 172 }
+
+				}
+
+			}
+
+			c_rhan_dazu = {
+				color = { 39 140 57 }
+
+				b_xhan_xhan = {
+					province = 2146
+
+					color = { 247 175 37 }
+
+				}
+
+				b_zuna_zhon = {
+					province = 2147
+
+					color = { 125 68 195 }
+
+				}
+
+				b_qhun = {
+					province = 2148
+
+					color = { 32 186 200 }
+
+				}
+
+			}
+
+			c_domo_domo = {
+				color = { 30 114 76 }
+
+				b_mari_ghun = {
+					province = 2149
+
+					color = { 150 161 88 }
+
+				}
+
+				b_vudu_than = {
+					province = 2150
+
+					color = { 135 51 110 }
+
+				}
+
+			}
+
+			c_whan_nevi = {
+				color = { 84 129 81 }
+
+				b_hani_qhan = {
+					province = 2151
+
+					color = { 108 154 120 }
+
+				}
+
+				b_bema_bhun = {
+					province = 2152
+
+					color = { 35 159 67 }
+
+				}
+
+				b_dhon_dhon = {
+					province = 2153
+
+					color = { 193 79 89 }
+
+				}
+
+			}
+
+		}

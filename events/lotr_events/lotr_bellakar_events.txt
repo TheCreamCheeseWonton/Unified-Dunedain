@@ -1019,9 +1019,11 @@ bellakar.0300 = { # The Golden Lands / decision_proclaim_pharazain
 	}
 	
 	immediate = {
-		show_as_tooltip = {
-			form_pharazain_effect = yes
-		}
+		##Quonton - No longer gets titles here
+		#show_as_tooltip = {
+		#	form_pharazain_effect = yes
+		#}
+		dynasty = { add_dynasty_prestige = 600 }
 	}
 
 	option = {

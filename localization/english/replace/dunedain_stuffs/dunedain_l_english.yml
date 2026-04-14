@@ -204,6 +204,21 @@
 
  not_darkness_religion: "This character's faith is not a faith of Darkness"
 
+ #Born in the Gold
+ culture_parameter_children_can_be_born_in_the_gold:2 "[children|E] born to a [ruler|E] holding the [GetTitleByKey('h_pharazain').GetName] or [GetTitleByKey('h_numenor_in_exile').GetName] may gain the [GetTrait('born_in_the_gold').GetName( GetNullCharacter )] [trait|E]. Having the Born in the Gold Trait increases a character's candidate score under $acclamation_succession_law$."
+
+ trait_born_in_the_gold:0 "Born in the Gold"
+ trait_born_in_the_gold_desc:0 "This character was born to prominent parents, a rich life, and high expectations."
+ trait_born_in_the_gold_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] was born to prominent parents, a rich life, and high expectations."
+ born_in_the_gold_interesting_desc: "Is [GetTrait('born_in_the_gold').GetName( GetNullCharacter )]"
+ ACTIVITY_GUEST_BORN_IN_THE_GOLD_REASON: "[ROOT.Char.GetSheHe|U] is [GetTrait('born_in_the_gold').GetName( ROOT.Char.Self )]: $VALUE|=+0$"
+ tooltip_feudal_elector_vote_born_in_the_gold:0 "[candidate.GetSheHe|U] was [GetTrait('born_in_the_gold').GetName( candidate.Self )]: $VALUE|=+0$"
+ FACTION_REASON_ADMIN_BORN_IN_GOLD: "[claimant|E] is [GetTrait('born_in_the_gold')]: $VALUE|+0=$"
+
+ #Title Names
+ cn_suza_sumar_quenya: "Yára Ëartoina"
+ d_cinta_toina: "Cinta Toina"
+
  #Modifiers 
  custom_add_cultural_acceptance_gain_for_nie: "Numenorean Revival"
  custom_add_cultural_acceptance_gain_for_nie_desc: "With the establishment of Númenor-in-Exile, the many different cultures descendant from [numenor|E] have been united into one state, and have thus begun to mingle and find their differences fewer and fewer by the day."
@@ -349,7 +364,7 @@
  decision_solidify_pharazain_desc: "Despite the proclamation of the [GetTitleByKey('h_pharazain').GetName], our fractured rule over the [adunai|E] kingdoms has led many to question our claim as lords of a true dominion of all [adunaic|E] peoples.\n\nMore gravely, proud [adunai|E] and downtrodden [haradrim|E] alike have risen in revolt, refusing to recognize our authority. They brand us outsiders and pretenders, mere conquerors who seek to trample their ways of life. Left unchecked, their defiance will only embolden others. This threat must be crushed without mercy, for only then can we secure our rule.\n\nYet silencing rebellion alone is not enough. To put an end to centuries of division, we must secure full dominion over the lands of [GetGeographicalRegion('special_pharazain').GetName], subdue the separatist forces that fracture our nation, and unite every branch of the [adunai|E] people. Only then will we finally heal the rift that has lingered since the [akallabeth|E], and bind the [GetTitleByKey('h_pharazain').GetName] into one indivisible whole.\n\nOnce this is achieved, no power shall ever again challenge our claim, nor wrest our lands from us."
  decision_solidify_pharazain_confirm: "The Adûnâi shall stand united till the end of days!"
  decision_solidify_pharazain_tooltip: "The homelands of the Adûnâi shall never again be sundered!"
- decision_solidify_pharazain_tt: "The [GetTitleByKey('h_pharazain').GetName] becomes [de_jure|E] liege of all [kingdom|E] [titles|E] within the [GetGeographicalRegion('special_pharazain').GetName]."
+ #decision_solidify_pharazain_tt: "The [GetTitleByKey('h_pharazain').GetName] becomes [de_jure|E] liege of all [empire|E] [titles|E] within the [GetGeographicalRegion('special_pharazain').GetName] [region|E]."
  pharazain_solidified: "You hold and have solidified the [GetTitleByKey('h_pharazain').GetName] [title|E]"
 
  decision_unify_adunai: "Restore a Unified Adûnâic Identity"
@@ -470,6 +485,48 @@
  decision_bozisha_dar_tributary_confirm: "Bôzisha-Dâr will again be a [tributary|E] of the [adunai|E]"
  decision_bozisha_dar_tributary_tt: "We will dispatch envoys to [GetTitleByKey('c_bozisha_dar').GetNameNoTier] reminding them of their ancient, yet binding pact."
 
+ decision_anbalkumagan_empire_form: "Restore the Realm of Anbalûkkhôr"
+ decision_anbalkumagan_empire_form_desc: "Once, An-Balkûmagân stood as the mightiest colony south of Umbar, holding sway over Tûlwang through its tributaries, its southern marches guarded by the citadel of Azarîdêth in Kharadûnê. In the long millennia since, much of its land and power has been stripped away.\n\nNow, local lords in Zadan an-Adûn, along with our other [adunai|E] subjects in [anbalkumagan|E], have petitioned us time and again to restore the ancient realm of Anbalûkkhôr, so that its former glory might rise anew.\n\nWe now stand as the greatest power in Pharazâin, and the choice rests with us."
+ decision_anbalkumagan_empire_form_confirm: "All shall bow before the might of Pharazâin"
+ decision_anbalkumagan_empire_form_tooltip: "Restore the lands of Anbalûkkhôr"
+ form_anbalkumagan_empire_event: "You will be able to choose the fulture of An-Balkûmagân"
+
+ #Invite Elves South
+ decision_invite_elves_baranagath: "Invite the Cuind to Bârânagath"
+ decision_invite_elves_baranagath_desc: "You invite the [cuind|E] [elves|E] to settle Bârânagath, bringing back life to the once great [elven|E] refuge."
+ decision_invite_elves_baranagath_confirm: "Invite Elves to settle Bârânagath"
+ decision_invite_elves_baranagath_tooltip: "You invite Elves to come live in Bârânagath."
+ decision_invite_elves_baranagath_effect_tooltip: "Elves come to settle the desolate forests of Bârânagath, bringing back life to the wooded lands."
+ decision_invite_elves_baranagath_effect_tt: "Sent a message to the [elves|E]"
+ LOTR_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER: "One of the [eldar|E] that rules the [GetTitleByKey('k_drel').GetNameNoTier] [kingdom|E] numbers you among your [friends|E]"
+
+ south_adunai_events.2000.t: "Elves in Bârânagath"
+ south_adunai_events.2000.desc: "The refuge of Cinta Toina has stood empty for hundreds of years, ever since the Cuind departed these lands with the coming of the [numenoreans|E].\n\nThrough determination and goodwill, I have managed to make contact with Elves willing to return and settle in Cinta Toina, bringing life and prosperity back to a region that has lain abandoned for thousands of years. It now falls to me to appoint the leader of the Cuind who will oversee Cinta Toina and maintain contact with my rule." # Look at this again
+ south_adunai_events.2000.a: "The Cuind are known for their excellent medicines."
+ south_adunai_events.2000.a_tt: "You ask a Cuind Elf toto lead Cinta Toina."
+
+ south_adunai_events.2001.t: "Elves in Bârânagath"
+ south_adunai_events.2001.desc: "The Elves have finally arrived in my forests, bringing with them gifts for the people living close to Cinta Toina.\n\nIn time there might exist a friendship between Men and Elves as there existed the days of the old, but for now I must focus on first strengething the bonds between my people and the recently arrived elves."
+ south_adunai_events.2001.a: "Time to focus on more important matters."
+ south_adunai_events.2001.b: "I wonder how they will rule..."
+
+ decision_invite_elves_suza_sumar: "Invite the Cuind to Sûza Sûmar"
+ decision_invite_elves_suza_sumar_desc: "You invite the [cuind|E] [elves|E] to settle Sûza Sûmar, bringing back life to the once great [elven|E] refuge."
+ decision_invite_elves_suza_sumar_confirm: "Invite Elves to settle Sûza Sûmar"
+ decision_invite_elves_suza_sumar_tooltip: "You invite Elves to come live in Sûza Sûmar."
+ decision_invite_elves_suza_sumar_effect_tooltip: "Elves come to settle the desolate forests of Sûza Sûmar, bringing back life to the wooded lands."
+ decision_invite_elves_suza_sumar_effect_tt: "Sent a message to the [elves|E]"
+
+ south_adunai_events.2101.t: "Elves in Sûza Sûmar"
+ south_adunai_events.2101.desc: "The refuge of Yára Ëartoina has stood empty for hundreds of years, ever since the Cuind departed these lands with the coming of the [haradrim|E].\n\nThrough determination and goodwill, I have managed to make contact with Elves willing to return and settle in Yára Ëartoina, bringing life and prosperity back to a region that has lain abandoned for thousands of years. It now falls to me to appoint the leader of the Cuind who will oversee Yára Ëartoina and maintain contact with my rule." # Look at this again
+ south_adunai_events.2101.a: "The Cuind are known for their excellent medicines."
+ south_adunai_events.2101.a_tt: "You ask a Cuind Elf toto lead Yára Ëartoina."
+
+ south_adunai_events.2101.t: "Elves in Sûza Sûmar"
+ south_adunai_events.2101.desc: "The Elves have finally arrived in my forests, bringing with them gifts for the people living close to Yára Ëartoina.\n\nIn time there might exist a friendship between Men and Elves as there existed the days of the old, but for now I must focus on first strengething the bonds between my people and the recently arrived elves."
+ south_adunai_events.2101.a: "Time to focus on more important matters."
+ south_adunai_events.2101.b: "I wonder how they will rule..."
+
  ##Pharazain Separatism Decisions
  #Separatism
  decision_deal_with_pharazain_separatism: "Combat Rebelion"
@@ -530,9 +587,20 @@
  every_province_in_zimrathani_change_to_fighting_separatism_faster: "Every [county|E] in [GetGeographicalRegion('special_k_zimrathani').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 5 years#!"
  every_province_in_pel_change_to_fighting_separatism_faster: "Every [county|E] in [GetGeographicalRegion('special_k_pel').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 5 years#!"
 
+ every_province_in_bellazen_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_bellazen').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_nilulonde_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_nilulonde').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_felaya_change_to_fighting_separatism_extra_faster: "very [county|E] in [GetGeographicalRegion('special_k_felaya').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 5 years#!and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_mardruak_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_mardruak').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_tulwang_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_tulwang').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_an_balkumagan_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_an_balkumagan').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_kharadune_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_kharadune').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_gimilthani_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_gimilthani').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_zimrathani_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_zimrathani').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_pel_change_to_fighting_separatism_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_pel').GetName] will loose the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+
  every_minority_vassal_pharazain: "Every one of your [minority|E] [vassal_stance|E] [vassals|E]"
 
- could_be_faster_with_mil_reform: "Complete your Military Reforms to Restore Order #V 5 years#! faster"
+ could_be_faster_with_mil_reform: "Complete your Military Reforms to #V Restore Order#! #P  50%#! faster"
 
  #Integration
  decision_integrate_pharazain_province: "Integrate Provinces"
@@ -593,7 +661,18 @@
  every_province_in_zimrathani_change_to_pharazain_integration_faster: "Every [county|E] in [GetGeographicalRegion('special_k_zimrathani').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 5 years#!"
  every_province_in_pel_change_to_pharazain_integration_faster: "Every [county|E] in [GetGeographicalRegion('special_k_pel').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 5 years#!"
 
- could_be_faster_with_admin_reform: "Complete your Domain Reforms to Integrate Provinces #V 5 years#! faster"
+ every_province_in_bellazen_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_bellazen').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_nilulonde_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_nilulonde').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_felaya_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_felaya').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_mardruak_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_mardruak').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_tulwang_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_tulwang').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_an_balkumagan_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_an_balkumagan').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_kharadune_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_kharadune').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_gimilthani_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_gimilthani').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_zimrathani_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_zimrathani').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+ every_province_in_pel_change_to_pharazain_integration_extra_faster: "Every [county|E] in [GetGeographicalRegion('special_k_pel').GetName] will loose the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_pharazain_integration_county_modifier').GetNameWithTooltip] [modifier|E] for #V 2.5 years#!"
+
+ could_be_faster_with_admin_reform: "Complete your Domain Reforms to #V Integrate Provinces#! #P 50%#! faster"
 
  #Administration
  decision_pharazain_reform_administration: "Reform Administration"
@@ -609,13 +688,36 @@
  decision_pharazain_reform_administration.tt.tax: "Overhaul the Taxation Apparatus"
  decision_pharazain_reform_administration.tt.done: "The Final Administrative Reform"
 
- pharazain_reform_administration_domain_tooltip: "You loose the [GetModifier('lotr_broken_domain_admin_character_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_broken_domain_admin_getting_better_character_modifier').GetNameWithTooltip] [modifier|E] for #V 10 years#!"
- pharazain_reform_administration_military_tooltip: "You loose the [GetModifier('lotr_broken_military_admin_character_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_broken_military_admin_getting_better_character_modifier').GetNameWithTooltip] [modifier|E] for #V 10 years#!"
- pharazain_reform_administration_tax_tooltip: "You loose the [GetModifier('lotr_broken_tax_admin_character_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_broken_tax_admin_getting_better_character_modifier').GetNameWithTooltip] [modifier|E] for #V 10 years#!"
+ pharazain_reform_administration_domain_tooltip: "You loose the [GetModifier('lotr_broken_domain_admin_character_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_broken_domain_admin_getting_better_character_modifier').GetNameWithTooltip] [modifier|E]"
+ pharazain_reform_administration_military_tooltip: "You loose the [GetModifier('lotr_broken_military_admin_character_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_broken_military_admin_getting_better_character_modifier').GetNameWithTooltip] [modifier|E]"
+ pharazain_reform_administration_tax_tooltip: "You loose the [GetModifier('lotr_broken_tax_admin_character_modifier').GetNameWithTooltip] [modifier|E] and gain the [GetModifier('lotr_broken_tax_admin_getting_better_character_modifier').GetNameWithTooltip] [modifier|E]"
  pharazain_reform_administration_delt_with_tooltip: "You will complete one last Administrative Reform"
 
  pharazain_reform_administration_fallback_effect.tt: "You do not have the ability to Reform the Administration"
  pharazain_admin_delt_with: "You will complete one last Administrative Reform"
+
+ #Faster/Slower Decision
+ decision_pharazain_spend_more_resources_choice: "Intensify Pacification Measures"
+ decision_pharazain_spend_more_resources_choice_desc: "While we make steady and measured progress in quelling the revolts and unrest ravaging [GetTitleByKey('h_pharazain').GetNameNoTier], it has become clear that at our current pace, it will take years, if not decades, to truly restore peace to the land.\n\nIf we are to bring order to the chaos that grips [GetTitleByKey('h_pharazain').GetNameNoTier], we must redouble our efforts to pacify our rebellious subjects. More soldiers must be mustered to put down uprisings, more craftsmen and laborers set to rebuild what has been laid to waste, and more officials appointed to see the rule of law restored.\n\nSuch an undertaking will demand a heavy toll in gold and lives, leaving us diminished in the short term, but many believe the price is worth paying for lasting peace."
+ decision_pharazain_spend_more_resources_choice_tooltip: "We must bring peace to the realm at any cost"
+ decision_pharazain_spend_more_resources_choice_confirm: "Increase or Decrease Pacification Measures"
+
+ decision_pharazain_spend_more_resources_choice.second_step: "Increase or Decrease Pacification Measures"
+
+ decision_pharazain_spend_more_resources_choice.tt.fallback: "Cant Increase or Decrease Pacification Measures"
+ decision_pharazain_spend_more_resources_choice.tt.more_expensive: "Increase Pacification Measures"
+ decision_pharazain_spend_more_resources_choice.tt.less_expensive: " Decrease Pacification Measures"
+
+ decision_pharazain_spend_more_resources_choice_effect.tt: "Cant #E Restore Order#!, #E Integrate Provinces#!, and #E Reform Administration#! #p 50%#! faster"
+ decision_pharazain_spend_more_resources_choice_effect_more.tt: "You will be able to #E Restore Order#!, #E Integrate Provinces#!, and #E Reform Administration#! #p 50%#! faster"
+ decision_pharazain_spend_more_resources_choice_effect_less.tt: "You will no longer be able to #E Restore Order#!, #E Integrate Provinces#!, and #E Reform Administration#! #p 50%#! faster"
+
+ decision_pharazain_spend_more_resources_choice_fallback_tooltip: "Cant #E Restore Order#!, #E Integrate Provinces#!, and #E Reform Administration#! #p 50%#! faster"
+ decision_pharazain_spend_more_resources_more_expensive_tooltip: "You will be able to #E Restore Order#!, #E Integrate Provinces#!, and #E Reform Administration#! #p 50%#! faster\nYou Gain [GetModifier('lotr_pharazain_spend_more_resources_character_modifier').GetNameWithTooltip]"
+ decision_pharazain_spend_more_resources_choice_less_expensive_tooltip: "You will no longer be able to #E Restore Order#!, #E Integrate Provinces#!, and #E Reform Administration#! #p 50%#! faster\nYou Lose [GetModifier('lotr_pharazain_spend_more_resources_character_modifier').GetNameWithTooltip]"
+
+ lotr_pharazain_spend_more_resources_character_modifier: "Intensifying Pacification Measures"
+ lotr_pharazain_spend_more_resources_character_modifier_desc: "This character is redoubling efforts to pacify the Pharazâin Civil War, committing great stores of gold and manpower to restore order with all haste."
 
  #Separatism Events
  pharazain_events.9.t: "Despair and Rebelion"
@@ -630,12 +732,13 @@
 
  remove_all_previous_modifiers: "All [modifiers|E] gained during the conquest of [GetTitleByKey('h_pharazain').GetNameNoTier] will be removed"
  remove_all_non_pharazain_vassals: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName] [region|E] will become [independent|E]"
+ remove_all_non_pharazain_vassals_extra: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName] or [GetGeographicalRegion('special_region_west_dune_sea').GetName] [regions|E] will become [independent|E]"
  bellakar_revolts: "[bellakar|E] will revolt from your rule, begining the Pharazâini Civil War"
  thani_hazad_revolts: "[thanihazad|E] will revolt from your rule, begining the Pharazâini Civil War"
  anbalkumagan_revolts: "[anbalkumagan|E] will revolt from your rule, begining the Pharazâini Civil War"
 
  pharazain_events.27.t: "Smoke and Ashes"
- pharazain_events.27.desc: "As the dust settles, my armies move to mop up what remains of the rebellious forces, and my soldiers begin their long return home after years of war. Only now is the true cost of the civil war revealed. Much of the realm lies in anarchy with homes destroyed, families torn apart, farms and fields left in ashes, while the people look to the future with fear.\n\nWorse still, though open rebellion has been crushed and my rule restored, resistance endures. Across the outlying regions of Pharazâin, insurgents and underground movements continue to fester, defying the fragile peace.\n\n The battle may be won, but the war is far from over.\n\nAnarchy and unrest spread unchecked across every province beyond my core strongholds. The royal court lies in disarray, my armies are overstretched and fractured, governance has all but collapsed, and tax collectors are cut down before they ever reach their posts. Though open rebellion no longer engulfs the realm, Pharazâin still teeters on the brink, no longer functioning as a kingdom should, but as a shadow of its former self."
+ pharazain_events.27.desc: "As the dust settles, my armies move to mop up what remains of the rebellious forces, and my soldiers begin their long return home after years of war. Only now is the true cost of the civil war revealed. Much of the realm lies in anarchy with homes destroyed, families torn apart, farms and fields left in ashes, while the people look to the future with fear.\n\nWorse still, though open rebellion has been crushed and my rule restored, resistance endures. Across the outlying regions of Pharazâin, insurgents and underground movements continue to fester, defying the fragile peace.\n\nThe battle may be won, but the war is far from over.\n\nAnarchy and unrest spread unchecked across every province beyond my core strongholds. The royal court lies in disarray, my armies are overstretched and fractured, governance has all but collapsed, and tax collectors are cut down before they ever reach their posts. Though open rebellion no longer engulfs the realm, Pharazâin still teeters on the brink, no longer functioning as a kingdom should, but as a shadow of its former self."
  pharazain_events.27.a: "Pharazâin will endure, because it must."
 
  pharazain_events.10.t: "Vassal Joins Rebelion"
@@ -643,7 +746,7 @@
  pharazain_events.10.a: "How many rebellions can there be?"
 
  pharazain_events.11.t: "A Bloody Calm"
- pharazain_events.11.desc: "At last, after years of bloodshed and unending rebellion, the [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has come to an end. Countless lie dead across the realm. Many vassals, traitor and loyal alike, fell in the unending fields of battle. The hordes of rebels and separatists have bled out their last, and none now dare oppose my victorious armies. Some claim the wounds are too deep to heal, that even as the embers cool [GetTitleByKey('h_pharazain').GetNameNoTier] is fated to a 27slow, humiliating decline. \n\nThey will be proven wrong. With this long-awaited peace I can finally turn to rebuilding the realm and reforming my administration. Doubters will be silenced by deeds. [GetTitleByKey('h_pharazain').GetNameNoTier] will endure, triumphant, whatever trials remain."
+ pharazain_events.11.desc: "At last, after years of bloodshed and unending rebellion, the [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has come to an end. Countless lie dead across the realm. Many vassals, traitor and loyal alike, fell in the unending fields of battle. The hordes of rebels and separatists have bled out their last, and none now dare oppose my victorious armies. Some claim the wounds are too deep to heal, that even as the embers cool [GetTitleByKey('h_pharazain').GetNameNoTier] is fated to a slow, humiliating decline. \n\nThey will be proven wrong. With this long-awaited peace I can finally turn to rebuilding the realm and reforming my administration. Doubters will be silenced by deeds. [GetTitleByKey('h_pharazain').GetNameNoTier] will endure, triumphant, whatever trials remain."
  pharazain_events.11.a: "There is much work to be done."
 
  pharazain_events.12.t: "The Final Consolidation of the Realm"
@@ -677,8 +780,40 @@
  pharazain_events.29.desc: "The newly proclaimed [GetTitleByKey('h_pharazain').GetName] has been embroiled in a brutal civil war for some time, as its newly conquered territories rose in defiance against the crown. Yet the great realm has weathered the storm. Under the command of [high_king_pharazain.GetName], the Golden Dominion has emerged victorious, crushing the rebellions and securing its dominion once more."
  pharazain_events.29.a: "The future looks bright for the [GetTitleByKey('h_pharazain').GetName]"
 
+ pharazain_events.30.t: "Finally a Time for Rest"
+ pharazain_events.30.desc1: "After so many years, the days before the Pharazâin Civil War feel like a distant dream. My campaigns of conquest and dominion from [anbalkumagan|E], and the great wealth they brought to me and my people, now lie shrouded in the haze of war. \n\nYet all things must come to an end, and now only scars and memories remain. Still, this is an hour of rejoicing. My rule stands stronger than ever, my realm more firmly bound to my will, and my proud [adunai|E] countrymen have never before known such prosperity. Much have I learned in the crucible of this war. Though I am glad it has passed, from its fires has been forged a realm greater and more powerful than any since the [akallabeth|E].\n\nAnd yet, when my thoughts drift back to those days, a question lingers… Has my path been just? Have I truly walked the right road?"
+ pharazain_events.30.desc2: "After so many years, the days before the Pharazâin Civil War feel like a distant dream. My campaigns of conquest and rulership from [thanihazad|E], and the great wealth they brought to me and my people, now lie shrouded in the haze of war. \n\nYet all things must come to an end, and now only scars and memories remain. Still, this is an hour of rejoicing. My rule stands stronger than ever, my realm more firmly united, and my proud [adunai|E] countrymen have never before known such prosperity. Much have I learned in the crucible of this war. Though I am glad it has passed, from its fires has been forged a realm greater and more powerful than any since the [akallabeth|E]."
+ pharazain_events.30.desc3: "After so many years, the days before the Pharazâin Civil War feel like a distant dream. My campaigns of conquest and rulership from [bellakar|E], and the great wealth they brought to me and my people, now lie shrouded in the haze of war. \n\nYet all things must come to an end, and now only scars and memories remain. Still, this is an hour of rejoicing. My rule stands stronger than ever, my realm more firmly united, and my proud Pharazâini countrymen have never before known such prosperity. Much have I learned in the crucible of this war. Though I am glad it has passed, from its fires has been forged a realm greater and more powerful than any since the [akallabeth|E]."
+ pharazain_events.30.desc4: "After so many years, the days before the Pharazâin Civil War feel like a distant dream. My campaigns of conquest and dominion from [anbalkumagan|E], and the great wealth they brought to me and my people, now lie shrouded in the haze of war. \n\nYet all things must come to an end, and now only scars and memories remain. Still, this is an hour of rejoicing. My rule stands stronger than ever, my realm more firmly bound to my will, and my proud [adunai|E] countrymen have never before known such prosperity. Much have I learned in the crucible of this war. Though I am glad it has passed, from its fires has been forged a realm greater and more powerful than any since the [akallabeth|E]."
+ pharazain_events.30.a: "Of course, for a just world is one dominated by the Adûnâi"
+ pharazain_events.30.b: "Perhaps I was too harsh a lord..."
+ pharazain_events.30.c: "Oh Eru, what have we done?"
+ pharazain_events.30.d: "Let us all rejoice, for thus begins the age of Pharazâin!"
+ pharazain_events.30.e: "Let us all rejoice, for thus begins the age of Pharazâin!"
+ pharazain_events.30.f: "Let us all rejoice, for thus begins the age of Pharazâin!"
+
+ angry_vassals_lesser_tt: "All [vassals|E] that follow your original [faith|E] looses #n 10#! [opinion|E] of #v you#!"
+ angry_vassals_major_tt: "All [vassals|E] that follow your original [faith|E] looses #n 30#! [opinion|E] of #v you#!"
+
+ pharazain_post_anbalkumagan_evil: "The Dominance of An-Balkûmagân"
+ pharazain_post_anbalkumagan_evil_desc: "An-Balkûmagân has established itself as the foremost power in Pharazâin, securing its place at the head of the [adunai|E]."
+
+ pharazain_post_anbalkumagan_good: "The Prosperity of An-Balkûmagân"
+ pharazain_post_anbalkumagan_good_desc: "An-Balkûmagân has established itself as the foremost power in Pharazâin, bringing prosperity to the lands under its rule."
+
+ pharazain_post_thani_hazad: "The Guidance of Thani Hazad"
+ pharazain_post_thani_hazad_desc: "Thani Hazad has established itself as the foremost power in Pharazâin, fostering prosperity among those under its sway."
+
+ pharazain_post_bellakar: "The Guardianship of Bellakar"
+ pharazain_post_bellakar_desc: "Bellakar has established itself as the foremost power in Pharazâin, bringing prosperity to those sheltered behind its readied shield."
+
+ pharazain_events.31.t: "Restoration of Anbalûkkhôr?"
+ pharazain_events.31.desc: "Once, An-Balkûmagân stood as the mightiest colony south of Umbar, controlling much of what is now northern [thanihazad|E]. However, in the wake of the War of the Renegades, the colony was greatly reduced - stripped of Tulwang, and its southern settlements in Kharadûnê carved off into the new colonial principality of Zimrathâni.\n\nSome local lords in [anbalkumagan|E] long to once more be part of the realm of Anbalûkkhôr, seeking to restore its former glory. Even within the court of Pharazâin, there are those who argue that dividing the lands of Thani Hazad would ease the burdens of governance and strengthen our bureaucracy.\n\nYet others, particularly in Thani Hazad and Bellakar, warn that such a course would be a grave mistake. It would grant legitimacy to the Anbalûkkhôri cause and diminish the authority of Mispír.\n\nThe question remains, should the old realm be restored?"
+ pharazain_events.31.a: "Let us reform the old realm of Anbalûkkhôr"
+ pharazain_events.31.b: "Why would we do this?"
+
  #separatism Triggers/Effects
- pharazain_cause_separatism_tt_start: "The fire of Civil War now ravages your lands.\nAll lands outside of your starting [empire|E] [title|E] will gain the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E]."
+ pharazain_cause_separatism_tt_start: "The after effects of the Civil War ravages your lands.\nAll lands outside of your starting [empire|E] [title|E] will gain the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E]."
  pharazain_cause_separatism_tt_start_2: "All lands in your [realm|E] will gain the [GetModifier('lotr_shattered_control_county_modifier').GetNameWithTooltip] [modifier|E]"
  pharazain_cause_separatism_tt_more: "The fire of Civil War burns brighter. \nAll lands outside of your starting [empire|E] [title|E] will gain the [GetModifier('lotr_pharazain_separatism_county_modifier').GetNameWithTooltip] [modifier|E]."
 
@@ -770,6 +905,9 @@
  bellakar_revolt_army_name: "The Bellakari Host"
  thani_hazad_revolt_army_name: "The Thani Hazad Host"
  anbalkumagan_revolt_army_name: "The Anbalûkkhôri Host"
+
+ decision_group_type_pharazaini_cw: "The Pharazâin Civil War"
+
  innovation_adunai_administration_feudal: "Adûnâic Feudal Structure"
  innovation_adunai_administration_feudal_desc: "Through the trials and tribulations of the [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War, the [adunai|E] of the south endured great hardship and devastation. Yet from the fire they rose like a phoenix from the ashes, and the Golden Dominion emerged with newfound wisdom in statecraft and stability. \n\nAmong the greatest legacies of this struggle was the reformed [adunaic|E] Feudal Structure, which greatly enhanced the lords' ability to govern effectively, ushering in an age of prosperity for all under the [GetTitleByKey('h_pharazain').GetName]."
 
@@ -778,7 +916,7 @@
 
  decision_solidify_pharazain_no_more_separatism_tt: "The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has came to an end"
  decision_solidify_pharazain_integrated_everything_tt: "All [kingdom|E] [titles|E] in [GetGeographicalRegion('special_pharazain').GetName] have been fully integrated into the realm"
- decision_solidify_pharazain_reformed_admin_tt: "The Government Administration of [GetTitleByKey('h_pharazain').GetNameNoTier] has successfully been reformed"
+ decision_solidify_pharazain_reformed_admin_tt: "The #V Government Administration#! of [GetTitleByKey('h_pharazain').GetNameNoTier] has successfully been reformed"
 
  valid_pharazain_separatism_delt_with_tt: "No [county|E] in [GetGeographicalRegion('special_pharazain').GetName] has the [GetModifier('lotr_pharazain_fighting_separatism_county_modifier').GetNameWithTooltip] [modifier|E]"
 
@@ -860,7 +998,7 @@
 ##\n\n #VNote!#bold For #TÂrûgimil#! to prove his worth he must gain atleast 5000 [prestige|E].
 
  pharazain_events.1.t: "Union of The Adûnâi"
- pharazain_events.1.desc: "Today, I renew my vows and reaffirm my commitment to an undivided, indivisible union.\n\nSince its proclamation, the Golden Dominion has served chiefly as an administrative body, and I have often struggled to coordinate the many disparate realms of the [adunai|E]. This task was made all the harder by the truth that much of the land I claimed did not, in fact, lie beneath my banner. Yet through tireless effort, my labor has at last borne fruit.\n\nA profound transformation is already underway. The peoples of [bellakar|E], [anbalkumagan|E], and [thanihazad|E] have begun to see themselves as one with [GetTitleByKey('h_pharazain').GetNameNoTier]. Reconstruction has come to its end; my cities stand rebuilt, repopulated, and restored to their rightful place as the homes of true [adunaic|E] folk.\n\nFrom the northern reaches of [GetTitleByKey('k_mardruak').GetNameNoTier], to the wealth of [GetTitleByKey('c_nilulonde').GetNameNoTier], and as far south as [GetTitleByKey('c_mispir').GetNameNoTier], the people now recognize themselves as part of a single realm. After millennia of division and strife, the lands of the [adunai|E] at last stand united beneath one King, beneath me."
+ pharazain_events.1.desc: "Today, I renew my vows and reaffirm my commitment to an undivided, indivisible union.\n\nSince its proclamation, the Golden Dominion has served chiefly as an administrative body, and I have often struggled to coordinate the many disparate realms of the [adunai|E]. This task was made all the harder by the truth that much of the land I claimed did not, in fact, truely lie beneath my rule. Yet through tireless effort, my labor has at last borne fruit.\n\nA profound transformation is already underway. The peoples of [bellakar|E], [anbalkumagan|E], and [thanihazad|E] have begun to see themselves as one with [GetTitleByKey('h_pharazain').GetNameNoTier]. Reconstruction has come to its end; my cities stand rebuilt, repopulated, and restored to their rightful place as the homes of true [adunaic|E] folk.\n\nFrom the northern reaches of [GetTitleByKey('k_mardruak').GetNameNoTier], to the wealth of [GetTitleByKey('c_nilulonde').GetNameNoTier], and as far south as [GetTitleByKey('c_mispir').GetNameNoTier], the people now recognize themselves as part of a single realm. After millennia of division and strife, the lands of the [adunai|E] at last stand united beneath one King, beneath me."
   pharazain_events.1.a: "The Golden Lands, indivisible and eternal."
 
  pharazain_events.2.t: "Sons of Anadûnê"
@@ -1036,8 +1174,8 @@
 
  pharazain_events.25.t: "Rumblings of Revolt"
  pharazain_events.25.desc1: "It has been some time since we proudly proclaimed our dominion over the vast and far-reaching lands of the [GetTitleByKey('h_pharazain').GetName], and our people have rejoiced greatly. The proud and deserving folk of [anbalkumagan|E] have grown immensely wealthy, so much so that even the lowliest of the [adunai|E] now live as kings. Their every need met through the labor of those beneath them.\n\nYet across our conquered territories, our grip has begun to wane. Emissaries of the Gilded Sovereign are attacked in the streets, tax collectors report cold shoulders and veiled threats, and even our armies and slavers are met with open hostility. This cannot be allowed to continue. To preserve our rule, we may be forced to put all such dissenters to the sword.\n\nSuch measures, however, would come at great cost, and many warn that even the harshest punishments may fail to bring lasting peace.\n\nHow much, then, are we willing to spend to bring an end to this unrest?"
- pharazain_events.25.desc2: "It has been some time since we proudly proclaimed our dominion over the vast and far-reaching lands of the [GetTitleByKey('h_pharazain').GetName], and our people have rejoiced greatly. The ever-faithful and illustrious people of [bellakar|E] have grown immensely wealthy, as trade and commerce flow freely across our lands and seas. Unmatched since the glory days of [numenor|E], with even much of our conquered lands growing in prosperity.\n\nYet across our conquered territories, our grip has begun to wane. Emissaries of the Gilded Sovereign are attacked in the streets, tax collectors report cold shoulders and veiled threats, and even our armies are met with open hostility. This cannot be allowed to continue. To preserve our rule, we may be forced to respond to all such dissenters quite harshly.\n\nSuch measures, however, would come at great cost, and many warn that even the harshest punishments may fail to bring lasting peace.\n\nHow much, then, are we willing to spend to bring an end to this unrest?"
- pharazain_events.25.desc3: "It has been some time since we proudly proclaimed our dominion over the vast and far-reaching lands of the [GetTitleByKey('h_pharazain').GetName], and our people have rejoiced greatly. The proud and illustrious people of [thanihazad|E] have grown immensely wealthy, as trade and commerce flow freely across our lands and seas. Unmatched since the glory days of [numenor|E], with even much of our conquered lands growing in prosperity.\n\nYet across our conquered territories, our grip has begun to wane. Emissaries of the Gilded Sovereign are attacked in the streets, tax collectors report cold shoulders and veiled threats, and even our armies are met with open hostility. This cannot be allowed to continue. To preserve our rule, we may be forced to respond to all such dissenters quite harshly.\n\nSuch measures, however, would come at great cost, and many warn that even the harshest punishments may fail to bring lasting peace.\n\nHow much, then, are we willing to spend to bring an end to this unrest?"
+ pharazain_events.25.desc2: "It has been some time since we proudly proclaimed our dominion over the vast and far-reaching lands of the [GetTitleByKey('h_pharazain').GetName], and our people have rejoiced greatly. The proud and illustrious people of [thanihazad|E] have grown immensely wealthy, as trade and commerce flow freely across our lands and seas. Unmatched since the glory days of [numenor|E], with even much of our conquered lands growing in prosperity.\n\nYet across our conquered territories, our grip has begun to wane. Emissaries of the Gilded Sovereign are attacked in the streets, tax collectors report cold shoulders and veiled threats, and even our armies are met with open hostility. This cannot be allowed to continue. To preserve our rule, we may be forced to respond to all such dissenters quite harshly.\n\nSuch measures, however, would come at great cost, and many warn that even the harshest punishments may fail to bring lasting peace.\n\nHow much, then, are we willing to spend to bring an end to this unrest?"
+ pharazain_events.25.desc3: "It has been some time since we proudly proclaimed our dominion over the vast and far-reaching lands of the [GetTitleByKey('h_pharazain').GetName], and our people have rejoiced greatly. The ever-faithful and illustrious people of [bellakar|E] have grown immensely wealthy, as trade and commerce flow freely across our lands and seas. Unmatched since the glory days of [numenor|E], with even much of our conquered lands growing in prosperity.\n\nYet across our conquered territories, our grip has begun to wane. Emissaries of the Gilded Sovereign are attacked in the streets, tax collectors report cold shoulders and veiled threats, and even our armies are met with open hostility. This cannot be allowed to continue. To preserve our rule, we may be forced to respond to all such dissenters quite harshly.\n\nSuch measures, however, would come at great cost, and many warn that even the harshest punishments may fail to bring lasting peace.\n\nHow much, then, are we willing to spend to bring an end to this unrest?"
  pharazain_events.25.desc4: "It has been some time since we proudly proclaimed our dominion over the vast and far-reaching lands of the [GetTitleByKey('h_pharazain').GetName], and our people have rejoiced greatly. The proud and deserving folk of [anbalkumagan|E] have grown immensely wealthy, as trade and commerce flow freely across our lands and seas. Unmatched since the glory days of [numenor|E], with even much of our conquered lands growing in prosperity.\n\nYet across our conquered territories, our grip has begun to wane. Emissaries of the Gilded Sovereign are attacked in the streets, tax collectors report cold shoulders and veiled threats, and even our armies are met with open hostility. This cannot be allowed to continue. To preserve our rule, we may be forced to put all such dissenters to the sword.\n\nSuch measures, however, would come at great cost, and many warn that even the harshest punishments may fail to bring lasting peace.\n\nHow much, then, are we willing to spend to bring an end to this unrest?"
  pharazain_events.25.a: "No expense will be spared to crush these rebels!"
  pharazain_events.25.b: "Spend the gold, stability must be secured across our lands."

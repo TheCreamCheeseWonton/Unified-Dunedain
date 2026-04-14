@@ -6,6 +6,12 @@ on_vassal_change = { on_actions = { dunedain_on_vassal_change } }
 on_faith_conversion = { on_actions = { dunedain_on_faith_conversion } }
 #lotr_yearly_playable_pulse = { on_actions = { pharazain_events }}
 on_title_gain = { on_actions = { ud_bellakar_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan ud_thani_hazad_conquered_bellakar ud_thani_hazad_conquered_an_balkumagan ud_an_balkumagan_conquered_bellakar ud_an_balkumagan_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan_good ud_thani_hazad_conquered_an_balkumagan_good} }
+on_birth_child = { on_actions = { pharazain_born_in_the_gold_events } }
+pharazain_born_in_the_gold_events = {
+	events = {
+		pharazain_events.8000 #Born in the Gold
+	}
+}
 
 ud_bellakar_conquered_thani_hazad = {
 	trigger = {

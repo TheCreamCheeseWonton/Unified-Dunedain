@@ -161,7 +161,7 @@ special_pharazain = { # The vague area of 'Pharazain'
 			d_nilulonde d_arbatan d_siresani d_esmer d_narduvi d_auz_udil
 		# e_bozisha_miraz
 			# k_tulwang
-			d_kanjar d_khorsaj d_tulwa d_bishra d_tulija d_ashatur
+			d_kanjar d_khorsaj d_tulwa d_bishra d_tulija d_ashatur d_dalyan d_lari
 		# e_thani_hazad
 			# k_an_balkumagan
 			d_aruzayan d_urithani d_nardubarim d_benthani d_velashar d_dobaraka d_sakya

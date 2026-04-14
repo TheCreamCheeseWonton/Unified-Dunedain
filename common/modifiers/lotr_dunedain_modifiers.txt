@@ -159,9 +159,9 @@ lotr_fighting_separatism_character_modifier = {
 	different_culture_opinion = -50
 	county_opinion_add = -25
 	general_opinion = -50
-	tax_mult = -0.15
-	levy_size = -0.15
-	development_decline = -0.05
+	tax_mult = -0.2
+	levy_size = -0.6
+	development_decline = -0.1
 	monthly_legitimacy_add = -0.1
 }
 
@@ -205,7 +205,7 @@ lotr_broken_tax_admin_character_modifier = {
 
 lotr_broken_tax_admin_getting_better_character_modifier = { 
 	icon = economy_positive 
-	tax_mult = -0.3
+	tax_mult = -0.4
 	vassal_tax_contribution_mult = -0.4
 }
 
@@ -240,6 +240,14 @@ lotr_integration_complete_character_modifier = {
 	monthly_county_control_growth_factor = 0.25
 }
 
+lotr_pharazain_spend_more_resources_character_modifier = { 
+	icon = prowess_negative 
+	domain_limit = -1
+	tax_mult = -0.3
+	vassal_tax_contribution_mult = -0.3
+	levy_size = -0.3
+	men_at_arms_maintenance = 2.0
+}
 
 #Harder To Colonize
 custom_harder_to_colonize_elven = { 
@@ -392,4 +400,36 @@ pharazain_revolt_modifier = {
 	icon = martial_positive
 	additional_fort_level = 10
 	garrison_size = 2
+}
+
+pharazain_post_anbalkumagan_good = { 
+	icon = martial_positive
+	different_culture_opinion = 10
+	martial = 2
+	vassal_tax_mult = 0.1
+}
+
+pharazain_post_anbalkumagan_evil = { 
+	icon = dread_positive
+	same_culture_opinion = 15
+	martial = 1
+	prowess = 2
+	dread_baseline_add = 15
+	monthly_prestige_gain_per_dread_mult = 0.008
+	knight_effectiveness_per_dread = 0.002
+}
+
+pharazain_post_bellakar = { 
+	icon = diplomacy_positive
+	different_culture_opinion = 10
+	same_culture_opinion = 10
+	diplomacy = 2
+	vassal_tax_mult = 0.1
+}
+
+pharazain_post_thani_hazad = { 
+	icon = intrigue_positive
+	same_culture_opinion = 10
+	intrigue = 2
+	vassal_tax_mult = 0.2
 }

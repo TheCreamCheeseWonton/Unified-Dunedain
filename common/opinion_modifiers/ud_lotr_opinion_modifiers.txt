@@ -1,0 +1,5 @@
+﻿invite_elves_cuind = {
+	opinion = 75
+	years = 20
+	decaying = yes
+}

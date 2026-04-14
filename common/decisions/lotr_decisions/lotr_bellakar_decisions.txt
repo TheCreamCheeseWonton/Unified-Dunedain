@@ -258,6 +258,14 @@ decision_bellakar_vassalise_izindubeth = {
 	
 	is_shown = {
 		current_year >= 6000
+		NOT = {
+			OR = { 
+				any_vassal_or_below = {
+					has_title = title:k_izindizanda_eruhinim
+				}
+			}
+		}
+		exists = title:k_izindizanda_eruhinim.holder
 		culture = {
 			##Quonton
 			OR = { 
@@ -507,9 +515,10 @@ decision_proclaim_pharazain = {
 			##Quonton
 			percent >= 0.5
 		}
+
 	}
 	is_valid = {
-		prestige_level >= 4
+	prestige_level >= 4
 		piety_level >= 4
 		custom_tooltip = {
 			##Quonton
@@ -634,8 +643,18 @@ decision_proclaim_pharazain = {
 				}
 				set_de_jure_liege_title = title:e_thon_an_kharlokh
 			}
-			else = { 
+			else_if = { 
+				limit = {
+					NOT = {
+						empire = title:e_anbalkumagan
+					}
+					title:k_an_balkumagan = {
+						empire = title:e_anbalkumagan
+					}
+				}
 				set_de_jure_liege_title = title:e_anbalkumagan
+			}
+			else = { 
 			}
 				
 		}
@@ -734,7 +753,7 @@ decision_proclaim_pharazain = {
 		}
 		
 		hidden_effect = { 
-			title:c_sulatha = {
+			title:d_dalyan = {
 				if = {
 					limit = {
 						NOT = {
@@ -744,17 +763,7 @@ decision_proclaim_pharazain = {
 					set_de_jure_liege_title = title:k_tulwang
 				}
 			}
-			title:c_yoeha = {
-				if = {
-					limit = {
-						NOT = {
-							kingdom = title:k_tulwang
-						}
-					}
-					set_de_jure_liege_title = title:k_tulwang
-				}
-			}
-			title:c_aldodish = {
+			title:d_lari = {
 				if = {
 					limit = {
 						NOT = {
@@ -864,7 +873,14 @@ decision_deal_with_pharazain_separatism = {
 		reference = "gfx/interface/illustrations/decisions/fp2_decision_struggle_hostility.dds"
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 12
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -873,7 +889,7 @@ decision_deal_with_pharazain_separatism = {
 	desc = decision_deal_with_pharazain_separatism_desc
 	confirm_text = decision_deal_with_pharazain_separatism_confirm
 
-	decision_group_type = realms_in_exile_major
+	decision_group_type = pharazaini_cw
 
 	cooldown = { years = 2 }
 
@@ -1113,6 +1129,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_bellazen_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_bellazen
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_bellazen_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_bellazen
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_bellazen_change_to_fighting_separatism_faster"
@@ -1149,6 +1196,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_nilulonde_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_nilulonde
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_nilulonde_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_nilulonde
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_nilulonde_change_to_fighting_separatism_faster"
@@ -1185,6 +1263,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_felaya_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_felaya
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_felaya_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_felaya
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_felaya_change_to_fighting_separatism_faster"
@@ -1221,6 +1330,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_mardruak_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_mardruak
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_mardruak_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_mardruak
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_mardruak_change_to_fighting_separatism_faster"
@@ -1257,6 +1397,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_tulwang_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_tulwang
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_tulwang_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_tulwang
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_tulwang_change_to_fighting_separatism_faster"
@@ -1293,6 +1464,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_an_balkumagan_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_an_balkumagan
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_an_balkumagan_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_an_balkumagan
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_an_balkumagan_change_to_fighting_separatism_faster"
@@ -1329,6 +1531,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_kharadune_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_kharadune
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_kharadune_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_kharadune
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_kharadune_change_to_fighting_separatism_faster"
@@ -1365,6 +1598,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_gimilthani_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_gimilthani
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_gimilthani_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_gimilthani
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_gimilthani_change_to_fighting_separatism_faster"
@@ -1401,6 +1665,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_zimrathani_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_zimrathani
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_zimrathani_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_zimrathani
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_zimrathani_change_to_fighting_separatism_faster"
@@ -1437,6 +1732,37 @@ decision_deal_with_pharazain_separatism = {
 							name = unavailable_unique_decisions
 							target = flag:military_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_pel_change_to_fighting_separatism_faster"
+						every_county_in_region  = { 
+							region = special_k_pel
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:military_administration_reformed
+						}
+					}
+					custom_tooltip = { 
+						text = "every_province_in_pel_change_to_fighting_separatism_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_pel
+							remove_county_modifier = lotr_pharazain_separatism_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_fighting_separatism_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_pel_change_to_fighting_separatism_faster"
@@ -1520,7 +1846,7 @@ decision_integrate_pharazain_province = {
 	confirm_text = decision_integrate_pharazain_province_confirm
 	selection_tooltip = decision_integrate_pharazain_province_tooltip
 
-	decision_group_type = realms_in_exile_major
+	decision_group_type = pharazaini_cw
 
 	cooldown = { years = 2.5 }
 
@@ -1761,6 +2087,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_bellazen_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_bellazen
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_bellazen_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_bellazen
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_bellazen_change_to_pharazain_integration_faster"
@@ -1797,6 +2154,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_nilulonde_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_nilulonde
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_nilulonde_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_nilulonde
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_nilulonde_change_to_pharazain_integration_faster"
@@ -1833,6 +2221,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_felaya_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_felaya
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_felaya_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_felaya
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_felaya_change_to_pharazain_integration_faster"
@@ -1869,6 +2288,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_mardruak_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_mardruak
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_mardruak_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_mardruak
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_mardruak_change_to_pharazain_integration_faster"
@@ -1905,6 +2355,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_tulwang_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_tulwang
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_tulwang_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_tulwang
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_tulwang_change_to_pharazain_integration_faster"
@@ -1941,6 +2422,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_an_balkumagan_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_an_balkumagan
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_an_balkumagan_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_an_balkumagan
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_an_balkumagan_change_to_pharazain_integration_faster"
@@ -1977,6 +2489,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_kharadune_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_kharadune
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_kharadune_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_kharadune
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_kharadune_change_to_pharazain_integration_faster"
@@ -2013,6 +2556,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_gimilthani_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_gimilthani
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_gimilthani_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_gimilthani
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_gimilthani_change_to_pharazain_integration_faster"
@@ -2049,6 +2623,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_zimrathani_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_zimrathani
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_zimrathani_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_zimrathani
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_zimrathani_change_to_pharazain_integration_faster"
@@ -2085,6 +2690,37 @@ decision_integrate_pharazain_province = {
 							name = unavailable_unique_decisions
 							target = flag:domain_administration_reformed
 						}
+						NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+					}
+					custom_tooltip = { 
+						text = "every_province_in_pel_change_to_pharazain_integration_faster"
+						every_county_in_region  = { 
+							region = special_k_pel
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:domain_administration_reformed
+						}
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+					}
+					custom_tooltip = { 
+						text = "every_province_in_pel_change_to_pharazain_integration_extra_faster"
+						every_county_in_region  = { 
+							region = special_k_pel
+							remove_county_modifier = lotr_shattered_control_county_modifier
+							add_county_modifier = { modifier = lotr_pharazain_integration_county_modifier years = 2.5 }
+						}
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 					}
 					custom_tooltip = { 
 						text = "every_province_in_pel_change_to_pharazain_integration_faster"
@@ -2130,7 +2766,14 @@ decision_integrate_pharazain_province = {
 		}
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 12
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -2153,7 +2796,7 @@ decision_pharazain_reform_administration = {
 	confirm_text = decision_pharazain_reform_administration_confirm
 	selection_tooltip = decision_pharazain_reform_administration_tooltip
 
-	decision_group_type = realms_in_exile_major
+	decision_group_type = pharazaini_cw
 
 	cooldown = { years = 5 }
 
@@ -2260,7 +2903,15 @@ decision_pharazain_reform_administration = {
 		else_if = {		# Domain
 			limit = { scope:pharazain_reform_administration_domain = yes }
 			remove_character_modifier = lotr_broken_domain_admin_character_modifier
-			add_character_modifier = { modifier = lotr_broken_domain_admin_getting_better_character_modifier years = 10 }
+			if = { 
+				limit = { 
+					has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+				}
+				add_character_modifier = { modifier = lotr_broken_domain_admin_getting_better_character_modifier years = 5 }
+			}
+			else = {
+				add_character_modifier = { modifier = lotr_broken_domain_admin_getting_better_character_modifier years = 10 }
+			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:domain_administration_reformed
@@ -2269,7 +2920,15 @@ decision_pharazain_reform_administration = {
 		else_if = {		# Military
 			limit = { scope:pharazain_reform_administration_military = yes }
 			remove_character_modifier = lotr_broken_military_admin_character_modifier
-			add_character_modifier = { modifier = lotr_broken_military_admin_getting_better_character_modifier years = 10 }
+			if = { 
+				limit = { 
+					has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+				}
+				add_character_modifier = { modifier = lotr_broken_military_admin_getting_better_character_modifier years = 5 }
+			}
+			else = {
+				add_character_modifier = { modifier = lotr_broken_military_admin_getting_better_character_modifier years = 10 }
+			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:military_administration_reformed
@@ -2278,7 +2937,15 @@ decision_pharazain_reform_administration = {
 		else_if = {		# Tax
 			limit = { scope:pharazain_reform_administration_tax = yes }
 			remove_character_modifier = lotr_broken_tax_admin_character_modifier
-			add_character_modifier = { modifier = lotr_broken_tax_admin_getting_better_character_modifier years = 10 }
+			if = { 
+				limit = { 
+					has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+				}
+				add_character_modifier = { modifier = lotr_broken_tax_admin_getting_better_character_modifier years = 5 }
+			}
+			else = {
+				add_character_modifier = { modifier = lotr_broken_tax_admin_getting_better_character_modifier years = 10 }
+			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:tax_administration_reformed
@@ -2298,7 +2965,14 @@ decision_pharazain_reform_administration = {
 		}
 	}
 	
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 12
+	}
 	ai_potential = {
 		always = yes
 	}
@@ -2309,9 +2983,125 @@ decision_pharazain_reform_administration = {
 	}
 }
 
+## More Expensive/Less Expensive ##
+decision_pharazain_spend_more_resources_choice = {
+	sort_order = 300
+	title = decision_pharazain_spend_more_resources_choice
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_spend_money.dds"
+	}
+
+	desc = decision_pharazain_spend_more_resources_choice_desc
+	confirm_text = decision_pharazain_spend_more_resources_choice_confirm
+	selection_tooltip = decision_pharazain_spend_more_resources_choice_tooltip
+
+	decision_group_type = pharazaini_cw
+
+	cooldown = { years = 2 }
+
+	is_shown = {
+		is_landed = yes
+		has_title = title:h_pharazain
+
+		highest_held_title_tier >= tier_empire
+		
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_solidify_pharazain
+			}
+		}
+		
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:separatism_has_started
+		}
+	}
+	
+	is_valid = {
+		has_title = title:h_pharazain
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	
+	widget = {
+		gui = "decision_view_widget_option_list_generic"
+		controller = decision_option_list_controller
+		decision_to_second_step_button = "decision_pharazain_spend_more_resources_choice.second_step"
+		
+		item = {	# Fallback
+			value = decision_pharazain_spend_more_resources_choice_fallback
+			localization = decision_pharazain_spend_more_resources_choice.tt.fallback
+			icon = "gfx/interface/icons/message_feed/titles.dds"
+			is_shown = { always = no }
+			is_valid = { always = no }
+			ai_chance = { value = 100 }
+		}
+		
+		item = {	# More Expensive
+			value = decision_pharazain_spend_more_resources_more_expensive
+			localization = decision_pharazain_spend_more_resources_choice.tt.more_expensive
+			icon = "gfx/interface/icons/message_feed/money.dds"
+			is_shown = { NOT = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }  }
+			is_valid = {  }
+			ai_chance = { value = 100 }
+		}
+		
+		item = {	# Less Expensive
+			value = decision_pharazain_spend_more_resources_choice_less_expensive
+			localization = decision_pharazain_spend_more_resources_choice.tt.less_expensive
+			icon = "gfx/interface/icons/message_feed/money.dds"
+			is_shown = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+			is_valid = { }
+			ai_chance = { value = 100 }
+		}
+	}
+	
+	effect = {
+		if = {		# Fallback
+			limit = { scope:decision_pharazain_spend_more_resources_choice_fallback = yes }
+			custom_tooltip = decision_pharazain_spend_more_resources_choice_effect.tt
+		}
+		else_if = {		# More Expensive
+			limit = { scope:decision_pharazain_spend_more_resources_more_expensive = yes }
+			custom_tooltip = decision_pharazain_spend_more_resources_choice_effect_more.tt
+			add_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+		}
+		else_if = {		# Less Expensive
+			limit = { scope:decision_pharazain_spend_more_resources_choice_less_expensive = yes }
+			custom_tooltip = decision_pharazain_spend_more_resources_choice_effect_less.tt
+			remove_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
+		}
+		else = {
+			
+		}
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 12
+	}
+	ai_potential = {
+		always = yes
+	}
+	
+	cost = {
+		gold = 1500
+	}
+}
+
 ##Quonton
 decision_solidify_pharazain = {
-	sort_order = 250
+	sort_order = 50
 	# TEXT
 	title = decision_solidify_pharazain
 	picture = {
@@ -2321,7 +3111,7 @@ decision_solidify_pharazain = {
 	desc = decision_solidify_pharazain_desc
 	confirm_text = decision_solidify_pharazain_confirm
 
-	decision_group_type = realms_in_exile_major
+	decision_group_type = pharazaini_cw
 	
 
 	# IS_SHOWN
@@ -2392,7 +3182,7 @@ decision_solidify_pharazain = {
 	# EFFECT 
 	effect = {
 		give_nickname = nick_pharazain_golden
-		custom_tooltip = decision_solidify_pharazain_tt
+		#custom_tooltip = decision_solidify_pharazain_tt
 		
 		trigger_event = pharazain_events.1 # Solidify Empire Flavor
 		form_pharazain_effect = yes
@@ -2404,7 +3194,103 @@ decision_solidify_pharazain = {
 	}
 
 	# AI
-	ai_goal = yes
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 12
+	}
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
+}
+
+##Anbalkumagan Empire Post Solidify
+decision_anbalkumagan_empire_form = {
+	sort_order = 150
+	# TEXT
+	title = decision_anbalkumagan_empire_form
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_adunai_01.dds"
+	}
+	selection_tooltip = decision_anbalkumagan_empire_form_tooltip
+	desc = decision_anbalkumagan_empire_form_desc
+	confirm_text = decision_anbalkumagan_empire_form_confirm
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 0
+		hegemony = 6
+	}
+
+	decision_group_type = realms_in_exile_major
+	
+
+	# IS_SHOWN
+	is_shown = {
+		has_title = title:h_pharazain
+
+		culture ?= { 
+			OR = { 
+				has_cultural_pillar = heritage_southern_adunaic 
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic 
+			}
+		}
+		
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:anbalkumagan_empire
+			}
+		}
+		NOT = { 
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:anbalkumagan_empire_naaaaa
+			}
+		}
+		NOT = { has_global_variable = thani_hazad_pharazain }
+		
+		NOT = {
+			OR = { 
+				any_vassal_or_below = {
+					has_title = title:e_anbalkumagan
+				}
+			}
+		}
+		
+		NOT = { has_title = title:e_anbalkumagan }
+		
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_solidify_pharazain
+		}
+	}
+	# IS_VALID
+	is_valid = {
+		is_independent_ruler = yes
+		completely_controls = title:k_an_balkumagan
+		completely_controls = title:k_tulwang
+		completely_controls = title:k_kharadune
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	# EFFECT 
+	effect = {
+		custom_tooltip = form_anbalkumagan_empire_event
+		trigger_event = pharazain_events.31 # Form Anbalkumagan Empire Event
+	}
+
+	# AI
 	ai_potential = { always = yes }
 	ai_will_do = { base = 100 }
 }

@@ -211,14 +211,17 @@ civil_war_defender_wins_initial_revolt_war_effect = {
 			scope:defender = { 
 				NOT = { 
 					any_character_war = { 
+						count > 1
 						using_cb = lotr_pharazain_revolt_invasion_cb 
 					}
 				}
 			}
 		}
-		trigger_event = { 
-			id = pharazain_events.27
-			delayed = yes
+		scope:defender = {
+			trigger_event = { 
+				id = pharazain_events.27
+				days = 7
+			}
 		}
 	}
 		

@@ -1325,3 +1325,244 @@ decision_adunaic_revival_tanturak = {#Restore Adunaic
 		base = 50
 	}
 }
+
+##Quonton
+
+# Invite Elves to Baranagath
+decision_invite_elves_baranagath = {
+	sort_order = 35
+	# TEXT + PICTURE
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_elves_06.dds"
+	}
+	title = decision_invite_elves_baranagath
+	selection_tooltip = decision_invite_elves_baranagath_tooltip
+	desc = decision_invite_elves_baranagath_desc	
+	confirm_text = decision_invite_elves_baranagath_confirm
+
+	decision_group_type = realms_in_exile_major
+
+
+	# SHOWN
+	is_shown = {
+		is_landed = yes
+
+		#faith = faith:faith_edain
+		OR = { 
+			religion = { is_in_family = rf_eruhini }
+			faith = { has_doctrine = doctrine_echoes_of_the_ainur }
+		}
+
+		# If Anfalas player controlled, apply decision restrictions as normal. If not, allow ruler to land them
+		trigger_if = {
+			limit = {
+				title:c_baranagath.holder = { is_ai = yes }
+			}
+			title:c_baranagath = { holder.top_liege = root }
+		}
+		trigger_else = {
+			has_title = title:c_baranagath
+		}
+
+		NOR = {
+			title:c_baranagath = {
+				county_is_elven = yes
+			}
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:invite_elves_baranagath
+			}
+		}
+	}
+
+	# IS_VALID
+	is_valid = {
+		completely_controls = title:c_baranagath
+		custom_tooltip = {
+			text = LOTR_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER
+			any_relation = {
+				type = friend
+				is_ruler = yes
+				highest_held_title_tier >= tier_kingdom
+				is_elf = yes
+				is_in_valinor = no
+				is_eldar = yes
+				has_title = title:k_drel
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				title:c_baranagath.holder = { is_ai = yes }
+			}
+			prestige_level >= 4
+		}
+		trigger_else = {
+			prestige_level >= 3
+		}
+
+		knows_language = language_cuind
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	#COST
+	cost = {
+		gold = 350
+		prestige = 1000
+		piety = 750
+	}
+
+	# EFFECT
+	effect = {
+		custom_tooltip = decision_invite_elves_baranagath_effect_tooltip
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = decision_invite_elves_baranagath_effect_tt
+			left_icon = root
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:invite_elves_baranagath
+		}
+		trigger_event = {
+			id = south_adunai_events.2000
+			days = 5 # Aerien note: Make idle time shorter to reduce confusion
+		}
+	}
+
+	# AI
+	ai_goal = yes
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+}
+
+# Invite Elves to Sûza Sûmar
+decision_invite_elves_suza_sumar = {
+	sort_order = 35
+	# TEXT + PICTURE
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_elves_05.dds"
+	}
+	title = decision_invite_elves_suza_sumar
+	selection_tooltip = decision_invite_elves_suza_sumar_tooltip
+	desc = decision_invite_elves_suza_sumar_desc
+	confirm_text = decision_invite_elves_suza_sumar_confirm
+
+	decision_group_type = realms_in_exile_major
+
+
+	# SHOWN
+	is_shown = {
+		is_landed = yes
+
+		#faith = faith:faith_edain
+		OR = { 
+			religion = { is_in_family = rf_eruhini }
+			faith = { has_doctrine = doctrine_echoes_of_the_ainur }
+		}
+
+		# If Anfalas player controlled, apply decision restrictions as normal. If not, allow ruler to land them
+		trigger_if = {
+			limit = {
+				title:d_suza_sumar.holder = { is_ai = yes }
+			}
+			title:d_suza_sumar = { holder.top_liege = root }
+		}
+		trigger_else = {
+			has_title = title:d_suza_sumar
+		}
+		
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:invite_elves_baranagath
+		}
+
+		NOR = {
+			title:d_suza_sumar = {
+				county_is_elven = yes
+			}
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:invite_elves_suza_sumar
+			}
+		}
+	}
+
+	# IS_VALID
+	is_valid = {
+		completely_controls = title:d_suza_sumar
+		custom_tooltip = {
+			text = LOTR_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER
+			any_relation = {
+				type = friend
+				is_ruler = yes
+				highest_held_title_tier >= tier_kingdom
+				is_elf = yes
+				is_in_valinor = no
+				is_eldar = yes
+				has_title = title:k_drel
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				title:d_suza_sumar.holder = { is_ai = yes }
+			}
+			prestige_level >= 4
+		}
+		trigger_else = {
+			prestige_level >= 3
+		}
+
+		knows_language = language_cuind
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	#COST
+	cost = {
+		gold = 350
+		prestige = 1000
+		piety = 750
+	}
+
+	# EFFECT
+	effect = {
+		custom_tooltip = decision_invite_elves_suza_sumar_effect_tooltip
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = decision_invite_elves_suza_sumar_effect_tt
+			left_icon = root
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:invite_elves_suza_sumar
+		}
+		trigger_event = {
+			id = south_adunai_events.2100
+			days = 5 # Aerien note: Make idle time shorter to reduce confusion
+		}
+	}
+
+	# AI
+	ai_goal = yes
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+}

@@ -7,11 +7,11 @@ pharazain_events.1 = { # Solidify Empire Flavor
 	title = pharazain_events.1.t
 	desc = pharazain_events.1.desc
 	theme = stewardship_duty_focus
-	override_background = { reference = bp1_courtyard_indian }
+	override_background = { reference = throne_room }
 
 	left_portrait = {
 		character = root
-		animation = steward
+		animation = scepter
 	}
 
 	option = {
@@ -23,6 +23,10 @@ pharazain_events.1 = { # Solidify Empire Flavor
 			add_prestige = 400
 			dynasty = { add_dynasty_prestige = 1250 }
 			add_character_flag = pharazain_reunited_1
+		}
+		trigger_event = {
+			id = pharazain_events.30
+			delayed = yes
 		}
 	}
 }
@@ -352,7 +356,20 @@ pharazain_events.9 = {
 		play_sound_effect = "event:/DLC/CE2/UI/Notifications/ce2_ui_notifications_migration_negative"
 		##Remove all modifiers before CV Starts
 		custom_tooltip = remove_all_previous_modifiers
-		custom_tooltip = remove_all_non_pharazain_vassals
+		if = { 
+			limit = { 
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:tame_desert_decision
+					}
+				}
+			}
+			custom_tooltip = remove_all_non_pharazain_vassals
+		}
+		else = { 
+			custom_tooltip = remove_all_non_pharazain_vassals_extra
+		}
 		hidden_effect = { 
 			every_county = {
 				remove_county_modifier = custom_bellakar_conquer_adunai_modifier  
@@ -366,16 +383,41 @@ pharazain_events.9 = {
 			remove_character_modifier = custom_ud_conquer_modifier_1 
 			remove_character_modifier = custom_an_balkumagan_conquer_modifier 
 			remove_character_modifier = custom_bellakar_conquer_modifier
-			every_vassal = {
-				limit = { NOT = { capital_province = { geographical_region = special_pharazain } } }
-				create_title_and_vassal_change = {
-					type = independency
-					save_scope_as = change
-					add_claim_on_loss = no
+			if = { 
+				limit = { 
+					NOT = {
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:tame_desert_decision
+						}
+					}
 				}
+				custom_tooltip = remove_all_non_pharazain_vassals
+				every_vassal = {
+					limit = { NOT = { capital_province = { geographical_region = special_pharazain } } }
+					create_title_and_vassal_change = {
+						type = independency
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
 
-				becomes_independent = { change = scope:change }
-				resolve_title_and_vassal_change = scope:change
+					becomes_independent = { change = scope:change }
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+			else = { 
+				custom_tooltip = remove_all_non_pharazain_vassals_extra
+				every_vassal = {
+					limit = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea  } } } }
+					create_title_and_vassal_change = {
+						type = independency
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+
+					becomes_independent = { change = scope:change }
+					resolve_title_and_vassal_change = scope:change
+				}
 			}
 				
 		}
@@ -384,10 +426,10 @@ pharazain_events.9 = {
 
 	option = {
 		name = pharazain_events.9.a
-		#trigger = { 
-		#	has_global_variable = bellakar_pharazain
-		#}
-		custom_tooltip = bellakar_revolts
+		trigger = { 
+			has_global_variable = bellakar_pharazain
+		}
+		custom_tooltip = anbalkumagan_revolts
 		custom_tooltip = thani_hazad_revolts
 		hidden_effect_new_object = { 
 			sunset_invasion_general_effect = { #An-Balkumagan
@@ -420,6 +462,8 @@ pharazain_events.9 = {
 			has_global_variable = anbalkumagan_pharazain
 			faith = { has_doctrine = tenet_adunaic_birthright }
 		}
+		custom_tooltip = bellakar_revolts
+		custom_tooltip = thani_hazad_revolts
 		hidden_effect_new_object = { 
 			sunset_invasion_general_effect = { #Bellakar
 				GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
@@ -451,6 +495,8 @@ pharazain_events.9 = {
 			has_global_variable = anbalkumagan_pharazain
 			NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
 		}
+		custom_tooltip = bellakar_revolts
+		custom_tooltip = thani_hazad_revolts
 		hidden_effect_new_object = { 
 			sunset_invasion_general_effect = { #Bellakar
 				GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
@@ -481,6 +527,8 @@ pharazain_events.9 = {
 		trigger = { 
 			has_global_variable = thani_hazad_pharazain
 		}
+		custom_tooltip = anbalkumagan_revolts
+		custom_tooltip = bellakar_revolts
 		hidden_effect_new_object = { 
 			sunset_invasion_general_effect = { #An-Balkumagan
 				GEOGRAPHICAL_REGION = custom_anbalkumagan_sirayn
@@ -508,93 +556,93 @@ pharazain_events.9 = {
 	}
 }
 
-#After conquering land
-pharazain_events.10 = {
-	type = character_event
-	title = pharazain_events.10.t
-	desc = pharazain_events.10.desc
-	theme = battle
-	override_background = { reference = battlefield }
+# #After conquering land
+# pharazain_events.10 = {
+	# type = character_event
+	# title = pharazain_events.10.t
+	# desc = pharazain_events.10.desc
+	# theme = battle
+	# override_background = { reference = battlefield }
 	
-	trigger = { 
-		has_title = title:h_pharazain
-		is_target_in_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:separatism_has_started
-		}
-		title:h_pharazain.holder = {
-			any_vassal = {
-				culture = { 
-					NOT = { has_same_culture_heritage = title:h_pharazain.holder.culture }
-				}
-				any_held_title = {
-					tier >= tier_duchy
-				}
-				opinion = {
-					target = title:h_pharazain.holder
-					value <= 10
-				}
-				is_imprisoned = no
-				current_military_strength >= root.current_military_strength
-			}
-		}
-	}
+	# trigger = { 
+		# has_title = title:h_pharazain
+		# is_target_in_global_variable_list = {
+			# name = unavailable_unique_decisions
+			# target = flag:separatism_has_started
+		# }
+		# title:h_pharazain.holder = {
+			# any_vassal = {
+				# culture = { 
+					# NOT = { has_same_culture_heritage = title:h_pharazain.holder.culture }
+				# }
+				# any_held_title = {
+					# tier >= tier_duchy
+				# }
+				# opinion = {
+					# target = title:h_pharazain.holder
+					# value <= 10
+				# }
+				# is_imprisoned = no
+				# current_military_strength >= root.current_military_strength
+			# }
+		# }
+	# }
 
-	left_portrait = {
-		character = root
-		animation = disbelief
-	}
-	immediate = {
-		title:h_pharazain = { save_scope_as = pharazain_title }
-		scope:pharazain_title.holder ?= { save_scope_as = high_king_of_pharazain }
-		#scope:pharazain_title.holder.culture ?= { save_scope_as = high_king_of_pharazain_culture }
+	# left_portrait = {
+		# character = root
+		# animation = disbelief
+	# }
+	# immediate = {
+		# title:h_pharazain = { save_scope_as = pharazain_title }
+		# scope:pharazain_title.holder ?= { save_scope_as = high_king_of_pharazain }
+		# #scope:pharazain_title.holder.culture ?= { save_scope_as = high_king_of_pharazain_culture }
 
-		scope:high_king_of_pharazain = {
-			random_vassal = {
-				limit = {
-					culture = { 
-						NOT = { has_same_culture_heritage = title:h_pharazain.holder.culture }
-					}
-					any_held_title = {
-						tier >= tier_duchy
-					}
-					opinion = {
-						target = title:h_pharazain.holder
-						value <= 10
-					}
-				}
-				save_scope_as = leader_of_rebellion
-			}
-		}
-	}
+		# scope:high_king_of_pharazain = {
+			# random_vassal = {
+				# limit = {
+					# culture = { 
+						# NOT = { has_same_culture_heritage = title:h_pharazain.holder.culture }
+					# }
+					# any_held_title = {
+						# tier >= tier_duchy
+					# }
+					# opinion = {
+						# target = title:h_pharazain.holder
+						# value <= 10
+					# }
+				# }
+				# save_scope_as = leader_of_rebellion
+			# }
+		# }
+	# }
 
-	option = { # (fight against rebelious/religious people)
-		name = pharazain_events.10.a
+	# option = { # (fight against rebelious/religious people)
+		# name = pharazain_events.10.a
 
-		scope:leader_of_rebellion = {
-			start_war = {
-				casus_belli = independence_war
-				target = scope:high_king_of_pharazain
-				target_title = scope:high_king_of_pharazain.primary_title
-			}
-			every_character_war = {
-				limit = { using_cb = independence_war } # In-case the random head of the attackers has other wars hes currently engaged in
-				save_scope_as = war_against_pharazain
-			}
-			spawn_army = {
-				name = bp2_yearly_6203_army_name
-				levies = 600
-				men_at_arms = {
-					type = light_footmen
-					stacks = 2
-				}
-				inheritable = no
-				uses_supply = no
-				location = scope:leader_of_rebellion.capital_province
-			}
-		}
-	}
-}
+		# scope:leader_of_rebellion = {
+			# start_war = {
+				# casus_belli = independence_war
+				# target = scope:high_king_of_pharazain
+				# target_title = scope:high_king_of_pharazain.primary_title
+			# }
+			# every_character_war = {
+				# limit = { using_cb = independence_war } # In-case the random head of the attackers has other wars hes currently engaged in
+				# save_scope_as = war_against_pharazain
+			# }
+			# spawn_army = {
+				# name = bp2_yearly_6203_army_name
+				# levies = 600
+				# men_at_arms = {
+					# type = light_footmen
+					# stacks = 2
+				# }
+				# inheritable = no
+				# uses_supply = no
+				# location = scope:leader_of_rebellion.capital_province
+			# }
+		# }
+	# }
+# }
 
 #Separatism Done
 pharazain_events.11 = {
@@ -806,7 +854,7 @@ pharazain_events.16 = {
 	title = pharazain_events.16.t
 	desc = pharazain_events.16.desc
 	theme = crown
-	override_background = { reference = harad_desert }
+	override_background = { reference = pharazain_fullscreen }
 	
 	immediate = { 
 		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
@@ -1324,7 +1372,7 @@ pharazain_events.27 = {
 
 	left_portrait = {
 		character = root
-		animation = shock
+		animation = worry
 	}
 	
 	immediate = { 
@@ -1382,7 +1430,7 @@ pharazain_events.28 = {
 	title = pharazain_events.28.t
 	desc = pharazain_events.28.desc
 	theme = crown
-	override_background = { reference = pharazain_fullscreen. }
+	override_background = { reference = pharazain_fullscreen }
 	
 	immediate = { 
 		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
@@ -1400,7 +1448,7 @@ pharazain_events.29 = {
 	title = pharazain_events.29.t
 	desc = pharazain_events.29.desc
 	theme = crown
-	override_background = { reference = pharazain_fullscreen. }
+	override_background = { reference = pharazain_fullscreen }
 	
 	immediate = { 
 		title:h_pharazain.holder = { save_scope_as = high_king_pharazain }
@@ -1410,3 +1458,293 @@ pharazain_events.29 = {
 	}
 }
 
+pharazain_events.30 = { # Solidify Empire Flavor - 2
+	content_source = realms_dlc
+	type = character_event
+	title = pharazain_events.30.t
+	desc = {
+		random_valid = {
+    		triggered_desc = {
+      			trigger = {
+        			has_global_variable = anbalkumagan_pharazain
+					faith = { has_doctrine = tenet_adunaic_birthright }
+      			}
+      			desc = pharazain_events.30.desc1
+    		}
+    		triggered_desc = {
+      			trigger = {
+        			has_global_variable = thani_hazad_pharazain
+      			}
+      			desc = pharazain_events.30.desc2
+    		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = bellakar_pharazain
+      			}
+      			desc = pharazain_events.30.desc3
+    		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = anbalkumagan_pharazain
+					NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+      			}
+      			desc = pharazain_events.30.desc4
+    		}
+  		}
+	}
+	theme = stewardship_duty_focus
+	override_background = { reference = feast }
+
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = pharazain_events.30.a #Continue the Evil Path
+		trigger = {
+			has_global_variable = anbalkumagan_pharazain
+			faith = { has_doctrine = tenet_adunaic_birthright }
+		}
+
+		add_character_modifier = { modifier = pharazain_post_anbalkumagan_evil years = 30 }
+		add_character_modifier = {
+			modifier = promise_of_feasts_modifier
+			years = 15
+		}
+	}
+	option = {
+		name = pharazain_events.30.b #Civil War made you think it was best to mellow out a little 
+		trigger = {
+			has_global_variable = anbalkumagan_pharazain
+			faith = { has_doctrine = tenet_adunaic_birthright }
+		}
+		
+		custom_tooltip = angry_vassals_lesser_tt
+		hidden_effect = { 
+			every_vassal  = {
+				limit = { has_faith = root.faith }
+				add_opinion = {
+					modifier = angry_opinion
+					opinion = -10
+					target = root
+				}
+			}
+		}
+		
+		set_character_faith = faith:faith_thani_hazad 
+		add_stress = -30
+		stress_impact = {
+			humble = medium_stress_impact_loss
+			arrogant = medium_stress_impact_gain
+			content = medium_stress_impact_loss
+			ambitious = medium_stress_impact_gain
+			zealous = medium_stress_impact_gain
+		}
+		add_character_modifier = { modifier = pharazain_post_anbalkumagan_good years = 30 }
+	}
+	option = {
+		name = pharazain_events.30.c #Civil War made you think it was best to mellow out a lot 
+		trigger = {
+			has_global_variable = anbalkumagan_pharazain
+			faith = { has_doctrine = tenet_adunaic_birthright }
+		}
+		custom_tooltip = angry_vassals_major_tt
+		hidden_effect = { 
+			every_vassal  = {
+				limit = { has_faith = root.faith }
+				add_opinion = {
+					modifier = angry_opinion
+					opinion = -30
+					target = root
+				}
+			}
+		}
+		
+		set_character_faith = faith:faith_adunaic_faithful
+		add_stress = 30
+		stress_impact = {
+			humble = medium_stress_impact_loss
+			arrogant = medium_stress_impact_gain
+			content = medium_stress_impact_loss
+			ambitious = medium_stress_impact_gain
+			zealous = medium_stress_impact_gain
+		}
+		add_character_modifier = { modifier = pharazain_post_anbalkumagan_good years = 30 }
+	}
+	option = {
+		name = pharazain_events.30.d #We made the right choice
+		trigger = {
+			has_global_variable = thani_hazad_pharazain
+		}
+
+		add_character_modifier = { modifier = pharazain_post_thani_hazad years = 30 }
+		add_character_modifier = {
+			modifier = promise_of_feasts_modifier
+			years = 15
+		}
+	}
+	option = {
+		name = pharazain_events.30.e #We made the right choice
+		trigger = {
+			has_global_variable = bellakar_pharazain
+		}
+
+		add_character_modifier = { modifier = pharazain_post_bellakar years = 30 }
+		add_character_modifier = {
+			modifier = promise_of_feasts_modifier
+			years = 15
+		}
+	}
+	option = {
+		name = pharazain_events.30.f #We made the right choice
+		trigger = {
+			has_global_variable = anbalkumagan_pharazain
+			NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+		}
+
+		add_character_modifier = { modifier = pharazain_post_anbalkumagan_good years = 30 }
+		add_character_modifier = {
+			modifier = promise_of_feasts_modifier
+			years = 15
+		}
+	}
+}
+
+pharazain_events.31 = { #An-Balkumagan Empire Formation Event
+	type = character_event
+	title = pharazain_events.31.t
+	desc = pharazain_events.31.desc
+	theme = stewardship
+	
+	left_portrait = {
+		character = root
+		animation = throne_room_writer
+	}
+	
+	option = { 
+		name = pharazain_events.31.a # Form Empire Title
+		#Create the title and make it primary
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = yes
+		}
+		title:e_anbalkumagan = {
+			change_title_holder = {
+				holder = root
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		title:e_anbalkumagan = {
+			set_de_jure_liege_title = title:h_pharazain
+		}
+		title:k_an_balkumagan = {
+			set_de_jure_liege_title = title:e_anbalkumagan
+		}
+		title:k_tulwang = {
+			set_de_jure_liege_title = title:e_anbalkumagan
+		}
+		title:k_kharadune = {
+			set_de_jure_liege_title = title:e_anbalkumagan
+		}
+		root.capital_county = {
+			change_development_level = 3
+		}
+		title:e_thani_hazad = {
+			set_title_name = e_thani_hazad_southern_province
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:anbalkumagan_empire
+		}
+	}
+	
+	option = { 
+		name = pharazain_events.31.b # Dont Form Empire Title
+		add_prestige = 200
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:anbalkumagan_empire_naaaaa
+		}
+	}
+}
+
+pharazain_events.8000 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		any_parent = {
+			culture = {
+				has_cultural_parameter = children_can_be_born_in_the_gold 
+			}
+			trigger_if = {
+				limit = {
+					has_ach_dlc_trigger = yes
+					NOT = { has_game_rule = coronation_laws_off }
+				}
+				NOT = { has_realm_law = uncrowned } # Must be coronated
+			}
+			trigger_if = {
+				limit = {
+					is_diarch = yes
+				}
+				liege_has_co_emperorship_trigger = yes
+				liege = {
+					OR = { 
+						has_title = title:h_pharazain
+						has_title = title:h_numenor_in_exile
+					}
+					OR = {
+						capital_county = title:h_pharazain.title_capital_county 	#Must rule from the Capital of Pharazain
+						capital_county = title:h_numenor_in_exile.title_capital_county		 # ... or from Numenor Capital
+					}
+				}
+			}
+			trigger_else = {
+				OR = { 
+					has_title = title:h_pharazain
+					has_title = title:h_numenor_in_exile
+				}
+				OR = {
+					capital_county = title:h_pharazain.title_capital_county 	#Must rule from the Capital of Pharazain
+					capital_county = title:h_numenor_in_exile.title_capital_county # ... or from Numenor Capital
+				}
+			}
+		}
+		mother = {
+			OR = {
+				AND = {	#Landless mothers must be actually at court to use the chamber.
+					#is_ruler = no
+					exists = location # Security check
+					OR = {
+						OR = {
+							location = title:h_pharazain.title_province
+							location = title:h_numenor_in_exile.title_province
+						}
+						# Be a bit more lenient with co-emperors.
+						AND = {
+							is_diarch = yes
+							liege_has_co_emperorship_trigger = yes
+						}
+						root.father ?= {
+							is_diarch = yes
+							liege_has_co_emperorship_trigger = yes
+						}
+					}
+
+				}
+				AND = {	#Landed rulers can be assumed to make the journey, unless they have some extremely pressing reason not to.
+					is_ruler = yes
+					NOT = { is_at_war_with = root.father }
+				}
+			}
+			is_imprisoned = no	#Cannot use the purple chamber from prison.
+			is_commanding_army = no	#Cannot use the purple chamber whilst commanding an army.
+		}
+	}
+
+	immediate = { add_trait = born_in_the_gold }
+}

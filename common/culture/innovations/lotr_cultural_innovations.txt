@@ -201,11 +201,9 @@ innovation_lords_of_the_westlands = { # Rewards for a resurgent Dunedain
 		#army_maintenance_mult = -0.25
 		army_damage_mult = 0.2
 		army_toughness_mult = 0.2
-		monthly_lifestyle_xp_gain_mult = 0.05
-		knight_effectiveness_mult = 0.1
-		coastal_advantage = 2
-		health = 0.25
-		epidemic_resistance = 10
+		monthly_lifestyle_xp_gain_mult = 0.075
+		knight_effectiveness_mult = 0.15
+		health = 0.6
 		#men_at_arms_maintenance = -0.25
 	}
 
@@ -231,11 +229,9 @@ innovation_lords_of_the_golden_lands = { # Rewards for a resurgent Adunai
 		#army_maintenance_mult = -0.25
 		army_damage_mult = 0.2
 		army_toughness_mult = 0.2
-		monthly_lifestyle_xp_gain_mult = 0.05
-		knight_effectiveness_mult = 0.1
-		coastal_advantage = 2
-		health = 0.25
-		epidemic_resistance = 10
+		monthly_lifestyle_xp_gain_mult = 0.075
+		knight_effectiveness_mult = 0.15
+		health = 0.6
 		#men_at_arms_maintenance = -0.25
 	}
 
@@ -549,6 +545,10 @@ innovation_adunai_administration_feudal = {
 		vassal_tax_contribution_mult = 0.1
 		vassal_levy_contribution_mult = 0.1
 	}
+	
+	parameters = { 
+		children_can_be_born_in_the_gold = yes
+	}
 
 	flag = global_regional
 	flag = late_medieval_era_regional	
@@ -575,6 +575,10 @@ innovation_adunai_administration_admin = {
 		men_at_arms_cap = 1
 		men_at_arms_limit = 2
 		army_maintenance_mult = 0.5
+	}
+	
+	parameters = { 
+		children_can_be_born_in_the_gold = yes
 	}
 
 	flag = global_regional

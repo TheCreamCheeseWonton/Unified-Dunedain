@@ -272,3 +272,780 @@ south_adunai_events.4 = { # Tanturaki Reformation Flavor
 		}
 	}
 }
+
+
+scripted_effect upgrade_baranagath = {
+	province:5321 = {
+		add_building = elven_forges_01
+		add_building = elven_settlement_02
+	}
+}
+
+scripted_effect apply_elven_influence_1 = {
+	title:c_mikurideluk = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_arurabad = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_mispir = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_belhim = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_ninegatan = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+}
+
+scripted_effect apply_elven_influence_2 = {
+	title:c_refine = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_basaba = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_ewatu = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_tralwas = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_keras = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_netharzin = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_suza_riy = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_nariyar = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_simza = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_baisa = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_bozisha_dar = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+	title:c_sanma = {
+		add_county_modifier = {
+			modifier = elves_in_edhellond
+			years = 30
+		}
+	}
+}
+
+south_adunai_events.2000 = { # Invite elves to Baranagath
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.2000.t
+	desc = south_adunai_events.2000.desc
+	theme = elven
+
+	override_background = {
+		reference = elven_holding
+	}
+
+	lower_center_portrait = {
+		character = scope:elf_cuind
+		animation = personality_honorable
+	}
+
+	immediate = {
+		hidden_effect = { # Create elf
+			if = { # Cuind
+				limit = { 
+					is_alive = character:lineofmeglasul9
+					character:lineofmeglasul9 = {
+						is_landed = no
+					}
+				}
+				character:lineofmeglasul9 = {
+					save_scope_as = elf_cuind
+				}
+			}
+			else_if = {
+				limit = { 
+					is_alive = character:lineofmeglasul7
+					character:lineofmeglasul7 = {
+						is_landed = no
+					}
+				}
+				character:lineofmeglasul7 = {
+					save_scope_as = elf_cuind
+				}
+			
+			}
+			else = { 
+				create_character = { # Cuind Elf
+					location = root.capital_province
+					culture = culture:cuind
+					faith = faith:faith_cuind
+					age = { 100 6950 }
+					#random_traits = yes
+					trait = education_stewardship_4
+
+					trait = patient
+
+					trait = lifestyle_poet
+
+					diplomacy = { 8 10 }
+					stewardship = { 6 14 }
+					martial = { 6 8 }
+					intrigue = { 10 12 }
+					learning = { 6 8 }
+					prowess = { 6 8 }
+
+					gender_female_chance = 50
+					save_scope_as = elf_cuind
+					after_creation = {
+						scope:elf_cuind = { replace_unelven_traits = yes }
+					}
+				}
+			}
+		}
+
+		title:c_baranagath = { # Changes province to elven holding
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				set_holding_type = elven_holding
+			}
+		}
+		#title:c_edhellond_2 = { # Changes province to elven holding
+		#	every_county_province = {
+		#		limit = {
+		#			has_holding = yes
+		#		}
+		#		set_holding_type = elven_holding
+		#	}
+		#}
+	}
+
+	option = { # Invite Elves from Cuind
+		name = south_adunai_events.2000.a
+		custom_tooltip = south_adunai_events.2000.a_tt
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		title:c_baranagath = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+
+		title:c_baranagath = {
+			set_county_culture = scope:elf_cuind.culture
+			set_county_faith = scope:elf_cuind.faith
+		}
+
+
+		scope:elf_cuind = {
+			add_opinion = {
+				target = root
+				modifier = invite_elves_cuind
+				years = 25
+			}
+			hidden_effect = {
+				add_gold = 150
+				add_prestige = 750
+				add_piety = 500
+			}
+		}
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		title:d_cinta_toina = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+
+		apply_elven_influence_1 = yes
+		upgrade_edhellond = yes
+	}
+
+	after = {
+		trigger_event = south_adunai_events.2001
+
+		# Some elven characters to make sure the elf has some nice courtiers
+		create_character = {
+			employer = title:d_cinta_toina.holder
+			faith = title:d_cinta_toina.holder.faith
+			culture = title:d_cinta_toina.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_cinta_toina.holder
+			faith = title:d_cinta_toina.holder.faith
+			culture = title:d_cinta_toina.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_cinta_toina.holder
+			faith = title:d_cinta_toina.holder.faith
+			culture = title:d_cinta_toina.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_cinta_toina.holder
+			faith = title:d_cinta_toina.holder.faith
+			culture = title:d_cinta_toina.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_cinta_toina.holder
+			faith = title:d_cinta_toina.holder.faith
+			culture = title:d_cinta_toina.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+
+		# De jure and vassal shifts to make sure the Elves don't get caught in a revocation cycle
+		hidden_effect = {
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			title:d_cinta_toina.holder = {
+				change_liege = {
+					liege = root
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+			
+			# Get rid of any remaining human claims 
+			title:d_cinta_toina = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:d_cinta_toina 
+				}
+			}
+			title:c_baranagath = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:c_baranagath 
+				}
+			}
+		}
+	}
+}
+
+
+south_adunai_events.2001 = { # Swap over to elves in Edhellond event
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.2001.t
+	desc = south_adunai_events.2001.desc
+	theme = elven
+
+	override_background = {
+		reference = market_elven
+	}
+
+	right_portrait = {
+		character = root
+		animation = admiration
+	}
+
+	left_portrait = {
+		character = title:c_baranagath.holder
+		animation = personality_content
+	}
+
+	immediate = {
+		title:c_baranagath.holder = {
+			vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 }
+        	vassal_contract_set_obligation_level = { type = religious_rights level = 1 }
+			save_scope_as = cinta_toinaholder
+		}
+	}
+
+	option = {
+		name = south_adunai_events.2001.a
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = south_adunai_events.2001.b
+		set_player_character = title:c_baranagath.holder
+
+		ai_chance = {
+			base = 0
+		}
+	}
+    after = {
+		add_elven_hope_global_effect = { VALUE = medium_elven_hope_gain HOPE_EFFECT = effect_elven_hope_good_realm_rises }
+    }
+}
+
+scripted_effect upgrade_pred = {
+	province:2142 = {
+		add_building = elven_forges_01
+		add_building = elven_settlement_02
+	}
+}
+
+south_adunai_events.2100 = { # Invite elves to Baranagath
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.2100.t
+	desc = south_adunai_events.2100.desc
+	theme = elven
+
+	override_background = {
+		reference = elven_holding
+	}
+
+	lower_center_portrait = {
+		character = scope:elf_cuind
+		animation = personality_honorable
+	}
+
+	immediate = {
+		hidden_effect = { # Create elf
+			if = { # Cuind
+				limit = { 
+					is_alive = character:lineofmeglasul7
+					character:lineofmeglasul7 = {
+						is_landed = no
+					}
+				}
+				character:lineofmeglasul7 = {
+					save_scope_as = elf_cuind
+				}
+			}
+			else_if = {
+				limit = { 
+					is_alive = character:lineofmeglasul9
+					character:lineofmeglasul9 = {
+						is_landed = no
+					}
+				}
+				character:lineofmeglasul9 = {
+					save_scope_as = elf_cuind
+				}
+			
+			}
+			else = { 
+				create_character = { # Cuind Elf
+					location = root.capital_province
+					culture = culture:cuind
+					faith = faith:faith_cuind
+					age = { 100 6950 }
+					#random_traits = yes
+					trait = education_stewardship_4
+
+					trait = patient
+
+					trait = lifestyle_poet
+
+					diplomacy = { 8 10 }
+					stewardship = { 6 14 }
+					martial = { 6 8 }
+					intrigue = { 10 12 }
+					learning = { 6 8 }
+					prowess = { 6 8 }
+
+					gender_female_chance = 50
+					save_scope_as = elf_cuind
+					after_creation = {
+						scope:elf_cuind = { replace_unelven_traits = yes }
+					}
+				}
+			}
+		}
+
+		title:c_madi_khon = { # Changes province to elven holding
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				set_holding_type = elven_holding
+			}
+		}
+		title:c_pred = { # Changes province to elven holding
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				set_holding_type = elven_holding
+			}
+		}
+		title:c_qhan_vuzo = { # Changes province to elven holding
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				set_holding_type = elven_holding
+			}
+		}
+		title:c_rhan_dazu = { # Changes province to elven holding
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				set_holding_type = elven_holding
+			}
+		}
+		title:c_domo_domo = { # Changes province to elven holding
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				set_holding_type = elven_holding
+			}
+		}
+		title:c_whan_nevi = { # Changes province to elven holding
+			every_county_province = {
+				limit = {
+					has_holding = yes
+				}
+				set_holding_type = elven_holding
+			}
+		}
+		#title:c_edhellond_2 = { # Changes province to elven holding
+		#	every_county_province = {
+		#		limit = {
+		#			has_holding = yes
+		#		}
+		#		set_holding_type = elven_holding
+		#	}
+		#}
+	}
+
+	option = { # Invite Elves from Cuind
+		name = south_adunai_events.2100.a
+		custom_tooltip = south_adunai_events.2100.a_tt
+		create_title_and_vassal_change = {
+			type = granted
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		title:c_madi_khon = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		title:c_pred = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		title:c_qhan_vuzo = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		title:c_rhan_dazu = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		title:c_domo_domo = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		title:c_whan_nevi = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+		
+		title:c_madi_khon = {
+			set_county_culture = scope:elf_cuind.culture
+			set_county_faith = scope:elf_cuind.faith
+		}
+		title:c_pred = {
+			set_county_culture = scope:elf_cuind.culture
+			set_county_faith = scope:elf_cuind.faith
+		}
+		title:c_qhan_vuzo = {
+			set_county_culture = scope:elf_cuind.culture
+			set_county_faith = scope:elf_cuind.faith
+		}
+		title:c_rhan_dazu = {
+			set_county_culture = scope:elf_cuind.culture
+			set_county_faith = scope:elf_cuind.faith
+		}
+		title:c_domo_domo = {
+			set_county_culture = scope:elf_cuind.culture
+			set_county_faith = scope:elf_cuind.faith
+		}
+		title:c_whan_nevi = {
+			set_county_culture = scope:elf_cuind.culture
+			set_county_faith = scope:elf_cuind.faith
+		}
+
+
+		scope:elf_cuind = {
+			add_opinion = {
+				target = root
+				modifier = invite_elves_cuind
+				years = 25
+			}
+			hidden_effect = {
+				add_gold = 150
+				add_prestige = 750
+				add_piety = 500
+			}
+		}
+
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		title:d_suza_sumar = {
+			change_title_holder = {
+				holder = scope:elf_cuind
+				change = scope:change
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+
+		apply_elven_influence_2 = yes
+		upgrade_pred = yes
+	}
+
+	after = {
+		trigger_event = south_adunai_events.2101
+
+		# Some elven characters to make sure the elf has some nice courtiers
+		create_character = {
+			employer = title:d_suza_sumar.holder
+			faith = title:d_suza_sumar.holder.faith
+			culture = title:d_suza_sumar.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_suza_sumar.holder
+			faith = title:d_suza_sumar.holder.faith
+			culture = title:d_suza_sumar.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_suza_sumar.holder
+			faith = title:d_suza_sumar.holder.faith
+			culture = title:d_suza_sumar.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_suza_sumar.holder
+			faith = title:d_suza_sumar.holder.faith
+			culture = title:d_suza_sumar.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+		create_character = {
+			employer = title:d_suza_sumar.holder
+			faith = title:d_suza_sumar.holder.faith
+			culture = title:d_suza_sumar.holder.culture
+			gender_female_chance = 50
+			age = { 100 6950 }
+			random_traits = yes
+		}
+
+		# De jure and vassal shifts to make sure the Elves don't get caught in a revocation cycle
+		hidden_effect = {
+			create_title_and_vassal_change = {
+				type = granted
+				save_scope_as = change
+				add_claim_on_loss = no
+			}
+			title:d_suza_sumar.holder = {
+				change_liege = {
+					liege = root
+					change = scope:change
+				}
+			}
+			resolve_title_and_vassal_change = scope:change
+			
+			# Get rid of any remaining human claims 
+			title:d_suza_sumar = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:d_suza_sumar 
+				}
+			}
+			title:c_madi_khon = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:c_madi_khon 
+				}
+			}
+			title:c_pred = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:c_pred 
+				}
+			}
+			title:c_qhan_vuzo = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:c_qhan_vuzo 
+				}
+			}
+			title:c_rhan_dazu = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:c_rhan_dazu 
+				}
+			}
+			title:c_domo_domo = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:c_domo_domo 
+				}
+			}
+			title:c_whan_nevi = {
+				every_claimant = {
+					limit = { is_human = yes }
+					remove_claim = title:c_whan_nevi 
+				}
+			}
+		}
+	}
+}
+
+
+south_adunai_events.2101 = { # Swap over to elves in Edhellond event
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.2101.t
+	desc = south_adunai_events.2101.desc
+	theme = elven
+
+	override_background = {
+		reference = market_elven
+	}
+
+	right_portrait = {
+		character = root
+		animation = admiration
+	}
+
+	left_portrait = {
+		character = title:c_baranagath.holder
+		animation = personality_content
+	}
+
+	immediate = {
+		title:c_pred.holder = {
+			vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 }
+        	vassal_contract_set_obligation_level = { type = religious_rights level = 1 }
+			save_scope_as = predholder
+		}
+	}
+
+	option = {
+		name = south_adunai_events.2101.a
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	option = {
+		name = south_adunai_events.2101.b
+		set_player_character = title:c_pred.holder
+
+		ai_chance = {
+			base = 0
+		}
+	}
+    after = {
+		add_elven_hope_global_effect = { VALUE = medium_elven_hope_gain HOPE_EFFECT = effect_elven_hope_good_realm_rises }
+    }
+}
