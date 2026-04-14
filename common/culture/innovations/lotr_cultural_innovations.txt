@@ -103,6 +103,7 @@ innovation_lesser_numenorean_heritage = {
 			}
 			this = culture:umbarean
 		}
+		NOT = { this = culture:kharatakhori }
 	}
 	
 	character_modifier = {

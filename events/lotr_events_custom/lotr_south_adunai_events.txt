@@ -282,108 +282,108 @@ scripted_effect upgrade_baranagath = {
 }
 
 scripted_effect apply_elven_influence_1 = {
+	title:c_mispir = {
+		add_county_modifier = {
+			modifier = elves_in_thani_hazad_mispir
+			years = 30
+		}
+	}
 	title:c_mikurideluk = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_arurabad = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
-			years = 30
-		}
-	}
-	title:c_mispir = {
-		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_belhim = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_ninegatan = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 }
 
 scripted_effect apply_elven_influence_2 = {
-	title:c_refine = {
+	title:c_bozisha_dar = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad_bozisha_dar
+			years = 30
+		}
+	}
+	title:c_refina = {
+		add_county_modifier = {
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_basaba = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_ewatu = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_tralwas = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_keras = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_netharzin = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_suza_riy = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_nariyar = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_simza = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_baisa = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
-			years = 30
-		}
-	}
-	title:c_bozisha_dar = {
-		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
 	title:c_sanma = {
 		add_county_modifier = {
-			modifier = elves_in_edhellond
+			modifier = elves_in_thani_hazad
 			years = 30
 		}
 	}
@@ -399,8 +399,8 @@ south_adunai_events.2000 = { # Invite elves to Baranagath
 	override_background = {
 		reference = elven_holding
 	}
-
-	lower_center_portrait = {
+	
+	right_portrait = {
 		character = scope:elf_cuind
 		animation = personality_honorable
 	}
@@ -409,7 +409,9 @@ south_adunai_events.2000 = { # Invite elves to Baranagath
 		hidden_effect = { # Create elf
 			if = { # Cuind
 				limit = { 
-					is_alive = character:lineofmeglasul9
+					character:lineofmeglasul9 = { 
+						is_alive = yes
+					}
 					character:lineofmeglasul9 = {
 						is_landed = no
 					}
@@ -420,7 +422,9 @@ south_adunai_events.2000 = { # Invite elves to Baranagath
 			}
 			else_if = {
 				limit = { 
-					is_alive = character:lineofmeglasul7
+					character:lineofmeglasul7 = { 
+						is_alive = yes
+					}
 					character:lineofmeglasul7 = {
 						is_landed = no
 					}
@@ -526,7 +530,7 @@ south_adunai_events.2000 = { # Invite elves to Baranagath
 		resolve_title_and_vassal_change = scope:change
 
 		apply_elven_influence_1 = yes
-		upgrade_edhellond = yes
+		upgrade_baranagath = yes
 	}
 
 	after = {
@@ -674,7 +678,7 @@ south_adunai_events.2100 = { # Invite elves to Baranagath
 		reference = elven_holding
 	}
 
-	lower_center_portrait = {
+	right_portrait = {
 		character = scope:elf_cuind
 		animation = personality_honorable
 	}
@@ -683,7 +687,9 @@ south_adunai_events.2100 = { # Invite elves to Baranagath
 		hidden_effect = { # Create elf
 			if = { # Cuind
 				limit = { 
-					is_alive = character:lineofmeglasul7
+					character:lineofmeglasul7 = { 
+						is_alive = yes
+					}
 					character:lineofmeglasul7 = {
 						is_landed = no
 					}
@@ -694,7 +700,9 @@ south_adunai_events.2100 = { # Invite elves to Baranagath
 			}
 			else_if = {
 				limit = { 
-					is_alive = character:lineofmeglasul9
+					character:lineofmeglasul9 = { 
+						is_alive = yes
+					}
 					character:lineofmeglasul9 = {
 						is_landed = no
 					}
@@ -732,48 +740,8 @@ south_adunai_events.2100 = { # Invite elves to Baranagath
 				}
 			}
 		}
-
-		title:c_madi_khon = { # Changes province to elven holding
-			every_county_province = {
-				limit = {
-					has_holding = yes
-				}
-				set_holding_type = elven_holding
-			}
-		}
+		
 		title:c_pred = { # Changes province to elven holding
-			every_county_province = {
-				limit = {
-					has_holding = yes
-				}
-				set_holding_type = elven_holding
-			}
-		}
-		title:c_qhan_vuzo = { # Changes province to elven holding
-			every_county_province = {
-				limit = {
-					has_holding = yes
-				}
-				set_holding_type = elven_holding
-			}
-		}
-		title:c_rhan_dazu = { # Changes province to elven holding
-			every_county_province = {
-				limit = {
-					has_holding = yes
-				}
-				set_holding_type = elven_holding
-			}
-		}
-		title:c_domo_domo = { # Changes province to elven holding
-			every_county_province = {
-				limit = {
-					has_holding = yes
-				}
-				set_holding_type = elven_holding
-			}
-		}
-		title:c_whan_nevi = { # Changes province to elven holding
 			every_county_province = {
 				limit = {
 					has_holding = yes
@@ -799,13 +767,13 @@ south_adunai_events.2100 = { # Invite elves to Baranagath
 			save_scope_as = change
 			add_claim_on_loss = no
 		}
-		title:c_madi_khon = {
+		title:c_pred = {
 			change_title_holder = {
 				holder = scope:elf_cuind
 				change = scope:change
 			}
 		}
-		title:c_pred = {
+		title:c_madi_khon = {
 			change_title_holder = {
 				holder = scope:elf_cuind
 				change = scope:change
@@ -836,28 +804,8 @@ south_adunai_events.2100 = { # Invite elves to Baranagath
 			}
 		}
 		resolve_title_and_vassal_change = scope:change
-		
-		title:c_madi_khon = {
-			set_county_culture = scope:elf_cuind.culture
-			set_county_faith = scope:elf_cuind.faith
-		}
+
 		title:c_pred = {
-			set_county_culture = scope:elf_cuind.culture
-			set_county_faith = scope:elf_cuind.faith
-		}
-		title:c_qhan_vuzo = {
-			set_county_culture = scope:elf_cuind.culture
-			set_county_faith = scope:elf_cuind.faith
-		}
-		title:c_rhan_dazu = {
-			set_county_culture = scope:elf_cuind.culture
-			set_county_faith = scope:elf_cuind.faith
-		}
-		title:c_domo_domo = {
-			set_county_culture = scope:elf_cuind.culture
-			set_county_faith = scope:elf_cuind.faith
-		}
-		title:c_whan_nevi = {
 			set_county_culture = scope:elf_cuind.culture
 			set_county_faith = scope:elf_cuind.faith
 		}
@@ -1018,7 +966,7 @@ south_adunai_events.2101 = { # Swap over to elves in Edhellond event
 	}
 
 	left_portrait = {
-		character = title:c_baranagath.holder
+		character = title:c_pred.holder
 		animation = personality_content
 	}
 

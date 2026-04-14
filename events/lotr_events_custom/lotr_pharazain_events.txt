@@ -394,7 +394,7 @@ pharazain_events.9 = {
 				}
 				custom_tooltip = remove_all_non_pharazain_vassals
 				every_vassal = {
-					limit = { NOT = { capital_province = { geographical_region = special_pharazain } } }
+					limit = { AND = { NOT = { capital_province = { geographical_region = special_pharazain } } is_elf = no} }
 					create_title_and_vassal_change = {
 						type = independency
 						save_scope_as = change
@@ -408,7 +408,7 @@ pharazain_events.9 = {
 			else = { 
 				custom_tooltip = remove_all_non_pharazain_vassals_extra
 				every_vassal = {
-					limit = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea  } } } }
+					limit = { OR = {  NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea  } } } is_elf = no } }
 					create_title_and_vassal_change = {
 						type = independency
 						save_scope_as = change

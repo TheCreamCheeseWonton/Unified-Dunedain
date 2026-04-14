@@ -53,6 +53,20 @@ coa_switch_to_adunai_trigger = {
 	}
 }
 
+coa_switch_to_anbalukkhori_trigger = { 
+	OR = { 
+		holder.culture = culture:anbalukkhori
+		holder.culture = { any_parent_culture_or_above = { this = culture:anbalukkhori } }
+	}
+}
+
+coa_switch_to_kharadunai_trigger = { 
+	OR = { 
+		holder.culture = culture:kharadunaim
+		holder.culture = { any_parent_culture_or_above = { this = culture:kharadunaim } }
+	}
+}
+
 coa_switch_to_northern_adunai_trigger = { # this was set for umbar
 	holder.culture = { has_cultural_pillar = heritage_northern_adunaic }
 	##Quonton

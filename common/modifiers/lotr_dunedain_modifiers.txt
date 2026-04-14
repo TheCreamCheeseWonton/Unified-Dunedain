@@ -433,3 +433,30 @@ pharazain_post_thani_hazad = {
 	intrigue = 2
 	vassal_tax_mult = 0.2
 }
+
+elves_in_thani_hazad = {
+	icon = stewardship_positive
+	development_growth_factor = 0.10
+	county_opinion_add = 30
+	build_speed = -0.1
+	build_gold_cost = -0.1
+	epidemic_resistance = 10
+}
+
+elves_in_thani_hazad_mispir = {
+	icon = stewardship_positive
+	development_growth_factor = 0.25
+	county_opinion_add = 30
+	build_speed = -0.2
+	build_gold_cost = -0.2
+	epidemic_resistance = 10
+}
+
+elves_in_thani_hazad_bozisha_dar = {
+	icon = stewardship_positive
+	development_growth_factor = 0.25
+	county_opinion_add = 30
+	build_speed = -0.2
+	build_gold_cost = -0.2
+	epidemic_resistance = 10
+}

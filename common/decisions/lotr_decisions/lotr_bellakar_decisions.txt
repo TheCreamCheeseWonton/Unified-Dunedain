@@ -3339,11 +3339,69 @@ decision_unify_adunai = {
 		prestige_level >= 5
 		piety_level >= 5
 		custom_tooltip = {
+			text = control_percentage_of_pharazain_dunedain_desc
+			any_county_in_region = {
+				region = special_pharazain
+				OR = {
+					holder = {
+						is_vassal_or_below_of = root
+					}
+					holder = root
+				}
+				##Quonton
+				percent >= 1.0
+			}
+		}
+		custom_tooltip = {
 			text = "decision_unify_adunai_own_all_aduanic_provinces"
 			any_realm_county = {
 				count = number_of_south_bellakar_adunaic_culture_provinces
 				my_south_bellakar_adunaic_culture_trigger = yes
 				any_county_province = { geographical_region = special_nie_extra }
+			}
+		}
+		trigger_if = { 
+			limit = {
+				culture = culture:anbalukkhori
+			}
+			culture = { cultural_acceptance = { target = culture:kharadunaim value >= 40 } }
+			OR = { 
+				culture = { cultural_acceptance = { target = culture:bellakarani value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:bellakaze value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:felayan value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:mardrukan value >= 40 } }
+			}
+		}
+		trigger_else_if = { 
+			limit = {
+				culture = culture:kharadunaim
+			}
+			culture = { cultural_acceptance = { target = culture:anbalukkhori value >= 40 } }
+			OR = { 
+				culture = { cultural_acceptance = { target = culture:bellakarani value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:bellakaze value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:felayan value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:mardrukan value >= 40 } }
+			}
+		}
+		trigger_else_if = { 
+			limit = {
+				culture = culture:kharatakhori
+			}
+			OR = { 
+				culture = { cultural_acceptance = { target = culture:bellakarani value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:bellakaze value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:felayan value >= 40 } }
+				culture = { cultural_acceptance = { target = culture:mardrukan value >= 40 } }
+			}
+		}
+		trigger_else = { 
+			OR = { 
+				AND = { 
+					culture = { cultural_acceptance = { target = culture:anbalukkhori value >= 40 } }
+					culture = { cultural_acceptance = { target = culture:kharadunaim value >= 40 } }
+				}
+				culture = { cultural_acceptance = { target = culture:kharatakhori value >= 40 } }
 			}
 		}
 	}

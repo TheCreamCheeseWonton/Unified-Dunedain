@@ -1,4 +1,9 @@
-﻿d_cinta_toina = {
+﻿@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+@never_primary_score = -1000
+
+d_cinta_toina = {
 	color = { 103 177 212 }
 	#landless = yes
 	destroy_on_succession = no
@@ -8,8 +13,393 @@
 
 	capital = c_baranagath
 }
+e_bozisha_miraz = {
+	color = { 25 133 81 }
+	capital = c_bozisha_dar
 
-	d_suza_sumar = {
+	k_sumarieth = {
+		color = { 178 124 225 }
+		#landless = yes
+		always_follows_primary_heir = yes
+		definite_form = yes
+
+		capital = c_pred
+		ai_primary_priority = {
+			if = {
+				limit = {
+					culture = { has_cultural_pillar = heritage_moriquendi }
+				}
+				add = @always_primary_score
+			}
+		}
+	}
+
+	k_ray = {
+		color = { 68 139 103 }
+		cultural_names = {
+			name_list_druedain = cn_ray_honnin
+		}
+
+		capital = c_bozisha_dar
+
+		d_dar = {
+			color = { 79 152 106 }
+			capital = c_bozisha_dar
+			c_bozisha_dar = {
+				color = { 87 144 119 }
+				b_bozisha_dar = {
+					province = 2093
+					color = { 255 219 130 }
+				}
+				b_calwan = {
+					province = 2094
+					color = { 211 116 124 }
+				}
+				b_sunmar = {
+					province = 2095
+					color = { 158 100 53 }
+				}
+				b_awaical = {
+					province = 2096
+					color = { 211 59 92 }
+				}
+				b_sulad = {
+					province = 2097
+					color = { 214 124 0 }
+				}
+			}
+
+			c_aziya = {
+				color = { 56 156 125 }
+
+				b_hamasan = {
+					province = 2098
+
+					color = { 165 112 209 }
+
+				}
+
+				b_an_haraca = {
+					province = 2099
+
+					color = { 209 123 170 }
+
+				}
+
+				b_afalahiy = {
+					province = 2100
+
+					color = { 56 158 61 }
+
+				}
+
+				b_sirtu = {
+					province = 2101
+
+					color = { 211 40 117 }
+
+				}
+
+			}
+
+			c_hartas = {
+				color = { 56 150 107 }
+
+				b_aziysta = {
+					province = 2102
+
+					color = { 100 209 145 }
+
+				}
+
+				b_hamatra = {
+					province = 2103
+
+					color = { 203 209 48 }
+
+				}
+
+				b_awasha = {
+					province = 2104
+
+					color = { 97 181 206 }
+
+				}
+
+			}
+
+			c_mentar = {
+				color = { 95 169 99 }
+
+				b_an_thasa = {
+					province = 2106
+
+					color = { 173 32 39 }
+
+				}
+
+				b_lahaitrama = {
+					province = 2107
+
+					color = { 175 81 186 }
+
+				}
+
+				b_iyuntra = {
+					province = 2108
+
+					color = { 32 85 24 }
+
+				}
+
+				b_afaza = {
+					province = 2109
+
+					color = { 173 155 65 }
+
+				}
+
+			}
+
+			c_anwaz = {
+				color = { 79 143 80 }
+
+				b_anwaz = {
+					province = 2110
+
+					color = { 26 90 139 }
+
+				}
+
+				b_masai = {
+					province = 2111
+
+					color = { 189 50 122 }
+
+				}
+
+				b_horcat = {
+					province = 2112
+
+					color = { 174 189 50 }
+
+				}
+
+				b_eruma = {
+					province = 2113
+
+					color = { 156 215 131 }
+
+				}
+
+				b_calmey = {
+					province = 2114
+
+					color = { 105 180 196 }
+
+				}
+
+			}
+
+			c_sanma = {
+				color = { 86 135 82 }
+
+				b_mesai = {
+					province = 2115
+
+					color = { 93 33 33 }
+
+				}
+
+				b_calan = {
+					province = 2116
+
+					color = { 212 160 49 }
+
+				}
+
+				b_tralsen = {
+					province = 2118
+
+					color = { 172 207 161 }
+
+				}
+
+			}
+
+		}
+
+		d_sarwa = {
+			color = { 92 135 89 }
+
+			capital = c_refina
+
+			c_refina = {
+				color = { 96 123 65 }
+
+				b_refina = {
+					province = 2119
+
+					color = { 68 167 119 }
+
+				}
+
+				b_trimsen = {
+					province = 2120
+
+					color = { 11 95 159 }
+
+				}
+
+				b_murtha = {
+					province = 2121
+
+					color = { 211 0 144 }
+
+				}
+
+			}
+
+			c_tosar = {
+				color = { 83 141 105 }
+
+				b_mascath = {
+					province = 2122
+
+					color = { 131 67 218 }
+
+				}
+
+				b_mezawan = {
+					province = 2123
+
+					color = { 70 218 67 }
+
+				}
+
+				b_apat = {
+					province = 2124
+
+					color = { 90 152 188 }
+
+				}
+
+				b_hasait = {
+					province = 2125
+
+					color = { 43 172 98 }
+
+				}
+
+			}
+
+			c_oyasir = {
+				color = { 104 133 66 }
+
+				b_tralma = {
+					province = 2126
+
+					color = { 197 212 99 }
+
+				}
+
+				b_al_hasatas = {
+					province = 2127
+
+					color = { 141 135 35 }
+
+				}
+
+				b_murtos = {
+					province = 2128
+
+					color = { 199 146 44 }
+
+				}
+
+			}
+
+			c_basaba = {
+				color = { 82 139 83 }
+
+				b_simhama = {
+					province = 2129
+
+					color = { 125 179 109 }
+
+				}
+
+				b_calhama = {
+					province = 2130
+
+					color = { 151 173 227 }
+
+				}
+
+				b_sursun = {
+					province = 2131
+
+					color = { 58 165 85 }
+
+				}
+
+			}
+
+			c_ewatu = {
+				color = { 83 140 62 }
+
+				b_samatha = {
+					province = 2132
+
+					color = { 154 78 28 }
+
+				}
+
+				b_tetraitra = {
+					province = 2133
+
+					color = { 175 146 75 }
+
+				}
+
+				b_awaima = {
+					province = 2134
+
+					color = { 136 104 154 }
+
+				}
+
+			}
+
+			c_tralwas = {
+				color = { 77 142 100 }
+
+				b_afazaya = {
+					province = 2135
+
+					color = { 95 28 91 }
+
+				}
+
+				b_an_nawad = {
+					province = 2136
+
+					color = { 75 137 176 }
+
+				}
+
+				b_awascat = {
+					province = 2137
+
+					color = { 176 184 55 }
+
+				}
+
+			}
+
+		}
+
+		d_suza_sumar = {
 			color = { 30 133 80 }
 			
 			cultural_names = {
@@ -162,3 +552,2981 @@
 			}
 
 		}
+
+		d_iunastiy = {
+			color = { 1 154 111 }
+
+			capital = c_tresti
+
+			c_tresti = {
+				color = { 5 159 91 }
+
+				b_tresti = {
+					province = 2162
+
+					color = { 119 94 52 }
+
+				}
+
+				b_izasus = {
+					province = 2163
+
+					color = { 187 154 97 }
+
+				}
+
+				b_atasafa = {
+					province = 2164
+
+					color = { 22 81 14 }
+
+				}
+
+				b_murwas = {
+					province = 2165
+
+					color = { 97 176 86 }
+
+				}
+
+			}
+
+			c_trimza = {
+				color = { 56 139 81 }
+
+				b_calbai = {
+					province = 2166
+
+					color = { 61 204 148 }
+
+				}
+
+				b_menit = {
+					province = 2167
+
+					color = { 124 112 49 }
+
+				}
+
+			}
+
+			c_astad = {
+				color = { 1 159 116 }
+
+				b_murtar = {
+					province = 2168
+
+					color = { 86 104 163 }
+
+				}
+
+				b_sanhan = {
+					province = 2169
+
+					color = { 19 121 81 }
+
+				}
+
+				b_atashoyusa = {
+					province = 2170
+
+					color = { 98 57 103 }
+
+				}
+
+			}
+
+		}
+
+		d_briy_miyesec = {
+			color = { 46 139 74 }
+
+			capital = c_surafa
+
+			c_surafa = {
+				color = { 1 149 64 }
+
+				b_aizawa = {
+					province = 2171
+
+					color = { 111 120 40 }
+
+				}
+
+				b_awasrya = {
+					province = 2172
+
+					color = { 122 167 69 }
+
+				}
+
+				b_refsar = {
+					province = 2173
+
+					color = { 169 52 207 }
+
+				}
+
+				b_simraqat = {
+					province = 2174
+
+					color = { 116 142 65 }
+
+				}
+
+			}
+
+			c_qalsul = {
+				color = { 79 143 59 }
+
+				b_tudaadas = {
+					province = 2175
+
+					color = { 159 155 56 }
+
+				}
+
+				b_qanir = {
+					province = 2176
+
+					color = { 59 119 201 }
+
+				}
+
+				b_urisir = {
+					province = 2177
+
+					color = { 42 84 30 }
+
+				}
+
+				b_dul = {
+					province = 2178
+
+					color = { 178 87 63 }
+
+				}
+
+			}
+
+			c_losen = {
+				color = { 54 126 62 }
+
+				b_umaqa = {
+					province = 2179
+
+					color = { 144 152 74 }
+
+				}
+
+				b_naraisha = {
+					province = 2180
+
+					color = { 31 189 161 }
+
+				}
+
+				b_asharos = {
+					province = 2220
+
+					color = { 189 31 72 }
+
+				}
+
+			}
+
+			c_pellasula = {
+				color = { 54 136 97 }
+
+				b_sushath = {
+					province = 2181
+
+					color = { 70 30 137 }
+
+				}
+
+				b_ethalas = {
+					province = 2182
+
+					color = { 210 88 88 }
+
+				}
+
+				b_araz_urebrad = {
+					province = 2183
+
+					color = { 85 121 166 }
+
+				}
+
+			}
+
+			c_masramar = {
+				color = { 78 150 89 }
+
+				b_thashar = {
+					province = 2184
+
+					color = { 221 68 108 }
+
+				}
+
+				b_bajaja = {
+					province = 2185
+
+					color = { 137 100 120 }
+
+				}
+
+				b_soralas = {
+					province = 2186
+
+					color = { 168 181 133 }
+
+				}
+
+				b_raiya = {
+					province = 2187
+
+					color = { 163 192 47 }
+
+				}
+
+			}
+
+		}
+
+		d_riyeshara = {
+			color = { 1 147 114 }
+
+			capital = c_ramadi
+
+			c_ramadi = {
+				color = { 1 158 125 }
+
+				b_al_ramadi = {
+					province = 2188
+
+					color = { 47 179 184 }
+
+				}
+
+				b_hasatra = {
+					province = 2189
+
+					color = { 210 200 44 }
+
+				}
+
+				b_tolaitha = {
+					province = 2190
+
+					color = { 124 87 186 }
+
+				}
+
+			}
+
+			c_baisa = {
+				color = { 47 138 126 }
+
+				b_izawai = {
+					province = 2192
+
+					color = { 46 128 61 }
+
+				}
+
+				b_tarcoyul = {
+					province = 2193
+
+					color = { 80 130 103 }
+
+				}
+
+				b_tarin = {
+					province = 2194
+
+					color = { 99 14 21 }
+
+				}
+
+				b_sancal = {
+					province = 2195
+
+					color = { 190 137 45 }
+
+				}
+
+			}
+
+			c_simza = {
+				color = { 51 127 90 }
+
+				b_an_boziywa = {
+					province = 2196
+
+					color = { 54 87 181 }
+
+				}
+
+				b_nawatu = {
+					province = 2197
+
+					color = { 116 43 64 }
+
+				}
+
+				b_surtrun = {
+					province = 2198
+
+					color = { 168 162 118 }
+
+				}
+
+				b_tarmar = {
+					province = 2199
+
+					color = { 163 77 158 }
+
+				}
+
+			}
+
+			c_nariyar = {
+				color = { 1 163 113 }
+
+				b_al_nariyza = {
+					province = 2200
+
+					color = { 228 234 77 }
+
+				}
+
+				b_erusa = {
+					province = 2201
+
+					color = { 34 19 177 }
+
+				}
+
+				b_muruyan = {
+					province = 2202
+
+					color = { 84 99 164 }
+
+				}
+
+			}
+
+			c_felhan = {
+				color = { 1 161 123 }
+
+				b_surbai = {
+					province = 2203
+
+					color = { 52 146 109 }
+
+				}
+
+				b_trunsan = {
+					province = 2204
+
+					color = { 85 24 46 }
+
+				}
+
+				b_marnawa = {
+					province = 2205
+
+					color = { 107 102 25 }
+
+				}
+
+				b_sulawai = {
+					province = 2206
+
+					color = { 122 226 90 }
+
+				}
+
+			}
+
+		}
+
+		d_sadhradamrun = {
+			color = { 108 136 76 }
+			capital = c_bathiria
+			cultural_names = {
+				name_list_middle_apysaic = cn_d_sadhradamrun_nafarati
+			}
+
+			c_bathiria = {
+				color = { 99 131 37 }
+				b_bathiria = {
+					province = 2233
+					color = { 46 43 41 }
+				}
+				b_zadarhiti = {
+					province = 2234
+					color = { 46 43 41 }
+				}
+				b_tasaratin = {
+					province = 2235
+					color = { 46 43 41 }
+				}
+			}
+
+			c_keras = {
+				color = { 112 125 58 }
+				b_keras = {
+					province = 2227
+					color = { 26 25 25 }
+				}
+				b_naithribi = {
+					province = 2228
+					color = { 26 25 25 }
+				}
+				b_kikanaishr = {
+					province = 2229
+					color = { 26 25 25 }
+				}
+			}
+
+			c_syrti = {
+				color = { 83 150 75 }
+				b_syrti = {
+					province = 2230
+					color = { 32 25 25 }
+				}
+				b_mermoyair = {
+					province = 2231
+					color = { 32 25 25 }
+				}
+				b_naparar = {
+					province = 2232
+					color = { 32 25 25 }
+				}
+			}
+
+			c_ki_jilo = {
+				color = { 85 134 67 }
+				b_ki_jilo = {
+					province = 2236
+					color = { 119 113 117 }
+				}
+				b_nekharard = {
+					province = 2304
+					color = { 119 113 117 }
+				}
+				b_khafali = {
+					province = 3011
+					color = { 254 31 10 }
+				}
+			}
+
+			c_salibara = {
+				color = { 96 144 33 }
+
+				b_brajth = {
+					province = 2988
+
+					color = { 42 38 61 }
+
+				}
+
+				b_darijt = {
+					province = 2989
+
+					color = { 83 248 220 }
+
+				}
+
+				b_jererakha = {
+					province = 2990
+
+					color = { 25 112 184 }
+
+				}
+
+				b_samilan = {
+					province = 2991
+
+					color = { 141 88 16 }
+
+				}
+
+			}
+
+		}
+
+		d_gai = {
+			color = { 85 151 97 }
+
+			capital = c_foja
+
+			c_foja = {
+				color = { 93 172 113 }
+
+				b_asharoq = {
+					province = 2207
+
+					color = { 188 80 223 }
+
+				}
+
+				b_qesus = {
+					province = 2208
+
+					color = { 12 157 131 }
+
+				}
+
+				b_qarasult = {
+					province = 2209
+
+					color = { 128 138 22 }
+
+				}
+
+				b_ashulauyan = {
+					province = 2210
+
+					color = { 35 147 205 }
+
+				}
+
+			}
+
+			c_giban = {
+				color = { 123 166 115 }
+
+				b_sujan = {
+					province = 2214
+
+					color = { 206 93 112 }
+
+				}
+
+				b_erausa = {
+					province = 2215
+
+					color = { 224 168 33 }
+
+				}
+
+				b_mogusar = {
+					province = 2216
+
+					color = { 57 179 19 }
+
+				}
+
+			}
+
+			c_jaloni = {
+				color = { 115 162 105 }
+
+				b_gitos = {
+					province = 2217
+
+					color = { 147 216 143 }
+
+				}
+
+				b_urutos = {
+					province = 2218
+
+					color = { 173 92 105 }
+
+				}
+
+				b_umaqat = {
+					province = 2219
+
+					color = { 123 139 47 }
+
+				}
+
+			}
+
+			c_drub = {
+				color = { 93 146 131 }
+
+				b_oghareg = {
+					province = 2998
+
+					color = { 1 32 39 }
+
+				}
+
+				b_rakhurek = {
+					province = 3000
+
+					color = { 138 14 103 }
+
+				}
+
+			}
+
+			c_zizal = {
+				color = { 103 118 101 }
+
+				b_frukho = {
+					province = 3001
+
+					color = { 244 86 226 }
+
+				}
+
+				b_ozreri = {
+					province = 3002
+
+					color = { 211 139 38 }
+
+				}
+
+			}
+
+		}
+
+		d_suza_riy = {
+			color = { 54 121 93 }
+
+			capital = c_suza_riy
+
+			c_suza_riy = {
+				color = { 79 119 93 }
+
+				b_suza_riy = {
+					province = 2154
+
+					color = { 133 155 58 }
+
+				}
+
+				b_thawas = {
+					province = 2155
+
+					color = { 178 52 165 }
+
+				}
+
+				b_bainawa = {
+					province = 2156
+
+					color = { 66 213 173 }
+
+				}
+
+				b_calmar = {
+					province = 2157
+
+					color = { 177 95 187 }
+
+				}
+
+			}
+
+			c_ilam = {
+				color = { 14 117 72 }
+
+				b_an_ilam = {
+					province = 2161
+
+					color = { 19 66 5 }
+
+				}
+
+				b_raycal = {
+					province = 2160
+
+					color = { 197 59 147 }
+
+				}
+
+				b_sulatrun = {
+					province = 2159
+
+					color = { 76 135 94 }
+
+				}
+
+				b_atha = {
+					province = 2158
+
+					color = { 31 240 95 }
+
+				}
+
+			}
+
+			c_netharzin = {
+				color = { 74 111 73 }
+				b_netharzin = {
+					province = 2237
+					color = { 32 30 31 }
+				}
+				b_khaun = {
+					province = 2238
+					color = { 32 30 31 }
+				}
+				b_ixtasa = {
+					province = 2239
+					color = { 32 30 31 }
+				}
+				b_ki_kandra = {
+					province = 2240
+					color = { 31 31 33 }
+				}
+			}
+
+
+			c_aya_nathiri = {
+				color = { 54 141 103 }
+				b_aya_nathiri = {
+					province = 2224
+					color = { 31 22 23 }
+				}
+				b_zincoyad = {
+					province = 2225
+					color = { 31 22 23 }
+				}
+				b_ahkorian = {
+					province = 2226
+					color = { 31 22 23 }
+				}
+			}
+
+			c_qobil = {
+				color = { 111 162 109 }
+
+				b_ishalen = {
+					province = 2211
+
+					color = { 57 59 133 }
+
+				}
+
+				b_joethaka = {
+					province = 2212
+
+					color = { 186 205 99 }
+
+				}
+
+				b_mogusal = {
+					province = 2213
+
+					color = { 32 103 90 }
+
+				}
+
+			}
+
+		}
+
+
+	}
+
+	k_tulwang = {
+		color = { 4 124 92 }
+		capital = c_soriya
+
+		d_kanjar = {
+			color = { 1 121 77 }
+
+			capital = c_soriya
+
+			c_soriya = {
+			color = { 1 106 49 }
+
+				b_soriya = {
+					province = 1959
+
+					color = { 125 28 103 }
+
+				}
+
+				b_dutha = {
+					province = 1960
+
+					color = { 81 161 194 }
+
+				}
+
+				b_ayal_ethaladeth = {
+					province = 1961
+
+					color = { 167 188 27 }
+
+				}
+
+				b_qisath = {
+					province = 1962
+
+					color = { 70 60 6 }
+
+				}
+
+				b_arajran = {
+					province = 1963
+
+					color = { 81 194 124 }
+
+				}
+
+			}
+
+			c_dalgen = {
+			color = { 45 127 73 }
+
+				b_dalgen = {
+					province = 1964
+
+					color = { 79 90 20 }
+
+				}
+
+				b_arduisha = {
+					province = 1965
+
+					color = { 55 125 65 }
+
+				}
+
+				b_dalraja = {
+					province = 1966
+
+					color = { 79 211 147 }
+
+				}
+
+				b_caira = {
+					province = 1967
+
+					color = { 204 105 32 }
+
+				}
+
+			}
+
+			c_marud = {
+			color = { 1 105 55 }
+
+				b_marud = {
+					province = 1968
+
+					color = { 43 133 170 }
+
+				}
+
+				b_sulas = {
+					province = 1969
+
+					color = { 27 75 45 }
+
+				}
+
+				b_ishimra = {
+					province = 1970
+
+					color = { 136 72 169 }
+
+				}
+
+			}
+
+			c_lahidas = {
+			color = { 47 135 69 }
+
+				b_tarsaj = {
+					province = 1971
+
+					color = { 19 147 200 }
+
+				}
+
+				b_murs = {
+					province = 1972
+
+					color = { 49 133 172 }
+
+				}
+
+				b_umator = {
+					province = 1973
+
+					color = { 28 116 88 }
+
+				}
+
+			}
+
+			c_ranan = {
+			color = { 27 120 48 }
+
+				b_mura = {
+					province = 1974
+
+					color = { 178 85 60 }
+
+				}
+
+				b_kas_temedur = {
+					province = 1975
+
+					color = { 119 108 37 }
+
+				}
+
+				b_sunsan = {
+					province = 1976
+
+					color = { 76 21 202 }
+
+				}
+
+			}
+
+		}
+
+		d_khorsaj = {
+			color = { 71 136 102 }
+
+			capital = c_khorsaj
+
+			c_khorsaj = {
+			color = { 3 150 112 }
+
+				b_khorsaj = {
+					province = 1977
+
+					color = { 136 56 56 }
+
+				}
+
+				b_bur_ishathan = {
+					province = 1978
+
+					color = { 45 109 119 }
+
+				}
+
+				b_sabthateth = {
+					province = 1979
+
+					color = { 104 129 56 }
+
+				}
+
+				b_ellidath = {
+					province = 1981
+
+					color = { 107 177 195 }
+
+				}
+
+				b_marqal = {
+					province = 1982
+
+					color = { 71 119 45 }
+
+				}
+
+			}
+
+			c_tarqal = {
+			color = { 92 143 105 }
+
+				b_an_herashar = {
+					province = 1983
+
+					color = { 26 95 12 }
+
+				}
+
+				b_susarja = {
+					province = 1984
+
+					color = { 170 124 124 }
+
+				}
+
+				b_qalshar = {
+					province = 1985
+
+					color = { 61 124 36 }
+
+				}
+
+				b_urenon = {
+					province = 1986
+
+					color = { 84 134 155 }
+
+				}
+
+				b_marjafa = {
+					province = 1987
+
+					color = { 145 18 126 }
+
+				}
+
+			}
+
+			c_fult = {
+			color = { 55 155 120 }
+
+				b_fult = {
+					province = 1988
+
+					color = { 52 95 35 }
+
+				}
+
+				b_damasun = {
+					province = 1989
+
+					color = { 107 104 167 }
+
+				}
+
+				b_saran = {
+					province = 1990
+
+					color = { 112 62 179 }
+
+				}
+
+				b_kes_astaqat = {
+					province = 1991
+
+					color = { 180 139 16 }
+
+				}
+
+				b_marlas = {
+					province = 1992
+
+					color = { 77 70 12 }
+
+				}
+
+			}
+
+		}
+
+		d_tulwa = {
+			color = { 1 124 102 }
+
+			capital = c_nashar
+
+			c_nashar = {
+			color = { 1 109 94 }
+
+				b_nashar = {
+					province = 1993
+
+					color = { 66 156 54 }
+
+				}
+
+				b_hija = {
+					province = 1994
+
+					color = { 107 206 94 }
+
+				}
+
+				b_sibatar = {
+					province = 1995
+
+					color = { 100 95 19 }
+
+				}
+
+				b_aglala = {
+					province = 1996
+
+					color = { 33 80 100 }
+
+				}
+
+			}
+
+			c_qanath = {
+			color = { 1 102 87 }
+
+				b_qanath = {
+					province = 1997
+
+					color = { 12 42 55 }
+
+				}
+
+				b_sumej = {
+					province = 1998
+
+					color = { 122 185 114 }
+
+				}
+
+				b_araz_diq = {
+					province = 1999
+
+					color = { 216 6 41 }
+
+				}
+
+				b_badraiya = {
+					province = 2000
+
+					color = { 172 134 75 }
+
+				}
+
+			}
+
+			c_uruqath = {
+			color = { 29 112 84 }
+
+				b_surdar = {
+					province = 2001
+
+					color = { 149 70 48 }
+
+				}
+
+				b_sabanon = {
+					province = 2002
+
+					color = { 62 126 119 }
+
+				}
+
+				b_ayal_sulanara = {
+					province = 2003
+
+					color = { 27 128 53 }
+
+				}
+
+			}
+
+			c_suraya = {
+			color = { 1 115 79 }
+
+				b_surhama = {
+					province = 2004
+
+					color = { 101 114 83 }
+
+				}
+
+				b_messon = {
+					province = 2005
+
+					color = { 127 179 53 }
+
+				}
+
+				b_rabonara = {
+					province = 2006
+
+					color = { 82 159 82 }
+
+				}
+
+			}
+
+			c_nisur = {
+			color = { 1 125 41 }
+
+				b_bor_nisur = {
+					province = 2491
+
+					color = { 78 181 187 }
+
+				}
+
+				b_morza = {
+					province = 2492
+
+					color = { 58 140 47 }
+
+				}
+
+			}
+
+		}
+
+		d_bishra = {
+			color = { 55 122 71 }
+
+			capital = c_bishra
+
+			c_bishra = {
+			color = { 48 130 50 }
+
+				b_bishra = {
+					province = 2007
+
+					color = { 81 177 174 }
+
+				}
+
+				b_telarud = {
+					province = 2008
+
+					color = { 67 23 176 }
+
+				}
+
+				b_gis = {
+					province = 2009
+
+					color = { 57 119 23 }
+
+				}
+
+				b_jalonde = {
+					province = 2010
+
+					color = { 158 97 97 }
+
+				}
+
+			}
+
+			c_rumyar = {
+			color = { 56 108 61 }
+
+				b_rumyar = {
+					province = 2011
+
+					color = { 176 11 96 }
+
+				}
+
+				b_ishisus = {
+					province = 2012
+
+					color = { 74 100 22 }
+
+				}
+
+				b_qoba = {
+					province = 2013
+
+					color = { 142 133 28 }
+
+				}
+
+				b_thakasor = {
+					province = 2014
+
+					color = { 39 87 51 }
+
+				}
+
+				b_tortar = {
+					province = 2015
+
+					color = { 10 44 217 }
+
+				}
+
+			}
+
+			c_ishiqal = {
+			color = { 45 125 51 }
+
+				b_mesarja = {
+					province = 2016
+
+					color = { 151 69 69 }
+
+				}
+
+				b_raboth = {
+					province = 2017
+
+					color = { 56 127 70 }
+
+				}
+
+				b_niousa = {
+					province = 2018
+
+					color = { 223 94 218 }
+
+				}
+
+			}
+
+			c_sunira = {
+			color = { 37 110 73 }
+
+				b_yashihan = {
+					province = 2019
+
+					color = { 76 93 23 }
+
+				}
+
+				b_menqal = {
+					province = 2020
+
+					color = { 219 184 117 }
+
+				}
+
+			}
+
+		}
+
+		d_tulija = {
+			color = { 8 104 80 }
+
+			capital = c_rothkadar
+
+			c_rothkadar = {
+			color = { 1 101 67 }
+
+				b_rothkadar = {
+					province = 2456
+
+					color = { 161 191 103 }
+
+				}
+
+				b_etharja = {
+					province = 2457
+
+					color = { 117 39 83 }
+
+				}
+
+				b_munsaz = {
+					province = 2458
+
+					color = { 21 70 79 }
+
+				}
+
+				b_suronaq = {
+					province = 2459
+
+					color = { 127 102 82 }
+
+				}
+
+				b_rumshara = {
+					province = 2460
+
+					color = { 133 68 166 }
+
+				}
+
+			}
+
+			c_akalibatan = {
+			color = { 1 96 71 }
+
+				b_jashkar = {
+					province = 2461
+
+					color = { 36 74 100 }
+
+				}
+
+				b_qaranon = {
+					province = 2462
+
+					color = { 88 16 189 }
+
+				}
+
+				b_rabara = {
+					province = 2463
+
+					color = { 163 122 195 }
+
+				}
+
+				b_karaphel = {
+					province = 2464
+
+					color = { 199 27 128 }
+
+				}
+
+				b_tuakand = {
+					province = 2465
+
+					color = { 73 123 52 }
+
+				}
+
+			}
+
+			c_doraqath = {
+			color = { 1 115 90 }
+
+				b_asumagal = {
+					province = 2466
+
+					color = { 89 142 173 }
+
+				}
+
+				b_minula = {
+					province = 2467
+
+					color = { 101 120 33 }
+
+				}
+
+				b_ardenath = {
+					province = 2468
+
+					color = { 25 41 161 }
+
+				}
+
+				b_abaradea = {
+					province = 2469
+
+					color = { 37 89 85 }
+
+				}
+
+			}
+
+			c_lokha = {
+			color = { 25 97 69 }
+
+				b_lokhathani = {
+					province = 2471
+
+					color = { 81 68 38 }
+
+				}
+
+				b_qanathand = {
+					province = 2472
+
+					color = { 119 143 179 }
+
+				}
+
+				b_araphor = {
+					province = 2473
+
+					color = { 130 118 185 }
+
+				}
+
+			}
+
+		}
+
+		d_ashatur = {
+			color = { 1 117 62 }
+
+			capital = c_norja
+
+			c_norja = {
+			color = { 2 116 39 }
+
+				b_norjadar = {
+					province = 2474
+
+					color = { 109 210 168 }
+
+				}
+
+				b_khorakan = {
+					province = 2475
+
+					color = { 150 181 140 }
+
+				}
+
+				b_azilar = {
+					province = 2476
+
+					color = { 136 82 92 }
+
+				}
+
+				b_izaraka = {
+					province = 2477
+
+					color = { 76 42 93 }
+
+				}
+
+			}
+
+			c_dulgabrad = {
+			color = { 30 111 42 }
+
+				b_rabosaqal = {
+					province = 2478
+
+					color = { 69 59 15 }
+
+				}
+
+				b_pherozar = {
+					province = 2479
+
+					color = { 154 180 84 }
+
+				}
+
+				b_merjan = {
+					province = 2480
+
+					color = { 25 97 39 }
+
+				}
+
+				b_izraqor = {
+					province = 2481
+
+					color = { 136 187 70 }
+
+				}
+
+			}
+
+			c_abarrakh = {
+			color = { 1 110 79 }
+
+				b_abarrakh = {
+					province = 2482
+
+					color = { 61 21 103 }
+
+				}
+
+				b_asulinzil = {
+					province = 2483
+
+					color = { 113 118 82 }
+
+				}
+
+				b_gimilaban = {
+					province = 2484
+
+					color = { 101 195 165 }
+
+				}
+
+				b_qoranath = {
+					province = 2485
+
+					color = { 93 151 70 }
+
+				}
+
+			}
+
+			c_marja = {
+			color = { 1 126 64 }
+
+				b_urezadan = {
+					province = 2486
+
+					color = { 215 233 91 }
+
+				}
+
+				b_bephoroz = {
+					province = 2487
+
+					color = { 96 94 45 }
+
+				}
+
+				b_kharazar = {
+					province = 2488
+
+					color = { 65 151 179 }
+
+				}
+
+			}
+
+			c_krazakan = {
+			color = { 1 115 35 }
+
+				b_krazakan = {
+					province = 2489
+
+					color = { 192 128 169 }
+
+				}
+
+				b_zoradan = {
+					province = 2490
+
+					color = { 40 85 96 }
+
+				}
+
+			}
+
+		}
+
+	}
+
+	k_raishoul = {
+		color = { 1 159 88 }
+		capital = c_ishiya
+
+		d_felira = {
+			color = { 14 146 49 }
+
+			capital = c_ishiya
+
+			c_ishiya = {
+				color = { 1 146 58 }
+
+				b_qitu = {
+					province = 2052
+
+					color = { 101 48 89 }
+
+				}
+
+				b_sanrya = {
+					province = 2053
+
+					color = { 126 170 56 }
+
+				}
+
+				b_murpat = {
+					province = 2054
+
+					color = { 183 37 147 }
+
+				}
+
+				b_aishadama = {
+					province = 2055
+
+					color = { 114 167 113 }
+
+				}
+
+				b_sunsha = {
+					province = 2056
+
+					color = { 35 121 12 }
+
+				}
+
+			}
+
+			c_dezful = {
+				color = { 1 150 1 }
+
+				b_dezful = {
+					province = 2034
+
+					color = { 30 71 103 }
+
+				}
+
+				b_urutas = {
+					province = 2035
+
+					color = { 234 137 65 }
+
+				}
+
+				b_santhaga = {
+					province = 2036
+
+					color = { 118 82 43 }
+
+				}
+
+				b_heraqal = {
+					province = 2037
+
+					color = { 108 136 94 }
+
+				}
+
+			}
+
+			c_baitu = {
+				color = { 1 145 70 }
+
+				b_mesbai = {
+					province = 2038
+
+					color = { 86 203 196 }
+
+				}
+
+				b_sanqath = {
+					province = 2039
+
+					color = { 101 181 61 }
+
+				}
+
+				b_araihousa = {
+					province = 2040
+
+					color = { 134 86 105 }
+
+				}
+
+			}
+
+			c_mes = {
+				color = { 79 134 49 }
+
+				b_sunsta = {
+					province = 2041
+
+					color = { 50 112 12 }
+
+				}
+
+				b_suryafa = {
+					province = 2042
+
+					color = { 110 98 72 }
+
+				}
+
+				b_meshatha = {
+					province = 2043
+
+					color = { 132 140 60 }
+
+				}
+
+				b_basaba = {
+					province = 2044
+
+					color = { 204 115 197 }
+
+				}
+
+			}
+
+			c_marbai = {
+				color = { 76 151 83 }
+
+				b_sundun = {
+					province = 2045
+
+					color = { 212 231 88 }
+
+				}
+
+				b_sanma = {
+					province = 2046
+
+					color = { 67 142 109 }
+
+				}
+
+				b_sunai = {
+					province = 2047
+
+					color = { 134 38 90 }
+
+				}
+
+			}
+
+			c_haraqoul = {
+				color = { 1 150 49 }
+
+				b_naradun = {
+					province = 2048
+
+					color = { 117 159 149 }
+
+				}
+
+				b_damamesha = {
+					province = 2049
+
+					color = { 57 104 79 }
+
+				}
+
+				b_erura = {
+					province = 2050
+
+					color = { 45 90 83 }
+
+				}
+
+				b_dunqal = {
+					province = 2051
+
+					color = { 215 66 66 }
+
+				}
+
+			}
+
+		}
+
+		d_dalyan = {
+			color = { 85 148 98 }
+
+			capital = c_sulatha
+
+			c_sulatha = {
+				color = { 56 164 118 }
+
+				b_dalsai = {
+					province = 2057
+
+					color = { 125 69 23 }
+
+				}
+
+				b_sard = {
+					province = 2058
+
+					color = { 104 55 170 }
+
+				}
+
+				b_yad = {
+					province = 2059
+
+					color = { 33 100 100 }
+
+				}
+
+				b_sirbai = {
+					province = 2060
+
+					color = { 48 54 175 }
+
+				}
+
+			}
+
+			c_narator = {
+				color = { 83 130 69 }
+
+				b_mendun = {
+					province = 2061
+
+					color = { 162 50 79 }
+
+				}
+
+				b_ishadama = {
+					province = 2062
+
+					color = { 237 151 151 }
+
+				}
+
+				b_lahaisai = {
+					province = 2063
+
+					color = { 84 175 48 }
+
+				}
+
+			}
+
+			c_qirya = {
+				color = { 72 141 85 }
+
+				b_tarhousa = {
+					province = 2064
+
+					color = { 89 65 169 }
+
+				}
+
+				b_horsen = {
+					province = 2065
+
+					color = { 73 127 124 }
+
+				}
+
+				b_elitu = {
+					province = 2066
+
+					color = { 114 107 61 }
+
+				}
+
+			}
+
+			c_acasha = {
+				color = { 72 146 69 }
+
+				b_qoultar = {
+					province = 2067
+
+					color = { 157 80 42 }
+
+				}
+
+				b_tedyaidun = {
+					province = 2068
+
+					color = { 168 33 176 }
+
+				}
+
+				b_yaqat = {
+					province = 2069
+
+					color = { 215 160 96 }
+
+				}
+
+				b_marsus = {
+					province = 2070
+
+					color = { 156 148 58 }
+
+				}
+
+			}
+
+			c_yoeha = {
+				color = { 66 128 90 }
+
+				b_eruin = {
+					province = 2071
+
+					color = { 180 83 83 }
+
+				}
+
+				b_qalma = {
+					province = 2072
+
+					color = { 38 141 28 }
+
+				}
+
+				b_marra = {
+					province = 2073
+
+					color = { 199 122 202 }
+
+				}
+
+			}
+
+		}
+
+		d_muryafa = {
+			color = { 1 178 75 }
+
+			capital = c_hard
+
+			c_hard = {
+				color = { 41 167 72 }
+
+				b_qiran = {
+					province = 2074
+
+					color = { 92 61 31 }
+
+				}
+
+				b_eliya = {
+					province = 2075
+
+					color = { 153 145 76 }
+
+				}
+
+				b_yafarya = {
+					province = 2076
+
+					color = { 94 125 54 }
+
+				}
+
+			}
+
+			c_nara = {
+				color = { 75 167 77 }
+
+				b_simrai = {
+					province = 2077
+
+					color = { 199 184 62 }
+
+				}
+
+				b_araihama = {
+					province = 2078
+
+					color = { 208 76 76 }
+
+				}
+
+			}
+
+			c_yafamar = {
+				color = { 1 182 47 }
+
+				b_hamad = {
+					province = 2079
+
+					color = { 190 143 69 }
+
+				}
+
+				b_qoulsoula = {
+					province = 2080
+
+					color = { 134 111 200 }
+
+				}
+
+			}
+
+			c_arai = {
+				color = { 1 193 1 }
+
+				b_houlsan = {
+					province = 2081
+
+					color = { 135 218 223 }
+
+				}
+
+				b_haratar = {
+					province = 2082
+
+					color = { 54 81 138 }
+
+				}
+
+			}
+
+		}
+
+		d_aus_yapat = {
+			color = { 1 183 104 }
+
+			capital = c_atasmey
+
+			c_atasmey = {
+				color = { 1 162 105 }
+
+				b_astasha = {
+					province = 2083
+
+					color = { 212 223 84 }
+
+				}
+
+				b_temetas = {
+					province = 2084
+
+					color = { 224 144 197 }
+
+				}
+
+				b_hararai = {
+					province = 2085
+
+					color = { 138 101 64 }
+
+				}
+
+			}
+
+			c_qalnan = {
+				color = { 1 184 120 }
+
+				b_yafaqat = {
+					province = 2086
+
+					color = { 134 151 67 }
+
+				}
+
+				b_yashi = {
+					province = 2087
+
+					color = { 164 97 135 }
+
+				}
+
+				b_maryan = {
+					province = 2088
+
+					color = { 39 48 157 }
+
+				}
+
+			}
+
+			c_houlyan = {
+				color = { 1 178 104 }
+
+				b_herasta = {
+					province = 2089
+
+					color = { 150 87 199 }
+
+				}
+
+				b_thaqal = {
+					province = 2090
+
+					color = { 139 89 115 }
+
+				}
+
+			}
+
+			c_harit = {
+				color = { 61 172 100 }
+
+				b_samahan = {
+					province = 2091
+
+					color = { 241 98 98 }
+
+				}
+
+				b_aras_naraqoul = {
+					province = 2092
+
+					color = { 192 166 44 }
+
+				}
+
+			}
+
+		}
+
+	}
+
+	k_zajantak = {
+		color = { 16 143 43 }
+		capital = c_samigal
+
+		d_lari = {
+			color = { 1 145 70 }
+
+			capital = c_alodish
+
+			c_alodish = {
+				color = { 35 133 49 }
+
+				b_lazo = {
+					province = 2620
+
+					color = { 34 104 73 }
+
+				}
+
+				b_mitaraka = {
+					province = 2621
+
+					color = { 95 38 17 }
+
+				}
+
+				b_mirat = {
+					province = 2622
+
+					color = { 185 127 150 }
+
+				}
+
+				b_vatramita = {
+					province = 2623
+
+					color = { 110 209 182 }
+
+				}
+
+			}
+
+			c_yozin = {
+				color = { 1 149 45 }
+
+				b_zakirey = {
+					province = 2610
+
+					color = { 183 121 39 }
+
+				}
+
+				b_salazo = {
+					province = 2611
+
+					color = { 83 117 114 }
+
+				}
+
+				b_mitaris = {
+					province = 2614
+
+					color = { 227 14 200 }
+
+				}
+
+			}
+
+			c_salako = {
+				color = { 1 146 1 }
+
+				b_ozosal = {
+					province = 2615
+
+					color = { 31 31 110 }
+
+				}
+
+				b_mulayeha = {
+					province = 2616
+
+					color = { 177 100 155 }
+
+				}
+
+				b_brayar = {
+					province = 2617
+
+					color = { 158 94 254 }
+
+				}
+
+				b_tihoren = {
+					province = 2619
+
+					color = { 1 243 10 }
+
+				}
+
+			}
+
+			c_mifar = {
+				color = { 65 131 57 }
+
+				b_boyag = {
+					province = 2624
+
+					color = { 172 143 192 }
+
+				}
+
+				b_yargibar = {
+					province = 2625
+
+					color = { 185 109 54 }
+
+				}
+
+				b_milyekhi = {
+					province = 2626
+
+					color = { 87 228 73 }
+
+				}
+
+			}
+
+		}
+
+		d_qarneri = {
+			color = { 3 122 35 }
+
+			capital = c_yargiris
+
+			c_yargiris = {
+				color = { 52 134 72 }
+
+				b_qasila = {
+					province = 2627
+
+					color = { 185 204 19 }
+
+				}
+
+				b_nenazak = {
+					province = 2628
+
+					color = { 143 204 139 }
+
+				}
+
+				b_rayfar = {
+					province = 2629
+
+					color = { 61 156 123 }
+
+				}
+
+				b_zakafar = {
+					province = 2630
+
+					color = { 17 1 95 }
+
+				}
+
+			}
+
+			c_lasiyan = {
+				color = { 27 107 31 }
+
+				b_qasidish = {
+					province = 2631
+
+					color = { 209 210 133 }
+
+				}
+
+				b_mutig = {
+					province = 2632
+
+					color = { 216 122 182 }
+
+				}
+
+				b_ostogos = {
+					province = 2633
+
+					color = { 127 155 107 }
+
+				}
+
+				b_ogaraka = {
+					province = 2634
+
+					color = { 42 168 147 }
+
+				}
+
+			}
+
+			c_qalogos = {
+				color = { 20 101 36 }
+
+				b_trulsak = {
+					province = 2635
+
+					color = { 231 192 190 }
+
+				}
+
+				b_qarnelan = {
+					province = 2636
+
+					color = { 127 147 184 }
+
+				}
+
+				b_liyan = {
+					province = 2637
+
+					color = { 105 50 221 }
+
+				}
+
+				b_zazen = {
+					province = 2638
+
+					color = { 49 238 125 }
+
+				}
+
+			}
+
+			c_ostoko = {
+				color = { 1 141 50 }
+
+				b_dartoyona = {
+					province = 2639
+
+					color = { 156 51 100 }
+
+				}
+
+				b_moratay = {
+					province = 2640
+
+					color = { 133 206 15 }
+
+				}
+
+				b_velatik = {
+					province = 2641
+
+					color = { 33 98 28 }
+
+				}
+
+			}
+
+			c_qashina = {
+				color = { 64 116 52 }
+
+				b_bikand = {
+					province = 2642
+
+					color = { 187 188 136 }
+
+				}
+
+				b_veyoren = {
+					province = 2643
+
+					color = { 99 138 38 }
+
+				}
+
+				b_zalima = {
+					province = 2644
+
+					color = { 21 70 17 }
+
+				}
+
+			}
+
+		}
+
+		d_mimita = {
+			color = { 1 160 67 }
+
+			capital = c_harsarat
+
+			c_harsarat = {
+				color = { 73 149 76 }
+
+				b_gyon = {
+					province = 2645
+
+					color = { 78 96 9 }
+
+				}
+
+				b_bilarna = {
+					province = 2646
+
+					color = { 64 24 101 }
+
+				}
+
+				b_nurotay = {
+					province = 2647
+
+					color = { 185 206 162 }
+
+				}
+
+			}
+
+			c_tayadish = {
+				color = { 1 178 97 }
+
+				b_mozeri = {
+					province = 2648
+
+					color = { 186 176 94 }
+
+				}
+
+				b_mutiyan = {
+					province = 2649
+
+					color = { 193 62 204 }
+
+				}
+
+				b_krako = {
+					province = 2650
+
+					color = { 168 225 255 }
+
+				}
+
+			}
+
+			c_imari = {
+				color = { 83 146 70 }
+
+				b_zeteraka = {
+					province = 2651
+
+					color = { 156 228 36 }
+
+				}
+
+				b_biyoyona = {
+					province = 2652
+
+					color = { 234 231 30 }
+
+				}
+
+				b_milyeshan = {
+					province = 2653
+
+					color = { 250 166 192 }
+
+				}
+
+			}
+
+			c_tayarak = {
+				color = { 1 166 74 }
+
+				b_makya = {
+					province = 2654
+
+					color = { 78 2 124 }
+
+				}
+
+				b_bozikor = {
+					province = 2655
+
+					color = { 108 149 101 }
+
+				}
+
+				b_zetemiz = {
+					province = 2656
+
+					color = { 219 103 45 }
+
+				}
+
+			}
+
+			c_yezo = {
+				color = { 17 142 50 }
+
+				b_ambaren = {
+					province = 2657
+
+					color = { 7 22 226 }
+
+				}
+
+				b_mutakya = {
+					province = 3103
+
+					color = { 238 255 47 }
+
+				}
+
+			}
+
+		}
+
+		d_yeretik = {
+			color = { 1 162 45 }
+
+			capital = c_samigal
+
+			c_samigal = {
+				color = { 1 170 50 }
+
+				b_zayyen = {
+					province = 2667
+
+					color = { 226 109 168 }
+
+				}
+
+				b_yereg = {
+					province = 2668
+
+					color = { 113 239 227 }
+
+				}
+
+				b_asuris = {
+					province = 2669
+
+					color = { 145 5 145 }
+
+				}
+
+			}
+
+			c_rakuran = {
+				color = { 1 173 53 }
+
+				b_lasiri = {
+					province = 2658
+
+					color = { 123 35 1 }
+
+				}
+
+				b_ratorat = {
+					province = 2659
+
+					color = { 72 88 58 }
+
+				}
+
+				b_gyonan = {
+					province = 2660
+
+					color = { 249 200 223 }
+
+				}
+
+				b_imayeha = {
+					province = 2661
+
+					color = { 38 66 125 }
+
+				}
+
+				b_trahom = {
+					province = 2662
+
+					color = { 164 75 161 }
+
+				}
+
+			}
+
+			c_rakula = {
+				color = { 1 166 77 }
+
+				b_morari = {
+					province = 2663
+
+					color = { 132 214 200 }
+
+				}
+
+				b_prashar = {
+					province = 2664
+
+					color = { 73 187 211 }
+
+				}
+
+				b_velarey = {
+					province = 2665
+
+					color = { 114 199 11 }
+
+				}
+
+				b_asudan = {
+					province = 2666
+
+					color = { 175 211 213 }
+
+				}
+
+			}
+
+			c_milyeris = {
+				color = { 52 152 74 }
+
+				b_mutiyar = {
+					province = 2670
+
+					color = { 121 48 64 }
+
+				}
+
+				b_trulsatin = {
+					province = 2671
+
+					color = { 160 244 91 }
+
+				}
+
+				b_zevosin = {
+					province = 2672
+
+					color = { 46 74 133 }
+
+				}
+
+			}
+
+			c_bogokya = {
+				color = { 1 178 61 }
+
+				b_zevoven = {
+					province = 2673
+
+					color = { 22 136 247 }
+
+				}
+
+				b_qaris = {
+					province = 2674
+
+					color = { 124 113 157 }
+
+				}
+
+				b_traguyona = {
+					province = 2675
+
+					color = { 91 197 103 }
+
+				}
+
+				b_traraz = {
+					province = 2676
+
+					color = { 201 40 51 }
+
+				}
+
+			}
+
+		}
+
+		d_yasin = {
+			color = { 2 159 68 }
+
+			capital = c_yoziyeha
+
+			c_yoziyeha = {
+				color = { 35 153 31 }
+
+				b_samikhi = {
+					province = 2677
+
+					color = { 229 201 191 }
+
+				}
+
+				b_boyan = {
+					province = 2679
+
+					color = { 13 19 129 }
+
+				}
+
+				b_zeteran = {
+					province = 2680
+
+					color = { 18 241 183 }
+
+				}
+
+				b_lasizak = {
+					province = 2681
+
+					color = { 147 161 50 }
+
+				}
+
+				b_raven = {
+					province = 2682
+
+					color = { 1 114 118 }
+
+				}
+
+			}
+
+			c_huroyar = {
+				color = { 1 147 74 }
+
+				b_tig = {
+					province = 2683
+
+					color = { 158 233 242 }
+
+				}
+
+				b_huroshina = {
+					province = 2684
+
+					color = { 248 94 192 }
+
+				}
+
+				b_nurorey = {
+					province = 2685
+
+					color = { 159 171 81 }
+
+				}
+
+				b_qalozal = {
+					province = 2686
+
+					color = { 100 14 2 }
+
+				}
+
+			}
+
+			c_boyan = {
+				color = { 43 145 70 }
+
+				b_darimiz = {
+					province = 2687
+
+					color = { 193 158 51 }
+
+				}
+
+				b_kyeshar = {
+					province = 2688
+
+					color = { 96 62 132 }
+
+				}
+
+				b_tarozo = {
+					province = 2689
+
+					color = { 174 234 146 }
+
+				}
+
+				b_biyorak = {
+					province = 2690
+
+					color = { 113 12 68 }
+
+				}
+
+			}
+
+			c_rahom = {
+				color = { 1 185 74 }
+
+				b_tan = {
+					province = 2691
+
+					color = { 176 68 85 }
+
+				}
+
+				b_milyemita = {
+					province = 2692
+
+					color = { 28 117 222 }
+
+				}
+
+				b_shalith = {
+					province = 2693
+
+					color = { 199 75 28 }
+
+				}
+
+				b_manab = {
+					province = 2694
+
+					color = { 239 14 48 }
+
+				}
+
+			}
+
+			c_tran = {
+				color = { 1 169 88 }
+
+				b_yargidan = {
+					province = 2695
+
+					color = { 118 53 65 }
+
+				}
+
+				b_dobagal = {
+					province = 2696
+
+					color = { 242 45 88 }
+
+				}
+
+				b_krayar = {
+					province = 2697
+
+					color = { 203 135 103 }
+
+				}
+
+			}
+
+			c_salir = {
+				color = { 1 157 1 }
+
+				b_hagok = {
+					province = 2698
+
+					color = { 194 31 154 }
+
+				}
+
+				b_tayath = {
+					province = 2699
+
+					color = { 185 84 10 }
+
+				}
+
+				b_yozikir = {
+					province = 2700
+
+					color = { 137 25 234 }
+
+				}
+
+			}
+
+			c_firad = {
+				color = { 19 126 43 }
+
+				b_asumabar = {
+					province = 3003
+
+					color = { 20 229 114 }
+
+				}
+
+				b_bozemar = {
+					province = 3004
+
+					color = { 80 34 94 }
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

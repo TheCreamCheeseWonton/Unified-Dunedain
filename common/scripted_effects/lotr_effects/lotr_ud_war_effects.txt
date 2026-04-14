@@ -431,6 +431,7 @@ ud_civil_war_general_landing_effect = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
 						is_at_war_with = title:h_pharazain.holder
+						is_elf = yes
 					}
 				}
 				holder = { is_wastelands = no }
@@ -468,6 +469,7 @@ ud_civil_war_general_landing_effect = {
 						culture = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
+						is_elf = no
 					}
 					NOT = { any_war_ally = { this = title:h_pharazain.holder } }
 					NOT = { is_at_war_with = title:h_pharazain.holder }
@@ -601,6 +603,7 @@ ud_civil_war_general_landing_effect = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
 						is_at_war_with = title:h_pharazain.holder
+						is_elf = yes
 					} 
 				}
 				holder = { is_wastelands = no }
@@ -638,6 +641,7 @@ ud_civil_war_general_landing_effect = {
 						culture = {
 							cultural_acceptance = { target = root.culture value > 40 }
 						}
+						is_elf = no
 					}
 					NOT = { any_war_ally = { this = title:h_pharazain.holder } }
 					NOT = { is_at_war_with = title:h_pharazain.holder }

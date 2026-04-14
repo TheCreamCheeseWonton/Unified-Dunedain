@@ -1378,6 +1378,7 @@ decision_invite_elves_baranagath = {
 	# IS_VALID
 	is_valid = {
 		completely_controls = title:c_baranagath
+		highest_held_title_tier >= tier_kingdom
 		custom_tooltip = {
 			text = LOTR_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER
 			any_relation = {
@@ -1386,8 +1387,18 @@ decision_invite_elves_baranagath = {
 				highest_held_title_tier >= tier_kingdom
 				is_elf = yes
 				is_in_valinor = no
-				is_eldar = yes
+				#is_eldar = yes
 				has_title = title:k_drel
+			}
+		}
+		
+		title:k_drel.holder = {
+			custom_tooltip = {
+				text = hope_4_or_higher_drel_tt
+				OR = {
+					has_highest_hope = yes 
+					has_high_hope = yes 
+				}
 			}
 		}
 
@@ -1395,10 +1406,10 @@ decision_invite_elves_baranagath = {
 			limit = {
 				title:c_baranagath.holder = { is_ai = yes }
 			}
-			prestige_level >= 4
+			prestige_level >= 3
 		}
 		trigger_else = {
-			prestige_level >= 3
+			prestige_level >= 2
 		}
 
 		knows_language = language_cuind
@@ -1481,9 +1492,17 @@ decision_invite_elves_suza_sumar = {
 			has_title = title:d_suza_sumar
 		}
 		
+		##To stop bellakar from doing unless they do the first decision
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:invite_elves_baranagath
+		}
+		NOT = { 
+			title:d_suza_sumar.holder = {
+				culture = { 
+					has_cultural_pillar = heritage_druedain
+				}
+			}
 		}
 
 		NOR = {
@@ -1500,6 +1519,7 @@ decision_invite_elves_suza_sumar = {
 	# IS_VALID
 	is_valid = {
 		completely_controls = title:d_suza_sumar
+		highest_held_title_tier >= tier_kingdom
 		custom_tooltip = {
 			text = LOTR_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER
 			any_relation = {
@@ -1508,8 +1528,18 @@ decision_invite_elves_suza_sumar = {
 				highest_held_title_tier >= tier_kingdom
 				is_elf = yes
 				is_in_valinor = no
-				is_eldar = yes
+				#is_eldar = yes
 				has_title = title:k_drel
+			}
+		}
+		
+		title:k_drel.holder = {
+			custom_tooltip = {
+				text = hope_4_or_higher_drel_tt
+				OR = {
+					has_highest_hope = yes 
+					has_high_hope = yes 
+				}
 			}
 		}
 

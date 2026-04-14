@@ -205,7 +205,7 @@
  not_darkness_religion: "This character's faith is not a faith of Darkness"
 
  #Born in the Gold
- culture_parameter_children_can_be_born_in_the_gold:2 "[children|E] born to a [ruler|E] holding the [GetTitleByKey('h_pharazain').GetName] or [GetTitleByKey('h_numenor_in_exile').GetName] may gain the [GetTrait('born_in_the_gold').GetName( GetNullCharacter )] [trait|E]. Having the Born in the Gold Trait increases a character's candidate score under $acclamation_succession_law$."
+ culture_parameter_children_can_be_born_in_the_gold:2 "[children|E] born to a [ruler|E] holding the [GetTitleByKey('h_pharazain').GetName] or the [GetTitleByKey('h_numenor_in_exile').GetName] [titles|E] may gain the [GetTrait('born_in_the_gold').GetName( GetNullCharacter )] [trait|E]. Having the Born in the Gold Trait increases a character's candidate score under $acclamation_succession_law$."
 
  trait_born_in_the_gold:0 "Born in the Gold"
  trait_born_in_the_gold_desc:0 "This character was born to prominent parents, a rich life, and high expectations."
@@ -368,7 +368,7 @@
  pharazain_solidified: "You hold and have solidified the [GetTitleByKey('h_pharazain').GetName] [title|E]"
 
  decision_unify_adunai: "Restore a Unified Adûnâic Identity"
- decision_unify_adunai_desc: "Since the [akallabeth|E] sundered the many colonies of [numenor|E], the different realms of our forefathers split apart and developed wildly different cultures. From [umbar|E] and the ever vengeful [kingsmen|E], [bellakar|E] and their egalitarian [faithful|E], [anbalkumagan|E] and their endless depravity, and [thanihazad|E] and the machinations of the [balan_lai|E]. All have developed their own distinct cultures, shaped by their long histories and the many trials and outside influences they have faced. Yet all have ever been fundamentally kingdoms of the [adunai|E], and proud of their high heritage. With the proclamation and solidification of [GetTitleByKey('h_pharazain').GetNameNoTier], the boundaries which once divided the [adunai|E] have fallen, and our people for the first time since the golden age of [numenor|E] have been united beneath a single crown. It will require much work to bring cultures long sundered under one roof once more, but given time and effort, even the diversity of the [adunaic|E] peoples might once more be made one."
+ decision_unify_adunai_desc: "Since the [akallabeth|E] sundered the many colonies of [numenor|E], the different realms of our forefathers split apart and developed wildly different cultures. From [umbar|E] and the ever vengeful [kingsmen|E], [bellakar|E] and their egalitarian [faithful|E], [anbalkumagan|E] and their endless depravity, and [thanihazad|E] and the machinations of the [balan_lai|E]. All have developed their own distinct cultures, shaped by their long histories and the many trials and outside influences they have faced. \n\nYet all have ever been fundamentally kingdoms of the [adunai|E], and proud of their high heritage. With the proclamation and solidification of [GetTitleByKey('h_pharazain').GetNameNoTier], the boundaries which once divided the [adunai|E] have fallen, and our people for the first time since the golden age of [numenor|E] have been united beneath a single crown. It will require much work to bring cultures long sundered under one roof once more, but given time and effort, even the diversity of the [adunaic|E] peoples might once more be made one."
  decision_unify_adunai_tooltip: "We are the [adunai|E]."
  decision_unify_adunai_confirm: "We are the Adûnâi."
  decision_unify_pharazaini_get_innovations: "The [pharazaini_culture_culture.GetName] [culture|E] gains all [black_numenorean|E] and [adunaic|E] [innovations|E]"
@@ -492,18 +492,26 @@
  form_anbalkumagan_empire_event: "You will be able to choose the fulture of An-Balkûmagân"
 
  #Invite Elves South
+ elves_in_thani_hazad: "Elven Influence"
+ elves_in_thani_hazad_desc: "The interaction between the local people and their new [cuind|E] [elvish|E] neighbors has brought great prosperity."
+ elves_in_thani_hazad_mispir: "Elven Influence - Mispír"
+ elves_in_thani_hazad_mispir_desc: "The interaction between the local people of [GetTitleByKey('c_mispir').GetNameNoTier] and their new [cuind|E] [elvish|E] neighbors has brought great prosperity."
+ elves_in_thani_hazad_bozisha_dar: "Elven Influence - Bôzisha-Dâr"
+ elves_in_thani_hazad_bozisha_dar_desc: "The interaction between the local people of [GetTitleByKey('c_bozisha_dar').GetNameNoTier] and their new [cuind|E] [elvish|E] neighbors has brought great prosperity."
  decision_invite_elves_baranagath: "Invite the Cuind to Bârânagath"
  decision_invite_elves_baranagath_desc: "You invite the [cuind|E] [elves|E] to settle Bârânagath, bringing back life to the once great [elven|E] refuge."
  decision_invite_elves_baranagath_confirm: "Invite Elves to settle Bârânagath"
  decision_invite_elves_baranagath_tooltip: "You invite Elves to come live in Bârânagath."
  decision_invite_elves_baranagath_effect_tooltip: "Elves come to settle the desolate forests of Bârânagath, bringing back life to the wooded lands."
  decision_invite_elves_baranagath_effect_tt: "Sent a message to the [elves|E]"
- LOTR_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER: "One of the [eldar|E] that rules the [GetTitleByKey('k_drel').GetNameNoTier] [kingdom|E] numbers you among your [friends|E]"
+ LOTR_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER: "The [avari|E] [elf|E] that rules the [GetTitleByKey('k_drel').GetNameNoTier] [kingdom|E] numbers you among your [friends|E]"
+ #LOTR_BEST_FRIENDS_WITH_ELVEN_KING_DREL_TRIGGER: "The [avari|E] [elf|E] that rules the [GetTitleByKey('k_drel').GetNameNoTier] [kingdom|E] numbers you among your best [friends|E]"
+ hope_4_or_higher_drel_tt: "[GetTitleByKey('k_drel').GetNameNoTier]'s [elven|E] [hope|E] [situation_phase|E] is 'Renewing' or higher"
 
  south_adunai_events.2000.t: "Elves in Bârânagath"
  south_adunai_events.2000.desc: "The refuge of Cinta Toina has stood empty for hundreds of years, ever since the Cuind departed these lands with the coming of the [numenoreans|E].\n\nThrough determination and goodwill, I have managed to make contact with Elves willing to return and settle in Cinta Toina, bringing life and prosperity back to a region that has lain abandoned for thousands of years. It now falls to me to appoint the leader of the Cuind who will oversee Cinta Toina and maintain contact with my rule." # Look at this again
  south_adunai_events.2000.a: "The Cuind are known for their excellent medicines."
- south_adunai_events.2000.a_tt: "You ask a Cuind Elf toto lead Cinta Toina."
+ south_adunai_events.2000.a_tt: "You ask a Cuind Elf to lead Cinta Toina."
 
  south_adunai_events.2001.t: "Elves in Bârânagath"
  south_adunai_events.2001.desc: "The Elves have finally arrived in my forests, bringing with them gifts for the people living close to Cinta Toina.\n\nIn time there might exist a friendship between Men and Elves as there existed the days of the old, but for now I must focus on first strengething the bonds between my people and the recently arrived elves."
@@ -517,15 +525,17 @@
  decision_invite_elves_suza_sumar_effect_tooltip: "Elves come to settle the desolate forests of Sûza Sûmar, bringing back life to the wooded lands."
  decision_invite_elves_suza_sumar_effect_tt: "Sent a message to the [elves|E]"
 
- south_adunai_events.2101.t: "Elves in Sûza Sûmar"
- south_adunai_events.2101.desc: "The refuge of Yára Ëartoina has stood empty for hundreds of years, ever since the Cuind departed these lands with the coming of the [haradrim|E].\n\nThrough determination and goodwill, I have managed to make contact with Elves willing to return and settle in Yára Ëartoina, bringing life and prosperity back to a region that has lain abandoned for thousands of years. It now falls to me to appoint the leader of the Cuind who will oversee Yára Ëartoina and maintain contact with my rule." # Look at this again
- south_adunai_events.2101.a: "The Cuind are known for their excellent medicines."
- south_adunai_events.2101.a_tt: "You ask a Cuind Elf toto lead Yára Ëartoina."
+ south_adunai_events.2100.t: "Elves in Sûza Sûmar"
+ south_adunai_events.2100.desc: "The refuge of Yára Ëartoina has stood empty for hundreds of years, ever since the Cuind departed these lands with the coming of the [haradrim|E].\n\nThrough determination and goodwill, I have managed to make contact with Elves willing to return and settle in Yára Ëartoina, bringing life and prosperity back to a region that has lain abandoned for thousands of years. It now falls to me to appoint the leader of the Cuind who will oversee Yára Ëartoina and maintain contact with my rule." 
+ south_adunai_events.2100.a: "The Cuind are known for their excellent medicines."
+ south_adunai_events.2100.a_tt: "You ask a Cuind Elf to lead Yára Ëartoina."
 
  south_adunai_events.2101.t: "Elves in Sûza Sûmar"
  south_adunai_events.2101.desc: "The Elves have finally arrived in my forests, bringing with them gifts for the people living close to Yára Ëartoina.\n\nIn time there might exist a friendship between Men and Elves as there existed the days of the old, but for now I must focus on first strengething the bonds between my people and the recently arrived elves."
  south_adunai_events.2101.a: "Time to focus on more important matters."
  south_adunai_events.2101.b: "I wonder how they will rule..."
+
+ invite_elves_cuind: "Invited a group of Cuind Elves to live in their old refuge"
 
  ##Pharazain Separatism Decisions
  #Separatism
@@ -757,8 +767,8 @@
  pharazain_events.13.desc: "The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War exposed the many flaws in our administration and revealed just how devastating they were to my realm. A lack of central control allowed those on the fringes of governance to pocket funds meant for the crown. Unruly commoners and traitors carried out their schemes without my knowledge, while levies and soldiers were withheld from my hands. Rebellion and treason festered beneath my very nose, and I was blind to it!\n\nThrough decades of effort, these failures of the past have been addressed. The capabilities and resilience of our bureaucracy are now stronger than those of any other realm in the [thirdage|E].\n\nYet many within the realm believe even more must be done. These voices fall into two camps, some call for a kingdom of strict law and order, where all are bound by the law and the administration wields the greatest authority. Others argue that the power of the Gilded Sovereign must be strengthened further still, leaving no room for rebellion and ensuring the crown holds all the cards. \n\nWhich path shall I choose?"
  pharazain_events.13.a: "A Realm of Law"
  pharazain_events.13.b: "A Realm of Power"
- once_done_you_get_buffed_admin_tt: "You gain the [GetModifier('lotr_admin_into_admin_character_modifier').GetNameWithTooltip] [modifier|E] for #V 10 years#!.\n\nAfter this period, your realm will adopt an [administrative_government|E] and your culture will unlock the unique #V $innovation_adunai_administration_admin$#! [innovation|E].\n\n[domain_limit|E]: #P +1#!\n[army|E] Gold Maintenance: @gold_icon! #N +50.00%#!\nSize of [men_at_arms|E] [regiments|E]: #P +2#!\nMax number of [men_at_arms|E] [regiments|E] #P +1#!"
- once_done_you_get_buffed_feudal_tt: "You gain the [GetModifier('lotr_admin_into_faudal_character_modifier').GetNameWithTooltip] [modifier|E] for #V 10 years#!.\n\nAfter this period, your realm will reform your [feudal_government|E] and your culture will unlock the unique #V $innovation_adunai_administration_feudal$#! [innovation|E].\n\n[domain_limit|E]: #P +1#!\n[vassal_limit|E] #P +60#!\n[vassal|E] [tax|E] [contribution|E]: @gold_icon! #P +10%#!\n[vassal|E] [levy|E] [contribution|E]: @soldier_icon! #P +10%#!"
+ once_done_you_get_buffed_admin_tt: "You gain the [GetModifier('lotr_admin_into_admin_character_modifier').GetNameWithTooltip] [modifier|E] for #V 10 years#!.\n\nAfter this period, your realm will adopt an [administrative_government|E] and your culture will unlock the unique #V $innovation_adunai_administration_admin$#! [innovation|E].\n\n[domain_limit|E]: #P +1#!\n[army|E] Gold Maintenance: @gold_icon! #N +50.00%#!\nSize of [men_at_arms|E] [regiments|E]: #P +2#!\nMax number of [men_at_arms|E] [regiments|E] #P +1#!\n[children|E] born to a [ruler|E] holding the [GetTitleByKey('h_pharazain').GetName] or the [GetTitleByKey('h_numenor_in_exile').GetName] [titles|E] may gain the [GetTrait('born_in_the_gold').GetName( GetNullCharacter )] [trait|E]. Having the Born in the Gold Trait increases a character's candidate score under $acclamation_succession_law$."
+ once_done_you_get_buffed_feudal_tt: "You gain the [GetModifier('lotr_admin_into_faudal_character_modifier').GetNameWithTooltip] [modifier|E] for #V 10 years#!.\n\nAfter this period, your realm will reform your [feudal_government|E] and your culture will unlock the unique #V $innovation_adunai_administration_feudal$#! [innovation|E].\n\n[domain_limit|E]: #P +1#!\n[vassal_limit|E] #P +60#!\n[vassal|E] [tax|E] [contribution|E]: @gold_icon! #P +10%#!\n[vassal|E] [levy|E] [contribution|E]: @soldier_icon! #P +10%#!\n[children|E] born to a [ruler|E] holding the [GetTitleByKey('h_pharazain').GetName] or the [GetTitleByKey('h_numenor_in_exile').GetName] [titles|E] may gain the [GetTrait('born_in_the_gold').GetName( GetNullCharacter )] [trait|E]. Having the Born in the Gold Trait increases a character's candidate score under $acclamation_succession_law$."
 
  pharazain_events.14.t: "The Reforms of [ROOT.GetCharacter.GetTitledFirstName]"
  pharazain_events.14.desc: "After decades of civil war, followed by years of relentless reform and political upheaval, the storm has at last subsided. The Golden Dominion now enters an age of peace and prosperity. The my reforms have taken firm root, and [GetTitleByKey('h_pharazain').GetNameNoTier] stands united under the order of a new [administrative_government|E]. Never again shall unruly [feudal|E] politics unsettle my realm, for law and the authority of the central government now hold sway.\n\nFrom the great cities of [bellakar|E], to the fertile fields of Kharadûnê, and the vast wealth of [thanihazad|E] and [anbalkumagan|E], the [GetTitleByKey('h_pharazain').GetName] has secured and cemented its rule. No longer can any doubt remain, these lands and their peoples are, beyond all question, Pharazâini."
