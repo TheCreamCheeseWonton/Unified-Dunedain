@@ -743,6 +743,8 @@
  remove_all_previous_modifiers: "All [modifiers|E] gained during the conquest of [GetTitleByKey('h_pharazain').GetNameNoTier] will be removed"
  remove_all_non_pharazain_vassals: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName] [region|E] will become [independent|E]"
  remove_all_non_pharazain_vassals_extra: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName] or [GetGeographicalRegion('special_region_west_dune_sea').GetName] [regions|E] will become [independent|E]"
+ remove_all_non_pharazain_vassals_extra_2: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName] or [GetGeographicalRegion('custom_anbalkumagan_sirayn').GetName] [regions|E] will become [independent|E]"
+ remove_all_non_pharazain_vassals_extra_3: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName], [GetGeographicalRegion('custom_anbalkumagan_sirayn').GetName], or [GetGeographicalRegion('custom_anbalkumagan_sirayn').GetName] [regions|E] will become [independent|E]"
  bellakar_revolts: "[bellakar|E] will revolt from your rule, begining the Pharazâini Civil War"
  thani_hazad_revolts: "[thanihazad|E] will revolt from your rule, begining the Pharazâini Civil War"
  anbalkumagan_revolts: "[anbalkumagan|E] will revolt from your rule, begining the Pharazâini Civil War"

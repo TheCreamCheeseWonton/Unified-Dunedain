@@ -21,7 +21,7 @@
 	discover_innovation = innovation_ledger
 	discover_innovation = innovation_numenorean_law
 	discover_innovation = innovation_southern_adunai_warfare
-	discover_innovation = innovation_lesser_numenorean_heritage
+	#discover_innovation = innovation_lesser_numenorean_heritage
 }	
 3900.1.2 = { # E.A. Cultural Innovations
 	# LotR Cultural Innovations

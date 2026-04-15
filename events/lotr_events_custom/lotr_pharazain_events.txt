@@ -390,6 +390,10 @@ pharazain_events.9 = {
 							name = unavailable_unique_decisions
 							target = flag:tame_desert_decision
 						}
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:anbalkumagan_empire
+						}	
 					}
 				}
 				custom_tooltip = remove_all_non_pharazain_vassals
@@ -405,10 +409,62 @@ pharazain_events.9 = {
 					resolve_title_and_vassal_change = scope:change
 				}
 			}
-			else = { 
+			else_if = {
+				limit = { 
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:anbalkumagan_empire
+					}	
+					NOT = {
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:tame_desert_decision
+						}
+					}
+				}		
+				custom_tooltip = remove_all_non_pharazain_vassals_extra_2
+				every_vassal = {
+					limit = { AND = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = custom_anbalkumagan_sirayn  } } } is_elf = no } }
+					create_title_and_vassal_change = {
+						type = independency
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+
+					becomes_independent = { change = scope:change }
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+			else_if = {
+				limit = { 
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_decisions
+						target = flag:tame_desert_decision
+					}	
+					NOT = {
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_decisions
+							target = flag:anbalkumagan_empire
+						}
+					}
+				}		
 				custom_tooltip = remove_all_non_pharazain_vassals_extra
 				every_vassal = {
-					limit = { OR = {  NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea  } } } is_elf = no } }
+					limit = { AND = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea  } } } is_elf = no } }
+					create_title_and_vassal_change = {
+						type = independency
+						save_scope_as = change
+						add_claim_on_loss = no
+					}
+
+					becomes_independent = { change = scope:change }
+					resolve_title_and_vassal_change = scope:change
+				}
+			}
+			else = { 
+				custom_tooltip = remove_all_non_pharazain_vassals_extra_3
+				every_vassal = {
+					limit = { AND = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea geographical_region = custom_anbalkumagan_sirayn } } } is_elf = no } }
 					create_title_and_vassal_change = {
 						type = independency
 						save_scope_as = change

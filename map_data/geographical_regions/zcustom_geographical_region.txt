@@ -12,8 +12,9 @@
 		d_runnach d_nen_gwathlo d_angrast d_swanfell
 		# k_andrast
 		d_nan_enqui d_annulefnui 
-		# k_ray
-		d_dar d_sarwa d_suza_sumar d_suza_riy d_iunastiy d_briy_miyesec
+		#Quonton - caused confusion
+		## k_ray
+		#d_dar d_sarwa d_suza_sumar d_suza_riy d_iunastiy d_briy_miyesec
 		d_riyeshara
 		# k_drel
 		d_metkharan
