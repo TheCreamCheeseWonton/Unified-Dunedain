@@ -1,0 +1,5 @@
+﻿incompatible_tenet_faithful_mandate_trigger = {
+	first_not = INCOMPATIBLE_TENET_FAITHFUL_MANDATE_TRIGGER
+	third_not = INCOMPATIBLE_TENET_FAITHFUL_MANDATE_TRIGGER
+	global_not = INCOMPATIBLE_TENET_FAITHFUL_MANDATE_TRIGGER
+}

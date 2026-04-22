@@ -545,8 +545,6 @@ show_andrast_trigger = {
 }
 
 show_umbar_trigger = {
-	##Quonton
-	NOT = { has_primary_title = title:h_pharazain } 
 	current_year >= 5843
 	NOT = {
 		is_target_in_global_variable_list = {
@@ -561,8 +559,8 @@ show_umbar_trigger = {
 			this = title:e_castamir
 			this.hegemony ?= title:h_numenor_in_exile
 			this.hegemony ?= title:h_reunited_kingdom
-			###Quonton
-			#this.hegemony ?= title:h_pharazain
+			##Quonton
+			this.hegemony ?= title:h_pharazain
 		}
 	}
 }

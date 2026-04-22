@@ -5319,6 +5319,11 @@ decision_restore_gondor_province = {
 				limit = { has_title = title:e_castamir }
 				title:k_umbar = { set_de_jure_liege_title = title:e_castamir }
 			}
+			##Quonton
+			else_if = {
+				limit = { has_title = title:h_pharazain }
+				title:e_umbar = { set_de_jure_liege_title = title:h_pharazain }
+			}
 			else = {
 				title:k_umbar = { set_de_jure_liege_title = title:e_gondor }
 			}

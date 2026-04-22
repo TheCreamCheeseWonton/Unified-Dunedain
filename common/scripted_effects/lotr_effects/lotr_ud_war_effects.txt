@@ -428,7 +428,7 @@ ud_civil_war_general_landing_effect = {
 						has_relation_friend = title:h_pharazain.holder 
 						is_allied_to = title:h_pharazain.holder
 						culture = {
-							cultural_acceptance = { target = root.culture value > 40 }
+							cultural_acceptance = { target = root.culture value > 60 }
 						}
 						is_at_war_with = title:h_pharazain.holder
 						is_elf = yes
@@ -467,7 +467,7 @@ ud_civil_war_general_landing_effect = {
 						has_relation_friend = title:h_pharazain.holder 
 						is_allied_to = title:h_pharazain.holder
 						culture = {
-							cultural_acceptance = { target = root.culture value > 40 }
+							cultural_acceptance = { target = root.culture value > 70 }
 						}
 						is_elf = no
 					}
@@ -600,7 +600,7 @@ ud_civil_war_general_landing_effect = {
 						has_relation_friend = title:h_pharazain.holder 
 						is_allied_to = title:h_pharazain.holder
 						culture = {
-							cultural_acceptance = { target = root.culture value > 40 }
+							cultural_acceptance = { target = root.culture value > 60 }
 						}
 						is_at_war_with = title:h_pharazain.holder
 						is_elf = yes
@@ -639,7 +639,7 @@ ud_civil_war_general_landing_effect = {
 						has_relation_friend = title:h_pharazain.holder 
 						is_allied_to = title:h_pharazain.holder
 						culture = {
-							cultural_acceptance = { target = root.culture value > 40 }
+							cultural_acceptance = { target = root.culture value > 80 }
 						}
 						is_elf = no
 					}
@@ -787,7 +787,7 @@ ud_civil_war_general_landing_effect = {
 						has_relation_friend = title:h_pharazain.holder 
 						is_allied_to = title:h_pharazain.holder
 						culture = {
-							cultural_acceptance = { target = root.culture value > 40 }
+							cultural_acceptance = { target = root.culture value > 60 }
 						}
 						is_at_war_with = title:h_pharazain.holder
 					}
@@ -825,7 +825,7 @@ ud_civil_war_general_landing_effect = {
 						has_relation_friend = title:h_pharazain.holder 
 						is_allied_to = title:h_pharazain.holder
 						culture = {
-							cultural_acceptance = { target = root.culture value > 40 }
+							cultural_acceptance = { target = root.culture value > 80 }
 						}
 					}
 					NOT = { any_war_ally = { this = title:h_pharazain.holder } }

@@ -518,7 +518,7 @@ decision_proclaim_pharazain = {
 
 	}
 	is_valid = {
-	prestige_level >= 4
+		prestige_level >= 4
 		piety_level >= 4
 		custom_tooltip = {
 			##Quonton
@@ -598,6 +598,12 @@ decision_proclaim_pharazain = {
 					has_title = title:k_pel
 				}
 			}
+		}
+		OR = { 
+			has_primary_title = title:e_bellakar
+			has_primary_title = title:e_thon_an_kharlokh
+			has_primary_title = title:e_anbalkumagan
+			has_primary_title = title:e_thani_hazad
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -853,9 +859,8 @@ decision_proclaim_pharazain = {
 		}
 		
 		##Warning Event
-		trigger_event = {
-			id = pharazain_events.25
-			months = { 1 6 }
+		character:k_wastelands_holder = {
+			trigger_event = { id = pharazain_events.2500 months = { 1 6 } }
 		}
 	}
 	
@@ -3190,6 +3195,10 @@ decision_solidify_pharazain = {
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:decision_solidify_pharazain
+		}
+		if = { 
+			limit = { has_character_modifier = lotr_pharazain_spend_more_resources_character_modifier }
+			remove_character_modifier = lotr_pharazain_spend_more_resources_character_modifier
 		}
 	}
 

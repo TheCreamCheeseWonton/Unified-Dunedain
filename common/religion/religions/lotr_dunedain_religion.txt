@@ -424,7 +424,7 @@ dunedain_religion = {
 			
 			# Tenets
 			doctrine = tenet_gift_of_men
-			doctrine = tenet_memory_of_akallabeth
+			doctrine = tenet_faithful_mandate
 			doctrine = tenet_unrelenting_faith_adunai_faithful
 		}
 	}

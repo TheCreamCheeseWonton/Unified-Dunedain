@@ -763,7 +763,9 @@ pharazain_events.13 = {
 		custom_tooltip = once_done_you_get_buffed_admin_tt
 		hidden_effect = { 
 			add_character_modifier = { modifier = lotr_admin_into_admin_character_modifier years = 10 }
-			trigger_event = { id = pharazain_events.14 years = 10 }
+			character:k_wastelands_holder = {
+				trigger_event = { id = pharazain_events.1300 years = 10 }
+			}
 		}
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -778,12 +780,32 @@ pharazain_events.13 = {
 		custom_tooltip = once_done_you_get_buffed_feudal_tt
 		hidden_effect = { 
 			add_character_modifier = { modifier = lotr_admin_into_faudal_character_modifier years = 10 }
-			trigger_event = { id = pharazain_events.15 years = 10 }
+			character:k_wastelands_holder = {
+				trigger_event = { id = pharazain_events.1310 years = 10 }
+			}
 		}
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:decision_reformed_admin_complete
 		
+		}
+	}
+}
+
+pharazain_events.1300 = {
+	hidden = yes
+	immediate = {
+		title:h_pharazain.holder = {
+			trigger_event = { id = pharazain_events.14 delayed = yes }
+		}
+	}
+}
+
+pharazain_events.1310 = {
+	hidden = yes
+	immediate = {
+		title:h_pharazain.holder = {
+			trigger_event = { id = pharazain_events.15 delayed = yes }
 		}
 	}
 }
@@ -1314,6 +1336,15 @@ pharazain_events.24 = { #An-Balkumagan conquers Thani-Hazad Good
 	}
 }
 
+pharazain_events.2500 = {
+	hidden = yes
+	immediate = {
+		title:h_pharazain.holder = {
+			trigger_event = { id = pharazain_events.25 delayed = yes }
+		}
+	}
+}
+
 pharazain_events.25 = { #Separatism Warning
 	type = character_event
 	title = pharazain_events.25.t
@@ -1359,13 +1390,11 @@ pharazain_events.25 = { #Separatism Warning
 		remove_reserved_gold = 500
 		add_character_modifier = { modifier = custom_ud_conquer_modifier_1 years = 5 }
 		##Start separatism
-		trigger_event = {
-			id = pharazain_events.9
-			years = { 5 10 }
+		character:k_wastelands_holder = {
+			trigger_event = { id = pharazain_events.900 years = { 5 10 } }
 		}
-		trigger_event = {
-			id = pharazain_events.26
-			months = { 6 18 }
+		character:k_wastelands_holder = {
+			trigger_event = { id = pharazain_events.2600 months = { 6 18 } }
 		}
 	}
 	option = { 
@@ -1373,25 +1402,39 @@ pharazain_events.25 = { #Separatism Warning
 		remove_reserved_gold = 250
 		add_character_modifier = { modifier = custom_ud_conquer_modifier years = 5 }
 		##Start separatism
-		trigger_event = {
-			id = pharazain_events.9
-			years = { 3 8 }
+		character:k_wastelands_holder = {
+			trigger_event = { id = pharazain_events.900 years = { 3 8 } }
 		}
-		trigger_event = {
-			id = pharazain_events.26
-			months = { 6 18 }
+		character:k_wastelands_holder = {
+			trigger_event = { id = pharazain_events.2600 months = { 6 18 } }
 		}
 	}
 	option = { 
 		name = pharazain_events.25.c # Spend no Money and get debuffs to adunai provinces
 		##Start separatism
-		trigger_event = {
-			id = pharazain_events.9
-			years = { 2 4 }
+				character:k_wastelands_holder = {
+			trigger_event = { id = pharazain_events.900 years = { 2 4 } }
 		}
-		trigger_event = {
-			id = pharazain_events.26
-			months = { 6 18 }
+		character:k_wastelands_holder = {
+			trigger_event = { id = pharazain_events.2600 months = { 6 18 } }
+		}
+	}
+}
+
+pharazain_events.900 = {
+	hidden = yes
+	immediate = {
+		title:h_pharazain.holder = {
+			trigger_event = { id = pharazain_events.9 delayed = yes }
+		}
+	}
+}
+
+pharazain_events.2600 = {
+	hidden = yes
+	immediate = {
+		title:h_pharazain.holder = {
+			trigger_event = { id = pharazain_events.26 delayed = yes }
 		}
 	}
 }

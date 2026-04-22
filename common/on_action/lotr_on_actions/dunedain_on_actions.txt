@@ -19,7 +19,7 @@ ud_bellakar_conquered_thani_hazad = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_bellakar_conquered_event
+				target = flag:ud_bellakar_th_conquered_event
 			}
 		}
 	}
@@ -41,7 +41,7 @@ ud_bellakar_conquered_thani_hazad = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_bellakar_conquered_event
+				target = flag:ud_bellakar_th_conquered_event
 			}
 			trigger_event = { id = pharazain_events.21 delayed = yes }
 		}
@@ -54,7 +54,7 @@ ud_bellakar_conquered_an_balkumagan = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_bellakar_conquered_event
+				target = flag:ud_bellakar_an_b_conquered_event
 			}
 		}
 	}
@@ -80,7 +80,7 @@ ud_bellakar_conquered_an_balkumagan = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_bellakar_conquered_event
+				target = flag:ud_bellakar_an_b_conquered_event
 			}
 			trigger_event = { id = pharazain_events.19 delayed = yes }
 		}
@@ -93,7 +93,7 @@ ud_thani_hazad_conquered_bellakar = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_thani_hazad_conquered_event
+				target = flag:ud_thani_hazad_bel_conquered_event
 			}
 		}
 	}
@@ -115,7 +115,7 @@ ud_thani_hazad_conquered_bellakar = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_thani_hazad_conquered_event
+				target = flag:ud_thani_hazad_bel_conquered_event
 			}
 			trigger_event = { id = pharazain_events.18  delayed = yes }
 		}
@@ -128,7 +128,7 @@ ud_thani_hazad_conquered_an_balkumagan = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_thani_hazad_conquered_event
+				target = flag:ud_thani_hazad_an_b_conquered_event
 			}
 		}
 	}
@@ -154,7 +154,7 @@ ud_thani_hazad_conquered_an_balkumagan = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_thani_hazad_conquered_event
+				target = flag:ud_thani_hazad_an_b_conquered_event
 			}
 			trigger_event = { id = pharazain_events.20  delayed = yes }
 		}
@@ -167,7 +167,7 @@ ud_an_balkumagan_conquered_bellakar = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_an_balkumagan_conquered_event
+				target = flag:ud_an_balkumagan_bel_conquered_event
 			}
 		}
 	}
@@ -200,7 +200,7 @@ ud_an_balkumagan_conquered_bellakar = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_an_balkumagan_conquered_event
+				target = flag:ud_an_balkumagan_bel_conquered_event
 			}
 			trigger_event = { id = pharazain_events.17  delayed = yes }
 		}
@@ -213,7 +213,7 @@ ud_an_balkumagan_conquered_thani_hazad = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_an_balkumagan_conquered_event
+				target = flag:ud_an_balkumagan_th_conquered_event
 			}
 		}
 	}
@@ -246,7 +246,7 @@ ud_an_balkumagan_conquered_thani_hazad = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_an_balkumagan_conquered_event
+				target = flag:ud_an_balkumagan_th_conquered_event
 			}
 			trigger_event = { id = pharazain_events.22  delayed = yes }
 		}
@@ -259,7 +259,7 @@ ud_bellakar_conquered_an_balkumagan_good = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_bellakar_conquered_event
+				target = flag:ud_bellakar_an_b_conquered_event
 			}
 		}
 	}
@@ -285,7 +285,7 @@ ud_bellakar_conquered_an_balkumagan_good = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_bellakar_conquered_event
+				target = flag:ud_bellakar_an_b_conquered_event
 			}
 			trigger_event = { id = pharazain_events.23 delayed = yes }
 		}
@@ -298,7 +298,7 @@ ud_thani_hazad_conquered_an_balkumagan_good = {
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_thani_hazad_conquered_event
+				target = flag:ud_thani_hazad_an_b_conquered_event
 			}
 		}
 	}
@@ -324,7 +324,7 @@ ud_thani_hazad_conquered_an_balkumagan_good = {
 			}
 			add_to_global_variable_list = {
 				name = unavailable_unique_event
-				target = flag:ud_thani_hazad_conquered_event
+				target = flag:ud_thani_hazad_an_b_conquered_event
 			}
 			trigger_event = { id = pharazain_events.24  delayed = yes }
 		}
