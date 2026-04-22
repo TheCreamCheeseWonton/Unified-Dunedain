@@ -263,6 +263,7 @@ decision_bellakar_vassalise_izindubeth = {
 				any_vassal_or_below = {
 					has_title = title:k_izindizanda_eruhinim
 				}
+				has_title = title:k_izindizanda_eruhinim
 			}
 		}
 		exists = title:k_izindizanda_eruhinim.holder
