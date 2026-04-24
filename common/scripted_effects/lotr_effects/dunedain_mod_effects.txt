@@ -450,3 +450,44 @@ convert_to_administrative_from_feudalism_effect_pharazain = {
 	custom_tooltip = vassals_become_administrative
 	custom_tooltip = vassals_who_may_switch_to_administrative
 }
+
+ud_lotr_laamp_setup_effect = { 
+	character:linegimilzadan2 ?= { #LotR
+		if = {
+			limit = {
+				is_alive = yes
+				has_dlc_feature = roads_to_power
+			}
+			if = {
+				limit = {
+					character:linegimilethtwocustom2 ?= {
+						is_alive = yes
+						is_landed = no
+						NOT = { is_courtier_of = character:linegimilzadan2 }
+					}
+				}
+				add_courtier = character:linegimilethtwocustom2
+			}
+			if = {
+				limit = {
+					character:linegimilethtwocustom3 ?= {
+						is_alive = yes
+						is_landed = no
+						NOT = { is_courtier_of = character:linegimilzadan2 }
+					}
+				}
+				add_courtier = character:linegimilethtwocustom3
+			}
+			if = {
+				limit = {
+					character:linegimilethtwocustom2husband ?= {
+						is_alive = yes
+						is_landed = no
+						NOT = { is_courtier_of = character:linegimilzadan2 }
+					}
+				}
+				add_courtier = character:linegimilethtwocustom2husband
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+﻿uraumo = { # Úraumo - Unending Storm
+    icon = "artefact_icons_unique_uraumo.dds"
+    asset = narsil_sword_portrait_entity 
+}

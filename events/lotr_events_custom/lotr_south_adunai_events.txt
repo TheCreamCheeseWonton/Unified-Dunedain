@@ -36,6 +36,12 @@ south_adunai_events.2 = { # Gimilzadan Flavor
 		animation = personality_honorable
 	}
 	
+	immediate = {
+		hidden_effect = { 
+			ud_lotr_laamp_setup_effect = yes
+		}
+	}
+	
 	option = {
 		name = south_adunai_events.2.a
 		add_short_term_gold = 350
@@ -996,4 +1002,19 @@ south_adunai_events.2101 = { # Swap over to elves in Edhellond event
     after = {
 		add_elven_hope_global_effect = { VALUE = medium_elven_hope_gain HOPE_EFFECT = effect_elven_hope_good_realm_rises }
     }
+}
+
+south_adunai_events.9999 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		ud_lotr_laamp_setup_effect = yes
+		if = { 
+			limit = { 
+				exists = title:d_laamp_house_of_gimilzadan.holder
+			}
+			title:d_laamp_house_of_gimilzadan.holder = { create_artifact_uraumo_effect = yes }
+		}
+	}
 }

@@ -7407,7 +7407,7 @@ k_pel = {
 	4010.2.5  = {
 		holder = linegimilzadan091
 	}
-	4212.2.5 = {
+	4025.3.10 = {
 		holder = linegimilzadan10
 	}
 	4212.2.5 = {
@@ -7608,7 +7608,7 @@ c_arpel = {
 	4010.2.5  = {
 		holder = linegimilzadan091
 	}
-	4212.2.5 = {
+	4025.3.10 = {
 		holder = linegimilzadan10
 	}
 	4212.2.5 = {

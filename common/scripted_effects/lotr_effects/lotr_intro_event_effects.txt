@@ -1460,6 +1460,12 @@ fire_intro_events_2754 = {
 ########################################
 fire_intro_events_3000 = {
 	##QUONTON CUSTOM CHATACVEYRSSUHSDS
+	character:k_wastelands_holder = { 
+		trigger_event = {
+			id = south_adunai_events.9999
+			delayed = no
+		}
+	}
 	##Quonton
 	character:linegimilzadan2 = {
 		if = { 
@@ -1468,7 +1474,7 @@ fire_intro_events_3000 = {
 			}
 			trigger_event = {
 				id = south_adunai_events.2
-				days = 1
+				delayed = no
 			}
 			house ?= {
 				if = {

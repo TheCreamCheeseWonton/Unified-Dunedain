@@ -105,3 +105,389 @@ create_artifact_arnorian_steelbow_effect = {
 		save_scope_as = epic
 	}
 }
+
+create_artifact_uraumo_effect = {
+	set_artifact_rarity_illustrious = yes
+	create_artifact = {
+		name = uraumo_name
+		description = uraumo_description
+		creator = character:lineofelros80 #Gimilzagar
+		type = sword
+		visuals = uraumo
+		wealth = scope:wealth
+		quality = scope:quality
+		history = {
+			type = created
+			date = 3314.2.4
+			recipient = character:lineofelros80 #Gimilzagar
+		}
+		modifier = uraumo_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+	scope:newly_created_artifact ?= {
+		equip_artifact_to_owner_replace = yes
+		set_variable = { name = historical_unique_artifact value = yes }
+		#set_variable = uraumo
+		set_variable = relic 
+		save_scope_as = epic
+
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3498.1.1
+			RECIPIENT = character:linegimilzadan030 # Morwen
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3598.1.1
+			RECIPIENT = character:linegimilzadan04
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3708.1.1
+			RECIPIENT = character:linegimilzadan05
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3845.1.1
+			RECIPIENT = character:linegimilzadan06
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3911.1.1
+			RECIPIENT = character:linegimilzadan08
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4010.2.4
+			RECIPIENT = character:linegimilzadan09
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4010.2.5
+			RECIPIENT = character:linegimilzadan091
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4025.3.10
+			RECIPIENT = character:linegimilzadan10
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4212.2.5
+			RECIPIENT = character:linegimilzadan11
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4437.1.1
+			RECIPIENT = character:linegimilzadan12
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4565.1.1
+			RECIPIENT = character:linegimilzadan13
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4625.1.1
+			RECIPIENT = character:linegimilzadan14
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4670.1.1
+			RECIPIENT = character:linegimilzadan15
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4791.1.1
+			RECIPIENT = character:linegimilzadan16
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4872.1.1
+			RECIPIENT = character:linegimilzadan17
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4941.1.1
+			RECIPIENT = character:linegimilzadan18
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4943.1.1
+			RECIPIENT = character:linegimilzadan19
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4979.3.5
+			RECIPIENT = character:linegimilzadan20
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5062.12.20
+			RECIPIENT = character:linegimilzadan21
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5143.12.5
+			RECIPIENT = character:linegimilzadan22
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5224.8.29
+			RECIPIENT = character:linegimilzadan222
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5305.2.19
+			RECIPIENT = character:linegimilzadan23
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5382.4.4
+			RECIPIENT = character:linegimilzadan24
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5389.7.8 
+			RECIPIENT = character:linegimilzadan25
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5492.1.13 
+			RECIPIENT = character:linegimilzadan26
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5541.2.22
+			RECIPIENT = character:linegimilzadan27
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5592.5.22
+			RECIPIENT = character:linegimilzadan28
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5622.9.29
+			RECIPIENT = character:linegimilzadan29
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5703.4.17
+			RECIPIENT = character:linegimilzadan30
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5776.8.21
+			RECIPIENT = character:linegimilzadan31
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5846.6.30
+			RECIPIENT = character:linegimilzadan32
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5924.11.20
+			RECIPIENT = character:linegimilzadan33
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5997.7.2
+			RECIPIENT = character:linegimilzadan34
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6008.12.24
+			RECIPIENT = character:linegimilzadan35
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6139.1.1
+			RECIPIENT = character:linegimilzadan36
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6210.1.1
+			RECIPIENT = character:linegimilzadan37
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6280.1.1
+			RECIPIENT = character:linegimilzadan38
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6352.1.1
+			RECIPIENT = character:linegimilzadan39
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6360.1.1
+			RECIPIENT = character:linegimilzadan40
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6488.1.1 
+			RECIPIENT = character:linegimilzadan41
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6556.1.1 
+			RECIPIENT = character:linegimilzadan42
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6621.1.1
+			RECIPIENT = character:linegimilzadan43
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6687.1.1
+			RECIPIENT = character:linegimilzadan44
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6752.1.1
+			RECIPIENT = character:linegimilzadan45
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6817.1.1
+			RECIPIENT = character:linegimilzadan46
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6881.1.1
+			RECIPIENT = character:linegimilzadan47
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6915.1.1 
+			RECIPIENT = character:linegimilzadan48
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6923.1.1 
+			RECIPIENT = character:linegimilzadan01
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6932.2.28
+			RECIPIENT = character:linegimilzadan02
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 6953.3.18
+			RECIPIENT = character:linegimilzadan1
+		}
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 7032.12.30
+			RECIPIENT = character:linegimilzadan2
+		}
+		
+	}
+}
