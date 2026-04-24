@@ -356,6 +356,17 @@ dunedain_on_game_start = {
 	effect = {
 		##Quonton
 		evil_strength_gamerule_buffs = yes
+		character:linegimilethtwocustom2 = {
+			if = { 
+				limit = {
+					is_alive = yes
+				}
+				start_dog_story_cycle_effect = yes
+				assign_dog_gender_effect = { GENDER = female }
+				assign_dog_fur_color_effect = { COLOR = brown }
+				assign_dog_eye_color_effect = { COLOR = brown }
+			}
+		}
 
 		##Bad Arnorian Ruins
 		province:4415 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }

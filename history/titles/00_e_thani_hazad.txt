@@ -7,6 +7,12 @@ e_thani_hazad = {
 		holder = linegimilzadan08
 	}
 	4010.2.4 = {
+		holder = linegimilzadan09
+	}
+	4010.2.5  = {
+		holder = linegimilzadan091
+	}
+	4025.3.11 = {
 		holder = 0
 	}
 }
@@ -4315,20 +4321,6 @@ k_zimrathani = {
 	3770.1.1 = {
 		holder = 0
 	}
-	##Quonton
-	3911.3.18 = {
-		holder = linegimilzadan08
-	}
-	4010.2.4 = {
-		holder = linegimilzadan09
-	}
-	4010.2.5 = {
-		holder = linegimilzadan091
-	}
-	4025.3.10 = {
-		holder = 0
-	}
-	##End Quonton
 }
 # Duchy of Alsarias
 d_alsarias = {
@@ -5052,20 +5044,6 @@ d_mispir = {
 	3981.3.5 = {
 		holder = linemispir4
 	}
-	##Quonton
-	3911.3.18 = {
-		holder = linegimilzadan08
-	}
-	4010.2.4 = {
-		holder = linegimilzadan09
-	}
-	4010.2.5 = {
-		holder = linegimilzadan091
-	}
-	4025.3.10 = {
-		holder = 0
-	}
-	##End Quonton
 	4044.2.11 = {
 		holder = 0
 	}
@@ -5144,20 +5122,6 @@ c_mispir = {
 	3981.3.5 = {
 		holder = linemispir4
 	}
-	##Quonton
-	3911.3.18 = {
-		holder = linegimilzadan08
-	}
-	4010.2.4 = {
-		holder = linegimilzadan09
-	}
-	4010.2.5 = {
-		holder = linegimilzadan091
-	}
-	4025.3.10 = {
-		holder = 0
-	}
-	##End Quonton
 	4454.8.3 = {
 		holder = linealsariastwopre1
 	}
@@ -7433,6 +7397,71 @@ c_nimiphurus = {
 ## Kingdom of Pel
 
 k_pel = {
+	##Quonton
+	3911.3.18 = {
+		holder = linegimilzadan08
+	}
+	4010.2.4 = {
+		holder = linegimilzadan09
+	}
+	4010.2.5  = {
+		holder = linegimilzadan091
+	}
+	4212.2.5 = {
+		holder = linegimilzadan10
+	}
+	4212.2.5 = {
+		holder = linetamska12
+	}
+	4309.12.22 = {
+		holder = linetamska13
+	}
+	4376.10.13 = {
+		holder = linetamska15
+	}
+	4405.7.17 = {
+		holder = linetamska17
+	}
+	4436.10.28 = {
+		holder = linetamska19
+	}
+	4498.3.20 = {
+		holder = linetamska22
+	}
+	4571.8.20 = {
+		holder = linetamska24
+	}
+	4599.8.21 = {
+		holder = linetamska26
+	}
+	4648.2.6 = {
+		holder = linetamska28
+	}
+	4825.12.8 = {
+		holder = linetamska33
+	}
+	4874.9.10 = {
+		holder = linetamska36
+	}
+	4920.6.6 = {
+		holder = linetamska39 # Dag_Ema the Azure
+	}
+	4950.11.23 = {
+		holder = linetamska40
+	}
+	5014.11.15 = {
+		holder = linetamska42
+	}
+	5043.1.1 = {
+		holder = linetamska44 # Ayanura Wave-Bride
+	}
+	5105.5.20 = {
+		holder = linetamska46
+	}
+	5154.7.16 = {
+		holder = linetamska50
+	}
+	##End Quonton
 	5236.5.19 = {
         holder = lineofagathohin1 #Sapazu_u_r
 		succession_laws = { vassal_conclave_dynastic_elective_succession_law } # New succession law put in place
@@ -7569,6 +7598,71 @@ c_arpel = {
 		change_development_level = -100			
 		government = wastelands_government
 	}
+	##Quonton
+	3911.3.18 = {
+		holder = linegimilzadan08
+	}
+	4010.2.4 = {
+		holder = linegimilzadan09
+	}
+	4010.2.5  = {
+		holder = linegimilzadan091
+	}
+	4212.2.5 = {
+		holder = linegimilzadan10
+	}
+	4212.2.5 = {
+		holder = linetamska12
+	}
+	4309.12.22 = {
+		holder = linetamska13
+	}
+	4376.10.13 = {
+		holder = linetamska15
+	}
+	4405.7.17 = {
+		holder = linetamska17
+	}
+	4436.10.28 = {
+		holder = linetamska19
+	}
+	4498.3.20 = {
+		holder = linetamska22
+	}
+	4571.8.20 = {
+		holder = linetamska24
+	}
+	4599.8.21 = {
+		holder = linetamska26
+	}
+	4648.2.6 = {
+		holder = linetamska28
+	}
+	4825.12.8 = {
+		holder = linetamska33
+	}
+	4874.9.10 = {
+		holder = linetamska36
+	}
+	4920.6.6 = {
+		holder = linetamska39 # Dag_Ema the Azure
+	}
+	4950.11.23 = {
+		holder = linetamska40
+	}
+	5014.11.15 = {
+		holder = linetamska42
+	}
+	5043.1.1 = {
+		holder = linetamska44 # Ayanura Wave-Bride
+	}
+	5105.5.20 = {
+		holder = linetamska46
+	}
+	5154.7.16 = {
+		holder = linetamska50
+	}
+	##End Quonton
 	5236.5.19 = {
         holder = lineofagathohin1 #Sapazu_u_r
 		change_development_level = 16
