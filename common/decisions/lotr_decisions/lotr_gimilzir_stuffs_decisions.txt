@@ -1,1 +1,215 @@
-﻿
+﻿decision_choose_gimilzir_path = {
+	title = decision_choose_gimilzir_path
+	picture = {
+		reference =gfx/interface/illustrations/decisions/decision_legitimacy.dds
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	selection_tooltip = decision_choose_gimilzir_path_tooltip
+	desc = decision_choose_gimilzir_path_desc
+	confirm_text = decision_choose_gimilzir_path_confirm
+	
+	ai_check_interval = 240
+	
+	decision_group_type = gimilzir_decisions
+	
+	is_shown = {
+		is_landed = no
+		dynasty = dynasty:dynasty_gimilzadan
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:enable_gimilzir_decision
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_choose_gimilzir_path
+			}
+		}
+		
+	}
+	is_valid = {
+		prestige_level >=3
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_choose_gimilzir_path
+		}
+		custom_tooltip = decision_choose_gimilzir_path_tt
+		trigger_event = gimilzir_events.4 
+	}
+	
+	ai_will_do = {
+		base = 100
+	}
+}
+
+decision_continue_adventure_gimilzir_tanturak = { ### Regain lost story contracts ~ Gimilzir ###
+	sort_order = 100
+	title = decision_continue_adventure_eradan
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_harad_07.dds"
+	}
+	selection_tooltip = decision_continue_adventure_tanturak_tooltip
+	desc = decision_continue_adventure_tanturak_desc
+	confirm_text = decision_continue_adventure_tanturak_confirm
+
+	decision_group_type = gimilzir_decisions
+	
+	sort_order = 1000
+
+	is_shown = {
+		is_landless_adventurer = yes
+		is_travelling = no
+		OR = {
+			has_character_flag = gimilzir_tanturak_contract_inzilloni
+			has_character_flag = gimilzir_tanturak_contract_azarideth
+			has_character_flag = gimilzir_tanturak_contract_urulomik
+			has_character_flag = gimilzir_tanturak_contract_mispir
+			has_character_flag = gimilzir_tanturak_contract_gimileth
+			has_character_flag = gimilzir_tanturak_contract_arpel
+			has_character_flag = gimilzir_tanturak_contract_arpel_sailing
+		}
+		#NOR = { # Should only show when the camp is not in the intended location
+		#	root.domicile.domicile_location = province:903 # Ramlond
+		#	root.domicile.domicile_location = province:935 # Mirlond
+		#	root.domicile.domicile_location = province:350 # Linhir
+		#}
+	}
+		
+	is_valid = {
+		is_at_war = no
+		is_travelling = no
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+	}
+	
+	effect = {
+		custom_tooltip = decision_continue_adventure_gimilzir_tanturak_tt
+		
+		if = {
+			limit = { has_character_flag = gimilzir_tanturak_contract_inzilloni }
+			hidden_effect = {
+				root = {
+					create_task_contract = {
+						task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni
+						task_contract_employer = title:c_inzilloni.holder
+						location = title:c_inzilloni.title_province
+						task_contract_tier = 4
+						save_scope_as = created_contract
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_character_flag = gimilzir_tanturak_contract_azarideth }
+			hidden_effect = {
+				root = {
+					create_task_contract = {
+						task_contract_type = lotr_gimilzir_tanturak_contract_azarideth
+						task_contract_employer = title:c_azarideth.holder
+						location = title:c_azarideth.title_province
+						task_contract_tier = 4
+						save_scope_as = created_contract
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_character_flag = gimilzir_tanturak_contract_urulomik }
+			hidden_effect = {
+				root = {
+					create_task_contract = {
+						task_contract_type = lotr_gimilzir_tanturak_contract_uruloni
+						task_contract_employer = title:c_uruloni.holder
+						location = title:c_uruloni.title_province
+						task_contract_tier = 4
+						save_scope_as = created_contract
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_character_flag = gimilzir_tanturak_contract_mispir }
+			hidden_effect = {
+				root = {
+					create_task_contract = {
+						task_contract_type = lotr_gimilzir_tanturak_contract_mispir
+						task_contract_employer = title:c_mispir.holder
+						location = title:c_mispir.title_province
+						task_contract_tier = 4
+						save_scope_as = created_contract
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_character_flag = gimilzir_tanturak_contract_gimileth }
+			hidden_effect = {
+				root = {
+					create_task_contract = {
+						task_contract_type = lotr_gimilzir_tanturak_contract_gimileth
+						task_contract_employer = title:c_gimileth.holder
+						location = title:c_gimileth.title_province
+						task_contract_tier = 4
+						save_scope_as = created_contract
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_character_flag = gimilzir_tanturak_contract_arpel }
+			hidden_effect = {
+				root = {
+					create_task_contract = {
+						task_contract_type = lotr_gimilzir_tanturak_contract_arpel
+						task_contract_employer = title:c_arpel.holder
+						location = title:c_arpel.title_province
+						task_contract_tier = 4
+						save_scope_as = created_contract
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = { has_character_flag = gimilzir_tanturak_contract_arpel_sailing }
+			hidden_effect = {
+				root = {
+					create_task_contract = {
+						task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing
+						task_contract_employer = title:c_arpel.holder
+						location = title:c_arpel.title_province
+						task_contract_tier = 4
+						save_scope_as = created_contract
+					}
+				}
+			}
+		}
+	}
+
+	# AI value
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 12
+		kingdom = 0
+		empire = 0
+		hegemony = 0
+	}
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
+}

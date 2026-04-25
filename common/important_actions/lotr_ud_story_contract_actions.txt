@@ -1,0 +1,92 @@
+﻿action_story_contract_available_gimilzir_tanturak = {
+	type = alert
+	check_create_action = {
+		random_task_contract = {
+			limit = {
+				root = { has_character_flag = gimilzir_path_chooser }
+				OR = { 
+					has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni
+					has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth
+					has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni
+					has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir
+					has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth
+					has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel
+					has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing
+				}
+				NOT = {
+					root = {
+						OR = {
+							any_character_active_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni }
+							any_character_active_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth }
+							any_character_active_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni }
+							any_character_active_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
+							any_character_active_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
+							any_character_active_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel }
+							any_character_active_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing }
+						}
+					}
+				}
+			}
+			try_create_important_action = {
+				important_action_type = action_story_contract_available_gimilzir_tanturak
+				actor = root
+				recipient = this
+			}
+		}
+	}
+
+	effect = {
+		scope:recipient = {
+			if = { # Gimilzir's Inzilloni Visit
+				limit = { any_task_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni } }
+				random_task_contract = {
+					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni }
+					pan_camera_to_province = title:c_inzilloni.title_province
+				}
+			}
+			else_if = { # Gimilzir's Azarideth Visit
+				limit = { any_task_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth } }
+				random_task_contract = {
+					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth }
+					pan_camera_to_province = title:c_azarideth.title_province
+				}
+			}
+			else_if = { # Gimilzir's Uruloni Visit
+				limit = { any_task_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni } }
+				random_task_contract = {
+					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni }
+					pan_camera_to_province = title:c_uruloni.title_province
+				}
+			}
+			else_if = { # Gimilzir's Mispir Visit
+				limit = { any_task_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir } }
+				random_task_contract = {
+					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
+					pan_camera_to_province = title:c_mispir.title_province
+				}
+			}
+			else_if = { # Gimilzir's Gimileth Visit
+				limit = { any_task_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth } }
+				random_task_contract = {
+					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
+					pan_camera_to_province = title:c_gimileth.title_province
+				}
+			}
+			else_if = { # Gimilzir's Arpel Visit
+				limit = { any_task_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel } }
+				random_task_contract = {
+					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel }
+					pan_camera_to_province = title:c_arpel.title_province
+				}
+			}
+			else_if = { # Gimilzir's Arpel Sailing Visit
+				limit = { any_task_contract = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing } }
+				random_task_contract = {
+					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing }
+					pan_camera_to_province = title:c_arpel.title_province
+				}
+			}
+			open_view_data = task_contract
+		}
+	}
+}

@@ -113,6 +113,7 @@ create_artifact_uraumo_effect = {
 		description = uraumo_description
 		creator = character:lineofelros80 #Gimilzagar
 		type = sword
+		template = uraumo_template
 		visuals = uraumo
 		wealth = scope:wealth
 		quality = scope:quality

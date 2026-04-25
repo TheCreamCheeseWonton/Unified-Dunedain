@@ -460,12 +460,3 @@ elves_in_thani_hazad_bozisha_dar = {
 	build_gold_cost = -0.2
 	epidemic_resistance = 10
 }
-
-##Artifact Modifiers
-uraumo_modifier = {
-    prowess_no_portrait = 17
-    martial_per_prestige_level = 1
-    monthly_prestige = 0.5
-    knight_effectiveness_mult = 0.1
-}
-##########

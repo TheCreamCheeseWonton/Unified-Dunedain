@@ -1054,7 +1054,7 @@ linegimilzadan01 = {
 
 	father = linegimilzadan48
 	
-	prowess = 36
+	prowess = 20
 	trait = physique_good_3
 	trait = intellect_good_1
 	trait = blood_of_numenor_3
@@ -1165,6 +1165,7 @@ linegimilzadan1 = {
 	trait = just
 	trait = athletic
 	trait = viking
+	trait = lifestyle_blademaster
 	trait = holy_warrior
 	trait = scarred
 	#trait = loyal
@@ -1174,7 +1175,7 @@ linegimilzadan1 = {
     stewardship = 8
     intrigue = 3
     learning = 7
-	prowess = 32
+	prowess = 26
 	
 	6971.1.29 = {
 		birth = yes

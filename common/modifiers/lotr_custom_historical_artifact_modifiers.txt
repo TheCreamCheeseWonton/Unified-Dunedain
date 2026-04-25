@@ -28,3 +28,13 @@ arnorian_steelbow_modifier = {
     archers_damage_mult = 0.1    
     archers_toughness_mult = 0.1
 }
+
+##Artifact Modifiers
+uraumo_modifier = {
+    prowess_no_portrait = 17
+    martial_per_prestige_level = 1
+    monthly_prestige = 0.5
+    knight_effectiveness_mult = 0.1
+	tolerance_advantage_mod = 4
+}
+#########
