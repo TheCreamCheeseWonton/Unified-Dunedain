@@ -593,7 +593,7 @@ lotr_gimilzir_tanturak_contract_arpel_sailing = {
 				task_contract_taker = {
 					play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
 					add_prestige = 400
-					add_dynasty_prestige = 200
+					root.dynasty = { add_dynasty_prestige = 200 }
 					add_piety = 250
 					add_gold = 200
 					if = { 

@@ -511,8 +511,17 @@ gimilzir_ardinak_military = {
 
 gimilzir_ardinak_diplomacy = { 
 	icon = diplomacy_positive
-	cultural_acceptance_gain_mult = 0.1
+	cultural_head_acceptance_gain_mult = 0.1
 	diplomacy = 2
 	opinion_of_different_culture = 20
 	different_culture_opinion = 20
+}
+
+gimilzir_tanturak_refounder = {
+	icon = family_positive 
+	close_relative_opinion = 20
+	monthly_prestige = 1
+	monthly_piety = 1
+	monthly_dynasty_prestige = 1
+	monthly_dynasty_prestige_mult = 0.5
 }

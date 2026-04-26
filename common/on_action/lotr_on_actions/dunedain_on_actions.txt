@@ -5,11 +5,79 @@ on_vassal_gained = { on_actions = { dunedain_on_vassal_gained } }
 on_vassal_change = { on_actions = { dunedain_on_vassal_change } }
 on_faith_conversion = { on_actions = { dunedain_on_faith_conversion } }
 #lotr_yearly_playable_pulse = { on_actions = { pharazain_events }}
-on_title_gain = { on_actions = { ud_bellakar_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan ud_thani_hazad_conquered_bellakar ud_thani_hazad_conquered_an_balkumagan ud_an_balkumagan_conquered_bellakar ud_an_balkumagan_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan_good ud_thani_hazad_conquered_an_balkumagan_good} }
+on_title_gain = { on_actions = { ud_custom_on_title_gain ud_bellakar_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan ud_thani_hazad_conquered_bellakar ud_thani_hazad_conquered_an_balkumagan ud_an_balkumagan_conquered_bellakar ud_an_balkumagan_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan_good ud_thani_hazad_conquered_an_balkumagan_good} }
 on_birth_child = { on_actions = { pharazain_born_in_the_gold_events } }
 pharazain_born_in_the_gold_events = {
 	events = {
 		pharazain_events.8000 #Born in the Gold
+	}
+}
+
+ud_custom_on_title_gain = {
+	effect = {
+		if = {
+			limit = {
+				OR = {
+					scope:transfer_type = flag:conquest
+					scope:transfer_type = flag:conquest_holy_war
+					scope:transfer_type = flag:conquest_claim
+					scope:transfer_type = flag:conquest_populist
+					scope:transfer_type = flag:abdication
+					scope:transfer_type = flag:usurped
+					scope:transfer_type = flag:revoked
+					scope:transfer_type = flag:faction_demand
+				}
+				scope:title ?= {
+					title = title:c_sarul
+				}
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:gimilzir_tanturak_path
+				}
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:ud_gimilzir_gotten_to_tanturak
+				}
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_event
+						target = flag:ud_conquer_sarul_gimilzir
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_conquer_sarul_gimilzir
+			}
+			trigger_event = { id = gimilzir_events.782 delayed = yes }
+		}
+		if = { 
+			limit = { 
+				scope:transfer_type = flag:created
+				scope:title ?= {
+					title = title:k_tanturak
+				}
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:gimilzir_tanturak_path
+				}
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:ud_gimilzir_gotten_to_tanturak
+				}
+				NOT = {
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_event
+						target = flag:ud_created_tanturak_gimilzir
+					}
+				}
+			}
+			add_to_global_variable_list = {
+				name = unavailable_unique_event
+				target = flag:ud_created_tanturak_gimilzir
+			}
+			trigger_event = { id = gimilzir_events.788 delayed = yes }
+		}
 	}
 }
 
@@ -828,6 +896,23 @@ dunedain_on_faith_conversion = {
 
 dunedain_on_death = {
 	effect = {
+		if = { #When Gimilzir Tanturak Dies you get event
+			limit = {
+				has_character_flag = gimilzir_path_chooser
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:ud_gimilzir_gotten_to_tanturak
+				}
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:gimilzir_tanturak_path
+				}
+			}
+			save_scope_as = deceased_mc
+			character:k_wastelands_holder = { #OG character dies flavor event
+				trigger_event = { id = gimilzir_events.7870 days = { 15 45 } }
+			}	
+		}
 		if = { #if building Armenolos, character's heir gains modifier
 			limit = {
 				OR = { 

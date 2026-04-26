@@ -300,3 +300,71 @@ decision_gimilzir_adunaic_revival_sarul = {#Settle Adunaic in Sarul
 		base = 50
 	}
 }
+
+decision_gimilzir_tanturak_founder_statue = {
+	title = decision_gimilzir_tanturak_founder_statue
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_castle_02.dds"
+	}
+	selection_tooltip = decision_gimilzir_tanturak_founder_statue_tooltip
+	desc = decision_gimilzir_tanturak_founder_statue_desc
+	confirm_text = decision_gimilzir_tanturak_founder_statue_confirm
+
+	decision_group_type = gimilzir_decisions
+	
+	ai_goal = yes
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+
+	is_shown = {
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:enable_gimilzir_tanturak_statue_enabled
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_gimilzir_tanturak_founder_statue
+			}
+		}
+	}
+	
+	is_valid = {
+		completely_controls = title:c_guishas
+		completely_controls = title:d_modune
+    }
+	
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+	
+	effect = {
+		add_prestige = 500
+		dynasty = { add_dynasty_prestige = 250 }
+		
+		
+		title:c_guishas.title_province = {
+			hidden_effect = { add_special_building_slot = wonder_gimilzir_statue }
+			add_special_building = wonder_gimilzir_statue
+		}
+		
+		
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_gimilzir_tanturak_founder_statue
+			}
+		}
+	}
+	
+	cost = {
+		gold = 1000
+	}
+
+}

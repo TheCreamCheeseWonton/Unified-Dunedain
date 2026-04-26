@@ -3226,12 +3226,10 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 	option = { # Try to convince him
 		name = gimilzir_events.761.a
 		trigger = { 
-			limit = { 
-				scope:arpelholder = { 
-					opinion = {
-						target = ROOT
-						value >= 10
-					}
+			scope:arpelholder = { 
+				opinion = {
+					target = ROOT
+					value >= 10
 				}
 			}
 		}
@@ -3294,12 +3292,10 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 	option = { # Try to convince him difficult
 		name = gimilzir_events.761.b
 		trigger = { 
-			limit = { 
-				scope:arpelholder = { 
-					opinion = {
-						target = ROOT
-						value < 10
-					}
+			scope:arpelholder = { 
+				opinion = {
+					target = ROOT
+					value < 10
 				}
 			}
 		}
@@ -3676,7 +3672,7 @@ gimilzir_events.767 = { # Depart Arpel for Tanturak
 		name = gimilzir_events.767.a # Set sail
 		trigger_event = {
 			id = gimilzir_events.768
-			days = 60
+			months = { 1 3 }
 		}
 		custom_tooltip = gimilzir_events.767.tt
 		start_travel_plan = {
@@ -4067,7 +4063,7 @@ gimilzir_events.770 = { # No damage storm damage
 		name = gimilzir_events.770.a # Land ahead!
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 5
+			days = 20
 		}
 	}
 }
@@ -4090,7 +4086,7 @@ gimilzir_events.771 = { # Moderate storm damage
             limit = {
                 NOR = {
                     this = character:linegimilzadan3
-					this = character:linegimilzadanwife
+					this = character:lineagimilzadanwife
 					this = character:linegimilzadan1
 					this = character:linegimilethtwocustom2
                     this = root
@@ -4111,7 +4107,7 @@ gimilzir_events.771 = { # Moderate storm damage
 		add_character_flag = moderate_storm_damage
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 5
+			days = 20
 		}
 	}
 }
@@ -4155,7 +4151,7 @@ gimilzir_events.772 = { # Severe storm damage
 		add_character_flag = severe_storm_damage
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 5
+			days = 20
 		}
 	}
 }
@@ -4178,7 +4174,7 @@ gimilzir_events.773 = { # Catastrophic storm damage
             limit = {
                 NOR = {
                     this = character:linegimilzadan3
-					this = character:linegimilzadanwife
+					this = character:lineagimilzadanwife
 					this = character:linegimilzadan1
 					this = character:linegimilethtwocustom2
                     this = root
@@ -4247,7 +4243,7 @@ gimilzir_events.773 = { # Catastrophic storm damage
 		add_character_flag = catastrophic_storm_damage
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 5
+			days = 20
 		}
 	}
 }
@@ -4296,6 +4292,16 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 			change_development_level = 3
 		}
 		get_title = title:d_ardinak
+		add_to_global_variable_list = {
+			name = unavailable_unique_event
+			target = flag:ud_gimilzir_gotten_to_tanturak
+		}
+		character:k_wastelands_holder = { #Post Settling Flavor 5 years
+			trigger_event = { id = gimilzir_events.7840 years = { 4 7 } }
+		}
+		character:k_wastelands_holder = { #Post Settling Flavor 20 years
+			trigger_event = { id = gimilzir_events.7850 years = { 17 24 } }
+		}
 	}
 
 	option = {
@@ -4329,13 +4335,13 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
-				change_development_level = 15
 				add_building = castle_03
 				add_building = windmills_02
 				add_building = barracks_02
 				add_building = common_tradeport_02
 			}
 			title:c_ardinak = { 
+				change_development_level = 15
 				add_county_modifier = {
 					modifier = gimilzir_ardinak_best
 					years = 25
@@ -4363,13 +4369,13 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
-				change_development_level = 10
 				add_building = curtain_walls_03
 				add_building = windmills_02
 				add_building = barracks_02
 				add_building = common_tradeport_02
 			}
 			title:c_ardinak = { 
+				change_development_level = 10
 				add_county_modifier = {
 					modifier = gimilzir_ardinak_good
 					years = 25
@@ -4400,13 +4406,13 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
-				change_development_level = 8
 				add_building = curtain_walls_02
 				add_building = windmills_02
 				add_building = barracks_01
 				add_building = common_tradeport_01
 			}
 			title:c_ardinak = { 
+				change_development_level = 8
 				add_county_modifier = {
 					modifier = gimilzir_ardinak_meh
 					years = 25
@@ -4437,7 +4443,6 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
-				change_development_level = 4
 				add_building = curtain_walls_01
 				add_building = windmills_01
 				add_building = barracks_01
@@ -4461,6 +4466,7 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
+				change_development_level = 4
 				set_holding_type = castle_holding
 				add_building = curtain_walls_01
 				add_building = common_tradeport_01
@@ -4519,14 +4525,16 @@ gimilzir_events.782 = { # Conquer Sarul Flavor Event  Talking about how people w
 		character = root
 		animation = marshal
 	}
-
-	option = {
-		name = gimilzir_events.782.a # What an Interesting development
-		custom_tooltip = gimilzir_tanturak_decision_enable
+	immediate = { 
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:enable_gimilzir_sarul_tanturak_decision
 		}
+	}
+
+	option = {
+		name = gimilzir_events.782.a # What an Interesting development
+		custom_tooltip = gimilzir_tanturak_decision_enable
 	}
 }
 
@@ -4566,13 +4574,13 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 			}
 			province:5832 = {
 				set_holding_type = castle_holding
-				change_development_level = 8
 				add_building = castle_03
 				add_building = windmills_02
 				add_building = barracks_02
 				add_building = common_tradeport_02
 			}
 			title:c_sarul = { 
+				change_development_level = 8
 				add_county_modifier = {
 					modifier = gimilzir_sarul_good
 					years = 25
@@ -4583,19 +4591,197 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 			add_gold = 1500
 			province:5832 = {
 				set_holding_type = castle_holding
-				change_development_level = 5
 				add_building = castle_02
 				add_building = windmills_01
 				add_building = barracks_01
 				add_building = common_tradeport_01
 			}
 			title:c_sarul = { 
+				change_development_level = 5
 				add_county_modifier = {
 					modifier = gimilzir_sarul_meh
 					years = 25
 				}
 			}
 		}
+		character:k_wastelands_holder = { #Post Settling Sarul Flavor 5 years
+			trigger_event = { id = gimilzir_events.7860 years = { 4 7 } }
+		}
+	}
+}
+
+gimilzir_events.7840 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		title:c_ardinak.holder.top_liege = { trigger_event = gimilzir_events.784 }
+	}
+}
+
+gimilzir_events.784 = { # Post Settle Flavor 5 Years
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.784.t
+	desc = gimilzir_events.784.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = gimilzir_events.784.a # What an Interesting development
+		title:c_ardinak = { 
+			add_county_modifier = { 
+				modifier = promote_culture_modifier
+				years = 20
+			}
+		}
+	}
+}
+
+gimilzir_events.7850 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		title:c_ardinak.holder.top_liege = { trigger_event = gimilzir_events.785 }
+	}
+}
+
+gimilzir_events.785 = { # Post Settling Flavor 20 Years
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.785.t
+	desc = gimilzir_events.785.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = toast
+	}
+
+
+	option = {
+		name = gimilzir_events.782.a # What an Interesting development
+		custom_tooltip = {
+			text = flourishing_culture_in_all_culture_faith_counties
+			every_county_in_region = {
+				region = special_azraphel_an_khar
+				limit = { 
+					culture = root.culture
+					faith = root.faith
+				}
+				add_county_modifier = { 
+					modifier = flourishing_culture_modifier
+					years = 25
+				}
+			}
+		}
+	}
+}
+
+gimilzir_events.7860 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		title:c_ardinak.holder.top_liege = { trigger_event = gimilzir_events.786 }
+	}
+}
+
+gimilzir_events.786 = { # Post Settle Sarul Flavor 5 Years
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.786.t
+	desc = gimilzir_events.786.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+
+	option = {
+		name = gimilzir_events.786.a # What an Interesting development
+		title:c_sarul = { 
+			add_county_modifier = { 
+				modifier = promote_culture_modifier
+				years = 20
+			}
+		}
+	}
+}
+
+gimilzir_events.7870 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		title:c_ardinak.holder.top_liege = { trigger_event = gimilzir_events.787 }
+	}
+}
+
+gimilzir_events.787 = { # Post MC Death Flavor
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.782.t
+	desc = gimilzir_events.782.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = grief
+	}
+	right_portrait = {
+		character = scope:relative
+		animation = crying
+	}
+	immediate = { 
+		##	scope:deceased_mc
+		random_close_family_member = {
+			limit = {
+				is_ai = yes
+				is_lotr_adult = yes
+			}
+			save_scope_as = relative
+		}
+	}
+
+	option = {
+		name = gimilzir_events.787.a # What an Interesting development
+		custom_tooltip = gimilzir_tanturak_statue_decision_enable
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:enable_gimilzir_tanturak_statue_enabled
+		}
+		create_legend_seed = {
+			type = holy
+			quality = illustrious
+			chronicle = saintly_deed
+			properties = {
+				ancestor = scope:deceased_mc
+				religion = root.religion
+			}
+		}
+	}
+}
+
+gimilzir_events.788 = { # Post Create Tanturak Kingdom
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.788.t
+	desc = gimilzir_events.788.desc
+	theme = crown
+	left_portrait = {
+		character = root
+		animation = personality_honorable  
+	}
+
+	option = {
+		name = gimilzir_events.788.a # What an Interesting development
+		add_prestige = 400
+		dynasty = { add_dynasty_prestige = 400 }
+		add_character_modifier = gimilzir_tanturak_refounder
+		remove_trait = depressed_genetic
 	}
 }
 

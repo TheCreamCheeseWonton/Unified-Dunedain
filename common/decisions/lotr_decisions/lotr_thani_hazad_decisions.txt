@@ -1609,6 +1609,7 @@ decision_invite_elves_suza_sumar = {
 	}
 }
 
+##Quonton
 decision_tanturak_search_ardinak = {#Search Ardinak for artifacts
 	ai_check_interval = 60
 	picture = {
@@ -1680,6 +1681,7 @@ decision_tanturak_search_ardinak = {#Search Ardinak for artifacts
 	}
 }
 
+##Quonton
 #Usakan Bay Hegemony
 decision_azraphel_an_khar = {
 	title = decision_azraphel_an_khar_title
@@ -1747,7 +1749,7 @@ decision_azraphel_an_khar = {
 				holder = { is_vassal_or_below_of = root }
 				holder = root
 			}
-			percent >= 0.25
+			percent >= 0.20
 		}
 	}
 	
@@ -1785,7 +1787,7 @@ decision_azraphel_an_khar = {
 					holder = { is_vassal_or_below_of = root }
 					holder = root
 				}
-				percent >= 0.70
+				percent >= 0.60
 			}
 		}
 	}
@@ -1887,4 +1889,104 @@ decision_azraphel_an_khar = {
 			target = flag:decision_azraphel_an_khar
 		}
 	}
+}
+
+#Quonton
+decision_tanturak_build_usakan_bay_citadels = {
+	title = decision_tanturak_build_usakan_bay_citadels
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_numenorean_haven.dds"
+	}
+	selection_tooltip = decision_tanturak_build_usakan_bay_citadels_tooltip
+	desc = decision_tanturak_build_usakan_bay_citadels_desc
+	confirm_text = decision_tanturak_build_usakan_bay_citadels_confirm
+
+	decision_group_type = realms_in_exile_major
+	
+	ai_goal = yes
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+
+	is_shown = {
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_tanturak_build_usakan_bay_citadels
+			}
+		}
+		culture = { 
+			OR = {
+				has_cultural_pillar = heritage_southern_adunaic 
+				has_cultural_pillar = heritage_eastern_adunaic 
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+		}
+		exists = capital_province
+		capital_province = {
+			geographical_region = special_azraphel_an_khar
+		}
+		any_county_in_region = {
+			region = special_azraphel_an_khar
+			OR = {
+				holder = { is_vassal_or_below_of = root }
+				holder = root
+			}
+			percent >= 0.10
+		}
+	}
+	
+	is_valid = {
+		prestige_level >= 4
+		piety_level >= 4
+		culture = { 
+			OR = {
+				has_cultural_pillar = heritage_southern_adunaic 
+				has_cultural_pillar = heritage_eastern_adunaic 
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+		}
+		completely_controls = title:c_tarango
+		completely_controls = title:c_toriar
+		completely_controls = title:c_kitusi
+		completely_controls = title:c_rurutori
+    }
+	
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+	
+	effect = {
+		add_prestige = 200
+		title:c_tarango.title_province = {
+			hidden_effect = { add_special_building_slot = wonder_usakan_citadels }
+			add_special_building = wonder_usakan_citadels
+		}
+		title:c_toriar.title_province = {
+			hidden_effect = { add_special_building_slot = wonder_usakan_citadels }
+			add_special_building = wonder_usakan_citadels
+		}
+		title:c_kitusi.title_province = {
+			hidden_effect = { add_special_building_slot = wonder_usakan_citadels }
+			add_special_building = wonder_usakan_citadels
+		}
+		title:c_rurutori.title_province = {
+			hidden_effect = { add_special_building_slot = wonder_usakan_citadels }
+			add_special_building = wonder_usakan_citadels
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_tanturak_build_usakan_bay_citadels
+		}
+	}
+	
+	cost = {
+		gold = 2000
+	}
+
 }

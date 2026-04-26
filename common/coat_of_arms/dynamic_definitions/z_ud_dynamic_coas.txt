@@ -1,0 +1,149 @@
+﻿###Pharazain
+
+h_pharazain = {
+	item = {
+		trigger = { OR = { has_global_variable = anbalkumagan_pharazain coa_switch_to_anbalukkhori_trigger = yes } }
+		coat_of_arms = h_pharazain_an_balkumagan
+	}
+	item = {
+		trigger = { OR = { has_global_variable = thani_hazad_pharazain coa_switch_to_kharadunai_trigger = yes } }
+		coat_of_arms = h_pharazain_thani_hazad
+	}
+}
+
+#Sakal an Khar#
+h_sakal_an_khar = {
+	item = {
+		trigger = { coa_switch_to_sauronic_trigger = yes }
+		coat_of_arms = h_sakal_an_khar_sauronic
+	}
+}
+
+#Usakan
+k_usakan = {
+	item = {
+		trigger = {coa_switch_to_elf_trigger = yes}
+		coat_of_arms = k_usakan_elf
+	}
+	item = {
+		trigger = {coa_switch_to_gobbo_trigger = yes}
+		coat_of_arms = k_usakan_orc
+	}
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = k_usakan_adunai
+	}
+}
+
+c_guishas = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_guishas_adunai
+	}
+}
+
+b_guishas = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_guishas_adunai
+	}
+}
+
+#Tanturak
+k_tanturak = {
+	item = {
+		trigger = {
+			coa_switch_to_adunai_trigger = yes
+			faith = { has_doctrine = tenet_adunaic_birthright }
+		}
+		coat_of_arms = k_tanturak_adunaic
+	}
+	item = {
+		trigger = {
+			coa_switch_to_adunai_trigger = yes
+			NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+		}
+		coat_of_arms = k_tanturak_adunaic_less_evil
+	}
+ 	item = {
+		trigger = { coa_switch_to_gobbo_trigger = yes }
+		coat_of_arms = k_tanturak_orc
+	}
+}
+
+c_azra_zhe = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_azra_chada_adunai
+	}
+}
+
+b_azra_chada = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_azra_chada_adunai
+	}
+}
+
+c_rathane = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_rathane_adunai
+	}
+}
+
+b_rathane = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_rathane_adunai
+	}
+}
+
+c_bata_an_sarul = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_bata_an_sarul_adunai
+	}
+}
+
+b_bata_an_sarul = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_bata_an_sarul_adunai
+	}
+}
+
+c_sarul = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_sarul_adunai
+	}
+}
+
+b_sarul = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_sarul_adunai
+	}
+}
+
+e_mag_tumag = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = e_mag_tumag_adunai
+	}
+}
+
+k_mag = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = k_mag_adunai
+	}
+}
+
+k_tumag = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = k_tumag_adunai
+	}
+}
