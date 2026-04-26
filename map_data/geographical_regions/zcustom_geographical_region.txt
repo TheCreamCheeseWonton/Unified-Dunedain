@@ -178,3 +178,25 @@ special_pharazain = { # The vague area of 'Pharazain'
 			d_pel d_barasi d_oshwari d_shanwo
 	}
 }
+
+special_azraphel_an_khar = {
+	regions = {
+		middleearth_uttersouth_usakan
+		middleearth_uttersouth_twinkingdoms
+		middleearth_uttersouth_mumakan_talilan
+		middleearth_uttersouth_mumakan_mulambur
+		middleearth_uttersouth_mumakan_hathor
+		middleearth_uttersouth_mumakan_koronande
+		
+	}
+}
+
+#Mîkazra-Zâin
+special_mikazra_zain = {
+	regions = {
+		middleearth_uttersouth_mumakan_talilan
+		middleearth_uttersouth_mumakan_mulambur
+		middleearth_uttersouth_mumakan_hathor
+		middleearth_uttersouth_mumakan_koronande
+	}
+}

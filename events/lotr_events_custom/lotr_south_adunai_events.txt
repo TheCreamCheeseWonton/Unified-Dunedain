@@ -192,6 +192,58 @@ south_adunai_events.4 = { # Tanturaki Reformation Flavor
 }
 
 
+
+south_adunai_events.10 = { # Search Ardinak
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.10.t
+	desc = south_adunai_events.10.desc
+	theme = legend
+	override_background = {
+      reference = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	option = {
+		name = south_adunai_events.10.a
+		trigger_event = {
+			id = south_adunai_events.11
+			days = 3
+		}
+	}
+	option = {
+		name = south_adunai_events.10.b
+		add_learning_lifestyle_xp = 800
+	}
+}
+
+south_adunai_events.11 = { # Find Artifacts
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.11.t
+	desc = south_adunai_events.11.desc
+	theme = crown
+	override_background = {
+		reference = wilderness_mountains
+	}
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	option = {
+		name = south_adunai_events.11.a
+		add_prestige = major_prestige_gain
+		add_martial_lifestyle_xp = major_lifestyle_experience
+		add_stewardship_lifestyle_xp = major_lifestyle_experience
+		add_diplomacy_lifestyle_xp = major_lifestyle_experience
+		create_artifact_lesser_ring_effect = { OWNER = this }
+		create_artifact_crown_of_tanturak_effect = { OWNER = this }
+	}
+}
+
+
 scripted_effect upgrade_baranagath = {
 	province:5321 = {
 		add_building = elven_forges_01

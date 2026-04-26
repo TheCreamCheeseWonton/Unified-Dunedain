@@ -13,9 +13,36 @@
 
 	# if a given character does not pass the "can_benefit" trigger then this modifier will be applied instead.
 	fallback = {
-		 prowess_no_portrait = 17
+		prowess_no_portrait = 17
 		monthly_prestige = 0.2
 		knight_effectiveness_mult = 0.05
+	}
+
+	ai_score = {
+		value = 100
+	}
+
+	unique = yes
+}
+
+crown_of_tanturak_template = {
+	can_equip = {
+		trigger_if = {
+			limit = {
+				has_ach_dlc_trigger = yes
+				coronation_proper_artifact_crown_trigger = yes
+				NOT = { scope:artifact = { category = court } }
+			}
+			NOT = { has_realm_law = uncrowned }
+		}
+	}
+	can_benefit = {
+		has_title = title:k_tanturak
+	}
+
+	fallback = {
+		monthly_dynasty_prestige_mult = 0.05
+		monthly_prestige = 1
 	}
 
 	ai_score = {

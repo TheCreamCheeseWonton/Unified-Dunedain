@@ -72,6 +72,8 @@ lotr_gimilzir_tanturak_contract_inzilloni = {
 					play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
 					add_prestige = 100
 					add_piety = 150
+					custom_tooltip = add_more_settlers_gimilzir
+					add_character_flag = contract_inzilloni_succeded
 				}
 			}
 		}
@@ -157,6 +159,8 @@ lotr_gimilzir_tanturak_contract_azarideth = {
 					play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
 					add_prestige = 100
 					add_piety = 150
+					custom_tooltip = add_more_settlers_gimilzir
+					add_character_flag = contract_azarideth_succeded
 				}
 			}
 		}
@@ -242,6 +246,8 @@ lotr_gimilzir_tanturak_contract_uruloni = {
 					play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
 					add_prestige = 100
 					add_piety = 150
+					custom_tooltip = add_more_settlers_gimilzir
+					add_character_flag = contract_uruloni_succeded
 				}
 			}
 		}
@@ -327,6 +333,8 @@ lotr_gimilzir_tanturak_contract_mispir = {
 					play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
 					add_prestige = 100
 					add_piety = 150
+					custom_tooltip = add_more_settlers_gimilzir
+					add_character_flag = contract_mispir_succeded
 				}
 			}
 		}
@@ -412,6 +420,8 @@ lotr_gimilzir_tanturak_contract_gimileth = {
 					play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
 					add_prestige = 100
 					add_piety = 150
+					custom_tooltip = add_more_settlers_gimilzir
+					add_character_flag = contract_gimileth_succeded
 				}
 			}
 		}
@@ -497,6 +507,8 @@ lotr_gimilzir_tanturak_contract_arpel = {
 					play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_success_on_contract"
 					add_prestige = 100
 					add_piety = 150
+					custom_tooltip = add_more_settlers_gimilzir
+					add_character_flag = contract_arpel_succeded
 				}
 			}
 		}

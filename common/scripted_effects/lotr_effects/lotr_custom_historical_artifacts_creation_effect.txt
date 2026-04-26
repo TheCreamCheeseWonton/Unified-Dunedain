@@ -492,3 +492,234 @@ create_artifact_uraumo_effect = {
 		
 	}
 }
+
+
+create_artifact_crown_of_tanturak_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = crown_of_tanturak_name
+		description = crown_of_tanturak_name
+		type = helmet
+		visuals = crown
+		wealth = scope:wealth
+		quality = scope:quality
+		template = crown_of_tanturak_template # Template is where you set restrictions on usability!
+		history = {
+			type = created
+			date = 3758.1.1
+			recipient = character:linearkinyarn2
+			location = province:5832
+		}
+		modifier = crown_of_tanturak_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact ?= {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = {
+			name = artifact_succession_title
+			value = title:k_tanturak
+		}
+		set_variable = relic 
+		save_scope_as = epic
+		
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3849.4.16
+			RECIPIENT = character:tanturakigovernor3 
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3861.2.11
+			RECIPIENT = character:tanturakigovernor4
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3913.8.2
+			RECIPIENT = character:linearkinyarn4
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 3915.1.19
+			RECIPIENT = character:linearkinyarn7
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4008.8.3
+			RECIPIENT = character:linearkinyarn11
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4113.4.5
+			RECIPIENT = character:linearkinyarn12
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4117.6.3
+			RECIPIENT = character:linearkinyarn13
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4200.9.21
+			RECIPIENT = character:linearkinyarn14
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4228.7.25
+			RECIPIENT = character:linearkinyarn15
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4229.2.1
+			RECIPIENT = character:linearkinyarnbastard4
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4271.10.2
+			RECIPIENT = character:linearkinyarnbastard5
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4424.12.11
+			RECIPIENT = character:linearkinyarnbastard6
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4458.5.5
+			RECIPIENT = character:linearkinyarnyoungbro8
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4480.4.25
+			RECIPIENT = character:linearkinyarnyoungbro10
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4564.7.2
+			RECIPIENT = character:linearkinyarnyoungbro11
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4649.1.27
+			RECIPIENT = character:linearkinyarnyoungbro12
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4665.10.15
+			RECIPIENT = character:linearkinyarn21
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4737.5.17
+			RECIPIENT = character:linearkinyarnyoungbro13
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4769.8.24
+			RECIPIENT = character:linearkinyarnyoungbro14
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4803.11.26
+			RECIPIENT = character:linearkinyarnyoungbro15
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4911.7.13
+			RECIPIENT = character:linearkinyarnbrothersecond14
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4972.10.18
+			RECIPIENT = character:linearkinyarnbrothersecond15
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4972.10.18
+			RECIPIENT = character:linearkinyarnbrothersecond16
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 4981.11.28
+			RECIPIENT = character:linearkinyarnyoungbro16
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5043.5.8
+			RECIPIENT = character:linearkinyarnyoungbro17
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5102.6.23
+			RECIPIENT = character:linearkinyarnbrotherthird13
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5183.12.12
+			RECIPIENT = character:linearkinyarnbrotherthird14
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5281.2.23
+			RECIPIENT = character:linearkinyarnbrotherthird15
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5284.4.15
+			RECIPIENT = character:linearkinyarnbrothersecond18
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5313.8.8
+			RECIPIENT = character:linearkinyarnbrotherthird16
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5375.4.15
+			RECIPIENT = character:linearkinyarnbrotherthird17
+		}
+		lotr_add_artifact_history = {
+			ARTIFACT = this
+			TYPE = inherited
+			DATE = 5381.6.18
+			RECIPIENT = character:linearkinyarnbrothersecond20
+		}
+	}
+}

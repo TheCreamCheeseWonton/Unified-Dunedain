@@ -94,10 +94,10 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 	
 	option = {
 		name = gimilzir_events.4.a
-		add_to_global_variable_list = {
-			name = available_unique_decisions
-			target = flag:gimilzir_an_balkumagan_path
-		}
+		#add_to_global_variable_list = {
+		#	name = unavailable_unique_decisions
+		#	target = flag:gimilzir_an_balkumagan_path
+		#}
 		custom_tooltip = choose_gimilzir_path_tt_1
 		add_character_flag = gimilzir_path_chooser
 		trigger_event = gimilzir_events.5
@@ -105,10 +105,10 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 	
 	option = {
 		name = gimilzir_events.4.b
-		add_to_global_variable_list = {
-			name = available_unique_decisions
-			target = flag:gimilzir_pel_path
-		}
+		#add_to_global_variable_list = {
+		#	name = unavailable_unique_decisions
+		#	target = flag:gimilzir_pel_path
+		#}
 		custom_tooltip = choose_gimilzir_path_tt_2
 		add_character_flag = gimilzir_path_chooser
 		trigger_event = gimilzir_events.6
@@ -117,7 +117,7 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 	option = {
 		name = gimilzir_events.4.c
 		add_to_global_variable_list = {
-			name = available_unique_decisions
+			name = unavailable_unique_decisions
 			target = flag:gimilzir_tanturak_path
 		}
 		custom_tooltip = choose_gimilzir_path_tt_3
@@ -127,10 +127,10 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 	
 	option = {
 		name = gimilzir_events.4.d
-		add_to_global_variable_list = {
-			name = available_unique_decisions
-			target = flag:gimilzir_wanderer_path
-		}
+	#	add_to_global_variable_list = {
+	#		name = unavailable_unique_decisions
+	#		target = flag:gimilzir_wanderer_path
+	#	}
 		custom_tooltip = choose_gimilzir_path_tt_4
 		add_character_flag = gimilzir_path_chooser
 		add_gold = 2500
@@ -3619,11 +3619,11 @@ gimilzir_events.765 = { # Arpel Sailing beginning
 	}
 	
 	option = { # Start Sailing
-		name = gimilzir_events.755.a
-		custom_tooltip = umbar.0103.a.tt
-		add_character_flag = aa_go_to_tharbad
+		name = gimilzir_events.765.a
+		custom_tooltip = gimilzir_events.765.a.tt
+		add_character_flag = gimilzir_go_to_sarul
 		trigger_event = {
-			id = umbar.0104
+			id = gimilzir_events.767
 			days = 7
 		}
 	}
@@ -3632,8 +3632,8 @@ gimilzir_events.765 = { # Arpel Sailing beginning
 gimilzir_events.766 = { # Arpel Sailing beginning Worst Outcome 
 	content_source = realms_dlc
 	type = character_event
-	title = gimilzir_events.765.t
-	desc = ugimilzir_events.765.desc
+	title = gimilzir_events.766.t
+	desc = ugimilzir_events.766.desc
 	theme = sailing_activity
 	override_background = { reference = docks }
 	left_portrait = {
@@ -3642,24 +3642,24 @@ gimilzir_events.766 = { # Arpel Sailing beginning Worst Outcome
 	}
 	
 	option = { # Start Sailing
-		name = gimilzir_events.755.a
-		custom_tooltip = umbar.0103.a.tt
-		add_character_flag = aa_go_to_tharbad_bad
+		name = gimilzir_events.766.a
+		custom_tooltip = gimilzir_events.766.a.tt
+		add_character_flag = gimilzir_go_to_sarul_bad
 		add_prestige = -300
 		remove_reserved_gold = 300
 		trigger_event = {
-			id = umbar.0104
+			id = gimilzir_events.767
 			days = 7
 		}
 	}
 }
 
 
-umbar.0104 = { # Depart Anagzayan for Tharbad/Ardinâk
+gimilzir_events.767 = { # Depart Arpel for Tanturak
 	content_source = realms_dlc
 	type = character_event
-	title = umbar.0104.t
-	desc = umbar.0104.desc
+	title = gimilzir_events.767.t
+	desc = gimilzir_events.767.desc
 	theme = sailing_activity
 	override_background = {
 		reference = docks_adunai
@@ -3673,19 +3673,29 @@ umbar.0104 = { # Depart Anagzayan for Tharbad/Ardinâk
 	}
 
 	option = {
-		name = umbar.0104.a # Set sail
+		name = gimilzir_events.767.a # Set sail
 		trigger_event = {
-			id = umbar.0105
-			days = 30
+			id = gimilzir_events.768
+			days = 60
+		}
+		custom_tooltip = gimilzir_events.767.tt
+		start_travel_plan = {
+			destination = title:c_ardinak.title_province
+			travel_with_domicile = yes
+			players_use_planner = no
+
+			return_trip = no
+
+			on_arrival_event = gimilzir_events.780
 		}
 	}
 }
 
-umbar.0105 = { # At sea
+gimilzir_events.768 = { # At sea
 	content_source = realms_dlc
 	type = character_event
-	title = umbar.0105.t
-	desc = umbar.0105.desc
+	title = gimilzir_events.768.t
+	desc = gimilzir_events.768.desc
 	theme = sailing_activity
 	override_background = {
 		reference = ocean
@@ -3696,20 +3706,20 @@ umbar.0105 = { # At sea
 	}
 
 	option = {
-		name = umbar.0105.a # Brave the storm
-		custom_tooltip = umbar.0105.a.tt
+		name = gimilzir_events.768.a # Brave the storm
+		custom_tooltip = gimilzir_events.768.a.tt
 		trigger_event = {
-			id = umbar.0106
-			days = 5
+			id = gimilzir_events.769
+			days = 7
 		}
 	}
 }
 
-umbar.0106 = { # A storm!
+gimilzir_events.769 = { # A storm!
 	content_source = realms_dlc
 	type = character_event
-	title = umbar.0106.t
-	desc = umbar.0106.desc
+	title = gimilzir_events.769.t
+	desc = gimilzir_events.769.desc
 	theme = sailing_activity
 	override_background = {
 		reference = ocean
@@ -3727,38 +3737,346 @@ umbar.0106 = { # A storm!
 			container = "foreground_shader_vfx_container"
 		}
 	}
-	option = {
-		name = umbar.0106.a
-		hidden_effect = {
-			random_list = {
-				35 = {
-					trigger_event = { # Moderate damage
-						id = umbar.0107
-						days = 5
+	
+	option = { # Bring the men in line - morale broken
+		name = gimilzir_events.769.a
+		trigger = { 
+			has_character_flag = gimilzir_go_to_sarul
+		}
+		duel = {
+			skill = martial
+			value = 24
+			70 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread > 30
+				}
+				modifier = {
+					add = 10
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 50
+						value < 100
 					}
 				}
-				35 = {
-					trigger_event = { # Severe damage
-						id = umbar.0108
-						days = 5
+				modifier = {
+					add = 20
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 100
 					}
 				}
-				15 = {
-					trigger_event = { # Catastrophic damage/Ulmo intervention
-						id = umbar.0109
-						days = 5
-					}
+				modifier = {
+					add = 20
+					has_trait = logistician
+				}
+				modifier = {
+					add = 10
+					has_trait = diplomat
+				}
+				desc = gimilzir_events.769.a.success
+				custom_tooltip = gimilzir_events.769.a.success.tt
+				trigger_event = { # No Damage
+					id = gimilzir_events.770
+					days = 5
 				}
 			}
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread > 30
+				}
+				modifier = {
+					add = 10
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 50
+						value < 100
+					}
+				}
+				modifier = {
+					add = 20
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 100
+					}
+				}
+				modifier = {
+					add = 20
+					has_trait = logistician
+				}
+				desc = gimilzir_events.769.b.success
+				custom_tooltip = gimilzir_events.769.b.success.tt
+				trigger_event = { # Moderate damage
+					id = gimilzir_events.771
+					days = 5
+				}
+			}
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread < 10
+				}
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = gluttonous
+				}
+				desc = gimilzir_events.769.a.failure
+				custom_tooltip = gimilzir_events.769.a.failure.tt
+				trigger_event = {
+					id = gimilzir_events.772
+					days = 1
+				}
+			}
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread < 10
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = gluttonous
+				}
+				desc = gimilzir_events.769.b.failure
+				custom_tooltip = gimilzir_events.769.b.failure.tt
+				trigger_event = {
+					id = gimilzir_events.773
+					days = 1
+				}
+			}
+		}
+		custom_tooltip = gimilzir_events.769.a.positive.odds
+		custom_tooltip = gimilzir_events.769.a.negative.odds
+	}
+
+	option = { # Bring the men in line - morale broken
+		name = gimilzir_events.769.b
+		trigger = { 
+			has_character_flag = gimilzir_go_to_sarul_bad
+		}
+		duel = {
+			skill = martial
+			value = 32
+			20 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread > 30
+				}
+				modifier = {
+					add = 10
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 50
+						value < 100
+					}
+				}
+				modifier = {
+					add = 20
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 100
+					}
+				}
+				modifier = {
+					add = 20
+					has_trait = logistician
+				}
+				modifier = {
+					add = 10
+					has_trait = diplomat
+				}
+				desc = gimilzir_events.769.a.success
+				custom_tooltip = gimilzir_events.769.a.success.tt
+				trigger_event = { # No Damage
+					id = gimilzir_events.770
+					days = 5
+				}
+			}
+			40 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread > 30
+				}
+				modifier = {
+					add = 10
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 50
+						value < 100
+					}
+				}
+				modifier = {
+					add = 20
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 100
+					}
+				}
+				modifier = {
+					add = 20
+					has_trait = logistician
+				}
+				modifier = {
+					add = 10
+					has_trait = diplomat
+				}
+				desc = gimilzir_events.769.b.success
+				custom_tooltip = gimilzir_events.769.b.success.tt
+				trigger_event = { # Moderate damage
+					id = gimilzir_events.771
+					days = 5
+				}
+			}
+			60 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread < 10
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = gluttonous
+				}
+				desc = gimilzir_events.769.a.failure
+				custom_tooltip = gimilzir_events.769.a.failure.tt
+				trigger_event = {
+					id = gimilzir_events.772
+					days = 1
+				}
+			}
+			80 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -3.5
+					min = -49
+				}
+				modifier = {
+					add = 10
+					dread < 10
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = gluttonous
+				}
+				desc = gimilzir_events.769.b.failure
+				custom_tooltip = gimilzir_events.769.b.failure.tt
+				trigger_event = {
+					id = gimilzir_events.773
+					days = 1
+				}
+			}
+		}
+		custom_tooltip = gimilzir_events.769.a.positive.odds
+		custom_tooltip = gimilzir_events.769.a.negative.odds
+	}
+}
+
+gimilzir_events.770 = { # No damage storm damage
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.770.t
+	desc = gimilzir_events.770.desc
+	theme = sailing_activity
+	override_background = {
+		reference = ocean
+	}
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	option = {
+		name = gimilzir_events.770.a # Land ahead!
+		trigger_event = {
+			id = gimilzir_events.774
+			days = 5
 		}
 	}
 }
 
-umbar.0107 = { # Moderate storm damage
+gimilzir_events.771 = { # Moderate storm damage
 	content_source = realms_dlc
 	type = character_event
-	title = umbar.0107.t
-	desc = umbar.0107.desc
+	title = gimilzir_events.771.t
+	desc = gimilzir_events.771.desc
 	theme = sailing_activity
 	override_background = {
 		reference = ocean
@@ -3771,7 +4089,10 @@ umbar.0107 = { # Moderate storm damage
         every_courtier_or_guest = {
             limit = {
                 NOR = {
-                    this = character:linepharazon8
+                    this = character:linegimilzadan3
+					this = character:linegimilzadanwife
+					this = character:linegimilzadan1
+					this = character:linegimilethtwocustom2
                     this = root
                 }
             }
@@ -3785,37 +4106,21 @@ umbar.0107 = { # Moderate storm damage
     }
 
 	option = {
-		name = umbar.0107.a # Land ahead!
-		trigger = { NOT = { has_character_flag = aa_go_to_ardinak } }
+		name = gimilzir_events.771.a # Land ahead!
+		custom_tooltip = settlers_damaged_gimilzir
 		add_character_flag = moderate_storm_damage
 		trigger_event = {
-			id = umbar.0110
+			id = gimilzir_events.774
 			days = 5
-		}
-	}
-	option = {
-		name = umbar.0107.b # Land ahead - Ardinak
-		trigger = { has_character_flag = aa_go_to_ardinak }
-		add_character_flag = moderate_storm_damage
-		trigger_event = {
-			id = umbar.0114
-			days = 5
-		}
-	}
-
-	after = {
-		trigger_event = {
-			id = umbar.0150 # Arphazêl's Flight
-			months = 5
 		}
 	}
 }
 
-umbar.0108 = { # Severe storm damage
+gimilzir_events.772 = { # Severe storm damage
 	content_source = realms_dlc
 	type = character_event
-	title = umbar.0108.t
-	desc = umbar.0108.desc
+	title = gimilzir_events.772.t
+	desc = gimilzir_events.772.desc
 	theme = sailing_activity
 	override_background = {
 		reference = ocean
@@ -3828,7 +4133,10 @@ umbar.0108 = { # Severe storm damage
 		every_courtier_or_guest = {
             limit = {
                 NOR = {
-                    this = character:linepharazon8
+                    this = character:linegimilzadan3
+					this = character:lineagimilzadanwife
+					this = character:linegimilzadan1
+					this = character:linegimilethtwocustom2
                     this = root
                 }
             }
@@ -3842,37 +4150,21 @@ umbar.0108 = { # Severe storm damage
 	}
 
 	option = {
-		name = umbar.0108.a # Land ahead!
-		trigger = { NOT = { has_character_flag = aa_go_to_ardinak } }
+		name = gimilzir_events.772.a # Land ahead!
+		custom_tooltip = settlers_damaged_gimilzir_greater
 		add_character_flag = severe_storm_damage
 		trigger_event = {
-			id = umbar.0110
+			id = gimilzir_events.774
 			days = 5
-		}
-	}
-	option = {
-		name = umbar.0108.b # Land ahead - Ardinak
-		trigger = { has_character_flag = aa_go_to_ardinak }
-		add_character_flag = severe_storm_damage
-		trigger_event = {
-			id = umbar.0114
-			days = 5
-		}
-	}
-
-	after = {
-		trigger_event = {
-			id = umbar.0150 # Arphazêl's Flight
-			months = 5
 		}
 	}
 }
 
-umbar.0109 = { # Catastrophic storm damage
+gimilzir_events.773 = { # Catastrophic storm damage
 	content_source = realms_dlc
 	type = character_event
-	title = umbar.0109.t
-	desc = umbar.0109.desc
+	title = gimilzir_events.773.t
+	desc = gimilzir_events.773.desc
 	theme = sailing_activity
 	override_background = {
 		reference = ocean
@@ -3885,7 +4177,10 @@ umbar.0109 = { # Catastrophic storm damage
 		every_courtier_or_guest = {
             limit = {
                 NOR = {
-                    this = character:linepharazon8
+                    this = character:linegimilzadan3
+					this = character:linegimilzadanwife
+					this = character:linegimilzadan1
+					this = character:linegimilethtwocustom2
                     this = root
                 }
             }
@@ -3899,187 +4194,406 @@ umbar.0109 = { # Catastrophic storm damage
 	}
 
 	option = {
-		name = umbar.0109.a # Land ahead!
-		trigger = { NOT = { has_character_flag = aa_go_to_ardinak } }
-		character:linepharazon8 = {
-			save_scope_as = adunaim_witch
+		name = gimilzir_events.773.a # Land ahead!
+		trigger = { 
+			character:linegimilzadan1 = { 
+				is_alive = yes
+			}
+		}
+		character:linegimilzadan3 = {
+			save_scope_as = gimilzir_sister
 		}
 		root = {
-			save_scope_as = gimilkhad
+			save_scope_as = gimilzir_mc
 		}
-		scope:adunaim_witch = {
+		scope:gimilzir_sister = {
 			create_title_and_vassal_change = {
 				type = granted
 				save_scope_as = change
 				add_claim_on_loss = no
 			}
-			scope:gimilkhad = {
+			scope:gimilzir_mc = {
 				every_held_title = {
-					limit = { tier >= tier_county }
 					change_title_holder = {
-						holder = scope:adunaim_witch
+						holder = scope:gimilzir_sister
 						change = scope:change
 					}
 				}
 			}
 			resolve_title_and_vassal_change = scope:change
+			custom_tooltip = settlers_damaged_catastrophic
 			add_character_flag = catastrophic_storm_damage
 			trigger_event = {
-				id = umbar.0110
+				id = gimilzir_events.774
 				days = 5
 			}
 		}
-		set_player_character = scope:adunaim_witch
+		set_player_character = scope:gimilzir_sister
 		death = {
 			death_reason = death_drowned
 		}
 	}
+	
 	option = {
-		name = umbar.0109.b # Land ahead - Ardinak
-		trigger = { has_character_flag = aa_go_to_ardinak }
-		character:linepharazon8 = {
-			save_scope_as = adunaim_witch
-		}
-		root = {
-			save_scope_as = gimilkhad
-		}
-		scope:adunaim_witch = {
-			create_title_and_vassal_change = {
-				type = granted
-				save_scope_as = change
-				add_claim_on_loss = no
-			}
-			scope:gimilkhad = {
-				every_held_title = {
-					limit = { tier >= tier_county }
-					change_title_holder = {
-						holder = scope:adunaim_witch
-						change = scope:change
-					}
+		name = gimilzir_events.773.a # Land ahead!
+		trigger = { 
+			NOT = { 
+				character:linegimilzadan1 = { 
+					is_alive = yes
 				}
 			}
-			resolve_title_and_vassal_change = scope:change
-			add_character_flag = catastrophic_storm_damage
-			trigger_event = {
-				id = umbar.0114
-				days = 5
-			}
 		}
-		set_player_character = scope:adunaim_witch
-		death = {
-			death_reason = death_drowned
+		custom_tooltip = settlers_damaged_catastrophic
+		add_character_flag = catastrophic_storm_damage
+		trigger_event = {
+			id = gimilzir_events.774
+			days = 5
 		}
 	}
 }
 
-umbar.0110 = { # Arrives at Tharbad - Complete
+gimilzir_events.774 = { # Flavor Event for entering Usakan Bay
 	content_source = realms_dlc
 	type = character_event
-	title = umbar.0110.t
-	desc = umbar.0110.desc
+	title = gimilzir_events.774.t
+	desc = gimilzir_events.774.desc
+	theme = sailing_activity
+	override_background = {
+		reference = ocean
+	}
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+
+	option = {
+		name = gimilzir_events.774.a # The Bay will be our new home!
+	}
+}
+
+gimilzir_events.780 = { # Arrives at Tanturak - Complete
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.780.t
+	desc = gimilzir_events.780.desc
 	theme = sailing_activity
 	override_background = {
 		reference = docks
 	}
 	left_portrait = {
 		character = root
-		animation = anger
+		animation = survey
 	}
 	immediate = {
 		play_music_cue = "mx_cue_combat_2"
-		title:c_tol_uialgaer = {
-			save_scope_as = targeted_county
+		province:5852 = {
+			set_holding_type = castle_holding
 		}
-		get_title = title:c_tharbad
-		title:c_tharbad = {
+		get_title = title:c_ardinak
+		title:c_ardinak = {
 			set_county_faith = root.faith
 			set_county_culture = root.culture
-			change_development_level = 7
+			change_development_level = 3
 		}
-		destroy_title = title:d_tol_uialgaer
-		make_settlement_county_wilderness = { COUNTY = scope:targeted_county }
-		scope:targeted_county.title_province = { add_building = pirate_remnants }
+		get_title = title:d_ardinak
 	}
 
 	option = {
-		name = umbar.0110.a
+		name = gimilzir_events.780.a
+		trigger_event = {
+			id = gimilzir_events.781
+			months = { 1 5 }
+		}
 		if = {
 			limit = {
-				has_character_flag = moderate_storm_damage
+				number_of_succeded_contracts_gimilzir_tanturak >= 6
 			}
-			add_gold = 600
+			add_gold = 2000
 			spawn_army = {
 				uses_supply = no
 				inheritable = yes
-				name = ar_ardunaim_event_settlers
+				name = gimilzir_event_settlers
 				levies = 2000
 				men_at_arms = {
-					type = adunaim_armsmen
+					type = knights_of_kharadune
+					stacks = 1
+				}
+				men_at_arms = {
+					type = zagar_an_adunai
 					stacks = 2
 				}
 				men_at_arms = {
-					type = abrazanim_warbows
+					type = ephalzagar_an_adunai
 					stacks = 2
 				}
-				location = province:4537
+				location = province:5852
 			}
-			province:4537 = {
-				set_holding_type = castle_holding
-				add_building = castle_02
+			province:5852 = {
+				change_development_level = 15
+				add_building = castle_03
 				add_building = windmills_02
-				add_building = common_tradeport_01
+				add_building = barracks_02
+				add_building = common_tradeport_02
+			}
+			title:c_ardinak = { 
+				add_county_modifier = {
+					modifier = gimilzir_ardinak_best
+					years = 25
+				}
 			}
 		}
 		else_if = {
 			limit = {
-				has_character_flag = severe_storm_damage
+				number_of_succeded_contracts_gimilzir_tanturak = 5
 			}
-			add_gold = 400
+			add_gold = 1500
 			spawn_army = {
 				uses_supply = no
 				inheritable = yes
-				name = ar_ardunaim_event_settlers
-				levies = 1000
+				name = gimilzir_event_settlers
+				levies = 2000
 				men_at_arms = {
-					type = adunaim_armsmen
-					stacks = 1
+					type = zagar_an_adunai
+					stacks = 2
 				}
 				men_at_arms = {
-					type = abrazanim_warbows
-					stacks = 1
+					type = ephalzagar_an_adunai
+					stacks = 2
 				}
-				location = province:4537
+				location = province:5852
 			}
-			province:4537 = {
-				set_holding_type = castle_holding
-				add_building = castle_02
+			province:5852 = {
+				change_development_level = 10
+				add_building = curtain_walls_03
+				add_building = windmills_02
+				add_building = barracks_02
+				add_building = common_tradeport_02
+			}
+			title:c_ardinak = { 
+				add_county_modifier = {
+					modifier = gimilzir_ardinak_good
+					years = 25
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				AND = { 
+					number_of_succeded_contracts_gimilzir_tanturak >= 3
+					number_of_succeded_contracts_gimilzir_tanturak < 5
+				}
+			}
+			add_gold = 1000
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = gimilzir_event_settlers
+				levies = 1500
+				men_at_arms = {
+					type = zagar_an_adunai
+					stacks = 1
+				}
+				men_at_arms = {
+					type = ephalzagar_an_adunai
+					stacks = 1
+				}
+				location = province:5852
+			}
+			province:5852 = {
+				change_development_level = 8
+				add_building = curtain_walls_02
+				add_building = windmills_02
+				add_building = barracks_01
+				add_building = common_tradeport_01
+			}
+			title:c_ardinak = { 
+				add_county_modifier = {
+					modifier = gimilzir_ardinak_meh
+					years = 25
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				AND = { 
+					number_of_succeded_contracts_gimilzir_tanturak >= 1
+					number_of_succeded_contracts_gimilzir_tanturak < 3
+				}
+			}
+			add_gold = 500
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = gimilzir_event_settlers
+				levies = 500
+				men_at_arms = {
+					type = zagar_an_adunai
+					stacks = 1
+				}
+				men_at_arms = {
+					type = ephalzagar_an_adunai
+					stacks = 1
+				}
+				location = province:5852
+			}
+			province:5852 = {
+				change_development_level = 4
+				add_building = curtain_walls_01
 				add_building = windmills_01
+				add_building = barracks_01
 				add_building = common_tradeport_01
 			}
 		}
 		else_if = {
 			limit = {
-				has_character_flag = catastrophic_storm_damage
+				number_of_succeded_contracts_gimilzir_tanturak < 1
 			}
 			add_gold = 200
 			spawn_army = {
 				uses_supply = no
 				inheritable = yes
-				name = ar_ardunaim_event_settlers
+				name = gimilzir_event_settlers
 				levies = 250
 				men_at_arms = {
-					type = adunaim_armsmen
+					type = zagar_an_adunai
 					stacks = 1
 				}
-				location = province:4537
+				location = province:5852
 			}
-			province:4537 = {
+			province:5852 = {
 				set_holding_type = castle_holding
-				add_building = castle_02
+				add_building = curtain_walls_01
 				add_building = common_tradeport_01
 			}
-			hidden_effect = {
-				add_stress = -300
+		}
+	}
+}
+
+gimilzir_events.781 = { # Flavor Event for after settling down, talking about how your settlers ask for more/new lands
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.781.t
+	desc = gimilzir_events.781.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = {
+		name = gimilzir_events.781.a # We need Lebensrealm
+		add_prestige = -250
+		add_unpressed_claim = title:k_tanturak
+		add_unpressed_claim = title:d_tanturak
+		add_unpressed_claim = title:c_sarul
+		add_character_modifier = { 
+			modifier = gimilzir_ardinak_military
+			years = 30
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.781.b # Naaa Nazi
+		add_prestige = -250
+		add_unpressed_claim = title:k_tanturak
+		add_unpressed_claim = title:d_tanturak
+		add_unpressed_claim = title:c_sarul
+		add_character_modifier = { 
+			modifier = gimilzir_ardinak_diplomacy
+			years = 30
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.781.c #Im lazy and like my island
+	}
+}
+
+gimilzir_events.782 = { # Conquer Sarul Flavor Event  Talking about how people want to settle there but you need to rebuild the city first
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.782.t
+	desc = gimilzir_events.782.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+
+	option = {
+		name = gimilzir_events.782.a # What an Interesting development
+		custom_tooltip = gimilzir_tanturak_decision_enable
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:enable_gimilzir_sarul_tanturak_decision
+		}
+	}
+}
+
+gimilzir_events.783 = { # Post Rebuild Sarul event
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.783.t
+	desc = gimilzir_events.783.desc
+	theme = crown
+	override_background = {
+		reference = courtyard
+	}
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	immediate = {
+		title:c_sarul = {
+			set_county_faith = root.faith
+			set_county_culture = root.culture
+			change_development_level = 3
+		}
+		title:c_ardinak = {
+			change_development_level = -3
+		}
+	}
+
+	option = {
+		name = gimilzir_events.783.a
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:enable_gimilzir_tanturak_culture_decision
+		}
+		if = {
+			limit = {
+				number_of_succeded_contracts_gimilzir_tanturak >= 6
+			}
+			province:5832 = {
+				set_holding_type = castle_holding
+				change_development_level = 8
+				add_building = castle_03
+				add_building = windmills_02
+				add_building = barracks_02
+				add_building = common_tradeport_02
+			}
+			title:c_sarul = { 
+				add_county_modifier = {
+					modifier = gimilzir_sarul_good
+					years = 25
+				}
+			}
+		}
+		else = {
+			add_gold = 1500
+			province:5832 = {
+				set_holding_type = castle_holding
+				change_development_level = 5
+				add_building = castle_02
+				add_building = windmills_01
+				add_building = barracks_01
+				add_building = common_tradeport_01
+			}
+			title:c_sarul = { 
+				add_county_modifier = {
+					modifier = gimilzir_sarul_meh
+					years = 25
+				}
 			}
 		}
 	}

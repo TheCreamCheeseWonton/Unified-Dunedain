@@ -460,3 +460,59 @@ elves_in_thani_hazad_bozisha_dar = {
 	build_gold_cost = -0.2
 	epidemic_resistance = 10
 }
+
+gimilzir_ardinak_best = { 
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.4
+	build_speed = -0.2
+	build_gold_cost = -0.2
+	tax_mult = 0.5
+	levy_size = 0.5
+}
+
+gimilzir_ardinak_good = { 
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.2
+	build_speed = -0.1
+	build_gold_cost = -0.1
+	tax_mult = 0.25
+	levy_size = 0.25
+}
+
+gimilzir_sarul_good = { 
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.2
+	build_speed = -0.1
+	build_gold_cost = -0.1
+	tax_mult = 0.25
+	levy_size = 0.25
+}
+
+gimilzir_sarul_meh = { 
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.1
+	tax_mult = 0.1
+	levy_size = 0.1
+}
+
+gimilzir_ardinak_meh = { 
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.1
+	tax_mult = 0.1
+	levy_size = 0.1
+}
+
+gimilzir_ardinak_military = { 
+	icon = diplomacy_positive
+	mercenary_hire_cost_mult = -0.1
+	holy_order_hire_cost_mult = -0.1
+	martial = 1
+}
+
+gimilzir_ardinak_diplomacy = { 
+	icon = diplomacy_positive
+	cultural_acceptance_gain_mult = 0.1
+	diplomacy = 2
+	opinion_of_different_culture = 20
+	different_culture_opinion = 20
+}

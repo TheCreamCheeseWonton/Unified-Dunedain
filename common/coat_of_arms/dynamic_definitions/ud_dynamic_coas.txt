@@ -10,3 +10,11 @@ h_pharazain = {
 		coat_of_arms = h_pharazain_thani_hazad
 	}
 }
+
+#Sakal an Khar#
+h_sakal_an_khar = {
+	item = {
+		trigger = { coa_switch_to_sauronic_trigger = yes }
+		coat_of_arms = h_sakal_an_khar_sauronic
+	}
+}

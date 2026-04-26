@@ -44,3 +44,61 @@ number_of_north_adunaic_culture_provinces = {
     }
 }
 
+number_of_succeded_contracts_gimilzir_tanturak = {
+    value = 0
+
+	if = {
+        limit = { 
+			has_character_flag = contract_inzilloni_succeded
+		}
+		add = 1
+    }
+	if = {
+        limit = { 
+			has_character_flag = contract_azarideth_succeded
+		}
+		add = 1
+    }
+	if = {
+        limit = { 
+			has_character_flag = contract_uruloni_succeded
+		}
+		add = 1
+    }
+	if = {
+        limit = { 
+			has_character_flag = contract_mispir_succeded
+		}
+		add = 1
+    }
+	if = {
+        limit = { 
+			has_character_flag = contract_gimileth_succeded
+		}
+		add = 1
+    }
+	if = {
+        limit = { 
+			has_character_flag = contract_arpel_succeded
+		}
+		add = 1
+    }
+	if = {
+        limit = { 
+			has_character_flag = moderate_storm_damage
+		}
+		add = -1
+    }
+	if = {
+        limit = { 
+			has_character_flag = severe_storm_damage
+		}
+		add = -2
+    }
+	if = {
+        limit = { 
+			has_character_flag = catastrophic_storm_damage
+		}
+		add = -4
+    }
+} 

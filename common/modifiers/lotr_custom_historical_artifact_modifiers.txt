@@ -38,3 +38,10 @@ uraumo_modifier = {
 	tolerance_advantage_mod = 4
 }
 #########
+
+crown_of_tanturak_modifier = {
+    monthly_dynasty_prestige_mult = 0.05
+    monthly_prestige = 1
+    vassal_limit = 10
+    domain_limit = 1
+}
