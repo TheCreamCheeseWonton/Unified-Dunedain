@@ -1030,6 +1030,59 @@ empire_feudal_adunaic = {
 	priority = 900
 }
 
+##Quonton
+hegemon_feudal_male_adunaic = {
+	type = character
+	gender = male
+	special = holder
+	tier = hegemony
+	priority = 900
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = no
+	}
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
+}
+hegemon_feudal_female_adunaic = {
+	type = character
+	gender = female
+	special = holder
+	tier = hegemony
+	priority = 755
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = yes
+	}
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
+}
+hegemon_feudal_female_adunaic_nonholder = {
+	type = character
+	gender = female
+	special = holder
+	tier = hegemony
+	priority = 800
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = no
+	}
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai }
+}
+
+hegemon_feudal_adunaic = {
+	type = title
+	tier = hegemony
+	flavourization_rules = { 
+		top_liege = no
+		only_holder = yes
+	}
+	heritages = { heritage_northern_adunaic heritage_southern_adunaic heritage_bellakari heritage_unified_adunaic heritage_tulwangi heritage_thani_native }
+	name_lists = { name_list_adunaic name_list_bellakaze name_list_south_adunaic name_list_kharadunai name_list_umbarean }
+	priority = 900
+}
+
 emperor_feudal_male_adunaic_bellakar = {
 	type = character
 	gender = male

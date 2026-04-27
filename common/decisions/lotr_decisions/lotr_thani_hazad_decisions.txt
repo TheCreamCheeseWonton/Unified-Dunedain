@@ -1636,6 +1636,7 @@ decision_tanturak_search_ardinak = {#Search Ardinak for artifacts
 	
 	is_valid = { 		
 		has_title = title:c_ardinak
+		has_title = title:d_ardinak
 		title:c_ardinak = {
 			title_province = {
 				has_building = wonder_ardinak_02
@@ -1686,7 +1687,7 @@ decision_tanturak_search_ardinak = {#Search Ardinak for artifacts
 decision_azraphel_an_khar = {
 	title = decision_azraphel_an_khar_title
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_control_trade_in_the_bay_of_ormal.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_adunai_02.dds"
 	}
 	sort_order = 1000
 	
@@ -1774,7 +1775,7 @@ decision_azraphel_an_khar = {
 			text = decision_azraphel_an_khar_trigger.tt_1
 			any_county_in_region = {
 				region = special_azraphel_an_khar
-				percent >= 0.10
+				percent >= 0.15
 				culture = root.culture
 				faith = root.faith
 			}
@@ -1800,6 +1801,10 @@ decision_azraphel_an_khar = {
 	
 	cost = {
 		gold = 500 
+	}
+	
+	hidden_effect = {
+		title:e_usakan = { set_capital_county = title:c_sarul }
 	}
 	
 	effect = {
@@ -1830,7 +1835,6 @@ decision_azraphel_an_khar = {
 			}
 		}
 		resolve_title_and_vassal_change = scope:title_change
-		set_primary_title_to = title:e_mikazra_zain
 
 		# Switch the de jure
 		every_county_in_region = { # Works
@@ -1857,8 +1861,6 @@ decision_azraphel_an_khar = {
 		title:e_mag_tumag = { 
 			set_de_jure_liege_title = title:h_azraphel_an_khar
 		}
-		
-		title:e_usakan = { set_capital_county = title:c_sarul }
 		
 		# Everyone is mad
 		custom_tooltip = {
@@ -1953,6 +1955,7 @@ decision_tanturak_build_usakan_bay_citadels = {
 		completely_controls = title:c_toriar
 		completely_controls = title:c_kitusi
 		completely_controls = title:c_rurutori
+		completely_controls = title:c_aradak
     }
 	
     is_valid_showing_failures_only = {
@@ -1976,6 +1979,10 @@ decision_tanturak_build_usakan_bay_citadels = {
 			add_special_building = wonder_usakan_citadels
 		}
 		title:c_rurutori.title_province = {
+			hidden_effect = { add_special_building_slot = wonder_usakan_citadels }
+			add_special_building = wonder_usakan_citadels
+		}
+		title:c_aradak.title_province = {
 			hidden_effect = { add_special_building_slot = wonder_usakan_citadels }
 			add_special_building = wonder_usakan_citadels
 		}

@@ -59,7 +59,6 @@ lotr_gimilzir_tanturak_contract_inzilloni = {
 	on_create = {
 		scope:contract = {
 			set_variable = no_success_or_failure
-			set_variable = inzilloni_contract
 		}
 	}
 
@@ -146,7 +145,6 @@ lotr_gimilzir_tanturak_contract_azarideth = {
 	on_create = {
 		scope:contract = {
 			set_variable = no_success_or_failure
-			set_variable = harfalas_contract
 		}
 	}
 
@@ -233,7 +231,6 @@ lotr_gimilzir_tanturak_contract_uruloni = {
 	on_create = {
 		scope:contract = {
 			set_variable = no_success_or_failure
-			set_variable = uruloni_contract
 		}
 	}
 
@@ -320,7 +317,6 @@ lotr_gimilzir_tanturak_contract_mispir = {
 	on_create = {
 		scope:contract = {
 			set_variable = no_success_or_failure
-			set_variable = mispir_contract
 		}
 	}
 
@@ -407,7 +403,6 @@ lotr_gimilzir_tanturak_contract_gimileth = {
 	on_create = {
 		scope:contract = {
 			set_variable = no_success_or_failure
-			set_variable = gimileth_contract
 		}
 	}
 
@@ -494,7 +489,6 @@ lotr_gimilzir_tanturak_contract_arpel = {
 	on_create = {
 		scope:contract = {
 			set_variable = no_success_or_failure
-			set_variable = arpel_contract
 		}
 	}
 
@@ -581,7 +575,6 @@ lotr_gimilzir_tanturak_contract_arpel_sailing = {
 	on_create = {
 		scope:contract = {
 			set_variable = no_success_or_failure
-			set_variable = arpel_sailing_contract
 		}
 	}
 

@@ -84,6 +84,15 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
       			desc = gimilzir_events.4.desc2
     		}
   		}
+		first_valid = {
+			triggered_desc = {
+				trigger = { 
+					faith_is_good = yes
+				} 
+				desc = gimilzir_events.4.desc3
+			}
+			desc = gimilzir_events.4.desc4
+		}
 	}
 	theme = family
 	
@@ -96,26 +105,33 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 		name = gimilzir_events.4.a
 		#add_to_global_variable_list = {
 		#	name = unavailable_unique_decisions
-		#	target = flag:gimilzir_an_balkumagan_path
+		#	target = flag:gimilzir_pel_path
 		#}
+		custom_tooltip = not_in_current_update_tooltip
 		custom_tooltip = choose_gimilzir_path_tt_1
-		add_character_flag = gimilzir_path_chooser
-		trigger_event = gimilzir_events.5
+		add_pressed_claim = title:k_pel
+		#add_character_flag = gimilzir_path_chooser
+		#trigger_event = gimilzir_events.6
 	}
 	
 	option = {
 		name = gimilzir_events.4.b
 		#add_to_global_variable_list = {
 		#	name = unavailable_unique_decisions
-		#	target = flag:gimilzir_pel_path
+		#	target = flag:gimilzir_an_balkumagan_path
 		#}
+		custom_tooltip = not_in_current_update_tooltip
 		custom_tooltip = choose_gimilzir_path_tt_2
-		add_character_flag = gimilzir_path_chooser
-		trigger_event = gimilzir_events.6
+		add_pressed_claim = title:k_an_balkumagan
+		#add_character_flag = gimilzir_path_chooser
+		#trigger_event = gimilzir_events.5
 	}
 	
 	option = {
 		name = gimilzir_events.4.c
+		trigger =  {
+			faith_is_good = yes
+		}
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:gimilzir_tanturak_path
@@ -195,6 +211,26 @@ gimilzir_events.7 = { # Gimilzadan Flavor Tanturak
 	type = character_event
 	title = gimilzir_events.7.t
 	desc = gimilzir_events.7.desc
+	theme = faith
+	
+	override_background = { reference = docks }
+	
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = {
+		name = gimilzir_events.7.a
+		trigger_event = gimilzir_events.71
+	}
+}
+
+gimilzir_events.71 = { # Gimilzadan Flavor Tanturak 2
+	content_source = realms_dlc 
+	type = character_event
+	title = gimilzir_events.71.t
+	desc = gimilzir_events.71.desc
 	theme = family
 	
 	override_background = { reference = docks }
@@ -212,12 +248,10 @@ gimilzir_events.7 = { # Gimilzadan Flavor Tanturak
 	}
 
 	option = {
-		name = gimilzir_events.7.a
-		custom_tooltip = gimilzir_tanturak_event_tt
+		name = gimilzir_events.71.a
 		hidden_effect = { pan_camera_to_province = title:c_inzilloni.title_province }
-	}
-	after = {
-		custom_tooltip = gimilzir.7.tt
+		custom_tooltip = gimilzir.71.tt_1
+		custom_tooltip = gimilzir.71.tt_2
 		hidden_effect = {
 			root = {
 				create_task_contract = {
@@ -230,6 +264,15 @@ gimilzir_events.7 = { # Gimilzadan Flavor Tanturak
 			}
 			add_character_flag = gimilzir_tanturak_contract_inzilloni
 		}
+	}
+	
+	option = {
+		name = gimilzir_events.71.b
+		remove_list_global_variable = {
+			name = unavailable_unique_decisions
+			target = flag:decision_choose_gimilzir_path
+		}
+		custom_tooltip = gimilzir.71.tt_3
 	}
 }
 
@@ -259,14 +302,14 @@ gimilzir_events.701 = { # Inzilloni Contract
 		title:c_inzilloni.holder = { save_scope_as = inzilloniholder }
 		remove_character_flag = gimilzir_tanturak_contract_inzilloni
 	}
-	option = { # Try to convince him
+	option = { # Try to convince him the faithful leaving wont harm the defence
 		name = gimilzir_events.701.a
 		domicile ?= {
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_inzilloni.title_province
 		}
 		duel = {
- 			skill = diplomacy
+ 			skill = martial
  			target = scope:inzilloniholder
  			40 = {
 				# You convince him
@@ -401,6 +444,7 @@ gimilzir_events.702 = { # Inzilloni Contract: Accept
 				opinion = 25
 			}
 		}
+		ud_lotr_gimilzir_following_effect = yes
 		show_as_tooltip = { add_contact = scope:inzilloniholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
@@ -534,6 +578,7 @@ gimilzir_events.704 = { # Inzilloni Contract: Sneaky
 						value = 10
 					}
 				}
+				ud_lotr_gimilzir_following_effect = yes
 				random_character_active_contract = {
 					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni }
 					complete_task_contract = success_standard
@@ -881,6 +926,7 @@ gimilzir_events.712 = { # Azarideth Contract: Accept
 				opinion = 25
 			}
 		}
+		ud_lotr_gimilzir_following_effect = yes
 		show_as_tooltip = { add_contact = scope:azaridethholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
@@ -1014,6 +1060,7 @@ gimilzir_events.714 = { # Azarideth Contract: Sneaky
 						value = 10
 					}
 				}
+				ud_lotr_gimilzir_following_effect = yes
 				random_character_active_contract = {
 					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth }
 					complete_task_contract = success_standard
@@ -1361,6 +1408,7 @@ gimilzir_events.722 = { # Uruloni Contract: Accept
 				opinion = 25
 			}
 		}
+		ud_lotr_gimilzir_following_effect = yes
 		show_as_tooltip = { add_contact = scope:uruloniholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
@@ -1494,6 +1542,7 @@ gimilzir_events.724 = { # Uruloni Contract: Sneaky
 						value = 10
 					}
 				}
+				ud_lotr_gimilzir_following_effect = yes
 				random_character_active_contract = {
 					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni }
 					complete_task_contract = success_standard
@@ -1699,14 +1748,14 @@ gimilzir_events.731 = { # Mispir Contract
 		title:c_mispir.holder = { save_scope_as = mispirholder }
 		remove_character_flag = gimilzir_tanturak_contract_mispir
 	}
-	option = { # Try to convince him
+	option = { # Try to convince him it wont be bad for the economy
 		name = gimilzir_events.731.a
 		domicile ?= {
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_mispir.title_province
 		}
 		duel = {
- 			skill = diplomacy
+ 			skill = stewardship
  			target = scope:mispirholder
  			40 = {
 				# You convince him
@@ -1841,6 +1890,7 @@ gimilzir_events.732 = { # Mispir Contract: Accept
 				opinion = 25
 			}
 		}
+		ud_lotr_gimilzir_following_effect = yes
 		show_as_tooltip = { add_contact = scope:mispirholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
@@ -1974,6 +2024,7 @@ gimilzir_events.734 = { # Mispir Contract: Sneaky
 						value = 10
 					}
 				}
+				ud_lotr_gimilzir_following_effect = yes
 				random_character_active_contract = {
 					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
 					complete_task_contract = success_standard
@@ -2321,6 +2372,7 @@ gimilzir_events.742 = { # Gimileth Contract: Accept
 				opinion = 25
 			}
 		}
+		ud_lotr_gimilzir_following_effect = yes
 		show_as_tooltip = { add_contact = scope:gimilethholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
@@ -2454,6 +2506,7 @@ gimilzir_events.744 = { # Gimileth Contract: Sneaky
 						value = 10
 					}
 				}
+				ud_lotr_gimilzir_following_effect = yes
 				random_character_active_contract = {
 					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
 					complete_task_contract = success_standard
@@ -2701,14 +2754,14 @@ gimilzir_events.751 = { # Arpel Contract
 		title:c_arpel.holder = { save_scope_as = arpelholder }
 		remove_character_flag = gimilzir_tanturak_contract_arpel
 	}
-	option = { # Try to convince him
+	option = { # Try to convince him it wont be worth it to keep the faithful there
 		name = gimilzir_events.751.a
 		domicile ?= {
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_arpel.title_province
 		}
 		duel = {
- 			skill = diplomacy
+ 			skill = learning
  			target = scope:arpelholder
  			40 = {
 				# You convince him
@@ -2843,6 +2896,7 @@ gimilzir_events.752 = { # Arpel Contract: Accept
 				opinion = 25
 			}
 		}
+		ud_lotr_gimilzir_following_effect = yes
 		show_as_tooltip = { add_contact = scope:arpelholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
@@ -2976,6 +3030,7 @@ gimilzir_events.754 = { # Arpel Contract: Sneaky
 						value = 10
 					}
 				}
+				ud_lotr_gimilzir_following_effect = yes
 				random_character_active_contract = {
 					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel }
 					complete_task_contract = success_standard
@@ -4302,6 +4357,7 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 		character:k_wastelands_holder = { #Post Settling Flavor 20 years
 			trigger_event = { id = gimilzir_events.7850 years = { 17 24 } }
 		}
+		trigger_event = { id = gimilzir_events.789 months = { 2 6 } }
 	}
 
 	option = {
@@ -4448,6 +4504,10 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				add_building = barracks_01
 				add_building = common_tradeport_01
 			}
+			
+			title:c_ardinak = { 
+				change_development_level = 4
+			}
 		}
 		else_if = {
 			limit = {
@@ -4466,7 +4526,6 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
-				change_development_level = 4
 				set_holding_type = castle_holding
 				add_building = curtain_walls_01
 				add_building = common_tradeport_01
@@ -4557,8 +4616,9 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 			set_county_culture = root.culture
 			change_development_level = 3
 		}
+		##People will wanna live in a nicer place
 		title:c_ardinak = {
-			change_development_level = -3
+			change_development_level = -5
 		}
 	}
 
@@ -4784,6 +4844,32 @@ gimilzir_events.788 = { # Post Create Tanturak Kingdom
 		remove_trait = depressed_genetic
 	}
 }
+
+
+gimilzir_events.789 = { # Ardinak, the Cursed Isle - Yeah, this is a pretty scary place
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.789.t
+	desc = gimilzir_events.789.desc
+	theme = dread
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	immediate = {
+		title:c_ardinak = {
+			add_county_modifier = {
+				modifier = ardinak_cursed_isle_modifier
+				years = 25
+			}
+		}
+	}
+	option = { # Never should have come here...
+		name = gimilzir_events.789.a
+		add_stress = 100
+	}
+}
+
 
 gimilzir_events.9999 = {
 	scope = none

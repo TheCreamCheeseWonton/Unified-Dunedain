@@ -525,3 +525,34 @@ gimilzir_tanturak_refounder = {
 	monthly_dynasty_prestige = 1
 	monthly_dynasty_prestige_mult = 0.5
 }
+
+gimilzir_tanturak_following_1 = { 
+	icon = family_positive
+	monthly_prestige = 0.1
+}
+
+gimilzir_tanturak_following_2 = { 
+	icon = family_positive
+	monthly_prestige = 0.2
+}
+
+gimilzir_tanturak_following_3 = { 
+	icon = family_positive
+	monthly_prestige = 0.3
+}
+
+gimilzir_tanturak_following_4 = { 
+	icon = family_positive
+	monthly_prestige = 0.4
+}
+
+gimilzir_tanturak_following_5 = { 
+	icon = family_positive
+	monthly_prestige = 0.6
+}
+
+gimilzir_tanturak_following_6 = { 
+	icon = family_positive
+	monthly_prestige = 0.8
+}
+	

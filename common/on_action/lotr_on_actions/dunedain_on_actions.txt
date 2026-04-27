@@ -17,16 +17,7 @@ ud_custom_on_title_gain = {
 	effect = {
 		if = {
 			limit = {
-				OR = {
-					scope:transfer_type = flag:conquest
-					scope:transfer_type = flag:conquest_holy_war
-					scope:transfer_type = flag:conquest_claim
-					scope:transfer_type = flag:conquest_populist
-					scope:transfer_type = flag:abdication
-					scope:transfer_type = flag:usurped
-					scope:transfer_type = flag:revoked
-					scope:transfer_type = flag:faction_demand
-				}
+				scope:title.tier = tier_county
 				scope:title ?= {
 					title = title:c_sarul
 				}
@@ -53,7 +44,7 @@ ud_custom_on_title_gain = {
 		}
 		if = { 
 			limit = { 
-				scope:transfer_type = flag:created
+				scope:title.tier = tier_kingdom
 				scope:title ?= {
 					title = title:k_tanturak
 				}

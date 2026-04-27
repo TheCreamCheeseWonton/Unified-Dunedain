@@ -18,6 +18,11 @@
  building_wonder_anonarmenlos_03: "Númen Mindon"
  building_wonder_anonarmenlos_03_desc: "The Númen Mindon, or 'Western Great Tower' is on the archipelago's tallest point on the westernmost island. This soaring tower reaches into the very heavens and peers outwards towards the western seas, towards [meneltarma|E]. Here is taught the history of [numenor|E], of the corruption and wicked hate that infected the hearts of the [numenoreans|E], and of their eventual fait in the [akallabeth|E]. A somber place of lore, remembrance, and teaching, the wardens of Númen Mindon dedicate themselves to duty, ensuring that the painful events at the end of the [secondage|E] never again come to pass."
 
+ building_wonder_usakan_citadels: "Citadel of Ûsakan"
+ building_wonder_usakan_citadels_desc: "A citadel of the Ûsakan Bay, raised by the [adunai|E]. These great fortresses stand astride the bay’s mouths and its principal seaways, ensuring that no enemy may enter without warning, or without facing swift harassment."
+ building_type_wonder_usakan_citadels: "Citadel of Ûsakan"
+ building_type_wonder_usakan_citadels_desc: "A citadel of the Ûsakan Bay, raised by the [adunai|E]. These great fortresses stand astride the bay’s mouths and its principal seaways, ensuring that Tantûrak cannot be caught unawares by its enemies."
+
  ##Blockers
  building_type_ruins_of_arnor: "Arnorian Ruins"
  building_type_ruins_of_arnor_desc: "$building_ruins_of_arnor_desc$"
@@ -539,6 +544,33 @@
 
  invite_elves_cuind: "Invited a group of Cuind Elves to live in their old refuge"
 
+ decision_tanturak_search_ardinak: "Search Ardinâk"
+ decision_tanturak_search_ardinak_desc: "The Citadel of [ardinak|E] has lain abandoned for an age, its ancient walls and towers crumbling from neglect. The island that bears the citadel has long been whispered to be haunted, with those who dare dwell there speaking of murmurs in the dark and fleeting visions of ghosts at the edges of sight.\n\nNow the citadel stands rebuilt, and the island once more inhabited. Yet the deepest and darkest reaches of Shân-ta-Rhôn's dungeons lie unexplored and open before us. Within, her long-buried secrets and forgotten treasures wait to be claimed."
+ decision_tanturak_search_ardinak_confirm: "Leave no stone unturned!"
+ decision_tanturak_search_ardinak_tt: "You will search the depths of [ardinak|E] for hidden treasures and sorceries."
+
+ south_adunai_events.10.t: "Search the Citadel of Shân-ta-Rhôn"
+ south_adunai_events.10.desc: "Much of the fortress above ground had to be rebuilt from the foundations up, for little remained of the original structure beyond its base and a few scattered sections of wall. Though the reconstruction of the great citadel was necessary, it came at the cost of preservation, and far less of the old fortress endures than many would have wished.\n\nYet beneath the surface, the vast subterranean quarter has remained largely intact, spared the worst of the decay that claimed the citadel above. Once buried and inaccessible beneath fallen stone and ruin, these depths have now been cleared.\n\nAt last, we may descend into the long-sealed reaches of [ardinak|E], and uncover whatever treasures, or terrors, lie waiting below."
+ south_adunai_events.10.a: "Ardinâk's secrets will be mine!"
+ south_adunai_events.10.b: "Perhaps it would be wiser to seal the entrance...."
+
+ south_adunai_events.11.t: "The Depths of Shân-ta-Rhôn"
+ south_adunai_events.11.desc: "Upon entering the dungeons below [ardinak|E], my whole body seemed to tense. Surrounded by plain stone walls, littered with what were once finely woven fabrics, now faded and brittle with age, every shadow, every echo, and every faint gust of air set me on edge. I found myself turning at every sound, gripped by an unnatural dread of what might lie beyond the next corridor.\n\nThe complex was vast beyond expectation. Endless passageways of cold stone, great storerooms where food had long since rotted into dust, and cavernous barracks filled with the shattered remains of [numenorean|E] artifacts. All spoke of a place abandoned in haste, or in fear. \n\nAt last, after pressing ever deeper through mounting unease, I reached the lowest and darkest reaches of [ardinak|E]. There I found a great steel door, firmly shut. Strangely, the key lay beside it, as though placed there with intent. The lock yielded without resistance. \n\nWithin lay treasures worth every moment spent in that haunted place. A beautifully preserved [numenorean|E] shield rested against the far wall. Nearby lay a skeleton clad in fine garments, and upon its finger was a genuine Ring of Power, its presence heavy, almost alive, filling the air with a palpable sense of might. Yet even this was not the greatest prize. That honor belonged to the Crown of Tantûrak, still set upon the skull of the long-dead figure before me, an artifact thought lost since the downfall of Tantûrak itself."
+ south_adunai_events.11.a: "Rest in peace, king of Tantûrak"
+
+ decision_azraphel_an_khar_title: "Proclaim the Azraphel an-Khar"
+ decision_azraphel_an_khar_desc: "The Bay of [GetTitleByKey('e_usakan').GetNameNoTier] is a region of great breadth, with deep ties to Tantûrak and [numenor|E]. Yet even at the height of our power, the [adunai|E] held only a narrow share of its shores. Beyond Tantûrak itself and a scattering of distant entrepôts, our grasp upon these lands was light.\n\nBut should we bring the bay under a single banner, we could raise a realm of true might, one that echoes the lost splendor of Anadûnê.\n\nLet us prove our supremacy. Let us unite the bay beneath the rightful rule of the [adunai|E], and proclaim the Azraphel an-Khar!"
+ decision_azraphel_an_khar_confirm: "Numenor shall rise anew through us!"
+ decision_azraphel_an_khar_tooltip: "Numenor shall rise anew through us!"
+ decision_azraphel_an_khar_effect.tt: "All vassals that are #V not#! your [religion|E] or of an [adunaic|E] [heritage|E] will receive a #N -100#! opinion mallus of you."
+ decision_azraphel_an_khar_trigger.tt_1: "#V 15%#! of the [GetGeographicalRegion('special_azraphel_an_khar').GetName]:\n$BULLET_WITH_TAB$Current: [GetPlayer.MakeScope.ScriptValue('lotr_azraphel_an_khar_geographical_region_control_complete')|2]\n$BULLET_WITH_TAB$Is your faith ([GetPlayer.GetFaith.GetName])\n$BULLET_WITH_TAB$Is your culture ([GetPlayer.GetCulture.GetName])"
+ decision_azraphel_an_khar_trigger.tt_2: "You must control at least #V 60%#! of the [counties|E] in the [GetGeographicalRegion('special_azraphel_an_khar').GetName] [region|E]"
+
+ decision_tanturak_build_usakan_bay_citadels: "Raise the Citadels of Ûsakan"
+ decision_tanturak_build_usakan_bay_citadels_desc: "The Bay of Ûsakan, with its [adunaic|E] heart in Tantûrak, has grown powerful and prosperous in recent years, enriched by its dominion over these waters. Yet this strength lies dangerously exposed. The bay stands open to any foe of Tantûrak, and no true defenses guard our homeland from the sea. \n\nThis cannot be allowed to endure. It has been proposed that a chain of great fortresses be raised upon the islands at the bay’s mouth, so that all traffic entering or leaving Ûsakan may be watched, controlled, and, if need be, turned away by vigilant eyes."
+ decision_tanturak_build_usakan_bay_citadels_confirm: "These Citadels will be the key to our dominion!"
+ decision_tanturak_build_usakan_bay_citadels_tooltip: "Raise the Citadels of Ûsakan to protect our seas"
+
  ##Pharazain Separatism Decisions
  #Separatism
  decision_deal_with_pharazain_separatism: "Combat Rebelion"
@@ -731,47 +763,6 @@
  lotr_pharazain_spend_more_resources_character_modifier: "Intensifying Pacification Measures"
  lotr_pharazain_spend_more_resources_character_modifier_desc: "This character is redoubling efforts to pacify the Pharazâin Civil War, committing great stores of gold and manpower to restore order with all haste."
 
- ##Gimilzir Decisions
- decision_choose_gimilzir_path: "The Future of House Gimilzîr"
- decision_choose_gimilzir_path_desc: "The future of my House rests in my hands, and the weight of it is not lightly borne. There is much to consider, and each path before me demands careful thought, for none are without risk, and all will shape our fate in ways that cannot be undone.\n\nOnce, my family held dominion over the lands of the [GetTitleByKey('k_pel').GetName], where [gimilziran|E] came ashore and founded his great, if short-lived, kingdom. To reclaim those lands would be to restore what was lost, to root our legacy once more in the soil where it first took hold.\n\nYet another road calls me northward, toward war and reckoning. There, I could take up the struggle begun by my forebear, [GetScriptedCharacterByHistoryID('linegimilzadan01').GetTitledFirstName], and carry the fight to [anbalkumagan|E]. Victory there would not only avenge old wounds, but carve out new lands for me to rule.\n\nOr I may turn away from both, and look instead to the distant east. Beyond the bounds of [thanihazad|E] lie the long-lost lands of Tantûrak, vast and abandoned.  There, I could lead what remains of the [faithful|E] left in [thanihazad|E] to a new beginning, far from the shadows that haunt us here.\n\nEach choice bears its own promise, and its own cost. Whatever path I choose, it will define the destiny of my House for generations to come."
- decision_choose_gimilzir_path_tooltip: "We must choose the future of House Gimilzîr"
- decision_choose_gimilzir_path_confirm: "The future of House Gimilzîr is bright!"
- decision_choose_gimilzir_path_tt: "I will choose the future of House Gimilzîr"
-
- decision_continue_adventure_gimilzir_tanturak: "Continue Your Adventure"
- decision_continue_adventure_gimilzir_tanturak_tooltip: "#italic If your current story [task_contract|E] has vanished, you may regain it here."
- decision_continue_adventure_gimilzir_tanturak_desc: "My companions and I still have work to do. We shall not rest until Tantûrak is mine.\n\n#N Only take this decision  if you've lost your current story contract#!!"
- decision_continue_adventure_gimilzir_tanturak_confirm: "Adventure calls."
- decision_continue_adventure_gimilzir_tanturak_tt: "Your current story [task_contract|E] is regained"
-
- ##Gimilzir Events
-
- gimilzir_events.2.t: "The Rise of House Gimilzîr"
- gimilzir_events.2.desc: "House Gimilzîr has always been a small, insular, but close-knit family. Taking care of their own, not interacting much with those outside their estate in [GetTitleByKey('c_mispir').GetNameNoTier]. Able to trace their bloodline back to [elrosshort|E] himself, they retain some of the purest [bloodofnumenor|E] in all of [thanihazad|E] which has afforded them some amount of renown. After [gimilziran|E]'s failed conquests in the early [thirdage|E], this is how the family lingered. Rotting as their ancient estate built after their exile from [GetTitleByKey('k_pel').GetNameNoTier], gathered dust and slowly crumbled away.\n\nHowever, [GetScriptedCharacterByHistoryID( 'linegimilzadan01' ).GetFirstNameNicknamed] Gimilzîr, changed the tune of the family forever. The [stormhost|E] invaded [thanihazad|E] early in the man's life, and returning the call of the [balan_lai|E] [GetScriptedCharacterByHistoryID( 'linegimilzadan01' ).GetFirstNameNicknamed] came to their aid as a Knight of Kharadûne. During a seige on [GetTitleByKey('c_mispir').GetNameNoTier], the ancient Estate of Gimilzîr, was raised and reduced to rubble by the [stormhost|E] army. Since that day the Gimilzîr family has been without a proper estate, following the head of their House wherever they may go. [GetScriptedCharacterByHistoryID( 'linegimilzadan01' ).GetFirstNameNicknamed] fought valiantly and served for most of his life, becoming the personal champion of [GetScriptedCharacterByHistoryID( 'lineofgimilthani47' ).GetFirstNameNicknamed]. He won the Gimilzîr family much honor with his many great deeds in those days, of which he is remembered quite fondly by all who knew him. \n\nMuch like his grandfather before him, [GetScriptedCharacterByHistoryID( 'linegimilzadan1' ).GetFirstNameNicknamed] also joined the Knights at the young age of 24. There he rose through the ranks at lightning speed. He quickly made a name for himself as one of the greatest knights in the history of [thanihazad|E], with some even saying he rivaled his Grandfather. However, after a particularly bad wound, and the news of his newborn son, [GetScriptedCharacterByHistoryID( 'linegimilzadan1' ).GetFirstNameNicknamed] left the knights to see after his family. Now, at the young age of 19 [GetScriptedCharacterByHistoryID( 'linegimilzadan2' ).GetFirstNameNicknamed] was gifted by his father the honor of becoming head of House Gimilzîr.\n\nThe young man was not ready for such a great responsibility, fearing he would let down his family and fail to rise to the great heights of his Father and Great-Grandfather. He did not even dare think of even approaching the brilliance of [gimilziran|E]. [GetScriptedCharacterByHistoryID( 'linegimilzadan1' ).GetFirstNameNicknamed] nonetheless believes in his son and sees him as a true heir of [numenor|E], with the wits and grace to forge a destiny greater than any other in House Gimilzîr, and to possibly, even fulfill the lamented dream of [gimilziran|E]."
-  gimilzir_events.2.a: "We all have hope in the young [GetScriptedCharacterByHistoryID( 'linegimilzadan2' ).GetFirstNameNicknamed]!"
-
-  gimilzir_events.3.t: "Am I worthy?"
-  gimilzir_events.3.desc: "Anxiety grips my heart with each passing dawn, as another day of leading my family stretches before me like an unending road. This burden was never one I sought, nor one I believed myself capable of bearing. I am no leader, no soldier, no warrior, no great statesman or silver-tongued diplomat. I am just... Ârûgimil. An unworthy heir to far greater sires, a shadow cast by the weight of their legacy.\n\nAnd yet, here I stand as head of my House. All who bear my name now look to me, their hopes and fears resting upon my shoulders. All trusting that I will guide them out of our withering darkness. I feel that weight in every word I speak, every choice I make. It presses upon me in quiet moments, whispering of my doubts, of my failings, of how easily I might falter.\n\nStill, I am not alone. My parents stand beside me, offering counsel, strength, and patience far beyond what I deserve. And [GetScriptedCharacterByHistoryID( 'linegimilethtwocustom2' ).GetFirstName], my steadfast friend, listens when the silence grows too heavy, when my thoughts turn against me. Without them, I fear I would have crumbled already beneath the strain of it all.\n\nI am an heir to [elros|E] himself. That truth both humbles and terrifies me. Such a lineage is no small thing, it is a flame that must be carried, not allowed to gutter and fade. I do not yet know if I possess the strength to live up to it... but I must try. I must prove it to them, to my family, to those who believe in me.\n\nMost of all, I must prove it to myself."
-  gimilzir_events.3.a: "They place their hope in me, but I have none in myself."
-  enable_gimilzir_decision: "Once you attain [prestige_level|E] @prestige_level_3_icon![GetModifier('prestige_level_3').GetNameWithTooltip|L], you will be able to choose House Gimilzîr's path forward"
-
-  gimilzir_events.4.t: "The Path Forward for House Gimilzîr"
-  gimilzir_events.4.desc1: "After much time, effort, and more than a fair share of anxiety, I have done what once seemed impossible. I have proven myself wrong, and my family right. In my stewardship, I have brought glory and renown to our name, and wealth and plenty to my house. Not since the early [thirdage|E] has House Gimilzîr known such prosperity or such standing among the realms. \n\nThough it is difficult for me to believe, much of our glory has come through my own command, and even I cannot deny what has been achieved. Where once there was doubt, there is now recognition. Where once there was uncertainty, there is now influence. And yet, prosperity has not quieted ambition. On the contrary, it has stirred it. Within House Gimilzîr, voices now speak not of survival, but of destiny, of what we might yet become.\n\nSome look back to what was lost, and demand its restoration. They urge us to reclaim [GetTitleByKey('k_pel').GetNameNoTier], and perhaps even all of [GetTitleByKey('e_thani_hazad').GetNameNoTier]. To finally realize the long-faded dream of [gimilziran|E] and restore what our line once reached for, but never fully held.\n\nOthers still hardened by the memory and loss of our old estate in [GetTitleByKey('c_mispir').GetNameNoTier] demand vengeance. They speak of [anbalkumagan|E], and of settling the score by taking their lands and breaking their power once and for all. Finally saving the [sevenlands|E] from their evil and depravity.\n\nAnd then there are those more cautious, those who see danger in both pride and revenge. They counsel departure instead, that we leave [thanihazad|E] behind entirely, gather what remains of the [faithful|E], and seek fortune along the Bay of Ûsakan. A new beginning, far from the shadow of past failures and the enemies that still linger here.\n\nAll of them now turn to me. The weight of choice rests where it always has, upon my shoulders. And whatever path I choose, it will not merely shape the present. It will define what House Gimilzîr becomes for generations."
-  gimilzir_events.4.desc2: "After much time and effort, I have done what once seemed impossible. In my stewardship, I have brought glory and renown to our name, and wealth and plenty to my house. Not since the early [thirdage|E] has House Gimilzîr known such prosperity or such standing among the realms. \n\nWhere once there was doubt, there is now recognition. Where once there was uncertainty, there is now influence. And yet, prosperity has not quieted ambition. On the contrary, it has stirred it. Within House Gimilzîr, voices now speak not of survival, but of destiny, of what we might yet become.\n\nSome look back to what was lost, and demand its restoration. They urge us to reclaim [GetTitleByKey('k_pel').GetNameNoTier], and perhaps even all of [GetTitleByKey('e_thani_hazad').GetNameNoTier]. To finally realize the long-faded dream of [gimilziran|E] and restore what our line once reached for, but never fully held.\n\nOthers still hardened by the memory and loss of our old estate in [GetTitleByKey('c_mispir').GetNameNoTier] demand vengeance. They speak of [anbalkumagan|E], and of settling the score by taking their lands and breaking their power once and for all. Finally saving the [sevenlands|E] from their evil and depravity.\n\nAnd then there are those more cautious, those who see danger in both pride and revenge. They counsel departure instead, that we leave [thanihazad|E] behind entirely, gather what remains of the [faithful|E], and seek fortune along the Bay of Ûsakan. A new beginning, far from the shadow of past failures and the enemies that still linger here.\n\nAll of them now turn to me. The weight of choice rests where it always has, upon my shoulders. And whatever path I choose, it will not merely shape the present. It will define what House Gimilzîr becomes for generations."
-  gimilzir_events.4.a: "Pél was [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstNamePossessive] and so it shall me mine"
-  choose_gimilzir_path_tt_1: "You will gather allies and strength to support your conquest of [GetTitleByKey('k_pel').GetNameNoTier]"
-  gimilzir_events.4.b: "An-Balkûmagân is an enemy of all that is good"
-  choose_gimilzir_path_tt_2: "You will gather allies and strength to support your conquest of [anbalkumagan|E]."
-  gimilzir_events.4.c: "The lost realm of Tantûrak shall be the home of my people"
-  choose_gimilzir_path_tt_3: "You will gather all the remaining [faithful|E] in [thanihazad|E] and set sail for Tantûrak"
-  gimilzir_events.4.d: "I quite like the adventurer life..."
-  choose_gimilzir_path_tt_4: "You will forge your own path forward, without any guidance"
-  gimilzir_events.4.e: "I need more time to think"
-  choose_gimilzir_path_tt_5: "You will choose at a different time"
-
-  gimilzir.7.tt: "A #high Story Contract#! becomes available"
-
-
  #Separatism Events
  pharazain_events.9.t: "Despair and Rebelion"
  pharazain_events.9.desc1: "Last night, while the rest of [GetTitleByKey('h_pharazain').GetNameNoTier] slept, a single spark of rebellion ignited the powderkeg that had long been smoldering beneath my rule. By dawn, countless cities across the realm had descended into chaos, as commoners and traitors alike rose up against those still loyal to my rule. \n\nA simmering hatred for [GetTitleByKey('h_pharazain').GetNameNoTier] had quietly taken root in the hearts of many of my people, largely concealed from the eyes of my loyal nobility. Where I had believed I ruled a united dominion, they saw only a foreign power imposed upon their lives, not a protector, not a unifier, but an oppressor. \n\nI awoke to the sight of my once-proud kingdom engulfed in flame. Anarchy and rebellion now run rampant across every province beyond [anbalkumagan|E], as the people of both [bellakar|E] and [thanihazad|E] have cast off all pretense of loyalty and risen in open revolt! The realm itself teeters on the brink, no longer functioning as a kingdom should.\n\n#V The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has begun.#!"
@@ -894,6 +885,7 @@
  no_integration_in_pel_tt: "[GetGeographicalRegion('special_k_pel').GetName] has yet to to be integrated"
 
  #Special Regions
+ special_azraphel_an_khar: "Greater Bay of Ûsakan"
  special_k_mardruak: "Mardrûak"
  special_k_felaya: "Felaya"
  special_k_bellazen: "Bellazen"
@@ -963,7 +955,11 @@
  anbalkumagan_revolt_army_name: "The Anbalûkkhôri Host"
 
  decision_group_type_pharazaini_cw: "The Pharazâin Civil War"
- decision_group_type_gimilzir_decisions: "Gimilzîr Decisions"
+
+ hegemon_feudal_male_adunaic: "Arkhôr"
+ hegemon_feudal_female_adunaic: "Arkhôr"
+ hegemon_feudal_female_adunaic_nonholder: "Ârikhôr"
+ hegemon_feudal_adunaic: "Ârûkhôr-Thani"
 
  innovation_adunai_administration_feudal: "Adûnâic Feudal Structure"
  innovation_adunai_administration_feudal_desc: "Through the trials and tribulations of the [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War, the [adunai|E] of the south endured great hardship and devastation. Yet from the fire they rose like a phoenix from the ashes, and the Golden Dominion emerged with newfound wisdom in statecraft and stability. \n\nAmong the greatest legacies of this struggle was the reformed [adunaic|E] Feudal Structure, which greatly enhanced the lords' ability to govern effectively, ushering in an age of prosperity for all under the [GetTitleByKey('h_pharazain').GetName]."
@@ -981,13 +977,6 @@
 
  nick_pharazain_golden: "an-Pharazir"
  nick_pharazain_golden_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U], hailed as an-Pharazir, 'The Golden One,' is remembered for bringing into being the [GetTitleByKey('h_pharazain').GetName], the fulfillment of a long-cherished dream. After enduring decades of Civil War and unrest, [CHARACTER.GetShortUINameNoTooltipNoFormat|U] secured [CharYourHerHis(CHARACTER)] empire through wit, courage, and unyielding resolve. In time, [CharYouSheHe(CHARACTER)] not only established but also cemented dominion over the greatest realm of the [adunai|E], if not all [men|E], in [middleearth|E]."
-
- BattlePoIHistoricalNameZairanak: "The Defence at Zâirânak"
- BattlePoIHistoricalDescZairanak: "#emp Victor: [GetScriptedCharacterByHistoryID( 'lineofgimilthani3' ).GetName]\nDefeated: [GetScriptedCharacterByHistoryID( 'linegimilzadan08' ).GetName] @death_icon!\nDate: [ageSA|E] 3418#!\n#weak The Defence of Zâirânak was a decisive engagement during the [balan_lai|E] invasion of [GetTitleByKey('k_pel').GetNameNoTier]. After the failed incursions led by [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstName], the [balan_lai|E] seized the initiative, advancing on the heavily fortified mountain pass of [GetTitleByKey('b_zairanak').GetNameNoTier]. As the armies of [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName] pressed into the narrow pass, [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstName] moved swiftly to respond, manning the defenses while leading a smaller force in repeated sorties to harass the advancing enemy. His strategy was to wear them down through constant pressure in anticipation of a prolonged siege.\n\nWhen battle was joined, these hit-and-run tactics proved effective, sapping the [balan_lai|E]’s morale and manpower. Yet the scale of the invasion soon became clear as the forces of [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName] far exceeded expectations, and fresh troops seemed to arrive without end. Before long, the [balan_lai|E] laid siege to the fortress at [GetTitleByKey('b_zairanak').GetNameNoTier]. Their formidable siege engines battered down its walls and reduced its towers to ruin in a matter of weeks.\n\nIn a final bid to turn the tide, [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstName] led his Royal Guard and the elite Argimilzagar-an-Êru in a decisive cavalry charge. The assault initially succeeded, shattering and routing much of the enemy’s left flank. However, [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName] quickly rallied his forces and counterattacked, leading the Knights of Kharadûnê in a devastating strike against [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstNamePossessive] rear. In the clash, the great commander was slain.\n\nWith [GetScriptedCharacterByHistoryID('linegimilzadan08').GetFirstNamePossessive] death, his son, [GetScriptedCharacterByHistoryID('linegimilzadan09').GetFirstName], attempted to regroup the army, but the effort collapsed. He was soon routed, later captured, and ultimately executed by [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName]. The battle ended in catastrophe, with much of [GetScriptedCharacterByHistoryID('linegimilzadan08').GetFirstNamePossessive] military strength being destroyed, along with both himself and his heir. Losses from which the realm would never truly recover.#!"
-
- #Úraumo - Unending Storm
- uraumo_name: "Úraumo"
- uraumo_description: "Úraumo, the Unending Storm, blade of [GetScriptedCharacterByHistoryID('lineofelros80').GetFirstName], was forged by the finest [numenorean|E] smiths of the [secondage|E]. This immense greatsword stands as tall as a man, and even a single blow is said to be capable of felling some of the mightiest beasts in all of [middleearth|E].\n\nCarried out of the [downfall|E] by [gimilziran|E], Úraumo quickly earned a fearsome reputation. Few could withstand its devastating power or the relentless ferocity of its swings, and it led its wielder to many victories against the [balan_lai|E] and other grave threats. \n\nOver time, it became the cherished heirloom of House Gimilzîr, passed down through the generations. It remains with the family to this very day."
 
  dunedain_identity.1.t: "The Language Question"
  dunedain_identity.1.desc: "Now that the [dunedain|E] have been reunited, a question has arisen on what language my people will use. Those of [gondor|E] request that we use Westron as the language of the [dunedain|E]. The people of [arnor|E], and many other groups in the north call to use [sindarin|E], as was custom for the [faithful|E] [numenoreans|E]. Which of these two languages should I choose?"
@@ -1369,40 +1358,18 @@
  dynn_Belazgarath: "Belazgarath"
  dynn_Belazgarath_motto: "War is our calling, for we our its lords"
 
- dynn_gimilzadan: "Gimilzîr"
- dynn_gimilzadan_motto: "[Glossary('Anâm nakhô Bârazra sakalada, phazagada, magada, azarada, katha gimilî nâluthôr.', 'gimils_pledge_gloss' )]"
-
- ##Gloss
- gimils_pledge_gloss: "[adunaic|E] #bold Anâm nakhô Bârazra sakalada, phazagada, magada, azarada, katha gimilî nâluthôr.#! \n\nThus spoke [gimilziran|E], upon his landing in [middleearth|E] after the [akallabeth|E]; vowing: 'Out of the Great Sea we rose, to rule, to shape, to shine, like stars born of shadow.'"
- ##Names
- quon_nakhoran: "Nakhôrân"
- quon_hazrimira: "Hazrimîra"
- quon_quinazir: "Ârûgimil"
- quon_nakalmira: "Akalmîra"
- quon_obephal: "Obêphal"
- g_imilziran: "Gimilattô"
- c_miriel: "Míriel"
- c_silmarien: "Silmariën"
- c_ancalime: "Ancalimë"
- c_telperien: "Telperiën"
- c_vanimelde: "Vanimeldë"
- c_firiel: "Fíriel"
- c_luthien: "Lúthien"
- c_haleth: "Haleth"
- c_beruthiel: "Berúthiel"
-
  ##Titles 
  d_laamp_house_of_gimilzadan: "The Gimilzîr Estate"
  h_sakal_an_khar: "Sakal an-Khar"
  h_azraphel_an_khar: "Azraphel an-Khar"
  e_mikazra_zain: "Mîkazra-Zâin"
- adunaic_mag_tumag: "Zâyanat an-Adûnâi"
+ adunaic_mag_tumag: "Magmâ an-Tumag"
  adunaic_tumag: "Zâyan an-Tumag"
  adunaic_mag: "Zâyan an-Mag"
+ adunaic_aradak: "Azrâda"
+ adunaic_guishas: "Pharasphurus"
 
- ##Game Concepts
- game_concept_gimilziran: "Gimilattô"
- game_concept_gimilziran_desc: "Gimilattô, known as Elf-Friend, was the would-be founder of the High Kingdom of [thanihazad|E] and a formidable conqueror who, for a time, held vast swaths of the southern [sevenlands|E] under his banner. \n\nHe was raised in [numenor|E] during the rise of the Shadow and became a leader among the [faithful|E] [numenoreans|E] exiled from Andúnië. Believing his life to be a mission in service to [iluvatar|E] and the [valargods|E], Gimilattô sought tirelessly to rekindle the light of [eru|E] among those who had turned away. When the Great Armament was summoned, he defied Ar-Pharazôn's command and fled to Nindamas, where he secretly prepared ships. Warned by his friend [elendil|E] of Amandil's vision of the [downfallofnumenor|E], Gimilattô and his sons narrowly escaped the cataclysm in a small fleet of vessels carrying their followers. He made landfall in Lôni Hîsekhôr, quickly resettling the recently destroyed city with his own [faithful|E] followers. \n\nFrom this refuge, he launched his campaign of conquest. Rallying the survivors of [numenor|E], Gimilattô rapidly took control of the Kingdom of Pél, establishing it as the heart of his new realm. Declaring himself High King of [thanihazad|E], he demanded fealty from the lords of the [sevenlands|E] and called upon them to renounce the ways of the [kingsmen|E]. This bold proclamation, however, proved his undoing. The nascent [balan_lai|E], viewing Gimilattô as both a heretic and an existential threat, launched a full-scale invasion, quickly overwhelming Gimilattô's armies. Within just a century, Gimilattô's dream lay in ruins. He and his son Izinduzôr fell in the bloody Battle of Zâirânak, ending his short-lived reign. Though his grandson, Adûnafazor, attempted to rekindle the flame of his legacy, he too perished in battle just a few years later. Gimilattô's great-grandson, Khibilathôr, secured a period of peace following the decisive victory of the [balan_lai|E], preserving his control over the Kingdom of Pél. However, this stability proved short-lived, as Pél was conquered by the [tamska|E] just over a century into his reign. \n\nThus the the vision of a [faithful|E] [thanihazad|E] was extinguished forever. The war was a total loss, and Gimilattô, along with his son, grandson, and great-grandson were all laid to rest in a hidden tomb deep beneath the newly founded Gimilzîr Estate in Mispír."
+ empire_twin_nations_adunaic: "Zâyanat"
  
  ##Game Rules
  rule_dunedain_bon_rule: "$lotr_gr_prefix$Unified Dunedain - The [bloodofnumenor|E]"
@@ -1449,11 +1416,6 @@
  custom_harder_to_colonize_dunedain: "Numenorean Colonization"
  custom_harder_to_colonize_dunedain_desc: "The [numenoreans|E], or their descendents, wisest and greatest of the [men|E] of [middleearth|E], are colonizing this province. Yet their dwindling numbers render the settling of these wild lands a slow and laborious endeavor."
 
-
- ##Nicknames
-  nick_bearer_of_light: "Nimruzîr" 
-  nick_bearer_of_light_desc: "[gimilziran|E] was often known as Nimruzîr, or Elf Friend, for his attempted conversion of [thanihazad|E] into a land of the [faithful|E], and his friendship with the [cuind|E] [elves|E]. His fervor was legendary, and his devotion to [erutheone|E] was unwavering, which ultimately led to his downfall."
-
 ##Dynasty Legacies
  lotr_numenorean_legacy_track_name: "Legacy of the Númenóreans"
  lotr_numenorean_legacy_track_desc: "The [bloodofnumenor|E] flows within House [GetPlayer.GetDynasty.GetBaseNameNoTooltip], and as [numenoreans|E] they will shape the noblest, or most dreadful, realms in [middleearth|E]."
@@ -1490,4 +1452,7 @@
  
  arnorian_steelbow_name: "Arnorian Steelbow"
  arnorian_steelbow_description: "The [numenorean|E] Steelbow was a legendary weapon of the [dunedain|E]. It was made of hollow steel, somewhat shorter than the average longbow. The [numenorean|E] Steelbow grew rare in the [thirdage|E], though some within [arnor|E] wielded them even unto the fall of the kingdom. This [arnorian|E] Steelbow, preserved in remarkable condition, has with careful restoration surpass any bow crafted in modern times."
+
+ crown_of_tanturak_name: "Crown of Tantûrak"
+ crown_of_tanturak_desc: "This golden crown, adorned with many fine jewels of the rarest and most precious kind, is a magnificent piece of late [numenorean|E] craftsmanship. It was lost, along with its final bearer, when the yoke of Tantûrak was overthrown and cast down.\n\nLike the Tantûraki themselves, the crown gleams with striking brilliance, yet its beauty was wrought through blood and steel."
  

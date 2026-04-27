@@ -216,6 +216,7 @@ south_adunai_events.10 = { # Search Ardinak
 	option = {
 		name = south_adunai_events.10.b
 		add_learning_lifestyle_xp = 800
+		add_stress = -60
 	}
 }
 
@@ -230,15 +231,15 @@ south_adunai_events.11 = { # Find Artifacts
 	}
 	left_portrait = {
 		character = root
-		animation = personality_rational
+		animation = worry
 	}
 	option = {
 		name = south_adunai_events.11.a
+		add_stress = 100
 		add_prestige = major_prestige_gain
-		add_martial_lifestyle_xp = major_lifestyle_experience
-		add_stewardship_lifestyle_xp = major_lifestyle_experience
-		add_diplomacy_lifestyle_xp = major_lifestyle_experience
+		add_gold = 1000
 		create_artifact_lesser_ring_effect = { OWNER = this }
+		create_artifact_numenorean_shield_effect = { OWNER = this }
 		create_artifact_crown_of_tanturak_effect = { OWNER = this }
 	}
 }

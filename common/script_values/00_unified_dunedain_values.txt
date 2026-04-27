@@ -102,3 +102,31 @@ number_of_succeded_contracts_gimilzir_tanturak = {
 		add = -4
     }
 } 
+
+# Azraphel an Khar
+lotr_azraphel_an_khar_geographical_region_control_complete = {
+	value = 0
+	add = lotr_azraphel_an_khar_geographical_region_control
+	divide = lotr_azraphel_an_khar_geographical_region
+	multiply = 100
+}
+
+lotr_azraphel_an_khar_geographical_region_control = {
+	value = 0
+	every_county_in_region = {
+		region = special_azraphel_an_khar
+		limit = { 
+			culture = root.culture
+			faith = root.faith
+		}
+		add = 1
+	}
+}
+
+lotr_azraphel_an_khar_geographical_region = {
+	value = 0
+	every_county_in_region = {
+		region = special_azraphel_an_khar
+		add = 1
+	}
+}

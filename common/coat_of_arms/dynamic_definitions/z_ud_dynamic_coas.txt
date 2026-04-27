@@ -35,6 +35,32 @@ k_usakan = {
 	}
 }
 
+d_modune = {
+	item = {
+		trigger = {coa_switch_to_gobbo_trigger = yes}
+		coat_of_arms = d_modune_orc
+	}
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_modune_adunaic
+	}
+}
+
+d_okan = {
+	item = {
+		trigger = {coa_switch_to_gobbo_trigger = yes}
+		coat_of_arms = d_okan_orc
+	}
+	item = {
+		trigger = {coa_switch_to_elf_trigger = yes}
+		coat_of_arms = d_okan_elf
+	}
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_okan_adunaic
+	}
+}
+
 c_guishas = {
 	item = {
 		trigger = {coa_switch_to_adunai_trigger = yes}
@@ -54,14 +80,22 @@ k_tanturak = {
 	item = {
 		trigger = {
 			coa_switch_to_adunai_trigger = yes
-			faith = { has_doctrine = tenet_adunaic_birthright }
+			OR = { 
+				faith = { has_doctrine = tenet_adunaic_birthright }
+				holder.religion = religion:sauronic_religion
+			}
 		}
 		coat_of_arms = k_tanturak_adunaic
 	}
 	item = {
 		trigger = {
 			coa_switch_to_adunai_trigger = yes
-			NOT = { faith = { has_doctrine = tenet_adunaic_birthright } }
+			NOT = { 
+				OR = { 
+					faith = { has_doctrine = tenet_adunaic_birthright }
+					holder.religion = religion:sauronic_religion
+				}
+			}
 		}
 		coat_of_arms = k_tanturak_adunaic_less_evil
 	}
@@ -127,6 +161,62 @@ b_sarul = {
 	}
 }
 
+c_narsacha = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_narasacha_adunaic
+	}
+}
+
+b_narsacha = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_narasacha_adunaic
+	}
+}
+
+c_wamo_vasa = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_wamo_vasa_adunaic
+	}
+}
+
+b_wamo_vasa = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_wamo_vasa_adunaic
+	}
+}
+
+c_deghuka = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_deghuka_adunaic
+	}
+}
+
+b_sekhuka = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_deghuka_adunaic
+	}
+}
+
+c_durche = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_durche_adunaic
+	}
+}
+
+b_durche = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_durche_adunaic
+	}
+}
+
 e_mag_tumag = {
 	item = {
 		trigger = {coa_switch_to_adunai_trigger = yes}
@@ -145,5 +235,19 @@ k_tumag = {
 	item = {
 		trigger = {coa_switch_to_adunai_trigger = yes}
 		coat_of_arms = k_tumag_adunai
+	}
+}
+
+c_aradak = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_aradak_adunai
+	}
+}
+
+b_aradak = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_aradak_adunai
 	}
 }

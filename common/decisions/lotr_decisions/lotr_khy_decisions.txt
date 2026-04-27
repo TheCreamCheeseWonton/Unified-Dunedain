@@ -179,31 +179,45 @@ decision_sakal_an_khar = {
 		set_primary_title_to = title:h_sakal_an_khar
 
 		# Switch the de jure
-		every_county_in_region = { # Works
-			region = special_sakal_an_khar_formable
-			add_to_list = sakal_an_khar_counties
-		}
-		every_empire = {
-			limit = {
-				OR = {
-					any_de_jure_county = {
-						count > 0
-						is_in_list = sakal_an_khar_counties
-					}
-				}
-			}
-			set_de_jure_liege_title = title:h_sakal_an_khar
-		}
-
 		title:e_khy = { 
 			set_de_jure_liege_title = title:h_sakal_an_khar
 		}
+		
+		title:e_sirayn = { 
+			set_de_jure_liege_title = title:h_sakal_an_khar
+		}
+
+		title:e_shayn = { 
+			set_de_jure_liege_title = title:h_sakal_an_khar
+		}
+
 
 		if = {
 			limit = {
 				title:k_arysis = { de_jure_liege = title:e_khy }	
 			}
 			title:k_arysis = { set_de_jure_liege_title = title:e_dune_sea }
+		}	
+		
+		if = {
+			limit = {
+				title:k_gan = { de_jure_liege = title:e_shayn }	
+			}
+			title:k_gan = { set_de_jure_liege_title = title:e_mumakan }
+		}	
+		
+		if = {
+			limit = {
+				title:k_chennacatt = { de_jure_liege = title:e_sirayn }	
+			}
+			title:k_chennacatt = { set_de_jure_liege_title = title:e_bozisha_miraz }
+		}
+		
+		if = {
+			limit = {
+				title:k_poa = { de_jure_liege = title:e_sirayn }	
+			}
+			title:k_poa = { set_de_jure_liege_title = title:e_bozisha_miraz }
 		}	
 		
 		# Everyone is mad

@@ -503,7 +503,7 @@ create_artifact_crown_of_tanturak_effect = {
 	# Create the artifact
 	create_artifact = {
 		name = crown_of_tanturak_name
-		description = crown_of_tanturak_name
+		description = crown_of_tanturak_desc
 		type = helmet
 		visuals = crown
 		wealth = scope:wealth

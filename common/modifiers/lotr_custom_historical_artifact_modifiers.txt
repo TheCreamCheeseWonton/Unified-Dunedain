@@ -42,6 +42,7 @@ uraumo_modifier = {
 crown_of_tanturak_modifier = {
     monthly_dynasty_prestige_mult = 0.05
     monthly_prestige = 1
-    vassal_limit = 10
+    knight_effectiveness_per_dread = 0.002
+	monthly_dread = 1
     domain_limit = 1
 }
