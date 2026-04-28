@@ -529,30 +529,49 @@ gimilzir_tanturak_refounder = {
 gimilzir_tanturak_following_1 = { 
 	icon = family_positive
 	monthly_prestige = 0.1
+	character_travel_speed_mult = -0.05
 }
 
 gimilzir_tanturak_following_2 = { 
 	icon = family_positive
 	monthly_prestige = 0.2
+	character_travel_speed_mult = -0.1
 }
 
 gimilzir_tanturak_following_3 = { 
 	icon = family_positive
 	monthly_prestige = 0.3
+	character_travel_speed_mult = -0.15
 }
 
 gimilzir_tanturak_following_4 = { 
 	icon = family_positive
 	monthly_prestige = 0.4
+	character_travel_speed_mult = -0.25
 }
 
 gimilzir_tanturak_following_5 = { 
 	icon = family_positive
 	monthly_prestige = 0.6
+	character_travel_speed_mult = -0.40
 }
 
 gimilzir_tanturak_following_6 = { 
 	icon = family_positive
 	monthly_prestige = 0.8
+	character_travel_speed_mult = -0.50
+}
+
+gimilzir_tanturak_knights_modifier = { 
+	icon = prowess_positive
+	character_travel_safety_mult = 0.1
+}
+
+gimilzir_no_more_faithful = {
+	icon = piety_positive
+	county_opinion_add = 20
+	supply_limit_mult = 0.25
+ 	levy_reinforcement_rate = -0.05
+ 	travel_danger = -10
 }
 	

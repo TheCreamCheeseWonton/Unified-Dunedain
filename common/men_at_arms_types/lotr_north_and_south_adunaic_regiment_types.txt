@@ -643,6 +643,7 @@ adunaic_skirmishers = {
 
 	counters = { 
 		skirmishers = 1
+		pikemen = 1
 		heavy_infantry = 1
 	}
 
@@ -694,6 +695,7 @@ adunaic_soldiers = { # Heavy Shock Infantry
 		skirmishers = 2
 		heavy_infantry = 1
 		pikemen = 1
+		monster = 1
 	}
 
 	winter_bonus = {
@@ -741,6 +743,9 @@ adunic_steelbowmen = {
 
 	counters = {
 		skirmishers = 1
+		archers = 1
+		pikemen = 1
+		heavy_infantry = 1
 		monster = 1
 	}
 
@@ -776,6 +781,7 @@ knights_of_the_adunai = {
 	screen = 30
 
 	counters = {
+		light_cavalry = 1
 		heavy_infantry = 1
 		skirmishers = 1
 		archers = 1
@@ -850,6 +856,7 @@ adunaic_spearmen = {
 		heavy_cavalry = 1
 		camel_cavalry = 1
 		elephant_cavalry = 1
+		monster = 1
 		pikemen = 1
 	}
 

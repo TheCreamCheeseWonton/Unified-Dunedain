@@ -402,7 +402,7 @@ dunedain_religion = {
 			doctrine = doctrine_clerical_gender_either 
 		}
 		faith_adunaic_faithful = {
-			color = { 5 8 28 }
+			color = { 116 16 28 }
 			icon = faithful_adunai
 		
 			holy_site = pelargir
@@ -410,7 +410,7 @@ dunedain_religion = {
 			holy_site = korlea
 			holy_site = adunazain
 			holy_site = inzilioni
-			holy_site = uruloni
+			holy_site = arpel
 			holy_site = mispir
 			# others
 			doctrine = doctrine_gender_equal

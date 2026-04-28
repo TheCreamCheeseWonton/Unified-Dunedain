@@ -1,5 +1,7 @@
 ﻿l_english:
  not_in_current_update_tooltip: "#XB #BOLD This path is not yet developed#!#!"
+ gimilzir_succeed_contract_tt: "You #high Succeed#! the #high Story Contract#!"
+ gimilzir_failcontract_tt: "You #high Fail#! the #high Story Contract#!"
  ##Gimilzir Decisions
  decision_group_type_gimilzir_decisions: "Gimilzîr Decisions"
 
@@ -29,7 +31,7 @@
   gimilzir_events.4.t: "The Path Forward for House Gimilzîr"
   gimilzir_events.4.desc1: "After much time, effort, and more than a fair share of anxiety, I have done what once seemed impossible. I have proven myself wrong, and my family right. In my stewardship, I have brought glory and renown to our name, and wealth and plenty to my house. Not since the early [thirdage|E] has House Gimilzîr known such prosperity or such standing among the realms. \n\nThough it is difficult for me to believe, much of our glory has come through my own command, and even I cannot deny what has been achieved. Where once there was doubt, there is now recognition. Where once there was uncertainty, there is now influence. And yet, prosperity has not quieted ambition. On the contrary, it has stirred it. Within House Gimilzîr, voices now speak not of survival, but of destiny, of what we might yet become.\n\nSome look back to what was lost, and demand its restoration. They urge us to reclaim [GetTitleByKey('k_pel').GetNameNoTier], and perhaps even all of [GetTitleByKey('e_thani_hazad').GetNameNoTier]. To finally realize the long-faded dream of [gimilziran|E] and restore what our line once reached for, but never fully held.\n\nOthers still hardened by the memory and loss of our old estate in [GetTitleByKey('c_mispir').GetNameNoTier] demand vengeance. They speak of [anbalkumagan|E], and of settling the score by taking their lands and breaking their power once and for all. Finally saving the [sevenlands|E] from their evil and depravity."
   gimilzir_events.4.desc2: "After much time and effort, I have done what once seemed impossible. In my stewardship, I have brought glory and renown to our name, and wealth and plenty to my house. Not since the early [thirdage|E] has House Gimilzîr known such prosperity or such standing among the realms. \n\nWhere once there was doubt, there is now recognition. Where once there was uncertainty, there is now influence. And yet, prosperity has not quieted ambition. On the contrary, it has stirred it. Within House Gimilzîr, voices now speak not of survival, but of destiny, of what we might yet become.\n\nSome look back to what was lost, and demand its restoration. They urge us to reclaim [GetTitleByKey('k_pel').GetNameNoTier], and perhaps even all of [GetTitleByKey('e_thani_hazad').GetNameNoTier]. To finally realize the long-faded dream of [gimilziran|E] and restore what our line once reached for, but never fully held.\n\nOthers still hardened by the memory and loss of our old estate in [GetTitleByKey('c_mispir').GetNameNoTier] demand vengeance. They speak of [anbalkumagan|E], and of settling the score by taking their lands and breaking their power once and for all. Finally saving the [sevenlands|E] from their evil and depravity."
-  gimilzir_events.4.desc3: "\n\nAnd then there are those more cautious, those who see danger in both pride and revenge. They counsel departure instead, that we leave [thanihazad|E] behind entirely, gather what remains of the [faithful|E], and seek fortune elsewhere. A new beginning, far from the shadow of past failures and the enemies that still linger here in [thanihazad|E].\n\nAll of them now turn to me. The weight of choice rests where it always has, upon my shoulders. And whatever path I choose, it will not merely shape the present. It will define what House Gimilzîr becomes for generations."
+  gimilzir_events.4.desc3: "\n\nAnd then there are those more cautious, those who see danger in both pride and revenge. They counsel departure instead, that we leave [thanihazad|E] behind entirely, gather what remains of the [batanim|E], and seek fortune elsewhere. A new beginning, far from the shadow of past failures and the enemies that still linger here in [thanihazad|E].\n\nAll of them now turn to me. The weight of choice rests where it always has, upon my shoulders. And whatever path I choose, it will not merely shape the present. It will define what House Gimilzîr becomes for generations."
   gimilzir_events.4.desc4: "\n\nAll of them now turn to me. The weight of choice rests where it always has, upon my shoulders. And whatever path I choose, it will not merely shape the present. It will define what House Gimilzîr becomes for generations."
   gimilzir_events.4.a: "Pél was [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstNamePossessive] and so it shall me mine"
   choose_gimilzir_path_tt_1: "You will gather allies and strength to support your conquest of [GetTitleByKey('k_pel').GetNameNoTier]"
@@ -42,17 +44,130 @@
   gimilzir_events.4.e: "I need more time to think"
   choose_gimilzir_path_tt_5: "You will choose at a different time"
 
+ gimilzir_tanturak_following_1: "Batânim Following - Tiny"
+ gimilzir_tanturak_following_1_desc: "A tiny number of [batanim|E] follow this character towards a new homeland"
+
+ gimilzir_tanturak_following_2: "Batânim Following - Small"
+ gimilzir_tanturak_following_2_desc: "A small number of [batanim|E] follow this character towards a new homeland"
+
+ gimilzir_tanturak_following_3: "Batânim Following - Sizable"
+ gimilzir_tanturak_following_3_desc: "A sizable number of [batanim|E] follow this character towards a new homeland"
+
+ gimilzir_tanturak_following_4: "Batânim Following - Moderate"
+ gimilzir_tanturak_following_4_desc: "A moderate number of [batanim|E] follow this character towards a new homeland"
+
+ gimilzir_tanturak_following_5: "Batânim Following - Large"
+ gimilzir_tanturak_following_5_desc: "A large number of [batanim|E] follow this character towards a new homeland"
+
+ gimilzir_tanturak_following_6: "Batânim Following - Massive"
+ gimilzir_tanturak_following_6_desc: "A truely massive number of [batanim|E] follow this character towards a new homeland"
+
+ gimilzir_no_more_faithful: "Flight of the Batânim"
+ gimilzir_no_more_faithful_desc: "With the local Batânim gone, the people feel more at ease, no longer unsettled by their presence."
+
+ gimilzir_tanturak_knights_modifier: "Faithful Knights"
+ gimilzir_tanturak_knights_modifier_desc: "A number of faithful Knights of Kharadûne follow this character"
+
   gimilzir_events.7.t: "Towards a New Home"
-  gimilzir_events.7.desc: "Ever since the defeats of [gimilziran|E] and the loss of [GetTitleByKey('k_pel').GetNameNoTier] to the [tamska|E], the [faithful|E] of [thanihazad|E] have had no homeland to call their own. They now live scattered among the Kharadûnâi, often regarded as lesser than their [kingsmen|e] neighbors, and at times subjected to outright persecution. Those few [faithful|E] who remain today, though steadfast in their beliefs, endure life as religious outcasts within Kharadûnâi society, or else conceal their faith for fear of reprisal.\n\nThough this has brought great suffering upon my people, it has also led many within [thanihazad|E] to see them as burdens best cast aside. With careful persuasion, they may be convinced to allow me to gather the [faithful|E] and lead them away, to a new homeland. One we may call our own, far from the oppression we have long endured."
+  gimilzir_events.7.desc: "Ever since the defeats of [gimilziran|E] and the loss of [GetTitleByKey('k_pel').GetNameNoTier] to the [tamska|E], the [faithful|E] of [thanihazad|E] have had no homeland to call their own. They now live scattered among the Kharadûnâi, often regarded as lesser than their [kingsmen|e] neighbors, and at times subjected to outright persecution. Those few [batanim|E] who remain today, though steadfast in their beliefs, endure life as religious outcasts within Kharadûnâi society, or else conceal their faith for fear of reprisal.\n\nThough this has brought great suffering upon my people, it has also led many within [thanihazad|E] to see them as burdens best cast aside. With careful persuasion, they may be convinced to allow me to gather the [faithful|E] and lead them away, to a new homeland. One we may call our own, far from the oppression we have long endured."
   gimilzir_events.7.a: "But where could our new homeland truly be?"
 
   gimilzir_events.71.t: "Tantûrak?"
-  gimilzir_events.71.desc: "While it may at first seem unconventional, even ironic, given the dark and truly evil legacy of that forsaken realm of [black_numenoreans|E], Tantûrak may yet prove an ideal site for a new homeland. Much of south-eastern [middleearth|E] is already thickly settled, its broad lands claimed by many peoples, yet the regions about the Bay of Ûsakan remain largely empty. The few [men|E] who dwell there, scattered in decentralized tribal societies, could be readily brought into loyal service.\n\nMore promising still is the presence of the [kinnlai|E], elves with whom we might forge enduring alliances and true friendship.\n\nThough the journey would be long, arduous, and fraught with uncertainty, this path offers the Batânim a future in which they may finally possess a land of their own. A realm not of ceaseless war, but of peace and prosperity. It may lack the glory of the other roads before us, yet I cannot help but see it as the wisest of them all."
+  gimilzir_events.71.desc: "While it may at first seem unconventional, even ironic, given the dark and truly evil legacy of that forsaken realm of [black_numenoreans|E], Tantûrak may yet prove an ideal site for a new homeland. Much of south-eastern [middleearth|E] is already thickly settled, its broad lands claimed by many peoples, yet the regions about the Bay of Ûsakan remain largely empty. The few [men|E] who dwell there, scattered in decentralized tribal societies, could be readily brought into loyal service.\n\nMore promising still is the presence of the [kinnlai|E], elves with whom we might forge enduring alliances and true friendship.\n\nThough the journey would be long, arduous, and fraught with uncertainty, this path offers the [batanim|E] a future in which they may finally possess a land of their own. A realm not of ceaseless war, but of peace and prosperity. It may lack the glory of the other roads before us, yet I cannot help but see it as the wisest of them all."
   gimilzir_events.71.a: "The lost realm of Tantûrak shall be the home of my people"
   gimilzir_events.71.b: "No, this isn't the path forward!"
   gimilzir.71.tt_1: "You will petition the many lords of the [balan_lai|E], seeking leave to lead your people out of [thanihazad|E]"
   gimilzir.71.tt_2: "A #high Story Contract#! becomes available"
   gimilzir.71.tt_3: "You will choose a different path"
+
+  gimilzir_events.701.t: "Meeting [inzilloniholder.GetTitledFirstName]"
+  gimilzir_events.701.desc: "As I entered the throne room before [inzilloniholder.GetTitledFirstName], my heart beat like a drum. Everything I hope to achieve rests on this moment, and I dread what may be lost should I fail. I dropped to one knee before the Phazân, bowing my head in due respect. A fleeting thought brought the faintest smile. Perhaps, one day, it will be I who is bowed to.\n\n“Rise,” he commanded. “Now tell me, what plight brings you before me?”\n\n“My [inzilloniholder.GetLadyLord],” I said, standing once more, “my people, the [batanim|E], have long dwelt in these lands. We have endured much hardship at the behedst of the princes of [GetTitleByKey('k_kharadune').GetNameNoTier], and too often face scorn from our fellow Kharadûnâi. We no longer feel welcome here. I ask that you grant those [batanim|E] within your lands leave to depart with me, that we might found a realm of our own.”\n\n[inzilloniholder.GetSheHe|U] seemed taken aback, but quickly replied, “Many among the [batanim|E] serve as loyal knights and soldiers, why should I allow them to leave?”\n\nI paused for a moment, gathering my thoughts before answering." 
+  gimilzir_events.701.a: "The Batânim are few, their presence aid you little"
+  gimilzir_events.701.b: "I'm sure some coin is more than enough reason"
+  gimilzir_events.701.c: "You offer a frivolous reply, already having a better method in mind...."
+  gimilzir_events.701.d: "Your right, my [inzilloniholder.GetLadyLord], I'm sorry to have had bothered you"
+  gimilzir_events.701.a.tt: "You will attempt to smuggle the Batânim out of Inzillôni"
+
+  gimilzir_events.701.a.success: "[inzilloniholder.GetTitledFirstNameNoTooltip] is Convinced"
+  gimilzir_events.701.a.failure: "[inzilloniholder.GetTitledFirstNameNoTooltip] is Unconvinced"
+
+  gimilzir_events.702.t: "[inzilloniholder.GetTitledFirstName] Agrees!"
+  gimilzir_events.702.desc: "I can scarcely believe it, [inzilloniholder.GetFirstName] has agreed to let me take the [batanim|E] of [GetTitleByKey('c_inzilloni').GetNameNoTier]! Already, many [faithful|E] families are packing their belongings and following me out of the city, with more joining them by the hour.\n\nThe hope on their faces, hope for a better tomorrow, fills my heart with joy. I am doing something meaningful here, guiding my people toward a brighter future. Though they are but a small part of the [faithful|E] of [thanihazad|E], they mark the true beginning of my journey to Tantûrak. In time, many more will follow in their footsteps." 
+  gimilzir_events.702.a: "The first step towards a new home has been made"
+  gimilzir_events_story_contract: "A #high Story Contract#! becomes available"
+  add_more_settlers_gimilzir: "The local #high Batânim#! population will #high join#! you"
+
+  gimilzir_events.703.t: "[inzilloniholder.GetTitledFirstName] has Refused!"
+  gimilzir_events.703.desc: "Anger and disappointment swell within me, spilling into rage. How could [inzilloniholder.GetTitledFirstName] do this? The [batanim|E] are my people, mine to lead. The Kharadûnâi show us no true respect, so why cling to us so jealously as subjects?\n\nI shake my head, but it does little to cool the fire in my chest. And then it strikes me, there is another way. I do not need [inzilloniholder.GetTitledFirstNamePossessive] permission. I can take my people and leave as I choose.\n\nThe [batanim|E] will follow me, even against their [inzilloniholder.GetLadyLord], if it means a future of freedom beyond these detestable [kingsmen|E]. Though smuggling so many out of [inzilloniholder.GetTitledFirstNamePossessive] grasp would be perilous, it may be my only chance to free my people from the clutches of the [balan_lai|E]."
+  gimilzir_events.703.a: "The Batânim are mine, whether [inzilloniholder.GetTitledFirstName] likes it or not!"
+  gimilzir_events.703.b: "It isn't worth the risks"
+  gimilzir_events.703.a.tt: "You will attempt to smuggle your people out of [GetTitleByKey('c_inzilloni').GetNameNoTier]"
+
+  gimilzir_events.704.t: "Smuggling the Batânim"
+  gimilzir_events.704.desc: "I have decided to do the unthinkable, steal an entire city, or at least part of one. The [batanim|E] of [GetTitleByKey('c_inzilloni').GetNameNoTier] have endured far too long as lesser subjects, and now they will be freed, whether I must obey the law or not.\n\nThough the [batanim|E] are nominally under [inzilloniholder.GetTitledFirstName], if I construct a great enough scheme, what power would he truly have to stop us? The [batanim|E] are a rowdy, fiercely independent people, and convincing them to join such a bold plan should not be difficult.\n\nSoon, they will all be free of these unjust rulers."
+  gimilzir_events.704.a: "Do it, for Eru"
+  gimilzir_events.704.b: "Maybe this isnt such a good idea after all..."
+
+  gimilzir_events.704.a.success: "You will succeed in smuggling your people out of [GetTitleByKey('c_inzilloni').GetNameNoTier]"
+  gimilzir_events.704.a.failure: "You will fail to smuggle your people out of [GetTitleByKey('c_inzilloni').GetNameNoTier]"
+
+  gimilzir_events.705.t: "Knights of Kharadûne"
+  gimilzir_events.705.desc: "Of the many [batanim|E] who have joined me from [GetTitleByKey('c_inzilloni').GetNameNoTier], a not insignificant number are Knights of Kharadûne, renowned for their bravery, skill in battle, and gallantry. To have such warriors at my side would be a great boon. And as fate would have it, several now stand before me.\n\n“Sir, we wish to join your camp as your personal knights,” the foremost among them began. “We believe in your cause and would serve you however we can. Since childhood, I have dreamed that we [faithful|E] might one day have a land of our own, and with you, that dream may yet be realized.”\n\n“Please,” another added, “let us join your entourage, that we might help free all those [batanim|E] who still remain under the grasp of the [balan_lai|E].”" 
+  gimilzir_events.705.a: "Of course you may serve"
+  gimilzir_events.705.b: "You would better be used protecting the people"
+  gimilzir_events.705.b.tt: "They leave, disappointed"
+
+  gimilzir_events.706.t: "Never Suspected a Thing"
+  gimilzir_events.706.desc: "Everything went perfectly. Contacts had been made, word spread throughout the [faithful|E] quarters, and a time and place set for the plan to begin.\n\nLate at night, several [batanim|E] loyal to the cause sparked a commotion at the docks, setting a few merchant vessels ablaze before swiftly joining the rest of our people along the southern wall. While the guards were drawn to the chaos, the [faithful|E] slipped from the city through a small gate along the southern walls of the city, lightly guarded even in the best of times.\n\nBy the time [inzilloniholder.GetTitledFirstName] became aware of the sudden disappearance of his [batanim|E] subjects, we were already miles away, beyond reach of any reprisal."
+  gimilzir_events.706.a: "The Faithful will have their home!"
+
+  gimilzir_events.707.t: "Caught!"
+  gimilzir_events.707.desc: "Everything was in place. Contacts had been made, word spread throughout the [batanim|E] quarters, and a time and place set for the plan to begin. We were to spark a commotion at the harbor, drawing the guards away while the [faithful|E] slipped out through a side gate in the southern walls of [GetTitleByKey('c_inzilloni').GetNameNoTier].\n\nIt was all proceeding perfectly, until, mere hours before our departure, my camp was suddenly swarmed by guards unmistakably sent by [inzilloniholder.GetTitledFirstName]. They knew.\n\nThere was no longer any hope of slipping the [faithful|E] beyond those walls. We had to flee, and with that, any chance of bringing them with us was lost."
+  gimilzir_events.707.a: "How could this have happened..."
+
+
+  gimilzir_events.711.t: "Meeting [azaridethholder.GetTitledFirstName]"
+  gimilzir_events.711.desc: "Once again, I entered the throne room of a [balan_lai|E] prince. I kneel before [azaridethholder.GetTitledFirstName], and though still nerve-wracking, it no longer feels quite as overwhelming as before.\n\n“Stand, son of [gimilziran|E],” he said. “Tell me, why have you come before me today?”\n\n“My [azaridethholder.GetLadyLord],” I replied as I rose, “I am of the [batanim|E], and I am leading my people on a long journey toward a new homeland far to the east. We have long endured scorn from our fellow Kharadûnâi, and we no longer feel welcome here in [thanihazad|E]. I believe a new home would serve all better in the end. We know that to many within the [balan_lai|E], our presence is a source of frustration, and so I ask that you allow your [batanim|E] subjects to depart with me, so that we may found a realm of our own.”\n\n[azaridethholder.GetSheHe|U] nodded slowly. “While your faith is... less than ideal, your people still provide me with valuable service. Why, then, should I permit them to leave?”" 
+  gimilzir_events.711.a: "The Batânim's presence here only causes disunity"
+  gimilzir_events.711.b: "I'm sure some coin is more than enough reason"
+  gimilzir_events.711.c: "You offer a frivolous reply, already having a better method in mind...."
+  gimilzir_events.711.d: "Your right, my [azaridethholder.GetLadyLord], I'm sorry to have had bothered you"
+  gimilzir_events.711.b.tt: "You will attempt to smuggle the Batânim out of Azarîdêth"
+
+  gimilzir_events.711.a.success: "[azaridethholder.GetTitledFirstNameNoTooltip] is Convinced"
+  gimilzir_events.711.a.failure: "[azaridethholder.GetTitledFirstNameNoTooltip] is Unconvinced"
+
+  gimilzir_events.712.t: "[azaridethholder.GetTitledFirstName] Agrees!"
+  gimilzir_events.712.desc: "Optimism fills the heart, my face spreading into a grin as [azaridethholder.GetFirstName] agrees to let me depart with the [batanim|E] of [GetTitleByKey('c_azarideth').GetNameNoTier], alongside my followers. Already, many [faithful|E] families have packed their belongings and joined me as I leave the fortress, with more gathering to us by the hour.\n\nOnce again, I see what is so rarely found upon a [batanim|E] face, hope. The [faithful|E] who follow my lead grow in number, marching toward a better future. Though those who have joined me today are but another small step in a longer journey toward uniting our people, they are nonetheless one more stride on the path to Tantûrak." 
+  gimilzir_events.712.a: "Maybe this dream may actually happen"
+
+  gimilzir_events.713.t: "[azaridethholder.GetTitledFirstName] has Refused!"
+  gimilzir_events.713.desc: "Disappointment swells within me, boiling into anger. How could [azaridethholder.GetTitledFirstName] deny me the [batanim|E] of [GetTitleByKey('c_azarideth').GetNameNoTier], condemning them to a lifetime as second-class citizens? Why does [azaridethholder.GetSheHe], who shows us no true respect, cling so tightly to these unwilling [faithful|E] subjects?\n\nI shake my head, but it does little to cool the fire within me. If he will not grant them to me, then I will take my people and leave as I choose.\n\nThe [batanim|E] will follow me, even against their [azaridethholder.GetLadyLord], if it means a future of freedom beyond these detestable [kingsmen|E]. Though smuggling so many out from under [azaridethholder.GetTitledFirstNamePossessive] grasp would be perilous, it may be my only chance to free my people from the clutches of the [balan_lai|E]."
+  gimilzir_events.713.a: "The Batânim are mine, whether [azaridethholder.GetTitledFirstName] likes it or not!"
+  gimilzir_events.713.b: "It isn't worth the risks"
+  gimilzir_events.713.a.tt: "You will attempt to smuggle your people out of [GetTitleByKey('c_azarideth').GetNameNoTier]"
+
+  gimilzir_events.714.t: "For a Better Future"
+  gimilzir_events.714.desc: "I have decided to do the unthinkable, abduct an entire group of people, with their help, of course. The [batanim|E] of [GetTitleByKey('c_azarideth').GetNameNoTier] have long endured their place as lesser subjects, bound by obligations to serve a power that cares little for them. I intend to change that and free them, whether I must obey the law or not.\n\nThough they are nominally under [azaridethholder.GetTitledFirstName], if enough of us defy him together, what power would he truly have to stop us? The [batanim|E] are a rowdy, fiercely independent people, and convincing them to join such a bold plan should not be difficult.\n\nSoon, they will all be free of these unjust rulers."
+  gimilzir_events.714.a: "Forward, for the good of all Batânim"
+  gimilzir_events.714.b: "Maybe this isnt such a good idea after all..."
+
+  gimilzir_events.714.a.success: "You will succeed in smuggling your people out of [GetTitleByKey('c_azarideth').GetNameNoTier]"
+  gimilzir_events.714.a.failure: "You will fail to smuggle your people out of [GetTitleByKey('c_azarideth').GetNameNoTier]"
+
+  gimilzir_events.715.t: "An Officer of Kharadûne"
+  gimilzir_events.715.desc: "Of the many [batanim|E] who have joined me from [GetTitleByKey('c_azarideth').GetNameNoTier], a notable number were soldiers, and even some officers, of the local garrison tasked with defending the fortress. One such man, a relatively high-ranking commander, now bows before me.\n\n“Sir,” he began, lifting his head, “for many years I have served in the armies of Kharadûne, defending [thanihazad|E] from [anbalkumagan|E] and whatever else might threaten these lands.”\n\nHe exhaled, disappointment and bitterness tightening his expression. “Yet my talents have been ignored by these [kingsmen|E] lords, and I have grown weary of being passed over for my lesser peers. I ask you, please accept me into your service. Let me serve you, so that we [batanim|E] may never again suffer such disgrace.”"
+  gimilzir_events.715.a: "Of course you may serve"
+  gimilzir_events.715.b: "Maybe you should retire, and live a peaceful life"
+  gimilzir_events.715.b.tt: "They leave, disappointed"
+
+  gimilzir_events.716.t: "Never Suspected a Thing"
+  gimilzir_events.716.desc: "Everything went perfectly. Contacts had been made, word spread throughout the [faithful|E] quarters, and a time and place set for the plan to begin.\n\nMy spies successfully disrupted the guard rotation, leaving a full hour in which the southern main gate stood unoccupied, wide open, and unguarded. This gave the [batanim|E] of [GetTitleByKey('c_azarideth').GetNameNoTier] more than enough time to depart, walking straight out through the front gate in open defiance of [azaridethholder.GetFirstName].\n\nBy the time [azaridethholder.GetTitledFirstName] learned of the sudden flight of his [batanim|E] subjects, we were already miles away, well beyond the reach of any reprisal."
+  gimilzir_events.716.a: "The Faithful will have their home!"
+
+  gimilzir_events.717.t: "Caught!"
+  gimilzir_events.717.desc: "Everything was in place. Contacts had been made, word had spread throughout the [batanim|E] quarters, and a time and place set for the plan to begin. We were to disrupt the guard rotation and depart openly through the front gate, a public act of defiance against [azaridethholder.GetTitledFirstName] once his forces were in no position to respond. We never got the chance.\n\nOur spies, sent ahead to unsettle the guards and secure our passage, were uncovered in their deception.\n\nWith that, any hope of slipping the [faithful|E] beyond those high walls and battlements vanished, leaving them trapped within as serfs. We were forced to flee, and with it, any chance of having them at my side was lost."
+  gimilzir_events.717.a: "How could this have happened..."
 
  BattlePoIHistoricalNameZairanak: "The Defence at Zâirânak"
  BattlePoIHistoricalDescZairanak: "#emp Victor: [GetScriptedCharacterByHistoryID( 'lineofgimilthani3' ).GetName]\nDefeated: [GetScriptedCharacterByHistoryID( 'linegimilzadan08' ).GetName] @death_icon!\nDate: [ageSA|E] 3418#!\n#weak The Defence of Zâirânak was a decisive engagement during the [balan_lai|E] invasion of [GetTitleByKey('k_pel').GetNameNoTier]. After the failed incursions led by [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstName], the [balan_lai|E] seized the initiative, advancing on the heavily fortified mountain pass of [GetTitleByKey('b_zairanak').GetNameNoTier]. As the armies of [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName] pressed into the narrow pass, [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstName] moved swiftly to respond, manning the defenses while leading a smaller force in repeated sorties to harass the advancing enemy. His strategy was to wear them down through constant pressure in anticipation of a prolonged siege.\n\nWhen battle was joined, these hit-and-run tactics proved effective, sapping the [balan_lai|E]’s morale and manpower. Yet the scale of the invasion soon became clear as the forces of [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName] far exceeded expectations, and fresh troops seemed to arrive without end. Before long, the [balan_lai|E] laid siege to the fortress at [GetTitleByKey('b_zairanak').GetNameNoTier]. Their formidable siege engines battered down its walls and reduced its towers to ruin in a matter of weeks.\n\nIn a final bid to turn the tide, [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstName] led his Royal Guard and the elite Argimilzagar-an-Êru in a decisive cavalry charge. The assault initially succeeded, shattering and routing much of the enemy’s left flank. However, [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName] quickly rallied his forces and counterattacked, leading the Knights of Kharadûnê in a devastating strike against [GetScriptedCharacterByHistoryID('linegimilzadan08').GetTitledFirstNamePossessive] rear. In the clash, the great commander was slain.\n\nWith [GetScriptedCharacterByHistoryID('linegimilzadan08').GetFirstNamePossessive] death, his son, [GetScriptedCharacterByHistoryID('linegimilzadan09').GetFirstName], attempted to regroup the army, but the effort collapsed. He was soon routed, later captured, and ultimately executed by [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetTitledFirstName]. The battle ended in catastrophe, with much of [GetScriptedCharacterByHistoryID('linegimilzadan08').GetFirstNamePossessive] military strength being destroyed, along with both himself and his heir. Losses from which the realm would never truly recover.#!"
@@ -86,6 +201,9 @@
  ##Game Concepts
  game_concept_gimilziran: "Gimilattô"
  game_concept_gimilziran_desc: "Gimilattô, known as Elf-Friend, was the would-be founder of the High Kingdom of [thanihazad|E] and a formidable conqueror who, for a time, held vast swaths of the southern [sevenlands|E] under his banner. \n\nHe was raised in [numenor|E] during the rise of the Shadow and became a leader among the [faithful|E] [numenoreans|E] exiled from Andúnië. Believing his life to be a mission in service to [iluvatar|E] and the [valargods|E], Gimilattô sought tirelessly to rekindle the light of [eru|E] among those who had turned away. When the Great Armament was summoned, he defied Ar-Pharazôn's command and fled to Nindamas, where he secretly prepared ships. Warned by his friend [elendil|E] of Amandil's vision of the [downfallofnumenor|E], Gimilattô and his sons narrowly escaped the cataclysm in a small fleet of vessels carrying their followers. He made landfall in Lôni Hîsekhôr, quickly resettling the recently destroyed city with his own [faithful|E] followers. \n\nFrom this refuge, he launched his campaign of conquest. Rallying the survivors of [numenor|E], Gimilattô rapidly took control of the Kingdom of Pél, establishing it as the heart of his new realm. Declaring himself High King of [thanihazad|E], he demanded fealty from the lords of the [sevenlands|E] and called upon them to renounce the ways of the [kingsmen|E]. This bold proclamation, however, proved his undoing. The nascent [balan_lai|E], viewing Gimilattô as both a heretic and an existential threat, launched a full-scale invasion, quickly overwhelming Gimilattô's armies. Within just a century, Gimilattô's dream lay in ruins. He and his son Izinduzôr fell in the bloody Battle of Zâirânak, ending his short-lived reign. Though his grandson, Adûnafazor, attempted to rekindle the flame of his legacy, he too perished in battle just a few years later. Gimilattô's great-grandson, Khibilathôr, secured a period of peace following the decisive victory of the [balan_lai|E], preserving his control over the Kingdom of Pél. However, this stability proved short-lived, as Pél was conquered by the [tamska|E] just over a century into his reign. \n\nThus the the vision of a [faithful|E] [thanihazad|E] was extinguished forever. The war was a total loss, and Gimilattô, along with his son, grandson, and great-grandson were all laid to rest in a hidden tomb deep beneath the newly founded Gimilzîr Estate in Mispír."
+
+ game_concept_batanim: "Batânim"
+ game_concept_batanim_desc: "The Batânim are the [faithful|E] [adunaic|E] inhabitants of [thanihazad|E], those who have clung to their beliefs even centuries after the failed conquests of [gimilziran|E]. Long persecuted by the many princes of the [balan_lai|E] throughout the [thirdage|E], they are now few in number and largely outcasts within Kharadûnâi society.\n\nYet they hold their faith, and their devotion to [erutheone|E], above all else. Willing to enduring reprisal, punishment, and whatever trials the world may cast upon them rather than abandon it. As their people say: 'The light of the sun will dim before our faith.'"
  
  ##Nicknames
   nick_bearer_of_light: "Nimruzîr" 
@@ -96,3 +214,46 @@
  action_story_contract_available_gimilzir_tanturak_label: "Story Contract Label"
  action_story_contract_available_gimilzir_tanturak_desc: "A #high Story#! [task_contract|E] for Ârûgimil is available."
  action_story_contract_available_gimilzir_tanturak_click: ""
+
+ lotr_gimilzir_tanturak_contract_inzilloni: "Petition Inzillôni"
+ lotr_gimilzir_tanturak_contract_inzilloni_contract: "$lotr_gimilzir_tanturak_contract_inzilloni$"
+ lotr_gimilzir_tanturak_contract_inzilloni_desc: "\nAmid the wide wheat fields of [GetTitleByKey('k_kharadune').GetNameNoTier] stands Inzillôni. This [numenorean|E] city is home to a large number of [faithful|E] [adunai|E], and its rulers have been among the more accepting of our people, often recruiting many of the Knights of Kharadûne from our ranks.\n\nIf I am to settle new lands, I must bring these people with me. To do so, I must petition the local lord, seeking leave to gather all [batanim|E] and lead them forth at my side."
+ lotr_gimilzir_tanturak_contract_inzilloni_desc_title: "$lotr_gimilzir_tanturak_contract_inzilloni$"
+ lotr_gimilzir_tanturak_contract_inzilloni_request: "This [task_contract|E] requires you to pay a visit to a ruler."
+ 
+ lotr_gimilzir_tanturak_contract_azarideth: "Petition Azarîdêth"
+ lotr_gimilzir_tanturak_contract_azarideth_contract: "$lotr_gimilzir_tanturak_contract_azarideth$"
+ lotr_gimilzir_tanturak_contract_azarideth_desc: "\nThe fortress of Azarîdêth is a truly formidable sight, and within its walls reside many [batanim|E], often set to serve as soldiers and laborers to man the mighty citadel.\n\nIf I am to settle Tantûrak, I must bring these [faithful|E] with me. To do so, I must petition the local lord, seeking permission to gather the [batanim|E] and lead them forth at my side." 
+ lotr_gimilzir_tanturak_contract_azarideth_desc_title: "$lotr_gimilzir_tanturak_contract_azarideth$"
+ lotr_gimilzir_tanturak_contract_azarideth_request: "This [task_contract|E] requires you to pay a visit to a ruler."
+ 
+ lotr_gimilzir_tanturak_contract_uruloni: "Petition Ûrulôni"
+ lotr_gimilzir_tanturak_contract_uruloni_contract: "$lotr_gimilzir_tanturak_contract_uruloni$"
+ lotr_gimilzir_tanturak_contract_uruloni_desc: "\nÛrulôni is the seat of power for the mighty [GetScriptedCharacterByHistoryID('lineofgimilthani3').GetDynasty.GetBaseName] [dynasty|E], the very same [dynasty|E] that shattered my ancestors’ dream of a united [faithful|E] [thanihazad|E]. Though that history still weighs heavily upon me, many [batanim|E] settled in Ûrulôni after our exile from [GetTitleByKey('k_pel').GetNameNoTier].\n\nI will travel to Ûrulôni to gather the [batanim|E], seeking to lead them forth at my side." 
+ lotr_gimilzir_tanturak_contract_uruloni_desc_title: "$lotr_gimilzir_tanturak_contract_uruloni$"
+ lotr_gimilzir_tanturak_contract_uruloni_request: "This [task_contract|E] requires you to pay a visit to a ruler."
+ 
+ lotr_gimilzir_tanturak_contract_mispir: "A Summons to Mispír"
+ lotr_gimilzir_tanturak_contract_mispir_contract: "$lotr_gimilzir_tanturak_contract_mispir$"
+ lotr_gimilzir_tanturak_contract_mispir_desc: "\nAn unexpected stranger appeared in my camp, offering an 'opportunity' to me and my fellows. I am to travel to Mispír and meet with the city’s ruler to discuss the fate of its [batanim|E] population. I had not anticipated such a summons, but if I am to unite my people, it is an opportunity I cannot afford to ignore."
+ lotr_gimilzir_tanturak_contract_mispir_desc_title: "$lotr_gimilzir_tanturak_contract_mispir$"
+ lotr_gimilzir_tanturak_contract_mispir_request: "This [task_contract|E] requires you to travel to a ruler's court."
+ 
+ lotr_gimilzir_tanturak_contract_gimileth: "Letter from Gimilêth?"
+ lotr_gimilzir_tanturak_contract_gimileth_contract: "$lotr_gimilzir_tanturak_contract_gimileth$"
+ lotr_gimilzir_tanturak_contract_gimileth_desc: "\nI have received a truly unexpected letter from Gimilêth, urging me to petition the local lord to allow members of the Sapthân-lâi population to join me. The letter claims they believe I will build a realm more accepting of their faith than then the [balan_lai|E].\n\nWhile not part of my original plans, and with Gimilêth holding few [batanim|E], the Sapthân-lâi could still strengthen my following and help build a my realm in Tantûrak." 
+ lotr_gimilzir_tanturak_contract_gimileth_desc_title: "$lotr_gimilzir_tanturak_contract_gimileth$"
+ lotr_gimilzir_tanturak_contract_gimileth_request: "This [task_contract|E] requires you to travel to a ruler's court."
+  
+ lotr_gimilzir_tanturak_contract_arpel: "Petition Lôni Hîsekhôr"
+ lotr_gimilzir_tanturak_contract_arpel_contract: "$lotr_gimilzir_tanturak_contract_arpel$"
+ lotr_gimilzir_tanturak_contract_arpel_desc: "\nLôni Hîsekhôr was once the city from which [gimilziran|E] and my dynasty ruled, and for many [batanim|E] it remains a place of pilgrimage and passage. As such, it still holds a considerable [faithful|E] presence.\n\nThough many may grieve to depart from the city of [gimilziran|E], I cannot leave them behind. I will travel to Lôni Hîsekhôr and seek the lord’s permission to gather the [batanim|E] and lead them forth at my side." 
+ lotr_gimilzir_tanturak_contract_arpel_desc_title: "$lotr_gimilzir_tanturak_contract_arpel$"
+ lotr_gimilzir_tanturak_contract_arpel_request: "This [task_contract|E] requires you to pay a visit to a ruler."
+
+ lotr_gimilzir_tanturak_contract_arpel_sailing: "Able Hands Wanted"
+ lotr_gimilzir_tanturak_contract_arpel_sailing_contract: "$lotr_gimilzir_tanturak_contract_arpel_sailing$"
+ lotr_gimilzir_tanturak_contract_arpel_sailing_desc: "\nThe Lord of [GetTitleByKey('c_serelond').GetNameNoTier] has contacted me, seeking aid in the construction of a new port on the far side of the cape of Andrast. My help is wanted in order to help the settlement there grow into a proper town."
+ lotr_gimilzir_tanturak_contract_arpel_sailing_desc_title: "$lotr_gimilzir_tanturak_contract_arpel_sailing$"
+ lotr_gimilzir_tanturak_contract_arpel_sailing_request: "This [task_contract|E] requires you to pay a visit to a ruler."
+ 

@@ -1803,11 +1803,10 @@ decision_azraphel_an_khar = {
 		gold = 500 
 	}
 	
-	hidden_effect = {
-		title:e_usakan = { set_capital_county = title:c_sarul }
-	}
-	
 	effect = {
+		hidden_effect = {
+			title:e_usakan = { set_capital_county = title:c_sarul }
+		}
 		# Get title 
 		create_title_and_vassal_change = {
 			type = created

@@ -81,11 +81,14 @@ decision_continue_adventure_gimilzir_tanturak = { ### Regain lost story contract
 			has_character_flag = gimilzir_tanturak_contract_arpel
 			has_character_flag = gimilzir_tanturak_contract_arpel_sailing
 		}
-		#NOR = { # Should only show when the camp is not in the intended location
-		#	root.domicile.domicile_location = province:903 # Ramlond
-		#	root.domicile.domicile_location = province:935 # Mirlond
-		#	root.domicile.domicile_location = province:350 # Linhir
-		#}
+		NOR = { # Should only show when the camp is not in the intended location
+			root.domicile.domicile_location = province:5497 # Inzilloni
+			root.domicile.domicile_location = province:5526 # Azarideth
+			root.domicile.domicile_location = province:5458 # Urulomik
+			root.domicile.domicile_location = province:5317 # Mispir
+			root.domicile.domicile_location = province:5401 # Gimileth
+			root.domicile.domicile_location = province:5411 # Arpel
+		}
 	}
 		
 	is_valid = {
