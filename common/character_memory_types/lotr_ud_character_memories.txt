@@ -1,0 +1,13 @@
+﻿###
+settled_tanturak_memory = {
+	categories = { positive family relationships }
+	icon = "faithful_adunai.dds"
+
+	description = { desc = settled_tanturak_memory_desc }
+
+	second_perspective_description = { desc = settled_tanturak_memory_desc_second_perspective }
+
+	third_perspective_description = { desc = settled_tanturak_memory_desc_third_perspective }
+
+	duration = { years = memory_default_duration }
+}

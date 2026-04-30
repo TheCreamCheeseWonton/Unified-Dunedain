@@ -349,6 +349,7 @@ decision_gimilzir_tanturak_founder_statue = {
 	
 	effect = {
 		add_prestige = 500
+		activate_holy_site = guishas_faithful
 		dynasty = { add_dynasty_prestige = 250 }
 		
 		

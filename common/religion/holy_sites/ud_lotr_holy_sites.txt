@@ -1,0 +1,29 @@
+﻿
+sarul_faithful = {
+	county = c_sarul
+	barony = b_sarul
+	character_modifier = {
+		martial_per_piety_level = 1
+		stewardship = 1
+	}
+}
+
+ardinak_faithful = {
+	county = c_ardinak
+	barony = b_ardinak
+	character_modifier = {
+		dread_baseline_add = 5
+		monthly_piety = 0.3
+		intrigue_per_piety_level = 1
+	}
+}
+
+guishas_faithful = {
+	county = c_guishas
+	barony = b_guishas
+	character_modifier = {
+		diplomatic_range_mult = 0.1
+		monthly_piety = 0.1
+		piety_level_impact_mult = 0.1
+	}
+}

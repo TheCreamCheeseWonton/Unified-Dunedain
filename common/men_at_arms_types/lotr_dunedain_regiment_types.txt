@@ -1518,10 +1518,6 @@ numenorean_elites_custom = {
 		archers = 1
 		monster = 1
 		skirmishers = 2
-		light_cavalry = 1
-		heavy_cavalry = 1
-		camel_cavalry = 1
-		elephant_cavalry = 1
 	}
 	
 	buy_cost = { gold = 700 }
@@ -1614,7 +1610,7 @@ numenorean_marines_adunaic = { #represents Dunedain maritime traditions and main
 	}
 
 	counters = {
-		pikemen = 1
+		pikemen = 2
 		skirmishers = 1
 		heavy_infantry = 1
 	}
@@ -1884,10 +1880,6 @@ numenorean_elites_adunaic = {
 		archers = 1
 		monster = 1
 		skirmishers = 2
-		light_cavalry = 1
-		heavy_cavalry = 1
-		camel_cavalry = 1
-		elephant_cavalry = 1
 	}
 	
 	buy_cost = { gold = 700 }
@@ -2081,9 +2073,9 @@ numenorean_marines = {
 	}
 
 	counters = {
-		pikemen = 1
+		pikemen = 2
+		skirmishers = 1
 		heavy_infantry = 1
-		skirmishers = 2
 	}
 
 	buy_cost = { gold = 130 }
@@ -2243,9 +2235,8 @@ numenorean_elites = {
 	
 	counters = {
 		pikemen = 2
-		heavy_infantry =2
-		skirmishers = 2
-		archers = 1
+		skirmishers = 1
+		heavy_infantry = 1
 		monster = 1
 	}
 	
@@ -2294,8 +2285,8 @@ dunedain_marines = { #represents Dunedain maritime traditions and mainly there f
 
 	counters = {
 		pikemen = 1
-		heavy_infantry = 1
 		skirmishers = 1
+		heavy_infantry = 1
 	}
 	
 	winter_bonus = {
@@ -2342,7 +2333,6 @@ dunedain_soldiers = {
 	counters = {
 		monster = 1
 		pikemen = 1
-		heavy_infantry = 1
 		skirmishers = 1
 	}
 	
@@ -2590,13 +2580,9 @@ dunedain_elites = {
 	
 	counters = {
 		pikemen = 2
-		skirmishers = 2
-		heavy_infantry = 2
-		monster = 2
-		light_cavalry = 1
-		heavy_cavalry = 1
-		camel_cavalry = 1
-		elephant_cavalry = 1
+		archers = 1
+		monster = 1
+		skirmishers = 1
 	}
 	
 	buy_cost = { gold = 500 }
@@ -2701,7 +2687,6 @@ dunedain_reformed_outriders = {
 	counters = {
 		archers = 1
 		skirmishers = 1
-		light_cavalry = 1
 		archer_cavalry = 1
 	}
 

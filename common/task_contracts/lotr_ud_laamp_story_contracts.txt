@@ -579,9 +579,20 @@ lotr_gimilzir_tanturak_contract_arpel_sailing = {
 			value = title:c_arpel.title_province
 		}
 		task_contract_taker = { play_sound_effect = "event:/DLC/EP3/SFX/UI/Contracts/ep3_ui_contracts_accept_contract" }
-		
-		task_contract_taker = {
-			trigger_event = gimilzir_events.761
+		if = { 
+			limit = { 
+				task_contract_taker = { 
+					has_character_flag = gimilzir_tanturak_contract_arpel_did_intrique
+				}
+			}
+			task_contract_taker = {
+				trigger_event = gimilzir_events.763
+			}
+		}
+		else = {
+			task_contract_taker = {
+				trigger_event = gimilzir_events.761
+			}
 		}
 	}
 	on_create = {

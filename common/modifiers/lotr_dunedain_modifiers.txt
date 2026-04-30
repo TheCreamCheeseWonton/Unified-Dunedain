@@ -461,13 +461,30 @@ elves_in_thani_hazad_bozisha_dar = {
 	epidemic_resistance = 10
 }
 
-gimilzir_ardinak_best = { 
+gimilzir_sarul_best = { 
 	icon = county_modifier_development_positive
-	development_growth_factor = 0.4
+	development_growth_factor = 0.3
 	build_speed = -0.2
 	build_gold_cost = -0.2
 	tax_mult = 0.5
 	levy_size = 0.5
+}
+
+gimilzir_sarul_good = { 
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.1
+	build_speed = -0.1
+	build_gold_cost = -0.1
+	tax_mult = 0.25
+	levy_size = 0.25
+}
+
+
+gimilzir_sarul_meh = { 
+	icon = county_modifier_development_positive
+	development_growth_factor = 0.1
+	tax_mult = 0.1
+	levy_size = 0.1
 }
 
 gimilzir_ardinak_good = { 
@@ -477,22 +494,6 @@ gimilzir_ardinak_good = {
 	build_gold_cost = -0.1
 	tax_mult = 0.25
 	levy_size = 0.25
-}
-
-gimilzir_sarul_good = { 
-	icon = county_modifier_development_positive
-	development_growth_factor = 0.2
-	build_speed = -0.1
-	build_gold_cost = -0.1
-	tax_mult = 0.25
-	levy_size = 0.25
-}
-
-gimilzir_sarul_meh = { 
-	icon = county_modifier_development_positive
-	development_growth_factor = 0.1
-	tax_mult = 0.1
-	levy_size = 0.1
 }
 
 gimilzir_ardinak_meh = { 
@@ -574,4 +575,40 @@ gimilzir_no_more_faithful = {
  	levy_reinforcement_rate = -0.05
  	travel_danger = -10
 }
+
+gimilzir_yes_sapath_lai = {
+	icon = family_negative
+	same_culture_opinion = -10
+}
 	
+trade_agreement_with_mispir = {
+	icon = stewardship_positive
+	tax_mult = 0.1
+	development_growth_factor = -0.25
+	general_opinion = -10
+	knight_effectiveness_mult = -0.05
+}
+
+trade_agreement_with_mispir_better = {
+	icon = stewardship_positive
+	tax_mult = 0.1
+	development_growth_factor = 0.1
+}
+
+trade_agreement_with_mispir_mispir = {
+	icon = stewardship_positive
+	tax_mult = 0.3
+	development_growth_factor = 0.3
+}
+
+trade_agreement_with_mispir_mispir_lesser = {
+	icon = stewardship_positive
+	tax_mult = 0.1
+	development_growth_factor = 0.1
+}
+
+trade_agreement_with_mispir_sarul = {
+	icon = stewardship_positive
+	tax_mult = 0.1
+	development_growth_factor = 0.1
+}

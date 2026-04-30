@@ -412,6 +412,10 @@ dunedain_religion = {
 			holy_site = inzilioni
 			holy_site = arpel
 			holy_site = mispir
+			
+			holy_site = sarul_faithful
+			holy_site = ardinak_faithful
+			holy_site = guishas_faithful
 			# others
 			doctrine = doctrine_gender_equal
 			doctrine = doctrine_divorce_approval

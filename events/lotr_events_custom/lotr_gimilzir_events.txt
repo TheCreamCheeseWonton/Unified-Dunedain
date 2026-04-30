@@ -98,7 +98,23 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 	
 	left_portrait = {
 		character = root
-		animation = personality_content
+		animation = thinking
+	}
+	right_portrait = {
+		character = character:linegimilzadan1
+		animation = debating
+	}
+	lower_left_portrait = {
+		character = character:linegimilzadan02
+		animation = debating
+	}
+	lower_center_portrait = {
+		character = character:lineagimilzadanwife
+		animation = debating
+	}
+	lower_right_portrait = {
+		character = character:linegimilzadan3
+		animation = debating
 	}
 	
 	option = {
@@ -285,7 +301,7 @@ gimilzir_events.701 = { # Inzilloni Contract
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = throne_room_bow_1
 	}
 	right_portrait = {
 		character = scope:inzilloniholder
@@ -387,6 +403,9 @@ gimilzir_events.701 = { # Inzilloni Contract
 		domicile ?= {
 			change_provisions = 50
 			move_domicile = title:c_inzilloni.title_province
+		}
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
 		}
 		custom_tooltip = gimilzir_events_story_contract
 		random_character_active_contract = {
@@ -505,6 +524,9 @@ gimilzir_events.703 = { # Inzilloni Contract - do it sneaky?
 		name = gimilzir_events.703.b
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni }
 			complete_task_contract = failure_standard
@@ -643,6 +665,9 @@ gimilzir_events.704 = { # Inzilloni Contract: Sneaky
 		name = gimilzir_events.704.b
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni }
 			complete_task_contract = failure_standard
@@ -899,6 +924,9 @@ gimilzir_events.707 = { # Inzilloni Sneaky Failure
 	option = { 
 		name = gimilzir_events.707.a
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_inzilloni }
 			complete_task_contract = failure_standard
@@ -914,6 +942,7 @@ gimilzir_events.710 = { # Hidden: Create the Azarideth Contract
 	hidden = yes
 	immediate = {
 		title:c_azarideth.holder = { save_scope_as = azaridethholder }
+		pan_camera_to_province = title:c_azarideth.title_province
 		root = {
 			create_task_contract = {
 				task_contract_type = lotr_gimilzir_tanturak_contract_azarideth
@@ -940,7 +969,7 @@ gimilzir_events.711 = { # Azarideth Contract
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = throne_room_bow_1
 	}
 	right_portrait = {
 		character = scope:azaridethholder
@@ -1036,6 +1065,13 @@ gimilzir_events.711 = { # Azarideth Contract
 		name = gimilzir_events.711.d
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		domicile ?= {
+			change_provisions = 50
+			move_domicile = title:c_azarideth.title_province
+		}
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth }
 			complete_task_contract = failure_standard
@@ -1111,7 +1147,6 @@ gimilzir_events.712 = { # Azarideth Contract: Accept
 			id = gimilzir_events.715
 			days = 1
 		}
-		custom_tooltip = gimilzir_events_story_contract
 	}
 }
 
@@ -1153,6 +1188,9 @@ gimilzir_events.713 = { # Azarideth Contract - do it sneaky?
 		name = gimilzir_events.713.b
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth }
 			complete_task_contract = failure_standard
@@ -1291,6 +1329,9 @@ gimilzir_events.714 = { # Azarideth Contract: Sneaky
 		name = gimilzir_events.714.b
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth }
 			complete_task_contract = failure_standard
@@ -1449,6 +1490,9 @@ gimilzir_events.717 = { # Azarideth Sneaky Failure
 	option = { 
 		name = gimilzir_events.717.a
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_azarideth }
 			complete_task_contract = failure_standard
@@ -1464,6 +1508,7 @@ gimilzir_events.720 = { # Hidden: Create the Uruloni Contract
 	hidden = yes
 	immediate = {
 		title:c_uruloni.holder = { save_scope_as = uruloniholder }
+		pan_camera_to_province = title:c_uruloni.title_province
 		root = {
 			create_task_contract = {
 				task_contract_type = lotr_gimilzir_tanturak_contract_uruloni
@@ -1490,7 +1535,7 @@ gimilzir_events.721 = { # Uruloni Contract
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = stress
 	}
 	right_portrait = {
 		character = scope:uruloniholder
@@ -1504,7 +1549,18 @@ gimilzir_events.721 = { # Uruloni Contract
 		title:c_uruloni.holder = { save_scope_as = uruloniholder }
 		remove_character_flag = gimilzir_tanturak_contract_urulomik
 	}
-	option = { # Try to convince him
+	
+	option = { # You pay him
+		name = gimilzir_events.721.b
+		domicile ?= {
+			change_provisions = medium_provisions_gain
+			move_domicile = title:c_uruloni.title_province
+		}
+		pay_reserved_gold = { target = scope:uruloniholder gold = 350 }
+		trigger_event = gimilzir_events.722
+	}
+	
+	option = { # Try to convince him to give for free
 		name = gimilzir_events.721.a
 		domicile ?= {
 			change_provisions = medium_provisions_gain
@@ -1513,7 +1569,7 @@ gimilzir_events.721 = { # Uruloni Contract
 		duel = {
  			skill = diplomacy
  			target = scope:uruloniholder
- 			40 = {
+ 			30 = {
 				# You convince him
  				desc = gimilzir_events.721.a.success
  				compare_modifier = {
@@ -1536,7 +1592,7 @@ gimilzir_events.721 = { # Uruloni Contract
 				trigger_event = gimilzir_events.722
 				add_prestige = 25
  			}
- 			60 = {
+ 			70 = {
  				# You fail to convince him
  				desc = gimilzir_events.721.a.failure
  				compare_modifier = {
@@ -1544,6 +1600,12 @@ gimilzir_events.721 = { # Uruloni Contract
  					multiplier = -3.5
  					min = -49
  				}
+				modifier = {
+					add = 25
+					scope:uruloniholder = {
+						faith_is_good = no
+					}
+				}
  				send_interface_toast = {
  					title = gimilzir_events.721.a.failure
  					left_icon = root
@@ -1562,17 +1624,6 @@ gimilzir_events.721 = { # Uruloni Contract
  		}
 	}
 	
-	option = { # You pay him
-		name = gimilzir_events.721.b
-		domicile ?= {
-			change_provisions = medium_provisions_gain
-			move_domicile = title:c_uruloni.title_province
-		}
-		custom_tooltip = gimilzir_events.721.a.tt
-		pay_reserved_gold = { target = scope:uruloniholder gold = 150 }
-		trigger_event = gimilzir_events.722
-	}
-	
 	option = { # Reject his offer and do it sneaky like
 		name = gimilzir_events.721.c
 		ai_chance = { base = 100 }
@@ -1587,11 +1638,18 @@ gimilzir_events.721 = { # Uruloni Contract
 		name = gimilzir_events.721.d
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		domicile ?= {
+			change_provisions = 50
+			move_domicile = title:c_uruloni.title_province
+		}
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni }
 			complete_task_contract = failure_standard
 		}
-		scope:inzilloniholder = {
+		scope:uruloniholder = {
 			add_opinion = {
 				target = root
 				modifier = annoyed_opinion
@@ -1617,7 +1675,7 @@ gimilzir_events.722 = { # Uruloni Contract: Accept
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = personality_content
 	}
 	right_portrait = {
 		character = scope:uruloniholder
@@ -1660,9 +1718,8 @@ gimilzir_events.722 = { # Uruloni Contract: Accept
 		}
 		trigger_event = {
 			id = gimilzir_events.725
-			days = 1
+			days = 2
 		}
-		custom_tooltip = gimilzir_events_story_contract
 	}
 }
 
@@ -1671,12 +1728,12 @@ gimilzir_events.723 = { # Uruloni Contract - do it sneaky?
 	type = character_event
 	title = gimilzir_events.723.t
 	desc = gimilzir_events.723.desc
-	theme = intrigue
+	theme = corruption
 	#window = visit_settlement_window
 	
 	left_portrait = {
 		character = root
-		animation = thinking
+		animation = anger
 	}
 	lower_right_portrait = {
 		character = scope:uruloniholder
@@ -1700,10 +1757,19 @@ gimilzir_events.723 = { # Uruloni Contract - do it sneaky?
 		}
 	}
 	
-	option = { # fuck off
+	option = { # You pay him
 		name = gimilzir_events.723.b
+		pay_reserved_gold = { target = scope:uruloniholder gold = 500 }
+		trigger_event = gimilzir_events.722
+	}
+	
+	option = { # fuck off
+		name = gimilzir_events.723.c
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni }
 			complete_task_contract = failure_standard
@@ -1764,7 +1830,6 @@ gimilzir_events.724 = { # Uruloni Contract: Sneaky
 					}
 				}
 				add_prestige = 25
-				custom_tooltip = gimilzir_events.724.a.tt
 				if = {
 					limit = {
 						has_government = landless_adventurer_government
@@ -1811,7 +1876,6 @@ gimilzir_events.724 = { # Uruloni Contract: Sneaky
 					}
 				}
 				add_prestige = -25
-				custom_tooltip = gimilzir_events.724.b.tt
 				if = {
 					limit = {
 						has_government = landless_adventurer_government
@@ -1844,6 +1908,9 @@ gimilzir_events.724 = { # Uruloni Contract: Sneaky
 		name = gimilzir_events.724.b
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni }
 			complete_task_contract = failure_standard
@@ -1880,7 +1947,7 @@ gimilzir_events.725 = { # Uruloni Faithful character joins you
             culture = culture:kharadunaim
             faith = root.faith
 			location = title:c_uruloni.title_province
-			gender_female_chance = 80
+			gender_female_chance = 100
 			dynasty = none
             save_scope_as = sexy_assassin_character
         }
@@ -1919,8 +1986,42 @@ gimilzir_events.725 = { # Uruloni Faithful character joins you
 		add_courtier = scope:sexy_assassin_character
 	}
 	
-	option = { # I don't trust him
+	option = { # More than Welcome
 		name = gimilzir_events.725.b
+		trigger = { 
+			can_start_scheme = {
+				type = seduce
+				target_character = scope:sexy_assassin_character
+			}
+		}
+		
+		add_courtier = scope:sexy_assassin_character
+		if = {
+			limit = {
+				can_start_scheme = {
+					type = seduce
+					target_character = scope:sexy_assassin_character
+				}
+			}
+			start_scheme = {
+				type = seduce
+				target_character = scope:sexy_assassin_character
+			}
+		}
+		random_scheme = {
+			limit = {
+				scheme_type = seduce
+				scheme_target_character = scope:sexy_assassin_character
+			}
+			add_scheme_progress = 5
+			add_scheme_modifier = {
+				type = extra_success_chance_modifier
+			}
+		}
+	}
+	
+	option = { # I don't trust him
+		name = gimilzir_events.725.c
 		custom_tooltip = gimilzir_events.725.b.tt
 		scope:sexy_assassin_character = {
 			silent_disappearance_effect = yes
@@ -2000,6 +2101,9 @@ gimilzir_events.727 = { # Uruloni Sneaky Failure
 	option = { 
 		name = gimilzir_events.727.a
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_uruloni }
 			complete_task_contract = failure_standard
@@ -2015,6 +2119,7 @@ gimilzir_events.730 = { # Hidden: Create the Mispir Contract
 	hidden = yes
 	immediate = {
 		title:c_mispir.holder = { save_scope_as = mispirholder }
+		pan_camera_to_province = title:c_mispir.title_province
 		root = {
 			create_task_contract = {
 				task_contract_type = lotr_gimilzir_tanturak_contract_mispir
@@ -2041,7 +2146,7 @@ gimilzir_events.731 = { # Mispir Contract
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = thinking
 	}
 	right_portrait = {
 		character = scope:mispirholder
@@ -2053,10 +2158,23 @@ gimilzir_events.731 = { # Mispir Contract
 	}
 	immediate = {
 		title:c_mispir.holder = { save_scope_as = mispirholder }
+		root = { save_scope_as = gimilzirchar }
 		remove_character_flag = gimilzir_tanturak_contract_mispir
 	}
-	option = { # Try to convince him it wont be bad for the economy
+	option = { # You Accept the terms
 		name = gimilzir_events.731.a
+		domicile ?= {
+			change_provisions = medium_provisions_gain
+			move_domicile = title:c_mispir.title_province
+		}
+		custom_tooltip = gimilzir_events.731.a.tt
+		custom_tooltip = gimilzir_events.731.b.tt
+		custom_tooltip = gimilzir_events.731.c.tt
+		trigger_event = gimilzir_events.732
+	}
+	
+	option = { # Maybe a better deal?
+		name = gimilzir_events.731.b
 		domicile ?= {
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_mispir.title_province
@@ -2064,7 +2182,7 @@ gimilzir_events.731 = { # Mispir Contract
 		duel = {
  			skill = stewardship
  			target = scope:mispirholder
- 			40 = {
+ 			30 = {
 				# You convince him
  				desc = gimilzir_events.731.a.success
  				compare_modifier = {
@@ -2080,14 +2198,17 @@ gimilzir_events.731 = { # Mispir Contract
 				scope:mispirholder = {
 					add_opinion = {
 						target = root
-						modifier = pleased_opinion
-						opinion = 15
+						modifier = annoyed_opinion
+						opinion = -15
 					}
 				}
-				trigger_event = gimilzir_events.732
+				trigger_event = gimilzir_events.734
 				add_prestige = 25
+				custom_tooltip = gimilzir_events.731.a_lesser.tt
+				custom_tooltip = gimilzir_events.731.b.tt
+				custom_tooltip = gimilzir_events.731.c_lesser.tt
  			}
- 			60 = {
+ 			70 = {
  				# You fail to convince him
  				desc = gimilzir_events.731.a.failure
  				compare_modifier = {
@@ -2095,6 +2216,12 @@ gimilzir_events.731 = { # Mispir Contract
  					multiplier = -3.5
  					min = -49
  				}
+				modifier = {
+					add = 50
+					scope:mispirholder = {
+						faith_is_good = no
+					}
+				}
  				send_interface_toast = {
  					title = gimilzir_events.731.a.failure
  					left_icon = root
@@ -2113,24 +2240,21 @@ gimilzir_events.731 = { # Mispir Contract
  		}
 	}
 	
-	option = { # You pay him
-		name = gimilzir_events.731.b
+	option = { #Just Pay Money 
+		name = gimilzir_events.731.c
+		ai_chance = { base = 100 }
 		domicile ?= {
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_mispir.title_province
 		}
-		custom_tooltip = gimilzir_events.731.a.tt
-		pay_reserved_gold = { target = scope:mispirholder gold = 150 }
-		trigger_event = gimilzir_events.732
-	}
-	
-	option = { # Reject his offer and do it sneaky like
-		name = gimilzir_events.731.c
-		ai_chance = { base = 100 }
-		custom_tooltip = gimilzir_events.731.b.tt
-		trigger_event = {
-			id = gimilzir_events.734
-			days = 10
+		pay_reserved_gold = { target = scope:mispirholder gold = 350 }
+		trigger_event = gimilzir_events.736
+		scope:mispirholder = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -5
+			}
 		}
 	}
 	
@@ -2138,11 +2262,18 @@ gimilzir_events.731 = { # Mispir Contract
 		name = gimilzir_events.731.d
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		domicile ?= {
+			change_provisions = 50
+			move_domicile = title:c_mispir.title_province
+		}
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
 			complete_task_contract = failure_standard
 		}
-		scope:inzilloniholder = {
+		scope:mispirholder = {
 			add_opinion = {
 				target = root
 				modifier = annoyed_opinion
@@ -2150,7 +2281,7 @@ gimilzir_events.731 = { # Mispir Contract
 			}
 		}
 		trigger_event = {
-			id = gimilzir_events.740 
+			id = gimilzir_events.739
 			days = 20
 		}
 	}
@@ -2168,11 +2299,11 @@ gimilzir_events.732 = { # Mispir Contract: Accept
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = worry
 	}
 	right_portrait = {
 		character = scope:mispirholder
-		animation = happiness
+		animation = personality_greedy
 	}
 	widget = {
 		gui = "event_window_widget_scheme"
@@ -2189,6 +2320,7 @@ gimilzir_events.732 = { # Mispir Contract: Accept
 				}
 			}
 		}
+		add_character_flag = gimilzir_mispir_trade_bad
 	}
 	
 	after = {
@@ -2213,24 +2345,27 @@ gimilzir_events.732 = { # Mispir Contract: Accept
 			id = gimilzir_events.735
 			days = 1
 		}
-		custom_tooltip = gimilzir_events_story_contract
+		custom_tooltip = gimilzir_events.731.a.tt
+		custom_tooltip = gimilzir_events.731.b.tt
+		custom_tooltip = gimilzir_events.731.c.tt
 	}
 }
 
-gimilzir_events.733 = { # Mispir Contract - do it sneaky?
+gimilzir_events.733 = { # Mispir Contract - Failed attempt
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.733.t
 	desc = gimilzir_events.733.desc
-	theme = intrigue
+	theme = diplomacy
 	#window = visit_settlement_window
 	
 	left_portrait = {
 		character = root
-		animation = thinking
+		animation = debating
 	}
-	lower_right_portrait = {
+	right_portrait = {
 		character = scope:mispirholder
+		animation = debating
 	}
 	widget = {
 		gui = "event_window_widget_scheme"
@@ -2241,44 +2376,70 @@ gimilzir_events.733 = { # Mispir Contract - do it sneaky?
 		title:c_mispir.holder = { save_scope_as = mispirholder }
 	}
 	
-	option = { #do it sneaky like
+	option = { #Fine I accept
 		name = gimilzir_events.733.a
 		ai_chance = { base = 100 }
-		custom_tooltip = gimilzir_events.733.a.tt
-		trigger_event = {
-			id = gimilzir_events.734
-			days = 10
+		pay_reserved_gold = { target = scope:mispirholder gold = 50 }
+		trigger_event =  gimilzir_events.732
+		scope:mispirholder = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 5
+			}
+		}
+	}
+	
+	option = { #Just Pay Money 
+		name = gimilzir_events.733.b
+		ai_chance = { base = 100 }
+		domicile ?= {
+			change_provisions = medium_provisions_gain
+			move_domicile = title:c_mispir.title_province
+		}
+		pay_reserved_gold = { target = scope:mispirholder gold = 400 }
+		trigger_event = gimilzir_events.736
+		scope:mispirholder = {
+			add_opinion = {
+				target = root
+				modifier = disappointed_opinion
+				opinion = -5
+			}
 		}
 	}
 	
 	option = { # fuck off
-		name = gimilzir_events.733.b
+		name = gimilzir_events.733.c
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
 			complete_task_contract = failure_standard
 		}
 		trigger_event = {
-			id = gimilzir_events.740
+			id = gimilzir_events.739
 			days = 20
 		}
 	}
 }
 
-gimilzir_events.734 = { # Mispir Contract: Sneaky
+gimilzir_events.734 = { # Mispir Contract: Successfully convince her
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.734.t
 	desc = gimilzir_events.734.desc
-	theme = intrigue
+	theme = diplomacy
 	#window = visit_settlement_window
-	override_background = {
-		reference = alley_night
-	}
 	left_portrait = {
 		character = root
-		animation = scheme
+		animation = ecstasy
+	}
+	right_portrait = {
+		character = scope:mispirholder
+		animation = dismissal
 	}
 	widget = {
 		gui = "event_window_widget_scheme"
@@ -2289,120 +2450,44 @@ gimilzir_events.734 = { # Mispir Contract: Sneaky
 		title:c_mispir.holder = { save_scope_as = mispirholder }
 	}
 	
-	option = { # Smuggle your people out
+	option = { # Take Your People
 		name = gimilzir_events.734.a
-		duel = {
- 			skill = intrigue
- 			target = scope:mispirholder
- 			60 = {
-				# You smuggle your people
- 				desc = gimilzir_events.734.a.success
- 				compare_modifier = {
- 					value = scope:duel_value
- 					multiplier = 3.5
- 					min = -49
- 				}
- 				send_interface_toast = {
- 					title = gimilzir_events.734.a.success
- 					left_icon = root
- 					right_icon = scope:mispirholder
- 				}
-				scope:mispirholder = {
-					add_opinion = {
-						target = root
-						modifier = angry_opinion
-						opinion = -50
-					}
+		scope:mispirholder = {
+			capital_county = {
+				add_county_modifier = {
+					modifier = gimilzir_no_more_faithful
+					years = 10
 				}
-				add_prestige = 25
-				custom_tooltip = gimilzir_events.734.a.tt
-				if = {
-					limit = {
-						has_government = landless_adventurer_government
-						NOT = { has_trait = gallowsbait }
-					}
-					add_trait = gallowsbait
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 10
-					}
-				}
-				else_if = {
-					limit = {
-						has_government = landless_adventurer_government
-						has_trait = gallowsbait
-					}
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 10
-					}
-				}
-				trigger_event = gimilzir_events.736
- 			}
- 			40 = {
- 				# You fail to smuggle them
- 				desc = gimilzir_events.734.a.failure
- 				compare_modifier = {
- 					value = scope:duel_value
- 					multiplier = -3.5
- 					min = -49
- 				}
- 				send_interface_toast = {
- 					title = gimilzir_events.734.a.failure
- 					left_icon = root
- 					right_icon = scope:mispirholder
- 				}
-				scope:mispirholder = {
-					add_opinion = {
-						target = root
-						modifier = angry_opinion
-						opinion = -25
-					}
-				}
-				add_prestige = -25
-				custom_tooltip = gimilzir_events.734.b.tt
-				if = {
-					limit = {
-						has_government = landless_adventurer_government
-						NOT = { has_trait = gallowsbait }
-					}
-					add_trait = gallowsbait
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 5
-					}
-				}
-				else_if = {
-					limit = {
-						has_government = landless_adventurer_government
-						has_trait = gallowsbait
-					}
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 5
-					}
-				}
-				trigger_event = gimilzir_events.737
- 			}
- 		}
+			}
+		}
+		add_character_flag = gimilzir_mispir_trade_good
 	}
 	
-	option = { # fuck off
-		name = gimilzir_events.734.b
-		ai_chance = { base = 100 }
+	after = {
 		custom_tooltip = gimilzir_events_story_contract
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
-			complete_task_contract = failure_standard
+			complete_task_contract = success_standard
+		}
+		scope:mispirholder = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 5
+			}
+		}
+		ud_lotr_gimilzir_following_effect = yes
+		show_as_tooltip = { add_contact = scope:mispirholder }
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
 		}
 		trigger_event = {
-			id = gimilzir_events.740 
-			days = 20
+			id = gimilzir_events.735
+			days = 1
 		}
+		custom_tooltip = gimilzir_events.731.a_lesser.tt
+		custom_tooltip = gimilzir_events.731.b.tt
+		custom_tooltip = gimilzir_events.731.c_lesser.tt
 	}
 }
 
@@ -2426,15 +2511,22 @@ gimilzir_events.735 = { # Mispir Faithful character joins you
 	}
 	
 	immediate = {
+		title:c_mispir.holder = { save_scope_as = mispirholder }
 		create_character = {
             template = merchant_template
             culture = culture:kharadunaim
             faith = root.faith
 			location = title:c_mispir.title_province
-			gender_female_chance = 30
+			gender_female_chance = 60
 			dynasty = none
             save_scope_as = merchant_template
         }
+		hidden_effect = { 
+			scope:merchant_template = {
+				add_gold = 300
+				add_stewardship_skill = 6
+			}
+		}
 		scope:merchant_template = {
 			if = { 
 				limit = { 
@@ -2456,9 +2548,13 @@ gimilzir_events.735 = { # Mispir Faithful character joins you
 				random_list = {
 					30 = { 
 						add_trait = blood_of_numenor_2
+						add_trait = intellect_good_2
+						add_trait = beauty_good_1
 					}
 					70 = { 
 						add_trait = blood_of_numenor_1
+						add_trait = intellect_good_1
+
 					}
 				}
 			}
@@ -2480,42 +2576,69 @@ gimilzir_events.735 = { # Mispir Faithful character joins you
 	
 	after = { # Create the Gimileth contract
 		trigger_event = {
-			id = gimilzir_events.740
+			id = gimilzir_events.739
 			days = 20
 		}
 	}
 }
 
-gimilzir_events.736 = { # Mispir Sneaky Success
+gimilzir_events.736 = { # Mispir Contract: Payed
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.736.t
 	desc = gimilzir_events.736.desc
-	theme = intrigue
+	theme = laamp
 	#window = visit_settlement_window
 	override_background = {
-		reference = alley_night
+		reference = throne_room_mediterranean
 	}
 	left_portrait = {
 		character = root
-		animation = happiness
+		animation = eyeroll
 	}
 	right_portrait = {
 		character = scope:mispirholder
-		animation = shock
+		animation = dismissal
 	}
+	
 	immediate = {
 		title:c_mispir.holder = { save_scope_as = mispirholder }
+		root = { save_scope_as = gimilzirchar }
 	}
-
-	option = { 
+	
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+	
+	option = { # Take Your People
 		name = gimilzir_events.736.a
+		scope:mispirholder = {
+			capital_county = {
+				add_county_modifier = {
+					modifier = gimilzir_no_more_faithful
+					years = 10
+				}
+			}
+		}
+		add_character_flag = gimilzir_mispir_trade_bad
+	}
+	
+	after = {
 		custom_tooltip = gimilzir_events_story_contract
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
 			complete_task_contract = success_standard
 		}
+		scope:mispirholder = {
+			add_opinion = {
+				target = root
+				modifier = annoyed_opinion
+				opinion = -10
+			}
+		}
 		ud_lotr_gimilzir_following_effect = yes
+		show_as_tooltip = { add_contact = scope:mispirholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
 		}
@@ -2526,38 +2649,63 @@ gimilzir_events.736 = { # Mispir Sneaky Success
 	}
 }
 
-gimilzir_events.737 = { # Mispir Sneaky Failure
+gimilzir_events.739 = { #Misterious Letter
 	content_source = realms_dlc
 	type = character_event
-	title = gimilzir_events.737.t
-	desc = gimilzir_events.737.desc
-	theme = intrigue
+	title = gimilzir_events.739.t
+	desc = gimilzir_events.739.desc
+	theme = laamp
 	#window = visit_settlement_window
-	override_background = {
-		reference = alley_night
-	}
+	
 	left_portrait = {
 		character = root
-		animation = disapproval
+		animation = thinking
 	}
+	
 	right_portrait = {
-		character = scope:mispirholder
-		animation = anger
+		character = scope:relative
+		animation = interested_left
 	}
-	immediate = {
-		title:c_mispir.holder = { save_scope_as = mispirholder }
+	immediate = { 
+		title:c_gimileth.holder = { save_scope_as = gimilethholder }
+		root = { save_scope_as = gimilzirchar }
+		random_close_family_member = {
+			limit = {
+				location = root.location
+				is_ai = yes
+				is_lotr_adult = yes
+			}
+			save_scope_as = relative
+		}
 	}
-
+	
+	widget = {
+		gui = "event_window_widget_scheme"
+		container = "custom_widgets_container"
+	}
+	
 	option = { 
-		name = gimilzir_events.737.a
-		custom_tooltip = gimilzir_events_story_contract
-		random_character_active_contract = {
-			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_mispir }
-			complete_task_contract = failure_standard
+		name = gimilzir_events.739.a
+		custom_tooltip = gimilzir_events.739.a.tt
+		trigger_event = {
+			id = gimilzir_events.740
+			days = 3
+		}
+		add_character_modifier = { 
+			modifier = gimilzir_yes_sapath_lai
+			years = 10
+		}
+	}
+	
+	option = { 
+		name = gimilzir_events.739.b
+		custom_tooltip = gimilzir_events.739.b.tt
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
 		}
 		trigger_event = {
-			id = gimilzir_events.740 
-			days = 20
+			id = gimilzir_events.750
+			days = 1
 		}
 	}
 }
@@ -2566,6 +2714,7 @@ gimilzir_events.740 = { # Hidden: Create the Gimileth Contract
 	hidden = yes
 	immediate = {
 		title:c_gimileth.holder = { save_scope_as = gimilethholder }
+		pan_camera_to_province = title:c_gimileth.title_province
 		root = {
 			create_task_contract = {
 				task_contract_type = lotr_gimilzir_tanturak_contract_gimileth
@@ -2592,7 +2741,7 @@ gimilzir_events.741 = { # Gimileth Contract
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = throne_room_bow_1
 	}
 	right_portrait = {
 		character = scope:gimilethholder
@@ -2604,6 +2753,7 @@ gimilzir_events.741 = { # Gimileth Contract
 	}
 	immediate = {
 		title:c_gimileth.holder = { save_scope_as = gimilethholder }
+		root = { save_scope_as = gimilzirchar }
 		remove_character_flag = gimilzir_tanturak_contract_gimileth
 	}
 	option = { # Try to convince him
@@ -2615,7 +2765,7 @@ gimilzir_events.741 = { # Gimileth Contract
 		duel = {
  			skill = diplomacy
  			target = scope:gimilethholder
- 			40 = {
+ 			30 = {
 				# You convince him
  				desc = gimilzir_events.741.a.success
  				compare_modifier = {
@@ -2638,7 +2788,7 @@ gimilzir_events.741 = { # Gimileth Contract
 				trigger_event = gimilzir_events.742
 				add_prestige = 25
  			}
- 			60 = {
+ 			70 = {
  				# You fail to convince him
  				desc = gimilzir_events.741.a.failure
  				compare_modifier = {
@@ -2646,6 +2796,18 @@ gimilzir_events.741 = { # Gimileth Contract
  					multiplier = -3.5
  					min = -49
  				}
+				modifier = {
+					add = 50
+					scope:gimilethholder = {
+						faith_is_good = no
+					}
+				}
+				modifier = {
+					add = 25
+					scope:gimilethholder = {
+						faith_is_good = yes
+					}
+				}
  				send_interface_toast = {
  					title = gimilzir_events.741.a.failure
  					left_icon = root
@@ -2655,11 +2817,12 @@ gimilzir_events.741 = { # Gimileth Contract
 					add_opinion = {
 						target = root
 						modifier = refusal_opinion
-						opinion = -15
+						opinion = -10
 					}
 				}
 				add_prestige = -25
 				trigger_event = gimilzir_events.743
+				add_character_flag = gimilzir_failed_gimil_negotiations
  			}
  		}
 	}
@@ -2670,30 +2833,35 @@ gimilzir_events.741 = { # Gimileth Contract
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_gimileth.title_province
 		}
-		custom_tooltip = gimilzir_events.741.a.tt
 		pay_reserved_gold = { target = scope:gimilethholder gold = 150 }
-		trigger_event = gimilzir_events.742
+		trigger_event = gimilzir_events.744
 	}
 	
-	option = { # Reject his offer and do it sneaky like
+	option = { # Is there no other way?
 		name = gimilzir_events.741.c
-		ai_chance = { base = 100 }
-		custom_tooltip = gimilzir_events.741.b.tt
-		trigger_event = {
-			id = gimilzir_events.744
-			days = 10
+		domicile ?= {
+			change_provisions = medium_provisions_gain
+			move_domicile = title:c_gimileth.title_province
 		}
+		trigger_event = gimilzir_events.743
 	}
 	
 	option = { # Reject his offer and fuck off
 		name = gimilzir_events.741.d
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		domicile ?= {
+			change_provisions = 50
+			move_domicile = title:c_gimileth.title_province
+		}
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
 			complete_task_contract = failure_standard
 		}
-		scope:inzilloniholder = {
+		scope:gimilethholder = {
 			add_opinion = {
 				target = root
 				modifier = annoyed_opinion
@@ -2730,15 +2898,21 @@ gimilzir_events.742 = { # Gimileth Contract: Accept
 		container = "custom_widgets_container"
 	}
 	
-	option = { # Take Your People
+	option = { # Take The People
 		name = gimilzir_events.742.a
 		scope:gimilethholder = {
-			capital_county = {
-				add_county_modifier = {
-					modifier = gimilzir_no_more_faithful
-					years = 10
-				}
+			add_character_modifier = {
+				modifier = tolerance_gospel_modifier
+				years = 25 	
 			}
+		}
+		progress_towards_friend_effect = {
+			REASON = friend_matters_of_faith
+			CHARACTER = scope:gimilethholder
+			OPINION = default_friend_opinion
+		}
+		scope:gimilethholder.capital_county = {
+			change_development_level = -1
 		}
 	}
 	
@@ -2764,25 +2938,43 @@ gimilzir_events.742 = { # Gimileth Contract: Accept
 			id = gimilzir_events.745
 			days = 1
 		}
-		custom_tooltip = gimilzir_events_story_contract
 	}
 }
 
-gimilzir_events.743 = { # Gimileth Contract - do it sneaky?
+gimilzir_events.743 = { # Gimileth Contract - any other way?
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.743.t
-	desc = gimilzir_events.743.desc
-	theme = intrigue
+	desc = {
+		random_valid = {
+    		triggered_desc = {
+      			trigger = {
+        			has_character_flag = gimilzir_failed_gimil_negotiations
+      			}
+      			desc = gimilzir_events.743.desc1
+    		}
+    		triggered_desc = {
+      			trigger = {
+        			NOT = { has_character_flag = gimilzir_failed_gimil_negotiations }
+      			}
+      			desc = gimilzir_events.743.desc2
+    		}
+  		}
+	}
+	theme = diplomacy
 	#window = visit_settlement_window
-	
+	override_background = {
+		reference = throne_room_mediterranean
+	}
 	left_portrait = {
 		character = root
+		animation = debating
+	}
+	right_portrait = {
+		character = scope:gimilethholder
 		animation = thinking
 	}
-	lower_right_portrait = {
-		character = scope:gimilethholder
-	}
+	
 	widget = {
 		gui = "event_window_widget_scheme"
 		container = "custom_widgets_container"
@@ -2792,23 +2984,85 @@ gimilzir_events.743 = { # Gimileth Contract - do it sneaky?
 		title:c_gimileth.holder = { save_scope_as = gimilethholder }
 	}
 	
-	option = { #do it sneaky like
+	option = { #accept and do as he wishes
 		name = gimilzir_events.743.a
 		ai_chance = { base = 100 }
-		custom_tooltip = gimilzir_events.743.a.tt
-		trigger_event = {
-			id = gimilzir_events.744
-			days = 10
+		duel = {
+			skill = martial 
+			value = 15
+			30 = { # Success
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2
+					min = -10
+				}
+
+				desc = gimilzir_events.743.a.duel_success
+				add_prestige = medium_prestige_gain
+				root = {
+					send_interface_toast = {
+						left_icon = root
+						title = gimilzir_events.743.success.toast.t
+					}
+					trigger_event = {
+						id = gimilzir_events.746
+						days = 1
+					}
+				}
+			}
+			30 = { # Failure
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2
+					min = -25
+				}
+				desc = gimilzir_events.743.a.duel_failure
+				root = {
+					send_interface_toast = {
+						left_icon = root
+						title = gimilzir_events.743.failure.toast.t
+						add_trait = wounded_2
+						add_prestige = medium_prestige_loss	
+						stress_impact = {
+							greedy = medium_stress_impact_gain
+							wrathful = medium_stress_impact_gain
+							vengeful = medium_stress_impact_gain
+							sadistic = minor_stress_impact_gain
+							stubborn = minor_stress_impact_gain							
+						}
+						trigger_event = {
+							id = gimilzir_events.747
+							days = 1
+						}
+					}
+				}					
+			}
 		}
 	}
 	
-	option = { # fuck off
+	option = { # You pay him
 		name = gimilzir_events.743.b
+		pay_reserved_gold = { target = scope:gimilethholder gold = 250 }
+		trigger_event = gimilzir_events.744
+	}
+	
+	option = { # fuck off
+		name = gimilzir_events.743.c
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
 			complete_task_contract = failure_standard
+		}
+		scope:gimilethholder = {
+			add_opinion = {
+				target = root
+				modifier = annoyed_opinion
+				opinion = -30
+			}
 		}
 		trigger_event = {
 			id = gimilzir_events.750
@@ -2817,20 +3071,25 @@ gimilzir_events.743 = { # Gimileth Contract - do it sneaky?
 	}
 }
 
-gimilzir_events.744 = { # Gimileth Contract: Sneaky
+gimilzir_events.744 = { # Gimileth Contract: you pay
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.744.t
 	desc = gimilzir_events.744.desc
-	theme = intrigue
+	theme = stewardship
 	#window = visit_settlement_window
 	override_background = {
 		reference = alley_night
 	}
 	left_portrait = {
 		character = root
-		animation = scheme
+		animation = interested
 	}
+	right_portrait = {
+		character = scope:gimilethholder
+		animation = dismissal
+	}
+	
 	widget = {
 		gui = "event_window_widget_scheme"
 		container = "custom_widgets_container"
@@ -2840,119 +3099,34 @@ gimilzir_events.744 = { # Gimileth Contract: Sneaky
 		title:c_gimileth.holder = { save_scope_as = gimilethholder }
 	}
 	
-	option = { # Smuggle your people out
-		name = gimilzir_events.744.a
-		duel = {
- 			skill = intrigue
- 			target = scope:gimilethholder
- 			60 = {
-				# You smuggle your people
- 				desc = gimilzir_events.744.a.success
- 				compare_modifier = {
- 					value = scope:duel_value
- 					multiplier = 3.5
- 					min = -49
- 				}
- 				send_interface_toast = {
- 					title = gimilzir_events.744.a.success
- 					left_icon = root
- 					right_icon = scope:gimilethholder
- 				}
-				scope:gimilethholder = {
-					add_opinion = {
-						target = root
-						modifier = angry_opinion
-						opinion = -50
-					}
-				}
-				add_prestige = 25
-				custom_tooltip = gimilzir_events.744.a.tt
-				if = {
-					limit = {
-						has_government = landless_adventurer_government
-						NOT = { has_trait = gallowsbait }
-					}
-					add_trait = gallowsbait
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 10
-					}
-				}
-				else_if = {
-					limit = {
-						has_government = landless_adventurer_government
-						has_trait = gallowsbait
-					}
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 10
-					}
-				}
-				trigger_event = gimilzir_events.746
- 			}
- 			40 = {
- 				# You fail to smuggle them
- 				desc = gimilzir_events.744.a.failure
- 				compare_modifier = {
- 					value = scope:duel_value
- 					multiplier = -3.5
- 					min = -49
- 				}
- 				send_interface_toast = {
- 					title = gimilzir_events.744.a.failure
- 					left_icon = root
- 					right_icon = scope:gimilethholder
- 				}
-				scope:gimilethholder = {
-					add_opinion = {
-						target = root
-						modifier = angry_opinion
-						opinion = -25
-					}
-				}
-				add_prestige = -25
-				custom_tooltip = gimilzir_events.744.b.tt
-				if = {
-					limit = {
-						has_government = landless_adventurer_government
-						NOT = { has_trait = gallowsbait }
-					}
-					add_trait = gallowsbait
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 5
-					}
-				}
-				else_if = {
-					limit = {
-						has_government = landless_adventurer_government
-						has_trait = gallowsbait
-					}
-					add_trait_xp = {
-						trait = gallowsbait
-						track = trickster
-						value = 5
-					}
-				}
-				trigger_event = gimilzir_events.747
- 			}
- 		}
+	option = { # Take The People
+		name = gimilzir_events.742.a
+		scope:gimilethholder.capital_county = {
+			change_development_level = -1
+		}
 	}
 	
-	option = { # fuck off
-		name = gimilzir_events.744.b
-		ai_chance = { base = 100 }
+	after = {
 		custom_tooltip = gimilzir_events_story_contract
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
-			complete_task_contract = failure_standard
+			complete_task_contract = success_standard
+		}
+		scope:gimilethholder = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 25
+			}
+		}
+		ud_lotr_gimilzir_following_effect = yes
+		show_as_tooltip = { add_contact = scope:gimilethholder }
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
 		}
 		trigger_event = {
-			id = gimilzir_events.750 
-			days = 20
+			id = gimilzir_events.745
+			days = 1
 		}
 	}
 }
@@ -2977,16 +3151,22 @@ gimilzir_events.745 = { # Gimileth Faithful character joins you
 	}
 	lower_right_portrait = {
 		character = scope:child_template
-		animation = worry
+	}
+	lower_center_portrait = {
+		character = scope:child_template1
+	}
+	lower_left_portrait = {
+		character = scope:child_template2
 	}
 	
 	immediate = {
+		root = { save_scope_as = gimilzirchar }
 		create_character = {
             template = garden_hermit_character
             culture = culture:kharadunaim
             faith = root.faith
 			location = title:c_gimileth.title_province
-			gender_female_chance = 50
+			gender_female_chance = 0
 			dynasty = none
             save_scope_as = garden_hermit_character
         }
@@ -3046,21 +3226,69 @@ gimilzir_events.745 = { # Gimileth Faithful character joins you
 					}
 				}
 				random_list = {
-					50 = { 
+					90 = { 
 						add_trait = blood_of_numenor_2
 					}
-					50 = { 
+					10 = { 
 						add_trait = blood_of_numenor_1
 					}
 				}
 			}
 		}
+		create_character = {
+            template = peasant_young_child_character
+            culture = culture:kharadunaim
+            faith = title:b_gimileth.faith
+			location = title:c_gimileth.title_province
+			gender_female_chance = 50
+			dynasty = none
+            save_scope_as = child_template1
+        }
+		scope:child_template1 = {
+			if = { 
+				limit = { 
+					NOT = { 
+						OR = {
+							has_trait = blood_of_numenor_1 
+							has_trait = blood_of_numenor_2
+							has_trait = blood_of_numenor_3 
+							has_trait = blood_of_numenor_4
+							has_trait = blood_of_numenor_5
+							has_trait = blood_of_numenor_6
+							has_trait = blood_of_numenor_7
+							has_trait = blood_of_numenor_8
+							has_trait = blood_of_numenor_9
+							has_trait = blood_of_numenor_10
+						} 
+					}
+				}
+				random_list = {
+					90 = { 
+						add_trait = physique_good_1
+					}
+					10 = { 
+						add_trait = blood_of_numenor_1
+					}
+				}
+			}
+		}
+		create_character = {
+            template = peasant_young_child_character
+            culture = culture:adena
+            faith = title:b_gimileth.faith
+			location = title:c_gimileth.title_province
+			gender_female_chance = 50
+			dynasty = none
+            save_scope_as = child_template2
+        }
 	}
 
 	option = { # Stay
 		name = gimilzir_events.745.a
 		add_courtier = scope:garden_hermit_character
 		add_courtier = scope:child_template
+		add_courtier = scope:child_template1
+		add_courtier = scope:child_template2
 	}
 	
 	option = { # I don't trust him
@@ -3070,6 +3298,12 @@ gimilzir_events.745 = { # Gimileth Faithful character joins you
 			silent_disappearance_effect = yes
 		}
 		scope:child_template = {
+			silent_disappearance_effect = yes
+		}
+		scope:child_template1 = {
+			silent_disappearance_effect = yes
+		}
+		scope:child_template2 = {
 			silent_disappearance_effect = yes
 		}
 	}
@@ -3082,36 +3316,54 @@ gimilzir_events.745 = { # Gimileth Faithful character joins you
 	}
 }
 
-gimilzir_events.746 = { # Gimileth Sneaky Success
+gimilzir_events.746 = { # Gimileth Pirates Failure
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.746.t
 	desc = gimilzir_events.746.desc
-	theme = intrigue
+	theme = martial
 	#window = visit_settlement_window
 	override_background = {
-		reference = alley_night
+		reference = throne_room_mediterranean
 	}
 	left_portrait = {
 		character = root
-		animation = happiness
+		animation = celebrate_sword
 	}
 	right_portrait = {
 		character = scope:gimilethholder
-		animation = shock
+		animation = happiness
 	}
 	immediate = {
 		title:c_gimileth.holder = { save_scope_as = gimilethholder }
+		root = { save_scope_as = gimilzirchar }
 	}
 
-	option = { 
+	option = { # Take The People
 		name = gimilzir_events.746.a
+		scope:gimilethholder.capital_county = {
+			change_development_level = -1
+		}
+		scope:gimilethholder = {  
+			pay_reserved_gold = { target = scope:gimilzirchar gold = 100 }
+		}
+	}
+	
+	after = {
 		custom_tooltip = gimilzir_events_story_contract
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
 			complete_task_contract = success_standard
 		}
+		scope:gimilethholder = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 50
+			}
+		}
 		ud_lotr_gimilzir_following_effect = yes
+		show_as_tooltip = { add_contact = scope:gimilethholder }
 		hidden_effect = {
 			current_travel_plan ?= { abort_travel_plan = yes }
 		}
@@ -3122,19 +3374,20 @@ gimilzir_events.746 = { # Gimileth Sneaky Success
 	}
 }
 
-gimilzir_events.747 = { # Gimileth Sneaky Failure
+gimilzir_events.747 = { # Gimileth Pirate Failure
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.747.t
 	desc = gimilzir_events.747.desc
-	theme = intrigue
+	theme = martial
 	#window = visit_settlement_window
 	override_background = {
-		reference = alley_night
+		reference = throne_room_mediterranean
 	}
+	
 	left_portrait = {
 		character = root
-		animation = disapproval
+		animation = sadness
 	}
 	right_portrait = {
 		character = scope:gimilethholder
@@ -3147,6 +3400,9 @@ gimilzir_events.747 = { # Gimileth Sneaky Failure
 	option = { 
 		name = gimilzir_events.747.a
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_gimileth }
 			complete_task_contract = failure_standard
@@ -3162,6 +3418,7 @@ gimilzir_events.750 = { # Hidden: Create the Arpel Contract
 	hidden = yes
 	immediate = {
 		title:c_arpel.holder = { save_scope_as = arpelholder }
+		pan_camera_to_province = title:c_arpel.title_province
 		root = {
 			create_task_contract = {
 				task_contract_type = lotr_gimilzir_tanturak_contract_arpel
@@ -3188,7 +3445,7 @@ gimilzir_events.751 = { # Arpel Contract
 	}
 	left_portrait = {
 		character = root
-		animation = ecstasy
+		animation = throne_room_bow_1
 	}
 	right_portrait = {
 		character = scope:arpelholder
@@ -3219,6 +3476,16 @@ gimilzir_events.751 = { # Arpel Contract
  					multiplier = 3.5
  					min = -49
  				}
+				modifier = {
+					add = 50
+					scope:gimilethholder = {
+						has_trait = zealous
+					}
+				}
+				modifier = {
+					add = 50
+					has_trait = zealous
+				}
  				send_interface_toast = {
  					title = gimilzir_events.751.a.success
  					left_icon = root
@@ -3266,7 +3533,6 @@ gimilzir_events.751 = { # Arpel Contract
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_arpel.title_province
 		}
-		custom_tooltip = gimilzir_events.751.a.tt
 		pay_reserved_gold = { target = scope:arpelholder gold = 150 }
 		trigger_event = gimilzir_events.752
 	}
@@ -3285,11 +3551,18 @@ gimilzir_events.751 = { # Arpel Contract
 		name = gimilzir_events.751.d
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		domicile ?= {
+			change_provisions = 50
+			move_domicile = title:c_arpel.title_province
+		}
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel }
 			complete_task_contract = failure_standard
 		}
-		scope:inzilloniholder = {
+		scope:arpelholder = {
 			add_opinion = {
 				target = root
 				modifier = annoyed_opinion
@@ -3348,7 +3621,7 @@ gimilzir_events.752 = { # Arpel Contract: Accept
 			add_opinion = {
 				target = root
 				modifier = pleased_opinion
-				opinion = 25
+				opinion = 50
 			}
 		}
 		ud_lotr_gimilzir_following_effect = yes
@@ -3360,7 +3633,6 @@ gimilzir_events.752 = { # Arpel Contract: Accept
 			id = gimilzir_events.755
 			days = 1
 		}
-		custom_tooltip = gimilzir_events_story_contract
 	}
 }
 
@@ -3402,6 +3674,9 @@ gimilzir_events.753 = { # Arpel Contract - do it sneaky?
 		name = gimilzir_events.753.b
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel }
 			complete_task_contract = failure_standard
@@ -3462,7 +3737,6 @@ gimilzir_events.754 = { # Arpel Contract: Sneaky
 					}
 				}
 				add_prestige = 25
-				custom_tooltip = gimilzir_events.754.a.tt
 				if = {
 					limit = {
 						has_government = landless_adventurer_government
@@ -3509,7 +3783,6 @@ gimilzir_events.754 = { # Arpel Contract: Sneaky
 					}
 				}
 				add_prestige = -25
-				custom_tooltip = gimilzir_events.754.b.tt
 				if = {
 					limit = {
 						has_government = landless_adventurer_government
@@ -3542,6 +3815,9 @@ gimilzir_events.754 = { # Arpel Contract: Sneaky
 		name = gimilzir_events.754.b
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel }
 			complete_task_contract = failure_standard
@@ -3569,7 +3845,7 @@ gimilzir_events.755 = { # Arpel Faithful character joins you
 	}
 	right_portrait = {
 		character = scope:physician
-		animation = physician 
+		animation = personality_zealous 
 	}
 	lower_right_portrait = {
 		character = scope:local_saint_template
@@ -3578,7 +3854,7 @@ gimilzir_events.755 = { # Arpel Faithful character joins you
 	
 	immediate = {
 		create_character = {
-            template = physician_excellent_character_template
+            template = local_saint_template
             culture = culture:kharadunaim
             faith = root.faith
 			location = title:c_arpel.title_province
@@ -3604,6 +3880,8 @@ gimilzir_events.755 = { # Arpel Faithful character joins you
 						} 
 					}
 				}
+				add_trait = zealous
+				add_learning_skill = 10
 				random_list = {
 					30 = { 
 						add_trait = blood_of_numenor_2
@@ -3641,6 +3919,8 @@ gimilzir_events.755 = { # Arpel Faithful character joins you
 						} 
 					}
 				}
+				add_learning_skill = 10
+				add_trait = zealous
 				random_list = {
 					90 = { 
 						add_trait = blood_of_numenor_2
@@ -3744,6 +4024,9 @@ gimilzir_events.757 = { # Arpel Sneaky Failure
 	option = { 
 		name = gimilzir_events.757.a
 		custom_tooltip = gimilzir_events_story_contract
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
 		random_character_active_contract = {
 			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel }
 			complete_task_contract = failure_standard
@@ -3760,6 +4043,7 @@ gimilzir_events.760 = { # Hidden: Create the Arpel Sailing Contract
 	hidden = yes 
 	immediate = {
 		title:c_arpel.holder = { save_scope_as = arpelholder }
+		pan_camera_to_province = title:c_arpel.title_province
 		root = {
 			create_task_contract = {
 				task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing
@@ -3802,25 +4086,15 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 	}
 	option = { # Try to convince him
 		name = gimilzir_events.761.a
-		trigger = { 
-			scope:arpelholder = { 
-				AND = { 
-					opinion = {
-						target = ROOT
-						value >= 0
-					}
-					NOT = { has_character_flag = gimilzir_tanturak_contract_arpel_did_intrique }
-				}
-			}
-		}
 		domicile ?= {
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_arpel.title_province
 		}
+		custom_tooltip = gimilzir_pay_for_boat
 		duel = {
  			skill = stewardship
  			target = scope:arpelholder
- 			60 = {
+ 			40 = {
 				# You convince him
  				desc = gimilzir_events.761.a.success
  				compare_modifier = {
@@ -3836,14 +4110,14 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 				scope:arpelholder = {
 					add_opinion = {
 						target = root
-						modifier = pleased_opinion
-						opinion = 15
+						modifier = annoyed_opinion
+						opinion = -5
 					}
 				}
 				trigger_event = gimilzir_events.762
 				add_prestige = 25
  			}
- 			40 = {
+ 			60 = {
  				# You fail to convince him
  				desc = gimilzir_events.761.a.failure
  				compare_modifier = {
@@ -3851,6 +4125,18 @@ gimilzir_events.761 = { # Arpel Sailing Contract
  					multiplier = -3.5
  					min = -49
  				}
+				modifier = {
+					add = 50
+					scope:gimilethholder = {
+						faith_is_good = no
+					}
+				}
+				modifier = {
+					add = 25
+					scope:gimilethholder = {
+						faith_is_good = yes
+					}
+				}
  				send_interface_toast = {
  					title = gimilzir_events.761.a.failure
  					left_icon = root
@@ -3859,76 +4145,7 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 				scope:arpelholder = {
 					add_opinion = {
 						target = root
-						modifier = refusal_opinion
-						opinion = -15
-					}
-				}
-				add_prestige = -25
-				trigger_event = gimilzir_events.763
- 			}
- 		}
-	}
-	
-	option = { # Try to convince him difficult
-		name = gimilzir_events.761.b
-		trigger = { 
-			scope:arpelholder = { 
-				AND = { 
-					opinion = {
-						target = ROOT
-						value < 0
-					}
-					NOT = { has_character_flag = gimilzir_tanturak_contract_arpel_did_intrique }
-				}
-			}
-		}
-		domicile ?= {
-			change_provisions = medium_provisions_gain
-			move_domicile = title:c_arpel.title_province
-		}
-		duel = {
- 			skill = stewardship
- 			target = scope:arpelholder
- 			20 = {
-				# You convince him
- 				desc = gimilzir_events.761.b.success
- 				compare_modifier = {
- 					value = scope:duel_value
- 					multiplier = 3.5
- 					min = -49
- 				}
- 				send_interface_toast = {
- 					title = gimilzir_events.761.b.success
- 					left_icon = root
- 					right_icon = scope:arpelholder
- 				}
-				scope:arpelholder = {
-					add_opinion = {
-						target = root
-						modifier = pleased_opinion
-						opinion = 15
-					}
-				}
-				trigger_event = gimilzir_events.762
-				add_prestige = 25
- 			}
- 			80 = {
- 				# You fail to convince him
- 				desc = gimilzir_events.761.b.failure
- 				compare_modifier = {
- 					value = scope:duel_value
- 					multiplier = -3.5
- 					min = -49
- 				}
- 				send_interface_toast = {
- 					title = gimilzir_events.761.b.failure
- 					left_icon = root
- 					right_icon = scope:arpelholder
- 				}
-				scope:arpelholder = {
-					add_opinion = {
-						target = root
-						modifier = refusal_opinion
+						modifier = annoyed_opinion
 						opinion = -15
 					}
 				}
@@ -3939,7 +4156,7 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 	}
 	
 	option = { # You pay him
-		name = gimilzir_events.761.c
+		name = gimilzir_events.761.b
 		trigger = { 
 			NOT = { has_character_flag = gimilzir_tanturak_contract_arpel_did_intrique }
 		}
@@ -3947,13 +4164,12 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 			change_provisions = medium_provisions_gain
 			move_domicile = title:c_arpel.title_province
 		}
-		custom_tooltip = gimilzir_events.761.a.tt
-		pay_reserved_gold = { target = scope:arpelholder gold = 250 }
+		pay_reserved_gold = { target = scope:arpelholder gold = 100 }
 		trigger_event = gimilzir_events.762
 	}
 	
 	option = { # Reject his offer and do it sneaky like or you already did the sneaky
-		name = gimilzir_events.761.d
+		name = gimilzir_events.761.c
 		ai_chance = { base = 100 }
 		custom_tooltip = gimilzir_events.761.b.tt
 		trigger_event = {
@@ -3991,17 +4207,26 @@ gimilzir_events.762 = { # Arpel Sailing Contract: Accept
 		pay_reserved_gold = { target = scope:arpelholder gold = 400 }
 		custom_tooltip = gimilzir_events.762.tt
 		trigger_event = {
-			id = gimilzir_events.766
+			id = gimilzir_events.765
 			months = 2
 		}
 	}
 	
-	option = { # Its too expensive...
-		name = gimilzir_events.762.b
-		custom_tooltip = gimilzir_events.762.b.tt
-		trigger_event = {
-			id = gimilzir_events.764
-			days = 10
+	after = {
+		random_character_active_contract = {
+			limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing }
+			complete_task_contract = success_standard
+		}
+		scope:arpelholder = {
+			add_opinion = {
+				target = root
+				modifier = pleased_opinion
+				opinion = 50
+			}
+		}
+		show_as_tooltip = { add_contact = scope:arpelholder }
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
 		}
 	}
 }
@@ -4010,7 +4235,22 @@ gimilzir_events.763 = { # Arpel Sailing Contract - do it sneaky preface
 	content_source = realms_dlc
 	type = character_event
 	title = gimilzir_events.763.t
-	desc = gimilzir_events.763.desc
+	desc = {
+		first_valid = { 
+			triggered_desc = { #You won the last round
+				trigger = {
+					NOT = { has_character_flag = gimilzir_tanturak_contract_arpel_did_intrique }
+				}
+				desc = gimilzir_events.763.desc1
+			}
+			triggered_desc = { #You lost the last round
+				trigger = {
+					has_character_flag = gimilzir_tanturak_contract_arpel_did_intrique
+				}
+				desc = gimilzir_events.763.desc2 
+			}
+		}
+	}
 	theme = intrigue
 	#window = visit_settlement_window
 	
@@ -4094,7 +4334,6 @@ gimilzir_events.764 = { # Arpel Sailing Contract: Sneaky Boat Stealing
 					}
 				}
 				add_prestige = 125
-				custom_tooltip = gimilzir_events.764.a.tt
 				if = {
 					limit = {
 						has_government = landless_adventurer_government
@@ -4151,7 +4390,6 @@ gimilzir_events.764 = { # Arpel Sailing Contract: Sneaky Boat Stealing
 					}
 				}
 				add_prestige = -125
-				custom_tooltip = gimilzir_events.764.b.tt
 				if = {
 					limit = {
 						has_government = landless_adventurer_government
@@ -4174,6 +4412,9 @@ gimilzir_events.764 = { # Arpel Sailing Contract: Sneaky Boat Stealing
 						track = trickster
 						value = 10
 					}
+				}
+				hidden_effect = {
+					current_travel_plan ?= { abort_travel_plan = yes }
 				}
 				random_character_active_contract = {
 					limit = { has_task_contract_type = lotr_gimilzir_tanturak_contract_arpel_sailing }
@@ -4200,13 +4441,25 @@ gimilzir_events.765 = { # Arpel Sailing beginning
 		animation = happiness
 	}
 	
+	immediate = {
+		play_music_cue = lotr_cue_adunai
+	}
+	
 	option = { # Start Sailing
 		name = gimilzir_events.765.a
-		custom_tooltip = gimilzir_events.765.a.tt
 		add_character_flag = gimilzir_go_to_sarul
 		trigger_event = {
 			id = gimilzir_events.767
-			days = 7
+			days = 12
+		}
+		start_travel_plan = {
+			destination = title:c_ardinak.title_province
+			travel_with_domicile = yes
+			players_use_planner = no
+			on_arrival_event = gimilzir_events.780
+			return_trip = no
+			on_arrival_destinations = none
+
 		}
 	}
 }
@@ -4223,6 +4476,10 @@ gimilzir_events.766 = { # Arpel Sailing beginning Worst Outcome
 		animation = worry
 	}
 	
+	immediate = {
+		play_music_cue = lotr_cue_adunai
+	}
+	
 	option = { # Start Sailing
 		name = gimilzir_events.766.a
 		custom_tooltip = gimilzir_events.766.a.tt
@@ -4231,7 +4488,15 @@ gimilzir_events.766 = { # Arpel Sailing beginning Worst Outcome
 		remove_reserved_gold = 300
 		trigger_event = {
 			id = gimilzir_events.767
-			days = 7
+			days = 12
+		}
+		start_travel_plan = {
+			destination = title:c_ardinak.title_province
+			travel_with_domicile = yes
+			players_use_planner = no
+			on_arrival_event = gimilzir_events.780
+			return_trip = no
+			on_arrival_destinations = none
 		}
 	}
 }
@@ -4251,24 +4516,15 @@ gimilzir_events.767 = { # Depart Arpel for Tanturak
 		animation = survey
 	}
 	immediate = {
-		play_music_cue = lotr_cue_adunai
+		root = { save_scope_as = gimilzirchar }
+		root.father = { save_scope_as = gimilzirchar_father }
 	}
 
 	option = {
-		name = gimilzir_events.767.a # Set sail
+		name = gimilzir_events.767.a
 		trigger_event = {
 			id = gimilzir_events.768
 			months = { 1 3 }
-		}
-		custom_tooltip = gimilzir_events.767.tt
-		start_travel_plan = {
-			destination = title:c_ardinak.title_province
-			travel_with_domicile = yes
-			players_use_planner = no
-
-			return_trip = no
-
-			on_arrival_event = gimilzir_events.780
 		}
 	}
 }
@@ -4328,7 +4584,7 @@ gimilzir_events.769 = { # A storm!
 		duel = {
 			skill = martial
 			value = 24
-			70 = {
+			90 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 3.5
@@ -4368,7 +4624,7 @@ gimilzir_events.769 = { # A storm!
 					days = 5
 				}
 			}
-			60 = {
+			80 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 3.5
@@ -4404,7 +4660,7 @@ gimilzir_events.769 = { # A storm!
 					days = 5
 				}
 			}
-			50 = {
+			40 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = -3.5
@@ -4412,7 +4668,7 @@ gimilzir_events.769 = { # A storm!
 				}
 				modifier = {
 					add = 10
-					dread < 10
+					has_trait = shy
 				}
 				modifier = {
 					add = 10
@@ -4433,15 +4689,11 @@ gimilzir_events.769 = { # A storm!
 					days = 1
 				}
 			}
-			40 = {
+			5 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = -3.5
 					min = -49
-				}
-				modifier = {
-					add = 10
-					dread < 10
 				}
 				modifier = {
 					add = 10
@@ -4649,7 +4901,7 @@ gimilzir_events.770 = { # No damage storm damage
 		name = gimilzir_events.770.a # Land ahead!
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 20
+			months = {1 2}
 		}
 	}
 }
@@ -4693,7 +4945,7 @@ gimilzir_events.771 = { # Moderate storm damage
 		add_character_flag = moderate_storm_damage
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 20
+			months = {1 2}
 		}
 	}
 }
@@ -4737,7 +4989,7 @@ gimilzir_events.772 = { # Severe storm damage
 		add_character_flag = severe_storm_damage
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 20
+			months = {1 2}
 		}
 	}
 }
@@ -4827,9 +5079,10 @@ gimilzir_events.773 = { # Catastrophic storm damage
 		}
 		custom_tooltip = settlers_damaged_catastrophic
 		add_character_flag = catastrophic_storm_damage
+		add_stress = 160
 		trigger_event = {
 			id = gimilzir_events.774
-			days = 20
+			months = {1 2}
 		}
 	}
 }
@@ -4889,6 +5142,16 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 			trigger_event = { id = gimilzir_events.7850 years = { 17 24 } }
 		}
 		trigger_event = { id = gimilzir_events.789 months = { 2 6 } }
+		
+		faith:faith_adunaic_faithful = {
+			activate_holy_site = sarul_faithful
+			activate_holy_site = ardinak_faithful
+			deactivate_holy_site = pelargir
+			deactivate_holy_site = umbar
+		}
+		
+		#Memory
+		create_character_memory = { type = settled_tanturak_memory }
 	}
 
 	option = {
@@ -4923,6 +5186,7 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 			}
 			province:5852 = {
 				add_building = castle_03
+				add_building = curtain_walls_03
 				add_building = windmills_02
 				add_building = barracks_02
 				add_building = common_tradeport_02
@@ -4930,7 +5194,7 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 			title:c_ardinak = { 
 				change_development_level = 15
 				add_county_modifier = {
-					modifier = gimilzir_ardinak_best
+					modifier = gimilzir_ardinak_good
 					years = 25
 				}
 			}
@@ -4956,6 +5220,7 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
+				add_building = castle_03
 				add_building = curtain_walls_03
 				add_building = windmills_02
 				add_building = barracks_02
@@ -4971,12 +5236,9 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 		}
 		else_if = {
 			limit = {
-				AND = { 
-					number_of_succeded_contracts_gimilzir_tanturak >= 3
-					number_of_succeded_contracts_gimilzir_tanturak < 5
-				}
+				number_of_succeded_contracts_gimilzir_tanturak = 4
 			}
-			add_gold = 1000
+			add_gold = 1250
 			spawn_army = {
 				uses_supply = no
 				inheritable = yes
@@ -4988,11 +5250,12 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				}
 				men_at_arms = {
 					type = ephalzagar_an_adunai
-					stacks = 1
+					stacks = 2
 				}
 				location = province:5852
 			}
 			province:5852 = {
+				add_building = castle_02
 				add_building = curtain_walls_02
 				add_building = windmills_02
 				add_building = barracks_01
@@ -5008,10 +5271,42 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 		}
 		else_if = {
 			limit = {
-				AND = { 
-					number_of_succeded_contracts_gimilzir_tanturak >= 1
-					number_of_succeded_contracts_gimilzir_tanturak < 3
+				number_of_succeded_contracts_gimilzir_tanturak = 3
+			}
+			add_gold = 1000
+			spawn_army = {
+				uses_supply = no
+				inheritable = yes
+				name = gimilzir_event_settlers
+				levies = 1000
+				men_at_arms = {
+					type = zagar_an_adunai
+					stacks = 1
 				}
+				men_at_arms = {
+					type = ephalzagar_an_adunai
+					stacks = 1
+				}
+				location = province:5852
+			}
+			province:5852 = {
+				add_building = castle_02
+				add_building = curtain_walls_02
+				add_building = windmills_02
+				add_building = barracks_01
+				add_building = common_tradeport_01
+			}
+			title:c_ardinak = { 
+				change_development_level = 8
+				add_county_modifier = {
+					modifier = gimilzir_ardinak_meh
+					years = 25
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				number_of_succeded_contracts_gimilzir_tanturak >= 2
 			}
 			add_gold = 500
 			spawn_army = {
@@ -5030,6 +5325,7 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
+				add_building = castle_01
 				add_building = curtain_walls_01
 				add_building = windmills_01
 				add_building = barracks_01
@@ -5057,7 +5353,7 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 				location = province:5852
 			}
 			province:5852 = {
-				set_holding_type = castle_holding
+				add_building = castle_01
 				add_building = curtain_walls_01
 				add_building = common_tradeport_01
 			}
@@ -5082,26 +5378,31 @@ gimilzir_events.781 = { # Flavor Event for after settling down, talking about ho
 		add_unpressed_claim = title:k_tanturak
 		add_unpressed_claim = title:d_tanturak
 		add_unpressed_claim = title:c_sarul
+		add_unpressed_claim = title:d_azra_zhe
+		add_unpressed_claim = title:c_azra_zhe
 		add_character_modifier = { 
 			modifier = gimilzir_ardinak_military
 			years = 30
 		}
+		add_character_flag = tanturak_military_expansion
+		custom_tooltip = gimilzir_events.781.a.tt
 	}
 	
 	option = {
 		name = gimilzir_events.781.b # Naaa Nazi
-		add_prestige = -250
+		add_prestige = -100
 		add_unpressed_claim = title:k_tanturak
-		add_unpressed_claim = title:d_tanturak
-		add_unpressed_claim = title:c_sarul
 		add_character_modifier = { 
 			modifier = gimilzir_ardinak_diplomacy
 			years = 30
 		}
+		add_character_flag = tanturak_diplomatic_expansion
+		custom_tooltip = gimilzir_events.781.b.tt
 	}
 	
 	option = {
 		name = gimilzir_events.781.c #Im lazy and like my island
+		add_prestige = 100
 	}
 }
 
@@ -5166,6 +5467,28 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 			province:5832 = {
 				set_holding_type = castle_holding
 				add_building = castle_03
+				add_building = windmills_02
+				add_building = barracks_02
+				add_building = common_tradeport_02
+			}
+			title:c_sarul = { 
+				change_development_level = 8
+				add_county_modifier = {
+					modifier = gimilzir_sarul_best
+					years = 25
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				AND = { 
+					number_of_succeded_contracts_gimilzir_tanturak >= 3
+					number_of_succeded_contracts_gimilzir_tanturak <= 5
+				}
+			}
+			province:5832 = {
+				set_holding_type = castle_holding
+				add_building = castle_02
 				add_building = windmills_02
 				add_building = barracks_02
 				add_building = common_tradeport_02

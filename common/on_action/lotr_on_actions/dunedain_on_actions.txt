@@ -17,8 +17,8 @@ ud_custom_on_title_gain = {
 	effect = {
 		if = {
 			limit = {
-				scope:title.tier = tier_county
-				scope:title ?= {
+				this.tier ?= tier_county
+				this ?= {
 					title = title:c_sarul
 				}
 				is_target_in_global_variable_list = {
@@ -44,8 +44,8 @@ ud_custom_on_title_gain = {
 		}
 		if = { 
 			limit = { 
-				scope:title.tier = tier_kingdom
-				scope:title ?= {
+				this.tier = tier_kingdom
+				this ?= {
 					title = title:k_tanturak
 				}
 				is_target_in_global_variable_list = {
@@ -413,6 +413,11 @@ ud_thani_hazad_conquered_an_balkumagan_good = {
 
 dunedain_on_game_start = {
 	effect = {
+		faith:faith_adunaic_faithful = {
+			deactivate_holy_site = sarul_faithful
+			deactivate_holy_site = ardinak_faithful
+			deactivate_holy_site = guishas_faithful
+		}
 		##Quonton
 		evil_strength_gamerule_buffs = yes
 		character:linegimilethtwocustom2 = {
