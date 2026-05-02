@@ -189,6 +189,36 @@ b_wamo_vasa = {
 	}
 }
 
+c_ardinak = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_ardinak_adunai
+	}
+	item = {
+		trigger = { coa_switch_to_gobbo_trigger = yes }
+		coat_of_arms = d_ardinak_orc
+	}
+	item = {
+		trigger = {coa_switch_to_elf_trigger = yes}
+		coat_of_arms = d_ardinak_elf
+	}
+}
+
+b_ardinak = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_ardinak_adunai
+	}
+	item = {
+		trigger = { coa_switch_to_gobbo_trigger = yes }
+		coat_of_arms = d_ardinak_orc
+	}
+	item = {
+		trigger = {coa_switch_to_elf_trigger = yes}
+		coat_of_arms = d_ardinak_elf
+	}
+}
+
 c_deghuka = {
 	item = {
 		trigger = {coa_switch_to_adunai_trigger = yes}
@@ -224,10 +254,53 @@ e_mag_tumag = {
 	}
 }
 
+d_aya_ugab = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_aya_ugab_adunai
+	}
+}
+
+c_ayahopa = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_ayahopa_adunai
+	}
+}
+
+b_ayahopa = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_ayahopa_adunai
+	}
+}
+
+
 k_mag = {
 	item = {
 		trigger = {coa_switch_to_adunai_trigger = yes}
 		coat_of_arms = k_mag_adunai
+	}
+}
+
+d_ugab_mag = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_ugab_mag_adunaic
+	}
+}
+
+c_akos = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_akos_adunaic
+	}
+}
+
+b_akos = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_akos_adunaic
 	}
 }
 
@@ -249,5 +322,320 @@ b_aradak = {
 	item = {
 		trigger = {coa_switch_to_adunai_trigger = yes}
 		coat_of_arms = c_aradak_adunai
+	}
+}
+
+c_tam_wamo = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_tam_wamo_adunaic
+	}
+}
+
+b_tam_wamo = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_tam_wamo_adunaic
+	}
+}
+
+c_ramorth = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_ramorth_adunaic
+	}
+}
+
+b_ramorth = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_ramorth_adunaic
+	}
+}
+
+b_okan = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_okan_adunaic
+	}
+}
+
+c_okan = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_okan_adunaic
+	}
+}
+
+b_osum = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_osum_adunaic
+	}
+}
+
+c_osum = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_osum_adunaic
+	}
+}
+
+b_che_chy = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_che_chy_adunaic
+	}
+}
+
+c_che_chy = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_che_chy_adunaic
+	}
+}
+
+b_hopa_klust = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_nol_klust_adunaic
+	}
+}
+
+c_nol_klust = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_nol_klust_adunaic
+	}
+}
+
+b_godega = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_godega_adunaic
+	}
+}
+
+c_godega = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_godega_adunaic
+	}
+}
+
+b_mbara = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_mbara_adunaic
+	}
+}
+
+c_mbara = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_mbara_adunaic
+	}
+}
+
+b_hwomo = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_hwomo_adunaic
+	}
+}
+
+c_hwomo = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_hwomo_adunaic
+	}
+}
+
+b_hwozaya = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_hwozaya_adunaic
+	}
+}
+
+c_hwozaya= {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_hwozaya_adunaic
+	}
+}
+
+b_bata_jeme = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_bata_jeme_adunaic
+	}
+}
+
+c_bata_jeme = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_bata_jeme_adunaic
+	}
+}
+
+d_dudol_iga = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_dudol_iga_adunaic
+	}
+}
+
+c_tarango = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_tarango_adunaic
+	}
+}
+
+b_tarango = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_tarango_adunaic
+	}
+}
+
+c_toriar = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_toriar_adunaic
+	}
+}
+
+b_toriar = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_toriar_adunaic
+	}
+}
+
+c_kitusi = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_kitusi_adunaic
+	}
+}
+
+b_musiutuse = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_kitusi_adunaic
+	}
+}
+
+c_rurutori = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_rurutori_adunaic
+	}
+}
+
+b_rurutori = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_rurutori_adunaic
+	}
+}
+
+c_taulbund = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_taulbund_adunaic
+	}
+}
+
+b_taulbund = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_taulbund_adunaic
+	}
+}
+
+k_mulambur = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = k_mulambur_adunaic
+	}
+}
+
+k_hathor = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = k_hathor_adunaic
+	}
+}
+
+c_tanith = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_tanith_adunaic
+	}
+}
+
+b_tanith = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_tanith_adunaic
+	}
+}
+
+k_koronande = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = k_koronande_adunaic
+	}
+}
+
+c_korlan = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_korlan_adunaic
+	}
+}
+
+b_korlan = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_korlan_adunaic
+	}
+}
+
+d_koronande = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_koronabde_adunaic
+	}
+}
+
+d_hathor = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_hathor_adunaic
+	}
+}
+
+d_buramak = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = d_buramak_adunaic
+	}
+}
+
+c_buramak = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_buramak_adunaic
+	}
+}
+
+b_buramak = {
+	item = {
+		trigger = {coa_switch_to_adunai_trigger = yes}
+		coat_of_arms = c_buramak_adunaic
 	}
 }

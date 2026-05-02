@@ -1202,7 +1202,6 @@ linegimilzadan2 = {
 	trait = just
 	trait = depressed_genetic
 	trait = confider 
-	trait = deviant
 	
     diplomacy = 8
     martial = 7
@@ -1217,6 +1216,9 @@ linegimilzadan2 = {
 		birth = yes
 		effect = {
 			learn_language = language_sindarin
+			add_secret = {
+				type = secret_deviant
+			}
 		}
 	}
 	7124.3.14 = { death = { death_reason = death_natural_causes }  }

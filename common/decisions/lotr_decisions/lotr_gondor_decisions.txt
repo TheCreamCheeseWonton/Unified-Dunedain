@@ -2977,6 +2977,7 @@ decision_reunify_numenor_culture = {
 						}
 						culture = { has_cultural_pillar = heritage_northern_adunaic }
 						culture = { has_cultural_pillar = heritage_southern_adunaic }
+						culture = { has_cultural_pillar = heritage_eastern_adunaic }
 						culture = { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
@@ -3112,6 +3113,7 @@ decision_reunify_numenor_culture = {
 							}
 							culture = { has_cultural_pillar = heritage_northern_adunaic }
 							culture = { has_cultural_pillar = heritage_southern_adunaic }
+							culture = { has_cultural_pillar = heritage_eastern_adunaic }
 							culture = { has_cultural_pillar = heritage_unified_adunaic }
 						}
 					}
@@ -3183,6 +3185,7 @@ decision_reunify_numenor_culture = {
 						}
 						culture = { has_cultural_pillar = heritage_northern_adunaic }
 						culture = { has_cultural_pillar = heritage_southern_adunaic }
+						culture = { has_cultural_pillar = heritage_eastern_adunaic }
 						culture = { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
@@ -3590,6 +3593,14 @@ decision_numenor_in_exile = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:decision_solidify_reunited_kingdom
+			}	
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_azraphel_an_khar
+			}	
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_sakal_an_khar
 			}			
 		}
 		##End Quonton

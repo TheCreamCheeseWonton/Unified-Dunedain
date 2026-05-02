@@ -2,6 +2,26 @@
  not_in_current_update_tooltip: "#XB #BOLD This path is not yet developed#!#!"
  gimilzir_succeed_contract_tt: "You #high Succeed#! the #high Story Contract#!"
  gimilzir_failcontract_tt: "You #high Fail#! the #high Story Contract#!"
+ usakani_opinion: "#E Ûsakani [opinion|E]#!"
+
+ challenge_character_arugimil: "Ârûgimil of House Gimilzîr"
+ challenge_character_arugimil_desc: "In the heartlands of the southern [kingsmen|E] stands House Gimilzîr, the last bastion of the southern [faithful|E] of [thanihazad|E]. As heir to the legacy of [gimilziran|E] and [elros|E] himself, Ârûgimil bears the near-impossible burden of living up to such greatness, all while the rule of his house has been thrust upon him.\n\nWill he rise to lead his family and the [batanim|E] to glory, or be crushed beneath the weight of his own fears?"
+
+ building_wonder_gimilzir_statue: "Onyx Statue of Ârûgimil"
+ building_wonder_gimilzir_statue_desc: "A towering statue, forty feet tall, wrought from finely cut black onyx, stands at the heart of Pharasphurus, depicting Ârûgimil Gimilzîr in solemn majesty. Stark and adamant, it overlooks the very city whose rise he was largely responsible for, a silent testament to his enduring legacy.\n\nÂrûgimil was the one who led the [batanim|E] to their new home in Tantûrak, guiding them through uncertainty into destiny. To many among his people, he is more than a king. He is a near-sacred figure, one who preserved the [faithful|E] and drove out the evils that once plagued these Tantûrak.\n\nRaised after his death, this statue has since become a site of pilgrimage for the [batanim|E]. From distant settlements and far-off shores, they come to stand before his likeness, to honor his memory, and to reflect upon the path he carved for his people. In its shadow, his legend endures, rigid as the stone from which it is shaped."
+ building_type_wonder_gimilzir_statue: "Onyx Statue of Ârûgimil"
+ building_type_wonder_gimilzir_statue_desc: "A towering statue, forty feet tall, wrought from finely cut black onyx, stands at the heart of Pharasphurus, depicting Ârûgimil Gimilzîr in solemn majesty. Stark and adamant, it overlooks the very city whose rise he was largely responsible for, a silent testament to his enduring legacy.\n\nÂrûgimil was the one who led the [batanim|E] to their new home in Tantûrak, guiding them through uncertainty into destiny. To many among his people, he is more than a king. He is a near-sacred figure, one who preserved the [faithful|E] and drove out the evils that once plagued these Tantûrak.\n\nRaised after his death, this statue has since become a site of pilgrimage for the [batanim|E]. From distant settlements and far-off shores, they come to stand before his likeness, to honor his memory, and to reflect upon the path he carved for his people. In its shadow, his legend endures, rigid as the stone from which it is shaped."
+
+ ##Gimilarani
+ gimilarani: "Gimilthâni"
+ gimilarani_collective_noun: "Gimilthâni"
+ gimilarani_prefix: "Gimilthâni"
+ gimilarani_ethnicity: "Gimilthâni"
+ gimilarani_desc: "#size:15    The [faithful|E|E] of [thanihazad|E] had long lived under the thumb of the [kingsmen|E] Kharadûnâi. Now, however, with the [batanim|E] established in a realm of their own, they have begun to spread their wings, shaping a distinct culture and forging a strong, independent community far from the oppression of the [kingsmen|E].\n\nFrom this cultural awakening have arisen the Gimilthâni, a fervent and devout people. They cling to their [religion|E] with unwavering resolve, ready to follow [eru|E] even into the darkest nights, trusting that light will yet pour forth from the stars. \n\nThough they remain proud of their [numenorean|E] heritage and [adunaic|E] traditions, among all the [adunai|E], save perhaps those of [bellakar|E], they stand apart as the truest heirs to the path of the original [numenoreans|E]. They are determined to reveal the light of [eru|E] to the wider world.#"
+
+ tradition_batanim_name: "Batânim Legacy"
+ tradition_batanim_desc: "The [batanim|E], heirs to the legacy of [gimilziran|E], are the last remnant of the dream of a southern [faithful|E] realm. We must endure, placing our trust in our own strength and in one another. For if we falter, that dream, that flame of hope for a [faithful|E] southern [middleearth|E], will perish with us.\n\nWe are the protectors of that flame, and we will fight to ensure it endures until the ending of the world."
+
  ##Gimilzir Decisions
  decision_group_type_gimilzir_decisions: "Gimilzîr Decisions"
 
@@ -10,6 +30,21 @@
  decision_choose_gimilzir_path_tooltip: "We must choose the future of House Gimilzîr"
  decision_choose_gimilzir_path_confirm: "The future of House Gimilzîr is bright!"
  decision_choose_gimilzir_path_tt: "I will choose the future of House Gimilzîr"
+
+ decision_gimilzir_tanturak_founder_statue: "In Memory of Ârûgimil"
+ decision_gimilzir_tanturak_founder_statue_desc: "[GetScriptedCharacterByHistoryID( 'linegimilzadan2' ).GetName] is dead, and many across the realm believe that we must honor the memory of this great man, the savior of the [batanim|E]. It is to him that we owe Tantûrak being made our own, the prosperity we now enjoy, and even our very existence. His deeds demand remembrance worthy of their magnitude.\n\nAnd so, we shall ensure that his legacy endures. A great statue has been commissioned in Pharasphurus, one that will stand as a lasting tribute to his life and accomplishments. The finest [dwarven|E] stonemasons have been summoned from the [yellowmountains|E], their unmatched skill set to the task of carving his likeness from solid onyx, unyielding, eternal, and forever memorialized in stone. \n\nIn this way, his name shall not fade, and his deeds shall be remembered for generations to come."
+ decision_gimilzir_tanturak_founder_statue_tooltip: "We must give the great man a proper legacy"
+ decision_gimilzir_tanturak_founder_statue_confirm: "Ârûgimil's name will forever be remembered"
+ decision_gimilzir_tanturak_founder_statue_tt: "Forever his likeness will be carved into stone"
+
+ decision_gimilzir_adunaic_revival_sarul: "Batânim Settle Sarûl"
+ decision_gimilzir_adunaic_revival_sarul_desc: "For thousands of years, [GetTitleByKey('c_sarul').GetNameNoTier] has lain a rotting ruin, slowly decaying, consumed by the ever-encroaching jungle. No longer. Now that the [batanim|E] rule these lands, we shall restore the city to its former splendor and settle many of our people within the great capital of Tantûrak.\n\nSoon, it will stand as the capital of Tantûrak once more, the center of [faithful|E] rule in the Ûsakan Bay. To achieve this, we must first rebuild what has been lost. Only then will the many eager settlers be able to cross the sea and claim their new homes."
+ decision_gimilzir_adunaic_revival_sarul_tooltip: "We must settle Sarûl for the good of all Batânim"
+ decision_gimilzir_adunaic_revival_sarul_confirm: "The future of Tantûrak is bright!"
+ decision_gimilzir_adunaic_revival_sarul_tt: "Soon Sarûl will be a city of the [batanim|E]"
+ gimilzir_sarul_tooltip: "[GetTitleByKey('c_sarul').GetNameNoTier] will gain a powerful bonus, along with several free [buildings|E] and increased [development|E]"
+ gimilzir_sarul_tooltip_culture: "[GetTitleByKey('c_sarul').GetNameNoTier] will adopt your [culture|E]"
+ gimilzir_sarul_tooltip_faith: "[GetTitleByKey('c_sarul').GetNameNoTier] will adopt your [faith|E]"
 
  decision_continue_adventure_gimilzir_tanturak: "Continue Your Adventure"
  decision_continue_adventure_tanturak_tooltip: "#italic If your current story [task_contract|E] has vanished, you may regain it here."
@@ -107,6 +142,12 @@
 
  gimilzir_ardinak_diplomacy: "A New Tantûrak"
  gimilzir_ardinak_diplomacy_desc: "The [batanim|E] will use diplomacy to expand. If we are to avoid the mistakes of the past, we must not always turn to violence"
+
+ lotr_usakan_dislike_tanturak_modifier: "Ûsakani Disdain"
+ lotr_usakan_dislike_tanturak_modifier_desc: "The Ûsakani people see the [batanim|E] as evil [adunaic|E] conquers"
+
+ gimilzir_tanturak_refounder: "The Refounder of Tantûrak"
+ gimilzir_tanturak_refounder_desc: "This character refounded the realm of Tantûrak, which has became the home of the [faithful|E] [batanim|E]"
 
   gimilzir_events.7.t: "Towards a New Home"
   gimilzir_events.7.desc: "Ever since the defeats of [gimilziran|E] and the loss of [GetTitleByKey('k_pel').GetNameNoTier] to the [tamska|E], the [faithful|E] of [thanihazad|E] have had no homeland to call their own. They now live scattered among the Kharadûnâi, often regarded as lesser than their [kingsmen|e] neighbors, and at times subjected to outright persecution. Those few [batanim|E] who remain today, though steadfast in their beliefs, endure life as religious outcasts within Kharadûnâi society, or else conceal their faith for fear of reprisal.\n\nThough this has brought great suffering upon my people, it has also led many within [thanihazad|E] to see them as burdens best cast aside. With careful persuasion, they may be convinced to allow me to gather the [faithful|E] and lead them away, to a new homeland. One we may call our own, far from the oppression we have long endured."
@@ -493,9 +534,55 @@
   gimilzir_events.781.a.tt: "You will use military force to conquer Tantûrak"
   gimilzir_events.781.b.tt: "You will use diplomacy to unite Tantûrak"
 
+  gimilzir_events.782.t: "The Conquest of Sarûl"
+  gimilzir_events.782.desc: "[GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] is ours! After thousands of years, [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], the capital of the old realm of Tantûrak, once more stands as the seat of a [numenorean|E] realm,  my realm. This time, we shall show the world what a [faithful|E] Tantûrak can be, a realm that vanquishes evil, rather than giving rise to it.\n\nYet, as unfortunate as it may be, the native Ûsakani people do not see us as liberators who would guide them into the light of [eru|E]. Instead, they view us as the same evil [adunai|E] of old. We must prove them wrong through the way we rule and lead Tantûrak.\n\nNow that the [batanim|E] have finally secured [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], many settlers in [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] long to journey there and restore the old capital as a true city of the [batanim|E], from which we shall govern. Though we must prepare [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] before it can receive them, already thousands wait, ready to bring their families and their lives to the city."
+  gimilzir_events.782.a: "Soon, our new capital will be born!"
+  gimilzir_tanturak_decision_enable: "You now can see the #bold #V 'Batânim Settle Sarûl'#! Decision"
+
+  gimilzir_events.7820.t: "The Contract with Mispír"
+  gimilzir_events.7820.desc: "Long ago, in [GetTitleByKey('c_mispir').GetNameNoTierNoTooltip], before the [batanim|E] set sail for Tantûrak, I struck a bargain with [mispirholder.GetTitledFirstName]. I pledged that we would establish profitable trade with the city, and in return, they granted me leave to take my people and depart.\n\nNow, it seems that agreement has come due. Today, the first ship from [GetTitleByKey('c_mispir').GetNameNoTierNoTooltip] has arrived upon our shores. A merchant and diplomat stood before me, requesting that we honor our pact, and more than that, that we provide the first shipment of Tantûrak mahogany to be carried back across the sea.\n\nThere is no denying the opportunity before us. This trade is lucrative, and it was, in part, the very foundation that allowed our journey to succeed. Yet not all among my council are in agreement. Some argue that the treaty is unequal, that it binds us to terms unworthy of what we have built, and that it would see Tantûrak’s natural beauty and wealth sold away piece by piece.\n\nSo now the question stands before me. Shall we honor the pact that helped bring us here, or cast it aside in pursuit of a freer future?"
+  gimilzir_events.7820.a: "We must abide by the contract, however unequal it may be."
+  gimilzir_events.7820.b: "This will only benefit us both!"
+  gimilzir_events.7820.c: "Never! The riches of Tantûrak will be ours alone!"
+
+  gimilzir_events.783.t: "The Settlement of Sarûl"
+  gimilzir_events.783.desc: "After long years of rebuilding [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], clearing the encroaching jungle, and restoring the old dream of Tantûrak, the city has at last become home to many thousands of [batanim|E]. Its wide boulevards are now filled with my people, and our wealth is proudly displayed within its great ports and bustling markets.\n\n[GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] has become a jewel of southern [middleearth|E]. To behold it now, a city of my people, of the [faithful|E], is something I never believed I would witness. It fills me with profound satisfaction and joy for what we have achieved.\n\nMay our prosperity endure forever."
+  gimilzir_events.783.a: "The Batânim have found their new home"
+
+  gimilzir_events.784.t: "Life on Ardinâk"
+  gimilzir_events.784.desc: "It has been several years since we first settled Ardinâk, and while the island is, to many of the [batanim|E], an unsettling place, it has truly become our home. A new generation of [faithful|E] now walks its streets, knowing no other land as their own.\n\nThe seas of Ûsakan, once foreign and uncertain, are now filled with our fishermen, their sails a common sight upon the waters. The island has even became home to a large merchant marine, which sails to foreign lands bring back riches untold. Ask any sailor of the southern reaches of [middleearth|E], and they will tell you the same, Tantûrak is the land of the [batanim|E]. \n\nThough our years here have not been without hardship or strife, this island has, beyond doubt, become our home."
+  gimilzir_events.784.a: "And so it shall stay forever more"
+
+  gimilzir_events.785.t: "The Foundation of our Homeland"
+  gimilzir_events.785.desc: "It has been nearly two decades since we sailed from [thanihazad|E] and claimed Tantûrak as our new homeland. Once, the [batanim|E] were scattered like leaves upon the wind, without a realm to call their own, living in squalor and at the mercy of others. Now, we have risen into a mighty kingdom of [men|E], rivaling the strength of great realms such as [gondor|E], while bearing the splendor and legacy of the [faithful|E] and of [numenor|E].\n\nAcross the southern lands, our name is spoken with certainty. The Kharadûnâi, the Kinn-lai, the Mûmakanil, all know that Tantûrak and the Bay of Ûsakan are lands shaped and dominated by us, the [batanim|E]. Our banners fly where once there was only wilderness and ruin, and our presence has redefined these shores.\n\nNever before in history has such a realm been forged along these waters. What was once a desperate exodus has become an enduring dominion, strong, prosperous, and adamant. And it is by my will, by my vision, that this has come to pass. I, [gimilzirchar.GetName], have led my people from nothing into greatness."
+  gimilzir_events.785.a: "Long Live House Gimilzîr, Long Live Tantûrak!"
+  flourishing_culture_in_all_culture_faith_counties: "All [counties|E] of your [faith|E] and [culture|E] will gain the [GetModifier('flourishing_culture_modifier').GetNameWithTooltip] for #V 25 years#!"
+
+  gimilzir_events.786.t: "Life in Sarûl"
+  gimilzir_events.786.desc: "Sarûl has flourished greatly since the [batanim|E] made their homes within its walls. New neighborhoods have risen, broad boulevards have been laid, and bustling markets now thrive alongside temples dedicated to [erutheone|E], all built upon the continued prosperity and growth of our people.\n\nChildren who have known only the jungles of Ûsakan now roam the city’s streets, playing beneath its walls and venturing into the wilds, untroubled by climate or beast. Commerce and opportunity continue to expand, enriching both the city and its surrounding lands.\n\nGreat fortifications now encircle Sarûl, standing as a bulwark against any would-be invader, while a strong garrison ensures the safety of its people. Many within the city believe that nowhere in all the southern lands has such prosperity been seen in recent years as that which Sarûl now enjoys."
+  gimilzir_events.786.a: "And so it will continue for many more"
+
+  gimilzir_events.787.t: "[deceased_mc.GetFirstNameNicknamed]'s Legacy"
+  gimilzir_events.787.desc: "[deceased_mc.GetName], the First King of the [faithful|E] Tantûrak, founder of our great realm and the one who led our people into greatness, is dead. Many believed such a day would never come. More still had hoped it never would. Yet none can deny the truth that now stands before us.\n\nAll that we are, all that we possess, our lands, our riches, our alliances, even the very lives we now live in freedom, are owed to him. From scattered beginnings, he forged unity. From uncertainty, he built strength. Where once the [batanim|E] wandered without a homeland, he gave them a kingdom worthy of their name.\n\nHis legacy will shape my [dynasty|E], House Gimilzîr, for all the years to come. It is a legacy not easily matched, nor soon forgotten. Many believe that the heights he reached, and the greatness he secured for our people, shall never be surpassed.\n\n And yet, all are in agreement on this, his name now stands among the greatest heroes of [men|E]. Some even dare to say that his deeds surpass those of [gimilziran|E] himself. Whether such claims be true or not, one thing is certain, his memory shall endure for as long as Tantûrak stands."
+  gimilzir_events.787.a: "His memory will live on till the end of days"
+  gimilzir_tanturak_statue_decision_enable: "You now can see the #bold #V 'Statue Gimilzir Not Done'#! Decision"
+
+  gimilzir_events.788.t: "The Refounded Kingdom of Tantûrak"
+  gimilzir_events.788.desc: "It has finally happened. \n\nAll those years ago, when I first began the preparations to bring the [batanim|E] to Tantûrak, I was young, uncertain, burdened with anxiety, and unsure of the consequences of my actions. I could have scarcely imagined then how far those first steps would carry us, nor how great the outcome would become.\n\nNot only did I bring my people to these distant shores and forge a new homeland for them, I raised a truely mighty kingdom. A realm that has enriched its people, that has carried the word of [eru|E] into foreign lands, and that has known nothing but victory after victory, success after success.\n\nWhat once was a desperate venture has become a living dominion. Soon, all of [middleearth|E] shall know the glory of Tantûrak, and the strength of the [batanim|E]. The name of my house shall no longer be spoken in uncertainty or doubt, but in recognition of what we have achieved.\n\nThe future of House Gimilzîr is now set in stone, carved deeper than granite, adamant and eternal. No rival shall unmake what has been built. From this day forward, victory shall follow me and my house for generations yet to come."
+  gimilzir_events.788.a: "Everything I have done has led to this triumph!"
+
   gimilzir_events.789.t: "The Curse of Ardinâk"
   gimilzir_events.789.desc: "Ever since our arrival upon the isle of [GetTitleByKey('c_ardinak').GetNameNoTier], settlers have periodically gone missing. Some are never found again, while others turn up as shriveled husks, as if something had drained them of all their life all at once. The populace is terrified, and even my own familiy has begun to no longer feel safe within our own walls...\n\nThe men of [GetTitleByKey('k_tanturak').GetNameNoTier] speak of an ancient plague that once depopulated Ardinâk, which had been a mighty haven of [numenor|E] before. Surely the effects of that disaster must have long passed? It has been millennia since then, hasn't it?\n\nDoubt begins to rise within me..."
   gimilzir_events.789.a: "We must push on for Eru!"
+
+  gimilzir_events.7900.t: "A New Batânim Culture?"
+  gimilzir_events.7900.desc: "It has been many years since the [batanim|E] first set foot upon the shores of Tantûrak. Since that time, my people have known prosperity, a measure of peace, and a homeland far removed from the overbearing rule of the Kharadûnâi [kingsmen|E]. In these years, our culture has flourished, with new [batanim|E] art, song, dance, and countless other forms of expression having emerged. All born of our freedom to live as we will and the ability to worship [eru|E] without fear.\n\nMoreover, some of the native peoples of Ûsakan have joined our ranks, bringing with them their own customs and traditions, which have begun to intertwine with ours. Through this blending, our culture has grown richer, yet also more distinct.\n\nIn this time, the ways of my people have diverged greatly from those of the traditional Kharadûnâi. Though we [batanim|E] once considered ourselves as one with them, since our departure many in Tantûrak have come to see us as a different people. Separate, with an identity of our own.\n\nShould I allow this divergence to continue? Or should we hold fast to our roots and preserve what we once were?"
+  gimilzir_events.7900.a: "Gimilthâni? I think I like that name..."
+  gimilzir_events.7900.b: "Our heritage must be held onto with unwavering resolve!"
+  event_form_gimilarani_get_innovations: "The [gimilarani_culture.GetName] [culture|E] gains all [kharadunaim_culture.GetName] [innovations|E]"
+  event_form_gimilarani_get_characters_custom: "All Southern Adûnâic [heritage|E] [characters|e] who's [faith|E] is [alignment_good|E]"
+  event_form_gimilarani_counties_custom1: "All Southern Adûnâic [heritage|E] [counties|e] within your [realm|E] and the [GetGeographicalRegion('special_azraphel_an_khar').GetName] [region|E]"
+  event_form_gimilarani_counties_custom2: "All Non-Southern Adûnâic [heritage|E] [counties|e] within your [realm|E] and the [GetGeographicalRegion('special_azraphel_an_khar').GetName] [region|E]"
 
 
  BattlePoIHistoricalNameZairanak: "The Defence at Zâirânak"

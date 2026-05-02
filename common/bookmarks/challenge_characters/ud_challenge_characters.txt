@@ -1,0 +1,17 @@
+﻿challenge_character_arugimil = {
+	start_date = 7033.1.1
+	character = {
+		name = "challenge_character_arugimil"
+		dynasty = dynasty_gimilzadan
+		dynasty_splendor_level = 4
+		type = male
+		birth = 7013.11.30
+		title = d_laamp_house_of_gimilzadan
+		government = landless_adventurer_government
+		culture = kharadunaim
+		religion = faith_adunaic_faithful
+		difficulty = "BOOKMARK_CHARACTER_DIFFICULTY_MEDIUM"
+		history_id = linegimilzadan2
+		animation = worry
+	}
+}

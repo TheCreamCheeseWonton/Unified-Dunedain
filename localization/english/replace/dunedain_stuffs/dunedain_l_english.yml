@@ -267,6 +267,11 @@
  lotr_converting_tanturak_county_modifier: "Adûnaicization Unrest"
  lotr_converting_tanturak_county_modifier_desc: "You have enacted agressive policies to spread [adunaic|E] culture to [GetTitleByKey('k_tanturak').GetNameNoTier], which has caused the locals of the affected regions to rebel"
 
+ lotr_converting_usakan_modifier: "Adûnaic Revival of Ûsakan"
+ lotr_converting_usakan_modifier_desc: "You have enacted agressive policies to spread [adunaic|E] culture to [GetTitleByKey('k_usakan').GetNameNoTier], which has caused some minorities within your realm to become uneasy" 
+ lotr_converting_usakan_county_modifier: "Adûnaicization Unrest"
+ lotr_converting_usakan_county_modifier_desc: "You have enacted agressive policies to spread [adunaic|E] culture to [GetTitleByKey('k_usakan').GetNameNoTier], which has caused the locals of the affected regions to rebel"
+
  lotr_converting_anarike_modifier: "Eastern Adûnaic Revival"
  lotr_converting_anarike_modifier_desc: "You have enacted agressive policies to spread your new [adunaic|E] culture to Anarike which has caused the Khyan influenced people of your realm to rebel"
 
@@ -463,6 +468,11 @@
  decision_convert_umbar_dunedain_umbaredain_modifier: "All Formerly Northern Adûnâic [heritage|E] [counties|E] will gain [GetModifier('lotr_converting_umbaredain_county_modifier').GetNameWithTooltip] for #V 25 years#!"
  decision_convert_umbar_dunedain_gondorian: "All [gondorian|E] [culture|E] [counties|E] in [GetGeographicalRegion('middleearth_harad_near_umbar').GetName] will be converted to the #V [umbaredain_culture.GetName]#! [culture|E]"
 
+ decision_adunaic_revival_usakan: "Revive Adûnaic Culture in [GetTitleByKey('k_usakan').GetNameNoTier]"
+ decision_adunaic_revival_usakan_desc: "Ûsakan was once a tributary of [numenor|E], and the city of Pharasphurus stood as a proud port of the [adunai|E], a thriving center of [numenorean|E] trade. For many long years, its ancient docks and harbors, hidden deep within Ûsakan’s vast jungles, have lain abandoned, crumbling into ruin.\n\nBut no longer! By bringing colonists from [GetTitleByKey('e_thani_hazad').GetNameNoTier], these lands shall once more become true domains of the [adunai|E]!"
+ decision_adunaic_revival_usakan_tt: "Stand, [adunai|E] of the Ûsakan Bay!"
+ decision_adunaic_revival_usakan_confirm: "[GetTitleByKey('k_usakan').GetNameNoTier] is again a realm of the [adunai|E]"
+
  decision_adunaic_revival_tanturak: "Revive Adûnaic Culture in [GetTitleByKey('k_tanturak').GetNameNoTier]"
  decision_adunaic_revival_tanturak_desc: "Tantûrak was once a proud, if depraved, realm of the [adunai|E]. For many long years, the ancient palaces and cities of [numenor|E], hidden within Tantûrak's vast jungles, have stood abandoned and decaying. But no longer! By bringing in colonists from [GetTitleByKey('e_thani_hazad').GetNameNoTier], these lands shall once again become true lands of the [adunai|E]!"
  decision_adunaic_revival_tanturak_tt: "Stand, [adunai|E] of the South!"
@@ -568,6 +578,15 @@
  decision_azraphel_an_khar_effect.tt: "All vassals that are #V not#! your [religion|E] or of an [adunaic|E] [heritage|E] will receive a #N -100#! opinion mallus of you."
  decision_azraphel_an_khar_trigger.tt_1: "#V 15%#! of the [GetGeographicalRegion('special_azraphel_an_khar').GetName]:\n$BULLET_WITH_TAB$Current: [GetPlayer.MakeScope.ScriptValue('lotr_azraphel_an_khar_geographical_region_control_complete')|2]\n$BULLET_WITH_TAB$Is your faith ([GetPlayer.GetFaith.GetName])\n$BULLET_WITH_TAB$Is your culture ([GetPlayer.GetCulture.GetName])"
  decision_azraphel_an_khar_trigger.tt_2: "You must control at least #V 60%#! of the [counties|E] in the [GetGeographicalRegion('special_azraphel_an_khar').GetName] [region|E]"
+
+ decision_mikazra_zain_title: "Proclaim the Mîkazra-Zâin"
+ decision_mikazra_zain_desc: "Of all the lands that lie in the southern reaches of [middleearth|E], the region of Kôronânde stands apart, one of the last untouched expanses, unclaimed and unshaped by the will of our [numenorean|E] forefathers. While other realms have long since felt the guiding hand of our people, Kôronânde remains wild, its potential unrealized, its destiny unwritten. This absence is not merely an oversight, it is an opportunity.\n\nWe must seize that opportunity with purpose and resolve. Let us bring to these lands the strength, wisdom, and enduring legacy of the [adunai|E]. Where there is wilderness, we shall raise cities of stone and splendor. Where there is silence, we shall establish order, law, and culture. The rivers will carry our ships, the fields will yield to our cultivation, and the hills will echo with the voices of a thriving people.\n\nThis is not conquest for its own sake, but the fulfillment of a greater vision, the expansion of our heritage and the securing of our future. Kôronânde shall no longer remain a forgotten corner of the world. Under our stewardship, it will rise as a beacon of [numenorean|E] might and pride. A true kingdom of the [adunai|E]."
+ decision_mikazra_zain_confirm: "A new kingdom of the Adûnâi!"
+ decision_mikazra_zain_tooltip: "A new kingdom of the Adûnâi"
+ decision_mikazra_zain_effect.tt: "All vassals that are #V not#! your [religion|E] or of an [adunaic|E] [heritage|E] will receive a #N -50#! opinion mallus of you."
+ decision_mikazra_zain_trigger.tt_1: "#V 5%#! of the [GetGeographicalRegion('special_mikazra_zain').GetName] must be of your [culture|E]"
+ decision_mikazra_zain_trigger.tt_2: "You must control at least #V 75%#! of the [counties|E] in the [GetGeographicalRegion('special_mikazra_zain').GetName] [region|E]"
+ special_mikazra_zain: "Mîkazra-Zâin"
 
  decision_tanturak_build_usakan_bay_citadels: "Raise the Citadels of Ûsakan"
  decision_tanturak_build_usakan_bay_citadels_desc: "The Bay of Ûsakan, with its [adunaic|E] heart in Tantûrak, has grown powerful and prosperous in recent years, enriched by its dominion over these waters. Yet this strength lies dangerously exposed. The bay stands open to any foe of Tantûrak, and no true defenses guard our homeland from the sea. \n\nThis cannot be allowed to endure. It has been proposed that a chain of great fortresses be raised upon the islands at the bay’s mouth, so that all traffic entering or leaving Ûsakan may be watched, controlled, and, if need be, turned away by vigilant eyes."
@@ -1371,6 +1390,12 @@
  adunaic_mag: "Zâyan an-Mag"
  adunaic_aradak: "Azrâda"
  adunaic_guishas: "Pharasphurus"
+
+ adunaic_tarango: "Ûri Târiksakal"
+ adunaic_toriar: "Attô Târiksakal"
+ adunaic_musiutuse: "Ammê Târiksakal"
+ adunaic_rurutori: "Nîlu Târiksakal"
+ adunaic_taulbund: "Phazân Târiksakal"
 
  empire_twin_nations_adunaic: "Zâyanat"
  

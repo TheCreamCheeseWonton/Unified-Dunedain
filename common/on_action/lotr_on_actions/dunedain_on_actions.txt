@@ -17,19 +17,16 @@ ud_custom_on_title_gain = {
 	effect = {
 		if = {
 			limit = {
-				this.tier ?= tier_county
-				this ?= {
-					title = title:c_sarul
-				}
+				scope:title ?= title:c_sarul
 				is_target_in_global_variable_list = {
 					name = unavailable_unique_decisions
 					target = flag:gimilzir_tanturak_path
 				}
 				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
+					name = unavailable_unique_event
 					target = flag:ud_gimilzir_gotten_to_tanturak
 				}
-				NOT = {
+				NOT = { 
 					is_target_in_global_variable_list = {
 						name = unavailable_unique_event
 						target = flag:ud_conquer_sarul_gimilzir
@@ -44,16 +41,13 @@ ud_custom_on_title_gain = {
 		}
 		if = { 
 			limit = { 
-				this.tier = tier_kingdom
-				this ?= {
-					title = title:k_tanturak
-				}
+				scope:title ?= title:k_tanturak
 				is_target_in_global_variable_list = {
 					name = unavailable_unique_decisions
 					target = flag:gimilzir_tanturak_path
 				}
 				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
+					name = unavailable_unique_event
 					target = flag:ud_gimilzir_gotten_to_tanturak
 				}
 				NOT = {
@@ -419,6 +413,14 @@ dunedain_on_game_start = {
 			deactivate_holy_site = guishas_faithful
 		}
 		##Quonton
+		character:linegimilzadan2 = {
+			if = {
+				limit = {
+					is_alive = yes
+				}
+				lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
+			}
+		}
 		evil_strength_gamerule_buffs = yes
 		character:linegimilethtwocustom2 = {
 			if = { 
@@ -895,14 +897,7 @@ dunedain_on_death = {
 		if = { #When Gimilzir Tanturak Dies you get event
 			limit = {
 				has_character_flag = gimilzir_path_chooser
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:ud_gimilzir_gotten_to_tanturak
-				}
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:gimilzir_tanturak_path
-				}
+
 			}
 			save_scope_as = deceased_mc
 			character:k_wastelands_holder = { #OG character dies flavor event

@@ -91,6 +91,26 @@ create_numenor_in_exile_effect = {
 		}
 		destroy_title = title:h_pharazain
 	}
+	if = {
+		limit = { has_title = title:h_sakal_an_khar }
+		title:h_sakal_an_khar = {
+			every_in_de_jure_hierarchy = {
+				limit = { tier = tier_empire }
+				set_de_jure_liege_title = title:h_numenor_in_exile 
+			}
+		}
+		destroy_title = title:h_sakal_an_khar
+	}
+	if = {
+		limit = { has_title = title:h_azraphel_an_khar }
+		title:h_azraphel_an_khar = {
+			every_in_de_jure_hierarchy = {
+				limit = { tier = tier_empire }
+				set_de_jure_liege_title = title:h_numenor_in_exile 
+			}
+		}
+		destroy_title = title:h_azraphel_an_khar
+	}
 	
 	# And add a flavor desc
 	#title:h_numenor_in_exile = { custom_tooltip = numenor_in_exile_titles_tt } #Scope change for tooltip formatting.

@@ -51786,9 +51786,27 @@ e_mag_tumag = {
 
             c_tarango = {
 				color = { 45 166 186 }
+				
+				cultural_names = {
+					name_list_adunaic = adunaic_tarango
+					name_list_mardrukan = adunaic_tarango
+					name_list_umbarean = adunaic_tarango
+					name_list_south_adunaic = adunaic_tarango
+					name_list_kharadunai = adunaic_tarango
+					name_list_bellakaze	= adunaic_tarango
+				}
 
                 b_tarango = {
                     province = 6008
+					
+					cultural_names = {
+						name_list_adunaic = adunaic_tarango
+						name_list_mardrukan = adunaic_tarango
+						name_list_umbarean = adunaic_tarango
+						name_list_south_adunaic = adunaic_tarango
+						name_list_kharadunai = adunaic_tarango
+						name_list_bellakaze	= adunaic_tarango
+					}
 
                     color = { 31 175 93 }
 
@@ -64751,9 +64769,27 @@ e_mumakan = {
 
             c_toriar = {
 				color = { 1 23 1 }
+				
+				cultural_names = {
+					name_list_adunaic = adunaic_toriar
+					name_list_mardrukan = adunaic_toriar
+					name_list_umbarean = adunaic_toriar
+					name_list_south_adunaic = adunaic_toriar
+					name_list_kharadunai = adunaic_toriar
+					name_list_bellakaze	= adunaic_toriar
+				}
 
                 b_toriar = {
                     province = 7518
+					
+					cultural_names = {
+						name_list_adunaic = adunaic_toriar
+						name_list_mardrukan = adunaic_toriar
+						name_list_umbarean = adunaic_toriar
+						name_list_south_adunaic = adunaic_toriar
+						name_list_kharadunai = adunaic_toriar
+						name_list_bellakaze	= adunaic_toriar
+					}
 
                     color = { 141 184 91 }
 
@@ -64770,7 +64806,16 @@ e_mumakan = {
 
             c_kitusi = {
 				color = { 1 23 1 }
-
+					
+				cultural_names = {
+					name_list_adunaic = adunaic_musiutuse
+					name_list_mardrukan = adunaic_musiutuse
+					name_list_umbarean = adunaic_musiutuse
+					name_list_south_adunaic = adunaic_musiutuse
+					name_list_kharadunai = adunaic_musiutuse
+					name_list_bellakaze	= adunaic_musiutuse
+				}
+					
                 b_nyiutuse = {
                     province = 7520
 
@@ -64780,7 +64825,15 @@ e_mumakan = {
 
                 b_musiutuse = {
                     province = 7521
-
+					
+					cultural_names = {
+						name_list_adunaic = adunaic_musiutuse
+						name_list_mardrukan = adunaic_musiutuse
+						name_list_umbarean = adunaic_musiutuse
+						name_list_south_adunaic = adunaic_musiutuse
+						name_list_kharadunai = adunaic_musiutuse
+						name_list_bellakaze	= adunaic_musiutuse
+					}
                     color = { 214 172 107 }
 
                 }
@@ -64796,9 +64849,27 @@ e_mumakan = {
 
             c_rurutori = {
 				color = { 2 52 40 }
+				
+				cultural_names = {
+					name_list_adunaic = adunaic_rurutori
+					name_list_mardrukan = adunaic_rurutori
+					name_list_umbarean = adunaic_rurutori
+					name_list_south_adunaic = adunaic_rurutori
+					name_list_kharadunai = adunaic_rurutori
+					name_list_bellakaze	= adunaic_rurutori
+				}
 
                 b_rurutori = {
                     province = 7522
+					
+					cultural_names = {
+						name_list_adunaic = adunaic_rurutori
+						name_list_mardrukan = adunaic_rurutori
+						name_list_umbarean = adunaic_rurutori
+						name_list_south_adunaic = adunaic_rurutori
+						name_list_kharadunai = adunaic_rurutori
+						name_list_bellakaze	= adunaic_rurutori
+					}
 
                     color = { 208 44 57 }
 
@@ -65486,9 +65557,27 @@ e_mumakan = {
 
             c_taulbund = {
 				color = { 51 59 44 }
+				
+				cultural_names = {
+					name_list_adunaic = adunaic_taulbund
+					name_list_mardrukan = adunaic_taulbund
+					name_list_umbarean = adunaic_taulbund
+					name_list_south_adunaic = adunaic_taulbund
+					name_list_kharadunai = adunaic_taulbund
+					name_list_bellakaze	= adunaic_taulbund
+				}
 
                 b_taulbund = {
                     province = 7599
+					
+					cultural_names = {
+						name_list_adunaic = adunaic_taulbund
+						name_list_mardrukan = adunaic_taulbund
+						name_list_umbarean = adunaic_taulbund
+						name_list_south_adunaic = adunaic_taulbund
+						name_list_kharadunai = adunaic_taulbund
+						name_list_bellakaze	= adunaic_taulbund
+					}
 
                     color = { 142 112 188 }
 

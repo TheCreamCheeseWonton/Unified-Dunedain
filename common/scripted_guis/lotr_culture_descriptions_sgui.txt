@@ -162,6 +162,7 @@
 			culture:east_adunai_colonial = { custom_tooltip = east_adunai_colonial_desc }
 			##Quonton
 			culture:azralai = { custom_tooltip = azralai_desc }
+			culture:gimilarani = { custom_tooltip = gimilarani_desc }
 			
 			
 			# Northron

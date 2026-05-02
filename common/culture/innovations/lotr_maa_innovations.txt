@@ -1355,6 +1355,7 @@ innovation_knights_of_kharadune_warfare = {
 			this = culture:kharadunaim
 			any_parent_culture_or_above = { this = culture:kharadunaim }
 		}
+		NOT = { this = culture:gimilarani }
 	}
 
 	custom = unlock_knights_of_kharadune

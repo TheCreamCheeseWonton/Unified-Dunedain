@@ -5149,6 +5149,42 @@ gimilzir_events.780 = { # Arrives at Tanturak - Complete
 			deactivate_holy_site = pelargir
 			deactivate_holy_site = umbar
 		}
+		if = {
+			limit = { 
+				has_character_modifier = gimilzir_tanturak_following_6
+			}
+			remove_character_modifier = gimilzir_tanturak_following_6
+		}
+		else_if = {
+			limit = { 
+				has_character_modifier = gimilzir_tanturak_following_5
+			}
+			remove_character_modifier = gimilzir_tanturak_following_5
+		}
+		else_if = {
+			limit = { 
+				has_character_modifier = gimilzir_tanturak_following_4
+			}
+			remove_character_modifier = gimilzir_tanturak_following_4
+		}
+		else_if = {
+			limit = { 
+				has_character_modifier = gimilzir_tanturak_following_3
+			}
+			remove_character_modifier = gimilzir_tanturak_following_3
+		}
+		else_if = {
+			limit = { 
+				has_character_modifier = gimilzir_tanturak_following_2
+			}
+			remove_character_modifier = gimilzir_tanturak_following_2
+		}
+		else_if = {
+			limit = { 
+				has_character_modifier = gimilzir_tanturak_following_1
+			}
+			remove_character_modifier = gimilzir_tanturak_following_1
+		}
 		
 		#Memory
 		create_character_memory = { type = settled_tanturak_memory }
@@ -5374,30 +5410,26 @@ gimilzir_events.781 = { # Flavor Event for after settling down, talking about ho
 
 	option = {
 		name = gimilzir_events.781.a # We need Lebensrealm
-		add_prestige = -250
+		add_prestige = -100
 		add_unpressed_claim = title:k_tanturak
 		add_unpressed_claim = title:d_tanturak
-		add_unpressed_claim = title:c_sarul
+		add_unpressed_claim = title:d_tam_wamo
 		add_unpressed_claim = title:d_azra_zhe
-		add_unpressed_claim = title:c_azra_zhe
+		add_unpressed_claim = title:d_okan
 		add_character_modifier = { 
 			modifier = gimilzir_ardinak_military
 			years = 30
 		}
-		add_character_flag = tanturak_military_expansion
-		custom_tooltip = gimilzir_events.781.a.tt
 	}
 	
 	option = {
 		name = gimilzir_events.781.b # Naaa Nazi
-		add_prestige = -100
+		add_prestige = -50
 		add_unpressed_claim = title:k_tanturak
 		add_character_modifier = { 
 			modifier = gimilzir_ardinak_diplomacy
 			years = 30
 		}
-		add_character_flag = tanturak_diplomatic_expansion
-		custom_tooltip = gimilzir_events.781.b.tt
 	}
 	
 	option = {
@@ -5421,11 +5453,123 @@ gimilzir_events.782 = { # Conquer Sarul Flavor Event  Talking about how people w
 			name = unavailable_unique_decisions
 			target = flag:enable_gimilzir_sarul_tanturak_decision
 		}
+		hidden_effect = { 
+			culture:usakani = { 
+				add_innovation = innovation_hoardings
+			}
+		}
+		if = { 
+			limit = { 
+				OR = { 
+					has_character_flag = gimilzir_mispir_trade_bad
+					has_character_flag = gimilzir_mispir_trade_good
+				}
+			}
+			trigger_event = { id = gimilzir_events.7820 months = { 1 6 } }
+		}
 	}
 
 	option = {
 		name = gimilzir_events.782.a # What an Interesting development
 		custom_tooltip = gimilzir_tanturak_decision_enable
+		add_character_modifier = { 
+			modifier = lotr_usakan_dislike_tanturak_modifier
+			years = 30
+		}
+	}
+}
+
+gimilzir_events.7820 = { # Conquer Sarul Flavor Event Mispir Trade
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7820.t
+	desc = gimilzir_events.7820.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = disbelief
+	}
+	
+	right_portrait = {
+		character = scope:mispirholder
+		animation = personality_greedy
+	}
+	
+	immediate = {
+		title:c_mispir.holder = { save_scope_as = mispirholder }
+		root = { save_scope_as = gimilzirchar }
+	}
+
+	option = {
+		name = gimilzir_events.7820.a # bad trade
+		trigger = {
+			has_character_flag = gimilzir_mispir_trade_bad
+		}
+		title:c_sarul = {
+			add_county_modifier = { 
+				modifier = trade_agreement_with_mispir_sarul
+				years = 50
+			}
+		}
+		title:c_mispir = {
+			add_county_modifier = { 
+				modifier = trade_agreement_with_mispir_mispir
+				years = 50
+			}
+		}
+		add_character_modifier = { 
+			modifier = trade_agreement_with_mispir
+			years = 50
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7820.b # good trade
+		trigger = {
+			has_character_flag = gimilzir_mispir_trade_good
+		}
+		title:c_sarul = {
+			add_county_modifier = { 
+				modifier = trade_agreement_with_mispir_sarul
+				years = 50
+			}
+		}
+		title:c_mispir = {
+			add_county_modifier = { 
+				modifier = trade_agreement_with_mispir_mispir_lesser
+				years = 50
+			}
+		}
+		add_character_modifier = { 
+			modifier = trade_agreement_with_mispir_better
+			years = 50
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7820.c #No Trade
+		trigger = {
+			has_character_flag = gimilzir_mispir_trade_good
+		}
+		scope:mispirholder = {
+			add_opinion = {
+				target = root
+				modifier = angry_opinion
+				opinion = -100
+			}
+		}
+		scope:mispirholder = { 
+			hidden_effect = { 
+				add_prestige = 2000
+				add_piety = 2000
+			}
+			add_pressed_claim = title:k_tanturak
+			start_war = {
+				cb = invasion_war
+				target = scope:gimilzirchar
+				target_title = title:k_tanturak
+			}
+		}
 	}
 }
 
@@ -5446,11 +5590,11 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 		title:c_sarul = {
 			set_county_faith = root.faith
 			set_county_culture = root.culture
-			change_development_level = 3
+			change_development_level = 8
 		}
 		##People will wanna live in a nicer place
 		title:c_ardinak = {
-			change_development_level = -5
+			change_development_level = -8
 		}
 	}
 
@@ -5465,8 +5609,7 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 				number_of_succeded_contracts_gimilzir_tanturak >= 6
 			}
 			province:5832 = {
-				set_holding_type = castle_holding
-				add_building = castle_03
+				add_building = curtain_walls_03
 				add_building = windmills_02
 				add_building = barracks_02
 				add_building = common_tradeport_02
@@ -5487,8 +5630,7 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 				}
 			}
 			province:5832 = {
-				set_holding_type = castle_holding
-				add_building = castle_02
+				add_building = curtain_walls_02
 				add_building = windmills_02
 				add_building = barracks_02
 				add_building = common_tradeport_02
@@ -5504,8 +5646,7 @@ gimilzir_events.783 = { # Post Rebuild Sarul event
 		else = {
 			add_gold = 1500
 			province:5832 = {
-				set_holding_type = castle_holding
-				add_building = castle_02
+				add_building = curtain_walls_01
 				add_building = windmills_01
 				add_building = barracks_01
 				add_building = common_tradeport_01
@@ -5572,12 +5713,16 @@ gimilzir_events.785 = { # Post Settling Flavor 20 Years
 	theme = realm
 	left_portrait = {
 		character = root
-		animation = toast
+		animation = personality_content
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
 	}
 
 
 	option = {
-		name = gimilzir_events.782.a # What an Interesting development
+		name = gimilzir_events.785.a # What an Interesting development
 		custom_tooltip = {
 			text = flourishing_culture_in_all_culture_faith_counties
 			every_county_in_region = {
@@ -5638,8 +5783,8 @@ gimilzir_events.7870 = {
 gimilzir_events.787 = { # Post MC Death Flavor
 	content_source = realms_dlc
 	type = character_event
-	title = gimilzir_events.782.t
-	desc = gimilzir_events.782.desc
+	title = gimilzir_events.787.t
+	desc = gimilzir_events.787.desc
 	theme = realm
 	left_portrait = {
 		character = root
@@ -5693,9 +5838,15 @@ gimilzir_events.788 = { # Post Create Tanturak Kingdom
 	option = {
 		name = gimilzir_events.788.a # What an Interesting development
 		add_prestige = 400
-		dynasty = { add_dynasty_prestige = 400 }
+		dynasty = { add_dynasty_prestige = 4000 }
 		add_character_modifier = gimilzir_tanturak_refounder
 		remove_trait = depressed_genetic
+	}
+	
+	after = { 
+		character:k_wastelands_holder = { #Post Settling Tanturak Flavor 7ish years
+			trigger_event = { id = gimilzir_events.790 years = { 5 10 } }
+		}
 	}
 }
 
@@ -5721,6 +5872,101 @@ gimilzir_events.789 = { # Ardinak, the Cursed Isle - Yeah, this is a pretty scar
 	option = { # Never should have come here...
 		name = gimilzir_events.789.a
 		add_stress = 100
+	}
+}
+
+
+gimilzir_events.790 = {
+	scope = none
+	hidden = yes
+
+	immediate = {
+		title:c_ardinak.holder.top_liege = { trigger_event = gimilzir_events.7900 }
+	}
+}
+
+gimilzir_events.7900 = { # Post Settle Flavor 20 Yearsish
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7900.t
+	desc = gimilzir_events.7900.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = interested
+	}
+
+	option = {
+		name = gimilzir_events.7900.a # Adopt new Culture
+		culture:gimilarani = {
+			culture:gimilarani = { save_temporary_scope_as = gimilarani_culture }
+			culture:kharadunaim = { save_temporary_scope_as = kharadunaim_culture }
+			# Needs to be above the 'custom_tooltip'
+			custom_tooltip = event_form_gimilarani_get_innovations
+			hidden_effect = {
+				reset_culture_creation_date = yes
+				get_all_innovations_from = culture:kharadunaim
+				remove_innovation = innovation_knights_of_kharadune_warfare
+				remove_innovation = innovation_lesser_numenorean_heritage
+			}
+		}
+
+		every_living_character = { 
+			custom = event_form_gimilarani_get_characters_custom
+			limit = { 
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+				faith_is_good = yes
+			}
+			set_culture = culture:gimilarani
+		}
+
+		#Flip Counties
+		every_county_in_region = {
+			region = special_azraphel_an_khar
+			custom = event_form_gimilarani_counties_custom1
+			limit = {
+				OR = {
+					holder = root
+					holder.top_liege = root
+				}
+				culture = { has_cultural_pillar = heritage_southern_adunaic }
+			}
+			set_county_culture = culture:gimilarani
+		}
+		every_county_in_region = {
+			region = special_azraphel_an_khar
+			custom = event_form_gimilarani_counties_custom2
+			limit = {
+				OR = {
+					holder = root
+					holder.top_liege = root
+				}
+				culture = { NOT = { has_cultural_pillar = heritage_southern_adunaic } }
+			}
+			add_county_modifier = { 
+				modifier = improve_promote_culture_modifier
+				years = 30
+			}
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7900.b # Na keep current culture
+		every_county_in_region = {
+			region = special_azraphel_an_khar
+			custom = event_form_gimilarani_counties_custom2
+			limit = {
+				OR = {
+					holder = root
+					holder.top_liege = root
+				}
+				culture = { NOT = { has_cultural_pillar = heritage_southern_adunaic } }
+			}
+			add_county_modifier = { 
+				modifier = improve_promote_culture_modifier
+				years = 30
+			}
+		}
 	}
 }
 

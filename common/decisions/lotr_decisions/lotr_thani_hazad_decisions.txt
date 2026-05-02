@@ -1226,7 +1226,7 @@ decision_adunaic_revival_tanturak = {#Restore Adunaic
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_set_sail.dds"
 	}
-	sort_order = 100
+	sort_order = 90
 	desc = decision_adunaic_revival_tanturak_desc
 	selection_tooltip = decision_adunaic_revival_tanturak_tt
 	confirm_text = decision_adunaic_revival_tanturak_confirm
@@ -1326,6 +1326,124 @@ decision_adunaic_revival_tanturak = {#Restore Adunaic
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:decision_adunaic_revival_tanturak
+		}
+	}
+
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
+decision_adunaic_revival_usakan = {#Restore Adunaic
+	ai_check_interval = 60
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_set_sail.dds"
+	}
+	sort_order = 90
+	desc = decision_adunaic_revival_usakan_desc
+	selection_tooltip = decision_adunaic_revival_usakan_tt
+	confirm_text = decision_adunaic_revival_usakan_confirm
+
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		OR = { 
+			has_title = title:d_modune
+			has_title = title:k_usakan
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_adunaic_revival_tanturak
+			}
+		}
+		OR = {
+			faith.religion = religion:adunai_religion
+			culture = {	has_cultural_pillar = heritage_southern_adunaic }
+			culture = {	has_cultural_pillar = heritage_unified_adunaic }
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_adunaic_revival_usakan
+			}
+		}
+		trigger_if = { 
+			limit = { 
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:gimilzir_tanturak_path
+				}
+			}
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:enable_gimilzir_tanturak_culture_decision
+			}
+		}		
+	}
+	
+	is_valid = { 		
+		is_adult = yes
+		prestige_level >= 3
+		piety_level >= 3
+		is_independent_ruler = yes
+		OR = { 
+			has_title = title:d_modune
+			has_title = title:k_usakan
+		}
+		title:c_guishas = {
+			faith = root.faith
+		} 
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 200
+			}
+			else = {
+				value = 1
+			}
+		}
+		prestige = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				value = 100
+			}
+			else = {
+				value = 1
+			}
+		}
+	}
+	
+	effect = {
+		title:c_guishas = {
+			set_county_culture = root.culture
+			add_county_modifier = {
+				modifier = lotr_converting_usakan_county_modifier
+				years = 20
+			}
+		}
+		add_character_modifier = {
+			modifier = lotr_converting_usakan_modifier
+			years = 10
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_adunaic_revival_usakan
 		}
 	}
 
@@ -1822,34 +1940,41 @@ decision_azraphel_an_khar = {
 		resolve_title_and_vassal_change = scope:title_change
 		set_primary_title_to = title:h_azraphel_an_khar
 		
-		create_title_and_vassal_change = {
-			type = created
-			save_scope_as = title_change
-			add_claim_on_loss = yes
-		}
-		title:e_mikazra_zain = {
-			change_title_holder = {
-				holder = root
-				change = scope:title_change
-			}
-		}
-		resolve_title_and_vassal_change = scope:title_change
-
-		# Switch the de jure
-		every_county_in_region = { # Works
-			region = special_mikazra_zain
-			add_to_list = mikazra_zain_counties
-		}
-		every_kingdom = {
-			limit = {
-				OR = {
-					any_de_jure_county = {
-						count > 0
-						is_in_list = mikazra_zain_counties
-					}
+		if = {
+			limit = { 
+				NOT = { 
+					exists = title:e_mikazra_zain.holder
 				}
 			}
-			set_de_jure_liege_title = title:e_mikazra_zain
+			create_title_and_vassal_change = {
+				type = created
+				save_scope_as = title_change
+				add_claim_on_loss = yes
+			}
+			title:e_mikazra_zain = {
+				change_title_holder = {
+					holder = root
+					change = scope:title_change
+				}
+			}
+			resolve_title_and_vassal_change = scope:title_change
+			# Switch the de jure
+			every_county_in_region = { # Works
+				region = special_mikazra_zain
+				add_to_list = mikazra_zain_counties
+			}
+			every_kingdom = {
+				limit = {
+					OR = {
+						any_de_jure_county = {
+							count > 0
+							is_in_list = mikazra_zain_counties
+						}
+					}
+				}
+				set_de_jure_liege_title = title:e_mikazra_zain
+			}
+			resolve_title_and_vassal_change = scope:title_change
 		}
 		title:e_usakan = { 
 			set_de_jure_liege_title = title:h_azraphel_an_khar
@@ -1888,6 +2013,195 @@ decision_azraphel_an_khar = {
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:decision_azraphel_an_khar
+		}
+	}
+}
+
+decision_mikazra_zain = {
+	title = decision_mikazra_zain_title
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_adunai_02.dds"
+	}
+	sort_order = 1000
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 12
+		empire = 6
+		hegemony = 0
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+	
+	selection_tooltip = decision_mikazra_zain_tooltip
+	desc = decision_mikazra_zain_desc
+	confirm_text = decision_mikazra_zain_confirm
+	
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		is_landed = yes
+		highest_held_title_tier <= tier_empire
+		
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_numenor_in_exile
+			}
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_azraphel_an_khar
+			}
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_mikazra_zain
+			}
+		}
+		culture = { 
+			OR = {
+				has_cultural_pillar = heritage_southern_adunaic 
+				has_cultural_pillar = heritage_eastern_adunaic 
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+		}
+		faith = {
+			OR = {
+				has_doctrine = tenet_adunaic_birthright
+				has_doctrine = tenet_adunaic_mandate 
+				has_doctrine = tenet_faithful_mandate 
+			}
+		}
+		exists = capital_province
+		capital_province = {
+			geographical_region = special_mikazra_zain
+		}
+		any_county_in_region = {
+			region = special_mikazra_zain
+			OR = {
+				holder = { is_vassal_or_below_of = root }
+				holder = root
+			}
+			percent >= 0.20
+		}
+	}
+	
+	is_valid = {
+		prestige_level >= 4
+		piety_level >= 4
+		culture = { 
+			OR = {
+				has_cultural_pillar = heritage_southern_adunaic 
+				has_cultural_pillar = heritage_eastern_adunaic 
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+		}
+		faith = {
+			OR = {
+				has_doctrine = tenet_adunaic_birthright
+				has_doctrine = tenet_adunaic_mandate 
+				has_doctrine = tenet_faithful_mandate 
+			}
+		}
+		custom_tooltip = {
+			text = decision_mikazra_zain_trigger.tt_1
+			any_county_in_region = {
+				region = special_mikazra_zain
+				percent >= 0.05
+				culture = root.culture
+				faith = root.faith
+			}
+		}
+		custom_tooltip = {
+			text = decision_mikazra_zain_trigger.tt_2
+			any_county_in_region = {
+				region = special_mikazra_zain
+				OR = {
+					holder = { is_vassal_or_below_of = root }
+					holder = root
+				}
+				percent >= 0.75
+			}
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	cost = {
+		gold = 500 
+	}
+	
+	effect = {
+		create_title_and_vassal_change = {
+			type = created
+			save_scope_as = title_change
+			add_claim_on_loss = yes
+		}
+		title:e_mikazra_zain = {
+			change_title_holder = {
+				holder = root
+				change = scope:title_change
+			}
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		# Switch the de jure
+		every_county_in_region = { # Works
+			region = special_mikazra_zain
+			add_to_list = mikazra_zain_counties
+		}
+		every_kingdom = {
+			limit = {
+				OR = {
+					any_de_jure_county = {
+						count > 0
+						is_in_list = mikazra_zain_counties
+					}
+				}
+			}
+			set_de_jure_liege_title = title:e_mikazra_zain
+		}
+		resolve_title_and_vassal_change = scope:title_change
+		
+		# Everyone is mad
+		custom_tooltip = {
+			text = decision_mikazra_zain_effect.tt
+			every_vassal_or_below = {
+				limit = {
+					NOR = {
+						culture = { 
+							OR = { 
+								has_cultural_pillar = heritage_southern_adunaic 
+								has_cultural_pillar = heritage_eastern_adunaic 
+								has_cultural_pillar = heritage_unified_adunaic
+							}
+						}
+						faith.religion = root.religion
+					}
+				}
+				add_opinion = {
+					modifier = angry_opinion
+					target = root
+					opinion = -50
+				}
+			}
+		}
+
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_mikazra_zain
 		}
 	}
 }
@@ -1965,6 +2279,28 @@ decision_tanturak_build_usakan_bay_citadels = {
     }
 	
 	effect = {
+		hidden_effect = { 
+			province:7521 = {
+				set_holding_type = castle_holding
+			}
+			province:7518 = {
+				set_holding_type = castle_holding
+			}
+			province:6008 = {
+				set_holding_type = castle_holding
+			}
+			province:7522 = {
+				set_holding_type = castle_holding
+			}
+			province:7506 = {
+				set_holding_type = castle_holding
+			}
+			province:7599 = {
+				set_holding_type = castle_holding
+			}
+			title:b_musiutuse = { set_capital_barony = yes }
+		}
+		
 		add_prestige = 200
 		title:c_tarango.title_province = {
 			hidden_effect = { add_special_building_slot = wonder_usakan_citadels }

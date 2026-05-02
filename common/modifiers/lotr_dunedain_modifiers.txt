@@ -612,3 +612,25 @@ trade_agreement_with_mispir_sarul = {
 	tax_mult = 0.1
 	development_growth_factor = 0.1
 }
+
+lotr_usakan_dislike_tanturak_modifier = {
+	icon = piety_negative
+	monthly_piety = 0.1
+	usakani_opinion  = -60
+	county_opinion_add = -10
+}
+
+lotr_converting_usakan_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	opinion_of_same_culture = 10
+	opinion_of_different_culture = -10
+	county_opinion_add = -5
+}
+
+lotr_converting_usakan_county_modifier = {
+	icon = family_negative
+	county_opinion_add = -50
+	monthly_county_control_decline_add = -0.25
+	development_growth_factor = 0.1
+}

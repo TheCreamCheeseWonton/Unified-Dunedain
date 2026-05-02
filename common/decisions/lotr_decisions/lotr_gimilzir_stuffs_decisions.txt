@@ -288,6 +288,8 @@ decision_gimilzir_adunaic_revival_sarul = {#Settle Adunaic in Sarul
 	
 	effect = {
 		custom_tooltip = gimilzir_sarul_tooltip # just tells player what will happen in event
+		custom_tooltip = gimilzir_sarul_tooltip_culture
+		custom_tooltip = gimilzir_sarul_tooltip_faith
 		trigger_event = gimilzir_events.783
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -307,7 +309,7 @@ decision_gimilzir_adunaic_revival_sarul = {#Settle Adunaic in Sarul
 decision_gimilzir_tanturak_founder_statue = {
 	title = decision_gimilzir_tanturak_founder_statue
 	picture = {
-		reference ="gfx/interface/illustrations/decisions/decision_castle_02.dds"
+		reference ="gfx/interface/illustrations/decisions/decision_statue.dds"
 	}
 	selection_tooltip = decision_gimilzir_tanturak_founder_statue_tooltip
 	desc = decision_gimilzir_tanturak_founder_statue_desc
@@ -349,13 +351,14 @@ decision_gimilzir_tanturak_founder_statue = {
 	
 	effect = {
 		add_prestige = 500
-		activate_holy_site = guishas_faithful
-		dynasty = { add_dynasty_prestige = 250 }
+		faith:faith_adunaic_faithful = {
+			activate_holy_site = guishas_faithful
+		}
+		dynasty = { add_dynasty_prestige = 1250 }
 		
 		
 		title:c_guishas.title_province = {
-			hidden_effect = { add_special_building_slot = wonder_gimilzir_statue }
-			add_special_building = wonder_gimilzir_statue
+			add_special_building_slot = wonder_gimilzir_statue 
 		}
 		
 		

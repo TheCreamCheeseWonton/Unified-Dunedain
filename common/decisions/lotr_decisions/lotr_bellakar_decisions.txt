@@ -3530,13 +3530,27 @@ decision_bozisha_dar_tributary = {
 			any_vassal_or_below = {
 				has_title = title:c_bozisha_dar
 			}
+			has_title = title:c_bozisha_dar
 		}
 		NOT = { 
 			any_vassal_or_below = {
 				has_title = title:k_ray
 			}
+			has_title = title:k_ray
+		}
+		NOT = { 
+			any_vassal_or_below = {
+				has_title = title:e_bozisha_miraz
+			}
+			has_title = title:e_bozisha_miraz
 		}
 		exists = title:c_bozisha_dar.holder
+		
+		NOT = { 
+			title:c_bozisha_dar.holder = {
+				lotr_has_numenorean_culture_trigger = yes
+			}
+		}
 		
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -3603,6 +3617,29 @@ decision_unify_southern_adunai = {
 		highest_held_title_tier >= tier_kingdom
 
 		culture = { has_cultural_pillar = heritage_southern_adunaic }
+		
+		OR = {
+			any_county_in_region = {
+				region = custom_mannish_thani_hazad
+				OR = {
+					holder = {
+						is_vassal_or_below_of = root
+					}
+					holder = root
+				}
+				percent >= 0.1
+			}
+			any_county_in_region = {
+				region = custom_anbalkumagan
+				OR = {
+					holder = {
+						is_vassal_or_below_of = root
+					}
+					holder = root
+				}
+				percent >= 0.1
+			}
+		}
 		
 		NOT = {
 			is_target_in_global_variable_list = {

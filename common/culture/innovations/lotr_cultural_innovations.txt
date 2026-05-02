@@ -48,6 +48,7 @@ innovation_numenorean_heritage = {
 			##End Quonton
 			this = culture:black_numenorean
 			this = culture:old_umbarean
+			this = culture:gimilarani
 		}
 	}
 	character_modifier = {
@@ -103,7 +104,9 @@ innovation_lesser_numenorean_heritage = {
 			}
 			this = culture:umbarean
 		}
+		##Quonton
 		NOT = { this = culture:kharatakhori }
+		NOT = { this = culture:gimilarani }
 	}
 	
 	character_modifier = {
@@ -158,6 +161,7 @@ innovation_numenorean_architecture_02 = {
 			##Quonton
 			has_cultural_pillar = heritage_unified_adunaic
 			this = culture:ar_adunaim_numenorean
+			this = culture:gimilarani 
 		}
 	}
 

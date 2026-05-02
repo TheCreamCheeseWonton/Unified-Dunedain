@@ -310,7 +310,7 @@ tradition_adunaic_legacy = {
 
 	county_modifier = {
 		monthly_county_control_growth_add = 0.5
-		development_growth_factor = 0.1
+		#development_growth_factor = 0.1
 	}	
 }
 
@@ -386,7 +386,7 @@ tradition_new_numenor = {
 
 	county_modifier = {
 		monthly_county_control_growth_add = 0.5
-		development_growth_factor = 0.15
+		#development_growth_factor = 0.15
 	}
 
 	province_modifier = {
