@@ -26,14 +26,18 @@ gimilzir_events.2 = { # Gimilzadan Flavor 2
 	immediate = {
 		hidden_effect = { 
 			ud_lotr_laamp_setup_effect = yes
+			root.dynasty = {
+				add_dynasty_prestige = 150
+			}
 		}
 	}
 	
 	option = {
 		name = gimilzir_events.2.a
+		#add_character_flag = gimilzir_char
 		add_short_term_gold = 350
 		root.dynasty = {
-			add_dynasty_prestige = 1150
+			add_dynasty_prestige = 1000
 		}
 		add_prestige = 150
 		trigger_event = gimilzir_events.3
@@ -61,7 +65,118 @@ gimilzir_events.3 = { # Gimilzadan Flavor 3
 			name = unavailable_unique_decisions
 			target = flag:enable_gimilzir_decision
 		}
+		add_character_modifier = arugimil_starting_debuf
 		custom_tooltip = enable_gimilzir_decision
+	}
+}
+
+gimilzir_events.30 = { # Gimilzadan Flavor Lesson Trait
+	content_source = realms_dlc 
+	type = character_event
+	title = gimilzir_events.30.t
+	desc = gimilzir_events.30.desc
+	theme = stewardship_domain_focus
+	
+	override_background = { reference = study }
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	option = {
+		name = gimilzir_events.30.a
+		remove_character_modifier = arugimil_starting_debuf
+		add_character_modifier = arugimil_starting_debuf_lesser
+		trigger_event = {
+			id = gimilzir_events.31
+			years = { 2 7 }
+		}
+	}
+}
+
+gimilzir_events.31 = { # Gimilzadan Flavor Lesson Trait
+	content_source = realms_dlc 
+	type = character_event
+	title = gimilzir_events.31.t
+	desc = gimilzir_events.31.desc
+	theme = stewardship_domain_focus
+	
+	override_background = { reference = study }
+	
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan1
+		animation = toast
+	}
+		
+	option = {
+		name = gimilzir_events.31.a
+		remove_character_modifier = arugimil_starting_debuf_lesser
+		add_character_modifier = arugimil_starting_debuf_alomst_gone
+		trigger_event = {
+			id = gimilzir_events.32
+			years = { 2 7 }
+		}
+	}
+}
+
+gimilzir_events.32 = { # Gimilzadan Flavor Remove Trait
+	content_source = realms_dlc 
+	type = character_event
+	title = gimilzir_events.32.t
+	desc = gimilzir_events.32.desc
+	theme = stewardship_domain_focus
+	
+	override_background = { reference = study }
+	
+	left_portrait = {
+		character = root
+		animation = personality_content
+	}
+
+	option = {
+		name = gimilzir_events.32.a
+		remove_character_modifier = arugimil_starting_debuf_alomst_gone
+	}
+}
+
+gimilzir_events.33 = { # Gimilzadan Flavor gain extra health
+	content_source = realms_dlc 
+	type = character_event
+	title = gimilzir_events.33.t
+	desc = gimilzir_events.33.desc
+	theme = faith
+	
+	override_background = { reference = study }
+	
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	
+	immediate = { 
+		add_to_global_variable_list = {
+			name = unavailable_unique_events
+			target = flag:gimilzir_saintly_life
+		}
+	}
+
+	option = {
+		name = gimilzir_events.33.a
+		add_character_modifier = uncanny_health_lotr_modifier
+	}
+	
+	option = {
+		name = gimilzir_events.33.b
+		add_character_modifier = legend_saintly_sinless
+		root.dynasty = {
+			add_dynasty_prestige = 6000
+		}
 	}
 }
 

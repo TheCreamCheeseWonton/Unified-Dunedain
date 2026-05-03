@@ -356,20 +356,6 @@ pharazain_events.9 = {
 		play_sound_effect = "event:/DLC/CE2/UI/Notifications/ce2_ui_notifications_migration_negative"
 		##Remove all modifiers before CV Starts
 		custom_tooltip = remove_all_previous_modifiers
-		if = { 
-			limit = { 
-				NOT = {
-					is_target_in_global_variable_list = {
-						name = unavailable_unique_decisions
-						target = flag:tame_desert_decision
-					}
-				}
-			}
-			custom_tooltip = remove_all_non_pharazain_vassals
-		}
-		else = { 
-			custom_tooltip = remove_all_non_pharazain_vassals_extra
-		}
 		hidden_effect = { 
 			every_county = {
 				remove_county_modifier = custom_bellakar_conquer_adunai_modifier  
@@ -383,108 +369,15 @@ pharazain_events.9 = {
 			remove_character_modifier = custom_ud_conquer_modifier_1 
 			remove_character_modifier = custom_an_balkumagan_conquer_modifier 
 			remove_character_modifier = custom_bellakar_conquer_modifier
-			if = { 
-				limit = { 
-					NOT = {
-						is_target_in_global_variable_list = {
-							name = unavailable_unique_decisions
-							target = flag:tame_desert_decision
-						}
-						is_target_in_global_variable_list = {
-							name = unavailable_unique_decisions
-							target = flag:anbalkumagan_empire
-						}	
-					}
-				}
-				custom_tooltip = remove_all_non_pharazain_vassals
-				every_vassal = {
-					limit = { AND = { NOT = { capital_province = { geographical_region = special_pharazain } } is_elf = no} }
-					create_title_and_vassal_change = {
-						type = independency
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-
-					becomes_independent = { change = scope:change }
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-			else_if = {
-				limit = { 
-					is_target_in_global_variable_list = {
-						name = unavailable_unique_decisions
-						target = flag:anbalkumagan_empire
-					}	
-					NOT = {
-						is_target_in_global_variable_list = {
-							name = unavailable_unique_decisions
-							target = flag:tame_desert_decision
-						}
-					}
-				}		
-				custom_tooltip = remove_all_non_pharazain_vassals_extra_2
-				every_vassal = {
-					limit = { AND = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = custom_anbalkumagan_sirayn  } } } is_elf = no } }
-					create_title_and_vassal_change = {
-						type = independency
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-
-					becomes_independent = { change = scope:change }
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-			else_if = {
-				limit = { 
-					is_target_in_global_variable_list = {
-						name = unavailable_unique_decisions
-						target = flag:tame_desert_decision
-					}	
-					NOT = {
-						is_target_in_global_variable_list = {
-							name = unavailable_unique_decisions
-							target = flag:anbalkumagan_empire
-						}
-					}
-				}		
-				custom_tooltip = remove_all_non_pharazain_vassals_extra
-				every_vassal = {
-					limit = { AND = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea  } } } is_elf = no } }
-					create_title_and_vassal_change = {
-						type = independency
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-
-					becomes_independent = { change = scope:change }
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-			else = { 
-				custom_tooltip = remove_all_non_pharazain_vassals_extra_3
-				every_vassal = {
-					limit = { AND = { NOT = { capital_province = { OR = { geographical_region = special_pharazain geographical_region = special_region_west_dune_sea geographical_region = custom_anbalkumagan_sirayn } } } is_elf = no } }
-					create_title_and_vassal_change = {
-						type = independency
-						save_scope_as = change
-						add_claim_on_loss = no
-					}
-
-					becomes_independent = { change = scope:change }
-					resolve_title_and_vassal_change = scope:change
-				}
-			}
-				
 		}
 		
 	}
 
 	option = {
 		name = pharazain_events.9.a
-		trigger = { 
-			has_global_variable = bellakar_pharazain
-		}
+		#trigger = { 
+		#	has_global_variable = bellakar_pharazain
+		#}
 		custom_tooltip = anbalkumagan_revolts
 		custom_tooltip = thani_hazad_revolts
 		hidden_effect_new_object = { 
@@ -509,6 +402,34 @@ pharazain_events.9 = {
 			}
 			every_player = { #Global News Announcement
 				trigger_event = pharazain_events.16
+			}
+		}
+		custom_tooltip = {
+			##Quonton
+			text = all_non_pharazain_vassals_war
+			every_vassal = {
+				limit = { 
+					AND = { 
+						NOT = { 
+							capital_province = { geographical_region = special_pharazain } 
+						} 
+						NOR = {
+							culture = title:h_pharazain.holder.culture 
+							has_relation_best_friend = title:h_pharazain.holder
+							has_relation_friend = title:h_pharazain.holder 
+							is_allied_to = title:h_pharazain.holder
+							culture = {
+								cultural_acceptance = { target = root.culture value > 60 }
+							}
+							is_at_war_with = title:h_pharazain.holder
+							is_elf = yes
+						}
+					} 
+				}
+				start_war = {
+					casus_belli = independence_war
+					target = title:h_pharazain.holder
+				}
 			}
 		}
 	}
@@ -544,6 +465,34 @@ pharazain_events.9 = {
 				trigger_event = pharazain_events.16
 			}
 		}
+		custom_tooltip = {
+			##Quonton
+			text = all_non_pharazain_vassals_war
+			every_vassal = {
+				limit = { 
+					AND = { 
+						NOT = { 
+							capital_province = { geographical_region = special_pharazain } 
+						} 
+						NOR = {
+							culture = title:h_pharazain.holder.culture 
+							has_relation_best_friend = title:h_pharazain.holder
+							has_relation_friend = title:h_pharazain.holder 
+							is_allied_to = title:h_pharazain.holder
+							culture = {
+								cultural_acceptance = { target = root.culture value > 60 }
+							}
+							is_at_war_with = title:h_pharazain.holder
+							is_elf = yes
+						}
+					} 
+				}
+				start_war = {
+					casus_belli = independence_war
+					target = title:h_pharazain.holder
+				}
+			}
+		}
 	}
 	option = {
 		name = pharazain_events.9.c
@@ -577,6 +526,34 @@ pharazain_events.9 = {
 				trigger_event = pharazain_events.16
 			}
 		}
+		custom_tooltip = {
+			##Quonton
+			text = all_non_pharazain_vassals_war
+			every_vassal = {
+				limit = { 
+					AND = { 
+						NOT = { 
+							capital_province = { geographical_region = special_pharazain } 
+						} 
+						NOR = {
+							culture = title:h_pharazain.holder.culture 
+							has_relation_best_friend = title:h_pharazain.holder
+							has_relation_friend = title:h_pharazain.holder 
+							is_allied_to = title:h_pharazain.holder
+							culture = {
+								cultural_acceptance = { target = root.culture value > 60 }
+							}
+							is_at_war_with = title:h_pharazain.holder
+							is_elf = yes
+						}
+					} 
+				}
+				start_war = {
+					casus_belli = independence_war
+					target = title:h_pharazain.holder
+				}
+			}
+		}
 	}
 	option = {
 		name = pharazain_events.9.d
@@ -607,6 +584,34 @@ pharazain_events.9 = {
 			}
 			every_player = { #Global News Announcement
 				trigger_event = pharazain_events.16
+			}
+		}
+		custom_tooltip = {
+			##Quonton
+			text = all_non_pharazain_vassals_war
+			every_vassal = {
+				limit = { 
+					AND = { 
+						NOT = { 
+							capital_province = { geographical_region = special_pharazain } 
+						} 
+						NOR = {
+							culture = title:h_pharazain.holder.culture 
+							has_relation_best_friend = title:h_pharazain.holder
+							has_relation_friend = title:h_pharazain.holder 
+							is_allied_to = title:h_pharazain.holder
+							culture = {
+								cultural_acceptance = { target = root.culture value > 60 }
+							}
+							is_at_war_with = title:h_pharazain.holder
+							is_elf = yes
+						}
+					} 
+				}
+				start_war = {
+					casus_belli = independence_war
+					target = title:h_pharazain.holder
+				}
 			}
 		}
 	}
@@ -770,7 +775,6 @@ pharazain_events.13 = {
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:decision_reformed_admin_complete
-		
 		}
 	}
 	

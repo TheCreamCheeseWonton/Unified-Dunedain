@@ -2726,6 +2726,7 @@ decision_reunify_numenor_culture = {
 						remove_innovation = innovation_conscripts_warfare
 						remove_innovation = innovation_bellakari_warfare
 						remove_innovation = innovation_mardrukan_warfare
+						remove_innovation = innovation_tanturak_rangers_warfare
 					}
 				}
 			}
@@ -3041,6 +3042,7 @@ decision_reunify_numenor_culture = {
 						remove_innovation = innovation_conscripts_warfare
 						remove_innovation = innovation_bellakari_warfare
 						remove_innovation = innovation_mardrukan_warfare
+						remove_innovation = innovation_tanturak_rangers_warfare
 					}
 				}
 			}

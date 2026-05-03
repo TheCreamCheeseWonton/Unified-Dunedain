@@ -926,4 +926,53 @@ adunaic_elites = { # Heavy Shock Infantry
 	ai_quality = { value = @cultural_maa_extra_ai_score }
 	icon = golden_numenorean
 }
+
+#Ithilien
+rangers_of_tanturak = {
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+	can_recruit = {
+		OR = {
+			culture = { has_innovation = innovation_tanturak_rangers_warfare }
+			AND = {
+				is_human = yes
+				is_landless_adventurer = yes
+				has_perk = planned_cultivation_perk
+				location.culture ?= { has_innovation = innovation_tanturak_rangers_warfare }
+			}
+		}
+	}
+	type = archers
+	
+	damage = 75
+	toughness = 55
+	pursuit = 25
+	screen = 50
+	
+	terrain_bonus = {
+		jungle = { damage = 45 toughness = 45 pursuit = 8 screen = 15 }
+		deep_forest = { damage = 45 toughness = 33 pursuit = 8 screen = 15 }
+		floodplains = { damage = 34 toughness = 25 pursuit = 6 screen = 12 }
+		hills = { damage = 34 toughness = 25 pursuit = 6 screen = 12 }
+		forest = { damage = 34 toughness = 25 pursuit = 6 screen = 12 }
+		mountains = { damage = 12 toughness = 12 pursuit = 3 screen = 6 }
+	}
+
+	counters = {
+		skirmishers = 1
+		elephant_cavalry = 1
+		monster = 1
+	}
+
+	buy_cost = { gold = 120 }
+	low_maintenance_cost = { gold = 0.43 }
+	high_maintenance_cost = { gold = 1.3 }
+	provision_cost = @provisions_cost_infantry_moderate
+	
+	stack = 50
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	
+	illustration = {
+		reference = ithilien_rangers
+	}
+}
 ##End Quonton

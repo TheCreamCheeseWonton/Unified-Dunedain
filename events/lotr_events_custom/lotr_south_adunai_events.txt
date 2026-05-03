@@ -19,6 +19,24 @@ south_adunai_events.1 = { # Solidify Empire Flavor
 	}
 }
 
+south_adunai_events.2 = { # Form Hegemony Event
+	content_source = realms_dlc
+	type = character_event
+	title = south_adunai_events.2.t
+	desc = south_adunai_events.2.desc
+	theme = stewardship_duty_focus
+	override_background = { reference = bp1_courtyard_indian }
+
+	left_portrait = {
+		character = root
+		animation = steward
+	}
+
+	option = {
+		name = south_adunai_events.2.a
+	}
+}
+
 south_adunai_events.4 = { # Tanturaki Reformation Flavor
 	content_source = realms_dlc
 	type = character_event

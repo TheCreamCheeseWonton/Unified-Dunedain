@@ -59,6 +59,29 @@ innovation_unified_adunai_warfare = {
 	
 	flag = global_maa
 }
+
+innovation_tanturak_rangers_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+
+	potential = {
+		lotr_has_numenorean_culture_trigger = yes
+		NOT = { has_innovation =  innovation_numenorean_warriors_adunaic }
+		NOT = { has_innovation =  innovation_numenorean_warriors }
+		NOT = { has_innovation =  innovation_numenorean_warriors_custom }
+		NOT = { has_innovation =  innovation_unified_adunai_warfare }
+		any_culture_county = {
+			any_county_province = {
+				has_building_or_higher = wonder_tanturak_ranger_base
+			}
+		}
+	}
+
+	custom = unlock_tanturak_rangers
+	
+	flag = global_maa
+}
 ##End Quonton
 
 ### Dunlendings ###

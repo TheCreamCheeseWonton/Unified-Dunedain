@@ -9671,3 +9671,581 @@ b_korlan ={
 	}
 
 }
+
+d_burakan ={
+	pattern="pattern__solid_designer.dds"
+	color1=rgb { 56 23 0 }
+	color2=white
+	color3=red
+	colored_emblem={
+		color1=red
+		color2=white
+		texture="ce_african_pattern_03.dds"
+	}
+
+	colored_emblem={
+		color1=rgb { 56 23 0 }
+		texture="ans_scrimshaw_05.dds"
+		instance={
+			position={ 0.500000 0.470000 }
+			rotation=180
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		color2=red
+		texture="ans_scrimshaw_outline_03.dds"
+		instance={
+			position={ 0.500000 0.420000 }
+			rotation=180
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		color2=red
+		texture="ans_scrimshaw_outline_03.dds"
+		instance={
+			rotation=180
+		}
+
+	}
+
+}
+
+
+b_osum ={
+	pattern="pattern__solid_designer.dds"
+	color1=purple
+	color2=rgb { 250 180 80 }
+	color3=rgb { 30 76 72 }
+	color4=umbar_gold
+	colored_emblem={
+		color1=purple
+		color2=rgb { 250 180 80 }
+		texture="ce_verticle_stripes_02.dds"
+		instance={
+			position={ 0.660000 0.850000 }
+			scale={ 0.333000 0.333000 }
+			depth=20.010000
+		}
+
+		instance={
+			position={ 0.990000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=21.010000
+		}
+
+		instance={
+			position={ 0.330000 0.850000 }
+			scale={ 0.333000 0.333000 }
+			depth=22.010000
+		}
+
+		instance={
+			position={ 0.660000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=23.010000
+		}
+
+		instance={
+			position={ 0.330000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=24.010000
+		}
+
+		instance={
+			position={ 0.000000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=25.010000
+		}
+
+		instance={
+			position={ 0.990000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=26.010000
+		}
+
+		instance={
+			position={ 0.660000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=27.010000
+		}
+
+		instance={
+			position={ 0.330000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=28.010000
+		}
+
+		instance={
+			position={ 0.000000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=29.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 250 180 80 }
+		color2=rgb { 30 76 72 }
+		texture="ans_scrimshaw_outline_03.dds"
+		instance={
+			position={ 0.500000 0.580000 }
+			depth=16.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 250 180 80 }
+		color2=rgb { 30 76 72 }
+		texture="ans_scrimshaw_outline_03.dds"
+		instance={
+			depth=17.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=umbar_gold
+		texture="ce_african_kara.dds"
+		instance={
+			position={ 0.965000 0.300000 }
+			scale={ 0.130000 0.130000 }
+			depth=6.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.035000 0.300000 }
+			scale={ 0.130000 0.130000 }
+			depth=7.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.895000 0.445000 }
+			scale={ 0.130000 0.130000 }
+			depth=8.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.105000 0.445000 }
+			scale={ 0.130000 0.130000 }
+			depth=9.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.180000 0.585000 }
+			scale={ 0.130000 0.130000 }
+			depth=10.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.820000 0.585000 }
+			scale={ 0.130000 0.130000 }
+			depth=11.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.255000 0.725000 }
+			scale={ 0.130000 0.130000 }
+			depth=12.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.745000 0.725000 }
+			scale={ 0.130000 0.130000 }
+			depth=13.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.325000 0.860000 }
+			scale={ 0.130000 0.130000 }
+			depth=14.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.675000 0.860000 }
+			scale={ 0.130000 0.130000 }
+			depth=15.010000
+			rotation=55
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 250 180 80 }
+		texture="ans_scrimshaw_outline_01.dds"
+		instance={
+			depth=18.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 30 76 72 }
+		texture="ans_scrimshaw_05.dds"
+		instance={
+			position={ 0.500000 0.530000 }
+			depth=19.010000
+		}
+
+	}
+
+}
+
+
+c_osum ={
+	pattern="pattern__solid_designer.dds"
+	color1=purple
+	color2=rgb { 250 180 80 }
+	color3=rgb { 30 76 72 }
+	color4=umbar_gold
+	colored_emblem={
+		color1=purple
+		color2=rgb { 250 180 80 }
+		texture="ce_verticle_stripes_02.dds"
+		instance={
+			position={ 0.660000 0.850000 }
+			scale={ 0.333000 0.333000 }
+			depth=20.010000
+		}
+
+		instance={
+			position={ 0.990000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=21.010000
+		}
+
+		instance={
+			position={ 0.330000 0.850000 }
+			scale={ 0.333000 0.333000 }
+			depth=22.010000
+		}
+
+		instance={
+			position={ 0.660000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=23.010000
+		}
+
+		instance={
+			position={ 0.330000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=24.010000
+		}
+
+		instance={
+			position={ 0.000000 0.515000 }
+			scale={ 0.333000 0.333000 }
+			depth=25.010000
+		}
+
+		instance={
+			position={ 0.990000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=26.010000
+		}
+
+		instance={
+			position={ 0.660000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=27.010000
+		}
+
+		instance={
+			position={ 0.330000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=28.010000
+		}
+
+		instance={
+			position={ 0.000000 0.180000 }
+			scale={ 0.333000 0.333000 }
+			depth=29.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 250 180 80 }
+		color2=rgb { 30 76 72 }
+		texture="ans_scrimshaw_outline_03.dds"
+		instance={
+			position={ 0.500000 0.580000 }
+			depth=16.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 250 180 80 }
+		color2=rgb { 30 76 72 }
+		texture="ans_scrimshaw_outline_03.dds"
+		instance={
+			depth=17.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=umbar_gold
+		texture="ce_african_kara.dds"
+		instance={
+			position={ 0.965000 0.300000 }
+			scale={ 0.130000 0.130000 }
+			depth=6.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.035000 0.300000 }
+			scale={ 0.130000 0.130000 }
+			depth=7.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.895000 0.445000 }
+			scale={ 0.130000 0.130000 }
+			depth=8.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.105000 0.445000 }
+			scale={ 0.130000 0.130000 }
+			depth=9.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.180000 0.585000 }
+			scale={ 0.130000 0.130000 }
+			depth=10.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.820000 0.585000 }
+			scale={ 0.130000 0.130000 }
+			depth=11.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.255000 0.725000 }
+			scale={ 0.130000 0.130000 }
+			depth=12.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.745000 0.725000 }
+			scale={ 0.130000 0.130000 }
+			depth=13.010000
+			rotation=55
+		}
+
+		instance={
+			position={ 0.325000 0.860000 }
+			scale={ 0.130000 0.130000 }
+			depth=14.010000
+			rotation=305
+		}
+
+		instance={
+			position={ 0.675000 0.860000 }
+			scale={ 0.130000 0.130000 }
+			depth=15.010000
+			rotation=55
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 250 180 80 }
+		texture="ans_scrimshaw_outline_01.dds"
+		instance={
+			depth=18.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 30 76 72 }
+		texture="ans_scrimshaw_05.dds"
+		instance={
+			position={ 0.500000 0.530000 }
+			depth=19.010000
+		}
+
+	}
+
+}
+
+
+d_koronande ={
+	pattern="pattern__solid_designer.dds"
+	color1=maroon
+	color2=offwhite
+	color3=rgb { 56 23 0 }
+	color4=white
+	colored_emblem={
+		color1=rgb { 56 23 0 }
+		color2=offwhite
+		texture="ce_african_pattern_undy.dds"
+	}
+
+	colored_emblem={
+		color1=maroon
+		texture="ans_scrimshaw_05.dds"
+		instance={
+			position={ 0.530000 0.500000 }
+			rotation=270
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		texture="ce_circles_01.dds"
+		instance={
+			position={ 0.300000 0.965000 }
+			scale={ 0.130000 0.130000 }
+			rotation=330
+		}
+
+		instance={
+			position={ 0.300000 0.035000 }
+			scale={ 0.130000 0.130000 }
+			rotation=90
+		}
+
+		instance={
+			position={ 0.445000 0.895000 }
+			scale={ 0.130000 0.130000 }
+			rotation=330
+		}
+
+		instance={
+			position={ 0.445000 0.105000 }
+			scale={ 0.130000 0.130000 }
+			rotation=90
+		}
+
+		instance={
+			position={ 0.585000 0.180000 }
+			scale={ 0.130000 0.130000 }
+			rotation=330
+		}
+
+		instance={
+			position={ 0.585000 0.820000 }
+			scale={ 0.130000 0.130000 }
+			rotation=90
+		}
+
+		instance={
+			position={ 0.725000 0.255000 }
+			scale={ 0.130000 0.130000 }
+			rotation=330
+		}
+
+		instance={
+			position={ 0.725000 0.745000 }
+			scale={ 0.130000 0.130000 }
+			rotation=90
+		}
+
+		instance={
+			position={ 0.860000 0.325000 }
+			scale={ 0.130000 0.130000 }
+			rotation=330
+		}
+
+		instance={
+			position={ 0.860000 0.675000 }
+			scale={ 0.130000 0.130000 }
+			rotation=90
+		}
+
+	}
+
+	colored_emblem={
+		color1=offwhite
+		color2=rgb { 56 23 0 }
+		texture="ans_scrimshaw_outline_01.dds"
+		instance={
+			rotation=270
+		}
+
+	}
+
+	colored_emblem={
+		color1=offwhite
+		color2=rgb { 56 23 0 }
+		texture="ans_scrimshaw_outline_01.dds"
+		instance={
+			position={ 0.580000 0.500000 }
+			rotation=270
+		}
+
+	}
+
+	colored_emblem={
+		color1=offwhite
+		texture="ce_circle_mask.dds"
+		instance={
+			position={ 0.355000 0.500000 }
+			scale={ 0.490000 0.490000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 56 23 0 }
+		texture="ce_circle_mask.dds"
+		instance={
+			position={ 0.355000 0.500000 }
+			scale={ 0.460000 0.460000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		color2=rgb { 56 23 0 }
+		texture="ce_frame_circle_broa.dds"
+		instance={
+			position={ 0.355000 0.500000 }
+			scale={ 0.590000 0.590000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		color2=white
+		color3=white
+		texture="ce_african_fern.dds"
+		instance={
+			position={ 0.355000 0.500000 }
+			scale={ 0.330000 0.330000 }
+		}
+
+	}
+
+}

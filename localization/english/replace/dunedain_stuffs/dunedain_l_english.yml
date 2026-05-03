@@ -23,6 +23,11 @@
  building_type_wonder_usakan_citadels: "Citadel of Ûsakan"
  building_type_wonder_usakan_citadels_desc: "A citadel of the Ûsakan Bay, raised by the [adunai|E]. These great fortresses stand astride the bay’s mouths and its principal seaways, ensuring that Tantûrak cannot be caught unawares by its enemies."
 
+ building_wonder_tanturak_ranger_bases: "Zidar an-Tantûrak"
+ building_wonder_tanturak_ranger_base_desc: "Zidar an-Tantûrak stands as the headquarters of the Tantûrak Rangers. From this stronghold, they guard the northern mountain passes, ensuring that none may descend from the [yellowmountains|E] to threaten the heartlands of Tantûrak.\n\nYet their duty does not end at the high passes. From Zidar an-Tantûrak, ranger bands range deep into the jungles of Ûsakan, moving silently through the wilderness to watch over every corner of the land. There, they safeguard the [adunai|E], ensuring that the people of Tantûrak may live without fear within their domain.\n\nThrough vigilance, skill, and unyielding resolve, the Rangers of Tantûrak stand as the realm’s shield. By their watch, Tantûrak shall never fall again, and through their strength, the land remains safe."
+ building_type_wonder_tanturak_ranger_base: "Zidar an-Tantûrak"
+ building_type_wonder_tanturak_ranger_base_desc: "Zidar an-Tantûrak stands as the headquarters of the Tantûrak Rangers. From this stronghold, they guard the northern mountain passes, ensuring that none may descend from the [yellowmountains|E] to threaten the heartlands of Tantûrak.\n\nYet their duty does not end at the high passes. From Zidar an-Tantûrak, ranger bands range deep into the jungles of Ûsakan, moving silently through the wilderness to watch over every corner of the land. There, they safeguard the [adunai|E], ensuring that the people of Tantûrak may live without fear within their domain.\n\nThrough vigilance, skill, and unyielding resolve, the Rangers of Tantûrak stand as the realm’s shield. By their watch, Tantûrak shall never fall again, and through their strength, the land remains safe."
+
  ##Blockers
  building_type_ruins_of_arnor: "Arnorian Ruins"
  building_type_ruins_of_arnor_desc: "$building_ruins_of_arnor_desc$"
@@ -156,6 +161,9 @@
  innovation_dunedain_warriors_steelbow: "Soldiers of the Dúnedain"
  innovation_dunedain_warriors_steelbow_desc: "The Dúnedain retain much of the strength and wisdom of their Númenórean forefathers and field among the fiercest armies in all of Middle-earth."
 
+ innovation_tanturak_rangers_warfare: "Rangers of Tantûrak"
+ innovation_tanturak_rangers_warfare_desc: "The Rangers of Tantûrak prowl the jungles surrounding the Bay of Ûsakan, unseen, yet ever watchful. Ready to strike at any who dare trespass upon the proud lands of the [adunai|E]."
+
  unlock_dunedain_marines: "Can recruit [GetMaA('dunedain_marines').GetName] as [men_at_arms|E]"
  unlock_dunedain_elites: "Can recruit [GetMaA('dunedain_elites').GetName] as [men_at_arms|E]"
  unlock_dunedain_reformed_rangers: "Can recruit [GetMaA('dunedain_reformed_rangers').GetName] as [men_at_arms|E]"
@@ -185,6 +193,8 @@
  unlock_numenorean_marines_adunaic: "Can recruit [GetMaA('numenorean_marines_adunaic').GetName] as [men_at_arms|E]"
  unlock_numenorean_reformed_outriders_adunaic: "Can recruit [GetMaA('numenorean_reformed_outriders_adunaic').GetName] as [men_at_arms|E]"
  unlock_numenorean_pikemen_adunaic: "Can recruit [GetMaA('numenorean_pikemen_adunaic').GetName] as [men_at_arms|E]"
+
+ unlock_tanturak_rangers: "Can recruit [GetMaA('rangers_of_tanturak').GetName] as [men_at_arms|E]"
 
  innovation_eastern_adunai_warfare: "Soldiers of the Eastern Adûnâi"
  innovation_eastern_adunai_warfare_desc: "The soldiers of the Eastern Adûnâi are mariners and marines, warriors born of the sea and bound to it, and like the sea they are a wave unyielding."
@@ -373,6 +383,11 @@
  ephalnardu: "Êphalnardû"
  ephalnardu_flavor: "In the waning days of the [secondage|E], the Far Soldiers of the Eastern Fleet were often drawn from the outspoken [faithful|E] or those considered troublemakers by the Lords of [numenor|E]. Cast out to the furthest outposts, they became men of iron will and hardened bodies, able to endure any storm or typhoon, as they do even to this day."
 
+ #Cû Sindar for bow
+ #Dâr is bastardization of daer meaning large
+ #Arûn is bastardization of eryn meaning wood or forest
+ rangers_of_tanturak: "Nardu an-Arun" 
+ rangers_of_tanturak_flavor: "The “Soldiers of the Forest” are the elite jungle rangers of Tantûrak, feared by all who dare enter those shadowed lands. You will never hear them coming, and by the time you realize they are there, you will already lie dead upon the cold earth."
 
  ##Decisions
  decision_solidify_pharazain: "Solidify the Golden Dominion"
@@ -593,6 +608,11 @@
  decision_tanturak_build_usakan_bay_citadels_confirm: "These Citadels will be the key to our dominion!"
  decision_tanturak_build_usakan_bay_citadels_tooltip: "Raise the Citadels of Ûsakan to protect our seas"
 
+ decision_establish_the_tanturak_rangers: "Establish the Rangers of Tantûrak"
+ decision_establish_the_tanturak_rangers_desc: "Tantûrak, and the wider Bay of Ûsakan region, is dominated by vast jungles, dense forests, and seemingly endless wilderness. The traditional tactics of the [adunai|E], centered on heavy infantry and supported by heavy cavalry, have proven not only ineffective in these lands, but often counterproductive. Formations designed for open terrain falter in the undergrowth, and heavily armored forces become slow, exposed, and difficult to maneuver.\n\nTo properly defend these lands from outside invaders, a more fluid and adaptive form of warfare must be established, one suited to the dense jungles we call home. Many argue that the answer lies in the creation of dedicated ranger forces, skilled bowmen and scouts who move unseen through the trees and underbrush, striking swiftly and vanishing before the enemy can respond. Such a force would not only align with the terrain, but would allow us to reclaim control of it."
+ decision_establish_the_tanturak_rangers_confirm: "Found the Rangers of Tantûrak"
+ decision_establish_the_tanturak_rangers_tt: "We will defend these lands!"
+
  ##Pharazain Separatism Decisions
  #Separatism
  decision_deal_with_pharazain_separatism: "Combat Rebelion"
@@ -796,6 +816,7 @@
  pharazain_events.9.c: "How could this happen..."
  pharazain_events.9.d: "How could this happen..."
 
+ all_non_pharazain_vassals_war: "All [vassals|E] who's [capital|E] are outside of the [GetGeographicalRegion('special_pharazain').GetName] [region|E] and not your [ally|E], [friend|E], or of your [heritage|E] will:\nBegin a [war|E] for Independence"
  remove_all_previous_modifiers: "All [modifiers|E] gained during the conquest of [GetTitleByKey('h_pharazain').GetNameNoTier] will be removed"
  remove_all_non_pharazain_vassals: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName] [region|E] will become [independent|E]"
  remove_all_non_pharazain_vassals_extra: "All [vassals|E] whos [capital|E] is outside of the [GetGeographicalRegion('special_pharazain').GetName] or [GetGeographicalRegion('special_region_west_dune_sea').GetName] [regions|E] will become [independent|E]"
@@ -975,6 +996,7 @@
  bellakar_revolt_army_name: "The Bellakari Host"
  thani_hazad_revolt_army_name: "The Thani Hazad Host"
  anbalkumagan_revolt_army_name: "The Anbalûkkhôri Host"
+ tanturak_rangers_force: "Rangers of Tantûrak"
 
  decision_group_type_pharazaini_cw: "The Pharazâin Civil War"
 
@@ -1064,6 +1086,10 @@
  south_adunai_events.1.t: "Union of Kharat Ephalaim"
  south_adunai_events.1.desc: "Today will be a historic day in the annals of history. For the first time since the [akallabeth|E], the [adunai|E] of the south have ended their rivalry and united under one nation. Brought together, mingled and traded with one another, and broke the barriers between each other, finally, we are one. The Anbalûkkhôri and Kharadûnâi have been ever-bickering enemies, but now my efforts have brought both together as one people. The [fourthage|E] will be the age of the [adunai|E] of the South!"
   south_adunai_events.1.a: "The [adunai|E] of the South, one and the same."
+
+ south_adunai_events.2.t: "An Adûnâic Bay of Ûsakan"
+ south_adunai_events.2.desc: "The Bay of Ûsakan has been home to the [adunai|E] since the late [secondage|E], with the realm of Tantûrak at its heart. Yet for much of this time, the [adunai|E] were dispossessed of these lands after Tantûrak fell to their own slaves.\n\nNow, with the reconquest and resettlement of Tantûrak, and the vast territories surrounding the bay brought under the dominion of our mighty armies, the strength and influence of the [adunai|E] stand greater than ever, perhaps even surpassing the height of [numenor|E].\n\nNever again shall our realm fall. The [adunai|E] are ascendant, and all lands around the Bay of Ûsakan are now fully and rightfully ours."
+ south_adunai_events.2.a: "The [adunai|E] of Ûsakan shall rule eternal!"
 
  pharazain_events.1.t: "Union of The Adûnâi"
  pharazain_events.1.desc: "Today, I renew my vows and reaffirm my commitment to an undivided, indivisible union.\n\nSince its proclamation, the Golden Dominion has served chiefly as an administrative body, and I have often struggled to coordinate the many disparate realms of the [adunai|E]. This task was made all the harder by the truth that much of the land I claimed did not, in fact, truely lie beneath my rule. Yet through tireless effort, my labor has at last borne fruit.\n\nA profound transformation is already underway. The peoples of [bellakar|E], [anbalkumagan|E], and [thanihazad|E] have begun to see themselves as one with [GetTitleByKey('h_pharazain').GetNameNoTier]. Reconstruction has come to its end; my cities stand rebuilt, repopulated, and restored to their rightful place as the homes of true [adunaic|E] folk.\n\nFrom the northern reaches of [GetTitleByKey('k_mardruak').GetNameNoTier], to the wealth of [GetTitleByKey('c_nilulonde').GetNameNoTier], and as far south as [GetTitleByKey('c_mispir').GetNameNoTier], the people now recognize themselves as part of a single realm. After millennia of division and strife, the lands of the [adunai|E] at last stand united beneath one King, beneath me."

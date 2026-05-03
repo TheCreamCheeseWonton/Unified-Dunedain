@@ -634,3 +634,39 @@ lotr_converting_usakan_county_modifier = {
 	monthly_county_control_decline_add = -0.25
 	development_growth_factor = 0.1
 }
+
+arugimil_starting_debuf = { 
+	icon = health_negative
+	diplomacy = -3
+	martial = -3
+	stewardship = -3
+	intrigue = -3
+	learning = -3		
+	stewardship_per_stress_level = -5				
+	monthly_lifestyle_xp_gain_mult = -0.30
+	stress_gain_mult = 0.5
+}
+
+arugimil_starting_debuf_lesser = { 
+	icon = health_negative
+	diplomacy = -2
+	martial = -2
+	stewardship = -2
+	intrigue = -2
+	learning = -2
+	stewardship_per_stress_level = -3
+	monthly_lifestyle_xp_gain_mult = -0.20
+	stress_gain_mult = 0.3
+}
+
+arugimil_starting_debuf_alomst_gone = { 
+	icon = health_negative
+	diplomacy = -1
+	martial = -1
+	stewardship = -1
+	intrigue = -1 
+	learning = -1
+	stewardship_per_stress_level = -1
+	monthly_lifestyle_xp_gain_mult = -0.10
+	stress_gain_mult = 0.1
+}

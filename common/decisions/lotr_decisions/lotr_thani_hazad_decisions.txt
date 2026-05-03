@@ -2009,6 +2009,10 @@ decision_azraphel_an_khar = {
 				}
 			}
 		}
+		
+		trigger_event = {
+			id = south_adunai_events.2
+		}
 
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -2336,4 +2340,88 @@ decision_tanturak_build_usakan_bay_citadels = {
 		gold = 2000
 	}
 
+}
+
+decision_establish_the_tanturak_rangers = {
+	sort_order = 50
+	title = decision_establish_the_tanturak_rangers
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_breeland.dds"
+	}
+	selection_tooltip = decision_establish_the_tanturak_rangers_tt
+	desc = decision_establish_the_tanturak_rangers_desc
+	confirm_text = decision_establish_the_tanturak_rangers_confirm
+
+	decision_group_type = realms_in_exile_major
+
+	# IS_SHOWN
+	is_shown = {
+		lotr_has_numenorean_culture_trigger = yes
+		OR = { 
+			has_title = title:k_tanturak
+			has_title = title:e_usakan
+			has_title = title:h_azraphel_an_khar
+		}
+		NOT = { culture = { this = culture:pharazaini_culture } }
+		NOT = { culture = { this = culture:new_numenorean_adunaic } }
+		NOT = { culture = { this = culture:new_numenorean } }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_tanturak_rangers
+			}
+		}
+	}
+
+	# IS_VALID
+	is_valid = {
+		completely_controls = title:c_ramorth
+		completely_controls = title:d_tanturak
+		OR = { 
+			any_vassal = {
+				has_title = title:k_tanturak
+			}
+			has_title = title:k_tanturak
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_lotr_adult = yes
+		is_at_war = no
+	}
+
+	effect = {
+		root.culture = { 
+			add_innovation = innovation_tanturak_rangers_warfare
+		}
+		spawn_army = { # Event troops!
+			uses_supply = no
+			inheritable = yes
+			name = tanturak_rangers_force
+			men_at_arms = {
+				type = rangers_of_tanturak
+				stacks = 5
+			}
+			location = capital_province
+		}
+		province:6006 = { # Add Tanutrak Ranger Base building
+			add_special_building_slot = wonder_tanturak_ranger_base
+			add_special_building = wonder_tanturak_ranger_base
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_tanturak_rangers
+		}
+	}
+
+	cost = {
+		gold = 750
+		prestige = 250
+	}
+
+	# AI value
+	ai_goal = yes
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
 }

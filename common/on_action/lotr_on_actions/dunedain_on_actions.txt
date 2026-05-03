@@ -4,12 +4,28 @@ on_death = { on_actions = { dunedain_on_death } }
 on_vassal_gained = { on_actions = { dunedain_on_vassal_gained } }
 on_vassal_change = { on_actions = { dunedain_on_vassal_change } }
 on_faith_conversion = { on_actions = { dunedain_on_faith_conversion } }
-#lotr_yearly_playable_pulse = { on_actions = { pharazain_events }}
+on_character_faith_change = { on_actions = { dunedain_on_character_faith_change } }
+on_prestige_level_gain = { on_actions = { ud_on_prestige_level_gain } }
 on_title_gain = { on_actions = { ud_custom_on_title_gain ud_bellakar_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan ud_thani_hazad_conquered_bellakar ud_thani_hazad_conquered_an_balkumagan ud_an_balkumagan_conquered_bellakar ud_an_balkumagan_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan_good ud_thani_hazad_conquered_an_balkumagan_good} }
 on_birth_child = { on_actions = { pharazain_born_in_the_gold_events } }
+on_game_start_after_lobby = { on_actions = { ud_on_game_start_after_lobby } }
+
+# Use this to test
+# debug_log = "my custom on_action has triggered"
+
 pharazain_born_in_the_gold_events = {
 	events = {
 		pharazain_events.8000 #Born in the Gold
+	}
+}
+
+ud_on_prestige_level_gain = {
+	trigger = { 
+		has_character_modifier = arugimil_starting_debuf
+		prestige_level >= 2
+	}
+	effect = { 
+		trigger_event = { id = gimilzir_events.30 days = { 1 90 } }
 	}
 }
 
@@ -421,7 +437,6 @@ dunedain_on_game_start = {
 				lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 			}
 		}
-		evil_strength_gamerule_buffs = yes
 		character:linegimilethtwocustom2 = {
 			if = { 
 				limit = {
@@ -483,6 +498,28 @@ dunedain_yearly_global_pulse = {
 			remove_county_modifier = custom_harder_to_colonize_dwarven
 			remove_county_modifier = custom_harder_to_colonize_dunedain
 		}
+		if = { 
+			limit = { 
+				character:linegimilzadan2 = {
+					piety_level >= 5
+					NOT = { 
+						is_target_in_global_variable_list = {
+							name = unavailable_unique_events
+							target = flag:gimilzir_saintly_life
+						}
+					}
+				}
+			}
+			character:linegimilzadan2 = {
+				trigger_event = { id = gimilzir_events.33 years = { 3 7 } }
+			}
+		}
+	}
+}
+
+ud_on_game_start_after_lobby = { 
+	effect = { 
+		evil_strength_gamerule_buffs = yes
 	}
 }
 
@@ -505,22 +542,7 @@ dunedain_on_vassal_gained = {
 					}
 				}
 				NOT = { 
-					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
-					}
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -549,29 +571,16 @@ dunedain_on_vassal_gained = {
 					}
 				}
 				NOT = {
-					has_character_modifier = sauron_strengthened_4_modifier
-					has_character_modifier = sauron_strengthened_3_modifier
-					has_character_modifier = sauron_strengthened_2_modifier
-					has_character_modifier = sauron_strengthened_1_modifier
-					has_character_modifier = sauron_weakened_modifier
+					OR = {
+						has_character_modifier = sauron_strengthened_4_modifier
+						has_character_modifier = sauron_strengthened_3_modifier
+						has_character_modifier = sauron_strengthened_2_modifier
+						has_character_modifier = sauron_strengthened_1_modifier
+						has_character_modifier = sauron_weakened_modifier
+					}
 				}
 				NOT = { 
-					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
-					}
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -604,29 +613,16 @@ dunedain_on_vassal_change = {
 					}
 				}
 				NOT = {
-					has_character_modifier = sauron_strengthened_4_modifier
-					has_character_modifier = sauron_strengthened_3_modifier
-					has_character_modifier = sauron_strengthened_2_modifier
-					has_character_modifier = sauron_strengthened_1_modifier
-					has_character_modifier = sauron_weakened_modifier
+					OR = { 
+						has_character_modifier = sauron_strengthened_4_modifier
+						has_character_modifier = sauron_strengthened_3_modifier
+						has_character_modifier = sauron_strengthened_2_modifier
+						has_character_modifier = sauron_strengthened_1_modifier
+						has_character_modifier = sauron_weakened_modifier
+					}
 				}
 				NOT = { 
-					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
-					}
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -655,29 +651,16 @@ dunedain_on_vassal_change = {
 					}
 				}
 				NOT = {
-					has_character_modifier = sauron_strengthened_4_modifier
-					has_character_modifier = sauron_strengthened_3_modifier
-					has_character_modifier = sauron_strengthened_2_modifier
-					has_character_modifier = sauron_strengthened_1_modifier
-					has_character_modifier = sauron_weakened_modifier
+					OR = { 
+						has_character_modifier = sauron_strengthened_4_modifier
+						has_character_modifier = sauron_strengthened_3_modifier
+						has_character_modifier = sauron_strengthened_2_modifier
+						has_character_modifier = sauron_strengthened_1_modifier
+						has_character_modifier = sauron_weakened_modifier
+					}
 				}
 				NOT = { 
-					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
-					}
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -708,29 +691,16 @@ dunedain_on_faith_conversion = {
 					}
 				}
 				NOT = {
-					has_character_modifier = sauron_strengthened_4_modifier
-					has_character_modifier = sauron_strengthened_3_modifier
-					has_character_modifier = sauron_strengthened_2_modifier
-					has_character_modifier = sauron_strengthened_1_modifier
-					has_character_modifier = sauron_weakened_modifier
+					OR = { 
+						has_character_modifier = sauron_strengthened_4_modifier
+						has_character_modifier = sauron_strengthened_3_modifier
+						has_character_modifier = sauron_strengthened_2_modifier
+						has_character_modifier = sauron_strengthened_1_modifier
+						has_character_modifier = sauron_weakened_modifier
+					}
 				}
 				NOT = { 
-					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
-					}
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -759,29 +729,16 @@ dunedain_on_faith_conversion = {
 					}
 				}
 				NOT = {
-					has_character_modifier = sauron_strengthened_4_modifier
-					has_character_modifier = sauron_strengthened_3_modifier
-					has_character_modifier = sauron_strengthened_2_modifier
-					has_character_modifier = sauron_strengthened_1_modifier
-					has_character_modifier = sauron_weakened_modifier
+					OR = { 
+						has_character_modifier = sauron_strengthened_4_modifier
+						has_character_modifier = sauron_strengthened_3_modifier
+						has_character_modifier = sauron_strengthened_2_modifier
+						has_character_modifier = sauron_strengthened_1_modifier
+						has_character_modifier = sauron_weakened_modifier
+					}
 				}
 				NOT = { 
-					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
-					}
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -796,15 +753,12 @@ dunedain_on_faith_conversion = {
 			limit = { 
 				NOT = { has_game_rule = default_evil_strength }
 				has_game_rule = no_they_arent
-				is_independent_ruler = yes 
 				NOT = { religion = { is_in_family = rf_forcesofevil } } 
 				OR = {
 					has_character_modifier = evil_weakened_modifier
 					has_character_modifier = evil_strengthened_1_modifier
 					has_character_modifier = evil_strengthened_2_modifier
 					has_character_modifier = evil_strengthened_3_modifier
-				}
-				OR = {
 					has_character_modifier = sauron_strengthened_4_modifier
 					has_character_modifier = sauron_strengthened_3_modifier
 					has_character_modifier = sauron_strengthened_2_modifier
@@ -812,22 +766,7 @@ dunedain_on_faith_conversion = {
 					has_character_modifier = sauron_weakened_modifier
 				}
 				NOT = { 
-					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
-					}
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -842,20 +781,17 @@ dunedain_on_faith_conversion = {
 			limit = { 
 				NOT = { has_game_rule = default_evil_strength }
 				has_game_rule = yes_they_are
-				is_independent_ruler = yes
 				NOT = { 
 					OR = { 
 						religion = { is_in_family = rf_forcesofevil } 
 						faith = { has_doctrine = doctrine_dominion_of_the_dark }
 					}
 				}
-				OR = { 
+				OR = {
 					has_character_modifier = evil_weakened_modifier
 					has_character_modifier = evil_strengthened_1_modifier
 					has_character_modifier = evil_strengthened_2_modifier
 					has_character_modifier = evil_strengthened_3_modifier
-				}
-				OR = {
 					has_character_modifier = sauron_strengthened_4_modifier
 					has_character_modifier = sauron_strengthened_3_modifier
 					has_character_modifier = sauron_strengthened_2_modifier
@@ -863,22 +799,147 @@ dunedain_on_faith_conversion = {
 					has_character_modifier = sauron_weakened_modifier
 				}
 				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { remove_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { remove_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { remove_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { remove_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+	}
+}
+
+dunedain_on_character_faith_change = {
+	effect = {
+		debug_log = "my custom on_action has triggered"
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = no_they_arent
+				is_independent_ruler = yes 
+				religion = { is_in_family = rf_forcesofevil }
+				NOT = {
 					OR = { 
-						this = character:lineofsauron 
-						this = character:lineofdulgu44
-						this = character:lineoflavrajyatante21 
-						this = character:lineofafalku15 
-						this = character:vangarisofkhand
-						this = character:lineofazog10 
-						this = character:lineofazog6 
-						this = character:nazgul2 
-						this = character:lineofazog1
-						this = character:nazgul1
-						this = character:lineofafalku11a 
-						this = character:lineofdulgu31 
-						this = character:lineofgoblinking1 
-						this = character:lineoftharzog1 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
 					}
+				}
+				NOT = {
+					OR = { 
+						has_character_modifier = sauron_strengthened_4_modifier
+						has_character_modifier = sauron_strengthened_3_modifier
+						has_character_modifier = sauron_strengthened_2_modifier
+						has_character_modifier = sauron_strengthened_1_modifier
+						has_character_modifier = sauron_weakened_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = yes_they_are
+				is_independent_ruler = yes
+				OR = { 
+					religion = { is_in_family = rf_forcesofevil } 
+					faith = { has_doctrine = doctrine_dominion_of_the_dark }
+				}
+				NOT = {
+					OR = { 
+						has_character_modifier = evil_weakened_modifier
+						has_character_modifier = evil_strengthened_1_modifier
+						has_character_modifier = evil_strengthened_2_modifier
+						has_character_modifier = evil_strengthened_3_modifier
+					}
+				}
+				NOT = {
+					OR = { 
+						has_character_modifier = sauron_strengthened_4_modifier
+						has_character_modifier = sauron_strengthened_3_modifier
+						has_character_modifier = sauron_strengthened_2_modifier
+						has_character_modifier = sauron_strengthened_1_modifier
+						has_character_modifier = sauron_weakened_modifier
+					}
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = no_they_arent
+				NOT = { religion = { is_in_family = rf_forcesofevil } } 
+				OR = {
+					has_character_modifier = evil_weakened_modifier
+					has_character_modifier = evil_strengthened_1_modifier
+					has_character_modifier = evil_strengthened_2_modifier
+					has_character_modifier = evil_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
+				NOT = { 
+					this = character:lineofsauron 
+				}
+			} 
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { remove_character_modifier = evil_weakened_modifier }
+				strong_evil_strength = { remove_character_modifier = evil_strengthened_1_modifier }
+				very_strong_evil_strength = { remove_character_modifier = evil_strengthened_2_modifier }
+				apocalyptic_evil_strength = { remove_character_modifier = evil_strengthened_3_modifier }
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { has_game_rule = default_evil_strength }
+				has_game_rule = yes_they_are
+				NOT = { 
+					OR = { 
+						religion = { is_in_family = rf_forcesofevil } 
+						faith = { has_doctrine = doctrine_dominion_of_the_dark }
+					}
+				}
+				OR = {
+					has_character_modifier = evil_weakened_modifier
+					has_character_modifier = evil_strengthened_1_modifier
+					has_character_modifier = evil_strengthened_2_modifier
+					has_character_modifier = evil_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_4_modifier
+					has_character_modifier = sauron_strengthened_3_modifier
+					has_character_modifier = sauron_strengthened_2_modifier
+					has_character_modifier = sauron_strengthened_1_modifier
+					has_character_modifier = sauron_weakened_modifier
+				}
+				NOT = { 
+					this = character:lineofsauron 
 				}
 			} 
 			switch = {
@@ -944,6 +1005,13 @@ dunedain_on_death = {
 					has_character_modifier = evil_strengthened_1_modifier
 					has_character_modifier = evil_strengthened_2_modifier
 					has_character_modifier = evil_strengthened_3_modifier
+				}
+				player_heir ?= {
+					religion = { is_in_family = rf_forcesofevil } 
+					faith = { has_doctrine = doctrine_dominion_of_the_dark }
+					NOT = { 
+						this = character:lineofsauron 
+					}
 				}
 			}
 			if = {
