@@ -354,7 +354,7 @@ pezar = {
 		OR = {
 			culture = culture:pezarsani
 			culture = { any_parent_culture_or_above = { this = culture:pezarsani } }
-			dynasty = dynasty:dynasty_pesasikka
+			dynasty = dynasty:dynasty_pesarsikka
 		}
 		game_start_date >= 5243
 	}

@@ -18580,6 +18580,32 @@ journey_activity_background = {
 		environment = "environment_generic_holy_site_mena"
 		ambience = "event:/SFX/Events/Backgrounds/town_market_middleeastern_day"
 	}
+	#East Asia Temple     
+	background = {
+		trigger = {
+			#scope:activity ?= {
+			#	activity_location ?= {
+			#		OR = {
+			#			has_building_or_higher = three_pagodas_dali_01
+			#			has_building_or_higher = dengfeng_observatory_01
+			#			has_building_or_higher = stone_pagoda_01
+			#			has_building_or_higher = yuelu_academy_01
+			#			has_building_or_higher = confucius_temple_01
+			#			has_building_or_higher = izumo_taisha_01
+			#			has_building_or_higher = giant_wild_goose_pagoda_01
+			#			has_building_or_higher = liuhe_pagoda_01
+			#			has_building_or_higher = pagoda_of_fogong_temple_01
+			#			has_building_or_higher = qianling_mausoleum_01
+			#		}
+			#	}
+			#}
+			always = no #LotR
+		}
+		reference = "gfx/interface/illustrations/event_scenes/tgp_holysite_asia.dds"
+		environment = "environment_tgp_holysite_asia"
+		ambience = "event:/DLC/EP4/SFX/Events/Event_Backgrounds/tgp_holysite_asia"
+	}
+
 	background = {
 		trigger = {
 			scope:activity ?= {
@@ -18754,6 +18780,21 @@ journey_activity_background = {
 		ambience = "event:/SFX/Events/Backgrounds/FP4/fp4_magic_spring"
 	}
 
+	# Beach natural wonder
+	background = {
+		trigger = {
+			always = no #LOTR TODO
+			# scope:activity ?= {
+			# 	activity_location ?= {
+			# 		has_building_or_higher = ha_long_bay_01
+			# 	}
+			# }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/bp3_coast.dds"
+		environment = "environment_bp3_coast"
+		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
+	}
+
 	# Nordic
 	background = {
 		trigger = {
@@ -18839,8 +18880,8 @@ journey_activity_background = {
 		}
 
 		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_iberian_neutral.dds"
-		environment = "environment_ep2_tour_arrival_iberian_neutral" 
-		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day" 
+		environment = "environment_ep2_tour_arrival_iberian_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
 	# Indian
 	background = {
@@ -18856,8 +18897,8 @@ journey_activity_background = {
 		}
 
 		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_indian_neutral.dds"
-		environment = "environment_ep2_tour_arrival_indian_neutral" 
-		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day" 
+		environment = "environment_ep2_tour_arrival_indian_neutral"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
 	# Western
 	background = {
@@ -18866,7 +18907,7 @@ journey_activity_background = {
 		}
 
 		reference = "gfx/interface/illustrations/activity_splash_screens/tour_arrival_western_neutral.dds"
-		environment = "environment_ep2_tour_arrival_western_neutral" 
+		environment = "environment_ep2_tour_arrival_western_neutral"
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
 }
@@ -18889,15 +18930,15 @@ survey_activity_background = {
 			}
 		}
 		reference = "gfx/interface/illustrations/event_scenes/fp2_courtyard.dds"
-		environment = "environment_event_fp2_courtyard" 
-		ambience = "event:/DLC/FP2/SFX/Events/courtyard" 
+		environment = "environment_event_fp2_courtyard"
+		ambience = "event:/DLC/FP2/SFX/Events/courtyard"
 	}
 	background = {	#Indian Courtyard
 		trigger = {
 			location.culture ?= { has_graphical_india_culture_group_trigger = yes }
 		}
 		reference = "gfx/interface/illustrations/event_scenes/bp1_courtyard_indian.dds"
-		environment = "environment_event_bp1_courtyard_indian" 
+		environment = "environment_event_bp1_courtyard_indian"
 		ambience = "event:/SFX/Events/Backgrounds/castle_courtyard_western"
 	}
 	background = {	#MENA Courtyard
@@ -18928,7 +18969,7 @@ survey_activity_background = {
 	background = { # Fallback
 		reference = "gfx/interface/illustrations/event_scenes/bp2_courtyard.dds"
 		environment = "environment_bp2_courtyard"
-		ambience = "event:/DLC/FP2/SFX/Events/courtyard" 
+		ambience = "event:/DLC/FP2/SFX/Events/courtyard"
 	}
 }
 
@@ -21544,5 +21585,14 @@ coronation_activity_background = {
 		reference = "gfx/interface/illustrations/event_scenes/feast.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
+	}
+}
+
+#### TGP Japan Fullscreen Backgrounds ####
+tgp_fullscreen_japanese_shogunate = {
+	background = {	# Intro
+		reference = "gfx/interface/illustrations/event_story/tgp_japanese_shogunate.dds"
+		environment = "environment_tgp_frontend_japan_main"
+		ambience = "event:/DLC/EP4/SFX/Events/Story_Events/tgp_dynastic_cycle_shogunate"
 	}
 }

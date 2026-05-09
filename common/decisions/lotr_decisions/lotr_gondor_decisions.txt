@@ -988,7 +988,7 @@ decision_colonial_harnen = {
 
 ## Destroy Mordor ##
 decision_destroy_mordor = {
-	sort_order = 100
+	sort_order = 1000
 	title = decision_destroy_mordor
 	picture = {
 		trigger = {
@@ -1051,7 +1051,15 @@ decision_destroy_mordor = {
 			has_primary_title = title:h_numenor_in_exile
 			has_primary_title = title:h_reunited_kingdom
 			any_neighboring_top_liege_realm_owner = { this = title:e_mordor.holder }
-		}
+			AND = { #Custom Northward Bellakar Stuff
+				OR = {
+					has_primary_title = title:e_bellakar
+					has_primary_title = title:h_pharazain
+				}
+				global_var:bellakar_north_focus = yes
+				completely_controls = title:c_umbar
+			}
+		}	
 		faith_is_good = yes
 		# lotr_has_numenorean_culture_trigger = yes
 		NOR = {
@@ -1098,6 +1106,32 @@ decision_destroy_mordor = {
 				}
 				completely_controls_region = custom_gondorian_heartlands
 			}
+trigger_else_if = { #Custom Northward Bellakar Stuff
+				limit = {
+					any_ruler = {
+						is_gondor = yes
+						faith_is_good = yes
+					}
+					OR = {
+						has_primary_title = title:e_bellakar
+						has_primary_title = title:h_pharazain
+					}
+					global_var:bellakar_north_focus = yes
+				}
+				custom_tooltip = {
+					text = destroy_mordor_bellakar_gondor_alliance
+					OR = {
+						any_ally = {
+							is_gondor = yes
+						}
+						confederation ?= {
+							any_confederation_member = {
+								is_gondor = yes
+							}
+						}
+					}
+				}								
+			}				
 			trigger_else = { # Must border Mordor to destroy it
 				custom_tooltip = {
 					text = you_border_mordor
@@ -1109,6 +1143,34 @@ decision_destroy_mordor = {
 				}
 
 			}
+			trigger_if = { #Custom Northward Bellakar Stuff
+				limit = {
+					OR = {
+						has_primary_title = title:e_bellakar
+						has_primary_title = title:h_pharazain
+					}
+					global_var:bellakar_north_focus = yes
+				}
+				custom_tooltip = {
+					text = destroy_mordor_bellakar_stormhost_gone
+					title:e_thon_an_kharlokh = { is_title_created = no }
+				}
+				custom_tooltip = {
+					text = destroy_mordor_bellakar_harnen_requierment
+					any_county_in_region = {
+						region = custom_harnendor
+						holder = {
+							OR = {
+								any_liege_or_above = {this = root}
+								any_liege_or_above = {this = {is_gondor = yes}}
+								this = root
+								this = {is_gondor = yes}
+							}						
+						}
+						count = all
+					}
+				}								
+			}		
 			trigger_if = {
 				limit = { is_elf = yes }
 				custom_tooltip = {
@@ -1136,12 +1198,46 @@ decision_destroy_mordor = {
 	effect = {
 		play_music_cue = lotr_cue_gondor
 		custom_tooltip = destroy_mordor_decision
+		if = { #Custom Northward Bellakar Stuff
+			limit = {
+				any_ruler = {
+					is_gondor = yes
+					faith_is_good = yes
+				}
+				AND = {
+					OR = {
+						has_primary_title = title:e_bellakar
+						has_primary_title = title:h_pharazain
+					}
+					global_var:bellakar_north_focus = yes
+				}
+			}
+			title:e_mordor.holder = {
+				random_character_war = {
+					limit = {
+						using_cb = final_battle_gondor_cb
+					}
+					save_scope_as = destroy_mordor_war
+				}
+				random_ruler = {
+					limit = {
+						is_gondor = yes
+						faith_is_good = yes						
+					}
+					scope:destroy_mordor_war = { add_attacker = prev }
+				}
+			}			
+		}		
 		if = {
 			limit = {
 				OR = {
 					is_gondor = yes
 					has_primary_title = title:h_numenor_in_exile
 					has_primary_title = title:h_reunited_kingdom
+					AND = {
+						has_primary_title = title:e_bellakar
+						global_var:bellakar_north_focus = yes
+					}
 				}
 			}
 			trigger_event = gondor.2100
@@ -1238,6 +1334,7 @@ decision_destroy_mordor_AI = {
 		OR = {
 			has_primary_title = title:e_gondor_steward
 			has_primary_title = title:e_gondor
+			has_primary_title = title:e_castamir
 			has_primary_title = title:h_reunited_kingdom
 			has_primary_title = title:h_eonwe_host
 		}
@@ -3475,6 +3572,7 @@ decision_reclaim_anarion_lineage = {
 		prestige_level >= 5
 		OR = {
 			has_title = title:e_gondor
+			has_title = title:e_castamir
 			has_title = title:h_reunited_kingdom
 			has_title = title:h_numenor_in_exile
 		}
@@ -4055,8 +4153,8 @@ decision_new_capital = {
 
 						has_primary_title = title:e_umbar
 						has_primary_title = title:e_adunaim
-						has_primary_title = title:h_pharazain
 						has_primary_title = title:e_bellakar
+						has_primary_title = title:h_pharazain
 					}
 				}
 				desc = decision_new_capital.t.king
@@ -4153,7 +4251,7 @@ decision_new_capital = {
 			show_khorsaj_capital_trigger = yes
 			show_inzilloni_capital_trigger = yes
 			show_mispir_capital_trigger = yes
-			show_uruloni_capital_trigger = yes 
+			show_uruloni_capital_trigger = yes
 			##End Quonton
 			show_tol_uialgaer_capital_trigger = yes
 		}
@@ -4456,7 +4554,7 @@ decision_new_capital = {
 		}
 		item = {	# Khorsaj
 			value = new_capital_khorsaj
-			localization = decision_new_capital.tt.new_capital_khorsaj_custom
+			localization = decision_new_capital.tt.new_capital_khorsaj
 			icon = "gfx/interface/icons/message_feed/titles.dds"
 			is_shown = { show_khorsaj_capital_trigger = yes }
 			is_valid = { valid_khorsaj_capital_trigger = yes }
@@ -4478,7 +4576,7 @@ decision_new_capital = {
 			is_valid = { valid_inzilloni_capital_trigger = yes }
 			ai_chance = { value = 100 }
 		}
-		item = {	# Mispir
+		item = {	# Mispír
 			value = new_capital_mispir
 			localization = decision_new_capital.tt.new_capital_mispir
 			icon = "gfx/interface/icons/message_feed/titles.dds"
@@ -4486,7 +4584,7 @@ decision_new_capital = {
 			is_valid = { valid_mispir_capital_trigger = yes }
 			ai_chance = { value = 100 }
 		}
-		item = {	# Uruloni
+		item = {	# Ûrulôni
 			value = new_capital_uruloni
 			localization = decision_new_capital.tt.new_capital_uruloni
 			icon = "gfx/interface/icons/message_feed/titles.dds"
@@ -4668,12 +4766,12 @@ decision_new_capital = {
 			set_realm_capital = title:c_inzilloni
 			primary_title = { set_capital_county = title:c_inzilloni }
 		}
-		else_if = {	# Mispir
+		else_if = {	# Mispír
 			limit = { scope:new_capital_mispir = yes }
 			set_realm_capital = title:c_mispir
 			primary_title = { set_capital_county = title:c_mispir }
 		}
-		else_if = {	# Uruloni
+		else_if = {	# Ûrulôni
 			limit = { scope:new_capital_uruloni = yes }
 			set_realm_capital = title:c_uruloni
 			primary_title = { set_capital_county = title:c_uruloni }
@@ -6971,6 +7069,7 @@ decision_expand_tharagrondost = {
 			has_title = title:e_gondor_steward
 			has_title = title:e_gondor
 			has_title = title:e_castamir
+			has_title = title:h_reunited_kingdom
 			has_title = title:h_numenor_in_exile
 		}
 		lotr_has_numenorean_culture_trigger = yes

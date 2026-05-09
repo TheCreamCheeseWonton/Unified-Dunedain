@@ -52,7 +52,7 @@ travel_events.4000 = {
 	title = travel_events.4000.t
 	desc = {
 		desc = travel_events.4000.desc.intro
-				desc = travel_events.4000.desc.mid.long_to_go
+		desc = travel_events.4000.desc.mid.long_to_go
 		desc = travel_events.4000.desc.outro
 	}
 	theme = travel
@@ -262,6 +262,7 @@ travel_events.4000 = {
 			}
 		}
 		scope:mystic_scope = {
+			add_trait = burned #LotR
 			death = {
 				killer = root
 				death_reason = death_burned_witch
@@ -286,7 +287,7 @@ travel_events.4000 = {
 	}
 	
 	after = {
-			scope:mystic_scope = {
+		scope:mystic_scope = {
 			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
@@ -447,7 +448,7 @@ travel_events.4001 = {
 	}
 	
 	after = {
-			scope:loyal_fan_scope = {
+		scope:loyal_fan_scope = {
 			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
@@ -1332,7 +1333,7 @@ travel_events.4004 = {
 		character = root 
 	   	animation = admiration
 	}
-	override_background = { reference = ocean }
+	override_background = { reference = fp1_ocean }
 	cooldown = { years = 10 }
 	trigger = {
 		is_available_travelling = yes
@@ -1525,7 +1526,7 @@ travel_events.4005 = {
 		target = scope:merchant_artifact_scope
 		position = lower_left_portrait
 	}
-	override_background = { reference = ocean }
+	override_background = { reference = fp1_ocean }
 	cooldown = { years = 10 }
 	trigger = {
 		is_available_travelling = yes
@@ -1885,6 +1886,7 @@ travel_events.4006 = {
 		root.current_travel_plan = {
 			random_entourage_character = {
 				limit = {
+					is_adult = yes
 					opinion = {
 						value <= low_negative_opinion
 						target = root
@@ -2030,7 +2032,7 @@ travel_events.4007 = {
 		character = root.current_travel_plan.travel_leader
 	   	animation = stress
 	}
-	override_background = { reference = ocean }
+	override_background = { reference = fp1_ocean }
 	cooldown = { months = 1 }
 	trigger = {
 		exists = current_travel_plan.travel_leader
@@ -2326,7 +2328,7 @@ travel_events.4008 = {
 		character = root 
 	   	animation = personality_rational
 	}
-	override_background = { reference = ocean }
+	override_background = { reference = fp1_ocean }
 	cooldown = { years = 10 }
 	trigger = {
 		is_available_travelling = yes
@@ -2447,7 +2449,7 @@ travel_events.4009 = {
 		target = scope:new_trinket
 		position = lower_left_portrait
 	}
-	override_background = { reference = ocean }
+	override_background = { reference = fp1_ocean }
 	immediate = {
 		wayfarer_storyteller_fame_effect = { VALUE = roaming_reward_fame_medium }
 		generate_trinket_effect = {
@@ -2498,7 +2500,7 @@ travel_events.4011 = {
 		character = scope:castaway_scope 
 	   	animation = ecstasy
 	}
-	override_background = { reference = ocean }
+	override_background = { reference = fp1_ocean }
 	immediate = {
 		wayfarer_storyteller_fame_effect = { VALUE = roaming_reward_fame_medium }
 		root.location = {
@@ -2574,7 +2576,7 @@ travel_events.4011 = {
 	}
 	
 	after = {
-				scope:castaway_scope = {
+		scope:castaway_scope = {
 			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
@@ -3646,6 +3648,7 @@ travel_events.4018 = {
 		trait = callous
 		trait = zealous
 		scope:mystic_scope = {
+			add_trait = burned #LotR
 			death = {
 				killer = root
 				death_reason = death_burned_witch
@@ -4100,6 +4103,7 @@ travel_events.4020 = {
 			}
 		}
 		scope:strong_believer_scope = {
+			add_trait = burned #LotR
 			death = {
 				killer = root
 				death_reason = death_burned_witch
@@ -6044,7 +6048,7 @@ travel_events.4032 = {
 					}
 					if = {
 						limit = {
-							accolade ?= { is_accolade_active = yes }
+							is_acclaimed = yes
 						}
 						accolade = { add_glory = minor_glory_gain }
 					}
@@ -6063,7 +6067,7 @@ travel_events.4032 = {
 					}
 					if = {
 						limit = {
-							accolade ?= { is_accolade_active = yes }
+							is_acclaimed = yes
 						}
 						accolade = { add_glory = minor_glory_gain }
 					}
@@ -6461,6 +6465,7 @@ travel_events.4033 = {
 					left_icon = root
 					add_piety = medium_piety_gain
 					scope:witch_scope = {
+						add_trait = burned #LotR
 						death = {
 							killer = root
 							death_reason = death_burned
@@ -6512,7 +6517,7 @@ travel_events.4033 = {
 	}
 	
 	after = {
-			scope:witch_scope = {
+		scope:witch_scope = {
 			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
@@ -6940,7 +6945,7 @@ travel_events.4035 = {
 	}
 	
 	after = {
-			scope:zealous_priest_scope = {
+		scope:zealous_priest_scope = {
 			silent_disappearance_ai_if_created_effect = yes
 		}
 	}
@@ -7440,7 +7445,7 @@ travel_events.4037 = {
 	}
 	
 	after = {
-				scope:fanboy_character_scope = {
+		scope:fanboy_character_scope = {
 			silent_disappearance_ai_if_created_effect = yes
 		}
 	}

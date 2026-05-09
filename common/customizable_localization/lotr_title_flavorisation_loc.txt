@@ -1088,7 +1088,7 @@ elf_queen_quenya = {
 				}
 			}
 			trigger_else = {
-				any_spouse = { this = character:lineofelrond1 } # Elrond
+				any_spouse = { this = character:lineofelrond1 } # Elrond's Wife
 			}
 		}
 		localization_key = lady_quenya
@@ -1172,7 +1172,7 @@ elf_empress_quenya = {
 				}
 			}
 			trigger_else = {
-				any_spouse = { this = character:lineofelrond1 } # Elrond
+				any_spouse = { this = character:lineofelrond1 } # Elrond's Wife
 			}
 		}
 		localization_key = high_lady_quenya
@@ -1257,7 +1257,10 @@ elf_queen_sindarin = {
 				}
 			}
 			trigger_else = {
-				this = character:lineoffinarfin5 # Galadriel
+				OR = {
+					this = character:lineoffinarfin5 # Galadriel
+					any_spouse = { this = character:lineoftirneldor8 } # Meladorn's Potential Wife
+				}
 			}
 		}
 		localization_key = lady_sindarin
@@ -1299,7 +1302,11 @@ elf_king_sindarin = {
 				}
 			}
 			trigger_else = {
-				any_spouse = { this = character:lineoffinarfin5 } # Galadriel
+				OR = {
+					this = character:lineofelmo5 # Celeborn
+					any_spouse = { this = character:lineoffinarfin5 } # Galadriel's Husband
+					this = character:lineoftirneldor8 # Meladorn
+				}
 			}
 		}
 		localization_key = lord_sindarin
@@ -1341,7 +1348,10 @@ elf_empress_sindarin = {
 				}
 			}
 			trigger_else = {
-				this = character:lineoffinarfin5 # Galadriel
+				OR = {
+					this = character:lineoffinarfin5 # Galadriel
+					any_spouse = { this = character:lineoftirneldor8 } # Meladorn's Potential Wife
+				}
 			}
 		}
 		localization_key = high_lady_sindarin
@@ -1383,7 +1393,11 @@ elf_emperor_sindarin = {
 				}
 			}
 			trigger_else = {
-				any_spouse = { this = character:lineoffinarfin5 } # Galadriel
+				OR = {
+					this = character:lineofelmo5 # Celeborn
+					any_spouse = { this = character:lineoffinarfin5 } # Galadriel's Husband
+					this = character:lineoftirneldor8 # Meladorn
+				}
 			}
 		}
 		localization_key = high_lord_sindarin
@@ -1467,7 +1481,7 @@ high_queen_falathrim = {
 				}
 			}
 			trigger_else = {
-				any_spouse = { this = character:lineofcirdan } # Cirdan
+				any_spouse = { this = character:lineofcirdan } # Cirdan's Potential Wife
 			}
 		}
 		localization_key = high_queen_falathrim
@@ -1483,10 +1497,10 @@ emperor_feudal_male_numenorean = {
     type = character
     text = {
         trigger = {
-            OR = {
-                faith.religion = religion:adunai_religion
+			OR = {
+            	faith.religion = religion:adunai_religion
                 faith.religion = religion:melkoric_religion
-            }
+        	}
         }
         localization_key = emperor_feudal_male_adunaic
     }

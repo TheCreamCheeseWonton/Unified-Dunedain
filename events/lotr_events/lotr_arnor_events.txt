@@ -665,7 +665,7 @@ arnor.7007 = { #Hidden event, Hwaldar takes titles in the Angle
 	hidden = yes
 	immediate = {
 		character:linebroccach = { save_scope_as = hwaldar }
-		character:linearamir21 = { save_scope_as = duinfinn }
+		character:linearamir27 = { save_scope_as = duinfinn }
 		character:linedaurich28 = { save_scope_as = rhagangr }
 		
 		scope:hwaldar = {

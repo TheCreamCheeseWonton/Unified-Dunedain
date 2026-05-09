@@ -97,6 +97,7 @@ lineofcastamir2 = { # Son of Castamir, acutally a decent dude, murdered by Morla
     }
 
 	5481.3.19 = {
+        make_trait_inactive = equipped_castamiri_winged_crown
 		death = { death_reason = death_murder_known killer = lineofanarion55 }  # Dies in the night just before the fleet arrives in Umbar
 	}
 }
@@ -155,6 +156,7 @@ lineofcastamir3 = { # Grandson of Castamir, couped by Morlaen and only regained 
         religion = faith_castamiri_creed
     }
 	5661.12.9 = {
+        make_trait_inactive = equipped_castamiri_winged_crown
 		death = { death_reason = death_natural_causes }
 	}
 }
@@ -199,6 +201,7 @@ lineofcastamir4 = { # Great-grandson of Castamir
 	}
 
 	5669.5.1 = {
+        make_trait_inactive = equipped_castamiri_winged_crown
 		death = { death_reason = death_bubonic_plague }  #Dies in the Great Plague
 	}
 }
@@ -239,6 +242,7 @@ lineofcastamir5 = { # Great-grandson of Castamir
 	}
 
 	5719.5.13 = {
+        make_trait_inactive = equipped_castamiri_winged_crown
 		death = { death_reason = death_natural_causes }  #Great Plague
 	}
 }
@@ -267,6 +271,7 @@ lineofcastamir6 = { # A lazy king, he did much to squander the sucess of his fat
     }
 
 	5730.6.1 = {
+        make_trait_inactive = equipped_castamiri_winged_crown
 		death = { death_reason = death_murder }
 	}
 }
@@ -311,6 +316,7 @@ lineofcastamir7 = { #The 'Sun-King' of Umbar, Castamir II was a strong leader an
         }
     }
 	5842.9.1 = {
+        make_trait_inactive = equipped_castamiri_winged_crown
 		death = {
 			death_reason = death_natural_causes
 		}
@@ -340,6 +346,7 @@ lineofcastamir8 = { # Castamir III, last king of Umbar, slain by Umbardaicil
 	}
 
 	5843.7.23 = {
+        make_trait_inactive = equipped_castamiri_winged_crown
 		death = {
 			death_reason = death_battle # Killed by the Telumehtar Umbardacil
 			killer = lineofanarion38 # Telumehtar Umbardacil
@@ -5769,6 +5776,10 @@ linebarazoncorsair42 = { # Arphazêl companion
 
 	7000.1.1 = {
 		employer = linepharazon2 
+		effect = {
+            add_character_flag = no_eyepatch
+            add_character_flag = one_eyed_healed
+        }
 	}
 
 
@@ -5777,6 +5788,7 @@ linebarazoncorsair42 = { # Arphazêl companion
     }
 
     7123.4.2 = {
+		 make_trait_inactive = no_eyepatch
         death = { death_reason = death_accident  }
     }
 }
@@ -9602,6 +9614,10 @@ lineofromendilion5 = {
     prowess = 2
 
     trait = education_stewardship_1
+
+    trait = pensive
+
+    disallow_random_traits = yes
 
     5367.1.22 = {
         birth = yes
@@ -20609,8 +20625,8 @@ lineofabarzagar37brother = {
 	
 	portrait_override = {
 		portrait_modifier_overrides = {
-			custom_headgear=m_headgear_sec_ep3_byzantine_era2_war_nob_01
-			custom_clothes=m_clothes_sec_ep2_western_era1_war_nob_02_hi
+			custom_headgear=m_headgear_kharadunaim_war_01_hi
+			custom_clothes=m_clothes_kharadunaim_war_02_hi
 		}
 	}
 

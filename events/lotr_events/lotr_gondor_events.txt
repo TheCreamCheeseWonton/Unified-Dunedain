@@ -845,6 +845,24 @@ gondor.0501 = { # Denethor reacts to Aragorn's return
 		custom_tooltip = gondor.0501.a.tt1
 		custom_tooltip = gondor.0501.a.tt2
 
+		if = {
+			limit = {
+				is_confederation_member = yes
+				root.confederation = {
+					any_confederation_member = {
+						has_title = title:e_bellakar
+					}
+				}
+				global_var:bellakar_north_focus = yes
+			}
+			scope:aragorn = {
+				trigger_event = {
+					id = bellakar_story.0227
+					days = 5
+				}
+			}
+		}
+
 		trigger = {
 			trigger_if = {
 				limit = { is_ai = yes }
@@ -1064,6 +1082,8 @@ gondor.0501 = { # Denethor reacts to Aragorn's return
 	}
 }
 
+
+
 gondor.0502 = { # Aragorn is allowed into Minas Tirith and is coronated
 	content_source = realms_dlc
 	type = character_event
@@ -1169,7 +1189,7 @@ gondor.0502 = { # Aragorn is allowed into Minas Tirith and is coronated
 					OR = {
 						exists = var:banner_dynasty
 						exists = var:banner_house
-						has_variable = stewards_rod
+						has_variable = steward_rod
 						has_variable = black_chair_stewards
 					}
 				}
@@ -1480,6 +1500,16 @@ gondor.0502 = { # Aragorn is allowed into Minas Tirith and is coronated
 			target = flag:aragorn_returned_to_gondor
 		}
 		add_character_flag = aragorn_has_returned
+		if = { #Keep the defensive alliance with Bellakar
+			limit = {
+				title:e_bellakar.holder = {
+					has_character_flag = bellakar_x_gondor_confederation
+				}
+			}
+			title:e_bellakar.holder.confederation = {
+				add_confederation_member = root
+			}			
+		}		
 	}
 
 	after = {
@@ -1955,7 +1985,15 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 
 	option = { # I cannot betray my heart's desire. Marry Arwen.
 		name = gondor.0506.a
-		trigger = { character:lineofelrond4 = { is_alive = yes } }
+		trigger = { 
+			character:lineofelrond4 = { is_alive = yes }
+			character:lineisildur42 = {
+				NOR = {
+					is_married = yes
+					has_trait = widowed
+				}
+			}
+		}
 
 		if = {
 			limit = {
@@ -2020,7 +2058,15 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 
 	option = {  # Perhaps there is another. Marry Éowyn.
 		name = gondor.0506.b
-		trigger = { character:lineofeofor18 = { is_alive = yes } }
+		trigger = { 
+			character:lineofeofor18 = { is_alive = yes } 
+			character:lineisildur42 = {
+				NOR = {
+					is_married = yes
+					has_trait = widowed
+				}
+			}
+		}
 
 		if = {
 			limit = {
@@ -2075,7 +2121,15 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 
 	option = {  # Marry Lothíriel of Dol Amroth.
 		name = gondor.0506.c
-		trigger = { character:dolamroth31 = { is_alive = yes } }
+		trigger = { 
+			character:dolamroth31 = { is_alive = yes } 
+			character:lineisildur42 = {
+				NOR = {
+					is_married = yes
+					has_trait = widowed
+				}
+			}
+		}
 
 		if = {
 			limit = {
@@ -2134,7 +2188,13 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 		trigger = {
 			title:e_gondor.holder ?= { in_diplomatic_range = title:e_bellakar.holder }
 			title:e_bellakar.holder ?= { faith_is_good = yes }
-			character:lineoftumakveh144 = { is_alive = yes }
+			character:lineoftumakveh145 = { is_alive = yes }
+			character:lineisildur42 = {
+				NOR = {
+					is_married = yes
+					has_trait = widowed
+				}
+			}
 		}
 
 		if = {
@@ -2143,16 +2203,16 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 				has_dlc_feature = advanced_activities
 			}
 			#Setting up the betrothal
-			create_betrothal = character:lineoftumakveh144
+			create_betrothal = character:lineoftumakveh145
 			set_grand_wedding_betrothal_variables = {
 				SPOUSE_1 = root
-				SPOUSE_2 = character:lineoftumakveh144
+				SPOUSE_2 = character:lineoftumakveh145
 				HOST = root
-				PROMISEE = character:lineoftumakveh144.liege
+				PROMISEE = character:lineoftumakveh145.liege
 			}
 		}
 		else = {
-			marry = character:lineoftumakveh144
+			marry = character:lineoftumakveh145
 		}
 
 		custom_tooltip = gondor.0506.d.tt
@@ -2186,8 +2246,16 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 	after = {
 		if = {
 			limit = { is_betrothed = yes }
-			add_character_flag = aragorn_gw
-			betrothed = { add_character_flag = aragorn_gw }
+			add_character_flag = {
+				flag = aragorn_gw
+				years = 3
+			}
+			betrothed = { 
+				add_character_flag = {
+					flag = aragorn_gw
+					years = 3
+				}
+			}
 
 			#Opening the Grand Wedding window
 			if = {
@@ -2335,7 +2403,12 @@ gondor.0507 = { # The Glory of Gondor Restored
 				size = 3
 			}
 		}
+		trigger_event = {
+		id = gondor.0598
+		days = 1
+		}
 	}
+	
 }
 
 gondor.0508 = { # Arwen is pregnant!
@@ -2408,10 +2481,10 @@ gondor.0509 = { # First Child of Arwen and Aragorn - Eldarion
 	option = {
 		name = gondor.0509.a # His name will be Eldarion!
 		create_character = {
-			dynasty_house = root.house
+			dynasty_house = character:lineisildur42.house
 			name = "Eldarion"
-			faith = root.faith
-			culture = root.culture
+			faith = character:lineisildur42.faith
+			culture = character:lineisildur42.culture
 			gender_female_chance = 0
 			age = 0
 			mother = character:lineofelrond4
@@ -2504,10 +2577,10 @@ gondor.0511 = { # Second Child of Arwen and Aragorn - Tindómerel
 	option = {
 		name = gondor.0511.a # Her name will be Tindómerel!
 		create_character = {
-			dynasty_house = root.house
+			dynasty_house = character:lineisildur42.house
 			name = "Tind_omerel"
-			faith = root.faith
-			culture = root.culture
+			faith = character:lineisildur42.faith
+			culture = character:lineisildur42.culture
 			gender_female_chance = 100
 			age = 0
 			mother = character:lineofelrond4
@@ -2600,10 +2673,10 @@ gondor.0513 = { # Third Child of Arwen and Aragorn - Vanimeldë
 	option = {
 		name = gondor.0513.a # Her name will be Vanimeldë!
 		create_character = {
-			dynasty_house = root.house
+			dynasty_house = character:lineisildur42.house
 			name = "Vanimeld_e_e"
-			faith = root.faith
-			culture = root.culture
+			faith = character:lineisildur42.faith
+			culture = character:lineisildur42.culture
 			gender_female_chance = 100
 			age = 0
 			mother = character:lineofelrond4
@@ -2696,10 +2769,10 @@ gondor.0515 = { # Fourth Child of Arwen and Aragorn - Altáriel
 	option = {
 		name = gondor.0515.a # Her name will be Altáriel!
 		create_character = {
-			dynasty_house = root.house
+			dynasty_house = character:lineisildur42.house
 			name = "Alt_ariel"
-			faith = root.faith
-			culture = root.culture
+			faith = character:lineisildur42.faith
+			culture = character:lineisildur42.culture
 			gender_female_chance = 100
 			age = 0
 			mother = character:lineofelrond4
@@ -2820,16 +2893,6 @@ gondor.0517 = { #Aragorn wedding-bot if he was too stupid to do it himself
 
 	trigger = {
 		has_character_flag = aragorn_gw #Aragorn hasn't organised his GW yet
-		trigger_if = { #If betrothed to Arwen, check if he still fulfills the conditions
-			limit = { root.betrothed = character:lineofelrond4 }
-			OR = {
-				has_title = title:h_reunited_kingdom
-				AND = {
-					has_title = title:e_gondor
-					has_title = title:e_arnor
-				}
-			}
-		}
 	}
 
 	immediate = {
@@ -2838,54 +2901,54 @@ gondor.0517 = { #Aragorn wedding-bot if he was too stupid to do it himself
 			limit = { is_ai = yes }
 			every_relation = {
 				type = lover
-				limit = { this != root.betrothed }
+				limit = { this != betrothed }
 				remove_relation_lover = root
 			}
 			every_relation = {
 				type = soulmate
-				limit = { this != root.betrothed }
+				limit = { this != betrothed }
 				remove_relation_soulmate = root
 			}
 		}
-		
-		#Aragorn marries his betrothed normally
-		marry = root.betrothed
-		#Aragorn loses his opportunity to hold a free GW
-		remove_character_flag = aragorn_gw
-		#So Aragorn doesn't get married twice to the same person
-		remove_variable = promised_grand_wedding_marriage_countdown
 
 		if = {  #Arwen marriage handling
-			limit = { root.betrothed = character:lineofelrond4 }
-
-			#Set up their relationship
-			set_relation_lover = character:lineofelrond4
-			set_relation_friend = character:lineofelrond4
+			limit = {
+				betrothed = character:lineofelrond4 
+			}
 			if = {
-				limit = { #So the player doesn't end up with 2 soulmates
-					any_relation = {
-						type = soulmate
-						count = 0
+				limit = {
+					OR = {
+						has_title = title:h_reunited_kingdom
+						AND = {
+							has_title = title:e_gondor
+							has_title = title:e_arnor
+						}
 					}
 				}
+				#Marry them
+				marry = betrothed
+				#Set up their relationship
+				set_relation_lover = character:lineofelrond4
+				set_relation_friend = character:lineofelrond4
 				set_relation_soulmate = character:lineofelrond4
-			}
-			
-			character:lineoffinarfin5 = { # Galadriel sends a royal gift
-				trigger_event = {
-					id = elven.0103
-					days = 1
+				
+				character:lineoffinarfin5 = { # Galadriel sends a royal gift
+					trigger_event = {
+						id = elven.0103
+						days = 1
+					}
+				}
+				trigger_event = { #Incepting Eldarion
+					id = gondor.0508
+					days = 100
 				}
 			}
-			trigger_event = { #Incepting Eldarion
-				id = gondor.0508
-				days = 100
-			}
+			else = { break_betrothal = betrothed }
 		}
-	}
+		else = { marry = betrothed } #Aragorn marries his betrothed normally
 
-	on_trigger_fail = { #If Aragorn doesn't fulfill the conditions, end the betrothal
-		break_betrothal = root.betrothed
+		#So Aragorn doesn't get married twice to the same person
+		remove_variable = promised_grand_wedding_marriage_countdown
 	}
 }
 
@@ -4489,7 +4552,7 @@ gondor.0562 = { # Royalist victory - Aragorn is crowned
 						has_variable = palantir_minasanor
 						has_variable = black_chair_stewards
 						has_variable = throne_of_gondor
-						has_variable = stewards_rod
+						has_variable = steward_rod
 					}
 				}
 				set_owner = {
@@ -4990,7 +5053,7 @@ gondor.0567 = { # Royalist victory - A new Dúnedain King is crowned
 						has_variable = palantir_minasanor
 						has_variable = black_chair_stewards
 						has_variable = throne_of_gondor
-						has_variable = stewards_rod
+						has_variable = steward_rod
 					}
 				}
 				set_owner = {
@@ -5197,7 +5260,7 @@ gondor.0570 = { # Royalist victory - Dol Amroth is crowned, Gondor is changed
 						has_variable = palantir_minasanor
 						has_variable = black_chair_stewards
 						has_variable = throne_of_gondor
-						has_variable = stewards_rod
+						has_variable = steward_rod
 					}
 				}
 				set_owner = {
@@ -5455,6 +5518,45 @@ gondor.0575 = { # Global Announcement - The Steward Triumphs
 
 	option = {
 		name = gondor.0575.a
+	}
+}
+
+gondor.0598 = {
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { has_game_rule = strong_gondor_strength }
+			add_character_modifier = gondor_strengthened_2_modifier
+		}
+		else_if = {
+			limit = { has_game_rule = very_strong_gondor_strength }
+			add_character_modifier = gondor_strengthened_3_modifier
+		}
+		title:k_gondor_steward.holder ?= {
+			trigger_event = {
+				id = gondor.0599
+			}
+		}
+	}
+	
+}
+
+gondor.0599 = {
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { has_game_rule = strong_gondor_strength }
+			remove_character_modifier = gondor_strengthened_1_modifier
+		}
+		else_if = {
+			limit = { has_game_rule = very_strong_gondor_strength }
+			remove_character_modifier = gondor_strengthened_2_modifier
+		}
+		else_if = {
+			limit = { has_game_rule = apocalyptic_gondor_strength }
+			remove_character_modifier = gondor_strengthened_3_modifier
+			add_character_modifier = gondor_strengthened_4_modifier
+		}
 	}
 }
 
@@ -6420,7 +6522,19 @@ gondor.2100 = { # Begin the assault on Mordor
 		reference = minas_tirith
 	}
 
-	immediate = { play_music_cue = lotr_cue_gondor }
+	immediate = { 
+		play_music_cue = lotr_cue_gondor
+		if = {
+			limit = {
+				is_gondor = no
+				any_ruler = {is_gondor = yes}
+			}
+			random_ruler = {
+				limit = {is_gondor = yes}
+				save_scope_as = gondor_ruler
+			}
+		}
+	}
 
 	option = {
 		name = gondor.2100.a
@@ -6441,6 +6555,22 @@ gondor.2100 = { # Begin the assault on Mordor
 				}
 				every_tributary = {
 					scope:destroy_mordor_war ?= { add_defender = prev }
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = title:e_mordor
+				is_gondor = no
+				has_primary_title = title:e_bellakar
+				any_ruler = {is_gondor = yes}
+			}
+			root = {
+				random_character_war = {
+					limit = {
+						using_cb = final_battle_gondor_cb
+					}
+					add_attacker = scope:gondor_ruler
 				}
 			}
 		}
@@ -7154,6 +7284,10 @@ gondor.2401 = { # Reclaim Calenardhon - Rohan event
 		else_if = {
 			limit = { exists = title:e_gondor_steward.holder }
 			title:e_gondor_steward.holder = { save_scope_as = gondor_controller }
+		}
+		else_if = {
+			limit = { exists = title:e_castamir.holder }
+			title:e_castamir.holder = { save_scope_as = gondor_controller }
 		}
 	}
 	title = gondor.2401.t
@@ -9363,8 +9497,16 @@ gondor.2801 = { # Gondor elevates Edhellond into a kingdom, maybe add a choice t
 			title:e_gondor.holder = {
 				save_scope_as = high_king_of_gondor
 			}
-		} else = {
+		} 
+		else_if = {
+			limit = { exists = title:e_gondor_steward.holder }
 			title:e_gondor_steward.holder = {
+				save_scope_as = high_king_of_gondor
+			}
+		}
+		else_if = {
+			limit = { exists = title:e_castamir.holder }
+			title:e_castamir.holder = {
 				save_scope_as = high_king_of_gondor
 			}
 		}
@@ -9589,8 +9731,16 @@ gondor.2804 = {
 			title:e_gondor.holder = {
 				save_scope_as = high_king_of_gondor
 			}
-		} else = {
+		} 
+		else_if = {
+			limit = { exists = title:e_gondor_steward.holder }
 			title:e_gondor_steward.holder = {
+				save_scope_as = high_king_of_gondor
+			}
+		}
+		else_if = {
+			limit = { exists = title:e_castamir.holder }
+			title:e_castamir.holder = {
 				save_scope_as = high_king_of_gondor
 			}
 		}
@@ -9806,8 +9956,13 @@ gondor.2950 = { # Bellakar receives message about making alliance with Gondor
 			}
 			title:h_reunited_kingdom = { save_scope_as = gondor_title }
 		}
-		else = {
+		else_if = {
+			limit = { exists = title:e_gondor.holder }
 			title:e_gondor = { save_scope_as = gondor_title }
+		}
+		else_if = {
+			limit = { exists = title:e_castamir.holder }
+			title:e_castamir = { save_scope_as = gondor_title }
 		}
 		scope:gondor_title.holder = { save_scope_as = high_king_of_gondor }
 		play_music_cue = lotr_cue_gondor
@@ -10115,6 +10270,7 @@ gondor.3603 = {   # Solidify the Reunited Kingdom flavour
 	    show_as_tooltip = {
 		    title:e_arnor = { set_de_jure_liege_title = title:h_reunited_kingdom }
 			title:e_gondor = { set_de_jure_liege_title = title:h_reunited_kingdom }
+			title:e_castamir = { set_de_jure_liege_title = title:h_reunited_kingdom }
 		}
 	}
 	option = {
@@ -10295,7 +10451,7 @@ gondor.3800 = { #Return of the King - Long Winter edition
 					OR = {
 						exists = var:banner_dynasty
 						exists = var:banner_house
-						has_variable = stewards_rod
+						has_variable = steward_rod
 						has_variable = black_chair_stewards
 					}
 				}
@@ -10408,7 +10564,7 @@ gondor.3800 = { #Return of the King - Long Winter edition
 			every_character_artifact = { #The Rod and the Black Chair are now tied to the kingdom tier title
 				limit = {
 					OR = {
-						has_variable = stewards_rod
+						has_variable = steward_rod
 						has_variable = black_chair_stewards
 					}
 				}

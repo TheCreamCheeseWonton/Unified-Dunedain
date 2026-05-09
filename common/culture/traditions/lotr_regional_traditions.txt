@@ -274,7 +274,7 @@ tradition_adunaic_legacy = {
 	}
 
 	parameters = { 
-		dislikes_marrying_outside_of_cultural_heritage = yes
+		dislikes_marrying_outside_adunai_heritage = yes 	
 		ai_doesnt_marry_outside_cultural_heritage = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
 		values_numenorean_blood = yes 
@@ -2926,6 +2926,7 @@ tradition_corsairs_of_umbar = {
 		culture_can_raid_at_sea_even_if_feudal = yes
 		can_use_maritime_raid = yes
 		can_travel_along_rivers = yes
+		sailing_traits_more_common = yes
 	}
 
 	character_modifier = {

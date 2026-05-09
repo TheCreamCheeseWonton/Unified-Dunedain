@@ -2950,12 +2950,14 @@ pilgrimage.2005 = {
 		character = scope:rude_pilgrim
 		animation = laugh
 	}
-	cooldown = { years = 2 }
+	cooldown = { years = 5 }
 	trigger = {
 		is_location_valid_for_travel_event_on_land = yes
 		current_travel_plan ?= {
 			any_entourage_character = {
 				is_physically_able_ai_adult = yes
+				has_no_particular_noble_roots_trigger = yes
+				is_ruler = no
 				this != root
 				NOT = { is_courtier_of = root }
 			}
@@ -2967,6 +2969,8 @@ pilgrimage.2005 = {
 			random_entourage_character = {
 				limit = {
 					is_physically_able_ai_adult = yes
+					has_no_particular_noble_roots_trigger = yes
+					is_ruler = no
 					this != root
 					NOT = { is_courtier_of = root }
 				}
@@ -4750,7 +4754,7 @@ pilgrimage.2030 = {
 	option = {
 		name = pilgrimage.2030.c
 		trigger = { has_activity_intent = reflection_intent }
-		custom_tooltip = available_because_intent_tt
+		reason = activity_intent
 		bonus_to_all_types_effect = yes
 		add_piety = miniscule_piety_gain
 		if = {
@@ -5472,7 +5476,7 @@ pilgrimage.2101 = {
 				limit = {
 					NOT = {
 						government_has_flag = government_is_mandala
-						house ?= { has_house_power_parameter = aspect_of_creation }
+						house ?= { has_house_aspiration_parameter = aspect_of_creation }
 					}
 				}
 				random = {
@@ -5532,7 +5536,7 @@ pilgrimage.2101 = {
 				limit = {
 					NOT = {
 						government_has_flag = government_is_mandala
-						house ?= { has_house_power_parameter = aspect_of_creation }
+						house ?= { has_house_aspiration_parameter = aspect_of_creation }
 					}
 				}
 				random = {
@@ -5738,6 +5742,7 @@ pilgrimage.2501 = {
 	immediate = {
 		create_character = {
 			age = 31
+			dynasty = none
 			gender_female_chance = 0.5
 			trait = education_intrigue_1
 			trait = stubborn
@@ -6388,6 +6393,7 @@ pilgrimage.3001 = {
 	desc = pilgrimage.3001.desc
 	theme = travel_pilgrimage
 	override_background = { reference = terrain_travel }
+	widget = { gui = event_window_widget_vfx_rain_storm container = foreground_shader_vfx_container }
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -6402,7 +6408,7 @@ pilgrimage.3001 = {
 	}
 	right_portrait = {
 		character = scope:zealous_priest
-		animation = personality_zealous
+		animation = debating
 		outfit_tags = { bishop_outfit }
 	}
 	cooldown = { years = 15 }
@@ -6433,6 +6439,7 @@ pilgrimage.3001 = {
 		random_dummy_gender_clergy_effect = yes
 		create_character = {
 			age = 40
+			dynasty = none
 			gender = scope:dummy_clergy_gender
 			location = root.location
 			faith = root.faith
@@ -6769,8 +6776,8 @@ pilgrimage.3004 = {
 	}
 	right_portrait = {
 		character = scope:doomsayer
-		animation = personality_zealous
-		#outfit_tags = { monk_outfit }
+		animation = debating
+		outfit_tags = { monk_outfit }
 	}
 	cooldown = { years = 15 }
 	trigger = {
@@ -6783,6 +6790,7 @@ pilgrimage.3004 = {
 		random_dummy_gender_clergy_effect = yes
 		create_character = {
 			age = 40
+			dynasty = none
 			trait = devoted
 			gender = scope:dummy_clergy_gender
 			location = root.location
@@ -7173,6 +7181,7 @@ pilgrimage.3301 = {
 		random_dummy_gender_clergy_effect = yes
 		create_character = {
 			age = 80
+			dynasty = none
 			gender = scope:dummy_clergy_gender
 			location = root.location
 			faith = root.faith
@@ -7266,6 +7275,7 @@ pilgrimage.3302 = {
 	immediate = {
 		create_character = {
 			age = 80
+			dynasty = none
 			template = default_mystic_character
 			location = root.location
 			culture = root.location.county.culture
@@ -7279,7 +7289,7 @@ pilgrimage.3302 = {
 			factor = 2
 			OR = { #you're in a reflection journey
 				has_activity_intent = reflection_intent
-				scope:activity = {
+				involved_activity = {
 					has_activity_option = {
 						category = special_type
 						option = pilgrimage_type_pious
@@ -7305,7 +7315,7 @@ pilgrimage.3302 = {
 			}
 		}
 	}
-	#Humble Relection 
+	#Humble Reflection 
 	option = {
 		name = pilgrimage.3302.b
 		pious_type_option_effect = yes
@@ -7395,7 +7405,7 @@ pilgrimage.3303 = {
 			factor = 2
 			OR = { #you're in a reflection journey
 				has_activity_intent = reflection_intent
-				scope:activity = {
+				involved_activity = {
 					has_activity_option = {
 						category = special_type
 						option = pilgrimage_type_pious
@@ -7572,7 +7582,7 @@ pilgrimage.3401 = {
 			factor = 2
 			OR = { #you're in a reflection journey
 				has_activity_intent = reflection_intent
-				scope:activity = {
+				involved_activity = {
 					has_activity_option = {
 						category = special_type
 						option = pilgrimage_type_pious
@@ -8261,6 +8271,7 @@ pilgrimage.6007 = {
 	immediate = {
 		play_music_cue = "mx_cue_sacredrite"
 		create_character = {
+			dynasty = none
 			location = root.location
 			template = priest_character_template
 			faith = root.faith
@@ -13702,85 +13713,6 @@ pilgrimage.6780 = {
 	}
 	weight_multiplier = {
 		base = 1
-	}
-	#Hey you wanna come work for me?
-	option = {
-		name = pilgrimage.6780.a
-		pay_short_term_gold = {
-			target = scope:stolen_courtier
-			gold = minor_gold_value
-		}
-		custom_tooltip = obligation_hook_tt
-		add_hook = {
-			type = obligation_hook
-			target = scope:stolen_courtier
-		}
-		involved_activity ?= {
-			add_activity_log_entry = {
-				key = pilgrimage_recruited_courtier_log
-				tags = { good }
-				score = 50
-				character = root
-				target = scope:stolen_courtier
-
-				#Effects
-				root = {
-					recruit_to_entourage_court_and_activity_effect = { 
-						CHAR_TO_ADD = scope:stolen_courtier 
-						NEW_COURT_OWNER = root 
-					}
-				}
-			}
-		}
-		hidden_effect = {
-			reverse_add_opinion = {
-				target = scope:stolen_courtier
-				modifier = recruited_me_opinion
-				opinion = 30
-			}
-		}
-		if = {
-			limit = {
-				OR = {
-					scope:stolen_courtier = {
-						is_of_major_or_minor_interest_trigger = { CHARACTER = scope:stolen_courtier }
-					}
-					NOT = { has_relation_nemesis = scope:current_employer }
-				}
-			}
-			progress_towards_rival_effect = {
-				REASON = pilgrimage_poached_courtier
-				CHARACTER = scope:current_employer
-				OPINION = -10
-			}
-		}
-		else = {
-			scope:current_employer = {
-				add_opinion = {
-					target = root
-					modifier = angry_opinion
-					opinion = -20
-				}
-			}
-		}
-		stress_impact = {
-			greedy = minor_stress_impact_gain
-			avaricious = minor_stress_impact_gain
-			honest = minor_stress_impact_gain
-			loyal = minor_stress_impact_gain
-		}
-		ai_chance = {
-			base = 100
-			modifier = {
-				factor = 0
-				OR = {
-					has_trait = greedy
-					has_trait = avaricious
-					has_trait = honest
-					has_trait = loyal
-				}
-			}
-		}
 	}
 	#My court is so much better than this one
 	option = {

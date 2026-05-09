@@ -16,6 +16,7 @@ education_intrigue_1 = {
 	intrigue = 2
 	category = education
 	monthly_intrigue_lifestyle_xp_gain_mult = 0.1
+	domain_limit = -1
 	
 	ruler_designer_cost = 0
 	
@@ -71,6 +72,7 @@ education_intrigue_3 = {
 	intrigue = 6
 	category = education
 	monthly_intrigue_lifestyle_xp_gain_mult = 0.3
+	domain_limit = 1
 	
 	ruler_designer_cost = 40
 	
@@ -96,6 +98,7 @@ education_intrigue_4 = {
 	intrigue = 8
 	category = education
 	monthly_intrigue_lifestyle_xp_gain_mult = 0.4
+	domain_limit = 2
 	
 	ruler_designer_cost = 80
 	
@@ -125,6 +128,7 @@ education_intrigue_5 = {
 	monthly_diplomacy_lifestyle_xp_gain_mult = 0.25
 	owned_hostile_scheme_success_chance_max_add = 10
 	flag = agent_acceptance_25
+	domain_limit = 3
 	
 	ruler_designer_cost = 150
 	
@@ -153,12 +157,17 @@ education_diplomacy_1 = {
 	diplomacy = 2
 	category = education
 	monthly_diplomacy_lifestyle_xp_gain_mult = 0.1
+	domain_limit = -1
 	
 	ruler_designer_cost = 0
 	
 	culture_modifier = {
 		parameter = poorly_educated_leaders_distrusted
 		feudal_government_opinion = -10
+	}
+	culture_modifier = {
+		parameter = innovation_from_diplomacy_traits
+		cultural_head_fascination_mult = 0.03
 	}
 	
 	desc = {
@@ -186,6 +195,11 @@ education_diplomacy_2 = {
 	
 	ruler_designer_cost = 20
 
+	culture_modifier = {
+		parameter = innovation_from_diplomacy_traits
+		cultural_head_fascination_mult = 0.06
+	}
+
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -208,9 +222,15 @@ education_diplomacy_3 = {
 	diplomacy = 6
 	category = education
 	monthly_diplomacy_lifestyle_xp_gain_mult = 0.3
+	domain_limit = 1
 	
 	ruler_designer_cost = 40
 	
+	culture_modifier = {
+		parameter = innovation_from_diplomacy_traits
+		cultural_head_fascination_mult = 0.09
+	}
+
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -233,8 +253,14 @@ education_diplomacy_4 = {
 	diplomacy = 8
 	category = education
 	monthly_diplomacy_lifestyle_xp_gain_mult = 0.4
+	domain_limit = 2
 	
 	ruler_designer_cost = 80
+
+	culture_modifier = {
+		parameter = innovation_from_diplomacy_traits
+		cultural_head_fascination_mult = 0.12
+	}
 
 	desc = {
 		first_valid = {
@@ -271,8 +297,14 @@ education_diplomacy_5 = {
 	owned_personal_scheme_success_chance_max_add = 10
 	flag = offer_vassalisation_25
 	flag = better_war_hostages
+	domain_limit = 3
 	
 	ruler_designer_cost = 150
+
+	culture_modifier = {
+		parameter = innovation_from_diplomacy_traits
+		cultural_head_fascination_mult = 0.15
+	}
 
 	desc = {
 		first_valid = {
@@ -308,6 +340,7 @@ education_stewardship_1 = { #Indulgent wastrel
 	stewardship = 2
 	category = education
 	monthly_stewardship_lifestyle_xp_gain_mult = 0.1
+	domain_limit = -1
 	
 	ruler_designer_cost = 0
 	
@@ -363,6 +396,7 @@ education_stewardship_3 = {	#Fortune builder
 	stewardship = 6
 	category = education
 	monthly_stewardship_lifestyle_xp_gain_mult = 0.3
+	domain_limit = 1
 	
 	ruler_designer_cost = 40
 	
@@ -388,6 +422,7 @@ education_stewardship_4 = {
 	stewardship = 8
 	category = education
 	monthly_stewardship_lifestyle_xp_gain_mult = 0.4
+	domain_limit = 2
 	
 	# culture_modifier = { #LotR
 	# 	parameter = elephant_bonuses_for_rank_4_education
@@ -424,6 +459,7 @@ education_stewardship_5 = {
 	monthly_stewardship_lifestyle_xp_gain_mult = 0.5
 	monthly_learning_lifestyle_xp_gain_mult = 0.25
 	vassal_tax_mult = 0.25
+	domain_limit = 3
 	
 	# culture_modifier = { #LotR
 	# 	parameter = elephant_bonuses_for_rank_4_education
@@ -460,6 +496,7 @@ education_martial_1 = {
 	martial = 2
 	category = education
 	monthly_martial_lifestyle_xp_gain_mult = 0.1
+	domain_limit = -1
 	
 	culture_modifier = {
 		parameter = poorly_educated_leaders_distrusted
@@ -540,6 +577,7 @@ education_martial_3 = { #Skilled tactician
 	martial = 6
 	category = education
 	monthly_martial_lifestyle_xp_gain_mult = 0.3
+	domain_limit = 1
 	
 	culture_modifier = {
 		parameter = prowess_from_martial_education
@@ -577,6 +615,7 @@ education_martial_4 = { #Brilliant strategist
 	martial = 8
 	category = education
 	monthly_martial_lifestyle_xp_gain_mult = 0.4
+	domain_limit = 2
 	
 	culture_modifier = {
 		parameter = prowess_from_martial_education
@@ -626,6 +665,7 @@ education_martial_5 = {
 	monthly_stewardship_lifestyle_xp_gain_mult = 0.25
 	army_siege_value_mult = 0.5
 	movement_speed = 0.2
+	domain_limit = 3
 	
 	culture_modifier = {
 		parameter = prowess_from_martial_education
@@ -674,6 +714,7 @@ education_learning_1 = {
 	learning = 2
 	category = education
 	monthly_learning_lifestyle_xp_gain_mult = 0.1
+	domain_limit = -1
 	
 	culture_modifier = {
 		parameter = poorly_educated_leaders_distrusted
@@ -761,6 +802,7 @@ education_learning_3 = {
 	learning = 6
 	category = education
 	monthly_learning_lifestyle_xp_gain_mult = 0.3
+	domain_limit = 1
 	
 	culture_modifier = {
 		parameter = prowess_from_religious_traits
@@ -802,6 +844,7 @@ education_learning_4 = {
 	learning = 8
 	category = education
 	monthly_learning_lifestyle_xp_gain_mult = 0.4
+	domain_limit = 2
 	
 	culture_modifier = {
 		parameter = prowess_from_religious_traits
@@ -856,6 +899,7 @@ education_learning_5 = {
 	monthly_intrigue_lifestyle_xp_gain_mult = 0.25
 	development_growth = 0.1
 	county_fertility_growth_mult = small_county_fertility_growth_gain
+	domain_limit = 3
 	
 	culture_modifier = {
 		parameter = prowess_from_religious_traits
@@ -911,6 +955,7 @@ diplomat = {
 	diplomacy = 3
 	personal_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
 	independent_ruler_opinion = 20
+	monthly_influence = 1
 	
 	ruler_designer_cost = 50
 
@@ -919,6 +964,11 @@ diplomat = {
 		diplomacy = 2
 		independent_ruler_opinion = 10
 		vassal_opinion = 10
+	}
+
+	culture_modifier = {
+		parameter = innovation_from_diplomacy_traits
+		cultural_head_fascination_mult = 0.05
 	}
 
 	desc = {
@@ -954,6 +1004,7 @@ family_first = {
 	dynasty_house_opinion = 10
 	close_relative_opinion = 15
 	stress_loss_mult = 0.2
+	domain_limit = 1
 	
 	ruler_designer_cost = 50
 
@@ -1887,6 +1938,7 @@ theologian = {
 	
 	learning = 3
 	monthly_piety_gain_mult = 0.2
+	domain_limit = 1
 	
 	ruler_designer_cost = 50
 
@@ -2771,7 +2823,7 @@ calm = {
 	}
 	diplomacy = 1
 	intrigue = 1
-	scheme_discovery_chance_mult = 0.1
+	enemy_scheme_secrecy_add = -10
 	
 	opposite_opinion = -10
 	same_opinion = 10
@@ -2818,7 +2870,7 @@ calm = {
 		parameter = stress_loss_bonus_from_harmonious_traits
 		stress_loss_mult = 0.15
 	}
-	
+
 	ai_war_chance = -0.25
 	
 	ruler_designer_cost = 25
@@ -3961,7 +4013,7 @@ paranoid = {
 	stress_gain_mult = 1
 	dread_gain_mult = 0.25
 	
-	scheme_discovery_chance_mult = 0.1
+	enemy_scheme_secrecy_add = -10
 	enemy_personal_scheme_success_chance_add = -25
 	
 	character_travel_speed = -10
@@ -4112,7 +4164,7 @@ compassionate = {
 		parameter = stress_loss_bonus_from_harmonious_traits
 		stress_loss_mult = 0.15
 	}
-	
+
 	ruler_designer_cost = 10
 	
 	desc = {
@@ -5556,7 +5608,7 @@ ill = {
 	
 	health = -1
 	elderly_health = -1
-	prowess = -4
+	prowess_mult = -0.4
 	fertility = -0.2
 
 	category = health
@@ -5598,7 +5650,7 @@ pneumonic = {
 	learning = -2
 	health = -3
 	elderly_health = -2
-	prowess = -8
+	prowess_mult = -0.8
 	fertility = -0.5
 
 	category = health
@@ -5717,7 +5769,7 @@ lovers_pox = {
 
 leper = {
 	health = -1.5
-	prowess = -8
+	prowess_mult = -0.8
 	fertility = -0.95
 	category = health
 
@@ -5987,9 +6039,6 @@ disfigured = {
 	#No dread loss: you're not actually worse for wear physically or mentally.
 
 	attraction_opinion = -20
-	
-	genetic = no
-	physical = yes
 
 	culture_modifier = {
 		parameter = wounds_and_scars_give_bonuses
@@ -6020,17 +6069,16 @@ disfigured = {
 }
 
 infirm = {
-	diplomacy = -3
-	martial = -3
-	stewardship = -3
-	intrigue = -3
-	learning = -3
-	prowess = -6
-	health = -1
-	fertility = -0.3
-
-	dread_baseline_add = -15
-	dread_loss_mult = 1
+	diplomacy = -1
+	martial = -1
+	prowess_mult = -0.2
+	health = -0.25
+	fertility = -0.1
+	ai_energy = -10
+	
+	flag = infirm_random_xp_gain
+	flag = age_related_ailment
+	flag = is_healthy_trigger_flag
 
 	category = health
 
@@ -6049,19 +6097,322 @@ infirm = {
 			desc = trait_infirm_character_desc
 		}
 	}
-
-	ai_energy = -30
 	
+	tracks = {
+		infirm = {
+			25 = {
+				diplomacy = -1
+				martial = -1
+				stewardship = -1
+				prowess_mult = -0.2
+				health = -0.25
+				fertility = -0.1
+				dread_baseline_add = -5
+				dread_loss_mult = 0.25
+				attraction_opinion = -5
+				ai_energy = -10
+			}
+			50 = {
+				diplomacy = -2
+				martial = -2
+				stewardship = -2
+				prowess_mult = -0.2
+				health = -0.25
+				fertility = -0.1
+				dread_baseline_add = -10
+				dread_loss_mult = 0.25
+				attraction_opinion = -5
+				ai_energy = -10
+			}
+			75 = {
+				diplomacy = -2
+				martial = -2
+				stewardship = -2
+				prowess_mult = -0.2
+				health = -0.25
+				fertility = -0.1
+				dread_baseline_add = -10
+				dread_loss_mult = 0.25
+				attraction_opinion = -5
+				ai_energy = -10
+			}
+			100 = {
+				diplomacy = -2
+				martial = -2
+				stewardship = -2
+				prowess_mult = -0.2
+				health = -0.25
+				fertility = -0.1
+				dread_baseline_add = -10
+				dread_loss_mult = 0.25
+				attraction_opinion = -5
+				ai_energy = -10
+			}
+		}
+	}
+}
+
+withering_mind = {
+	learning = -2
+	monthly_lifestyle_xp_gain_mult = -0.25
+	stress_gain_mult = 0.2
+	ai_rationality = -25
+	
+	flag = withering_mind_random_xp_gain
+	flag = incapable_on_max_level
+	flag = age_related_ailment
 	flag = is_healthy_trigger_flag
+
+	category = health
+	
+	ruler_designer_cost = -20
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_withering_mind_desc
+			}
+			desc = trait_withering_mind_character_desc
+		}
+	}
+	
+	tracks = {
+		withering_mind = {
+			25 = {
+				diplomacy_mult = -0.25
+				martial_mult = -0.25
+				stewardship_mult = -0.25
+				intrigue_mult = -0.25
+				learning_mult = -0.25
+				monthly_lifestyle_xp_gain_mult = -0.25
+				stress_gain_mult = 0.2
+				ai_rationality = -25
+			}
+			50 = {
+				diplomacy_mult = -0.25
+				martial_mult = -0.25
+				stewardship_mult = -0.25
+				intrigue_mult = -0.25
+				learning_mult = -0.25
+				monthly_lifestyle_xp_gain_mult = -0.25
+				stress_gain_mult = 0.2
+				ai_rationality = -25
+			}
+			75 = {
+				diplomacy_mult = -0.25
+				martial_mult = -0.25
+				stewardship_mult = -0.25
+				intrigue_mult = -0.25
+				learning_mult = -0.25
+				monthly_lifestyle_xp_gain_mult = -0.5
+				stress_gain_mult = 0.2
+				ai_rationality = -25
+			}
+			100 = {
+				diplomacy_mult = -0.25
+				martial_mult = -0.25
+				stewardship_mult = -0.25
+				intrigue_mult = -0.25
+				learning_mult = -0.25
+				monthly_lifestyle_xp_gain_mult = -0.5
+				stress_gain_mult = 0.2
+				ai_rationality = -25
+			}
+		}
+	}
+}
+
+clouded_eyes = {
+	martial = -1
+	prowess = -2
+	
+	flag = clouded_eyes_random_xp_gain
+	flag = age_related_ailment
+	flag = is_healthy_trigger_flag
+	flag = blind_on_max_level
+
+	category = health
+	
+	ruler_designer_cost = -20
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_clouded_eyes_desc
+			}
+			desc = trait_clouded_eyes_character_desc
+		}
+	}
+	
+	tracks = {
+		clouded_eyes = {
+			25 = {
+				martial = -1
+				prowess = -2
+			}
+			50 = {
+				martial = -1
+				prowess = -2
+			}
+			75 = {
+				martial = -1
+				stewardship = -1
+				intrigue = -1
+				prowess = -2
+				
+				dread_baseline_add = -5
+
+				attraction_opinion = -5
+			}
+			100 = {
+				martial = -2
+				stewardship = -1
+				intrigue = -1
+				prowess = -2
+				
+				health = -0.25
+				
+				dread_baseline_add = -5
+
+				attraction_opinion = -5
+			}
+		}
+	}
+}
+
+faltering_heart = {
+	health = -0.1
+	prowess = -1
+	character_travel_safety = -2
+	stress_gain_mult = 0.2
+	stress_loss_mult = -0.2
+	
+	flag = faltering_heart_random_xp_gain
+	flag = age_related_ailment
+	flag = is_healthy_trigger_flag
+	flag = death_on_max_level
+
+	category = health
+	
+	ruler_designer_cost = -20
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_faltering_heart_desc
+			}
+			desc = trait_faltering_heart_character_desc
+		}
+	}
+	
+	tracks = {
+		faltering_heart = {
+			25 = {
+				health = -0.1
+				prowess = -1
+				character_travel_safety = -2
+				stress_gain_mult = 0.2
+				stress_loss_mult = -0.2
+			}
+			50 = {
+				health = -0.1
+				prowess = -1
+				character_travel_safety = -2
+				stress_gain_mult = 0.2
+				stress_loss_mult = -0.2
+			}
+			75 = {
+				health = -0.1
+				prowess = -1
+				character_travel_safety = -2
+				stress_gain_mult = 0.2
+				stress_loss_mult = -0.2
+			}
+			100 = {
+				health = -100
+			}
+		}
+	}
+}
+
+fragile_bones = {
+	character_travel_speed_mult = -0.1
+	prowess_mult = -0.1
+	advantage = -3
+	life_expectancy = -3
+	enemy_hostile_scheme_success_chance_max_add = 5
+	
+	flag = fragile_bones_random_xp_gain
+	flag = age_related_ailment
+	flag = is_healthy_trigger_flag
+	flag = wounds_twice_as_bad
+
+	category = health
+	
+	ruler_designer_cost = -20
+	
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_fragile_bones_desc
+			}
+			desc = trait_fragile_bones_character_desc
+		}
+	}
+	
+	tracks = {
+		fragile_bones = {
+			25 = {
+				character_travel_speed_mult = -0.1
+				prowess_mult = -0.1
+				advantage = -3
+				life_expectancy = -3
+				enemy_hostile_scheme_success_chance_max_add = 10
+			}
+			50 = {
+				character_travel_speed_mult = -0.1
+				prowess_mult = -0.1
+				advantage = -3
+				life_expectancy = -3
+				enemy_hostile_scheme_success_chance_max_add = 10
+			}
+			75 = {
+				character_travel_speed_mult = -0.1
+				prowess_mult = -0.1
+				advantage = -5
+				life_expectancy = -5
+				enemy_hostile_scheme_success_chance_max_add = 15
+			}
+			100 = {
+				character_travel_speed_mult = -0.1
+				prowess_mult = -0.1
+				advantage = -10
+				life_expectancy = -10
+				enemy_hostile_scheme_success_chance_max_add = 15
+			}
+		}
+	}
 }
 
 incapable = {
-	diplomacy = -6
-	intrigue = -6
-	stewardship = -6
-	martial = -6
-	learning = -6
-	prowess = -12
+	diplomacy_mult = -1
+	martial_mult = -1
+	stewardship_mult = -1
+	intrigue_mult = -1
+	learning_mult = -1
+	prowess_mult = -1
 	health = -2
 	
 	dread_baseline_add = -25
@@ -6094,9 +6445,9 @@ incapable = {
 }
 
 gout_ridden = {
-	diplomacy = -2
-	martial = -1
-	prowess = -2
+	diplomacy_mult = -0.1
+	martial_mult = -0.1
+	prowess_mult = -0.2
 	health = -1
 	
 	dread_baseline_add = -5
@@ -6128,7 +6479,7 @@ consumption = { # Tuberculosis
 	diplomacy = -2
 	stewardship = -1
 	intrigue = -2
-	prowess = -2
+	prowess_mult = -0.4
 	health = -2.5
 	child_health = -1
 	elderly_health = -2
@@ -6197,7 +6548,7 @@ typhus = {
 	stewardship = -2
 	intrigue = -1
 	learning = -2
-	prowess = -4
+	prowess_mult = -0.8
 	health = -4.5
 	elderly_health = -1
 	fertility = -0.2
@@ -6239,7 +6590,7 @@ bubonic_plague = {
 	stewardship = -2
 	intrigue = -3
 	learning = -2
-	prowess = -10
+	prowess_mult = -0.8
 	health = -7
 	elderly_health = -2
 	fertility = -0.50
@@ -6278,7 +6629,7 @@ smallpox = {
 	diplomacy = -2
 	stewardship = -1
 	learning = -2
-	prowess = -10
+	prowess_mult = -0.8
 	health = -4.5
 	elderly_health = -1.5
 	fertility = -0.25
@@ -6318,7 +6669,7 @@ measles = {
 	stewardship = -1
 	intrigue = -1
 	learning = -2
-	prowess = -4
+	prowess_mult = -0.4
 	health = -3
 	child_health = -3
 
@@ -6355,7 +6706,7 @@ dysentery = { # Bloody Flux
 	diplomacy = -2
 	martial = -1
 	intrigue = -2
-	prowess = -8
+	prowess_mult = -0.8
 	health = -3.5
 	elderly_health = -2
 
@@ -6736,8 +7087,8 @@ beauty_bad_1 = {
 	
 	genetic = yes
 	physical = yes
-	portrait_extremity_shift = 0.05
-	ugliness_portrait_extremity_shift = 0.25
+	portrait_extremity_shift = 0.05##LOTR edit
+	ugliness_portrait_extremity_shift = 0.25##LOTR edit
 	
 	ruler_designer_cost = -10
 
@@ -6775,8 +7126,8 @@ beauty_bad_2 = {
 	
 	genetic = yes
 	physical = yes
-	portrait_extremity_shift = 0.1
-	ugliness_portrait_extremity_shift = 0.35
+	portrait_extremity_shift = 0.1##LOTR edit
+	ugliness_portrait_extremity_shift = 0.35##LOTR edit
 	
 	ruler_designer_cost = -20
 
@@ -6814,8 +7165,8 @@ beauty_bad_3 = {
 	
 	genetic = yes
 	physical = yes
-	portrait_extremity_shift = 0.2
-	ugliness_portrait_extremity_shift = 0.5
+	portrait_extremity_shift = 0.2##LOTR edit
+	ugliness_portrait_extremity_shift = 0.5##LOTR edit
 	
 	ruler_designer_cost = -30
 
@@ -10136,7 +10487,7 @@ varangian = {
 }
 
 lifestyle_poet = {
-	category = fame
+	category = lifestyle
 	diplomacy_per_prestige_level = 1
 	stress_loss_mult = 0.1
 	
@@ -10816,7 +11167,7 @@ murderer = {
 	general_opinion = -15
 	category = fame
 
-	culture_modifier = {
+	culture_modifier = { #LotR
 		parameter = murderers_are_prestigious_and_feared
 		dread_baseline_add = 10
 		monthly_prestige = 0.1
@@ -10962,12 +11313,20 @@ reincarnation = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
+					exists = this
+					this = character:havrilofkhand
+				}
+				desc = havril_desc_ancestor
+			}
+			triggered_desc = {
+				trigger = {
 					NOT = { exists = this }
 				}
 				desc = trait_reincarnation_desc
 			}
 			desc = trait_reincarnation_desc_ancestor
 		}
+		
 	}
 }
 
@@ -11012,7 +11371,7 @@ adventurer = {
 			triggered_desc = { # Member of Thorin and Company
 				trigger = {
 					exists = this
-					game_start_date >= 5442.9.15 #Erebor is reclaimed
+					game_start_date >= 6974.11.23 #Erebor is reclaimed
 					this = character:lineofdurin83
 				}
 				desc = trait_adventurer_thorins_company_desc
@@ -15193,6 +15552,7 @@ tourney_participant = {
 }
 
 lifestyle_traveler = {
+	category = lifestyle
 	icon = "traveler.dds"
 
 	monthly_wanderer_lifestyle_xp_gain_mult = 0.1
@@ -15523,7 +15883,7 @@ fp3_struggle_supporter = {
 
 # TRAITS TO TRACK HIPPODROME FACTION MEMBERS
 charioteer_blue = {
-	category = lifestyle
+	category = fame
 	icon = "charioteer_blue.dds"
 	opposites = {
 		charioteer_green
@@ -15587,7 +15947,7 @@ charioteer_blue = {
 }
 
 charioteer_green = {
-	category = lifestyle
+	category = fame
 	icon = "charioteer_green.dds"
 	opposites = {
 		charioteer_blue
@@ -15651,7 +16011,7 @@ charioteer_green = {
 }
 
 charioteer_white = {
-	category = lifestyle
+	category = fame
 	icon = "charioteer_white.dds"
 	opposites = {
 		charioteer_blue
@@ -15715,7 +16075,7 @@ charioteer_white = {
 }
 
 charioteer_red = {
-	category = lifestyle
+	category = fame
 	icon = "charioteer_red.dds"
 	opposites = {
 		charioteer_blue

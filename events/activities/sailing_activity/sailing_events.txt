@@ -32,6 +32,17 @@ namespace = sailing
 
 ###############################
 
+scripted_trigger has_trait_xp_between_50_100 = {
+	has_trait_xp = {
+		trait = $TRAIT$
+		value >= 50
+	}
+	has_trait_xp = {
+		trait = $TRAIT$
+		value < 100
+	}
+}
+
 # Arrive at the Docks / Setup
 sailing.0800 = {
 	type = activity_event
@@ -1428,11 +1439,7 @@ sailing.1013 = {
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -1505,11 +1512,7 @@ sailing.1013 = {
 		else_if = {
 			limit = {
 				scope:recruit = {
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 			}
 			remove_short_term_gold = 100
@@ -6192,11 +6195,7 @@ sailing.3200 = {
 				}
 				modifier = {
 					add = -40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -60
@@ -6219,11 +6218,7 @@ sailing.3200 = {
 				}
 				modifier = {
 					add = 40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 60
@@ -6310,11 +6305,7 @@ sailing.3202 = {
 				}
 				modifier = {
 					add = 40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 60
@@ -6341,11 +6332,7 @@ sailing.3202 = {
 				}
 				modifier = {
 					add = -40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -60
@@ -6374,11 +6361,7 @@ sailing.3202 = {
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -6405,11 +6388,7 @@ sailing.3202 = {
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -6540,11 +6519,7 @@ sailing.3300 = {
 				}
 				modifier = {
 					add = 10
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 20
@@ -6996,11 +6971,7 @@ sailing.3500 = {
 				}
 				modifier = {
 					add = 30
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 50
@@ -7059,11 +7030,7 @@ sailing.3500 = {
 				}
 				modifier = {
 					add = -30
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -50
@@ -9043,6 +9010,10 @@ sailing.5500 = { # Setting out for the hunt
 			limit = { has_character_flag = sailing_whitedread_sighted }
 			remove_character_flag = sailing_whitedread_sighted
 		}
+		if = {
+			limit = { has_character_flag = sailing_kraken_sighted }
+			remove_character_flag = sailing_kraken_sighted
+		}
 	}
 	option = { # All right, let's keep our eyes open!
 		name = sailing.5500.a
@@ -9098,7 +9069,7 @@ sailing.5500 = { # Setting out for the hunt
 					#custom_tooltip = sailing.5000.a.tt.j
 					if = {
 						limit = { has_character_flag = white_dread_slain }
-						add_character_flag = sailing_spermwhale_sighted
+						add_character_flag = sailing_kraken_sighted
 						trigger_event = { id = sailing.5501 days = 5 }
 					}
 					else = {
@@ -9189,6 +9160,12 @@ sailing.5501 = { # Look for signs of a creature!
 				}
 				desc = sailing.5501.desc.k
 			}
+			triggered_desc = {
+				trigger = {
+					root = { has_character_flag = sailing_kraken_sighted }
+				}
+				desc = sailing.5501.desc.l
+			}
 		}
 	}
 	theme = sailing_activity
@@ -9263,8 +9240,15 @@ sailing.5501 = { # Look for signs of a creature!
 		trigger = { has_character_flag = sailing_whitedread_sighted }
 		trigger_event = sailing.5511
 	}
+	option = { # Gaah! Get ready to defend the ship!
+		name = sailing.5501.j
+		custom_tooltip = sailing.5501.j.tt
+		trigger = { has_character_flag = sailing_kraken_sighted }
+		trigger_event = sailing.5513
+	}
 	option = { # We'll look for better prey.
 		name = sailing.5501.k
+		trigger = { NOT = { has_character_flag = sailing_kraken_sighted } } # The Kraken doesn't allow you to run
 		custom_tooltip = sailing.5501.k.tt
 		add_character_flag = sailing_looking_new_prey
 		trigger_event = { id = sailing.5500 days = 15 }
@@ -9300,12 +9284,7 @@ sailing.5502 = { # Try to catch the turtle
 					}
 				}
 				modifier = {
-					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 25
@@ -9340,11 +9319,7 @@ sailing.5502 = { # Try to catch the turtle
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -25
@@ -9395,11 +9370,7 @@ sailing.5503 = { # Try to catch the seal
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -9434,11 +9405,7 @@ sailing.5503 = { # Try to catch the seal
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -9489,11 +9456,7 @@ sailing.5504 = { # Try to catch the dolphin
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -9528,11 +9491,7 @@ sailing.5504 = { # Try to catch the dolphin
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -9583,11 +9542,7 @@ sailing.5505 = { # Try to catch the walrus
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -9622,11 +9577,7 @@ sailing.5505 = { # Try to catch the walrus
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -9681,11 +9632,7 @@ sailing.5506 = { # Try to catch the orca
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -9720,11 +9667,7 @@ sailing.5506 = { # Try to catch the orca
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -9779,11 +9722,7 @@ sailing.5507 = { # Try to catch the humpback whale
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -9818,11 +9757,7 @@ sailing.5507 = { # Try to catch the humpback whale
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -9877,11 +9812,7 @@ sailing.5508 = { # Try to catch the sperm whale
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -9916,11 +9847,7 @@ sailing.5508 = { # Try to catch the sperm whale
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -9975,11 +9902,7 @@ sailing.5509 = { # Try to catch the blue whale
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -10015,11 +9938,7 @@ sailing.5509 = { # Try to catch the blue whale
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -10077,11 +9996,7 @@ sailing.5510 = { # Try to catch the sea drake
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 30
@@ -10117,11 +10032,7 @@ sailing.5510 = { # Try to catch the sea drake
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -30
@@ -10202,11 +10113,7 @@ sailing.5511 = { # Try to catch the legendary White Dread
 				}
 				modifier = {
 					add = 20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 35
@@ -10258,11 +10165,7 @@ sailing.5511 = { # Try to catch the legendary White Dread
 				}
 				modifier = {
 					add = -20
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -35
@@ -10367,6 +10270,125 @@ sailing.5512 = { # the White Dread escapes you
 		}
 	}
 }
+
+sailing.5513 = { # Try to slay the Kraken (CURRENT OBJECTIVE: SURVIVE)
+	type = activity_event
+	content_source = realms_dlc
+	title = sailing.5513.t
+	theme = disaster
+	desc = sailing.5513.desc
+	theme = sailing_activity
+	override_background = {
+		reference = ocean
+	}
+	right_portrait = {
+		character = root
+		animation = aggressive_spear
+	}
+	left_portrait = {
+		character = scope:first_mate
+		animation = fear
+	}
+	override_effect_2d = {
+		reference = rain
+	}
+	widgets = {
+		widget = {
+			gui = "event_window_widget_vfx_lightning_storm"
+			container = "foreground_shader_vfx_container"
+		}
+	}
+	option = { # Ready, aim, and...
+		name = sailing.5511.a
+		random_list = {
+			3 = {
+				modifier = {
+					add = 10
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value < 50
+					}
+				}
+				modifier = {
+					add = 20
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
+				}
+				modifier = {
+					add = 30
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 100
+					}
+				}
+				modifier = {
+					add = 5
+					has_trait = brave
+				}
+				custom_tooltip = sailing.5513.a.success
+				trigger_event = { id = sailing.9001 days = 5 }
+				send_interface_toast = {
+					left_icon = ROOT
+					title = sailing.5513.a.success
+					custom_tooltip = sailing.hunt.success
+					add_gold = monumental_gold_value
+					add_prestige = monumental_prestige_gain
+					add_legitimacy = massive_legitimacy_gain
+				}
+				if = {
+					limit = { scope:host = { is_landless_adventurer = yes } }
+					scope:host = {
+						domicile = { change_provisions = massive_provisions_gain }
+					}
+				}
+			}
+			95 = {
+				modifier = {
+					add = -10
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value < 50
+					}
+				}
+				modifier = {
+					add = -20
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
+				}
+				modifier = {
+					add = -30
+					has_trait_xp = {
+						trait = lifestyle_mariner
+						value >= 100
+					}
+				}
+				modifier = {
+					add = -5
+					has_trait = brave
+				}
+				custom_tooltip = sailing.5513.a.failure
+				send_interface_toast = {
+					left_icon = ROOT
+					title = sailing.5513.a.failure
+					custom_tooltip = sailing.hunt.failure
+				}
+				random = {
+					chance = 95
+					increase_wounds_effect = { REASON = fight }
+				}
+				random = {
+					chance = 75
+					scope:activity = {
+						random_attending_character = {
+							limit = { NOT = { this = scope:host } }
+							death = { death_reason = death_drowned }
+						}
+					}
+				}
+				trigger_event = { id = sailing.5512 days = 5 }
+			}
+		}
+	}
+}
+
 
 ############################
 ## More Coast Exploration
@@ -13316,11 +13338,7 @@ sailing.8001 = { # Mouths of Anduin and The Fisher-folk of Ethir http://tolkieng
 		}
 		else_if = {
 			limit = {
-				has_trait_xp = {
-					trait = lifestyle_mariner
-					value >= 50
-					value < 100
-				}
+				has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 			}
 			remove_short_term_gold = 50
 		}
@@ -14632,11 +14650,7 @@ sailing.8100 = { # Approaching the Delta
 				}
 				modifier = {
 					add = 40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 60
@@ -14698,11 +14712,7 @@ sailing.8100 = { # Approaching the Delta
 				}
 				modifier = {
 					add = -40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -60
@@ -14739,11 +14749,7 @@ sailing.8100 = { # Approaching the Delta
 				}
 				modifier = {
 					add = 40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 60
@@ -14776,11 +14782,7 @@ sailing.8100 = { # Approaching the Delta
 				}
 				modifier = {
 					add = -40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -60
@@ -16380,11 +16382,7 @@ sailing.8251 = { # The Angle
 				}
 				modifier = {
 					add = 30
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 45
@@ -16414,11 +16412,7 @@ sailing.8251 = { # The Angle
 				}
 				modifier = {
 					add = -30
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -45
@@ -19454,6 +19448,10 @@ sailing.9003 = {
 				limit = { has_character_flag = sailing_whitedread_sighted }
 				remove_character_flag = sailing_whitedread_sighted
 			}
+			if = {
+				limit = { has_character_flag = sailing_kraken_sighted }
+				remove_character_flag = sailing_kraken_sighted
+			}
 		}
 		scope:activity = {
 			hidden_effect = { skip_activity_phase = yes }
@@ -19525,11 +19523,11 @@ sailing.9110 = {
 
 	left_portrait = {
 		character = root
-		animation = rage
+		animation = personality_rational
 	}
 	right_portrait = {
 		character = scope:first_mate
-		animation = rage
+		animation = personality_callous
 	}
 
 	immediate = {
@@ -19706,11 +19704,11 @@ sailing.9111 = {
 
 	left_portrait = {
 		character = root
-		animation = anger
+		animation = survey
 	}
 	right_portrait = {
 		character = scope:first_mate
-		animation = anger
+		animation = marshal
 	}
 
 	option = { # Attack
@@ -19734,11 +19732,7 @@ sailing.9111 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = 40
 						}
@@ -19783,11 +19777,7 @@ sailing.9111 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = -40
 						}
@@ -19833,11 +19823,7 @@ sailing.9111 = {
 				}
 				modifier = {
 					add = 40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = 60
@@ -19867,11 +19853,7 @@ sailing.9111 = {
 				}
 				modifier = {
 					add = -40
-					has_trait_xp = {
-						trait = lifestyle_mariner
-						value >= 50
-						value < 100
-					}
+					has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 				}
 				modifier = {
 					add = -60
@@ -19914,11 +19896,11 @@ sailing.9114 = {
 
 	left_portrait = {
 		character = root
-		animation = rage
+		animation = marshal
 	}
 	right_portrait = {
 		character = scope:first_mate
-		animation = rage
+		animation = personality_callous
 	}
 
 	immediate = {
@@ -20162,11 +20144,11 @@ sailing.9120 = {
 
 	left_portrait = {
 		character = root
-		animation = anger
+		animation = survey
 	}
 	right_portrait = {
 		character = scope:first_mate
-		animation = anger
+		animation = pondering
 	}
 
 	option = { # Attack
@@ -20190,11 +20172,7 @@ sailing.9120 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = 40
 						}
@@ -20271,11 +20249,7 @@ sailing.9120 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = -40
 						}
@@ -20328,11 +20302,7 @@ sailing.9120 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = 40
 						}
@@ -20414,11 +20384,7 @@ sailing.9120 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = -40
 						}
@@ -20471,11 +20437,11 @@ sailing.9130 = {
 
 	left_portrait = {
 		character = root
-		animation = anger
+		animation = marshal
 	}
 	right_portrait = {
 		character = scope:first_mate
-		animation = anger
+		animation = throne_room_two_handed_passive_1
 	}
 	trigger = {
 		exists = scope:selected_piracy_destination
@@ -20538,11 +20504,7 @@ sailing.9130 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = 40
 						}
@@ -20621,11 +20583,7 @@ sailing.9130 = {
 						}
 						if = {
 							limit = {
-								has_trait_xp = {
-									trait = lifestyle_mariner
-									value >= 50
-									value < 100
-								}
+								has_trait_xp_between_50_100 = { TRAIT = lifestyle_mariner }
 							}
 							add = -40
 						}
@@ -20754,7 +20712,7 @@ sailing.9131 = {
 
 	left_portrait = {
 		character = root
-		animation = anger
+		animation = celebrate_sword
 	}
 	right_portrait = {
 		character = scope:dueled_pirate

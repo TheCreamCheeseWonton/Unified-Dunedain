@@ -25,6 +25,115 @@ artifact_value_trigger = {
 		artifact_high_rarity_trigger = yes
 	}
 }
+artifact_is_worthy_to_improve_trigger = {
+	NOR = {
+		has_variable = ai_to_ai_destroy_in_sieges
+		has_variable = unwanted_artifact
+		has_variable = cursed_artifact
+		has_variable = 1025_treasure_map
+	}
+}
+artifact_can_be_gift_base_trigger = {
+	NOR = {
+		has_variable = ai_to_ai_destroy_in_sieges
+		has_variable = unwanted_artifact
+		has_variable = cursed_artifact
+		has_variable = 1025_treasure_map
+		has_variable = ungiftable
+		has_variable = is_tribute_mission_artifact
+		has_variable = artifact_prevent_transfer # not enforced in all script but make life easier for modders.
+		#LotR
+		has_variable = silmaril
+		AND = { #Only the Lord of Gifts can hand out Ring of Power, unless he's dead
+			has_variable = ring_of_power
+			sauron_is_alive = yes
+			artifact_owner != character:lineofsauron
+		}
+		AND = { #So the AI doesn't hand out certain artifacts
+			has_variable = ai_ungiftable
+			artifact_owner = { is_ai = yes }
+		}
+	}
+}
+# e.g. a formal tribute gift 
+artifact_can_be_gift_advance_trigger = {
+	artifact_can_be_gift_base_trigger = yes
+	NOR = {
+		has_variable = banner_dynasty
+		has_variable = banner_house
+		has_variable = bunga_mas_created_by
+		var:artifact_succession_title ?= { is_title_created = yes }
+		#LotR
+		var:heirloom_of_title ?= { is_title_created = yes }
+	}
+}
+
+artifact_can_be_gift_to_trigger = {
+	artifact_can_be_gift_base_trigger = yes
+	trigger_if = {
+		limit = {
+			NOT = { $RECIPIENT$ = { has_artifact_claim = prev } }
+		}
+		trigger_if = {
+			limit = {
+				has_variable = banner_dynasty
+			}
+			$RECIPIENT$.dynasty ?= var:banner_dynasty
+			artifact_owner = {
+				# it make no sense giving your own banner to other member if you are dynast
+				NAND = {
+					var:banner_dynasty.dynast ?= this
+					has_royal_court = yes
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_variable = banner_house
+			}
+			$RECIPIENT$.house ?= var:banner_house
+			artifact_owner = {
+				# it make no sense giving your own banner to other member if you are dynast
+				NAND = {
+					var:banner_house.house_head ?= this
+					has_royal_court = yes
+				}
+			}
+		}
+		trigger_if = {
+			limit = {
+				has_variable = relic_religion
+			}
+			# make no sense gifting relic to heathen, but sending heathen stuff to others are acceptable
+			OR = {
+				artifact_owner.religion != var:relic_religion
+				$RECIPIENT$.religion = var:relic_religion
+			}
+		}
+		trigger_if = {
+			limit = {
+				var:artifact_succession_title ?= { is_title_created = yes }
+			}
+			# either its title destroyed, or recipient is rightfully owner, or you are not the title's holder
+			OR = {
+				var:artifact_succession_title.holder = $RECIPIENT$
+				var:artifact_succession_title.holder != artifact_owner
+			}
+		}
+		trigger_if = { #LotR
+			limit = {
+				var:heirloom_of_title ?= { is_title_created = yes }
+			}
+			# either its title destroyed, or recipient is rightfully owner, or you are not the title's holder
+			OR = {
+				var:heirloom_of_title.holder = $RECIPIENT$
+				var:heirloom_of_title.holder.player_heir = $RECIPIENT$
+				var:heirloom_of_title.holder != artifact_owner
+				var:heirloom_of_title.holder.player_heir != artifact_owner
+			}
+		}
+	}
+}
 
 artifact_region_trigger = {
 	trigger_if = {
@@ -1289,7 +1398,7 @@ artifact_feature_pattern_wolf_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1365,7 +1474,7 @@ artifact_feature_pattern_war_god_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1391,7 +1500,7 @@ artifact_feature_pattern_religion_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = { has_artifact_feature = book_subject_learning }
 	}
@@ -1409,7 +1518,7 @@ artifact_feature_pattern_eschatology_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1432,7 +1541,7 @@ artifact_feature_pattern_religious_symbol_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1455,7 +1564,7 @@ artifact_feature_pattern_gibberish_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1480,7 +1589,7 @@ artifact_feature_pattern_culture_symbol_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1503,7 +1612,7 @@ artifact_feature_pattern_culture_style_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1526,7 +1635,7 @@ artifact_feature_pattern_dynasty_shield_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1547,7 +1656,7 @@ artifact_feature_pattern_dynasty_motifs_trigger = {
 	trigger_if = {
 		limit = {
 			exists = scope:newly_created_artifact
-			scope:newly_created_artifact = { artifact_type = book }
+			scope:newly_created_artifact = { artifact_slot_type = book }
 		}
 		scope:newly_created_artifact = {
 			OR = {
@@ -1582,7 +1691,7 @@ artifact_feature_pattern_geometric_trigger = {
 artifact_feature_pattern_quotes_trigger = {
 	trigger_if = {
 		limit = { exists = scope:newly_created_artifact }
-		NOT = { scope:newly_created_artifact = { artifact_type = book } }
+		NOT = { scope:newly_created_artifact = { artifact_slot_type = book } }
 	}
 	always = yes
 }
@@ -1597,7 +1706,7 @@ artifact_feature_pattern_bodies_trigger = {
 	trigger_if = {
 		limit = { exists = scope:newly_created_artifact }
 		scope:newly_created_artifact = {
-			artifact_type = book
+			artifact_slot_type = book
 			OR = {
 				has_artifact_feature = book_subject_cannibal
 				has_artifact_feature = book_subject_deviant
@@ -2427,6 +2536,7 @@ relic_war_valid_religious_artefact_trigger = {
 			can_benefit_from_artifact = prev
 		}
 	}
+	NOT = { has_variable = artifact_prevent_transfer }
 }
 
 relic_war_valid_struggle_artefact_trigger = {

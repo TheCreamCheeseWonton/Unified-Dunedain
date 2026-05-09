@@ -852,6 +852,7 @@ assign_random_nickname_effect = {
 				trigger = {
 					num_of_relation_lover >= 3
 					NOT = { exists = scope:had_nick_the_beguiling }
+					is_elf = no #LotR
 				}
 				modifier = {
 					OR = {
@@ -876,6 +877,7 @@ assign_random_nickname_effect = {
 						attraction >= 50
 					}
 					NOT = { exists = scope:had_nick_the_temptress }
+					is_elf = no #LotR
 				}
 				modifier = {
 					num_of_relation_lover >= 2
@@ -896,6 +898,7 @@ assign_random_nickname_effect = {
 						has_focus = intrigue_temptation_focus
 					}
 					NOT = { exists = scope:had_nick_the_seductress }
+					is_elf = no #LotR
 				}
 				modifier = {
 					num_of_relation_lover >= 2
@@ -916,6 +919,7 @@ assign_random_nickname_effect = {
 						has_trait = deviant
 					}
 					NOT = { exists = scope:had_nick_the_lewd }
+					is_elf = no #LotR
 				}
 				modifier = {
 					any_relation = { type = lover }
@@ -936,6 +940,7 @@ assign_random_nickname_effect = {
 						attraction >= 50
 					}
 					NOT = { exists = scope:had_nick_the_lecher }
+					is_elf = no #LotR
 				}
 				modifier = {
 					num_of_relation_lover >= 2
@@ -956,6 +961,7 @@ assign_random_nickname_effect = {
 						has_focus = intrigue_temptation_focus
 					}
 					NOT = { exists = scope:had_nick_the_seducer }
+					is_elf = no #LotR
 				}
 				modifier = {
 					num_of_relation_lover >= 2
@@ -2417,6 +2423,7 @@ assign_random_nickname_effect = {
 			100 = {
 				trigger = {
 					OR = {
+						has_trait = fragile_bones
 						has_trait = infirm
 						has_trait = weak
 						has_trait = spindly
@@ -2445,6 +2452,7 @@ assign_random_nickname_effect = {
 				trigger = {
 					prowess < 8
 					OR = {
+						has_trait = faltering_heart
 						has_trait = infirm
 						has_trait = spindly
 						has_trait = weak
@@ -3311,6 +3319,7 @@ assign_random_nickname_effect = {
 				trigger = {
 					OR = {
 						has_trait = infirm
+						has_trait = withering_mind
 						probably_unintelligent_trigger = yes
 					}
 					NOT = { exists = scope:had_nick_the_forgetful }
@@ -3358,6 +3367,7 @@ assign_random_nickname_effect = {
 			100 = {
 				trigger = {
 					OR = {
+						has_trait = fragile_bones
 						has_trait = infirm
 						has_trait = spindly
 						has_trait = weak
@@ -4483,7 +4493,482 @@ assign_random_nickname_effect = {
 				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_elder_dwarf }
 				trigger_event = lifestyle_nicknames.1000
 			}
-
+			300 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					NOT = { exists = scope:had_nick_the_blacksmith }
+				}
+				modifier = { # For elves its not such a deal for rulers to be doing 'menial' work like smithing
+					OR = {
+						is_dwarf = yes
+						is_elf = yes
+					}
+					factor = 0.2
+				}
+				give_nickname = nick_the_blacksmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_blacksmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			100 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait = artificer
+					OR = {
+						is_elf = yes
+						is_dwarf = yes
+						is_orc = yes
+					}
+					NOT = { exists = scope:had_nick_the_forgemaster }
+				}
+				give_nickname = nick_the_forgemaster
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_forgemaster }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			100 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					is_dwarf = yes
+					NOT = { exists = scope:had_nick_of_the_forge }
+				}
+				modifier = {
+					factor = 2
+					has_trait = stubborn
+				}
+				give_nickname = nick_of_the_forge
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_of_the_forge }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = weapon_smith
+						value >= 30
+					}
+					NOT = { exists = scope:had_nick_the_bladesmith }
+				}
+				modifier = {
+					factor = 2
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = weapon_smith
+						value >= 65
+					}
+				}
+				give_nickname = nick_the_bladesmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_bladesmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = armour_smith
+						value >= 30
+					}
+					NOT = { exists = scope:had_nick_the_armoursmith }
+				}
+				modifier = {
+					factor = 2
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = armour_smith
+						value >= 65
+					}
+				}
+				give_nickname = nick_the_armoursmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_armoursmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			100 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = jewel_smith
+						value >= 30
+					}
+					NOT = { exists = scope:had_nick_the_lapidary }
+				}
+				modifier = {
+					factor = 2
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = jewel_smith
+						value >= 65
+					}
+				}
+				give_nickname = nick_the_lapidary
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_lapidary }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			100 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = jewel_smith
+						value >= 30
+					}
+					NOT = { exists = scope:had_nick_the_jeweler }
+				}
+				modifier = {
+					factor = 2
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = jewel_smith
+						value >= 65
+					}
+				}
+				give_nickname = nick_the_jeweler
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_jeweler }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					OR = {
+						has_trait_xp = {
+							trait = lifestyle_artifact_crafting
+							track = enchanting_smith
+							value >= 30
+						}
+						has_trait = enchanter
+					}
+					NOT = { exists = scope:had_nick_the_enchanter }
+				}
+				modifier = {
+					factor = 2
+					has_trait_xp = {
+						trait = lifestyle_artifact_crafting
+						track = enchanting_smith
+						value >= 65
+					}
+				}
+				give_nickname = nick_the_enchanter
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_enchanter }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			300 = { # Rare Combination
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait = lifestyle_mariner
+					NOT = { exists = scope:had_nick_the_anchorsmith }
+				}
+				give_nickname = nick_the_anchorsmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_anchorsmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = { # Tin or iron
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					OR = {
+						contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_tin_province_modifier }
+						contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_iron_province_modifier }
+					}
+					NOT = { exists = scope:had_nick_the_brightsmith }
+				}
+				give_nickname = nick_the_brightsmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_brightsmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			100 = { # Copper
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_copper_province_modifier }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_silver_province_modifier } }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_gold_province_modifier } }
+					NOT = { exists = scope:had_nick_the_brownsmith }
+				}
+				give_nickname = nick_the_brownsmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_brownsmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			100 = { # Copper
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_copper_province_modifier }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_iron_province_modifier } }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_gold_province_modifier } }
+					NOT = { exists = scope:had_nick_the_greensmith }
+				}
+				give_nickname = nick_the_greensmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_greensmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			100 = { # Copper
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_copper_province_modifier }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_gold_province_modifier } }
+					NOT = { exists = scope:had_nick_the_redsmith }
+				}
+				give_nickname = nick_the_redsmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_redsmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = { # Tin or Pewtersmith
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_tin_province_modifier }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_gold_province_modifier } }
+					NOT = { exists = scope:had_nick_the_whitesmith }
+				}
+				give_nickname = nick_the_whitesmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_whitesmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = { # Iron
+				trigger = {
+					#has_trait = lifestyle_artifact_crafting #Also works just for iron miners
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_iron_province_modifier }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_copper_province_modifier } }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_silver_province_modifier } }
+					NOT = { contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_gold_province_modifier } }
+					NOT = { exists = scope:had_nick_the_ironmonger }
+				}
+				give_nickname = nick_the_ironmonger
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_ironmonger }
+				trigger_event = lifestyle_nicknames.1000
+				modifier = {
+					factor = 2
+					OR = {
+						has_trait = stubborn
+						culture = { has_cultural_pillar = heritage_ironfist }
+					}
+				}
+			}
+			200 = { # Silver
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					OR = {
+						is_dwarf = yes #Dwarves get more nuanced smith nicknames
+						is_elf = yes
+					}
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_silver_province_modifier }
+					NOT = { exists = scope:had_nick_the_silversmith }
+				}
+				give_nickname = nick_the_silversmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_silversmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = { # Gold
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_gold_province_modifier }
+					NOT = { exists = scope:had_nick_the_goldsmith }
+				}
+				give_nickname = nick_the_goldsmith
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_goldsmith }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = { # Gold
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					OR = {
+						is_human = yes
+						is_elf = yes
+					}
+					contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_gold_province_modifier }
+					NOT = { exists = scope:had_nick_the_aurifaber }
+				}
+				give_nickname = nick_the_aurifaber
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_aurifaber }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					OR = {
+						has_trait = wrathful
+						has_trait = irritable
+					}
+					NOT = { exists = scope:had_nick_the_volcanic }
+				}
+				give_nickname = nick_the_volcanic
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_volcanic }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait = cannot_marry
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					NOT = { exists = scope:had_nick_the_forgesworn }
+				}
+				give_nickname = nick_the_forgesworn
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_forgesworn }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait = cannot_marry
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					NOT = { exists = scope:had_nick_the_hammerbound }
+				}
+				give_nickname = nick_the_hammerbound
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_hammerbound }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_artifact_crafting
+					has_trait = cannot_marry
+					is_dwarf = yes #Dwarves get more nuanced smith nicknames
+					NOT = { exists = scope:had_nick_the_forgewed }
+				}
+				give_nickname = nick_the_forgewed
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_forgewed }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_miner
+					OR = {
+						has_trait_xp = {
+							trait = lifestyle_miner
+							track = prospector
+							value >= 20
+						}
+						has_trait = excavator
+					}
+					NOT = { exists = scope:had_nick_the_prospector }
+				}
+				modifier = {
+					factor = 2
+					has_trait_xp = {
+						trait = lifestyle_miner
+						track = prospector
+						value >= 65
+					}
+				}
+				give_nickname = nick_the_prospector
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_prospector }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					has_trait = lifestyle_miner
+					OR = {
+						has_trait_xp = {
+							trait = lifestyle_miner
+							track = hewer
+							value >= 20
+						}
+						has_trait = excavator
+					}
+					NOT = { exists = scope:had_nick_the_excavator }
+				}
+				modifier = {
+					factor = 2
+					has_trait_xp = {
+						trait = lifestyle_miner
+						track = hewer
+						value >= 65
+					}
+				}
+				give_nickname = nick_the_excavator
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_the_excavator }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					is_orc = no
+					any_killed_character = {
+						count >= 3
+						is_orc = yes
+					}
+					NOT = { exists = scope:had_nick_orc_slayer }
+				}
+				modifier = {
+					factor = 2
+					any_killed_character = {
+						count >= 5
+						is_orc = yes
+					}
+				}
+				give_nickname = nick_orc_slayer
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_orc_slayer }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					is_dwarf = no
+					any_killed_character = {
+						count >= 2
+						is_dwarf = yes
+					}
+					NOT = { exists = scope:had_nick_dwarf_slayer }
+				}
+				modifier = {
+					factor = 2
+					any_killed_character = {
+						count >= 5
+						is_dwarf = yes
+					}
+				}
+				give_nickname = nick_dwarf_slayer
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_dwarf_slayer }
+				trigger_event = lifestyle_nicknames.1000
+			}
+			200 = {
+				trigger = {
+					is_elf = no
+					faith_is_good = no # Juke note: FP get a negative version
+					any_killed_character = {
+						count >= 1
+						is_elf = yes
+					}
+					NOT = { exists = scope:had_nick_elf_slayer }
+				}
+				modifier = {
+					factor = 2
+					any_killed_character = {
+						count >= 3
+						is_elf = yes
+					}
+				}
+				give_nickname = nick_elf_slayer
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_elf_slayer }
+				trigger_event = lifestyle_nicknames.1000
+			}
 		}
 	}
 }
@@ -5598,6 +6083,7 @@ set_random_negative_nickname_effect = {
 			100 = {
 				trigger = {
 					OR = {
+						has_trait = fragile_bones
 						has_trait = infirm
 						has_trait = weak
 						has_trait = spindly
@@ -5624,6 +6110,7 @@ set_random_negative_nickname_effect = {
 				trigger = {
 					prowess < 10
 					OR = {
+						has_trait = fragile_bones
 						has_trait = infirm
 						has_trait = spindly
 						has_trait = weak
@@ -6096,6 +6583,7 @@ set_random_negative_nickname_effect = {
 			100 = {
 				trigger = {
 					OR = {
+						has_trait = withering_mind
 						has_trait = infirm
 						probably_unintelligent_trigger = yes
 					}
@@ -6135,6 +6623,7 @@ set_random_negative_nickname_effect = {
 			100 = {
 				trigger = {
 					OR = {
+						has_trait = fragile_bones
 						has_trait = infirm
 						has_trait = spindly
 						has_trait = weak
@@ -6640,6 +7129,30 @@ set_random_negative_nickname_effect = {
 				set_nickname_effect = {
 					NICKNAME = nick_the_unfortunate
 				}
+			}
+
+			### LOTR ADDITIONS ###
+			200 = {
+				trigger = {
+					is_elf = no
+					faith_is_good = yes # Juke note: FP get a negative version
+					any_killed_character = {
+						count >= 1
+						is_elf = yes
+					}
+					NOT = { exists = scope:had_nick_elf_slayer_bad }
+				}
+				modifier = {
+					factor = 2
+					any_killed_character = {
+						count >= 3
+						is_elf = yes
+					}
+				}
+				give_nickname = nick_elf_slayer_bad
+				# Flag this as having been spat out already, in case we're applying several nicknames in quick succession.
+				flag_random_nickname_as_taken_in_batch_effect = { NICK = nick_elf_slayer_bad }
+				trigger_event = lifestyle_nicknames.1000
 			}
 		}
 	}

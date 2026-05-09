@@ -26,8 +26,9 @@
 		culture = corsair
 		buildings = {
 			castle_04
-			citadel_01
+			# citadel_01
 			curtain_walls_06
+			farm_estates_04
 			# common_tradeport_07 
 			# barracks_04 
 		}
@@ -35,6 +36,10 @@
 	6930.1.1 = {
 		culture = umbarean
 		religion = faith_kings_men_castamir
+		special_building = wonder_umbar_03
+	}
+	7000.1.1 = {
+		special_building = wonder_umbar_01
 	}
 	7068.9.12 = { #Death of the Umbarean Culture
 		culture = corsair
@@ -118,10 +123,14 @@
 		culture = umbaredain
 		religion = faith_edain
 		special_building_slot = wonder_tar_calion
+		special_building = wonder_tar_calion
 	}
 	5883.1.1 = {
 		culture = corsair
 		religion = faith_corsair
+		effect = {
+			remove_building = wonder_tar_calion
+		}
 	}
 }
 

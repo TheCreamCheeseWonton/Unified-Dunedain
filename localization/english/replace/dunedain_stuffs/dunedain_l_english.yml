@@ -1005,6 +1005,9 @@
  hegemon_feudal_female_adunaic_nonholder: "Ârikhôr"
  hegemon_feudal_adunaic: "Ârûkhôr-Thani"
 
+ DEFENSIVE_ALLIANCE_KINN_LAI_ALLIANCE_NAME: "Batânim & Kinn-Lai Alliance"
+
+
  innovation_adunai_administration_feudal: "Adûnâic Feudal Structure"
  innovation_adunai_administration_feudal_desc: "Through the trials and tribulations of the [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War, the [adunai|E] of the south endured great hardship and devastation. Yet from the fire they rose like a phoenix from the ashes, and the Golden Dominion emerged with newfound wisdom in statecraft and stability. \n\nAmong the greatest legacies of this struggle was the reformed [adunaic|E] Feudal Structure, which greatly enhanced the lords' ability to govern effectively, ushering in an age of prosperity for all under the [GetTitleByKey('h_pharazain').GetName]."
 
@@ -1411,19 +1414,6 @@
  h_sakal_an_khar: "Sakal an-Khar"
  h_azraphel_an_khar: "Azraphel an-Khar"
  e_mikazra_zain: "Mîkazra-Zâin"
- adunaic_mag_tumag: "Magmâ an-Tumag"
- adunaic_tumag: "Zâyan an-Tumag"
- adunaic_mag: "Zâyan an-Mag"
- adunaic_aradak: "Azrâda"
- adunaic_guishas: "Pharasphurus"
-
- adunaic_tarango: "Ûri Târiksakal"
- adunaic_toriar: "Attô Târiksakal"
- adunaic_musiutuse: "Ammê Târiksakal"
- adunaic_rurutori: "Nîlu Târiksakal"
- adunaic_taulbund: "Phazân Târiksakal"
-
- empire_twin_nations_adunaic: "Zâyanat"
  
  ##Game Rules
  rule_dunedain_bon_rule: "$lotr_gr_prefix$Unified Dunedain - The [bloodofnumenor|E]"

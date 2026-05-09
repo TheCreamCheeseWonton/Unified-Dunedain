@@ -186,16 +186,6 @@ show_korlea_capital_trigger = {
 		#has_primary_title = title:e_thon_an_kharlokh
 	}
 }
-show_tariketh_an_kharat_capital_trigger = {
-	NOT = { primary_title.title_capital_county = title:c_tariketh_an_kharat }
-	#completely_controls = title:c_tariketh_an_kharat
-	OR = {
-		has_primary_title = title:h_pharazain
-		has_primary_title = title:h_numenor_in_exile
-		has_primary_title = title:e_thani_hazad
-		#has_primary_title = title:e_thon_an_kharlokh
-	}
-}
 show_khorsaj_capital_trigger = {
 	NOT = { primary_title.title_capital_county = title:c_khorsaj }
 	#completely_controls = title:c_khorsaj
@@ -204,39 +194,11 @@ show_khorsaj_capital_trigger = {
 		has_primary_title = title:h_numenor_in_exile
 		#has_primary_title = title:e_thon_an_kharlokh
 	}
-}
-show_tol_uialgaer_capital_trigger = {
-	NOT = { primary_title.title_capital_county = title:c_tol_uialgaer }
-	#completely_controls = title:c_tol_uialgaer
-	OR = {
-		has_primary_title = title:e_umbar
-		##Quonton
-		has_primary_title = title:h_pharazain
-		has_primary_title = title:h_numenor_in_exile
-		has_primary_title = title:e_adunaim
-	}
-	##Quonton
-	OR = { 
-		dynasty = dynasty:dynasty_pharazon
-		has_primary_title = title:h_numenor_in_exile
-	}
-	##End Quonton
-}
+} 
 
 ##Quonton
 show_inzilloni_capital_trigger = {
 	NOT = { primary_title.title_capital_county = title:c_inzilloni }
-	#completely_controls = title:c_tariketh_an_kharat
-	OR = {
-		has_primary_title = title:h_pharazain
-		has_primary_title = title:h_numenor_in_exile
-		has_primary_title = title:e_thani_hazad
-		#has_primary_title = title:e_thon_an_kharlokh
-	}
-}
-
-show_mispir_capital_trigger = {
-	NOT = { primary_title.title_capital_county = title:c_mispir }
 	#completely_controls = title:c_tariketh_an_kharat
 	OR = {
 		has_primary_title = title:h_pharazain
@@ -278,9 +240,10 @@ show_ciryandur_capital_trigger = {
 		#has_primary_title = title:e_thon_an_kharlokh
 	}
 }
+##End Quonton
 
-show_uruloni_capital_trigger = {
-	NOT = { primary_title.title_capital_county = title:c_uruloni }
+show_tariketh_an_kharat_capital_trigger = {
+	NOT = { primary_title.title_capital_county = title:c_tariketh_an_kharat }
 	#completely_controls = title:c_tariketh_an_kharat
 	OR = {
 		has_primary_title = title:h_pharazain
@@ -289,7 +252,44 @@ show_uruloni_capital_trigger = {
 		#has_primary_title = title:e_thon_an_kharlokh
 	}
 }
-##End Quonton
+
+show_mispir_capital_trigger = {
+	NOT = { primary_title.title_capital_county = title:c_mispir }
+	#completely_controls = title:c_mispir
+	OR = {
+		has_primary_title = title:h_pharazain
+		has_primary_title = title:h_numenor_in_exile
+		has_primary_title = title:e_thani_hazad
+	}
+}
+
+show_uruloni_capital_trigger = {
+	NOT = { primary_title.title_capital_county = title:c_uruloni }
+	#completely_controls = title:c_uruloni
+	OR = {
+		has_primary_title = title:h_pharazain
+		has_primary_title = title:h_numenor_in_exile
+		has_primary_title = title:e_thani_hazad
+	}
+}
+
+show_tol_uialgaer_capital_trigger = {
+	NOT = { primary_title.title_capital_county = title:c_tol_uialgaer }
+	#completely_controls = title:c_tol_uialgaer
+	OR = {
+		has_primary_title = title:e_umbar
+		##Quonton
+		has_primary_title = title:h_pharazain
+		has_primary_title = title:h_numenor_in_exile
+		has_primary_title = title:e_adunaim
+	}
+	##Quonton
+	OR = { 
+		dynasty = dynasty:dynasty_pharazon
+		has_primary_title = title:h_numenor_in_exile
+	}
+	##End Quonton
+}
 
 # Valid Triggers
 valid_osgiliath_capital_trigger = {
@@ -425,22 +425,11 @@ valid_tariketh_an_kharat_capital_trigger = {
 	province:2493 = { has_building_or_higher = castle_03 }
 	province:2493 = { has_building_or_higher = wonder_marath_kharadune_03 }
 }
-valid_tol_uialgaer_capital_trigger = {
-	has_title = title:c_tol_uialgaer
-	completely_controls = title:d_tol_uialgaer
-	province:1018 = { has_building_or_higher = castle_04 }
-	province:1018 = { has_building_or_higher = wonder_arminalethor_01 }
-}
 ##Quonton
 valid_inzilloni_capital_trigger = {
 	has_title = title:c_inzilloni
 	completely_controls = title:k_kharadune
 	province:5497 = { has_building_or_higher = castle_03 }
-}
-valid_mispir_capital_trigger = {
-	has_title = title:c_mispir
-	completely_controls = title:k_zimrathani
-	province:5317 = { has_building_or_higher = castle_03 }
 }
 valid_urezayan_capital_trigger = {
 	has_title = title:c_urezayan
@@ -457,12 +446,26 @@ valid_ciryandur_capital_trigger = {
 	completely_controls = title:k_felaya
 	province:1542 = { has_building_or_higher = castle_03 }
 }
+##End Quonton
+valid_mispir_capital_trigger = {
+	has_title = title:c_mispir
+	completely_controls = title:d_mispir
+	province:5317 = { has_building_or_higher = castle_03 }
+	province:5317 = { has_building_or_higher = wonder_mispir }
+}
 valid_uruloni_capital_trigger = {
 	has_title = title:c_uruloni
 	completely_controls = title:k_gimilthani
+	completely_controls = title:d_mispir
 	province:5458 = { has_building_or_higher = castle_03 }
+	province:5458 = { has_building_or_higher = wonder_uruloni }
 }
-##End Quonton
+valid_tol_uialgaer_capital_trigger = {
+	has_title = title:c_tol_uialgaer
+	completely_controls = title:d_tol_uialgaer
+	province:1018 = { has_building_or_higher = castle_04 }
+	province:1018 = { has_building_or_higher = wonder_arminalethor_01 }
+}
 
 ### Dejure Province Restoration Triggers ###
 

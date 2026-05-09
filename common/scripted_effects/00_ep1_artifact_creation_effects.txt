@@ -9971,7 +9971,7 @@ set_weapon_artifact_type_effect = {
 						}
 						modifier = { #LotR
 							add = 10
-							or = {
+							OR = {
 								has_culture = culture:variag
 								culture = { has_cultural_pillar = heritage_lomiquendi }
 								culture = { has_cultural_pillar = heritage_daen_coentis }
@@ -10029,10 +10029,10 @@ set_weapon_artifact_type_effect = {
 						}
 						modifier = { #LotR
 							add = 10
-							or = {
+							OR = {
 								lotr_horse_lords_trigger = yes
 								culture = {
-									or = {
+									OR = {
 										has_cultural_pillar = heritage_bellakari
 										##Quonton
 										has_cultural_pillar = heritage_unified_adunaic
@@ -10043,25 +10043,6 @@ set_weapon_artifact_type_effect = {
 							}
 						}
 					}
-					# 10 = {
-					# 	set_variable = {
-					# 		name = artifact_weapon_type
-					# 		value = flag:artifact_weapon_type_bow
-					# 	}
-					# 	modifier = {
-					# 		add = 10
-					# 		or = {
-					# 			lotr_steppe_cultures_trigger = yes
-					# 			is_elf = yes
-					# 			culture = { has_cultural_pillar = heritage_druedain }
-					# 			culture = { has_cultural_pillar = heritage_northron }
-					# 		}
-					# 	}
-					# 	modifier = {
-					# 		add = -10
-					# 		is_dwarf = yes
-					# 	}
-					# }
 					10 = {
 						set_variable = {
 							name = artifact_weapon_type
@@ -10210,67 +10191,6 @@ create_artifact_weapon_effect = {
 				get_axe_decoration_effect = yes
 				get_artifact_feature_references_effect = yes
 				set_artifact_description = artifact_axe_description
-			}
-		}
-		else_if = {
-			limit = { scope:weapon_type = flag:artifact_weapon_type_longaxe }
-			if = {
-				limit = { exists = scope:adventurer }
-				create_artifact = {
-					name = artifact_longaxe_name
-					description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-					visuals = longaxe
-					type = longaxe
-					modifier = artifact_prowess_1_modifier
-					wealth = scope:wealth
-					quality = scope:quality
-					save_scope_as = newly_created_artifact
-					history = {
-						location = scope:location
-						actor = scope:adventurer
-						recipient = root
-						type = discovered
-					}
-				}
-			}
-			else_if = {
-				limit = { exists = scope:smith }
-				create_artifact = {
-					name = artifact_longaxe_name
-					creator = scope:smith
-					description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-					visuals = longaxe
-					type = longaxe
-					modifier = artifact_prowess_1_modifier
-					wealth = scope:wealth
-					quality = scope:quality
-					save_scope_as = newly_created_artifact
-				}
-			}
-			else_if = {
-				limit = {
-					scope:host ?= $OWNER$
-					scope:activity ?= { has_activity_type = activity_tournament }
-				}
-				tournament_contest_weapon_prize_effect = { VISUALS = longaxe TYPE = longaxe }
-			}
-			else = {
-				create_artifact = {
-					name = artifact_longaxe_name
-					description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-					visuals = longaxe
-					type = longaxe
-					modifier = artifact_prowess_1_modifier
-					wealth = scope:wealth
-					quality = scope:quality
-					save_scope_as = newly_created_artifact
-					history = { type = created_before_history }
-				}
-			}
-			scope:newly_created_artifact = {
-				get_longaxe_decoration_effect = yes
-				get_artifact_feature_references_effect = yes
-				set_artifact_description = artifact_longaxe_description
 			}
 		}
 		else_if = {
@@ -10545,247 +10465,10 @@ create_artifact_weapon_effect = {
 				set_artifact_description = artifact_dagger_description
 			}
 		}
-		# else_if = {
-		# 	limit = { scope:weapon_type = flag:artifact_weapon_type_bow }
-
-		# 	#Determine which bow type is being made
-		# 	if = {
-		# 		limit = { exists = scope:smith }
-		# 		set_bow_artifact_type_effect = {
-		# 			BASE_SCOPE = scope:smith
-		# 			NO_TYPE = no
-		# 		}
-		# 		scope:smith = {
-		# 			var:artifact_bow_type = { save_scope_as = bow_type }
-		# 			remove_variable = artifact_bow_type
-		# 		}
-		# 	}
-		# 	else = {
-		# 		set_bow_artifact_type_effect = {
-		# 			BASE_SCOPE = scope:owner
-		# 			NO_TYPE = no
-		# 		}
-		# 		scope:owner = {
-		# 			var:artifact_bow_type = { save_scope_as = bow_type }
-		# 			remove_variable = artifact_bow_type
-		# 		}
-		# 	}
-
-
-		# 	# Get the type of weapon to forge. Defaults to bow if an invalid type is provided.
-		# 	if = { # Longbow
-		# 		limit = { scope:bow_type ?= flag:artifact_bow_type_longbow }
-		# 		if = {
-		# 			limit = { exists = scope:adventurer }
-		# 			create_artifact = {
-		# 				name = artifact_longbow_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = longbow
-		# 				type = longbow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = {
-		# 					location = scope:location
-		# 					actor = scope:adventurer
-		# 					recipient = root
-		# 					type = discovered
-		# 				}
-		# 			}
-		# 		}
-		# 		else_if = {
-		# 			limit = { exists = scope:smith }
-		# 			create_artifact = {
-		# 				name = artifact_longbow_name
-		# 				creator = scope:smith
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = longbow
-		# 				type = longbow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 			}
-		# 		}
-		# 		else = {
-		# 			create_artifact = {
-		# 				name = artifact_longbow_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = longbow
-		# 				type = longbow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = { type = created_before_history }
-		# 			}
-		# 		}
-		# 		scope:newly_created_artifact = {
-		# 			get_artifact_feature_references_effect = yes
-		# 			set_artifact_description = artifact_longbow_description
-		# 		}
-		# 	}
-		# 	else_if = { # Composite
-		# 		limit = { scope:bow_type = flag:artifact_bow_type_composite }
-		# 		if = {
-		# 			limit = { exists = scope:adventurer }
-		# 			create_artifact = {
-		# 				name = artifact_composite_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = composite
-		# 				type = composite
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = {
-		# 					location = scope:location
-		# 					actor = scope:adventurer
-		# 					recipient = root
-		# 					type = discovered
-		# 				}
-		# 			}
-		# 		}
-		# 		else_if = {
-		# 			limit = { exists = scope:smith }
-		# 			create_artifact = {
-		# 				name = artifact_composite_name
-		# 				creator = scope:smith
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = composite
-		# 				type = composite
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 			}
-		# 		}
-		# 		else = {
-		# 			create_artifact = {
-		# 				name = artifact_composite_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = composite
-		# 				type = composite
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = { type = created_before_history }
-		# 			}
-		# 		}
-		# 		scope:newly_created_artifact = {
-		# 			get_artifact_feature_references_effect = yes
-		# 			set_artifact_description = artifact_composite_description
-		# 		}
-		# 	}
-		# 	else_if = { # Crossbow
-		# 		limit = { scope:bow_type = flag:artifact_bow_type_crossbow }
-		# 		if = {
-		# 			limit = { exists = scope:adventurer }
-		# 			create_artifact = {
-		# 				name = artifact_crossbow_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = crossbow
-		# 				type = crossbow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = {
-		# 					location = scope:location
-		# 					actor = scope:adventurer
-		# 					recipient = root
-		# 					type = discovered
-		# 				}
-		# 			}
-		# 		}
-		# 		else_if = {
-		# 			limit = { exists = scope:smith }
-		# 			create_artifact = {
-		# 				name = artifact_crossbow_name
-		# 				creator = scope:smith
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = crossbow
-		# 				type = crossbow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 			}
-		# 		}
-		# 		else = {
-		# 			create_artifact = {
-		# 				name = artifact_crossbow_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = crossbow
-		# 				type = crossbow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = { type = created_before_history }
-		# 			}
-		# 		}
-		# 		scope:newly_created_artifact = {
-		# 			get_artifact_feature_references_effect = yes
-		# 			set_artifact_description = artifact_crossbow_description
-		# 		}
-		# 	}
-		# 	else_if = { # Standard
-		# 		limit = { scope:bow_type = flag:artifact_bow_type_bow }
-		# 		if = {
-		# 			limit = { exists = scope:adventurer }
-		# 			create_artifact = {
-		# 				name = artifact_bow_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = bow
-		# 				type = bow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = {
-		# 					location = scope:location
-		# 					actor = scope:adventurer
-		# 					recipient = root
-		# 					type = discovered
-		# 				}
-		# 			}
-		# 		}
-		# 		else_if = {
-		# 			limit = { exists = scope:smith }
-		# 			create_artifact = {
-		# 				name = artifact_bow_name
-		# 				creator = scope:smith
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = bow
-		# 				type = bow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 			}
-		# 		}
-		# 		else = {
-		# 			create_artifact = {
-		# 				name = artifact_bow_name
-		# 				description = placeholder # Will be re-generated once decorations are added in the post-creation effects.
-		# 				visuals = bow
-		# 				type = bow
-		# 				modifier = artifact_prowess_1_modifier
-		# 				wealth = scope:wealth
-		# 				quality = scope:quality
-		# 				save_scope_as = newly_created_artifact
-		# 				history = { type = created_before_history }
-		# 			}
-		# 		}
-		# 		scope:newly_created_artifact = {
-		# 			get_artifact_feature_references_effect = yes
-		# 			set_artifact_description = artifact_bow_description
-		# 		}
-		# 	}
-		# }
+		else_if = { #LotR
+			limit = { scope:weapon_type = flag:artifact_weapon_type_longaxe }
+			lotr_create_artifact_weapon_longaxe_effect = { OWNER = scope:owner }
+		}
 		else = {
 			if = {
 				limit = { exists = scope:adventurer }
@@ -10933,21 +10616,12 @@ create_artifact_weapon_effect = {
 						has_artifact_feature_group = shaft_decoration
 						has_artifact_feature_group = head_decoration
 						scope:weapon_type = flag:artifact_weapon_type_dagger
-						# scope:weapon_type = flag:artifact_weapon_type_bow
 					}
 				}
 				if = {
 					limit = { scope:weapon_type = flag:artifact_weapon_type_dagger }
 					add_2_scaled_artifact_modifier_intrigue_effect = yes
 				}
-				# else_if = {
-				# 	limit = { scope:bow_type ?= flag:artifact_bow_type_composite }
-				# 	add_scaled_artifact_modifier_archer_cavalry_screen_add_effect = yes
-				# }
-				# else_if = {
-				# 	limit = { scope:bow_type ?= flag:artifact_bow_type_longbow }
-				# 	add_scaled_artifact_modifier_archers_screen_add_effect = yes
-				# }
 				else = {
 					add_2_scaled_artifact_modifier_combat_effect = yes
 				}
@@ -10964,20 +10638,11 @@ create_artifact_weapon_effect = {
 						has_artifact_feature_group = shaft_decoration
 						has_artifact_feature_group = head_decoration
 						scope:weapon_type = flag:artifact_weapon_type_dagger
-						scope:weapon_type = flag:artifact_weapon_type_bow
 					}
 				}
 				if = {
 					limit = { scope:weapon_type = flag:artifact_weapon_type_dagger }
 					add_scaled_artifact_modifier_intrigue_effect = yes
-				}
-				else_if = {
-					limit = { scope:bow_type ?= flag:artifact_bow_type_composite }
-					add_scaled_artifact_modifier_archer_cavalry_screen_add_effect = yes
-				}
-				else_if = {
-					limit = { scope:bow_type ?= flag:artifact_bow_type_longbow }
-					add_scaled_artifact_modifier_archers_screen_add_effect = yes
 				}
 				else = {
 					add_scaled_artifact_modifier_combat_effect = yes
@@ -10996,23 +10661,6 @@ create_artifact_weapon_effect = {
 					add_scaled_artifact_modifier_intrigue_effect = yes
 					add_artifact_modifier = artifact_prowess_no_decorations_high_tier_modifier
 				}
-				else_if = {
-					limit = { scope:bow_type = flag:artifact_bow_type_composite }
-					add_scaled_artifact_modifier_archer_cavalry_screen_add_effect = yes
-				}
-				else_if = {
-					limit = { scope:bow_type = flag:artifact_bow_type_longbow }
-					add_scaled_artifact_modifier_archers_screen_add_effect = yes
-				}
-				else_if = {
-					limit = {
-						OR = {
-							scope:bow_type = flag:artifact_bow_type_crossbow
-							scope:bow_type = flag:artifact_bow_type_bow
-						}
-					}
-					add_2_scaled_artifact_modifier_combat_effect = yes
-				}
 				else = {
 					add_scaled_artifact_modifier_combat_effect = yes
 					add_artifact_modifier = artifact_prowess_no_decorations_high_tier_modifier
@@ -11027,23 +10675,6 @@ create_artifact_weapon_effect = {
 					limit = { scope:weapon_type = flag:artifact_weapon_type_dagger }
 					add_scaled_artifact_modifier_intrigue_effect = yes
 					add_artifact_modifier = artifact_prowess_no_decorations_modifier
-				}
-				else_if = {
-					limit = { scope:bow_type ?= flag:artifact_bow_type_composite }
-					add_scaled_artifact_modifier_archer_cavalry_screen_add_effect = yes
-				}
-				else_if = {
-					limit = { scope:bow_type ?= flag:artifact_bow_type_longbow }
-					add_scaled_artifact_modifier_archers_screen_add_effect = yes
-				}
-				else_if = {
-					limit = {
-						OR = {
-							scope:bow_type ?= flag:artifact_bow_type_crossbow
-							scope:bow_type ?= flag:artifact_bow_type_bow
-						}
-					}
-					add_2_scaled_artifact_modifier_combat_effect = yes
 				}
 				else = {
 					add_artifact_modifier = artifact_prowess_no_decorations_medium_tier_modifier
@@ -14657,15 +14288,7 @@ set_bow_artifact_type_effect = {
 					}
 					25 = {
 						trigger = {
-							# culture = { #LotR
-							# 	OR = {
-							# 		has_cultural_tradition = tradition_horse_lords
-							# 		has_cultural_pillar = heritage_byzantine
-							# 		has_cultural_pillar = heritage_turkic
-							# 		has_cultural_pillar = heritage_mongolic
-							# 	}
-							# }
-							lotr_steppe_cultures_trigger = yes #LotR
+							culture = { is_composite_bow_culture_trigger = yes }
 						}
 						set_variable = {
 							name = artifact_bow_type
@@ -16893,7 +16516,7 @@ generate_historical_artifact_based_on_location_effect = {
 				game_start_date > 6020
 				NOT = {
 					any_artifact = {
-						has_variable = stewards_rod
+						has_variable = steward_rod
 					}
 				}
 				$LOCATION$ ?= {

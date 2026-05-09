@@ -38,11 +38,11 @@ wonder_belegost_broken = { # Belegost (Broadbeam Capital)
 		is_dwarf = yes
 		has_building_or_higher = dwarven_depths_01
 	}
-	
+
 	province_modifier = {
 		supply_limit_mult = -0.5
 	}
-	
+
 	province_terrain_modifier = {
  		tax_mult = -0.20
  	}
@@ -58,7 +58,7 @@ wonder_belegost_broken = { # Belegost (Broadbeam Capital)
 			tax_mult = -0.20
 		}
 	}
-	
+
 	type = great_building
 	flag = first_tier_dwarven_capital_building
 	flag = dwarven_capital_building
@@ -95,7 +95,7 @@ wonder_belegost_t2 = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -107,7 +107,7 @@ wonder_belegost_t2 = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -128,7 +128,7 @@ wonder_belegost_t2 = { # Belegost (Broadbeam Capital)
 		monthly_prestige = 0.5
 		monthly_crafting_lifestyle_xp_gain_mult = 0.15
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			monthly_income = 0.1
@@ -137,7 +137,6 @@ wonder_belegost_t2 = { # Belegost (Broadbeam Capital)
 
 	type = great_building
 	great_project_type = dwarven_capital_02
-	flag = travel_point_of_interest_wonder
 	next_building = wonder_belegost_rebuilt
 	flag = dwarven_capital_building
 	flag = second_tier_dwarven_capital_building
@@ -173,7 +172,7 @@ wonder_belegost_rebuilt = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -185,7 +184,7 @@ wonder_belegost_rebuilt = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -206,7 +205,7 @@ wonder_belegost_rebuilt = { # Belegost (Broadbeam Capital)
 		monthly_prestige = 1
 		monthly_crafting_lifestyle_xp_gain_mult = 0.30
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			monthly_income = 0.1
@@ -215,7 +214,6 @@ wonder_belegost_rebuilt = { # Belegost (Broadbeam Capital)
 
 	type = great_building
 	great_project_type = dwarven_capital_03
-	flag = travel_point_of_interest_wonder
 	next_building = wonder_belegost_t4
 	flag = dwarven_capital_building
 	flag = third_tier_dwarven_capital_building
@@ -251,7 +249,7 @@ wonder_belegost_t4 = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -263,7 +261,7 @@ wonder_belegost_t4 = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -287,7 +285,7 @@ wonder_belegost_t4 = { # Belegost (Broadbeam Capital)
 		same_culture_opinion = 10
 		stress_loss_mult = 0.05
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			monthly_income = 0.1
@@ -296,7 +294,6 @@ wonder_belegost_t4 = { # Belegost (Broadbeam Capital)
 
 	type = great_building
 	great_project_type = dwarven_capital_04
-	flag = travel_point_of_interest_wonder
 	next_building = wonder_belegost_reborn
 	flag = dwarven_capital_building
 	flag = fourth_tier_dwarven_capital_building
@@ -335,7 +332,7 @@ wonder_belegost_reborn = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -347,7 +344,7 @@ wonder_belegost_reborn = { # Belegost (Broadbeam Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -379,7 +376,6 @@ wonder_belegost_reborn = { # Belegost (Broadbeam Capital)
 	}
 
 	type = great_building
-	flag = travel_point_of_interest_wonder
 	great_project_type = dwarven_capital_05
 	flag = dwarven_capital_building
 	flag = final_tier_dwarven_capital_building
@@ -429,7 +425,7 @@ wonder_nogrod_broken = { # Nogrod (Firebeard Capital)
 	province_modifier = {
 		supply_limit_mult = -0.5
 	}
-	
+
 	province_terrain_modifier = {
  		tax_mult = -0.30
  	}
@@ -446,7 +442,7 @@ wonder_nogrod_broken = { # Nogrod (Firebeard Capital)
 			tax_mult = -0.30
 		}
 	}
-	
+
 	type = great_building
 	flag = first_tier_dwarven_capital_building
 	flag = dwarven_capital_building
@@ -482,7 +478,7 @@ wonder_nogrod_t2 = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -494,7 +490,7 @@ wonder_nogrod_t2 = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -523,7 +519,6 @@ wonder_nogrod_t2 = { # Nogrod (Firebeard Capital)
 
 	type = great_building
 	great_project_type = dwarven_capital_02
-	flag = travel_point_of_interest_wonder	
 	next_building = wonder_nogrod_rebuilt
 	flag = dwarven_capital_building
 	flag = second_tier_dwarven_capital_building
@@ -558,7 +553,7 @@ wonder_nogrod_rebuilt = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -570,7 +565,7 @@ wonder_nogrod_rebuilt = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -599,14 +594,13 @@ wonder_nogrod_rebuilt = { # Nogrod (Firebeard Capital)
 
 	type = great_building
 	great_project_type = dwarven_capital_03
-	flag = travel_point_of_interest_wonder	
 	next_building = wonder_nogrod_t4
 	flag = dwarven_capital_building
 	flag = third_tier_dwarven_capital_building
 }
 wonder_nogrod_t4 = { # Nogrod (Firebeard Capital)
 	type_icon = "icon_structure_newgrange.dds"
-	
+
 	effect_desc = {
 		desc = feast_cost_discount_max_desc
 	}
@@ -638,7 +632,7 @@ wonder_nogrod_t4 = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -650,7 +644,7 @@ wonder_nogrod_t4 = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -662,8 +656,8 @@ wonder_nogrod_t4 = { # Nogrod (Firebeard Capital)
 	province_modifier = {
 		supply_limit_mult = 0.25
 		monthly_income = 4
-		stationed_heavy_infantry_damage_mult = 0.75
-		stationed_heavy_infantry_toughness_mult = 0.75
+		stationed_archers_damage_mult = 0.75
+		stationed_archers_toughness_mult = 0.75
 		fort_level = normal_building_fort_level_tier_1
 	}
 	county_modifier = {
@@ -683,7 +677,6 @@ wonder_nogrod_t4 = { # Nogrod (Firebeard Capital)
 	}
 
 	type = great_building
-	flag = travel_point_of_interest_wonder
 	great_project_type = dwarven_capital_04
 	next_building = wonder_nogrod_reborn
 	flag = dwarven_capital_building
@@ -691,7 +684,7 @@ wonder_nogrod_t4 = { # Nogrod (Firebeard Capital)
 }
 wonder_nogrod_reborn = { # Nogrod (Firebeard Capital)
 	type_icon = "icon_structure_newgrange.dds"
-	
+
 	effect_desc = {
 		desc = feast_cost_discount_max_desc
 		desc = unlocks_firebeard_monsters_recruitment_desc
@@ -724,7 +717,7 @@ wonder_nogrod_reborn = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -736,7 +729,7 @@ wonder_nogrod_reborn = { # Nogrod (Firebeard Capital)
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -748,8 +741,8 @@ wonder_nogrod_reborn = { # Nogrod (Firebeard Capital)
 	province_modifier = {
 		supply_limit_mult = 0.5
 		monthly_income = 5
-		stationed_heavy_infantry_damage_mult = 1.5
-		stationed_heavy_infantry_toughness_mult = 1.5
+		stationed_archers_damage_mult = 1.5
+		stationed_archers_toughness_mult = 1.5
 		fort_level = normal_building_fort_level_tier_3
 	}
 	county_modifier = {
@@ -769,7 +762,6 @@ wonder_nogrod_reborn = { # Nogrod (Firebeard Capital)
 	}
 
 	type = great_building
-	flag = travel_point_of_interest_wonder
 	great_project_type = dwarven_capital_05
 	flag = dwarven_capital_building
 	flag = final_tier_dwarven_capital_building
@@ -820,11 +812,11 @@ wonder_mabladdum_broken = { # Mablad-dum (destroyed by volcano)
 		is_dwarf = yes
 		has_building_or_higher = dwarven_depths_01
 	}
-	
+
 	province_modifier = {
 		supply_limit_mult = -0.5
 	}
-	
+
 	province_terrain_modifier = {
  		tax_mult = -0.20
  	}
@@ -833,13 +825,13 @@ wonder_mabladdum_broken = { # Mablad-dum (destroyed by volcano)
 		monthly_prestige = 0.25
 		stress_gain_mult = 0.1
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			tax_mult = -0.2
 		}
 	}
-	
+
 	type = great_building
 	flag = first_tier_dwarven_capital_building
 	next_building = wonder_mabladdum_t2
@@ -878,7 +870,7 @@ wonder_mabladdum_t2 = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -890,7 +882,7 @@ wonder_mabladdum_t2 = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -919,7 +911,6 @@ wonder_mabladdum_t2 = { # Mablad-dum
 
 	type = great_building
 	great_project_type = dwarven_capital_02
-	flag = travel_point_of_interest_wonder	
 	next_building = wonder_mabladdum_rebuilt
 	flag = dwarven_capital_building
 	flag = second_tier_dwarven_capital_building
@@ -956,7 +947,7 @@ wonder_mabladdum_rebuilt = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -968,7 +959,7 @@ wonder_mabladdum_rebuilt = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -1000,7 +991,6 @@ wonder_mabladdum_rebuilt = { # Mablad-dum
 
 	type = great_building
 	great_project_type = dwarven_capital_03
-	flag = travel_point_of_interest_wonder	
 	next_building = wonder_mabladdum_t4
 	flag = dwarven_capital_building
 	flag = third_tier_dwarven_capital_building
@@ -1039,7 +1029,7 @@ wonder_mabladdum_t4 = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -1051,7 +1041,7 @@ wonder_mabladdum_t4 = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -1082,7 +1072,6 @@ wonder_mabladdum_t4 = { # Mablad-dum
 	}
 
 	type = great_building
-	flag = travel_point_of_interest_wonder
 	great_project_type = dwarven_capital_04
 	next_building = wonder_mabladdum_reborn
 	flag = dwarven_capital_building
@@ -1122,7 +1111,7 @@ wonder_mabladdum_reborn = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1134,7 +1123,7 @@ wonder_mabladdum_reborn = { # Mablad-dum
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1166,7 +1155,6 @@ wonder_mabladdum_reborn = { # Mablad-dum
 	}
 
 	type = great_building
-	flag = travel_point_of_interest_wonder
 	great_project_type = dwarven_capital_05
 	flag = dwarven_capital_building
 	flag = final_tier_dwarven_capital_building
@@ -1213,7 +1201,7 @@ wonder_durin_throne_broken = { # Throne of Durin (Longbeard Capital)
 	province_modifier = {
 		supply_limit_mult = -0.5
 	}
-	
+
 	province_terrain_modifier = {
  		tax_mult = -0.30
  	}
@@ -1229,7 +1217,7 @@ wonder_durin_throne_broken = { # Throne of Durin (Longbeard Capital)
 			tax_mult = -0.30
 		}
 	}
-	
+
 	type = great_building
 	flag = first_tier_dwarven_capital_building
 	flag = dwarven_capital_building
@@ -1264,7 +1252,7 @@ wonder_durin_throne_t2 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -1276,7 +1264,7 @@ wonder_durin_throne_t2 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.25
@@ -1299,7 +1287,7 @@ wonder_durin_throne_t2 = {
 		vassal_tax_contribution_add = 0.05
 		monthly_crafting_lifestyle_xp_gain_mult = 0.1
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			monthly_income = 0.1
@@ -1308,7 +1296,6 @@ wonder_durin_throne_t2 = {
 
 	type = great_building
 	great_project_type = dwarven_capital_02
-	flag = travel_point_of_interest_wonder	
 	next_building = wonder_durin_throne_t3
 	flag = dwarven_capital_building
 	flag = second_tier_dwarven_capital_building
@@ -1342,7 +1329,7 @@ wonder_durin_throne_t3 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -1354,7 +1341,7 @@ wonder_durin_throne_t3 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -1389,7 +1376,6 @@ wonder_durin_throne_t3 = {
 
 	type = great_building
 	great_project_type = dwarven_capital_03
-	flag = travel_point_of_interest_wonder	
 	next_building = wonder_durin_throne_t4
 	flag = dwarven_capital_building
 	flag = third_tier_dwarven_capital_building
@@ -1424,7 +1410,7 @@ wonder_durin_throne_t4 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -1436,7 +1422,7 @@ wonder_durin_throne_t4 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.75
@@ -1472,7 +1458,6 @@ wonder_durin_throne_t4 = {
 	}
 
 	type = great_building
-	flag = travel_point_of_interest_wonder
 	great_project_type = dwarven_capital_04
 	next_building = wonder_durin_throne_t5
 	flag = dwarven_capital_building
@@ -1480,7 +1465,7 @@ wonder_durin_throne_t4 = {
 }
 wonder_durin_throne_t5 = {
 	type_icon = "icon_wonder_thranduil_hall.dds"
-	
+
 	effect_desc = {
 		desc = feast_cost_discount_max_desc
 		desc = unlocks_undying_of_khazad_dum_recruitment_desc
@@ -1513,7 +1498,7 @@ wonder_durin_throne_t5 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1525,7 +1510,7 @@ wonder_durin_throne_t5 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1561,7 +1546,6 @@ wonder_durin_throne_t5 = {
 	}
 
 	type = great_building
-	flag = travel_point_of_interest_wonder
 	great_project_type = dwarven_capital_05
 	flag = dwarven_capital_building
 	flag = final_tier_dwarven_capital_building
@@ -1570,7 +1554,7 @@ wonder_durin_throne_t5 = {
 ### Great Fleetport ###
 lotr_great_fleet_01 = {
 	type_icon = "icon_building_great_fleet.dds"
-	
+
 	effect_desc = {
 		desc = sailing_activity_cost_discount_major_desc
 	}
@@ -1588,7 +1572,7 @@ lotr_great_fleet_01 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1600,7 +1584,7 @@ lotr_great_fleet_01 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1634,7 +1618,7 @@ lotr_great_fleet_01 = {
 }
 lotr_great_fleet_02 = {
 	type_icon = "icon_building_great_fleet.dds"
-	
+
 	effect_desc = {
 		desc = sailing_activity_cost_discount_major_desc
 	}
@@ -1652,7 +1636,7 @@ lotr_great_fleet_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1664,7 +1648,7 @@ lotr_great_fleet_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1698,7 +1682,7 @@ lotr_great_fleet_02 = {
 }
 lotr_great_fleet_03 = {
 	type_icon = "icon_building_great_fleet.dds"
-	
+
 	effect_desc = {
 		desc = sailing_activity_cost_discount_major_desc
 	}
@@ -1715,7 +1699,7 @@ lotr_great_fleet_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1727,7 +1711,7 @@ lotr_great_fleet_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1758,6 +1742,203 @@ lotr_great_fleet_03 = {
 	flag = lotr_great_fleet_03
 }
 
+### Great Citadel ###
+lotr_great_citadel_01 = {
+	type_icon = "icon_building_range.dds"
+
+	can_construct_potential = {
+		always = no # This building is the result of a great project
+	}
+	#cost_gold = expensive_building_tier_2_cost
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+	}
+
+	max_garrison = 2000
+
+	province_modifier = {
+		fort_level = 12
+		defender_holding_advantage = 10
+		monthly_income = -1
+	}
+	county_modifier = {
+		defender_holding_advantage = 2
+		hostile_raid_time = 1
+		supply_limit = 1500
+		monthly_county_control_growth_add = 0.5
+	}
+	character_modifier = {
+		monthly_dynasty_prestige = 0.5
+		vassal_opinion = 5
+		monthly_prestige = 1
+	}
+	character_culture_modifier = {
+		parameter = castle_grant_prestige
+		monthly_dynasty_prestige = 0.5
+	}
+
+	type = great_building
+	great_project_type = construct_great_citadel_01
+	next_building = lotr_great_citadel_02
+	flag = lotr_great_citadel_01
+}
+lotr_great_citadel_02 = {
+	type_icon = "icon_building_range.dds"
+
+	# This building is the result of a great project
+	can_construct_potential = {
+		has_building = lotr_great_citadel_01
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+	}
+
+	max_garrison = 5000
+
+	province_modifier = {
+		fort_level = 24
+		defender_holding_advantage = 20
+		monthly_income = -2.5
+	}
+	county_modifier = {
+		defender_holding_advantage = 4
+		hostile_raid_time = 2
+		supply_limit = 3000
+		monthly_county_control_growth_add = 1
+	}
+	character_modifier = {
+		monthly_dynasty_prestige = 1
+		vassal_opinion = 10
+		monthly_prestige = 2.5
+	}
+	character_culture_modifier = {
+		parameter = castle_grant_prestige
+		monthly_dynasty_prestige = 1
+	}
+
+	type = great_building
+	great_project_type = construct_great_citadel_02
+	next_building = lotr_great_citadel_03
+	flag = lotr_great_citadel_02
+}
+lotr_great_citadel_03 = {
+	type_icon = "icon_building_range.dds"
+
+	# This building is the result of a great project
+	can_construct_potential = {
+		has_building = lotr_great_fleet_02
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+	}
+
+	max_garrison = 10000
+
+	province_modifier = {
+		fort_level = 36
+		defender_holding_advantage = 30
+		monthly_income = -5
+	}
+	county_modifier = {
+		fort_level = 4
+		defender_holding_advantage = 6
+		hostile_raid_time = 3
+		supply_limit = 5000
+		monthly_county_control_growth_add = 2
+	}
+	character_modifier = {
+		monthly_dynasty_prestige = 2
+		vassal_opinion = 20
+		monthly_prestige = 5
+	}
+	character_culture_modifier = {
+		parameter = castle_grant_prestige
+		monthly_dynasty_prestige = 2
+	}
+
+	type = great_building
+	great_project_type = construct_great_citadel_03
+	flag = lotr_great_citadel_03
+}
+
 ### Kinn-lai Reunification Building ###
 kinnlai_spire_of_unity_01 = {
 	type_icon = "icon_wonder_numenorean_tower.dds"
@@ -1777,7 +1958,7 @@ kinnlai_spire_of_unity_01 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1789,7 +1970,7 @@ kinnlai_spire_of_unity_01 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1805,8 +1986,8 @@ kinnlai_spire_of_unity_01 = {
 		stationed_maa_pursuit_add = 30
 		stationed_skirmishers_toughness_mult = 0.8
 		stationed_skirmishers_damage_mult = 0.8
-		stationed_elephant_cavalry_damage_mult = 0.2 
-		stationed_elephant_cavalry_toughness_mult = 0.2 
+		stationed_elephant_cavalry_damage_mult = 0.2
+		stationed_elephant_cavalry_toughness_mult = 0.2
 	}
 	# county_modifier = {
 		# development_growth = 0.1
@@ -1831,6 +2012,67 @@ kinnlai_spire_of_unity_01 = {
 	#next_building = kinnlai_spire_of_unity_02
 }
 
+wonder_barad_gularan = { # Barad Gúlaran
+	type_icon = "icon_wonder_barad_harn.dds"
+
+	can_construct_potential = {
+		always = no # This building is the result of a decision
+	}
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+	}
+
+	show_disabled = yes
+
+	province_modifier = {
+		fort_level = normal_building_fort_level_tier_2
+		development_growth_factor = 0.05
+	}
+
+	character_modifier = {
+		monthly_piety = 1
+		monthly_piety_gain_mult = 0.1
+		monthly_piety_gain_per_dread_add = 0.025
+		#cultural_head_fascination_mult = 0.2
+		learning = 1
+	}
+	is_enabled = {
+		scope:holder ?= {
+			faith_is_evil = yes
+		}
+	}
+
+	ai_value = {
+		base = 100
+	}
+	type = great_building
+	flag = travel_point_of_interest_religious
+}
+
 cuind_citadel_of_drel = {
 	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
 
@@ -1849,7 +2091,7 @@ cuind_citadel_of_drel = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1861,7 +2103,7 @@ cuind_citadel_of_drel = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -1874,7 +2116,7 @@ cuind_citadel_of_drel = {
 		development_growth_factor = 0.25
 		supply_limit_mult = 0.2
 		monthly_income = 0.5
-		stationed_maa_damage_mult = 0.2 
+		stationed_maa_damage_mult = 0.2
 		stationed_maa_toughness_mult = 0.3
 	}
 	county_modifier = {
@@ -1900,6 +2142,134 @@ cuind_citadel_of_drel = {
 	type = great_building
 	flag = travel_point_of_interest_economic
 	flag = elven_great_building
+}
+
+wonder_tirith_aear = {
+	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
+
+	can_construct_potential = {
+		always = no # This building is the result of a decision
+	}
+
+	show_disabled = yes
+	is_enabled = {
+		always = yes
+	}
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+	}
+
+	province_modifier = {
+		supply_limit_mult = 0.2
+		stationed_maa_damage_mult = 0.3
+		stationed_maa_toughness_mult = 0.3
+	}
+	county_modifier = {
+		fort_level = good_building_fort_level_tier_3
+		defender_holding_advantage = normal_building_advantage_tier_2
+		levy_size = 0.3
+		garrison_size = 0.3
+	}
+	character_modifier = {
+		legitimacy_gain_mult = 0.2
+		monthly_dynasty_prestige_mult = 0.05
+		monthly_prestige = 0.5
+	}
+
+	# fallback = {
+		# province_modifier = {
+			# monthly_income = 0.1
+		# }
+	# }
+
+	type = great_building
+	flag = dunedain_great_building
+}
+
+wonder_tirith_aear_decayed = {
+	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
+
+	can_construct_potential = {
+		always = no # This building is the result of a decision
+	}
+
+	show_disabled = yes
+	is_enabled = {
+		always = yes
+	}
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+	}
+
+	province_modifier = {
+		stationed_maa_damage_mult = 0.05
+		stationed_maa_toughness_mult = 0.05
+	}
+	county_modifier = {
+		levy_size = 0.05
+		garrison_size = 0.05
+	}
+	character_modifier = {
+		monthly_prestige = -0.2
+		legitimacy_gain_mult = -0.1
+	}
+
+	# fallback = {
+		# province_modifier = {
+			# monthly_income = 0.1
+		# }
+	# }
+
+	type = great_building
+	flag = dunedain_great_building
 }
 
 # City of Osgiliath #
@@ -1933,7 +2303,7 @@ wonder_osgiliath_01 = {
 		tax_mult = -0.3
 		levy_size = -0.3
 	}
-	
+
 	type = great_building
 	flag = dunedain_great_building
 	next_building = wonder_osgiliath_02
@@ -1964,7 +2334,7 @@ wonder_osgiliath_02 = {
 		}
 	}
 
-	
+
 	county_modifier = {
 		fort_level = good_building_fort_level_tier_1
 		defender_holding_advantage = normal_building_advantage_tier_1
@@ -1975,7 +2345,6 @@ wonder_osgiliath_02 = {
 
 	type = great_building
 	great_project_type = construct_osgiliath_02
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 	next_building = wonder_osgiliath_03
 }
@@ -2004,7 +2373,7 @@ wonder_osgiliath_03 = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	county_modifier = {
 		fort_level = good_building_fort_level_tier_1
 		defender_holding_advantage = normal_building_advantage_tier_1
@@ -2019,7 +2388,6 @@ wonder_osgiliath_03 = {
 	great_project_type = construct_osgiliath_03
 	flag = dunedain_great_building
 	next_building = wonder_osgiliath_04
-	flag = travel_point_of_interest_wonder
 }
 wonder_osgiliath_04 = {
 	type_icon = "icon_wonder_osgiliath.dds"
@@ -2061,7 +2429,7 @@ wonder_osgiliath_04 = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	county_modifier = {
 		fort_level = good_building_fort_level_tier_2
 		defender_holding_advantage = normal_building_advantage_tier_2
@@ -2076,7 +2444,6 @@ wonder_osgiliath_04 = {
 	great_project_type = construct_osgiliath_04
 	flag = dunedain_great_building
 	next_building = wonder_osgiliath_05
-	flag = travel_point_of_interest_wonder
 }
 wonder_osgiliath_05 = {
 	type_icon = "icon_wonder_osgiliath.dds"
@@ -2119,7 +2486,7 @@ wonder_osgiliath_05 = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	county_modifier = {
 		fort_level = good_building_fort_level_tier_2
 		defender_holding_advantage = normal_building_advantage_tier_2
@@ -2133,7 +2500,6 @@ wonder_osgiliath_05 = {
 	type = great_building
 	great_project_type = construct_osgiliath_05
 	flag = dunedain_great_building
-	flag = travel_point_of_interest_wonder
 }
 
 ### Arnorian Strongholds GP ###
@@ -2182,7 +2548,7 @@ wonder_annuminas_01 = {
 			has_building_or_higher = elven_settlement_01
 		}
 	}
-	
+
 	character_modifier = {
         same_culture_opinion = 2
         monthly_prestige = 0.1
@@ -2190,7 +2556,7 @@ wonder_annuminas_01 = {
 	fallback = {
 		monthly_prestige = 0.1
 	}
-		
+
 	next_building = wonder_annuminas_02
 	type = great_building
 	flag = first_tier_arnorian_stronghold_building
@@ -2241,7 +2607,7 @@ wonder_annuminas_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2253,7 +2619,7 @@ wonder_annuminas_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2261,7 +2627,7 @@ wonder_annuminas_02 = {
 			}
 		}
 	}
-	
+
 	province_modifier = {
 		fort_level = good_building_fort_level_tier_2
 	}
@@ -2275,7 +2641,7 @@ wonder_annuminas_02 = {
 		vassal_levy_contribution_add = 0.05
 		vassal_tax_contribution_add = 0.05
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = good_building_fort_level_tier_2
@@ -2289,11 +2655,10 @@ wonder_annuminas_02 = {
 	type = great_building
 	next_building = wonder_annuminas_03
 	great_project_type = arnorian_stronghold_1
-	
+
 	flag = second_tier_arnorian_stronghold_building
 	flag = dunedain_great_building
 	flag = arnorian_capital
-	flag = travel_point_of_interest_wonder
 }
 wonder_annuminas_03 = {
 	asset = { type = pdxmesh name = "annuminas_01_mesh" }
@@ -2302,7 +2667,7 @@ wonder_annuminas_03 = {
 		desc = feast_cost_discount_max_desc
 		desc = explore_history_cost_discount_max_desc
 	}
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -2334,7 +2699,7 @@ wonder_annuminas_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -2346,7 +2711,7 @@ wonder_annuminas_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -2369,7 +2734,7 @@ wonder_annuminas_03 = {
 		vassal_levy_contribution_add = 0.05
 		vassal_tax_contribution_add = 0.05
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = good_building_fort_level_tier_2
@@ -2381,12 +2746,11 @@ wonder_annuminas_03 = {
 		}
 	}
 
-	
+
 	type = great_building
 	great_project_type = arnorian_stronghold_2
 
 	flag = final_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 
@@ -2397,7 +2761,7 @@ wonder_fornost_01 = {
 		type = pdxmesh
 		name = wonder_fornost_03_mesh
 	}
-	
+
 	#We only build this through Decision -> Great Projects
 	can_construct_potential = {
 		always = no #This should never show up
@@ -2438,7 +2802,7 @@ wonder_fornost_01 = {
 	character_modifier = {
 		monthly_prestige = 0.1
 	}
-	
+
 	next_building = wonder_fornost_02
 	type = great_building
 	flag = first_tier_arnorian_stronghold_building
@@ -2450,7 +2814,7 @@ wonder_fornost_02 = {
 		name = wonder_fornost_01_mesh
 	}
 	effect_desc = explore_history_cost_discount_medium_desc
-	
+
 	can_construct_potential = {
 		OR = {
 			is_human = yes
@@ -2480,7 +2844,7 @@ wonder_fornost_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2492,7 +2856,7 @@ wonder_fornost_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2502,7 +2866,8 @@ wonder_fornost_02 = {
 	}
 
 	province_modifier = {
-		fort_level = good_building_fort_level_tier_3
+		fort_level = good_building_fort_level_tier_5
+		defender_holding_advantage = 10
         supply_limit_mult = 0.2
 	}
 
@@ -2517,7 +2882,6 @@ wonder_fornost_02 = {
 	flag = second_tier_arnorian_stronghold_building
 	flag = arnorian_capital
 	flag = dunedain_great_building
-	flag = travel_point_of_interest_wonder
 }
 wonder_fornost_03 = {
 	type_icon = "icon_wonder_isengard.dds"
@@ -2526,7 +2890,7 @@ wonder_fornost_03 = {
 		name = wonder_fornost_02_mesh
 	}
 	effect_desc = explore_history_cost_discount_max_desc
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -2558,7 +2922,7 @@ wonder_fornost_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -2570,7 +2934,7 @@ wonder_fornost_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -2580,16 +2944,17 @@ wonder_fornost_03 = {
 	}
 
 	province_modifier = {
-		fort_level = good_building_fort_level_tier_4
+		fort_level = good_building_fort_level_tier_8
+		defender_holding_advantage = 20
         supply_limit_mult = 0.2
 	}
-	
+
 	county_modifier = {
         development_growth_factor = 0.1
-        tax_mult = 0.1	
+        tax_mult = 0.1
 	}
 
-	character_modifier = { 
+	character_modifier = {
 		monthly_prestige = 0.2
 		men_at_arms_maintenance = -0.1
 	}
@@ -2599,14 +2964,13 @@ wonder_fornost_03 = {
 			fort_level = good_building_fort_level_tier_4
 		}
 		county_modifier = {
-			tax_mult = 0.1	
+			tax_mult = 0.1
 		}
 	}
-	
+
 	type = great_building
 	great_project_type = arnorian_stronghold_2
 
-	flag = travel_point_of_interest_wonder
 	flag = final_tier_arnorian_stronghold_building
 	flag = dunedain_great_building
 }
@@ -2618,7 +2982,7 @@ wonder_cameth_brin_01 = {
 		type = pdxmesh
 		name = wonder_rhudaur_tower_mesh
 	}
-	
+
 	#We only build this through Decision -> Great Projects
 	can_construct_potential = {
 		always = no #This should never show up
@@ -2660,7 +3024,7 @@ wonder_cameth_brin_01 = {
 	type = great_building
 	flag = first_tier_arnorian_stronghold_building
 	flag = dunedain_great_building
-}	
+}
 wonder_cameth_brin_02 = {
 	type_icon = "icon_wonder_cameth_brin.dds"
 	effect_desc = explore_history_cost_discount_medium_desc
@@ -2668,7 +3032,7 @@ wonder_cameth_brin_02 = {
 		type = pdxmesh
 		name = wonder_rhudaur_tower_mesh
 	}
-	
+
 	can_construct_potential = {
 		OR = {
 			is_human = yes
@@ -2698,7 +3062,7 @@ wonder_cameth_brin_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2710,7 +3074,7 @@ wonder_cameth_brin_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2750,7 +3114,6 @@ wonder_cameth_brin_02 = {
 
 	flag = second_tier_arnorian_stronghold_building
 	flag = arnorian_capital
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 wonder_cameth_brin_03 = {
@@ -2760,7 +3123,7 @@ wonder_cameth_brin_03 = {
 		type = pdxmesh
 		name = wonder_rhudaur_tower_mesh
 	}
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -2784,7 +3147,7 @@ wonder_cameth_brin_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -2796,7 +3159,7 @@ wonder_cameth_brin_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -2812,7 +3175,7 @@ wonder_cameth_brin_03 = {
 		}
 	}
 	show_disabled = yes
-	
+
 	province_modifier = {
         fort_level = great_building_fort_level_tier_3
         hostile_raid_time = 1
@@ -2835,14 +3198,13 @@ wonder_cameth_brin_03 = {
 	great_project_type = arnorian_stronghold_2
 
 	flag = final_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 
 # Palace of Thalion #
 wonder_thalion_01 = {
 	type_icon = "icon_building_observatory.dds"
-	
+
 	#We only build this through Decision -> Great Projects
 	can_construct_potential = {
 		always = no #This should never show up
@@ -2879,16 +3241,16 @@ wonder_thalion_01 = {
 	character_modifier = {
 		monthly_prestige = 0.1
 	}
-	
+
 	next_building = wonder_thalion_02
 	type = great_building
 	flag = first_tier_arnorian_stronghold_building
 	flag = dunedain_great_building
-}	
+}
 wonder_thalion_02 = {
 	type_icon = "icon_building_observatory.dds"
 	effect_desc = explore_history_cost_discount_medium_desc
-	
+
 	can_construct_potential = {
 		OR = {
 			is_human = yes
@@ -2918,7 +3280,7 @@ wonder_thalion_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2930,7 +3292,7 @@ wonder_thalion_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -2955,7 +3317,7 @@ wonder_thalion_02 = {
 	character_modifier = {
 		monthly_prestige = 0.3
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			tax_mult = 0.15
@@ -2969,13 +3331,12 @@ wonder_thalion_02 = {
 
 	flag = second_tier_arnorian_stronghold_building
 	flag = arnorian_capital
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
-}	
+}
 wonder_thalion_03 = {
 	type_icon = "icon_building_observatory.dds"
 	effect_desc = explore_history_cost_discount_medium_desc
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -2999,7 +3360,7 @@ wonder_thalion_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3011,7 +3372,7 @@ wonder_thalion_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3049,14 +3410,13 @@ wonder_thalion_03 = {
 	great_project_type = arnorian_stronghold_2
 
 	flag = final_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
-}		
+}
 
 # City of Argond #
 wonder_argond_01 = {
 	type_icon = "icon_building_observatory.dds"
-	
+
 	#We only build this through Decision -> Great Projects
 	can_construct_potential = {
 		always = no #This should never show up
@@ -3089,7 +3449,7 @@ wonder_argond_01 = {
 			has_building_or_higher = elven_settlement_01
 		}
 	}
-	
+
 	province_modifier = {
 		fort_level = normal_building_fort_level_tier_1
 	}
@@ -3098,11 +3458,11 @@ wonder_argond_01 = {
 	type = great_building
 	flag = first_tier_arnorian_stronghold_building
 	flag = dunedain_great_building
-}	
+}
 wonder_argond_02 = {
 	type_icon = "icon_building_observatory.dds"
 	effect_desc = explore_history_cost_discount_medium_desc
-	
+
 	can_construct_potential = {
 		OR = {
 			is_human = yes
@@ -3132,7 +3492,7 @@ wonder_argond_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3144,7 +3504,7 @@ wonder_argond_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3179,19 +3539,18 @@ wonder_argond_02 = {
 			tax_mult = 0.1
 		}
 	}
-	
+
 	type = great_building
 	great_project_type = arnorian_stronghold_1
 	next_building = wonder_argond_03
 
 	flag = second_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 wonder_argond_03 = {
 	type_icon = "icon_building_observatory.dds"
 	effect_desc = explore_history_cost_discount_max_desc
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -3215,7 +3574,7 @@ wonder_argond_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3227,7 +3586,7 @@ wonder_argond_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3247,7 +3606,7 @@ wonder_argond_03 = {
 	province_modifier = {
 		fort_level = normal_building_fort_level_tier_2
 	}
-	
+
 	county_modifier = {
         tax_mult = 0.15
 	}
@@ -3267,7 +3626,6 @@ wonder_argond_03 = {
 	great_project_type = arnorian_stronghold_2
 
 	flag = final_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 
@@ -3278,7 +3636,7 @@ wonder_tharbad_01 = {
 		type = pdxmesh
 		name = wonder_tharbad_castle_mesh
 	}
-	
+
 	#We only build this through Decision -> Great Projects
 	can_construct_potential = {
 		always = no #This should never show up
@@ -3302,9 +3660,11 @@ wonder_tharbad_01 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3329,11 +3689,11 @@ wonder_tharbad_02 = {
 		type = pdxmesh
 		name = wonder_tharbad_castle_mesh
 	}
-	
+
 	can_construct_potential = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 02 }
@@ -3343,9 +3703,11 @@ wonder_tharbad_02 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3359,7 +3721,7 @@ wonder_tharbad_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3371,7 +3733,7 @@ wonder_tharbad_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3383,25 +3745,25 @@ wonder_tharbad_02 = {
 	is_enabled = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 	}
 	show_disabled = yes
-	
+
 	province_modifier = {
 		fort_level = good_building_fort_level_tier_1
         supply_limit_mult = 0.3
         tax_mult = 0.3
 	}
-	
+
 	county_modifier = {
         development_growth_factor = 0.2
-	}			
+	}
 
 	character_modifier = {
 		no_water_crossing_penalty = yes
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = good_building_fort_level_tier_1
@@ -3409,15 +3771,14 @@ wonder_tharbad_02 = {
 			tax_mult = 0.15
 		}
 	}
-	
+
 	type = great_building
 	great_project_type = arnorian_stronghold_1
 	next_building = wonder_tharbad_03
 
 	flag = second_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
-}	
+}
 wonder_tharbad_03 = {
 	type_icon = "icon_wonder_tharbad.dds"
 	effect_desc = sailing_activity_cost_discount_minor_desc
@@ -3426,7 +3787,7 @@ wonder_tharbad_03 = {
 		type = pdxmesh
 		name = wonder_tharbad_castle_mesh
 	}
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -3434,9 +3795,11 @@ wonder_tharbad_03 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3450,7 +3813,7 @@ wonder_tharbad_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3462,7 +3825,7 @@ wonder_tharbad_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3474,7 +3837,7 @@ wonder_tharbad_03 = {
 	is_enabled = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 	}
 	show_disabled = yes
@@ -3484,17 +3847,17 @@ wonder_tharbad_03 = {
         supply_limit_mult = 0.5
         tax_mult = 0.4
 	}
-	
+
 	county_modifier = {
         development_growth_factor = 0.4
-	}			
+	}
 
 	character_modifier = {
 		no_water_crossing_penalty = yes
 		naval_movement_speed_mult = 0.25
         embarkation_cost_mult = -0.25
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = good_building_fort_level_tier_1
@@ -3507,18 +3870,17 @@ wonder_tharbad_03 = {
 	great_project_type = arnorian_stronghold_2
 
 	flag = final_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
-}	
+}
 
-# Tower of Amon Sûl #	
+# Tower of Amon Sûl #
 wonder_amon_sul_01 = {
 	type_icon = "icon_wonder_minas_tirith.dds"
 	asset = {
 		type = pdxmesh
 		name = wonder_amon_sul_mesh
 	}
-	
+
 	#We only build this through Decision -> Great Projects
 	can_construct_potential = {
 		always = no #This should never show up
@@ -3542,9 +3904,11 @@ wonder_amon_sul_01 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3572,11 +3936,11 @@ wonder_amon_sul_02 = {
 		type = pdxmesh
 		name = wonder_amon_sul_mesh
 	}
-	
+
 	can_construct_potential = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 02 }
@@ -3586,9 +3950,11 @@ wonder_amon_sul_02 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3602,7 +3968,7 @@ wonder_amon_sul_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3614,7 +3980,7 @@ wonder_amon_sul_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3626,11 +3992,11 @@ wonder_amon_sul_02 = {
 	is_enabled = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 	}
 	show_disabled = yes
-	
+
 	province_modifier = {
         fort_level = normal_building_fort_level_tier_3
         garrison_size = 2
@@ -3645,7 +4011,7 @@ wonder_amon_sul_02 = {
         same_culture_opinion = 8
         monthly_prestige = 0.3
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = normal_building_fort_level_tier_3
@@ -3656,9 +4022,8 @@ wonder_amon_sul_02 = {
 	type = great_building
 	great_project_type = arnorian_stronghold_1
 	next_building = wonder_amon_sul_03
-	
+
 	flag = second_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 wonder_amon_sul_03 = {
@@ -3667,7 +4032,7 @@ wonder_amon_sul_03 = {
 		type = pdxmesh
 		name = wonder_amon_sul_mesh
 	}
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -3675,9 +4040,11 @@ wonder_amon_sul_03 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3691,7 +4058,7 @@ wonder_amon_sul_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3703,7 +4070,7 @@ wonder_amon_sul_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3715,11 +4082,11 @@ wonder_amon_sul_03 = {
 	is_enabled = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 	}
 	show_disabled = yes
-	
+
 	province_modifier = {
         fort_level = normal_building_fort_level_tier_5
         garrison_size = 4
@@ -3736,7 +4103,7 @@ wonder_amon_sul_03 = {
         monthly_prestige = 0.5
 		knight_effectiveness_mult = 0.1
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = normal_building_fort_level_tier_5
@@ -3748,7 +4115,6 @@ wonder_amon_sul_03 = {
 	great_project_type = arnorian_stronghold_2
 
 	flag = final_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 
@@ -3760,7 +4126,7 @@ wonder_mistalonde_01 = {
 		name = "wonder_mistalonde_ruins_mesh"
 	}
 	effect_desc = sailing_activity_cost_discount_minor_desc
-	
+
 	#We only build this through Decision -> Great Projects
 	can_construct_potential = {
 		always = no #This should never show up
@@ -3785,8 +4151,10 @@ wonder_mistalonde_01 = {
 
 	can_rebuild = {
 		OR = {
-			is_human = yes
-			is_elf = yes
+			scope:holder = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3801,7 +4169,7 @@ wonder_mistalonde_01 = {
 	character_modifier = {
 		monthly_prestige = 0.1
 	}
-	
+
 	next_building = wonder_mistalonde_02
 	type = great_building
 	flag = first_tier_arnorian_stronghold_building
@@ -3814,11 +4182,13 @@ wonder_mistalonde_02 = {
 		name = "wonder_mistalonde_mesh"
 	}
 	effect_desc = sailing_activity_cost_discount_minor_desc
-	
+
 	can_construct_potential = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 02 }
@@ -3828,9 +4198,11 @@ wonder_mistalonde_02 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3844,7 +4216,7 @@ wonder_mistalonde_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3856,7 +4228,7 @@ wonder_mistalonde_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 1.5
@@ -3868,17 +4240,17 @@ wonder_mistalonde_02 = {
 	is_enabled = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 	}
 	show_disabled = yes
-	
+
 	province_modifier = {
 		fort_level = good_building_fort_level_tier_1
 		supply_limit_mult = 0.5
         tax_mult = 0.2
 	}
-	
+
 	county_modifier = {
         development_growth_factor = 0.3
 	}
@@ -3894,15 +4266,14 @@ wonder_mistalonde_02 = {
 			tax_mult = 0.1
 		}
 	}
-	
+
 	type = great_building
 	great_project_type = arnorian_stronghold_1
 	next_building = wonder_mistalonde_03
 
 	flag = second_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
-}	
+}
 wonder_mistalonde_03 = {
 	type_icon = "icon_building_tradeport.dds"
 	asset = {
@@ -3910,7 +4281,7 @@ wonder_mistalonde_03 = {
 		name = "wonder_mistalonde_mesh"
 	}
 	effect_desc = sailing_activity_cost_discount_minor_desc
-	
+
 	can_construct_potential = {
 		culture = { has_innovation = innovation_numenorean_architecture_02 }
 		building_requirement_castle_city_church = { LEVEL = 03 }
@@ -3918,9 +4289,11 @@ wonder_mistalonde_03 = {
 	}
 
 	can_rebuild = {
-		OR = {
-			is_human = yes
-			is_elf = yes
+		scope:holder = {
+			OR = {
+				is_human = yes
+				is_good_undying = yes
+			}
 		}
 		OR = {
 			building_requirement_castle_city_church = { LEVEL = 01 }
@@ -3934,7 +4307,7 @@ wonder_mistalonde_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3946,7 +4319,7 @@ wonder_mistalonde_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -3958,7 +4331,7 @@ wonder_mistalonde_03 = {
 	is_enabled = {
 		OR = {
 			is_human = yes
-			is_elf = yes
+			is_good_undying = yes
 		}
 	}
 	show_disabled = yes
@@ -3968,7 +4341,7 @@ wonder_mistalonde_03 = {
 		supply_limit_mult = 1
         tax_mult = 0.4
 	}
-	
+
 	county_modifier = {
         development_growth_factor = 0.3
 	}
@@ -3989,7 +4362,6 @@ wonder_mistalonde_03 = {
 	great_project_type = arnorian_stronghold_2
 
 	flag = final_tier_arnorian_stronghold_building
-	flag = travel_point_of_interest_wonder
 	flag = dunedain_great_building
 }
 
@@ -4023,16 +4395,16 @@ wonder_gaven_01 = {
 	province_modifier = {
 		supply_limit_mult = -0.5
 	}
-	
+
 	province_terrain_modifier = {
  		tax_mult = -0.20
  	}
-	
+
 	character_modifier = {
 		stress_gain_mult = 0.25
 		health = -0.1
 	}
-	
+
 	type = great_building
 	flag = wonder_gaven_01
 	flag = elven_great_building
@@ -4064,9 +4436,9 @@ wonder_gaven_02 = {
 		}
 	}
 
-	
+
 	province_modifier = {
-		monthly_income = 0.5	
+		monthly_income = 0.5
 	}
 	county_modifier = {
 		tax_mult = 0.1	#The entire county should benefit from the sprawling city.
@@ -4075,7 +4447,6 @@ wonder_gaven_02 = {
 
 	type = great_building
 	great_project_type = construct_gaven_02
-	flag = travel_point_of_interest_wonder
 	flag = wonder_gaven_02
 	flag = elven_great_building
 	next_building = wonder_gaven_03
@@ -4105,9 +4476,9 @@ wonder_gaven_03 = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	province_modifier = {
-		monthly_income = 2	
+		monthly_income = 2
 		fort_level = good_building_fort_level_tier_2
 	}
 	county_modifier = {
@@ -4123,7 +4494,6 @@ wonder_gaven_03 = {
 	flag = wonder_gaven_03
 	flag = elven_great_building
 	next_building = wonder_gaven_04
-	flag = travel_point_of_interest_wonder
 }
 wonder_gaven_04 = {
 	type_icon = "icon_structure_sacred_pool.dds"
@@ -4150,7 +4520,7 @@ wonder_gaven_04 = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	province_modifier = {
 		monthly_income = 3.5
 		fort_level = good_building_fort_level_tier_5
@@ -4169,7 +4539,6 @@ wonder_gaven_04 = {
 	flag = wonder_gaven_04
 	flag = elven_great_building
 	next_building = wonder_gaven_05
-	flag = travel_point_of_interest_wonder
 }
 wonder_gaven_05 = {
 	type_icon = "icon_structure_sacred_pool.dds"
@@ -4196,7 +4565,7 @@ wonder_gaven_05 = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	province_modifier = {
 		monthly_income = 5
 		fort_level = good_building_fort_level_tier_6
@@ -4216,7 +4585,6 @@ wonder_gaven_05 = {
 	great_project_type = construct_gaven_05
 	flag = wonder_gaven_05
 	flag = elven_great_building
-	flag = travel_point_of_interest_wonder
 }
 
 tamska_majesty_palace = {
@@ -4244,7 +4612,7 @@ tamska_majesty_palace = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	province_modifier = {
 		fort_level = good_building_fort_level_tier_3
         hostile_raid_time = 0.5
@@ -4261,11 +4629,11 @@ tamska_majesty_palace = {
 
 	type = great_building
 	flag = travel_point_of_interest_religious
-} 
+}
 
 wonder_protected_harbour = {
 	type_icon = "icon_structure_maiden_tower.dds"
-	
+
 	effect_desc = {
 		desc = sailing_activity_cost_discount_major_desc
 	}
@@ -4285,7 +4653,7 @@ wonder_protected_harbour = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -4297,7 +4665,7 @@ wonder_protected_harbour = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -4356,7 +4724,7 @@ nafarati_war_shrine = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -4368,7 +4736,7 @@ nafarati_war_shrine = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -4415,7 +4783,7 @@ nafarati_war_shrine = {
 
 great_building_arminalethor = {
 	type_icon = "icon_structure_theodosian_walls.dds"
-	
+
 	can_construct_potential = {
 		always = no # This building is the result of a decision
 	}
@@ -4431,7 +4799,7 @@ great_building_arminalethor = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -4443,7 +4811,7 @@ great_building_arminalethor = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { 
+			else = {
 				value = {
 					add = standard_rebuild_value
 					multiply = 2
@@ -4451,7 +4819,7 @@ great_building_arminalethor = {
 			}
 		}
 	}
-	
+
 	effect_desc = explore_history_cost_discount_max_desc
 
 	county_modifier = {
@@ -4465,7 +4833,7 @@ great_building_arminalethor = {
 		naval_movement_speed_mult = 0.25
 		embarkation_cost_mult = -0.25
 	}
-	
+
 	ai_value = {
 		base = 100
 	}
@@ -4481,4 +4849,4 @@ great_building_arminalethor = {
 
 	type = great_building
 	flag = travel_point_of_interest_martial
-}	
+}

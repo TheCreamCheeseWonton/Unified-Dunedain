@@ -25,6 +25,7 @@ lotr_has_graphical_india_culture_group_trigger = {
 		has_building_gfx = indian_building_gfx
 		has_building_gfx = ray_building_gfx
 		has_building_gfx = sirayni_building_gfx
+		has_building_gfx = lynerian_building_gfx
 	}
 }
 
@@ -223,16 +224,16 @@ graphical_wilderness_desert_rhun_trigger = { # LotR trigger
 	}
 }
 
-graphical_wilderness_arctic_trigger = { # LotR trigger.
+graphical_wilderness_arctic_trigger = { # LotR trigger
 	terrain = arctic
 }
-graphical_wilderness_volcanic_trigger = { # LotR trigger.
+graphical_wilderness_volcanic_trigger = { # LotR trigger
 	terrain = volcanic_plains
 }
-graphical_underground_caverns_trigger = { # LotR trigger.
+graphical_underground_caverns_trigger = { # LotR trigger
 	terrain = halls
 }
-graphical_wilderness_all_forests_trigger = { # LotR trigger.
+graphical_wilderness_all_forests_trigger = { # LotR trigger
 	OR = {
 		terrain = jungle
 		terrain = forest
@@ -248,7 +249,7 @@ graphical_wilderness_forest_deep_trigger = { # LotR trigger
 graphical_wilderness_forest_mallorn_trigger = { # LotR trigger
 	terrain = mallorn_forest
 }
-graphical_wilderness_all_littoral_trigger = { # LotR trigger.
+graphical_wilderness_all_littoral_trigger = { # LotR trigger
 	OR = {
 		terrain = wetlands
 		terrain = floodplains
@@ -257,13 +258,13 @@ graphical_wilderness_all_littoral_trigger = { # LotR trigger.
 		terrain = saltflats
 	}
 }
-graphical_wilderness_littoral_trigger = { # LotR trigger.
+graphical_wilderness_littoral_trigger = { # LotR trigger
 	terrain = littoral
 }
-graphical_wilderness_mangrove_trigger = { # LotR trigger.
+graphical_wilderness_mangrove_trigger = { # LotR trigger
 	terrain = mangrove
 }
-graphical_wilderness_saltflats_trigger = { # LotR trigger.
+graphical_wilderness_saltflats_trigger = { # LotR trigger
 	terrain = saltflats
 }
 
@@ -327,7 +328,59 @@ lotr_has_graphical_mediterranean_region_trigger = {
 }
 
 lotr_has_graphical_mena_region_trigger = {
-	always = no # LotR
+	trigger_if = {
+		limit = {
+			exists = capital_province
+		}
+		capital_province = {
+			OR = {
+				geographical_region = middleearth_harad_near
+				geographical_region = middleearth_harad_dunesea
+				geographical_region = middleearth_harad_far
+			}
+		}
+	}
+	trigger_else_if = {
+		limit = {
+			NOT = { exists = capital_province }
+		}
+		trigger_if = { 
+			limit = { exists = host.capital_province }
+			host.capital_province = {
+				OR = {
+					geographical_region = middleearth_harad_near
+					geographical_region = middleearth_harad_dunesea
+					geographical_region = middleearth_harad_far
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				exists = liege.capital_province
+			}
+			liege.capital_province = {
+				OR = {
+					geographical_region = middleearth_harad_near
+					geographical_region = middleearth_harad_dunesea
+					geographical_region = middleearth_harad_far
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				exists = location.province_owner.capital_province
+			}
+			location.province_owner.capital_province = {
+				OR = {
+					geographical_region = middleearth_harad_near
+					geographical_region = middleearth_harad_dunesea
+					geographical_region = middleearth_harad_far
+				}
+			}
+		}
+		trigger_else = { always = yes }
+	}
+	trigger_else = { always = yes }
 }
 
 lotr_has_graphical_scandinavia_region_trigger = {

@@ -1019,6 +1019,10 @@ poi_battles_historical = {
 			limit = { game_start_date > 6791.1.1 } # TA 2758
 			province:28 = { add_to_list = provinces }
 		}
+		if = { # Ovatha's Folly
+			limit = { game_start_date > 6799.8.2 } # TA 2766
+			province:4056 = { add_to_list = provinces }
+		}
 		if = { # The Battle of Azanulbizar
 			limit = { game_start_date > 6832.1.1 } # TA 2799
 			province:4918 = { add_to_list = provinces }
@@ -1358,7 +1362,7 @@ poi_mandala_capital = {
 				}
 				scope:province.county.holder.house ?= {
 					switch = {
-						trigger = has_house_power_parameter
+						trigger = has_house_aspiration_parameter
 						aspect_of_creation = {
 							root = {
 								poi_lifestyle_experience_effect = {
@@ -1486,8 +1490,8 @@ poi_lotr_great_buildings_wonder = {
 
 	on_visit = {
 		send_interface_toast = {
-			title = poi_gp_buildings.visit
 			left_icon = root
+			title = poi_lotr_gp_buildings.visit
 
 			add_poi_stewardship_experience_effect = yes
 			point_of_interest_prestige_effect = yes

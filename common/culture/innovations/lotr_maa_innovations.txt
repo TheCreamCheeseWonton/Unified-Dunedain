@@ -66,7 +66,14 @@ innovation_tanturak_rangers_warfare = {
 	icon = @special_maa_02
 
 	potential = {
-		lotr_has_numenorean_culture_trigger = yes
+		OR = { 
+			has_cultural_pillar = heritage_northern_adunaic
+			has_cultural_pillar = heritage_southern_adunaic
+			has_cultural_pillar = heritage_eastern_adunaic
+			has_cultural_pillar = heritage_dunedain
+			has_cultural_pillar = heritage_bellakari
+			has_cultural_pillar = heritage_unified_adunaic
+		}
 		NOT = { has_innovation =  innovation_numenorean_warriors_adunaic }
 		NOT = { has_innovation =  innovation_numenorean_warriors }
 		NOT = { has_innovation =  innovation_numenorean_warriors_custom }
@@ -390,6 +397,23 @@ innovation_dune_sea_warfare = {
 	#custom = unlock_maa_giant_scorpions
 }
 
+innovation_qarsa_warfare = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_01
+
+	potential = {
+		AND = {
+			OR = {
+				this = culture:qarsag
+				any_parent_culture_or_above = { this = culture:qarsag }
+			}
+		}
+	}
+
+	custom = unlock_maa_qarsag_outriders
+}
+
 ### Daen Coentis
 innovation_daen_warfare = {
 	group = culture_group_regional
@@ -458,6 +482,91 @@ innovation_eotheod_warfare = {
 	custom = culture_parameter_unlock_maa_eotheod_horse_archers
 	custom = culture_parameter_unlock_maa_eotheod_light_horsemen
 }
+
+#innovation_upgraded_eotheod_warfare = {
+#	group = culture_group_regional
+#	culture_era = culture_era_tribal
+#	icon = @special_maa_01
+#
+#	potential = {
+#			this = culture:eotheod
+#	}
+#
+#	#custom = culture_parameter_unlock_maa_riders_of_rohan
+#	custom = culture_parameter_unlock_maa_eotheod_horse_archers
+#	custom = culture_parameter_unlock_maa_eotheod_light_horsemen
+#	custom = culture_parameter_unlock_maa_eotheod_vanguard
+#}
+
+### Rohirrim ###
+#innovation_rohirrim_warfare = {
+#	group = culture_group_regional
+#	culture_era = culture_era_tribal
+#	icon = @special_maa_01
+#
+#	potential = {
+#		OR = {
+#			this = culture:rohirrim
+#			any_parent_culture_or_above = { this = culture:rohirrim }
+#		}
+#	}
+#
+#	custom = culture_parameter_unlock_maa_eorlingas_warriors
+#	custom = culture_parameter_unlock_maa_westfolders
+#}
+
+### Rhovanorim ###
+#innovation_rhovanorim_scattered_warfare = {
+#	group = culture_group_regional
+#	culture_era = culture_era_tribal
+#	icon = @special_maa_02
+#
+#	potential = {
+#			this = culture:rhovanorim
+#	}
+#
+#	custom = culture_parameter_unlock_maa_rhovanion_freemen
+#}
+
+#innovation_rhovanorim_reforged_warfare = {
+#	group = culture_group_regional
+#	culture_era = culture_era_tribal
+#	icon = @special_maa_02
+#
+#	potential = {
+#			this = culture:rhovanorim
+#	}
+#
+#	custom = culture_parameter_unlock_maa_rhovanion_freemen
+#	custom = culture_parameter_unlock_maa_rhovanion_light_cavalry
+#}
+
+#innovation_rhovanorim_warfare = {
+#	group = culture_group_regional
+#	culture_era = culture_era_tribal
+#	icon = @special_maa_01
+#
+#	potential = {
+#			this = culture:rhovanorim
+#	}
+#
+#	custom = culture_parameter_unlock_maa_rhovanion_freemen
+#	custom = culture_parameter_unlock_maa_rhovanion_light_cavalry
+#	custom = culture_parameter_unlock_maa_rhovanion_heavy_cavalry
+#}
+
+### Corsairs ###
+#innovation_corsair_warfare = {
+#	group = culture_group_regional
+#	culture_era = culture_era_tribal
+#	icon = @special_maa_02
+#
+#	potential = {
+#			any_parent_culture_or_above = { this = culture:umbaredain }
+#	}
+#
+#	custom = culture_parameter_unlock_maa_corsair_warriors
+#}
 
 ### Mardrukan ###
 innovation_mardrukan_warfare = {
@@ -888,6 +997,42 @@ innovation_dunedain_ranger_warfare = {
 	custom = unlock_dunedain_outriders
 }
 
+innovation_talon_knights = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_01
+	
+	potential = { #Unlocked by decision
+		custom_description = {
+			text = "innovation_unlocked_by_decision_trigger"
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_dol_amroth_swan_guard
+			}
+		}
+	}
+	custom = unlock_talon_knights
+	flag = global_maa
+}
+
+innovation_nimrodel_rangers = {
+	group = culture_group_regional
+	culture_era = culture_era_tribal
+	icon = @special_maa_02
+	
+	potential = { #Unlocked by decision
+		custom_description = {
+			text = "innovation_unlocked_by_decision_trigger"
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_dol_amroth_swan_guard
+			}
+		}
+	}
+	custom = unlock_nimrodel_rangers
+	flag = global_maa
+}
+
 ### Harondoric ###
 innovation_harondorim_warfare = {
 	group = culture_group_regional
@@ -1143,7 +1288,7 @@ innovation_raiders_of_the_north = {	#For Worauthai Madur
 	flag = culture_era_tribal
 }
 
-innovation_wood_trolls = {	#For Kazgumoth
+innovation_wood_trolls = {	#For Kazgumhoth
 	group = culture_group_regional
 	culture_era = culture_era_early_medieval
 	region = middleearth_west_rhovanion_mirkwood

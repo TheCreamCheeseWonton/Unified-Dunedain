@@ -1,0 +1,106 @@
+﻿#############################
+##### 	LotR UD Tenets 	#####
+#############################
+
+tenet_unrelenting_faith_adunai_faithful = {
+	icon = core_tenet_unrelenting_faith
+	piety_cost = {
+		value = faith_tenet_cost_low
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { has_doctrine = tenet_memory_of_akallabeth }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	is_shown = {
+		has_doctrine = tenet_unrelenting_faith_adunai_faithful
+	}
+	can_pick = {
+		has_doctrine = tenet_unrelenting_faith_adunai_faithful
+	}
+
+	character_modifier = {
+		prowess = 4
+		tolerance_advantage_mod = 2
+		naval_movement_speed_mult = 0.1
+	}
+	
+	parameters = {
+		divine_the_stars_active = yes
+	}
+}
+
+tenet_faithful_mandate = { # Adunaic Faithful
+	icon = tenet_memory_of_akallabeth
+	
+	piety_cost = {
+		# Similar Tenet
+		if = {
+			limit = {
+				has_doctrine = tenet_memory_of_akallabeth
+			}
+			value = faith_tenet_cost_low
+		}
+		else = {
+			value = faith_tenet_cost_mid
+		}
+
+		# Multiplier for keeping same tenet
+		if = {
+			limit = { has_doctrine = tenet_faithful_mandate }
+			multiply = faith_unchanged_doctrine_cost_mult
+		}
+	}
+
+	is_shown = {
+		OR = {
+			religion = religion:dunedain_religion
+			religion = religion:adunai_religion
+			religion = religion:bellakari_religion
+		}
+	}
+	
+	can_pick = {
+		custom_description = {
+			text = incompatible_tenet_adunaic_birthright_trigger
+			NOT = { doctrine:tenet_adunaic_birthright = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_adunaic_mandate_trigger
+			NOT = { doctrine:tenet_adunaic_mandate = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_tenet_memory_of_akallabeth_trigger
+			NOT = { doctrine:tenet_memory_of_akallabeth = { is_in_list = selected_doctrines } }
+		}
+		custom_description = {
+			text = incompatible_with_influence_trigger
+			NOR = { 
+				doctrine:doctrine_dominion_of_the_dark = { is_in_list = selected_doctrines }
+				doctrine:doctrine_a_people_apart = { is_in_list = selected_doctrines }
+			}
+		}
+	}
+	
+	traits = {
+		virtues = { just humble }
+		sins = { arbitrary arrogant }
+	}
+	
+	character_modifier = {
+		monthly_learning_lifestyle_xp_gain_mult = 0.15
+		tributary_opinion = 15
+		tributary_tax_mult = 0.1
+		levy_reinforcement_rate_same_faith = 0.15
+		levy_reinforcement_rate_different_faith = -0.25
+	}
+	
+	parameters = {
+		lotr_numenor_blood_bonuses = yes #Boni for blood of numenor traits. Replaces use of it as a virtue
+		increased_dynasty_prestige_birth_mult = 1
+		increased_dynasty_prestige_marriage_mult = 1
+		increased_dynasty_prestige_long_reign_mult = 0.5
+	}
+}

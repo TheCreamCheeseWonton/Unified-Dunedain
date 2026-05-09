@@ -6285,6 +6285,7 @@ lotr_travel_events.0024 = { # Second time meeting the Orc - Scared him
 		animation = fear
 	}
 	trigger = {
+		exists = scope:nemesis_orc
 		is_available_travelling = yes
 		is_location_valid_for_travel_event_on_land = yes
 		NOT = { has_character_flag = nemesis_orc_first_encounter }
@@ -8288,7 +8289,7 @@ lotr_travel_events.0200 = { # Old Flames
 	trigger = {
 		location = {
 			is_coastal = yes
-			culture = { has_cultural_tradition = tradition_belfalathrim_chivalry }
+			culture ?= { has_cultural_tradition = tradition_belfalathrim_chivalry }
 			has_holding = no
 			OR = { # Cape near Dol Amroth
 				duchy = title:d_lond_ernil

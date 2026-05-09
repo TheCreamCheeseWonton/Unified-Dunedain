@@ -103,14 +103,18 @@ culture_not_warlike_trigger = {
 			culture_tradition:tradition_hunters = { is_in_list = traits }
 			culture_tradition:tradition_warrior_culture = { is_in_list = traits }
 			culture_tradition:tradition_martial_admiration = { is_in_list = traits }
-			culture_tradition:tradition_riders_of_the_mark = { is_in_list = traits }
-			culture_tradition:tradition_a_people_reunited = { is_in_list = traits }
-			culture_tradition:tradition_the_people_of_the_plains = { is_in_list = traits }
-			culture_tradition:tradition_tales_of_great_deeds = { is_in_list = traits }
-			culture_tradition:tradition_warriors_of_rhun = { is_in_list = traits }
-			culture_tradition:tradition_belfalathrim_chivalry = { is_in_list = traits }
+			culture_tradition:tradition_tgp_bushido = { is_in_list = traits }
+			culture_tradition:tradition_tgp_defiant_ambushers = { is_in_list = traits }
+			culture_tradition:tradition_tgp_warrior_monks = { is_in_list = traits }
+			culture_tradition:tradition_tgp_art_of_war = { is_in_list = traits }
+			culture_tradition:tradition_riders_of_the_mark = { is_in_list = traits } #LotR
+			culture_tradition:tradition_a_people_reunited = { is_in_list = traits } #LotR
+			culture_tradition:tradition_the_people_of_the_plains = { is_in_list = traits } #LotR
+			culture_tradition:tradition_tales_of_great_deeds = { is_in_list = traits } #LotR
+			culture_tradition:tradition_warriors_of_rhun = { is_in_list = traits } #LotR
+			culture_tradition:tradition_belfalathrim_chivalry = { is_in_list = traits } #LotR
 			#culture_tradition:tradition_warriors_of_fame_and_field = { is_in_list = traits }
-			culture_tradition:tradition_variag_horse_lords = { is_in_list = traits }
+			culture_tradition:tradition_variag_horse_lords = { is_in_list = traits } #LotR
 		}
 	}
 	custom_description = {
@@ -421,6 +425,7 @@ culture_has_light_cavalry_maa = {
 		has_innovation = innovation_tedjin_warfare
 		has_innovation = innovation_rayan_warfare
 		has_innovation = innovation_dunlending_warriors
+		has_innovation = innovation_qarsa_warfare
 		##Quonton
 		has_innovation = innovation_numenorean_warriors
 		has_innovation = innovation_numenorean_warriors_custom
@@ -480,6 +485,7 @@ culture_has_archer_cavalry_maa = {
 			culture = prev
 			mpo_can_recruit_nomad_maa_trigger = yes
 		}
+		lotr_horse_lords_cultural_pillar_trigger = yes #LotR
 	}
 }
 
@@ -554,6 +560,7 @@ culture_specializes_in_light_cavalry_maa = {
 		has_cultural_tradition = tradition_hit_and_run
 		has_cultural_tradition = tradition_horse_breeder
 		# has_cultural_tradition = tradition_saharan_nomads
+		has_innovation = innovation_arched_saddle #LotR
 		culture_has_light_cavalry_maa = yes
 	}
 }
@@ -821,10 +828,14 @@ culture_tradition_reduction_trigger = {
 	}
 }
 
+culture_is_or_has_ancestor_trigger = {
+	OR = {
+		this = $CULTURE$
+		any_parent_culture_or_above = { this = $CULTURE$ }
+	}
+}
 
-# LOTR 
-
-can_launch_slave_expeditions = {
+can_launch_slave_expeditions = { #LotR 
 	culture = {
 		has_cultural_parameter = can_launch_slave_expeditions
 	}

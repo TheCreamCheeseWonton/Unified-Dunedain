@@ -1274,13 +1274,37 @@ common_faction_modifiers = {
 	}
 
 	#FP3 Strengthern Caliphate
-	# modifier = { # LotR
-	# 	desc = "FACTION_REASON_FP3_SUPPORTER"
-	# 	add = -50
-	# 	global_var:fp3_struggle_ending ?= flag:fp3_struggle_strengthen_caliphate_ending
-	# 	has_trait = fp3_struggle_supporter
-	# 	$FACTION_TARGET$ = { has_title = title:d_sunni }
-	# }
+	modifier = {
+		desc = "FACTION_REASON_FP3_SUPPORTER"
+		add = -50
+		always = no #LotR
+		#global_var:fp3_struggle_ending ?= flag:fp3_struggle_strengthen_caliphate_ending
+		#has_trait = fp3_struggle_supporter
+		#$FACTION_TARGET$ = { has_title = title:d_sunni }
+	}
+	modifier = {
+		add = 500
+		always = no #LotR
+		#trigger_if = {
+		#	limit = {
+		#		exists = scope:actor
+		#	}
+		#	confederation.leading_house.house_head.joined_faction ?= scope:actor.joined_faction
+		#	scope:actor.joined_faction.faction_leader ?= confederation.leading_house.house_head
+		#}
+		#trigger_else = {
+		#	confederation.leading_house.house_head.joined_faction ?= scope:faction
+		#	scope:faction.faction_leader ?= confederation.leading_house.house_head
+		#}
+		desc = "FACTION_REASON_BLOC_LEADER"
+	}
+	modifier = {
+		add = 300
+		desc = FACTION_REASON_DETRACTOR
+		always = no #LotR
+		#has_variable = detractor_faction
+		#var:detractor_faction ?= $FACTION_TARGET$
+	}
 }
 
 independence_faction_create_blockers = {
@@ -3073,7 +3097,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = deviant
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_TARGET$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_TARGET$ }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_DEVIANT_AND_CRIMINAL
@@ -3087,7 +3111,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = incestuous
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = incestuous FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_TARGET$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:incestuous FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_TARGET$ }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_INCESTUOUS_AND_CRIMINAL
@@ -3101,7 +3125,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = sodomite
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = sodomite FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:sodomite FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_SODOMITE_AND_CRIMINAL
@@ -3115,7 +3139,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = cannibal
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = cannibal FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:cannibal FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_CANNIBAL_AND_CRIMINAL
@@ -3126,7 +3150,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = kinslayer_1
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = kinslayer_1 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_1 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_KINSLAYER_1_AND_CRIMINAL
@@ -3137,7 +3161,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = kinslayer_2
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = kinslayer_2 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_2 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 30
 		desc = FACTION_REASON_ADMIN_LIEGE_KINSLAYER_2_AND_CRIMINAL
@@ -3148,7 +3172,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = kinslayer_3
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = kinslayer_3 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:kinslayer_3 FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 40
 		desc = FACTION_REASON_ADMIN_LIEGE_KINSLAYER_3_AND_CRIMINAL
@@ -3162,7 +3186,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = witch
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = witch FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:witch FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_WITCH_AND_CRIMINAL
@@ -3176,7 +3200,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = adulterer
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = adulterer FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:adulterer FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_ADULTERER_AND_CRIMINAL
@@ -3187,7 +3211,7 @@ admin_faction_modifiers = {
 		$FACTION_TARGET$ = {
 			has_trait = fornicator
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = fornicator FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:fornicator FAITH = top_liege.primary_title.state_faith GENDER_CHARACTER = root }
 		}
 		add = 20
 		desc = FACTION_REASON_ADMIN_LIEGE_FORNICATOR_AND_CRIMINAL
@@ -3509,7 +3533,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = deviant
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_DEVIANT_AND_CRIMINAL
@@ -3519,7 +3543,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = incestuous
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_INCESTUOUS_AND_CRIMINAL
@@ -3529,7 +3553,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = sodomite
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_SODOMITE_AND_CRIMINAL
@@ -3539,7 +3563,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = cannibal
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_CANNIBAL_AND_CRIMINAL
@@ -3549,7 +3573,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = kinslayer_1
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -10
 		desc = FACTION_REASON_ADMIN_CLAIMANT_KINSLAYER_1_AND_CRIMINAL
@@ -3559,7 +3583,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = kinslayer_2
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_KINSLAYER_2_AND_CRIMINAL
@@ -3569,7 +3593,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = kinslayer_3
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -30
 		desc = FACTION_REASON_ADMIN_CLAIMANT_KINSLAYER_3_AND_CRIMINAL
@@ -3579,7 +3603,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = witch
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_WITCH_AND_CRIMINAL
@@ -3589,7 +3613,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = adulterer
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_ADULTERER_AND_CRIMINAL
@@ -3599,7 +3623,7 @@ admin_claimant_faction_modifiers = {
 		$FACTION_CLAIMANT$ = {
 			has_trait = fornicator
 			exists = top_liege.primary_title.state_faith
-			trait_is_criminal_in_faith_trigger = { TRAIT = deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
+			trait_is_criminal_in_faith_trigger = { TRAIT = trait:deviant FAITH = $FACTION_TARGET$.primary_title.state_faith GENDER_CHARACTER = $FACTION_CLAIMANT$ }
 		}
 		add = -20
 		desc = FACTION_REASON_ADMIN_CLAIMANT_FORNICATOR_AND_CRIMINAL
@@ -3615,6 +3639,7 @@ admin_claimant_faction_modifiers = {
 	#	add = 25
 	#	desc = FACTION_REASON_ADMIN_BORN_IN_PURPLE
 	# }
+	##Quonton
 	modifier = { # Prefer a claimant who is born in the purple when the liege is not
 		ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context
 		OR = { 
@@ -3628,6 +3653,7 @@ admin_claimant_faction_modifiers = {
 		add = 25
 		desc = FACTION_REASON_ADMIN_BORN_IN_PURPLE
 	}
+	##End Quonton
 	## Unpreferred heir
 	#modifier = { # Admin realms have extra trouble with Unpreferred Heirs
 	# 	ep3_admin_faction_trigger = { FACTION_TARGET = $FACTION_TARGET$ } # Required for dlc context

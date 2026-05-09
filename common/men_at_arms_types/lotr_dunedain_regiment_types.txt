@@ -41,7 +41,7 @@ gondorian_footmen = { # Armored spearmen, represent elite formations organized i
 	}
 
 	damage = 38
-	toughness = 24
+	toughness = 34
 	pursuit = 0
 	screen = 20
 	
@@ -234,7 +234,7 @@ rangers_of_ithilien = {
 	counters = {
 		skirmishers = 1
 		elephant_cavalry = 1
-		monster = 1
+		monster = 1.5
 	}
 
 	buy_cost = { gold = 120 }
@@ -302,6 +302,7 @@ harondorim_rangers = {
 		pikemen = 1
 		heavy_infantry = 1
 		elephant_cavalry = 1
+		monster = 1
 	}
 
 	buy_cost = { gold = 155 }
@@ -459,8 +460,8 @@ swan_knights = {
 
 
 	counters = {
-		skirmishers = 2
-		archers = 1
+		skirmishers = 1
+		archers = 2
 	}
 
 	buy_cost = { gold = 285 }
@@ -504,6 +505,7 @@ wardens_tirith_aear = {
 		heavy_cavalry = 1
 		camel_cavalry = 1
 		elephant_cavalry = 1
+		monster = 1
 	}
 
 	buy_cost = { gold = 165 }
@@ -553,6 +555,7 @@ gondorian_clansmen = {
 
 	counters = {
 		heavy_infantry = 2
+		monster = 1
 	}
 
 	winter_bonus = {
@@ -898,38 +901,54 @@ grey_company = { # Grey Company.
 
 ### Dol Amroth Special Units
 
-# nimrodel_rangers = {
-# 	type = archers
+nimrodel_rangers = { # Can only be unlocked as an exclusive endgame choice
+	type = archers
 	
-# 	damage = 50
-# 	toughness = 15
-# 	pursuit = 0
-# 	screen = 10
+	damage = 75
+	toughness = 55
+	pursuit = 25
+	screen = 50
 	
-# 	terrain_bonus = {
-# 		hills = { damage = 10 toughness = 4 }
-# 		forest = { toughness = 4 screen = 4 }
-# 		taiga = { toughness = 4 screen = 4 }
-# 	}
+	terrain_bonus = {
+		wetlands = { damage = 45 toughness = 35 pursuit = 10 screen = 15}
+		floodplains = { damage = 45 toughness = 33 pursuit = 8 screen = 15 }
+		taiga = { damage = 34 toughness = 25 pursuit = 6 screen = 12 }
+		hills = { damage = 23 toughness = 17 pursuit = 4 screen = 8 }
+	}
 
-# 	counters = {
-# 		skirmishers = 1
-# 		heavy_cavalry = 1
-# 	}
+	counters = {
+		light_cavalry = 1
+		heavy_infantry = 1
+		monster = 1
+	}
 
-# 	buy_cost = { gold = longbowmen_recruitment_cost }
-# 	low_maintenance_cost = { gold = longbowmen_low_maint_cost }
-# 	high_maintenance_cost = { gold = longbowmen_high_maint_cost }
-# 	allowed_in_hired_troops = no
-# #	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
-	# can_recruit = { always = yes }
+	allowed_in_hired_troops = no
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 
+	can_recruit = { 
+		culture = { has_innovation = innovation_nimrodel_rangers } 
+		AND = {
+			OR = {
+				has_title = title:k_belfalas
+				any_liege_or_above = { has_title = title:k_belfalas }
+			}
+			# is_target_in_global_variable_list = {
+				# name = unavailable_unique_decisions
+				# target = flag:decision_dol_amroth_maa_choice_archers
+			# }
+		}
+	}
 	
-# 	stack = 100
-# 	ai_quality = { value = culture_ai_weight_archers }
-# 	icon = nimrodel_rangers
-# #	icon = dunedain_bow
-# }
+	buy_cost = { gold = 120 }
+	low_maintenance_cost = { gold = 0.43 }
+	high_maintenance_cost = { gold = 1.3 }
+	provision_cost = @provisions_cost_infantry_moderate
+	
+	stack = 50
+	ai_quality = { value = @cultural_maa_extra_ai_score }
+	
+	icon = nimrodel_rangers
+}
 
 # seaward_spearmen = { 
 # 	type = heavy_infantry
@@ -1122,31 +1141,48 @@ grey_company = { # Grey Company.
 # 	icon = royal_swan_guard
 # }
 
-# talon_knights = { #Elite of the elite Dol Amroth knights
-# 	type = heavy_infantry
+talon_knights = { #Elite of the elite Dol Amroth knights
+	type = heavy_infantry
 	
-# 	damage = 155
-# 	toughness = 90
-# 	pursuit = 0
-# 	screen = 30
-
-# 	counters = {
-# 		pikemen = 1 
-# 		skirmishers = 1
-# 	}
-
-# 	buy_cost = { gold = 300 }
-# 	low_maintenance_cost = { gold = 1 }
-# 	high_maintenance_cost = { gold = 3 }
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
+	can_recruit = { 
+		culture = { has_innovation = innovation_talon_knights } 
+		AND = {
+			OR = {
+				has_title = title:k_belfalas
+				any_liege_or_above = { has_title = title:k_belfalas }
+			}
+		}
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
+	}
 	
-# 	stack = 50
+	damage = 36
+	toughness = 56
+	pursuit = 5
+	screen = 25
 
-# 	allowed_in_hired_troops = no
-# #	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
-	# can_recruit = { always = yes }
-# 	ai_quality = { value = @cultural_maa_extra_ai_score }
-# 	icon = talon_knights
-# }
+	counters = {
+		pikemen = 1 
+		archers = 1
+		peasant_militia = 2
+	}
+
+	buy_cost = { gold = 140 }
+	low_maintenance_cost = { gold = 0.5 }
+	high_maintenance_cost = { gold = 1.5 }
+	
+	stack = 50
+
+	icon = talon_knights
+	
+	terrain_bonus = {
+		plains = { damage = 5 toughness = 8 pursuit = 1 screen = 4 }
+		farmlands = { damage = 5 toughness = 8 pursuit = 1 screen = 4 }
+	}
+
+}
 
 # haven_guard = { 
 # 	type = heavy_infantry
@@ -1495,6 +1531,9 @@ numenorean_elites_custom = {
 				has_perk = planned_cultivation_perk
 				location.culture ?= { has_innovation = innovation_numenorean_warriors_custom }
 			}
+		}
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
 		}
 	}
 
@@ -1858,6 +1897,9 @@ numenorean_elites_adunaic = {
 				location.culture ?= { has_innovation = innovation_numenorean_warriors_adunaic }
 			}
 		}
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
 	}
 
 	damage = 120
@@ -1959,7 +2001,7 @@ numenorean_soldiers = {
 			}
 		}
 	}
-	
+
 	##Quonton buffed to match new numenorean
 	damage = 58
 	toughness = 70
@@ -2226,7 +2268,7 @@ numenorean_elites = {
 			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
 		}
 	}
-	
+
 	##Quonton buffed to match new numenorean
 	damage = 120
 	toughness = 125
@@ -2255,6 +2297,7 @@ numenorean_elites = {
 # Duplicates of Numenorean soldiers, just with slightly smaller numbers
 ##Quonton
 dunedain_marines = { #represents Dunedain maritime traditions and mainly there for flavor. From gameplay perspective they are good skirmishers
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
@@ -2308,7 +2351,8 @@ dunedain_marines = { #represents Dunedain maritime traditions and mainly there f
 
 dunedain_soldiers = {
 	type = heavy_infantry
-
+	
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
@@ -2348,6 +2392,7 @@ dunedain_soldiers = {
 
 dunedain_reformed_wardens = { # Spear wielding rangers
 	type = pikemen
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = { 
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
@@ -2400,7 +2445,8 @@ dunedain_reformed_wardens = { # Spear wielding rangers
 
 dunedain_archers = {
 	type = archers
-
+	
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
@@ -2451,6 +2497,7 @@ dunedain_archers = {
 dunedain_steelbow = {
 	type = archers
 
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors_steelbow }
@@ -2500,7 +2547,8 @@ dunedain_steelbow = {
 
 dunedain_knights = {
 	type = heavy_cavalry
-
+	
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
@@ -2556,6 +2604,7 @@ dunedain_knights = {
 }
 
 dunedain_elites = {
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = { 
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
@@ -2569,6 +2618,9 @@ dunedain_elites = {
 					location.culture ?= { has_innovation = innovation_dunedain_warriors_steelbow }
 				}
 			}
+		}
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
 		}
 	}
 	type = heavy_infantry
@@ -2599,6 +2651,7 @@ dunedain_elites = {
 
 ##Quonton
 dunedain_reformed_rangers = { #Longbowmen with increased damage and screen, bonus in forest
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = { 
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }
@@ -2654,6 +2707,7 @@ dunedain_reformed_rangers = { #Longbowmen with increased damage and screen, bonu
 
 dunedain_reformed_outriders = {
 	type = light_cavalry
+	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = { 
 		OR = {
 			culture = { has_innovation = innovation_dunedain_warriors }

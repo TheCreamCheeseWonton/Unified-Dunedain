@@ -1190,6 +1190,31 @@ swan_shield_template = {
 	unique = yes
 }
 
+swan_circlet_template = {
+	can_equip = {
+		trigger_if = {
+			limit = {
+				has_ach_dlc_trigger = yes
+				coronation_proper_artifact_crown_trigger = yes
+				NOT = { scope:artifact = { category = court } }
+			}
+			NOT = { has_realm_law = uncrowned }
+		}
+	}
+
+	can_benefit = {
+		always = yes
+	}
+
+	fallback = {
+		monthly_prestige = 0.5
+		diplomacy = 1
+    	monthly_dynasty_prestige = 0.05
+	}
+
+	unique = yes
+}
+
 ## Arnor ##
 
 
@@ -1936,6 +1961,63 @@ crown_of_imrazor_II_template = {
 	# if a given character does not pass the "can_benefit" trigger then this modifier will be applied instead.
 	fallback = {
 		monthly_prestige = 0.5
+		monthly_dynasty_prestige = 0.05
+	}
+
+	ai_score = {
+		value = 100
+	}
+
+	unique = yes
+}
+
+reform_amendment_template = {
+	can_equip = {
+		always = yes
+	}
+
+	# can this character benefit from the full modifiers of the artifact?
+	can_benefit = {
+		AND = {
+			culture = { has_cultural_tradition = tradition_reformed_kharadunai }
+			faith_is_good = yes
+		}
+	}
+
+	# if a given character does not pass the "can_benefit" trigger then this modifier will be applied instead.
+	fallback = {
+		monthly_prestige = 0.3
+	}
+
+	ai_score = {
+		value = 100
+	}
+
+	unique = yes
+}
+
+reformer_scepter_template = {
+	can_equip = {
+		trigger_if = {
+			limit = {
+				has_ach_dlc_trigger = yes
+				coronation_proper_artifact_regalia_trigger = yes
+			}
+			NOT = { has_realm_law = uncrowned }
+		}
+	}
+
+	# can this character benefit from the full modifiers of the artifact?
+	can_benefit = {
+		AND = {
+			culture = { has_cultural_tradition = tradition_reformed_kharadunai }
+			faith_is_good = yes
+		}
+	}
+
+	# if a given character does not pass the "can_benefit" trigger then this modifier will be applied instead.
+	fallback = {
+		monthly_piety = 0.5
 		monthly_dynasty_prestige = 0.05
 	}
 
@@ -2867,15 +2949,7 @@ spear_amav_template = {
 
 	# can this character benefit from the full modifiers of the artifact?
 	can_benefit = {
-		OR = {
-			culture = { has_cultural_pillar = heritage_mumakani }
-			culture = { has_cultural_pillar = heritage_geshan }
-			culture = { has_cultural_pillar = heritage_kirani }
-			culture = { has_cultural_pillar = heritage_hathorim }
-			culture = { has_cultural_pillar = heritage_magri }
-			culture = { has_cultural_pillar = heritage_shayn }
-			culture = { has_cultural_pillar = heritage_sare }
-		}
+		culture = { has_cultural_parameter = heritage_family_haradrim }
 	}
 
 	# if a given character does not pass the "can_benefit" trigger then this modifier will be applied instead.

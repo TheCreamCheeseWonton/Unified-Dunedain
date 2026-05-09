@@ -164,7 +164,6 @@
 			culture:azralai = { custom_tooltip = azralai_desc }
 			culture:gimilarani = { custom_tooltip = gimilarani_desc }
 			
-			
 			# Northron
 			culture:northron = { custom_tooltip = northron_desc }
 			culture:valemen = { custom_tooltip = valemen_desc }

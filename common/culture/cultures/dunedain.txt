@@ -123,7 +123,7 @@ new_dunedain = {
 	
 	ethnicities = {
 		3 = numenorean_ethnicity
-		1 = gondorian_ethnicity
+		1 = eriadorim_ethnicity
 	}
 }
 ##End Quonton
@@ -162,7 +162,7 @@ dunedain = {
 	
 	ethnicities = {
 		3 = numenorean_ethnicity
-		1 = gondorian_ethnicity
+		1 = eriadorim_ethnicity
 	}
 }
 
@@ -201,7 +201,7 @@ arnorian = {
 	
 	ethnicities = {
 		2 = numenorean_ethnicity
-		3 = gondorian_ethnicity
+		3 = eriadorim_ethnicity
 	}
 }
 
@@ -245,7 +245,7 @@ uialedain = { #Folk of Emyn Uial (Hills of Evendim)
 	
 	ethnicities = {
 		1 = numenorean_ethnicity
-		1 = gondorian_ethnicity
+		1 = eriadorim_ethnicity
 	}
 }
 
@@ -285,7 +285,7 @@ dunedain_ranger = { # For the Dúnedain of Arnor after the fall of Fornost and t
 	
 	ethnicities = {
 		1 = numenorean_ethnicity
-		1 = gondorian_ethnicity
+		1 = eriadorim_ethnicity
 	}
 }
 
@@ -326,7 +326,7 @@ new_arnorian = { # Revivalist culture of Arnor in the Fourth Age
 
 	ethnicities = {
 		2 = numenorean_ethnicity
-		3 = gondorian_ethnicity
+		3 = eriadorim_ethnicity
 	}
 }
 
@@ -397,11 +397,8 @@ caledhrim = { # The people of Calenardhon, descended from a mix of the local Dae
 	
 	ethnicities = { # mixed Daen and Gondorian ethnicites
 		50 = gondorian_ethnicity
-		15 = dunlending_ethnicity
-		10 = caucasian_northern_brown_hair
-		10 = caucasian_northern_dark_hair
-		5 = caucasian_northern_blond
-		5 = caucasian_northern_ginger
+		10 = dunlending_ethnicity
+		10 = donan_ethnicity		
 		5 = numenorean_ethnicity
 	}
 }
@@ -437,11 +434,7 @@ orodbedhrim = { # The mixed people of the highlands, descended from the Men of t
 	
 	ethnicities = { # mixed Daen and Gondorian ethnicites
 		40 = gondorian_ethnicity
-		15 = dunlending_ethnicity
-		15 = caucasian_northern_brown_hair
-		15 = caucasian_northern_dark_hair
-		5 = caucasian_northern_blond
-		5 = caucasian_northern_ginger
+		55 = eredrim_ethnicity
 		5 = numenorean_ethnicity
 	}
 }
@@ -514,7 +507,7 @@ harondorim = {
 		55 = gondorian_ethnicity
 		15 = haradrim_ethnicity
 		15 = umbarean_ethnicity
-		10 = dunlending_ethnicity
+		10 = donan_ethnicity
 		5 = numenorean_ethnicity
 	}
 }

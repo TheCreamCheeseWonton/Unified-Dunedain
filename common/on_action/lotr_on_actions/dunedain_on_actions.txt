@@ -429,19 +429,23 @@ dunedain_on_game_start = {
 			deactivate_holy_site = guishas_faithful
 		}
 		##Quonton
-		character:linegimilzadan2 = {
-			if = {
-				limit = {
+		if = { 
+			limit = {
+				character:linegimilzadan2 = {
 					is_alive = yes
 				}
+			}
+			character:linegimilzadan2 = { 
 				lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 			}
 		}
-		character:linegimilethtwocustom2 = {
-			if = { 
-				limit = {
+		if = { 
+			limit = {
+				character:linegimilzadan2 = {
 					is_alive = yes
 				}
+			}
+			character:linegimilethtwocustom2 = {
 				start_dog_story_cycle_effect = yes
 				assign_dog_gender_effect = { GENDER = female }
 				assign_dog_fur_color_effect = { COLOR = brown }
@@ -544,6 +548,7 @@ dunedain_on_vassal_gained = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -582,6 +587,7 @@ dunedain_on_vassal_gained = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -624,6 +630,7 @@ dunedain_on_vassal_change = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -662,6 +669,7 @@ dunedain_on_vassal_change = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -702,6 +710,7 @@ dunedain_on_faith_conversion = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -740,6 +749,7 @@ dunedain_on_faith_conversion = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -815,7 +825,6 @@ dunedain_on_faith_conversion = {
 
 dunedain_on_character_faith_change = {
 	effect = {
-		debug_log = "my custom on_action has triggered"
 		if = {
 			limit = { 
 				NOT = { has_game_rule = default_evil_strength }
@@ -842,6 +851,7 @@ dunedain_on_character_faith_change = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -880,6 +890,7 @@ dunedain_on_character_faith_change = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -1012,6 +1023,7 @@ dunedain_on_death = {
 					NOT = { 
 						this = character:lineofsauron 
 					}
+					is_ai = yes
 				}
 			}
 			if = {

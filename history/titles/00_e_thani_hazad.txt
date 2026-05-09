@@ -101,7 +101,7 @@ k_an_balkumagan = {
 	5180.7.9 = {
 		holder = lineofanballukkhorohin2
 	}
-	5324.8.3 = {
+	5324.8.3 = {# RoA ruler
 		holder = lineofanballukkhorohin3
 	}
 	5432.7.9 = {
@@ -1905,11 +1905,22 @@ d_sakya = {
         holder = lineofrotthor3a3a2a4a1a5 # Ro_o_ttho_o_r
     }
 	4952.3.20 = {
-		holder = 0
-    }
-
-	5256.2.14 = {
-        holder = lineofrotthorANGMARTEMP # Phaza_a_kkha_a_d NUMERAL
+		holder = lineofrotthor100
+	}
+	5050.5.25 = {
+		holder = lineofrotthor101
+	}
+	5140.7.27  = {
+		holder = lineofrotthor102
+	}
+	5195.9.9  = {
+		holder = lineofrotthor103
+	}
+	5270.7.6  = {
+		holder = lineofrotthor104
+	}
+	5378.7.18 = { # RoA ruler
+        holder = lineofrotthor105 # Phaza_a_kkha_a_d
     }
 	5419.1.11 = {
         holder = 0
@@ -2055,9 +2066,23 @@ c_yakhi = {
 	4861.2.12 = {
         holder = lineofrotthor3a3a2a4a1a5 # Ro_o_ttho_o_r
     }
-
-	5256.2.14 = {
-        holder = lineofrotthorANGMARTEMP # Phaza_a_kkha_a_d NUMERAL
+	4952.3.20 = {
+		holder = lineofrotthor100
+	}
+	5050.5.25 = {
+		holder = lineofrotthor101
+	}
+	5140.7.27  = {
+		holder = lineofrotthor102
+	}
+	5195.9.9  = {
+		holder = lineofrotthor103
+	}
+	5270.7.6  = {
+		holder = lineofrotthor104
+	}
+	5378.7.18 = { # RoA ruler
+        holder = lineofrotthor105 # Phaza_a_kkha_a_d
     }
 
     5822.4.13 = {
@@ -2197,9 +2222,23 @@ c_vesala = {
 	4861.2.12 = {
         holder = lineofrotthor3a3a2a4a1a5 # Ro_o_ttho_o_r
     }
-
-	5256.2.14 = {
-        holder = lineofrotthorANGMARTEMP # Phaza_a_kkha_a_d NUMERAL
+	4952.3.20 = {
+		holder = lineofrotthor100
+	}
+	5050.5.25 = {
+		holder = lineofrotthor101
+	}
+	5140.7.27  = {
+		holder = lineofrotthor102
+	}
+	5195.9.9  = {
+		holder = lineofrotthor103
+	}
+	5270.7.6  = {
+		holder = lineofrotthor104
+	}
+	5378.7.18 = { # RoA ruler
+        holder = lineofrotthor105 # Phaza_a_kkha_a_d
     }
 
     5822.4.13 = {
@@ -2337,7 +2376,25 @@ c_biyori = {
 	4861.2.12 = {
         holder = lineofrotthor3a3a2a4a1a5 # Ro_o_ttho_o_r
     }
-
+	4952.3.20 = {
+		holder = lineofrotthor100
+	}
+	5050.5.25 = {
+		holder = lineofrotthor101
+	}
+	5140.7.27  = {
+		holder = lineofrotthor102
+	}
+	5195.9.9  = {
+		holder = lineofrotthor103
+	}
+	5270.7.6  = {
+		holder = lineofrotthor104
+	}
+	5378.7.18 = { # RoA ruler
+        holder = lineofrotthor105 # Phaza_a_kkha_a_d
+    }
+	
     5822.4.13 = {
         holder = lineofsakya1 #Pharazo_o_n
 		change_development_level = 5	
@@ -3878,16 +3935,74 @@ d_velashar = {
 	3941.6.4 = {
         holder = lineofbarimanurid5a4 # Sakalro_o_th
     }
-	4006.12.19 = {
-        holder = 0 # Sakalrôth makes a deal with Abâruzôr, and when he dies, Sakalthôr Abâruzôr's son dismantles the title of the duchies
+    3973.9.16 = {
+        holder = lineofbarimanurid52 #Azu_u_lzi_i_r
     }
+    4069.11.6 = {
+        holder = lineofbarimanurid54 #Imruzi_i_r
+    }
+    4126.10.7 = {
+        holder = lineofbarimanurid56 #Karbuzi_i_r
+    }
+    4197.11.11 = {
+        holder = lineofbarimanurid58 #Ephalzo_o_r
+    }
+    4223.12.7 = {
+        holder = lineofbarimanurid62 #Tamarzi_i_r
+    }
+    4373.4.28 = {
+        holder = lineofbarimanurid64 #Be_e_lzagar
+    }
+    4476.8.16 = {
+        holder = lineofbarimanurid66 #Balkazi_i_r
+    }
+    4563.5.5 = {
+        holder = lineofbarimanurid68 #Aba_a_ragar
+    }
+    4591.3.19 = {
+        holder = lineofbarimanurid70 #Erakho_o_r
+    }
+    4680.1.23 = {
+        holder = lineofbarimanurid72 #Izindikho_o_r
+    }
+    4744.11.12 = {
+        holder = lineofbarimanurid74 #Azgarzi_i_r
+    }
+    4842.1.17 = {
+        holder = lineofbarimanurid76 #Be_e_lkho_o_r
+    }
+    4924.6.23 = {
+        holder = lineofbarimanurid78 #Inzilurud
+    }
+    4931.10.17 = {
+        holder = lineofbarimanurid80 #Zimrupa_a_n
+    }
+    5015.12.27 = {
+        holder = lineofbarimanurid82 #Izindikho_o_r
+    }
+    5073.2.18 = {
+        holder = lineofbarimanurid84 #Izindo_o_n
+    }
+    5167.3.18 = {
+        holder = lineofbarimanurid86 #Minulzo_o_r
+    }
+    5268.5.20 = {
+        holder = lineofbarimanurid88 #Izinduzo_o_r
+    }
+    5329.3.12 = {
+        holder = lineofbarimanurid90 #Aba_a_ragar
+    }
+    5380.3.11 = { # RoA ruler
+        holder = lineofbarimanurid92 #Narduhil
+    }
+    5484.9.16 = {
+        holder = lineofbarimanurid95 #Aba_a_zagar
+    }
+	5555.5.5 = {
+		holder = 0
+	}
+	
 
-	5288.6.11 = {
-        holder = lineofbarimanuridANGMARTEMP # Nardu_u_hil
-    }
-	5446.12.11 = {
-        holder = 0
-    }
 }
 c_bralishina = {
 	3320.12.14 = {
@@ -3922,11 +4037,69 @@ c_bralishina = {
     }
 	3957.4.22 = {
         holder = lineofbarimanurid2a3a3a1 # Arzagar
-		liege = k_an_balkumagan
     }
-
-	5288.6.11 = {
-        holder = lineofbarimanuridANGMARTEMP # Nardu_u_hil
+    3973.9.16 = {
+        holder = lineofbarimanurid52 #Azu_u_lzi_i_r
+    }
+    4069.11.6 = {
+        holder = lineofbarimanurid54 #Imruzi_i_r
+    }
+    4126.10.7 = {
+        holder = lineofbarimanurid56 #Karbuzi_i_r
+    }
+    4197.11.11 = {
+        holder = lineofbarimanurid58 #Ephalzo_o_r
+    }
+    4223.12.7 = {
+        holder = lineofbarimanurid62 #Tamarzi_i_r
+    }
+    4373.4.28 = {
+        holder = lineofbarimanurid64 #Be_e_lzagar
+    }
+    4476.8.16 = {
+        holder = lineofbarimanurid66 #Balkazi_i_r
+    }
+    4563.5.5 = {
+        holder = lineofbarimanurid68 #Aba_a_ragar
+    }
+    4591.3.19 = {
+        holder = lineofbarimanurid70 #Erakho_o_r
+    }
+    4680.1.23 = {
+        holder = lineofbarimanurid72 #Izindikho_o_r
+    }
+    4744.11.12 = {
+        holder = lineofbarimanurid74 #Azgarzi_i_r
+    }
+    4842.1.17 = {
+        holder = lineofbarimanurid76 #Be_e_lkho_o_r
+    }
+    4924.6.23 = {
+        holder = lineofbarimanurid78 #Inzilurud
+    }
+    4931.10.17 = {
+        holder = lineofbarimanurid80 #Zimrupa_a_n
+    }
+    5015.12.27 = {
+        holder = lineofbarimanurid82 #Izindikho_o_r
+    }
+    5073.2.18 = {
+        holder = lineofbarimanurid84 #Izindo_o_n
+    }
+    5167.3.18 = {
+        holder = lineofbarimanurid86 #Minulzo_o_r
+    }
+    5268.5.20 = {
+        holder = lineofbarimanurid88 #Izinduzo_o_r
+    }
+    5329.3.12 = {
+        holder = lineofbarimanurid90 #Aba_a_ragar
+    }
+    5380.3.11 = { # RoA ruler
+        holder = lineofbarimanurid92 #Narduhil
+    }
+    5484.9.16 = {
+        holder = lineofbarimanurid95 #Aba_a_zagar
     }
 
     6204.4.7 = {
@@ -4016,11 +4189,69 @@ c_managal = {
     }
 	3957.4.22 = {
         holder = lineofbarimanurid2a3a3a1 # Arzagar
-		liege = k_an_balkumagan
     }
-
-	5288.6.11 = {
-        holder = lineofbarimanuridANGMARTEMP # Nardu_u_hil
+    3973.9.16 = {
+        holder = lineofbarimanurid52 #Azu_u_lzi_i_r
+    }
+    4069.11.6 = {
+        holder = lineofbarimanurid54 #Imruzi_i_r
+    }
+    4126.10.7 = {
+        holder = lineofbarimanurid56 #Karbuzi_i_r
+    }
+    4197.11.11 = {
+        holder = lineofbarimanurid58 #Ephalzo_o_r
+    }
+    4223.12.7 = {
+        holder = lineofbarimanurid62 #Tamarzi_i_r
+    }
+    4373.4.28 = {
+        holder = lineofbarimanurid64 #Be_e_lzagar
+    }
+    4476.8.16 = {
+        holder = lineofbarimanurid66 #Balkazi_i_r
+    }
+    4563.5.5 = {
+        holder = lineofbarimanurid68 #Aba_a_ragar
+    }
+    4591.3.19 = {
+        holder = lineofbarimanurid70 #Erakho_o_r
+    }
+    4680.1.23 = {
+        holder = lineofbarimanurid72 #Izindikho_o_r
+    }
+    4744.11.12 = {
+        holder = lineofbarimanurid74 #Azgarzi_i_r
+    }
+    4842.1.17 = {
+        holder = lineofbarimanurid76 #Be_e_lkho_o_r
+    }
+    4924.6.23 = {
+        holder = lineofbarimanurid78 #Inzilurud
+    }
+    4931.10.17 = {
+        holder = lineofbarimanurid80 #Zimrupa_a_n
+    }
+    5015.12.27 = {
+        holder = lineofbarimanurid82 #Izindikho_o_r
+    }
+    5073.2.18 = {
+        holder = lineofbarimanurid84 #Izindo_o_n
+    }
+    5167.3.18 = {
+        holder = lineofbarimanurid86 #Minulzo_o_r
+    }
+    5268.5.20 = {
+        holder = lineofbarimanurid88 #Izinduzo_o_r
+    }
+    5329.3.12 = {
+        holder = lineofbarimanurid90 #Aba_a_ragar
+    }
+    5380.3.11 = { # RoA ruler
+        holder = lineofbarimanurid92 #Narduhil
+    }
+    5484.9.16 = {
+        holder = lineofbarimanurid95 #Aba_a_zagar
     }
 
     6204.4.7 = {
@@ -4109,9 +4340,71 @@ c_akuzal = {
     }
 	3957.4.22 = {
         holder = lineofbarimanurid2a3a3a1 # Arzagar
-		liege = k_an_balkumagan
     }
-
+    3973.9.16 = {
+        holder = lineofbarimanurid52 #Azu_u_lzi_i_r
+    }
+    4069.11.6 = {
+        holder = lineofbarimanurid54 #Imruzi_i_r
+    }
+    4126.10.7 = {
+        holder = lineofbarimanurid56 #Karbuzi_i_r
+    }
+    4197.11.11 = {
+        holder = lineofbarimanurid58 #Ephalzo_o_r
+    }
+    4223.12.7 = {
+        holder = lineofbarimanurid62 #Tamarzi_i_r
+    }
+    4373.4.28 = {
+        holder = lineofbarimanurid64 #Be_e_lzagar
+    }
+    4476.8.16 = {
+        holder = lineofbarimanurid66 #Balkazi_i_r
+    }
+    4563.5.5 = {
+        holder = lineofbarimanurid68 #Aba_a_ragar
+    }
+    4591.3.19 = {
+        holder = lineofbarimanurid70 #Erakho_o_r
+    }
+    4680.1.23 = {
+        holder = lineofbarimanurid72 #Izindikho_o_r
+    }
+    4744.11.12 = {
+        holder = lineofbarimanurid74 #Azgarzi_i_r
+    }
+    4842.1.17 = {
+        holder = lineofbarimanurid76 #Be_e_lkho_o_r
+    }
+    4924.6.23 = {
+        holder = lineofbarimanurid78 #Inzilurud
+    }
+    4931.10.17 = {
+        holder = lineofbarimanurid80 #Zimrupa_a_n
+    }
+    5015.12.27 = {
+        holder = lineofbarimanurid82 #Izindikho_o_r
+    }
+    5073.2.18 = {
+        holder = lineofbarimanurid84 #Izindo_o_n
+    }
+    5167.3.18 = {
+        holder = lineofbarimanurid86 #Minulzo_o_r
+    }
+    5268.5.20 = {
+        holder = lineofbarimanurid88 #Izinduzo_o_r
+    }
+    5329.3.12 = {
+        holder = lineofbarimanurid90 #Aba_a_ragar
+    }
+    5380.3.11 = { # RoA ruler
+        holder = lineofbarimanurid92 #Narduhil
+    }
+    5484.9.16 = {
+        holder = lineofbarimanurid95 #Aba_a_zagar
+    }
+	
     6204.4.7 = {
         holder = lineofsapazir1 #Abraza_a_n
 		change_development_level = 4
@@ -4199,7 +4492,66 @@ c_rakashar = {
     }
 	4001.5.14 = {
         holder = lineofbalannaru2c1 # I_I_bal
-		liege = k_an_balkumagan
+    }
+    4069.11.6 = {
+        holder = lineofbarimanurid54 #Imruzi_i_r
+    }
+    4126.10.7 = {
+        holder = lineofbarimanurid56 #Karbuzi_i_r
+    }
+    4197.11.11 = {
+        holder = lineofbarimanurid58 #Ephalzo_o_r
+    }
+    4223.12.7 = {
+        holder = lineofbarimanurid62 #Tamarzi_i_r
+    }
+    4373.4.28 = {
+        holder = lineofbarimanurid64 #Be_e_lzagar
+    }
+    4476.8.16 = {
+        holder = lineofbarimanurid66 #Balkazi_i_r
+    }
+    4563.5.5 = {
+        holder = lineofbarimanurid68 #Aba_a_ragar
+    }
+    4591.3.19 = {
+        holder = lineofbarimanurid70 #Erakho_o_r
+    }
+    4680.1.23 = {
+        holder = lineofbarimanurid72 #Izindikho_o_r
+    }
+    4744.11.12 = {
+        holder = lineofbarimanurid74 #Azgarzi_i_r
+    }
+    4842.1.17 = {
+        holder = lineofbarimanurid76 #Be_e_lkho_o_r
+    }
+    4924.6.23 = {
+        holder = lineofbarimanurid78 #Inzilurud
+    }
+    4931.10.17 = {
+        holder = lineofbarimanurid80 #Zimrupa_a_n
+    }
+    5015.12.27 = {
+        holder = lineofbarimanurid82 #Izindikho_o_r
+    }
+    5073.2.18 = {
+        holder = lineofbarimanurid84 #Izindo_o_n
+    }
+    5167.3.18 = {
+        holder = lineofbarimanurid86 #Minulzo_o_r
+    }
+    5268.5.20 = {
+        holder = lineofbarimanurid88 #Izinduzo_o_r
+    }
+    5329.3.12 = {
+        holder = lineofbarimanurid90 #Aba_a_ragar
+    }
+    5380.3.11 = { # RoA ruler
+        holder = lineofbarimanurid92 #Narduhil
+    }
+    5484.9.16 = {
+        holder = lineofbarimanurid95 #Aba_a_zagar
     }
 
     6731.1.1 = {
@@ -4266,9 +4618,68 @@ c_manaman = {
     }
 	4001.5.14 = {
         holder = lineofbalannaru2c1 # I_I_bal
-		liege = k_an_balkumagan
     }
-	
+    4069.11.6 = {
+        holder = lineofbarimanurid54 #Imruzi_i_r
+    }
+    4126.10.7 = {
+        holder = lineofbarimanurid56 #Karbuzi_i_r
+    }
+    4197.11.11 = {
+        holder = lineofbarimanurid58 #Ephalzo_o_r
+    }
+    4223.12.7 = {
+        holder = lineofbarimanurid62 #Tamarzi_i_r
+    }
+    4373.4.28 = {
+        holder = lineofbarimanurid64 #Be_e_lzagar
+    }
+    4476.8.16 = {
+        holder = lineofbarimanurid66 #Balkazi_i_r
+    }
+    4563.5.5 = {
+        holder = lineofbarimanurid68 #Aba_a_ragar
+    }
+    4591.3.19 = {
+        holder = lineofbarimanurid70 #Erakho_o_r
+    }
+    4680.1.23 = {
+        holder = lineofbarimanurid72 #Izindikho_o_r
+    }
+    4744.11.12 = {
+        holder = lineofbarimanurid74 #Azgarzi_i_r
+    }
+    4842.1.17 = {
+        holder = lineofbarimanurid76 #Be_e_lkho_o_r
+    }
+    4924.6.23 = {
+        holder = lineofbarimanurid78 #Inzilurud
+    }
+    4931.10.17 = {
+        holder = lineofbarimanurid80 #Zimrupa_a_n
+    }
+    5015.12.27 = {
+        holder = lineofbarimanurid82 #Izindikho_o_r
+    }
+    5073.2.18 = {
+        holder = lineofbarimanurid84 #Izindo_o_n
+    }
+    5167.3.18 = {
+        holder = lineofbarimanurid86 #Minulzo_o_r
+    }
+    5268.5.20 = {
+        holder = lineofbarimanurid88 #Izinduzo_o_r
+    }
+    5329.3.12 = {
+        holder = lineofbarimanurid90 #Aba_a_ragar
+    }
+    5380.3.11 = { # RoA ruler
+        holder = lineofbarimanurid92 #Narduhil
+    }
+    5484.9.16 = {
+        holder = lineofbarimanurid95 #Aba_a_zagar
+    }
+
     6731.1.1 = {
         holder = lineofmanaman1 #Tamruzi_i_r
 		change_development_level = 5
@@ -5037,6 +5448,14 @@ d_mispir = {
 	3770.1.1 = {
 		holder = linemispir1
 		government = oligarchy_government	
+		effect = {
+			holder ?= {
+				start_tributary = {
+					contract_group = tributary_protectorate
+					suzerain = title:d_balan_lai_leader.holder
+				}
+			}
+        }
 	}
 	3902.8.21 = {
 		holder = linemispir2
@@ -5076,13 +5495,13 @@ d_mispir = {
 	}
 	# Azûlzîroni Political Dynasty
 	6649.11.17 = {
-        holder = lineofzaradancadet3 #Minlube_e_n
+        holder = lineofazulzirioninew3 #Minlube_e_n
     }
     6731.4.3 = {
-        holder = lineofzaradancadet7 #Ni_i_lozu_u_r
+        holder = lineofazulzirioninew7 #Ni_i_lozu_u_r
     }
     6825.10.25 = {
-        holder = lineofzaradancadet13 #This ruler was Weak and ineffective making people turn against the Azûlzîronis.
+        holder = lineofazulzirioninew13 #This ruler was Weak and ineffective making people turn against the Azûlzîronis.
     }
 	# Modern Mayors
     6859.11.6 = {
@@ -5105,7 +5524,7 @@ d_mispir = {
         holder = linebaladon5 #Adu_u_nakho_o_r
     }
 	7022.9.11 = {
-	    holder = lineofzaradancadet20 #Minsilbel # Elected
+	    holder = lineofazulzirioninew20 #Minsilbel # Elected
 	}
 	7032.12.15 = {
 		holder = linemispirthree1
@@ -5140,13 +5559,13 @@ c_mispir = {
 	
 	#Zaradan Political Dynasty
     6649.11.17 = {
-        holder = lineofzaradancadet3 #Agandua
+        holder = lineofazulzirioninew3 #Agandua
     }
     6731.4.3 = {
-        holder = lineofzaradancadet7 #Afanusi
+        holder = lineofazulzirioninew7 #Afanusi
     }
     6825.10.25 = {
-        holder = lineofzaradancadet13 #Abrasimi
+        holder = lineofazulzirioninew13 #Abrasimi
     }
 
 	# Modern Mayors
@@ -5170,28 +5589,32 @@ c_mispir = {
         holder = linebaladon5 #Adu_u_nakho_o_r
     }
 	7022.9.11 = {
-	    holder = lineofzaradancadet20 #Minsilbel # Elected
+	    holder = lineofazulzirioninew20 #Minsilbel # Elected
 	}
 	7032.12.15 = {
 		holder = linemispirthree1
 	}
+    7068.11.8 = {
+        holder = lineofazulzirioninew24 #Arkha_a_tho_o_r
+    }
 }
+
 b_tharazarul = {
 	# Modern Mayors
 	6591.9.16 = {
-        holder = lineofzaradancadet1 #Imrakho_o_r
+        holder = lineofazulzirioninew1 #Imrakho_o_r
     }
     6649.11.17 = {
-        holder = lineofzaradancadet3 #Agandua
+        holder = lineofazulzirioninew3 #Agandua
     }
     6731.4.3 = {
-        holder = lineofzaradancadet7 #Afanusi
+        holder = lineofazulzirioninew7 #Afanusi
     }
     6825.10.25 = {
-        holder = lineofzaradancadet13 #Abrasimi
+        holder = lineofazulzirioninew13 #Abrasimi
     }
     6859.11.6 = {
-        holder = lineofzaradancadet15 #Nilluhin
+        holder = lineofazulzirioninew15 #Nilluhin
     }
     6926.3.20 = {
 		holder = linekadarei1
@@ -5203,28 +5626,28 @@ b_tharazarul = {
 		holder = linekadarei19
 	}
 	6982.3.5 = { # Old Dynasty elected due to Tarnished Record of Arphaza_a_n (linekadarei21)
-        holder = lineofzaradancadet17 #Zigu_u_rkuzi_i_r
+        holder = lineofazulzirioninew17 #Zigu_u_rkuzi_i_r
     }
     6985.7.6 = {
-        holder = lineofzaradancadet20 #Minsilbel
+        holder = lineofazulzirioninew20 #Minsilbel
     }
-    7032.12.15 = {
-        holder = lineofzaradancadet22 #Zagarth_o_r
-    }
+    # 7032.12.15 = {
+    #     # holder = lineofazulzirioninew22 #Zagarth_o_r
+    # }
     7068.11.8 = {
-        holder = lineofzaradancadet24 #Arkha_a_tho_o_r
+        holder = lineofazulzirioninew24 #Arkha_a_tho_o_r
     }
 }
 b_baladursalan = {
 	#Zaradan Political Dynasty
     6649.11.17 = {
-        holder = lineofzaradancadet3 #Agandua
+        holder = lineofazulzirioninew3 #Agandua
     }
     6731.4.3 = {
-        holder = lineofzaradancadet7 #Afanusi
+        holder = lineofazulzirioninew7 #Afanusi
     }
     6825.10.25 = {
-        holder = lineofzaradancadet13 #Abrasimi
+        holder = lineofazulzirioninew13 #Abrasimi
     }
 
 	# Modern Mayors
@@ -5390,6 +5813,15 @@ c_arurabad = {
 	3770.1.1 = {
 		change_development_level = 11
 	}
+	5365.7.3 = {
+		holder = linealsariastwo9sister
+		liege = d_zayanuri
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
+	}
 	6578.9.17 = {
         holder = linebalkazim1 #Izindabe_e_n 
     }
@@ -5438,6 +5870,16 @@ c_baranagath = {
 	3770.1.1 = {
 		change_development_level = 8
 	}
+	5365.7.3 = {
+		holder = linealsariastwo9sister
+		liege = d_zayanuri
+		effect = {
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
+	}
+	
 	6578.9.17 = {
         holder = linebalkazim1 #Izindabe_e_n 
 		liege = d_zayanuri
@@ -5495,6 +5937,40 @@ c_mikurideluk = {
 	3770.1.1 = {
 		change_development_level = 9
 	}
+	5101.9.3 = {
+		holder = linealsariastwo6
+	}
+	5189.11.30 = {
+		holder = linealsariastwo7
+	}
+	5266.2.24 = {
+		holder = linealsariastwo8
+	}
+	5362.6.3 = {
+		holder = linealsariastwo9
+	}
+	5453.4.26 = {
+		holder = linealsariastwo10
+	}
+	5488.2.23 = {
+		holder = linealsariastwo11
+	}
+	5517.4.8 = {
+		holder = linealsariastwo12
+	}
+	5624.2.23 = {
+		holder = linealsariastwo13
+	}
+	5712.6.19 = {
+		holder = linealsariastwo14
+	}
+	5818.5.21 = {
+		holder = linealsariastwo15
+	}
+	5908.7.28 = {
+		holder = linealsariastwo16
+	}
+	
 	6578.9.17 = {
         holder = linebalkazim1 #Izindabe_e_n 
 		liege = d_zayanuri
@@ -6286,6 +6762,10 @@ c_galadutor = {
 
 # Duchy of Metkharan
 d_metkharan = {
+	5377.7.7 = {
+		holder = lineofziranihin3
+	}
+	
 	6712.11.15 = {
         holder = lineofogwo1 #Ogwo
     }
@@ -6303,6 +6783,22 @@ c_mekhrad = {
 	3770.1.1 = {
 		change_development_level = 10
 	}
+    5217.3.19 = {
+        holder = linehambari1 #Awalo_o_
+    }
+    5277.11.27 = {
+        holder = linehambari3 #Berivoz
+    }
+    5336.5.20 = {
+        holder = linehambari5 #Misrak
+    }
+    5356.10.17 = { # RoA Ruler
+        holder = linehambari7 #Qeto
+    }
+    5388.6.7 = {
+        holder = linehambari9 #Krouko
+    }
+	
 	6712.11.15 = {
         holder = lineofogwo1 #Ogwo
     }
@@ -6312,12 +6808,36 @@ c_mekhrad = {
     6802.10.4 = {
 		holder = lineofogwo6 #Asu_u_ma_a_ni
 	}
-	7024.1.1 = {
-		holder = lineofdrelnativeone1
-	}
+
+	6917.7.22 = {
+        holder = lineoftagoro1 #Imu_u_npo_o_
+    }
+    6984.7.20 = {
+        holder = lineoftagoro3 #Boya_a_n
+    }
+    7039.7.25 = {
+        holder = lineoftagoro5 #Ri_i_ya_a_n
+    }
+    7090.12.25 = {
+        holder = lineoftagoro7 #A_A_ntamo_o_r
+    }
+    7096.7.28 = {
+        holder = lineoftagoro9 #Qo_o_lo_o_nka_a_n
+    }
+    7129.9.1 = {
+        holder = lineoftagoro11 #O_O_zo
+    }
+    7187.3.25 = {
+		holder = lineoftagoro13 #A_A_li_i_ma
+    }
 }
 c_mitharin = {
-	3770.1.1 = {
+	2.1.1 = {
+		holder = k_wastelands_holder
+		change_development_level = -100
+		government = wastelands_government
+	}
+	5770.1.1 = {
 		change_development_level = 7
 	}
 	6712.11.15 = {
@@ -6335,13 +6855,29 @@ c_mitharin = {
 }
 b_kumbosi = {
 	7024.8.6 = {
-		holder = lineofszoranh2
+		holder = lineofbhalrimscarletsword
 	}
 }
 c_thambara = {
 	3770.1.1 = {
 		change_development_level = 6
 	}
+    5217.3.19 = {
+        holder = linehambari1 #Awalo_o_
+    }
+    5277.11.27 = {
+        holder = linehambari3 #Berivoz
+    }
+    5336.5.20 = {
+        holder = linehambari5 #Misrak
+    }
+    5356.10.17 = { # RoA Ruler
+        holder = linehambari7 #Qeto
+    }
+    5388.6.7 = {
+        holder = linehambari9 #Krouko
+    }
+	
 	6712.11.15 = {
         holder = lineofogwo1 #Ogwo
     }
@@ -6351,16 +6887,42 @@ c_thambara = {
     6802.10.4 = {
 		holder = lineofogwo6 #Asu_u_ma_a_ni
 	}
-	7024.1.1 = {
-		holder = lineofdrelnativeone1
-	}
+
+	6917.7.22 = {
+        holder = lineoftagoro1 #Imu_u_npo_o_
+    }
+    6984.7.20 = {
+        holder = lineoftagoro3 #Boya_a_n
+    }
+    7039.7.25 = {
+        holder = lineoftagoro5 #Ri_i_ya_a_n
+    }
+    7090.12.25 = {
+        holder = lineoftagoro7 #A_A_ntamo_o_r
+    }
+    7096.7.28 = {
+        holder = lineoftagoro9 #Qo_o_lo_o_nka_a_n
+    }
+    7129.9.1 = {
+        holder = lineoftagoro11 #O_O_zo
+    }
+    7187.3.25 = {
+		holder = lineoftagoro13 #A_A_li_i_ma
+    }
 }
 c_rukwala = {
 	3770.1.1 = {
 		change_development_level = 5
 	}
+	5377.7.7 = {
+		holder = lineofziranihin3
+		change_development_level = 9
+		government = feudal_government
+	}
 	6716.5.4 = {
         holder = lineoftab1 #Veyas
+		government = tribal_government
+		change_development_level = 6
     }
     6783.1.16 = {
         holder = lineoftab3 #Hagos
@@ -6368,16 +6930,42 @@ c_rukwala = {
     6827.12.1 = {
         holder = lineoftab5 #Ne_e_nad
     }
-	7024.1.1 = {
-		holder = lineofdrelnativefour1
-	}
+
+	6944.1.5 = {
+        holder = lineofzandari1 #Maydo_o_
+    }
+    7021.12.22 = {
+        holder = lineofzandari3 #Vatrak
+    }
+    7034.1.13 = {
+        holder = lineofzandari5 #Ratko
+    }
+    7083.6.19 = {
+        holder = lineofzandari7 #Wayaningewo
+    }
+    7138.2.20 = {
+        holder = lineofzandari9 #Torna
+    }
+    7138.5.28 = {
+        holder = lineofzandari11 #Ta_a_rouk
+    }
+    7183.12.19 = {
+        holder = lineofzandari13 #Huro_o_
+    }
 }
 c_gidwama = {
 	3770.1.1 = {
 		change_development_level = 4
 	}
+	5377.7.7 = {
+		holder = lineofziranihin3
+		change_development_level = 7
+		government = feudal_government
+	}
 	6718.8.3 = {
         holder = lineofzakir1 #Vese_e_lko
+		government = tribal_government
+		change_development_level = 5
     }
     6755.4.3 = {
         holder = lineofzakir3 #Su_u_lada
@@ -6385,14 +6973,48 @@ c_gidwama = {
     6816.1.23 = {
         holder = lineofzakir5 #Doba_a_radish
     }
-	7024.1.1 = {
-		holder = lineofdrelnativetwo1
-	}
+	6925.3.20 = {
+        holder = lineofgalavi1 #Namo_o_r
+    }
+    7012.3.16 = {
+        holder = lineofgalavi3 #Maksi_i_n
+    }
+    7031.5.20 = {
+        holder = lineofgalavi5 #Gyorad
+    }
+    7079.12.18 = {
+		holder = lineofgalavi7 #Rase_e_liyka
+    }
+	7067.2.9 = {
+        holder = lineofgalavi9 #Doba_a_radish
+    }
+    7154.2.7 = {
+		holder = lineofgalavi12 #Sa_a_li_i_m
+    }
+	7194.3.27 = {
+		holder = lineofgalavi14 #Ze_e_na
+    }
 }
 c_lumgira = {
 	3770.1.1 = {
-		change_development_level = 4
+		change_development_level = 5
 	}
+    5210.10.8 = {
+        holder = linemabaro1 #Rato
+    }
+    5283.8.8 = {
+        holder = linemabaro3 #Namo_o_r
+    }
+    5322.10.1 = {
+        holder = linemabaro5 #Misrak
+    }
+    5346.12.2 = { # RoA ruler
+        holder = linemabaro7 #A_A_ntamo_o_r
+    }
+    5394.12.11 = {
+        holder = linemabaro9 #Goyamo_o_r
+    }
+	
 	6718.8.3 = {
         holder = lineofzakir1 #Vese_e_lko
     }
@@ -6402,9 +7024,28 @@ c_lumgira = {
     6816.1.23 = {
         holder = lineofzakir5 #Doba_a_radish
     }
-	7024.1.1 = {
-		holder = lineofdrelnativethree1
-	}
+
+	6917.6.15 = {
+        holder = lineofomoro1 #Akumo_o_r
+    }
+    6982.2.8 = {
+        holder = lineofomoro3 #Da_a_mor
+    }
+    7040.12.13 = {
+        holder = lineofomoro5 #Yasiko
+    }
+    7064.7.15 = {
+        holder = lineofomoro7 #Za_a_l
+    }
+    7086.1.25 = {
+        holder = lineofomoro10 #Ya_a_rgize_e_n
+    }
+    7114.10.27 = {
+        holder = lineofomoro12 #Ewiro_o_
+    }
+    7152.10.18 = {
+        holder = lineofomoro14 #Safa_a_r
+    }
 }
 
 # Duchy of Galadartaure
@@ -6739,7 +7380,7 @@ d_gimileth = {
 	7020.1.1 = {
 		holder = lineofgimilethtwo107 #Derei 
 	}
-	7092.2.1 = {
+	7102.8.10 = {
 		holder = 0
 	}
 }
@@ -7294,6 +7935,31 @@ c_gulurath = {
 	3770.1.1 = {
 		change_development_level = 7
 	}
+    5210.12.16 = {
+        holder = lineeslani1 #Nawetan
+		liege = d_gimileth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
+    }
+    5276.5.5 = {
+        holder = lineeslani3 #Lavoraz
+    }
+    5331.4.21 = {
+        holder = lineeslani5 #Ganin
+    }
+    5368.3.27 = {
+        holder = lineeslani7 #Goyad
+    }
+    5374.9.14 = { # RoA ruler
+        holder = lineeslani9 #Bi_i_lago
+    }
+    5403.10.23 = {
+        holder = lineeslani11 #Lavoraz
+    }
+	
 	6489.1.26 = {
         holder = linebalisar1 #Da_a_r
     }
@@ -7317,12 +7983,6 @@ c_gulurath = {
     }
     6767.11.25 = {
         holder = linebalisar15 #Tragiyi
-		liege = d_gimileth
-		effect = { #Lotr Tribal Contract
-			holder = {
-                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
-			}
-		}
     }
     6799.6.16 = {
         holder = linebalisar17 #Zora_a_n
@@ -7348,6 +8008,31 @@ c_nimiphurus = {
 	3770.1.1 = {
 		change_development_level = 6
 	}
+    5210.12.16 = {
+        holder = lineeslani1 #Nawetan
+		liege = d_gimileth
+		effect = { #Lotr Tribal Contract
+			holder = {
+                vassal_contract_set_obligation_level = { type = title_revocation_rights level = 1 } 
+			}
+		}
+    }
+    5276.5.5 = {
+        holder = lineeslani3 #Lavoraz
+    }
+    5331.4.21 = {
+        holder = lineeslani5 #Ganin
+    }
+    5368.3.27 = {
+        holder = lineeslani7 #Goyad
+    }
+    5374.9.14 = { # RoA ruler
+        holder = lineeslani9 #Bi_i_lago
+    }
+    5403.10.23 = {
+        holder = lineeslani11 #Lavoraz
+    }
+	
 	6489.1.26 = {
         holder = linebalisar1 #Da_a_r
     }
@@ -7466,10 +8151,13 @@ k_pel = {
         holder = lineofagathohin1 #Sapazu_u_r
 		succession_laws = { vassal_conclave_dynastic_elective_succession_law } # New succession law put in place
     }
-    5317.2.8 = {
+	5317.2.8 = {
+		holder = lineofagathohin2b #A_A_rukhu_u_ra_a_n
+	}
+    5363.1.3 = {
         holder = lineofagathohin3 #A_A_rukhu_u_ra_a_n
     }
-    5393.1.3 = {
+    5423.1.3 = {
         holder = lineofagathohin5 #Aba_a_ruzi_i_r
     }
     5479.9.19 = {
@@ -7592,6 +8280,40 @@ k_pel = {
 }
 
 # Duchy of Pel
+d_pel = {
+	5236.5.19 = {
+        holder = lineofagathohin1 #Sapazu_u_r
+		succession_laws = { vassal_conclave_dynastic_elective_succession_law } # New succession law put in place
+    }
+    5317.2.8 = {
+        holder = lineofagathohin3 #A_A_rukhu_u_ra_a_n
+    }
+    5423.1.3 = {
+        holder = lineofagathohin5 #Aba_a_ruzi_i_r
+    }
+    5479.9.19 = {
+        holder = lineofagathohin7 #Gimilzo_o_r
+    }
+	5531.2.3 = {
+        holder = lineofagathohin16 #Zadnazi_i_r
+    }
+    5546.10.1 = {
+        holder = lineofagathohin18 #Sapazi_i_r
+    }
+	5549.10.23 = {
+        holder = lineofagathohin20 #Mo_o_rbe_e_hil
+    }
+	5561.3.7 = {
+        holder = lineofagathohin32 #Sapazu_u_r
+    }
+	5670.2.22 = {
+        holder = lineofagathohin35 #Imratho_o_r
+    }
+    5714.4.27 = {
+        holder = 0
+    }
+}
+
 c_arpel = {
 	3911.1.1 = {
 		holder = k_wastelands_holder
@@ -7670,7 +8392,7 @@ c_arpel = {
     5317.2.8 = {
         holder = lineofagathohin3 #A_A_rukhu_u_ra_a_n
     }
-    5393.1.3 = {
+    5423.1.3 = {
         holder = lineofagathohin5 #Aba_a_ruzi_i_r
     }
     5479.9.19 = {
@@ -7795,6 +8517,88 @@ c_mujua = {
 	3770.1.1 = {
 		change_development_level = 8
 	}
+	5236.5.19 = {
+        holder = lineofagathohin1 #Sapazu_u_r
+		change_development_level = 16
+    }
+    5317.2.8 = {
+        holder = lineofagathohin3 #A_A_rukhu_u_ra_a_n
+    }
+    5423.1.3 = {
+        holder = lineofagathohin5 #Aba_a_ruzi_i_r
+    }
+    5479.9.19 = {
+        holder = lineofagathohin7 #Gimilzo_o_r
+    }
+	5531.2.3 = {
+        holder = lineofagathohin16 #Zadnazi_i_r
+    }
+    5546.10.1 = {
+        holder = lineofagathohin18 #Sapazi_i_r
+    }
+	5549.10.23 = {
+        holder = lineofagathohin20 #Mo_o_rbe_e_hil
+    }
+	5561.3.7 = {
+        holder = lineofagathohin32 #Sapazu_u_r
+    }
+	5670.2.22 = {
+        holder = lineofagathohin35 #Imratho_o_r
+    }
+    5714.4.27 = {
+        holder = lineofagathohin37 #Gimlibe_e_n
+    }
+    5790.11.16 = {
+        holder = lineofagathohin39 #Balkazi_i_r
+    }
+    5834.7.9 = {
+        holder = lineofagathohin41 #E_E_ruzo_o_r
+    }
+    5873.2.9 = {
+        holder = lineofagathohin43 #Be_e_lphaza_a_n
+    }
+    5912.2.25 = {
+        holder = lineofagathohin45 #Abrazu_u_r
+    }
+    5969.8.22 = {
+        holder = lineofagathohin47 #A_A_rukhu_u_ra_a_n
+    }
+    6033.1.12 = {
+        holder = lineofagathohin49 #Ni_i_llu_u_be_e_n
+    }
+    6062.8.1 = {
+        holder = lineofagathohin51 #Azrube_e_n
+    }
+	6106.8.25 = {
+        holder = lineofagathohin83 #Aba_a_ruzi_i_r
+    }
+	6125.8.9 = {
+        holder = lineofagathohin86 #Azrube_e_l
+    }
+	6162.12.27 = {
+        holder = lineofagathohin88 #Minulzi_i_r
+    }
+    6184.4.11 = {
+        holder = lineofagathohin94 #Be_e_lnardu_u_
+    }
+    6251.11.26 = {
+        holder = lineofagathohin98 #Balkazi_i_r
+    }
+    6336.5.23 = {
+        holder = lineofagathohin100 #Gimilzo_o_r
+    }
+    6369.7.25 = {
+        holder = lineofagathohin102 #A_A_rukhu_u_ra_a_n
+    }
+    6385.5.25 = {
+        holder = lineofagathohin104 #Imratho_o_r
+    }
+    6461.4.14 = {
+        holder = lineofagathohin106 #Balkutho_o_r
+    }
+    6492.2.21 = {
+        holder = lineofagathohin108 #Arnubalakha_a_n
+    }
 	6532.12.1 = {
         holder = lineofagathohincadetlw1 # Zabatha_a_nardu
 		liege = k_pel
@@ -7848,6 +8652,106 @@ c_kwawiri = {
 	3770.1.1 = {
 		change_development_level = 14
 	}
+	5236.5.19 = {
+        holder = lineofagathohin1 #Sapazu_u_r
+		change_development_level = 16
+    }
+    5317.2.8 = {
+        holder = lineofagathohin3 #A_A_rukhu_u_ra_a_n
+    }
+    5423.1.3 = {
+        holder = lineofagathohin5 #Aba_a_ruzi_i_r
+    }
+    5479.9.19 = {
+        holder = lineofagathohin7 #Gimilzo_o_r
+    }
+	5531.2.3 = {
+        holder = lineofagathohin16 #Zadnazi_i_r
+    }
+    5546.10.1 = {
+        holder = lineofagathohin18 #Sapazi_i_r
+    }
+	5549.10.23 = {
+        holder = lineofagathohin20 #Mo_o_rbe_e_hil
+    }
+	5561.3.7 = {
+        holder = lineofagathohin32 #Sapazu_u_r
+    }
+	5670.2.22 = {
+        holder = lineofagathohin35 #Imratho_o_r
+    }
+    5714.4.27 = {
+        holder = lineofagathohin37 #Gimlibe_e_n
+    }
+    5790.11.16 = {
+        holder = lineofagathohin39 #Balkazi_i_r
+    }
+    5834.7.9 = {
+        holder = lineofagathohin41 #E_E_ruzo_o_r
+    }
+    5873.2.9 = {
+        holder = lineofagathohin43 #Be_e_lphaza_a_n
+    }
+    5912.2.25 = {
+        holder = lineofagathohin45 #Abrazu_u_r
+    }
+    5969.8.22 = {
+        holder = lineofagathohin47 #A_A_rukhu_u_ra_a_n
+    }
+    6033.1.12 = {
+        holder = lineofagathohin49 #Ni_i_llu_u_be_e_n
+    }
+    6062.8.1 = {
+        holder = lineofagathohin51 #Azrube_e_n
+    }
+	6106.8.25 = {
+        holder = lineofagathohin83 #Aba_a_ruzi_i_r
+    }
+	6125.8.9 = {
+        holder = lineofagathohin86 #Azrube_e_l
+    }
+	6162.12.27 = {
+        holder = lineofagathohin88 #Minulzi_i_r
+    }
+    6184.4.11 = {
+        holder = lineofagathohin94 #Be_e_lnardu_u_
+    }
+    6251.11.26 = {
+        holder = lineofagathohin98 #Balkazi_i_r
+    }
+    6336.5.23 = {
+        holder = lineofagathohin100 #Gimilzo_o_r
+    }
+    6369.7.25 = {
+        holder = lineofagathohin102 #A_A_rukhu_u_ra_a_n
+    }
+    6385.5.25 = {
+        holder = lineofagathohin104 #Imratho_o_r
+    }
+    6461.4.14 = {
+        holder = lineofagathohin106 #Balkutho_o_r
+    }
+    6492.2.21 = {
+        holder = lineofagathohin108 #Arnubalakha_a_n
+    }
+    6534.4.8 = {
+        holder = lineofagathohin110 #U_U_ri_i_tho_o_r
+    }
+    6550.12.27 = {
+        holder = lineofagathohin113 #Bala_a_kha_a_n
+    }
+    6585.3.8 = {
+        holder = lineofagathohin115 #Atto_o_wo_o_
+    }
+	6621.5.6 = {
+        holder = lineofagathohin128 #Za_a_nabe_e_n
+    }
+	6644.6.8 = {
+        holder = lineofagathohin139 #Arzagar
+    }
+    6682.11.2 = {
+        holder = lineofagathohin141 #Gimilzo_o_r
+    }
 	6732.5.16 = {
         holder = lineoflagbeback4 #Anuli
 		liege = k_pel
@@ -7884,6 +8788,103 @@ c_omutano = {
 	3770.1.1 = {
 		change_development_level = 10
 	}
+	5236.5.19 = {
+        holder = lineofagathohin1 #Sapazu_u_r
+		change_development_level = 16
+    }
+    5317.2.8 = {
+        holder = lineofagathohin3 #A_A_rukhu_u_ra_a_n
+    }
+    5423.1.3 = {
+        holder = lineofagathohin5 #Aba_a_ruzi_i_r
+    }
+    5479.9.19 = {
+        holder = lineofagathohin7 #Gimilzo_o_r
+    }
+	5531.2.3 = {
+        holder = lineofagathohin16 #Zadnazi_i_r
+    }
+    5546.10.1 = {
+        holder = lineofagathohin18 #Sapazi_i_r
+    }
+	5549.10.23 = {
+        holder = lineofagathohin20 #Mo_o_rbe_e_hil
+    }
+	5561.3.7 = {
+        holder = lineofagathohin32 #Sapazu_u_r
+    }
+	5670.2.22 = {
+        holder = lineofagathohin35 #Imratho_o_r
+    }
+    5714.4.27 = {
+        holder = lineofagathohin37 #Gimlibe_e_n
+    }
+    5790.11.16 = {
+        holder = lineofagathohin39 #Balkazi_i_r
+    }
+    5834.7.9 = {
+        holder = lineofagathohin41 #E_E_ruzo_o_r
+    }
+    5873.2.9 = {
+        holder = lineofagathohin43 #Be_e_lphaza_a_n
+    }
+    5912.2.25 = {
+        holder = lineofagathohin45 #Abrazu_u_r
+    }
+    5969.8.22 = {
+        holder = lineofagathohin47 #A_A_rukhu_u_ra_a_n
+    }
+    6033.1.12 = {
+        holder = lineofagathohin49 #Ni_i_llu_u_be_e_n
+    }
+    6062.8.1 = {
+        holder = lineofagathohin51 #Azrube_e_n
+    }
+	6106.8.25 = {
+        holder = lineofagathohin83 #Aba_a_ruzi_i_r
+    }
+	6125.8.9 = {
+        holder = lineofagathohin86 #Azrube_e_l
+    }
+	6162.12.27 = {
+        holder = lineofagathohin88 #Minulzi_i_r
+    }
+    6184.4.11 = {
+        holder = lineofagathohin94 #Be_e_lnardu_u_
+    }
+    6251.11.26 = {
+        holder = lineofagathohin98 #Balkazi_i_r
+    }
+    6336.5.23 = {
+        holder = lineofagathohin100 #Gimilzo_o_r
+    }
+    6369.7.25 = {
+        holder = lineofagathohin102 #A_A_rukhu_u_ra_a_n
+    }
+    6385.5.25 = {
+        holder = lineofagathohin104 #Imratho_o_r
+    }
+    6461.4.14 = {
+        holder = lineofagathohin106 #Balkutho_o_r
+    }
+    6492.2.21 = {
+        holder = lineofagathohin108 #Arnubalakha_a_n
+    }
+    6534.4.8 = {
+        holder = lineofagathohin110 #U_U_ri_i_tho_o_r
+    }
+    6550.12.27 = {
+        holder = lineofagathohin113 #Bala_a_kha_a_n
+    }
+    6585.3.8 = {
+        holder = lineofagathohin115 #Atto_o_wo_o_
+    }
+	6621.5.6 = {
+        holder = lineofagathohin128 #Za_a_nabe_e_n
+    }
+	6644.6.8 = {
+        holder = lineofagathohin139 #Arzagar
+    }
     6682.6.10 = {
         holder = lineofodindiLW1 #Deba_a_ra
 		liege = k_pel
@@ -7923,8 +8924,8 @@ c_mokuba = {
 	3770.1.1 = {
 		change_development_level = 6
 	}
-    6542.12.26 = {
-        holder = lineofemibiLW1 #Ze_e_na
+    5217.9.4 = {
+        holder = linemokubi1 #Liyadikir
 		liege = k_pel
 		effect = {
 			if = {
@@ -7938,6 +8939,25 @@ c_mokuba = {
 				}
 			}
 		}
+    }
+    5295.12.22 = {
+        holder = linemokubi3 #Ha_a_ramo_o_r
+    }
+    5318.11.15 = {
+        holder = linemokubi5 #GayinHa_a_rath
+    }
+    5361.5.1 = {
+        holder = linemokubi7 #Mu_u_la_a_no
+    }
+    5378.8.18 = { # RoA ruler
+        holder = linemokubi9 #Lavoraz
+    }
+    5428.10.8 = {
+        holder = linemokubi11 #O_O_lata_a_r
+    }
+
+    6542.12.26 = {
+        holder = lineofemibiLW1 #Ze_e_na
     }
     6607.8.27 = {
         holder = lineofemibiLW3 #Yehudith
@@ -7981,6 +9001,38 @@ c_igiza = {
 	3770.1.1 = {
 		change_development_level = 8
 	}
+    5217.9.4 = {
+        holder = linemokubi1 #Liyadikir
+		liege = k_pel
+		effect = {
+			if = {
+				limit = {
+					exists = holder
+					holder.top_liege != holder
+				}
+				holder = {
+					vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+					vassal_contract_set_obligation_level = { type = special_contract level = 4 }
+				}
+			}
+		}
+    }
+    5295.12.22 = {
+        holder = linemokubi3 #Ha_a_ramo_o_r
+    }
+    5318.11.15 = {
+        holder = linemokubi5 #GayinHa_a_rath
+    }
+    5361.5.1 = {
+        holder = linemokubi7 #Mu_u_la_a_no
+    }
+    5378.8.18 = { # RoA ruler
+        holder = linemokubi9 #Lavoraz
+    }
+    5428.10.8 = {
+        holder = linemokubi11 #O_O_lata_a_r
+    }
+	
     6542.12.26 = {
         holder = lineofemibiLW1 #Ze_e_na
     }
@@ -8019,6 +9071,7 @@ c_igiza = {
     }
 	7018.9.9 = {
         holder = lineofemibi9
+		liege = 0
     }
 }
 
@@ -8027,15 +9080,31 @@ c_kwazuru = {
 	3770.1.1 = {
 		change_development_level = 13
 	}
-    6682.6.8 = {
-        holder = lineofojasowoLW1 #Kyetika_a_nd
-		liege = k_pel	
+    5214.11.7 = {
+        holder = linedayogo1 #To_o_mo
+		liege = k_pel
 		effect = {
 			holder = {
                 vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
 				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
 			}
-		}	
+		}
+    }
+    5278.10.9 = {
+        holder = linedayogo3 #Boya_a_n
+    }
+    5305.6.8 = {
+        holder = linedayogo5 #Mu_u_la_a_no
+    }
+    5350.10.6 = { # RoA ruler
+        holder = linedayogo7 #Veyas
+    }
+    5386.6.27 = {
+        holder = linedayogo9 #GayinHa_a_rath
+    }
+	
+    6682.6.8 = {
+        holder = lineofojasowoLW1 #Kyetika_a_nd	
     }
     6745.10.18 = {
         holder = lineofojasowo1
@@ -8069,8 +9138,8 @@ c_ojua = {
 	3770.1.1 = {
 		change_development_level = 10
 	}
-    6611.7.16 = {
-        holder = lineofarogweLW1 #Krouko
+    5214.11.7 = {
+        holder = linedayogo1 #To_o_mo
 		liege = k_pel
 		effect = {
 			holder = {
@@ -8078,6 +9147,22 @@ c_ojua = {
 				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
 			}
 		}
+    }
+    5278.10.9 = {
+        holder = linedayogo3 #Boya_a_n
+    }
+    5305.6.8 = {
+        holder = linedayogo5 #Mu_u_la_a_no
+    }
+    5350.10.6 = { # RoA ruler
+        holder = linedayogo7 #Veyas
+    }
+    5386.6.27 = {
+        holder = linedayogo9 #GayinHa_a_rath
+    }
+	
+    6611.7.16 = {
+        holder = lineofarogweLW1 #Krouko
     }
     6675.11.27 = {
         holder = lineofarogweLW3 #Da_a_riyko
@@ -8117,8 +9202,8 @@ c_bwakuta = {
 	3770.1.1 = {
 		change_development_level = 9
 	}
-    6602.9.28 = {
-        holder = lineofjinibiLW1 #Qe_e_nath
+    5214.11.7 = {
+        holder = linedayogo1 #To_o_mo
 		liege = k_pel
 		effect = {
 			holder = {
@@ -8126,6 +9211,22 @@ c_bwakuta = {
 				vassal_contract_set_obligation_level = { type = special_contract level = 4 }
 			}
 		}
+    }
+    5278.10.9 = {
+        holder = linedayogo3 #Boya_a_n
+    }
+    5305.6.8 = {
+        holder = linedayogo5 #Mu_u_la_a_no
+    }
+    5350.10.6 = { # RoA ruler
+        holder = linedayogo7 #Veyas
+    }
+    5386.6.27 = {
+        holder = linedayogo9 #GayinHa_a_rath
+    }
+	
+    6602.9.28 = {
+        holder = lineofjinibiLW1 #Qe_e_nath
     }
     6652.8.6 = {
         holder = lineofjinibiLW3 #Qa_a_rne_e_n
@@ -8161,8 +9262,8 @@ c_bwakuta = {
 
 # Duchy of Barasi
 d_barasi = {
-	6561.3.13 = {
-        holder = lineofnyere1 # Nyére
+	5215.5.4 = {
+        holder = lineomeli1 #Misrak
 		government = oligarchy_government
 		succession_laws = { oligarchic_elective_succession_law }
 		liege = k_pel
@@ -8177,6 +9278,25 @@ d_barasi = {
 				}
 			}
 		}
+    }
+    5279.8.11 = {
+        holder = lineomeli3 #Gayin
+    }
+    5313.6.25 = {
+        holder = lineomeli5 #Namo_o_r
+    }
+    5364.11.8 = {
+        holder = lineomeli7 #Liyadikir
+    }
+    5380.10.3 = { # RoA ruler
+        holder = lineomeli9 #Yu_u_ma
+    }
+    5433.6.1 = {
+        holder = lineomeli11 #Qeto
+    }
+	
+	6561.3.13 = {
+        holder = lineofnyere1 # Nyére
     }
 	6623.3.12 = {
         holder = lineofnyere2 # Nanzegwa
@@ -8229,6 +9349,27 @@ c_shalala = {
 	3770.1.1 = {
 		change_development_level = 11
 	}
+    5215.5.4 = {
+        holder = lineomeli1 #Misrak
+		government = oligarchy_government
+		succession_laws = { oligarchic_elective_succession_law }
+    }
+    5279.8.11 = {
+        holder = lineomeli3 #Gayin
+    }
+    5313.6.25 = {
+        holder = lineomeli5 #Namo_o_r
+    }
+    5364.11.8 = {
+        holder = lineomeli7 #Liyadikir
+    }
+    5380.10.3 = { # RoA ruler
+        holder = lineomeli9 #Yu_u_ma
+    }
+    5433.6.1 = {
+        holder = lineomeli11 #Qeto
+    }
+	
 	6561.3.13 = {
         holder = lineofnyere1 # Nyére
 		government = oligarchy_government
@@ -8267,6 +9408,26 @@ c_kwambiri = {
 	3770.1.1 = {
 		change_development_level = 10
 	}
+    5215.5.4 = {
+        holder = lineomeli1 #Misrak
+		government = oligarchy_government
+		succession_laws = { oligarchic_elective_succession_law }
+    }
+    5279.8.11 = {
+        holder = lineomeli3 #Gayin
+    }
+    5313.6.25 = {
+        holder = lineomeli5 #Namo_o_r
+    }
+    5364.11.8 = {
+        holder = lineomeli7 #Liyadikir
+    }
+    5380.10.3 = { # RoA ruler
+        holder = lineomeli9 #Yu_u_ma
+    }
+    5433.6.1 = {
+        holder = lineomeli11 #Qeto
+    }
 	6561.3.13 = {
         holder = lineofnyere1 # Nyére
 		government = oligarchy_government
@@ -8305,6 +9466,10 @@ c_arokwanza = {
 	3770.1.1 = {
 		change_development_level = 5
 	}
+	5338.6.8 = {
+		holder = linelhanaghu1
+	}
+	
     6612.10.14 = {
         holder = lineofantigan1 #Bagha_a_d
     }
@@ -8346,6 +9511,10 @@ c_sukukita = {
 	3770.1.1 = {
 		change_development_level = 5
 	}
+	5338.6.8 = {
+		holder = linelhanaghu1
+	}
+		
     6612.10.14 = {
         holder = lineofantigan1 #Bagha_a_d
     }
@@ -8391,6 +9560,36 @@ c_igwanja = {
 	3770.1.1 = {
 		change_development_level = 6
 	}
+    5209.7.24 = {
+        holder = lineshanwani1 #Sha_a_li_i_n
+		liege = k_pel
+		effect = { #Lotr Tribal Contract
+			if = {
+				limit = {
+					exists = holder
+					holder.top_liege != holder
+				}
+				holder = {
+					vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				}
+			}
+		}
+	}
+    5280.10.12 = {
+        holder = lineshanwani3 #Misrak
+    }
+    5315.12.27 = {
+        holder = lineshanwani5 #Rato
+    }
+    5348.7.26 = {
+        holder = lineshanwani7 #Yerek
+    }
+    5378.10.3 = { # RoA Ruler
+        holder = lineshanwani9 #Qeto
+    }
+	5444.4.6 = {
+		liege = 0
+	}
 	6738.1.13 = {
         holder = lineofmajidodobandit2
     }
@@ -8402,8 +9601,28 @@ c_majidodo = {
 	3770.1.1 = {
 		change_development_level = 7
 	}
+    5215.5.4 = {
+        holder = lineomeli1 #Misrak
+    }
+    5279.8.11 = {
+        holder = lineomeli3 #Gayin
+    }
+    5313.6.25 = {
+        holder = lineomeli5 #Namo_o_r
+    }
+    5364.11.8 = {
+        holder = lineomeli7 #Liyadikir
+    }
+    5380.10.3 = { # RoA ruler
+        holder = lineomeli9 #Yu_u_ma
+    }
+    5433.6.1 = {
+        holder = lineomeli11 #Qeto
+    }
+	
 	6620.12.1 = {
         holder = lineofobimaji1 # Obibmaje
+		government = tribal_government
 		liege = k_pel
 		effect = { #Lotr Tribal Contract
 			if = {
@@ -8438,6 +9657,34 @@ c_obishamba = {
 	3770.1.1 = {
 		change_development_level = 7
 	}
+    5209.7.24 = {
+        holder = lineshanwani1 #Sha_a_li_i_n
+		liege = k_pel
+		effect = { #Lotr Tribal Contract
+			if = {
+				limit = {
+					exists = holder
+					holder.top_liege != holder
+				}
+				holder = {
+					vassal_contract_set_obligation_level = { type = jizya_special_rights level = 1 } 
+				}
+			}
+		}
+    }
+    5280.10.12 = {
+        holder = lineshanwani3 #Misrak
+    }
+    5315.12.27 = {
+        holder = lineshanwani5 #Rato
+    }
+    5348.7.26 = {
+        holder = lineshanwani7 #Yerek
+    }
+    5378.10.3 = { # RoA Ruler
+        holder = lineshanwani9 #Qeto
+    }
+	
 	6620.12.1 = {
         holder = lineofobimaji1 # Obibmaje
 		liege = k_pel
@@ -8470,8 +9717,6 @@ c_obishamba = {
 		liege = 0
     }
 }
-
-## Kingdom of Gimilthani
 
 ## Kingdom of Gimilthani
 
@@ -9108,6 +10353,118 @@ c_khorphazan = {
 	3770.1.1 = {
 		change_development_level = 11
 	}
+	3770.1.1 = {
+		holder = lineofprinceimrazor9
+		change_development_level = 12
+	}
+	3858.1.1 = {
+		holder = lineofgimilthani1
+	}
+	3922.1.1 = {
+		holder = lineofgimilthani2
+	}
+	3990.1.1 = {
+		holder = lineofgimilthani3
+	}
+	4059.1.1 = {
+		holder = lineofgimilthani4
+	}
+	4104.1.1 = {
+		holder = lineofgimilthani5
+	}
+	4253.1.1 = {
+		holder = lineofgimilthani6
+	}
+	4373.1.1 = {
+		holder = lineofgimilthani7
+	}
+	4463.1.1 = {
+		holder = lineofgimilthani8
+	}
+	4594.1.1 = {
+		holder = lineofgimilthani9
+	}
+	4639.1.1 = {
+		holder = lineofgimilthani10 # Imrazor II, Unites Uruloni and Alsarias
+	}
+	4707.1.1 = {
+		holder = lineofgimilthani11 # Son of Imrazor, allowed to keep Uruloni but not Alsarias
+	}
+	4806.1.1 = {
+		holder = lineofgimilthani14
+	}
+	4895.1.1 = {
+		holder = lineofgimilthani15
+	}
+	4977.1.1 = {
+		holder = lineofgimilthani16
+	}
+	5087.1.1 = {
+		holder = lineofgimilthani17
+	}
+	5191.1.1 = {
+		holder = lineofgimilthani18
+	}
+	5276.1.1 = {
+		holder = lineofgimilthani19
+	}
+	5349.1.1 = {
+		holder = lineofgimilthani20
+	}
+	5368.1.1 = {
+		holder = lineofgimilthani21
+	}
+	5470.1.1 = {
+		holder = lineofgimilthani22
+	}
+	5581.1.1 = {
+		holder = lineofgimilthani23
+	}
+	5596.1.1 = {
+		holder = lineofgimilthani27
+	}
+	5636.1.1 = {
+		holder = lineofgimilthani28
+	}
+	5747.1.1 = {
+		holder = lineofgimilthani29
+	}
+	5790.1.1 = {
+		holder = lineofgimilthani30
+	}
+	5875.1.1 = {
+		holder = lineofgimilthani31
+	}
+	5981.1.1 = {
+		holder = lineofgimilthani32
+	}
+	6072.1.1 = {
+		holder = lineofgimilthani33
+	}
+	6168.1.1 = {
+		holder = lineofgimilthani36
+	}
+	6259.1.1 = {
+		holder = lineofgimilthani37
+	}
+	6335.1.1 = {
+		holder = lineofgimilthani38
+	}
+	6417.1.1 = {
+		holder = lineofgimilthani39
+	}
+	6518.1.1 = {
+		holder = lineofgimilthani40
+	}
+	6578.1.1 = {
+		holder = lineofgimilthani41
+	}
+	6634.1.1 = {
+		holder = lineofgimilthani42
+	}
+	6715.1.1 = {
+		holder = lineofgimilthani43
+	}
 	6743.4.27 = {
         holder = linezabathanid1 #Za_a_nabe_e_n 
     }
@@ -9265,10 +10622,37 @@ c_nimiranthani = {
 }
 
 # Duchy of Mikrazor
+d_mikrazor = {
+	5250.12.25 = { # Granted in a grand wedding during the reconciliation of the Imrazorhin lines
+		holder = lineofbelzirani51
+		liege = k_gimilthani
+	}
+	5340.12.18 = { # RoA ruler
+		holder = lineofbelzirani52
+	}
+	5447.9.10 = {
+		holder = lineofbelzirani53
+	}
+	5499.8.12 = {
+		holder = 0
+		liege = 0
+	}
+}
+		
 c_ninegatan = {
 	3770.1.1 = {
 		change_development_level = 12
 	}
+	5250.12.25 = { # Granted in a grand wedding during the reconciliation of the Imrazorhin lines
+		holder = lineofbelzirani51
+	}
+	5340.12.18 = { # RoA ruler
+		holder = lineofbelzirani52
+	}
+	5447.9.10 = {
+		holder = lineofbelzirani53
+	}
+	
 	6679.1.5 = {
         holder = linemurazorhin1 #Inziladu_u_n 
     }
@@ -9305,6 +10689,17 @@ c_belhim = {
 	3770.1.1 = {
 		change_development_level = 10
 	}
+	5250.12.25 = { # Granted in a grand wedding during the reconciliation of the Imrazorhin lines
+		holder = lineofbelzirani51
+		liege = k_gimilthani
+	}
+	5340.12.18 = { # RoA ruler
+		holder = lineofbelzirani52
+	}
+	5447.9.10 = {
+		holder = lineofbelzirani53
+	}
+	
 	6679.1.5 = {
         holder = linemurazorhin1 #Inziladu_u_n 
     }
@@ -9335,6 +10730,17 @@ c_urgirush = {
 	3770.1.1 = {
 		change_development_level = 8
 	}
+	5250.12.25 = { # Granted in a grand wedding during the reconciliation of the Imrazorhin lines
+		holder = lineofbelzirani51
+		liege = k_gimilthani
+	}
+	5340.12.18 = { # RoA ruler
+		holder = lineofbelzirani52
+	}
+	5447.9.10 = {
+		holder = lineofbelzirani53
+	}
+	
 	6743.4.27 = {
         holder = linezabathanid1 #Za_a_nabe_e_n 
     }
@@ -9363,6 +10769,17 @@ c_zairazor = {
 	3770.1.1 = {
 		change_development_level = 7
 	}
+	5250.12.25 = { # Granted in a grand wedding during the reconciliation of the Imrazorhin lines
+		holder = lineofbelzirani51
+		liege = k_gimilthani
+	}
+	5340.12.18 = { # RoA ruler
+		holder = lineofbelzirani52
+	}
+	5447.9.10 = {
+		holder = lineofbelzirani53
+	}
+	
 	6743.4.27 = {
         holder = linezabathanid1 #Za_a_nabe_e_n 
     }
@@ -10189,8 +11606,21 @@ c_izmathar = {
     }
 }
 
-
 ## Kingdom of Kharadune
+k_kharadune = {
+	5244.1.1 = { # Awarded thanks to his service in the war against Tulwang, becoming favored by Gondor
+		holder = linehammerdelgeneral14
+	}
+	5345.1.1 = {
+		holder = linehammerdelgeneral15
+	}
+	5434.1.1 = {
+		holder = linehammerdelgeneral16
+	}
+	5444.4.4 = {
+		holder = 0
+	}
+}
 
 # Duchy of Inzilloni
 d_inzilloni = {
@@ -11299,6 +12729,129 @@ c_zoluran = {
 	3770.1.1 = {
 		change_development_level = 6
 	}
+	3871.1.1 = {
+		holder = lineazariroth1
+	}
+	3935.1.1 = {
+		holder = lineazariroth2
+	}
+	4001.1.1 = {
+		holder = lineazariroth3
+	}
+	4072.1.1 = {
+		holder = lineazariroth4
+	}
+	4137.1.1 = {
+		holder = lineazariroth5
+	}
+	4280.1.1 = {
+		holder = lineazariroth6
+	}
+	4373.1.1 = {
+		holder = lineazariroth7
+	}
+	4496.1.1 = {
+		holder = lineazariroth8
+	}
+	4611.1.1 = {
+		holder = lineazariroth9
+	}
+	4774.1.1 = {
+		holder = lineazariroth10
+	}
+	4891.1.1 = {
+		holder = lineazariroth11
+	}
+	4984.1.1 = {
+		holder = lineazariroth12
+	}
+	5089.1.1 = {
+		holder = lineazariroth13
+	}
+	5192.1.1 = {
+		holder = lineazariroth14
+	}
+	5298.1.1 = {
+		holder = lineazariroth15
+	}
+	5330.1.1 = {
+		holder = lineazariroth20
+	}
+	5382.1.1 = {
+		holder = lineazariroth21
+	}
+	5449.1.1 = {
+		holder = lineazariroth24
+	}
+	5500.1.1 = {
+		holder = lineazariroth25
+	}
+	5625.1.1 = {
+		holder = lineazariroth26
+	}
+	5711.1.1 = {
+		holder = lineazariroth27
+	}
+	5814.1.1 = {
+		holder = lineazariroth28
+	}
+	5864.1.1 = {
+		holder = lineazariroth29
+	}
+	5928.1.1 = {
+		holder = lineazariroth30
+	}
+	5998.1.1 = {
+		holder = lineazariroth31
+	}
+	6001.1.1 = {
+		holder = lineazariroth51
+	}
+	6027.1.1 = {
+		holder = lineazariroth52
+	}
+	6074.1.1 = {
+		holder = lineazariroth53
+	}
+	6166.1.1 = {
+		holder = lineazariroth54
+	}
+	6273.1.1 = {
+		holder = lineazariroth55 #Reunifies the Havens, dies mysteriously shortly afterwards
+	}
+	6275.1.1 = {
+		holder = lineazariroth60
+	}
+	6344.1.1 = {
+		holder = lineazariroth61
+	}
+	6394.1.1 = {
+		holder = lineazariroth62
+	}
+	6453.1.1 = {
+		holder = lineazariroth63
+	}
+	6514.1.1 = {
+		holder = lineazariroth64
+	}
+	6565.1.1 = {
+		holder = lineazariroth65
+	}
+	6609.1.1 = {
+		holder = lineazariroth66
+	}
+	6654.1.1 = {
+		holder = lineazariroth67
+	}
+	6711.1.1 = {
+		holder = lineazariroth68
+	}
+	6742.1.1 = {
+		holder = lineazariroth69
+	}
+	6771.1.1 = {
+		holder = lineazariroth70
+	}
 	6781.1.1 = {
 		holder = sedericharacterazar65
 		liege = d_azarideth
@@ -11334,6 +12887,129 @@ c_zoluran = {
 c_thazlo = {
 	3770.1.1 = {
 		change_development_level = 4
+	}
+	3871.1.1 = {
+		holder = lineazariroth1
+	}
+	3935.1.1 = {
+		holder = lineazariroth2
+	}
+	4001.1.1 = {
+		holder = lineazariroth3
+	}
+	4072.1.1 = {
+		holder = lineazariroth4
+	}
+	4137.1.1 = {
+		holder = lineazariroth5
+	}
+	4280.1.1 = {
+		holder = lineazariroth6
+	}
+	4373.1.1 = {
+		holder = lineazariroth7
+	}
+	4496.1.1 = {
+		holder = lineazariroth8
+	}
+	4611.1.1 = {
+		holder = lineazariroth9
+	}
+	4774.1.1 = {
+		holder = lineazariroth10
+	}
+	4891.1.1 = {
+		holder = lineazariroth11
+	}
+	4984.1.1 = {
+		holder = lineazariroth12
+	}
+	5089.1.1 = {
+		holder = lineazariroth13
+	}
+	5192.1.1 = {
+		holder = lineazariroth14
+	}
+	5298.1.1 = {
+		holder = lineazariroth15
+	}
+	5330.1.1 = {
+		holder = lineazariroth20
+	}
+	5382.1.1 = {
+		holder = lineazariroth21
+	}
+	5449.1.1 = {
+		holder = lineazariroth24
+	}
+	5500.1.1 = {
+		holder = lineazariroth25
+	}
+	5625.1.1 = {
+		holder = lineazariroth26
+	}
+	5711.1.1 = {
+		holder = lineazariroth27
+	}
+	5814.1.1 = {
+		holder = lineazariroth28
+	}
+	5864.1.1 = {
+		holder = lineazariroth29
+	}
+	5928.1.1 = {
+		holder = lineazariroth30
+	}
+	5998.1.1 = {
+		holder = lineazariroth31
+	}
+	6001.1.1 = {
+		holder = lineazariroth51
+	}
+	6027.1.1 = {
+		holder = lineazariroth52
+	}
+	6074.1.1 = {
+		holder = lineazariroth53
+	}
+	6166.1.1 = {
+		holder = lineazariroth54
+	}
+	6273.1.1 = {
+		holder = lineazariroth55 #Reunifies the Havens, dies mysteriously shortly afterwards
+	}
+	6275.1.1 = {
+		holder = lineazariroth60
+	}
+	6344.1.1 = {
+		holder = lineazariroth61
+	}
+	6394.1.1 = {
+		holder = lineazariroth62
+	}
+	6453.1.1 = {
+		holder = lineazariroth63
+	}
+	6514.1.1 = {
+		holder = lineazariroth64
+	}
+	6565.1.1 = {
+		holder = lineazariroth65
+	}
+	6609.1.1 = {
+		holder = lineazariroth66
+	}
+	6654.1.1 = {
+		holder = lineazariroth67
+	}
+	6711.1.1 = {
+		holder = lineazariroth68
+	}
+	6742.1.1 = {
+		holder = lineazariroth69
+	}
+	6771.1.1 = {
+		holder = lineazariroth70
 	}
 	6781.1.1 = {
 		holder = sedericharacterazar65
@@ -11769,6 +13445,23 @@ c_azulzani = {
 	3770.1.1 = {
 		change_development_level = 5
 	}
+    5210.6.13 = {
+        holder = lineanjedi1 #Hoyad
+		liege = d_rotharana
+    }
+    5288.12.3 = {
+        holder = lineanjedi3 #Hagos
+    }
+    5320.4.15 = {
+        holder = lineanjedi5 #Hoyad
+    }
+    5338.1.17 = { # RoA Ruler
+        holder = lineanjedi7 #A_A_lo
+    }
+    5400.4.10 = {
+        holder = lineanjedi9 #I_I_ma_a_n
+    }
+	
 	6256.9.3 = {
 		holder = sedericharacterazarazar1
 	}
@@ -11969,7 +13662,6 @@ c_azlokad = {
 		liege = d_azarideth
 	}
 }
-
 
 # Duchy of Holzoreth
 d_holzoreth = {
@@ -12341,6 +14033,156 @@ c_sazaran = {
 	3770.1.1 = {
 		change_development_level = 7
 	}
+	3864.1.1 = {
+		holder = linehammerdel1
+	}
+	3931.1.1 = {
+		holder = linehammerdel2
+	}
+	3998.1.1 = {
+		holder = linehammerdel3
+	}
+	4058.1.1 = {
+		holder = linehammerdel4
+	}
+	4123.1.1 = {
+		holder = linehammerdel5
+	}
+	4127.1.1 = {
+		holder = linehammerdel7
+	}
+	4159.1.1 = {
+		holder = linehammerdel8
+	}
+	4212.1.1 = {
+		holder = linehammerdel9
+	}
+	4275.1.1 = {
+		holder = linehammerdel20
+	}
+	4317.1.1 = {
+		holder = linehammerdel21
+	}
+	4366.1.1 = {
+		holder = linehammerdel22
+	}
+	4381.1.1 = {
+		holder = linehammerdel23
+	}
+	4417.1.1 = {
+		holder = linehammerdel24
+	}
+	4453.1.1 = {
+		holder = linehammerdel25
+	}
+	4500.1.1 = {
+		holder = linehammerdel26
+	}
+	4539.1.1 = {
+		holder = linehammerdelgeneral5
+	}
+	4592.1.1 = {
+		holder = linehammerdelgeneral6
+	}
+	4691.1.1 = {
+		holder = linehammerdelgeneral7
+	}
+	4753.1.1 = {
+		holder = linehammerdelgeneral8
+	}
+	4841.1.1 = {
+		holder = linehammerdelgeneral9
+	}
+	4925.1.1 = {
+		holder = linehammerdelgeneral10
+	}
+	5001.1.1 = {
+		holder = linehammerdelgeneral11
+	}
+	5093.1.1 = {
+		holder = linehammerdelgeneral12
+	}
+	5174.1.1 = {
+		holder = linehammerdelgeneral13
+	}
+	5244.1.1 = {
+		holder = linehammerdelgeneral14
+	}
+	5345.1.1 = {
+		holder = linehammerdelgeneral15
+	}
+	5434.1.1 = {
+		holder = linehammerdelgeneral16
+	}
+	5453.1.1 = {
+		holder = linehammerdelgeneral17
+	}
+	5486.1.1 = {
+		holder = linehammerdelgeneral18
+	}
+	5496.1.1 = {
+		holder = linehammerdelgeneral19
+	}
+	5537.1.1 = {
+		holder = linehammerdelgeneral20
+	}
+	5626.1.1 = {
+		holder = linehammerdelgeneral21
+	}
+	5712.1.1 = {
+		holder = linehammerdelgeneral22
+	}
+	5797.1.1 = {
+		holder = linehammerdelgeneral23
+	}
+	5856.1.1 = {
+		holder = linehammerdelgeneral24
+	}
+	5926.1.1 = {
+		holder = linehammerdelgeneral25
+	}
+	5983.1.1 = {
+		holder = linehammerdelgeneral26
+	}
+	6058.1.1 = {
+		holder = linehammerdelgeneral27
+	}
+	6120.1.1 = {
+		holder = linehammerdelgeneral28
+	}
+	6200.1.1 = {
+		holder = linehammerdelgeneral29
+	}
+	6248.1.1 = {
+		holder = linehammerdelgeneral30
+	}
+	6311.1.1 = {
+		holder = linehammerdelgeneral31
+	}
+	6366.1.1 = {
+		holder = linehammerdelgeneral32
+	}
+	6421.1.1 = {
+		holder = linehammerdelgeneral33
+	}
+	6425.1.1 = {
+		holder = linehammerdelgeneral34
+	}
+	6469.1.1 = {
+		holder = linehammerdelgeneral35
+	}
+	6522.1.1 = {
+		holder = linehammerdelgeneral36
+	}
+	6588.1.1 = {
+		holder = linehammerdelgeneral37
+	}
+	6628.1.1 = {
+		holder = linehammerdelgeneral38
+	}
+	6673.1.1 = {
+		holder = linehammerdelgeneral39
+	}
 	6674.5.9 = {
 		holder = sedericharacterthree25
 	}
@@ -12398,6 +14240,156 @@ c_tharkadur = {
 	3770.1.1 = {
 		change_development_level = 6
 	}
+	3864.1.1 = {
+		holder = linehammerdel1
+	}
+	3931.1.1 = {
+		holder = linehammerdel2
+	}
+	3998.1.1 = {
+		holder = linehammerdel3
+	}
+	4058.1.1 = {
+		holder = linehammerdel4
+	}
+	4123.1.1 = {
+		holder = linehammerdel5
+	}
+	4127.1.1 = {
+		holder = linehammerdel7
+	}
+	4159.1.1 = {
+		holder = linehammerdel8
+	}
+	4212.1.1 = {
+		holder = linehammerdel9
+	}
+	4275.1.1 = {
+		holder = linehammerdel20
+	}
+	4317.1.1 = {
+		holder = linehammerdel21
+	}
+	4366.1.1 = {
+		holder = linehammerdel22
+	}
+	4381.1.1 = {
+		holder = linehammerdel23
+	}
+	4417.1.1 = {
+		holder = linehammerdel24
+	}
+	4453.1.1 = {
+		holder = linehammerdel25
+	}
+	4500.1.1 = {
+		holder = linehammerdel26
+	}
+	4539.1.1 = {
+		holder = linehammerdelgeneral5
+	}
+	4592.1.1 = {
+		holder = linehammerdelgeneral6
+	}
+	4691.1.1 = {
+		holder = linehammerdelgeneral7
+	}
+	4753.1.1 = {
+		holder = linehammerdelgeneral8
+	}
+	4841.1.1 = {
+		holder = linehammerdelgeneral9
+	}
+	4925.1.1 = {
+		holder = linehammerdelgeneral10
+	}
+	5001.1.1 = {
+		holder = linehammerdelgeneral11
+	}
+	5093.1.1 = {
+		holder = linehammerdelgeneral12
+	}
+	5174.1.1 = {
+		holder = linehammerdelgeneral13
+	}
+	5244.1.1 = {
+		holder = linehammerdelgeneral14
+	}
+	5345.1.1 = {
+		holder = linehammerdelgeneral15
+	}
+	5434.1.1 = {
+		holder = linehammerdelgeneral16
+	}
+	5453.1.1 = {
+		holder = linehammerdelgeneral17
+	}
+	5486.1.1 = {
+		holder = linehammerdelgeneral18
+	}
+	5496.1.1 = {
+		holder = linehammerdelgeneral19
+	}
+	5537.1.1 = {
+		holder = linehammerdelgeneral20
+	}
+	5626.1.1 = {
+		holder = linehammerdelgeneral21
+	}
+	5712.1.1 = {
+		holder = linehammerdelgeneral22
+	}
+	5797.1.1 = {
+		holder = linehammerdelgeneral23
+	}
+	5856.1.1 = {
+		holder = linehammerdelgeneral24
+	}
+	5926.1.1 = {
+		holder = linehammerdelgeneral25
+	}
+	5983.1.1 = {
+		holder = linehammerdelgeneral26
+	}
+	6058.1.1 = {
+		holder = linehammerdelgeneral27
+	}
+	6120.1.1 = {
+		holder = linehammerdelgeneral28
+	}
+	6200.1.1 = {
+		holder = linehammerdelgeneral29
+	}
+	6248.1.1 = {
+		holder = linehammerdelgeneral30
+	}
+	6311.1.1 = {
+		holder = linehammerdelgeneral31
+	}
+	6366.1.1 = {
+		holder = linehammerdelgeneral32
+	}
+	6421.1.1 = {
+		holder = linehammerdelgeneral33
+	}
+	6425.1.1 = {
+		holder = linehammerdelgeneral34
+	}
+	6469.1.1 = {
+		holder = linehammerdelgeneral35
+	}
+	6522.1.1 = {
+		holder = linehammerdelgeneral36
+	}
+	6588.1.1 = {
+		holder = linehammerdelgeneral37
+	}
+	6628.1.1 = {
+		holder = linehammerdelgeneral38
+	}
+	6673.1.1 = {
+		holder = linehammerdelgeneral39
+	}
 	6674.5.9 = {
 		holder = sedericharacterthree25
 	}
@@ -12448,6 +14440,156 @@ c_tharkadur = {
 c_azulan = {
 	3770.1.1 = {
 		change_development_level = 4
+	}
+	3864.1.1 = {
+		holder = linehammerdel1
+	}
+	3931.1.1 = {
+		holder = linehammerdel2
+	}
+	3998.1.1 = {
+		holder = linehammerdel3
+	}
+	4058.1.1 = {
+		holder = linehammerdel4
+	}
+	4123.1.1 = {
+		holder = linehammerdel5
+	}
+	4127.1.1 = {
+		holder = linehammerdel7
+	}
+	4159.1.1 = {
+		holder = linehammerdel8
+	}
+	4212.1.1 = {
+		holder = linehammerdel9
+	}
+	4275.1.1 = {
+		holder = linehammerdel20
+	}
+	4317.1.1 = {
+		holder = linehammerdel21
+	}
+	4366.1.1 = {
+		holder = linehammerdel22
+	}
+	4381.1.1 = {
+		holder = linehammerdel23
+	}
+	4417.1.1 = {
+		holder = linehammerdel24
+	}
+	4453.1.1 = {
+		holder = linehammerdel25
+	}
+	4500.1.1 = {
+		holder = linehammerdel26
+	}
+	4539.1.1 = {
+		holder = linehammerdelgeneral5
+	}
+	4592.1.1 = {
+		holder = linehammerdelgeneral6
+	}
+	4691.1.1 = {
+		holder = linehammerdelgeneral7
+	}
+	4753.1.1 = {
+		holder = linehammerdelgeneral8
+	}
+	4841.1.1 = {
+		holder = linehammerdelgeneral9
+	}
+	4925.1.1 = {
+		holder = linehammerdelgeneral10
+	}
+	5001.1.1 = {
+		holder = linehammerdelgeneral11
+	}
+	5093.1.1 = {
+		holder = linehammerdelgeneral12
+	}
+	5174.1.1 = {
+		holder = linehammerdelgeneral13
+	}
+	5244.1.1 = {
+		holder = linehammerdelgeneral14
+	}
+	5345.1.1 = {
+		holder = linehammerdelgeneral15
+	}
+	5434.1.1 = {
+		holder = linehammerdelgeneral16
+	}
+	5453.1.1 = {
+		holder = linehammerdelgeneral17
+	}
+	5486.1.1 = {
+		holder = linehammerdelgeneral18
+	}
+	5496.1.1 = {
+		holder = linehammerdelgeneral19
+	}
+	5537.1.1 = {
+		holder = linehammerdelgeneral20
+	}
+	5626.1.1 = {
+		holder = linehammerdelgeneral21
+	}
+	5712.1.1 = {
+		holder = linehammerdelgeneral22
+	}
+	5797.1.1 = {
+		holder = linehammerdelgeneral23
+	}
+	5856.1.1 = {
+		holder = linehammerdelgeneral24
+	}
+	5926.1.1 = {
+		holder = linehammerdelgeneral25
+	}
+	5983.1.1 = {
+		holder = linehammerdelgeneral26
+	}
+	6058.1.1 = {
+		holder = linehammerdelgeneral27
+	}
+	6120.1.1 = {
+		holder = linehammerdelgeneral28
+	}
+	6200.1.1 = {
+		holder = linehammerdelgeneral29
+	}
+	6248.1.1 = {
+		holder = linehammerdelgeneral30
+	}
+	6311.1.1 = {
+		holder = linehammerdelgeneral31
+	}
+	6366.1.1 = {
+		holder = linehammerdelgeneral32
+	}
+	6421.1.1 = {
+		holder = linehammerdelgeneral33
+	}
+	6425.1.1 = {
+		holder = linehammerdelgeneral34
+	}
+	6469.1.1 = {
+		holder = linehammerdelgeneral35
+	}
+	6522.1.1 = {
+		holder = linehammerdelgeneral36
+	}
+	6588.1.1 = {
+		holder = linehammerdelgeneral37
+	}
+	6628.1.1 = {
+		holder = linehammerdelgeneral38
+	}
+	6673.1.1 = {
+		holder = linehammerdelgeneral39
 	}
 	6743.10.22 = {
 		holder = sedericharacterfive1
@@ -12571,26 +14713,22 @@ d_azgathani = {
 	5174.1.1 = {
 		holder = linehammerdelgeneral13
 	}
-	5244.1.1 = {
-		holder = linehammerdelgeneral14
+	5210.8.11 = {
+		holder = lineofzaradan63sister
+		liege = k_kharadune
 	}
-	5345.1.1 = {
-		holder = linehammerdelgeneral15
+	5290.9.27 = {
+		holder = lineofzaradancadet1
 	}
-	5434.1.1 = {
-		holder = linehammerdelgeneral16
+	5380.3.12 = {
+		holder = lineofzaradancadet2
 	}
-	5453.1.1 = {
-		holder = linehammerdelgeneral17
+	5520.3.12 = {
+		holder = lineofzaradancadet3
 	}
-	5486.1.1 = {
-		holder = linehammerdelgeneral18
-	}
-	5496.1.1 = {
-		holder = linehammerdelgeneral19
-	}
-	5537.1.1 = {
+	5560.10.22 = {
 		holder = linehammerdelgeneral20
+		liege = 0
 	}
 	5626.1.1 = {
 		holder = linehammerdelgeneral21
@@ -12754,25 +14892,19 @@ c_zairazgara = {
 	5174.1.1 = {
 		holder = linehammerdelgeneral13
 	}
-	5244.1.1 = {
-		holder = linehammerdelgeneral14
+	5210.8.11 = {
+		holder = lineofzaradan63sister
 	}
-	5345.1.1 = {
-		holder = linehammerdelgeneral15
+	5290.9.27 = {
+		holder = lineofzaradancadet1
 	}
-	5434.1.1 = {
-		holder = linehammerdelgeneral16
+	5380.3.12 = {
+		holder = lineofzaradancadet2
 	}
-	5453.1.1 = {
-		holder = linehammerdelgeneral17
+	5520.3.12 = {
+		holder = lineofzaradancadet3
 	}
-	5486.1.1 = {
-		holder = linehammerdelgeneral18
-	}
-	5496.1.1 = {
-		holder = linehammerdelgeneral19
-	}
-	5537.1.1 = {
+	5560.10.22 = {
 		holder = linehammerdelgeneral20
 	}
 	5626.1.1 = {
@@ -12865,6 +14997,25 @@ c_aganarukh = {
 	3770.1.1 = {
 		change_development_level = 4
 	}
+	5174.1.1 = {
+		holder = linehammerdelgeneral13
+	}
+	5210.8.11 = {
+		holder = lineofzaradan63sister
+	}
+	5290.9.27 = {
+		holder = lineofzaradancadet1
+	}
+	5380.3.12 = {
+		holder = lineofzaradancadet2
+	}
+	5520.3.12 = {
+		holder = lineofzaradancadet3
+	}
+	5560.10.22 = {
+		holder = linehammerdelgeneral20
+	}
+	
 	6748.4.18 = {
         holder = northguardian7
 		government = feudal_government
@@ -12902,6 +15053,25 @@ c_anaduniakho = {
 	3770.1.1 = {
 		change_development_level = 3
 	}
+	5174.1.1 = {
+		holder = linehammerdelgeneral13
+	}
+	5210.8.11 = {
+		holder = lineofzaradan63sister
+	}
+	5290.9.27 = {
+		holder = lineofzaradancadet1
+	}
+	5380.3.12 = {
+		holder = lineofzaradancadet2
+	}
+	5520.3.12 = {
+		holder = lineofzaradancadet3
+	}
+	5560.10.22 = {
+		holder = linehammerdelgeneral20
+	}
+	
 	6740.1.1 = { #Adûnaphazôr is a half-decent general, but more than that Tul-mir sucks. So, he takes control over two counties...
         holder = lineofdulgu31
     }
@@ -12940,6 +15110,25 @@ c_dolgunai = {
 		change_development_level = 4
 		government = feudal_government
 	}
+	5174.1.1 = {
+		holder = linehammerdelgeneral13
+	}
+	5210.8.11 = {
+		holder = lineofzaradan63sister
+	}
+	5290.9.27 = {
+		holder = lineofzaradancadet1
+	}
+	5380.3.12 = {
+		holder = lineofzaradancadet2
+	}
+	5520.3.12 = {
+		holder = lineofzaradancadet3
+	}
+	5560.10.22 = {
+		holder = linehammerdelgeneral20
+	}
+	
 	6731.3.17 = {
 		holder = sedericharacterprefour2
 
@@ -12972,6 +15161,25 @@ c_zayanaglar = {
 	3770.1.1 = {
 		change_development_level = 6
 	}
+	5174.1.1 = {
+		holder = linehammerdelgeneral13
+	}
+	5210.8.11 = {
+		holder = lineofzaradan63sister
+	}
+	5290.9.27 = {
+		holder = lineofzaradancadet1
+	}
+	5380.3.12 = {
+		holder = lineofzaradancadet2
+	}
+	5520.3.12 = {
+		holder = lineofzaradancadet3
+	}
+	5560.10.22 = {
+		holder = linehammerdelgeneral20
+	}
+	
 	6740.1.1 = { #Adûnaphazôr is a half-decent general, but more than that Tul-mir sucks. So, he takes control over two counties...
         holder = lineofdulgu31
     }
@@ -13005,10 +15213,3 @@ c_zayanaglar = {
 		holder = northguardian1
 	}
 }
-
-
-
-
-
-
-

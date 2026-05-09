@@ -1200,7 +1200,7 @@ linegimilzadan2 = {
 	trait = lustful
 	trait = compassionate
 	trait = just
-	trait = depressed_1 
+	trait = depressed_genetic  
 	trait = confider 
 	
     diplomacy = 8
@@ -1242,7 +1242,7 @@ linegimilzadan3 = {
 	trait = eccentric
 	trait = content
 	trait = curious
-	#trait = depressed_genetic
+	trait = depressed_genetic
 	trait = flagellant
 	#trait = journaller
 	trait = lifestyle_herbalist
@@ -1528,7 +1528,7 @@ lineagimilzadanwife = {
 	trait = compassionate
 	trait = forgiving
 	trait = just
-	#trait = depressed_genetic 
+	trait = depressed_genetic 
 	#trait = loyal
 	trait = lifestyle_gardener
 	trait = lifestyle_herbalist
@@ -1761,12 +1761,13 @@ linegimilethtwocustom3 = {
 }
 
 linegimilethtwocustom2husband = {
-	name = Iun_ast
-	dynasty = dynasty_vatrak
-    religion = faith_adunaic_faithful
-    culture = bellanarud
-	father = lineofsiranet18
-	mother = lineofsiranet19
+	name = Farzan
+    dynasty = dynasty_lowun
+    religion = faith_tamska_anjiru
+    culture = lomchy
+	father = linelowun7
+    mother = linelowun8
+	sexuality = heterosexual
 	
 	trait = intellect_good_1
 	trait = education_martial_3
@@ -1775,6 +1776,28 @@ linegimilethtwocustom2husband = {
 	
 
 	7007.11.20 = {
+		birth = yes
+	}
+	
+	7094.3.22 = { death = { death_reason = death_natural_causes }  }
+}
+
+linegimilethtwocustom2husbandsis = {
+	name = Jahanara
+    dynasty = dynasty_lowun
+    religion = faith_tamska_anjiru
+    culture = lomchy
+	father = linelowun7
+    mother = linelowun8
+	sexuality = heterosexual
+    female = yes
+	
+	trait = education_martial_3
+	trait = generous
+	trait = vengeful
+	
+
+	7003.4.23 = {
 		birth = yes
 	}
 	

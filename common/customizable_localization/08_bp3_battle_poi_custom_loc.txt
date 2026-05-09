@@ -499,6 +499,13 @@ BattlePoiNameHistorical = {
 		localization_key = BattlePoIHistoricalNameSikentrsFolly
 	}
 
+	text = { # Ovatha's Folly
+		trigger = {
+			this = province:4056
+		}
+		localization_key = BattlePoIHistoricalNameOvathasFolly
+	}
+
 	text = { # The Field of Black Death
 		trigger = {
 			this = province:1573
@@ -705,6 +712,13 @@ BattlePoIDescriptionHistorical = {
 			this = province:2171
 		}
 		localization_key = BattlePoIHistoricalDescSikentrsFolly
+	}
+
+	text = { # Ovatha's Folly
+		trigger = {
+			this = province:4056
+		}
+		localization_key = BattlePoIHistoricalDescOvathasFolly
 	}
 
 	text = { # The Field of Black Death

@@ -201,7 +201,7 @@ lotr_canon_safe_from_harm_trigger = {
 		this = character:lineofeofor18 #Eowyn
 		this = character:linegrima6 #Grima
 		this = character:lineofbeorn2 # Grimbeorn
-		this = character:lineoftumakveh134 #Niluhin
+		this = character:lineoftumakveh135 #Niluhin
 		this = character:lineofhuz189 #Huz-Margoz
 		this = character:lineblackqueen9 #Beruthiel
 		this = character:lineofcassimir23 #Cassimir
@@ -340,6 +340,13 @@ lotr_horse_lords_trigger = {
 		culture = { has_cultural_pillar = heritage_ioriag }
 	}
 }
+lotr_horse_lords_cultural_pillar_trigger = {
+	OR = {
+		has_cultural_pillar = heritage_eotheod
+		has_cultural_pillar = heritage_tedjin
+		has_cultural_pillar = heritage_ioriag
+	}
+}
 lotr_haradrim_group_culture_trigger = {
 	OR = {
 		culture = culture:umbarean
@@ -410,6 +417,14 @@ lotr_steppe_cultures_trigger = {
 		culture = { has_cultural_pillar = heritage_igath }
 		culture = { has_cultural_pillar = heritage_ioriag }
 		culture = { has_cultural_pillar = heritage_tedjin }
+	}
+}
+
+lotr_steppe_cultural_pillar_trigger = {
+	OR = {
+		has_cultural_pillar = heritage_igath
+		has_cultural_pillar = heritage_ioriag
+		has_cultural_pillar = heritage_tedjin
 	}
 }
 
@@ -494,17 +509,7 @@ is_evil_istari = {
 }
 
 is_wastelands = {
-	OR = {
-		culture = culture:wastelands
-		trigger_if = { #Juke note: fallback, in case tom converts his culture somehow
-			limit = {
-				exists = primary_title
-			}
-			is_landed = yes
-			government_has_flag = government_is_wastelands
-		}
-
-	}
+	culture = culture:wastelands
 }
 
 is_wastelands_culture = { 
@@ -668,7 +673,10 @@ is_elf_culture = {
 is_good_undying = {
 	OR = {
 		is_elf = yes
-		is_istari = yes 
+		AND = {
+			is_maiar = yes 
+			faith_is_good = yes 
+		}
 	}
 }
 

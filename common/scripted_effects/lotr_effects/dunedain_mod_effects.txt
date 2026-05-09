@@ -25,6 +25,7 @@ evil_strength_gamerule_buffs = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule
@@ -62,6 +63,7 @@ evil_strength_gamerule_buffs = {
 				NOT = { 
 					this = character:lineofsauron 
 				}
+				is_ai = yes
 			} 
 			switch = {
 				trigger = has_game_rule

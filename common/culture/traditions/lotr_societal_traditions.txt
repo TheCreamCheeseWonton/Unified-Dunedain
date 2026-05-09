@@ -875,7 +875,7 @@ tradition_blacknumenorean_legacy = { # Black Numenorean traditions
 	}
 
 	parameters = { 
-		dislikes_marrying_outside_of_tradition_blacknumenorean = yes 		
+		dislikes_marrying_outside_adunai_heritage = yes 		
 		values_numenorean_blood = yes 
 		courtiers_less_likely_to_leave_same_culture_court = yes
 		
@@ -981,7 +981,7 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 
 
 	parameters = { 
-		dislikes_marrying_outside_of_tradition_blacknumenorean = yes 		
+		dislikes_marrying_outside_adunai_heritage = yes 		
 		values_numenorean_blood = yes 
 		courtiers_less_likely_to_leave_same_culture_court = yes
 		
@@ -1093,7 +1093,7 @@ tradition_kharadunai = { # Kharadunaic tradition by Trig
 	}
 
 	parameters = { 
-		dislikes_marrying_outside_of_tradition_kharadunai = yes 		
+		dislikes_marrying_outside_adunai_heritage = yes 			
 		values_numenorean_blood = yes 
 		courtiers_less_likely_to_leave_same_culture_court = yes
 		
@@ -1166,8 +1166,61 @@ tradition_kharadunai = { # Kharadunaic tradition by Trig
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
+}
 
+tradition_reformed_kharadunai = { # Kharadunaic reforms by Derei
+	category = societal
+
+	layers = {
+		0 = diplo
+		1 = mena
+		4 = lotr_kharadunai.dds
+	}
+
+	is_shown = {
+		has_cultural_tradition = tradition_kharadunai
+	}
+
+	can_pick = {
+		always = no # Part of Derei's content, cannot be normally picked
+	}
+
+	parameters = { 		
+		values_numenorean_blood = yes 
+		courtiers_less_likely_to_leave_same_culture_court = yes
+		
+		# tradition_staunch_traditionalists remnants from tradition_kharadunai
+		expensive_convert_to_local_culture = yes
+		less_likely_to_culture_convert = yes
+
+		#Stuff from Astute Diplomats
+		cannot_attack_truces = yes
+		facilitate_white_peace = yes
+
+		#Philosopher culture but diplomatic
+		innovation_from_diplomacy_traits = yes
+	}
+		
+	character_modifier = { # change from culture to tenet
+		dread_decay_mult = 0.25
+		development_growth_factor = 0.1
+		farmlands_tax_mult = 0.1
+		learn_language_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
+	}
 	
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.25
+	}
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+		}
+	}
 }
 
 ##Quonton
@@ -1201,7 +1254,7 @@ tradition_kharatakhori = { # Kharatakhori tradition
 	}
 
 	parameters = { 
-		dislikes_marrying_outside_of_tradition_kharadunai = yes 		
+		dislikes_marrying_outside_adunai_heritage = yes 	
 		values_numenorean_blood = yes 
 		courtiers_less_likely_to_leave_same_culture_court = yes
 		
@@ -1225,15 +1278,16 @@ tradition_kharatakhori = { # Kharatakhori tradition
 		long_reign_bonus_mult = 0.25
 		cultural_head_fascination_mult = 0.05
 		dread_loss_mult = -0.5
+		farmlands_tax_mult = 0.1
 	}
 	
 	culture_modifier = {
-		cultural_acceptance_gain_mult = -0.35
+		cultural_acceptance_gain_mult = -0.25
 	}
 
 	county_modifier = {
 		monthly_county_control_growth_add = 0.5
-		#development_growth_factor = 0.05
+		#development_growth_factor = 0.1
 	}	
 	
 	cost = {
@@ -1296,6 +1350,8 @@ tradition_batanim = { # Southern Faithful
 		OR = {
 			lotr_culture_has_adunaic_supremacy_tradition = yes
 			has_cultural_pillar = heritage_southern_adunaic
+		}
+		culture_head ?= {
 			faith_is_good = yes
 		}
 	}
@@ -1304,6 +1360,9 @@ tradition_batanim = { # Southern Faithful
 		NOT = { 
 			has_cultural_tradition = tradition_staunch_traditionalists
 			lotr_culture_has_adunaic_supremacy_tradition = yes
+		}
+		culture_head ?= {
+			faith_is_good = yes
 		}
 
 		trigger_if = { #LotR
@@ -1318,7 +1377,7 @@ tradition_batanim = { # Southern Faithful
 	}
 
 	parameters = { 
-		dislikes_marrying_outside_of_cultural_heritage = yes
+		dislikes_marrying_outside_adunai_heritage = yes 	
 		ai_doesnt_marry_outside_cultural_heritage = yes		
 		values_numenorean_blood = yes 
 		courtiers_less_likely_to_leave_same_culture_court = yes
@@ -1637,6 +1696,117 @@ tradition_azralai = { # Azralâi tradition made by Quonton
 	}
 
 	
+}
+
+tradition_tanturaki = { # Tantûraki tradition by Zeltron
+	category = societal
+
+	layers = {
+		0 = diplo
+		1 = western
+		4 = blacknumenorean.dds
+	}
+
+	is_shown = {
+		OR = {
+			lotr_culture_has_adunaic_supremacy_tradition = yes
+			has_cultural_pillar = heritage_southern_adunaic
+		}
+	}
+
+	can_pick = {
+		NOT = { 
+			has_cultural_tradition = tradition_staunch_traditionalists
+			lotr_culture_has_adunaic_supremacy_tradition = yes
+		}
+		trigger_if = { #LotR
+            limit = {
+                scope:replacing ?= culture_tradition:tradition_variag_succession
+            }
+            custom_tooltip = {
+                text = cannot_replace_variag_succession
+                NOT = { has_cultural_tradition = tradition_variag_succession } #To prevent stacking after hybridization
+            }
+        }
+	}
+
+	parameters = { 
+		dislikes_marrying_outside_adunai_heritage = yes 		
+		values_numenorean_blood = yes 
+		courtiers_less_likely_to_leave_same_culture_court = yes
+		
+		# tradition_staunch_traditionalists like parameters
+		stubborn_trait_more_common = yes
+		expensive_convert_to_local_culture = yes
+		harder_to_hybridize = yes
+		less_likely_to_promote_culture = yes # These 2 parameters need to be merged to avoid text bloat
+		less_likely_to_culture_convert = yes
+	}
+		
+	character_modifier = { # change from culture to tenet
+		#same_tradition_blacknumenorean_opinion = 5
+		different_culture_opinion = -50
+		opinion_of_different_culture = -50
+		tax_mult = 0.05
+		monthly_county_control_growth_add = 0.2
+		county_opinion_add = -30
+		build_speed = -0.05
+		build_gold_cost = -0.05				
+	}
+	
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.80
+	}
+
+	county_modifier = {
+		county_opinion_add = 30
+	}	
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_communal = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_communal_spiritual_or_stoic_desc
+				}
+			}
+			if = {
+				limit = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							any_neighboring_county = {
+								NOT = {
+									culture = scope:character.culture
+								}
+								culture = {
+									cultural_acceptance = { target = scope:character.culture value >= 40 }
+								}
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = non_tolerated_cultures_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
 }
 
 ### Orc ###

@@ -11,7 +11,7 @@
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		tradition_blacknumenorean_legacy #Representing pre kharadunaim/anballukhori split
+		tradition_blacknumenorean_legacy #Representing pre kharadunaim/anbalukkhori split
 		tradition_ruling_caste
 		# tradition_staunch_traditionalists # Conflicts with above
 		tradition_castle_keepers
@@ -23,7 +23,7 @@
 	coa_gfx = { southern_numenorean_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -35,7 +35,7 @@
 anbalukkhori = {
 	color = { 10 10 20 }
 	created = 3297.1.1 # Split into colonial cultures
-	parents = { south_adunai_colonial } # Anballukhor rises in prominence, bringing with it the increasingly cruel politics and ideals germanating in the homeland
+	parents = { south_adunai_colonial } # Anbalukkhor rises in prominence, bringing with it the increasingly cruel politics and ideals germanating in the homeland
 	
 	history_loc_override = anbalukkhori_history_loc
 	
@@ -151,7 +151,7 @@ tanturaki = { # The inhabitants of the colony of Tantûrak, this culture is exti
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		tradition_blacknumenorean_legacy
+		tradition_tanturaki
 		tradition_spartan
 		tradition_hard_working
 		tradition_ruling_caste

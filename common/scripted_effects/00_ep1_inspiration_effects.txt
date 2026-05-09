@@ -1056,7 +1056,6 @@ set_adventure_location_effect = {
 						}
 					}
 					10 = { # Far Harad - Tulwang
-
 						trigger = {
 							trigger_if = {
 								limit = { exists = location }
@@ -1074,7 +1073,8 @@ set_adventure_location_effect = {
 							value = flag:farharad_tulwang
 						}
 					}
-					10 = { # Far Harad - Dune Sea
+
+					5 = { # Dune Sea
 
 						trigger = {
 							trigger_if = {
@@ -1090,7 +1090,83 @@ set_adventure_location_effect = {
 						}
 						set_variable = {
 							name = adventure_destination
-							value = flag:farharad_dunesea
+							value = flag:dunesea
+						}
+					}
+					5 = { # Dune Sea - Mirror of Fire
+
+						trigger = {
+							trigger_if = {
+								limit = { exists = location }
+								any_county_in_region = {
+									region = middleearth_harad_dunesea_mirroroffire
+									culture != culture:wastelands
+								}
+								adventurer_potential_destination_distance_check = {
+									REGION = middleearth_harad_dunesea_mirroroffire
+								}
+							}
+						}
+						set_variable = {
+							name = adventure_destination
+							value = flag:dunesea_mirroroffire
+						}
+					}
+					5 = { # Dune Sea - Narak Tedja
+
+						trigger = {
+							trigger_if = {
+								limit = { exists = location }
+								any_county_in_region = {
+									region = middleearth_harad_dunesea_naraktedja
+									culture != culture:wastelands
+								}
+								adventurer_potential_destination_distance_check = {
+									REGION = middleearth_harad_dunesea_naraktedja
+								}
+							}
+						}
+						set_variable = {
+							name = adventure_destination
+							value = flag:dunesea_naraktedja
+						}
+					}
+					5 = { # Dune Sea - Qarsa Aukar
+
+						trigger = {
+							trigger_if = {
+								limit = { exists = location }
+								any_county_in_region = {
+									region = middleearth_harad_dunesea_qarsaaukar
+									culture != culture:wastelands
+								}
+								adventurer_potential_destination_distance_check = {
+									REGION = middleearth_harad_dunesea_qarsaaukar
+								}
+							}
+						}
+						set_variable = {
+							name = adventure_destination
+							value = flag:dunesea_qarsaaukar
+						}
+					}
+					5 = { # Dune Sea - Abrakhan
+
+						trigger = {
+							trigger_if = {
+								limit = { exists = location }
+								any_county_in_region = {
+									region = middleearth_harad_dunesea_abrakhan
+									culture != culture:wastelands
+								}
+								adventurer_potential_destination_distance_check = {
+									REGION = middleearth_harad_dunesea_abrakhan
+								}
+							}
+						}
+						set_variable = {
+							name = adventure_destination
+							value = flag:dunesea_abrakhan
 						}
 					}
 
@@ -1305,6 +1381,7 @@ set_adventure_location_effect = {
 							value = flag:mountains_white
 						}
 					}
+
 					10 = { # Blue Mountains
 
 						trigger = {
@@ -1384,6 +1461,7 @@ set_adventure_location_effect = {
 							value = flag:mountains_blue_belegost
 						}
 					}
+					
 					10 = { # Misty Mountains
 
 						trigger = {
@@ -1463,6 +1541,7 @@ set_adventure_location_effect = {
 							value = flag:mountains_misty_gundabad
 						}
 					}
+					
 					10 = { # Iron Mountains
 
 						trigger = {
@@ -1542,6 +1621,7 @@ set_adventure_location_effect = {
 							value = flag:mountains_iron_erebor
 						}
 					}
+					
 					10 = { # Yellow Mountains
 
 						trigger = {
@@ -1949,10 +2029,45 @@ get_adventure_inspiration_start_location = {
 						title_province = { save_scope_as = location }
 					}
 				}
-				flag:farharad_dunesea = { #Dune Sea
+				flag:dunesea = { #Dune Sea
 					random_county_in_region = {
 						limit = { is_wastelands = no }
 						region = middleearth_harad_dunesea
+						title_province = { save_scope_as = location }
+					}
+				}
+				flag:dunesea_mirroroffire = { #Dune Sea - Mirror of Fire
+					random_county_in_region = {
+						limit = { is_wastelands = no }
+						region = middleearth_harad_dunesea_mirroroffire
+						title_province = { save_scope_as = location }
+					}
+				}
+				flag:dunesea_naraktedja = { #Dune Sea - Narak Tedja
+					random_county_in_region = {
+						limit = { is_wastelands = no }
+						region = middleearth_harad_dunesea_naraktedja
+						title_province = { save_scope_as = location }
+					}
+				}
+				flag:dunesea_qarsaaukar = { #Dune Sea - Qarsa Aukar
+					random_county_in_region = {
+						limit = { is_wastelands = no }
+						region = middleearth_harad_dunesea_qarsaaukar
+						title_province = { save_scope_as = location }
+					}
+				}
+				flag:dunesea_abrakhan = { #Dune Sea - Abrakhan
+					random_county_in_region = {
+						limit = { is_wastelands = no }
+						region = middleearth_harad_dunesea_abrakhan
+						title_province = { save_scope_as = location }
+					}
+				}
+				flag:dunesea_arysis = { #Dune Sea - Arysis
+					random_county_in_region = {
+						limit = { is_wastelands = no }
+						region = middleearth_harad_dunesea_arysis
 						title_province = { save_scope_as = location }
 					}
 				}
@@ -2537,10 +2652,18 @@ inspiration_adventure_create_artifact_effect = {
 									}
 									100 = { #Utter South
 										trigger = {
-											scope:location ?= {
-												geographical_region = middleearth_uttersouth
-												NOT = { geographical_region = adventure_elvenlands }
+											scope:location ?= {	geographical_region = middleearth_uttersouth }
+										}
+										modifier = {
+											NOT = {
+												scope:location ?= {
+													OR  = {
+														culture = { has_cultural_parameter = heritage_family_haradrim } 
+														culture = culture:wastelands
+													}
+												}
 											}
+											add = -75
 										}
 										random_list = {
 											1 = {
@@ -2858,7 +2981,7 @@ inspiration_adventure_create_artifact_effect = {
 									game_start_date > 6020
 									NOT = {
 										any_artifact = {
-											has_variable = stewards_rod
+											has_variable = steward_rod
 										}
 									}
 									scope:location ?= {
@@ -2923,6 +3046,33 @@ inspiration_adventure_create_artifact_effect = {
 									}
 								}
 								create_artifact_swan_shield_effect = { OWNER = root }
+							}
+							10 = { # Circlet of Dol Amroth
+								modifier = {
+									OR = {
+										scope:adventurer.adventure_inspiration_average_skill_value >= high_inspiration_skill
+										AND = {
+											exists = scope:inspiration_owner.var:artifact_quality
+											scope:inspiration_owner.var:artifact_quality > high_adventurer_epic_quality_level #Cumulative vent choices
+										}
+									}
+									add = 5
+								}
+								trigger = {
+									game_start_date > 6120
+									NOT = {
+										any_artifact = {
+											has_variable = swan_circlet
+										}
+									}
+									scope:location ?= {
+										OR = {
+											geographical_region = middleearth_west_gondor_centralfiefdoms
+											geographical_region = middleearth_west_gondor_easternfiefdoms
+										}
+									}
+								}
+								create_artifact_swan_circlet_effect = { OWNER = root }
 							}
 							10 = { #Mace of Anárion
 								modifier = {
@@ -6213,7 +6363,10 @@ inspiration_adventure_create_artifact_effect = {
 				}
 			}
 			if = {
-				limit = { exists = scope:epic }
+				limit = {
+					exists = scope:epic
+					NOT = { exists = scope:task_contract_taker }
+				}
 				scope:epic = {
 					add_artifact_history = {
 						location = root.capital_province
@@ -6224,7 +6377,10 @@ inspiration_adventure_create_artifact_effect = {
 				}
 			}
 			else_if = {
-				limit = { exists = scope:newly_created_artifact }
+				limit = {
+					exists = scope:newly_created_artifact
+					NOT = { exists = scope:task_contract_taker }
+				}
 				scope:newly_created_artifact = {
 					add_artifact_history = {
 						location = root.capital_province

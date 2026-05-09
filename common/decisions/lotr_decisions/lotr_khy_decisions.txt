@@ -169,6 +169,7 @@ decision_sakal_an_khar = {
 			save_scope_as = title_change
 			add_claim_on_loss = yes
 		}
+		##Quonton
 		title:h_sakal_an_khar = {
 			change_title_holder = {
 				holder = root
@@ -219,7 +220,7 @@ decision_sakal_an_khar = {
 			}
 			title:k_poa = { set_de_jure_liege_title = title:e_bozisha_miraz }
 		}	
-		
+		##End Quonton
 		# Everyone is mad
 		custom_tooltip = {
 			text = decision_sakal_an_khar_effect.tt
