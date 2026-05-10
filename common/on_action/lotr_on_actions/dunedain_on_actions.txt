@@ -506,11 +506,11 @@ dunedain_yearly_global_pulse = {
 			limit = { 
 				character:linegimilzadan2 = {
 					piety_level >= 5
-					NOT = { 
-						is_target_in_global_variable_list = {
-							name = unavailable_unique_events
-							target = flag:gimilzir_saintly_life
-						}
+				}
+				NOT = { 
+					is_target_in_global_variable_list = {
+						name = unavailable_unique_events
+						target = flag:gimilzir_saintly_life
 					}
 				}
 			}

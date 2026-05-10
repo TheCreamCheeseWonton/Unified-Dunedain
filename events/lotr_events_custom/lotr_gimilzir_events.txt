@@ -159,6 +159,8 @@ gimilzir_events.33 = { # Gimilzadan Flavor gain extra health
 		animation = personality_zealous
 	}
 	
+	cooldown = { years = 1000 }
+	
 	immediate = { 
 		add_to_global_variable_list = {
 			name = unavailable_unique_events
@@ -5863,6 +5865,8 @@ gimilzir_events.7822 = { # Meeting with Shelepinn
 		animation = marshal
 	}
 	
+	cooldown = { years = 1000 }
+	
 	immediate = {
 		character:lineoftainalann3 = { 
 			save_scope_as = talilan_woman 
@@ -6210,6 +6214,8 @@ gimilzir_events.7828 = { # Meeting with Dalavin
 		character = scope:talilan_man
 		animation = personality_honorable
 	}
+	
+	cooldown = { years = 1000 }
 	
 	immediate = {
 		character:lineoftainalann10 = { 

@@ -159,7 +159,7 @@
  gimilzir_ardinak_military_desc: "The [batanim|E] stand ready for war and will use all means necessary to claim their new homeland"
 
  gimilzir_ardinak_diplomacy: "A New Tantûrak"
- gimilzir_ardinak_diplomacy_desc: "The [batanim|E] will use diplomacy to expand. If we are to avoid the mistakes of the past, we must not always turn to violence"
+ gimilzir_ardinak_diplomacy_desc: "The [batanim|E] will use less harsh methods to expand. If we are to avoid the mistakes of the past, we must not always turn to violence"
 
  lotr_usakan_dislike_tanturak_modifier: "Ûsakani Disdain"
  lotr_usakan_dislike_tanturak_modifier_desc: "The Ûsakani people see the [batanim|E] as evil [adunaic|E] conquers"
@@ -554,9 +554,9 @@
   gimilzir_event_settlers: "Batânim Settlers"
 
   gimilzir_events.781.t: "Across the Bay"
-  gimilzir_events.781.desc: "It has been some time since the [batanim|E] first made landfall upon the shores of [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip], and much progress has been made in shaping this land into a new home for our people. Yet [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] has proven a far more challenging island to settle than we first believed.\n\nMany among my people now look northward to [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], seeking new lands, citing the unnatural nature of [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] and the increasingly cramped conditions upon its shores. My people require more land, and I shall see it granted.\n\nHowever, the lands that once formed the old realm of Tantûrak are not empty. Along the coasts dwell scattered peoples, living in sparse and decentralized communities. Some among my ranks claim it is our birthright to seize these lands by force, to conquer them through strength of arms. Others caution that such a path would stain our spirit, and urge that we instead expand through diplomacy and accord.\n\nWhat path shall we take?"
+  gimilzir_events.781.desc: "It has been some time since the [batanim|E] first made landfall upon the shores of [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip], and much progress has been made in shaping this land into a new home for our people. Yet [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] has proven a far more challenging island to settle than we first believed.\n\nMany among my people now look northward to [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], seeking new lands, citing the unnatural nature of [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] and the increasingly cramped conditions upon its shores. My people require more land, and I shall see it granted.\n\nHowever, the lands that once formed the old realm of Tantûrak are not empty. Along the coasts dwell scattered peoples, living in sparse and decentralized communities. Some among my ranks claim it is our birthright to seize these lands by force, and expel the locals from these lands. Others caution that such a path would stain our spirit, and urge that we instead expand with grace, treating the local Ûsakani with respect. Regardless, war is likely in our future.\n\nWhat path shall we take?"
   gimilzir_events.781.a: "By the sword, Tantûrak shall be ours!"
-  gimilzir_events.781.b: "Waging war against good people is bad for the soul"
+  gimilzir_events.781.b: "Maybe we should employ a kinder touch" #Waging war against good people is bad for the soul
   gimilzir_events.781.c: "I will forge my own path"
   gimilzir_events.781.a.tt: "You will use military force to conquer Tantûrak"
   gimilzir_events.781.b.tt: "You will use diplomacy to unite Tantûrak"
