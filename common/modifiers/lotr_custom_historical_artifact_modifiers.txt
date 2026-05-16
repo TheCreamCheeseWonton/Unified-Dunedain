@@ -46,3 +46,12 @@ crown_of_tanturak_modifier = {
 	monthly_dread = 1
     domain_limit = 1
 }
+
+lesser_ring_modifier_no_health = {
+    monthly_dynasty_prestige = 0.3
+    monthly_prestige = 0.3
+    prowess_no_portrait = 8
+    intrigue_per_prestige_level = 1
+    stress_gain_mult = 0.1
+    stress_loss_mult = -0.1
+}

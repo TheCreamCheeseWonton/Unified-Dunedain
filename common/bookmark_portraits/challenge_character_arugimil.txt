@@ -2,7 +2,7 @@
 # History database id:linegimilzadan2
 challenge_character_arugimil={
 	type=male
-	id=68923
+	id=72544
 	random_seed=2420291611
 	age=0.190000
 	genes={ 		hair_color={ 79 240 79 240 }
@@ -97,7 +97,7 @@ challenge_character_arugimil={
  		expression_other={ "cheek_wrinkles_both_01" 0 "cheek_wrinkles_both_01" 0 }
  		complexion={ "complexion_5" 255 "complexion_5" 177 }
  		gene_height={ "normal_height" 180 "normal_height" 137 }
- 		gene_bs_body_type={ "body_fat_head_fat_medium" 112 "body_fat_head_fat_full" 115 }
+ 		gene_bs_body_type={ "body_fat_head_fat_medium" 120 "body_fat_head_fat_full" 115 }
  		gene_bs_body_shape={ "body_shape_pear_full" 125 "body_shape_pear_full" 53 }
  		gene_bs_bust={ "bust_clothes" 104 "bust_shape_1_half" 154 }
  		gene_age={ "old_4" 86 "old_4" 86 }
@@ -143,7 +143,7 @@ challenge_character_arugimil={
  		beards={ "all_beards" 219 "no_beard" 0 }
  		cloaks={ "no_cloak" 75 "no_cloak" 0 }
  		hairstyles={ "all_hairstyles" 182 "no_hairstyles" 0 }
- 		legwear={ "adunai_common_legwear" 182 "" 0 }
+ 		legwear={ "adunai_common_legwear" 250 "" 0 }
  		gene_shrink_body={ "shrink_all" 255 "" 0 }
  		gene_bs_additive_headgears={ "additive_headgears" 255 "" 0 }
  		gene_bs_cloak_offset={ "cloak_offset" 255 "" 0 }
@@ -151,7 +151,8 @@ challenge_character_arugimil={
  		gene_bs_cloak_offset3={ "cloak_offset3" 255 "cloak_offset3" 0 }
  		gene_bs_long_beard={ "long_beard" 255 "" 0 }
  		clothes={ "thani_hazad_low_clothes" 155 "" 0 }
- 		headgear={ "no_headgear" 22 "no_headgear" 0 }
+ 		headgear={ "numenorean_high_headgear" 164 "no_headgear" 0 }
+ 		clothes_hoods={ "hoods" 8 "no_clothes_hood" 0 }
  		gene_balding_hair_effect={ "no_baldness" 255 "no_baldness" 0 }
  }
 	entity={ 3942081117 3942081117 }
@@ -160,19 +161,23 @@ challenge_character_arugimil={
 			invert=no
 		}
  {
-			hash=2670398845
-			invert=no
-		}
- {
 			hash=681013727
 			invert=no
 		}
  {
-			hash=1563190100
+			hash=75156179
 			invert=no
 		}
  {
-			hash=75156179
+			hash=2670398845
+			invert=no
+		}
+ {
+			hash=1500963499
+			invert=no
+		}
+ {
+			hash=1563190100
 			invert=no
 		}
  {

@@ -52,6 +52,18 @@
  decision_continue_adventure_tanturak_confirm: "Adventure calls."
  decision_continue_adventure_gimilzir_tanturak_tt: "Your current story [task_contract|E] is regained"
 
+ decision_become_allies_with_kinnlai_gimilzir: "Pursue a Batânim-Kinn-lai Alliance"
+ decision_become_allies_with_kinnlai_gimilzir_tooltip: "Soon, the [batanim|E] and [kinnlai|E] shall stand together as allies!"
+ decision_become_allies_with_kinnlai_gimilzir_desc: "The [kinnlai|E] [elves|E] have dwelt within the lands of Ûsakan for millennia, knowing its jungles more intimately than any other people. The [batanim|E] share a long history of friendship with the many [avari|E] of southern [middleearth|E], and so we must seek friendship and alliance with these [elves|E] if we are to secure peace and prosperity in our new homeland!"
+ decision_become_allies_with_kinnlai_gimilzir_confirm: "Meet with the [kinnlai|E]"
+ decision_become_allies_with_kinnlai_gimilzir_tt_1: "You will travel too [GetScriptedCharacterByHistoryID( 'lineoftainalann3' ).GetNamePossessive] [capital|E]"
+ decision_become_allies_with_kinnlai_gimilzir_tt_2: "You will travel too [GetScriptedCharacterByHistoryID( 'lineoftainalann10' ).GetNamePossessive] [capital|E]"
+
+ decision_become_allies_with_kinnlai_gimilzir_renew: "Reaffirm the Batânim-Kinn-lai Alliance"
+ decision_become_allies_with_kinnlai_gimilzir_renew_tooltip: "Again, the [batanim|E] and [kinnlai|E] shall stand together as allies!"
+ decision_become_allies_with_kinnlai_gimilzir_renew_desc: "We must reaffirm our bonds of fellowship with the [kinnlai|E] [elves|E], recreating our old alliance!"
+ decision_become_allies_with_kinnlai_gimilzir_renew_confirm: "Reaffirm our Alliance"
+
  ##Gimilzir Events
 
  gimilzir_events.2.t: "The Rise of House Gimilzîr"
@@ -564,7 +576,7 @@
   gimilzir_events.782.t: "The Conquest of Sarûl"
   gimilzir_events.782.desc: "[GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] is ours! After thousands of years, [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], the capital of the old realm of Tantûrak, once more stands as the seat of a [numenorean|E] realm,  my realm. This time, we shall show the world what a [faithful|E] Tantûrak can be, a realm that vanquishes evil, rather than giving rise to it.\n\nYet, as unfortunate as it may be, the native Ûsakani people do not see us as liberators who would guide them into the light of [eru|E]. Instead, they view us as the same evil [adunai|E] of old. We must prove them wrong through the way we rule and lead Tantûrak.\n\nNow that the [batanim|E] have finally secured [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], many settlers in [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] long to journey there and restore the old capital as a true city of the [batanim|E], from which we shall govern. Though we must prepare [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] before it can receive them, already thousands wait, ready to bring their families and their lives to the city."
   gimilzir_events.782.a: "Soon, our new capital will be born!"
-  gimilzir_tanturak_decision_enable: "You now can see the #bold #V 'Batânim Settle Sarûl'#! Decision"
+  gimilzir_tanturak_decision_enable: "Enables the #bold #V 'Batânim Settle Sarûl'#! Decision"
 
   gimilzir_events.7820.t: "The Contract with Mispír"
   gimilzir_events.7820.desc: "Long ago, in [GetTitleByKey('c_mispir').GetNameNoTierNoTooltip], before the [batanim|E] set sail for Tantûrak, I struck a bargain with [mispirholder.GetTitledFirstName]. I pledged that we would establish profitable trade with the city, and in return, they granted me leave to take my people and depart.\n\nNow, it seems that agreement has come due. Today, the first ship from [GetTitleByKey('c_mispir').GetNameNoTierNoTooltip] has arrived upon our shores. A merchant and diplomat stood before me, requesting that we honor our pact, and more than that, that we provide the first shipment of Tantûrak mahogany to be carried back across the sea.\n\nThere is no denying the opportunity before us. This trade is lucrative, and it was, in part, the very foundation that allowed our journey to succeed. Yet not all among my council are in agreement. Some argue that the treaty is unequal, that it binds us to terms unworthy of what we have built, and that it would see Tantûrak’s natural beauty and wealth sold away piece by piece.\n\nSo now the question stands before me. Shall we honor the pact that helped bring us here, or cast it aside in pursuit of a freer future?"
@@ -578,8 +590,7 @@
   gimilzir_events.7821.b: "I must travel to see [GetScriptedCharacterByHistoryID( 'lineoftainalann10' ).GetName]"
   gimilzir_events.7821.c: "I must travel to see [GetScriptedCharacterByHistoryID( 'lineoftainalann3' ).GetName]"
   gimilzir_events.7821.d: "We will be fine on our own"
-  gimilzir_events.7821_a_tt: "You will travel too [GetScriptedCharacterByHistoryID( 'lineoftainalann3' ).GetNamePossessive] [capital|E]"
-  gimilzir_events.7821_b_tt: "You will travel too [GetScriptedCharacterByHistoryID( 'lineoftainalann10' ).GetNamePossessive] [capital|E]"
+  gimilzir_events.7821_a_tt: "Enables the #bold #V 'Pursue a Batânim-Kinn-lai Alliance'#! Decision"
 
   gimilzir_events.7822.t: "Entiring [talilan_woman_capital.GetName]"
   gimilzir_events.7822.desc: "Honestly, a part of me doubted they would even grant me entry. Yet it seems [talilan_woman.GetName] has long desired an audience. [talilan_woman_capital.GetName] reveals itself as a breathtaking stronghold of the [kinnlai|E] [elves|E], existing in near-perfect harmony with the surrounding jungle with great tree-houses suspended high among ancient boughs, and sweeping thoroughfares framed by living wood shaped with elegant precision. \n\nEverywhere I walk, the local [kinnlai|E] watch me with quiet suspicion, their eyes lingering on me despite the escort of their own soldiers at my side. Their unease is palpable.\n\nAt last, I am brought before a vast open-air pavilion. Within stands an [elf|E] of unmistakable authority, her gaze sharp. [talilan_woman.GetFirstName] regards me in silence for a moment before speaking.\n\n“So, you are [gimilzir_char.GetName],” she begins, her tone measured but firm. “You have caused my people no small measure of concern, as I’m sure you’re aware. The [adunai|E] have never been friends to the [kinnlai|E], and some among my council urged me to put an end to your... venture into Ûsakan before it could take root.” \n\nShe steps forward slightly, her eyes never leaving mine. “Yet I would hear the truth from your own lips. Why have you come here, [gimilzir_char.GetFirstName]? And what ambition do you carry into Tantûrak, [adunai|E]?”"

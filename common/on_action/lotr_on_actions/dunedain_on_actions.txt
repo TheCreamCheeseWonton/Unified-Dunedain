@@ -441,6 +441,19 @@ dunedain_on_game_start = {
 		}
 		if = { 
 			limit = {
+				character:linegimilzadan_usakan_wife = {
+					is_alive = yes
+				}
+			}
+			character:linegimilzadan_usakan_wife = { 
+				add_character_modifier = uncanny_health_usakani_modifier
+				##uncomment once her content has been made
+				#add_trait = cannot_marry 
+				#add_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
+		if = { 
+			limit = {
 				character:linegimilzadan2 = {
 					is_alive = yes
 				}
@@ -504,7 +517,7 @@ dunedain_yearly_global_pulse = {
 		}
 		if = { 
 			limit = { 
-				character:linegimilzadan2 = {
+				character:linegimilzadan2 ?= {
 					piety_level >= 5
 				}
 				NOT = { 
@@ -514,7 +527,7 @@ dunedain_yearly_global_pulse = {
 					}
 				}
 			}
-			character:linegimilzadan2 = {
+			character:linegimilzadan2 ?= {
 				trigger_event = { id = gimilzir_events.33 years = { 3 7 } }
 			}
 		}

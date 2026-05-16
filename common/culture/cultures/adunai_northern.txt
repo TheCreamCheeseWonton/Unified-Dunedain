@@ -138,7 +138,7 @@ ar_adunaim_numenorean = { #Pharazônabênî
 	
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
-	clothing_gfx = { numenorean_clothing_gfx }
+	clothing_gfx = { umbar_clothing_gfx }
 	unit_gfx = { eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1

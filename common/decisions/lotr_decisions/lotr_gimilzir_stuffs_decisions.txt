@@ -217,6 +217,235 @@ decision_continue_adventure_gimilzir_tanturak = { ### Regain lost story contract
 	ai_will_do = { base = 100 }
 }
 
+decision_become_allies_with_kinnlai_gimilzir = {
+	sort_order = 100
+	title = decision_become_allies_with_kinnlai_gimilzir
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_elves_humans_01.dds"
+	}
+	selection_tooltip = decision_become_allies_with_kinnlai_gimilzir_tooltip
+	desc = decision_become_allies_with_kinnlai_gimilzir_desc
+	confirm_text = decision_become_allies_with_kinnlai_gimilzir_confirm
+
+	decision_group_type = gimilzir_decisions
+	
+	sort_order = 1000
+
+	is_shown = {
+		OR  = { 
+			has_character_flag = has_ally_talilan_both
+			has_character_flag = has_ally_talilan_man_only
+			has_character_flag = has_ally_talilan_woman_only
+		}
+		OR = { 
+			character:lineoftainalann10 = { 
+				is_alive = yes
+				is_landed = yes
+			}
+			character:lineoftainalann3 = { 
+				is_alive = yes
+				is_landed = yes
+			}
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_become_allies_with_kinnlai_gimilzir
+			}
+		}
+	}
+		
+	is_valid = {
+		is_at_war = no
+		is_travelling = no
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+	}
+	
+	effect = {
+		if = { 
+			limit = { 
+				has_character_flag = has_ally_talilan_both
+				character:lineoftainalann10 = { 
+					is_alive = yes
+					is_landed = yes
+				}
+				character:lineoftainalann3 = { 
+					is_alive = yes
+					is_landed = yes
+				}
+			}
+			custom_tooltip = decision_become_allies_with_kinnlai_gimilzir_tt_1
+			start_travel_plan = {
+				destination = character:lineoftainalann3.capital_province
+				travel_with_domicile = no
+				players_use_planner = yes
+				on_arrival_event = gimilzir_events.7822
+				return_trip = yes
+				on_arrival_destinations = none
+			}
+		}
+		if = { 
+			limit = { 
+				has_character_flag = has_ally_talilan_man_only
+				character:lineoftainalann10 = { 
+					is_alive = yes
+					is_landed = yes
+				}
+			}
+			custom_tooltip = decision_become_allies_with_kinnlai_gimilzir_tt_2
+			start_travel_plan = {
+				destination = character:lineoftainalann10.capital_province
+				travel_with_domicile = no
+				players_use_planner = yes
+				on_arrival_event = gimilzir_events.7828
+				return_trip = yes
+				on_arrival_destinations = none
+			}
+		}
+		if = { 
+			limit = { 
+				has_character_flag = has_ally_talilan_woman_only
+				character:lineoftainalann3 = { 
+					is_alive = yes
+					is_landed = yes
+				}
+			}
+			custom_tooltip = decision_become_allies_with_kinnlai_gimilzir_tt_1
+			start_travel_plan = {
+				destination = character:lineoftainalann3.capital_province
+				travel_with_domicile = no
+				players_use_planner = yes
+				on_arrival_event = gimilzir_events.7822
+				return_trip = yes
+				on_arrival_destinations = none
+			}
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_become_allies_with_kinnlai_gimilzir
+		}
+	}
+
+	# AI value
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
+}
+
+decision_become_allies_with_kinnlai_gimilzir_renew = {
+	sort_order = 100
+	title = decision_become_allies_with_kinnlai_gimilzir_renew
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_elves_humans_01.dds"
+	}
+	selection_tooltip = decision_become_allies_with_kinnlai_gimilzir_renew_tooltip
+	desc = decision_become_allies_with_kinnlai_gimilzir_renew_desc
+	confirm_text = decision_become_allies_with_kinnlai_gimilzir_renew_confirm
+
+	decision_group_type = gimilzir_decisions
+	
+	sort_order = 1000
+
+	is_shown = {
+		OR = {
+			has_global_variable = has_ally_gimilzir_man
+			has_global_variable = has_ally_gimilzir_woman
+		}
+		
+		dynasty = dynasty:dynasty_gimilzadan
+		
+		has_defensive_alliance = no
+
+		OR = { 
+			character:lineoftainalann10 = { 
+				is_alive = yes
+				is_landed = yes
+			}
+			character:lineoftainalann3 = { 
+				is_alive = yes
+				is_landed = yes
+			}
+		}
+	}
+		
+	is_valid = {
+		is_at_war = no
+		is_travelling = no
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+	}
+	
+	effect = {
+		if = { 
+			limit = {
+				has_global_variable = has_ally_gimilzir_man
+				has_global_variable = has_ally_gimilzir_woman
+			}
+			lotr_create_defensive_alliance = {
+				DEFENSIVE_ALLY = character:lineoftainalann10
+				LOC_KEY = kinn_lai_alliance
+			}					
+			scope:new_confederation ?= {
+				set_variable = lotr_permanent_defensive_alliance
+				set_coa = d_kinn_lai_gimilzir_alliance		
+				add_confederation_member = character:lineoftainalann3
+			}	
+		}
+		else_if = { 
+			limit = {
+				has_global_variable = has_ally_gimilzir_man
+			}
+			lotr_create_defensive_alliance = {
+				DEFENSIVE_ALLY = character:lineoftainalann10
+				LOC_KEY = kinn_lai_alliance
+			}					
+			scope:new_confederation ?= {
+				set_variable = lotr_permanent_defensive_alliance
+				set_coa = d_kinn_lai_gimilzir_alliance		
+			}	
+		}
+		else_if = { 
+			limit = {
+				has_global_variable = has_ally_gimilzir_woman
+			}
+			lotr_create_defensive_alliance = {
+				DEFENSIVE_ALLY = character:lineoftainalann3
+				LOC_KEY = kinn_lai_alliance
+			}					
+			scope:new_confederation ?= {
+				set_variable = lotr_permanent_defensive_alliance
+				set_coa = d_kinn_lai_gimilzir_alliance		
+			}	
+		}
+	}
+
+	# AI value
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 12
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+	ai_potential = { always = yes }
+	ai_will_do = { base = 100 }
+}
+
 decision_gimilzir_adunaic_revival_sarul = {#Settle Adunaic in Sarul
 	ai_check_interval = 60
 	picture = {
@@ -359,6 +588,7 @@ decision_gimilzir_tanturak_founder_statue = {
 		
 		title:c_guishas.title_province = {
 			add_special_building_slot = wonder_gimilzir_statue 
+			add_special_building = wonder_gimilzir_statue 
 		}
 		
 		

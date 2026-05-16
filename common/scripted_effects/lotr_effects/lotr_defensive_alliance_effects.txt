@@ -60,6 +60,7 @@
 		kinn_lai_alliance = {
 			scope:new_confederation ?= {
 				set_confederation_name = DEFENSIVE_ALLIANCE_KINN_LAI_ALLIANCE_NAME
+				set_variable = lotr_no_confederation_rename
 			}
 		}
 	}
@@ -115,6 +116,13 @@ lotr_refresh_defensive_alliance_name = {
 				set_confederation_name = DEFENSIVE_ALLIANCE_BALAN_LAI_NAME
 				set_coa = d_balan_lai_leader
 				set_variable = balan_lai_confederation
+			}
+		}
+		##Quonton
+		kinn_lai_alliance = {
+			scope:new_confederation ?= {
+				set_confederation_name = DEFENSIVE_ALLIANCE_KINN_LAI_ALLIANCE_NAME
+				set_variable = lotr_no_confederation_rename
 			}
 		}
 	}

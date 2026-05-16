@@ -52,7 +52,7 @@ south_adunai_events.4 = { # Tanturaki Reformation Flavor
 
 	option = { #Be Tanturaki
 		name = south_adunai_events.4.a
-		trigger = { NOT = { culture = { has_cultural_pillar = heritage_unified_adunaic } } }
+		trigger = { NOT = { faith_is_good = yes } NOT = { culture = { has_cultural_pillar = heritage_unified_adunaic } } }
 		title:k_tanturak = { 
 			every_de_jure_county = {
 				if = { 
@@ -141,7 +141,7 @@ south_adunai_events.4 = { # Tanturaki Reformation Flavor
 	
 	option = { #Not be Tanturaki
 		name = south_adunai_events.4.b
-		trigger = { NOT = { culture = { has_cultural_pillar = heritage_unified_adunaic } } }
+		trigger = { NOT = { faith_is_good = yes } NOT = { culture = { has_cultural_pillar = heritage_unified_adunaic } } }
 		title:k_tanturak = { 
 			every_de_jure_county = {
 				if = { 
@@ -256,7 +256,7 @@ south_adunai_events.11 = { # Find Artifacts
 		add_stress = 100
 		add_prestige = major_prestige_gain
 		add_gold = 1000
-		create_artifact_lesser_ring_effect = { OWNER = this }
+		create_artifact_lesser_ring_custom_effect = { OWNER = this }
 		create_artifact_numenorean_shield_effect = { OWNER = this }
 		create_artifact_crown_of_tanturak_effect = { OWNER = this }
 	}

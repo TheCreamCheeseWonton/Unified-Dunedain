@@ -670,3 +670,18 @@ arugimil_starting_debuf_alomst_gone = {
 	monthly_lifestyle_xp_gain_mult = -0.10
 	stress_gain_mult = 0.1
 }
+
+uncanny_health_usakani_modifier = {
+	icon = health_positive
+	life_expectancy = 20
+	years_of_fertility = 40
+	fertility = 0.25
+	health = 3
+	negate_health_penalty_add = 3
+}
+
+#uncanny_health_usakani_modifier_nothing = {
+#	icon = health_positive
+#	fertility = -10
+#	negate_health_penalty_add = 100
+#}

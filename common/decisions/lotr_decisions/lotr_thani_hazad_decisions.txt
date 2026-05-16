@@ -2205,6 +2205,7 @@ decision_azraphel_an_khar = {
 	
 	is_shown = {
 		is_landed = yes
+		highest_held_title_tier >= tier_empire
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
@@ -2248,6 +2249,7 @@ decision_azraphel_an_khar = {
 	is_valid = {
 		prestige_level >= 5
 		piety_level >= 5
+		highest_held_title_tier >= tier_empire
 		culture = { 
 			OR = {
 				has_cultural_pillar = heritage_southern_adunaic 
@@ -2506,7 +2508,7 @@ decision_mikazra_zain = {
 					holder = { is_vassal_or_below_of = root }
 					holder = root
 				}
-				percent >= 0.75
+				percent >= 0.65
 			}
 		}
 	}
@@ -2658,22 +2660,76 @@ decision_tanturak_build_usakan_bay_citadels = {
 	effect = {
 		hidden_effect = { 
 			province:7521 = {
-				set_holding_type = castle_holding
+				if = { 
+					limit = { 
+						title:c_kitusi.holder = {
+							NOT = { 
+								is_elf = yes
+							}
+						}
+					}
+					set_holding_type = castle_holding
+				}
 			}
 			province:7518 = {
-				set_holding_type = castle_holding
+				if = { 
+					limit = { 
+						title:c_toriar.holder = {
+							NOT = { 
+								is_elf = yes
+							}
+						}
+					}
+					set_holding_type = castle_holding
+				}
 			}
 			province:6008 = {
-				set_holding_type = castle_holding
+				if = { 
+					limit = { 
+						title:c_tarango.holder = {
+							NOT = { 
+								is_elf = yes
+							}
+						}
+					}
+					set_holding_type = castle_holding
+				}
 			}
 			province:7522 = {
-				set_holding_type = castle_holding
+				if = { 
+					limit = { 
+						title:c_rurutori.holder = {
+							NOT = { 
+								is_elf = yes
+							}
+						}
+					}
+					set_holding_type = castle_holding
+				}
 			}
 			province:7506 = {
-				set_holding_type = castle_holding
+				if = { 
+					limit = { 
+						title:c_aradak.holder = {
+							NOT = { 
+								is_elf = yes
+							}
+						}
+					}
+					set_holding_type = castle_holding
+				}
 			}
 			province:7599 = {
-				set_holding_type = castle_holding
+				if = { 
+					limit = { 
+						title:c_taulbund.holder = {
+							NOT = { 
+								is_elf = yes
+							}
+						}
+					}
+					set_holding_type = castle_holding
+				}
 			}
 			title:b_musiutuse = { set_capital_barony = yes }
 		}

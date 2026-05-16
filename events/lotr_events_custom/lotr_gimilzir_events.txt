@@ -2738,7 +2738,6 @@ gimilzir_events.736 = { # Mispir Contract: Payed
 				}
 			}
 		}
-		add_character_flag = gimilzir_mispir_trade_bad
 	}
 	
 	after = {
@@ -5681,7 +5680,10 @@ gimilzir_events.7820 = { # Conquer Sarul Flavor Event Mispir Trade
 	option = {
 		name = gimilzir_events.7820.c #No Trade
 		trigger = {
-			has_character_flag = gimilzir_mispir_trade_good
+			OR = { 
+				has_character_flag = gimilzir_mispir_trade_good
+				has_character_flag = gimilzir_mispir_trade_bad
+			}
 		}
 		scope:mispirholder = {
 			add_opinion = {
@@ -5770,15 +5772,7 @@ gimilzir_events.7821 = { # Elven Allies get? event
 			}		
 		}
 		custom_tooltip = gimilzir_events.7821_a_tt
-		start_travel_plan = {
-			destination = scope:talilan_woman.capital_province
-			travel_with_domicile = no
-			players_use_planner = yes
-			on_arrival_event = gimilzir_events.7822
-			return_trip = yes
-			on_arrival_destinations = none
-
-		}
+		add_character_flag = has_ally_talilan_both
 	}
 	
 	option = {
@@ -5800,16 +5794,8 @@ gimilzir_events.7821 = { # Elven Allies get? event
 				}
 			}
 		}
-		custom_tooltip = gimilzir_events.7821_b_tt
-		start_travel_plan = {
-			destination = scope:talilan_man.capital_province
-			travel_with_domicile = no
-			players_use_planner = yes
-			on_arrival_event = gimilzir_events.7828
-			return_trip = yes
-			on_arrival_destinations = none
-
-		}
+		custom_tooltip = gimilzir_events.7821_a_tt
+		add_character_flag = has_ally_talilan_man_only
 	}
 	
 	option = {
@@ -5821,7 +5807,7 @@ gimilzir_events.7821 = { # Elven Allies get? event
 			}
 			OR = { 
 				NOT = { 
-					character:lineoftainalann3 = { 
+					character:lineoftainalann10 = { 
 						is_alive = yes
 						is_landed = yes
 					}
@@ -5832,15 +5818,7 @@ gimilzir_events.7821 = { # Elven Allies get? event
 			}
 		}
 		custom_tooltip = gimilzir_events.7821_a_tt
-		start_travel_plan = {
-			destination = scope:talilan_woman.capital_province
-			travel_with_domicile = no
-			players_use_planner = yes
-			on_arrival_event = gimilzir_events.7822
-			return_trip = yes
-			on_arrival_destinations = none
-
-		}
+		add_character_flag = has_ally_talilan_woman_only
 		add_character_flag = only_befriend_shelepinn
 	}
 	
@@ -6113,6 +6091,7 @@ gimilzir_events.7824 = { # Meeting with Shelepinn success
 			add_elven_hope_effect = { VALUE = major_elven_hope_gain HOPE_EFFECT = effect_elven_hope_good_realm_rises }
 		}
 		add_character_flag = has_ally_talilan_woman
+		set_global_variable = has_ally_gimilzir_woman
 		if = { 
 			limit = { 
 				NOT = { 
@@ -6122,7 +6101,7 @@ gimilzir_events.7824 = { # Meeting with Shelepinn success
 			hidden_effect = {
 				current_travel_plan ?= { abort_travel_plan = yes }
 			}
-			custom_tooltip = gimilzir_events.7821_b_tt
+			custom_tooltip = decision_become_allies_with_kinnlai_gimilzir_tt_2
 			start_travel_plan = {
 				destination = scope:talilan_man.capital_province
 				travel_with_domicile = no
@@ -6185,7 +6164,7 @@ gimilzir_events.7825 = { # Meeting with Shelepinn failure
 			hidden_effect = {
 				current_travel_plan ?= { abort_travel_plan = yes }
 			}
-			custom_tooltip = gimilzir_events.7821_b_tt
+			custom_tooltip = decision_become_allies_with_kinnlai_gimilzir_tt_2
 			start_travel_plan = {
 				destination = scope:talilan_man.capital_province
 				travel_with_domicile = no
@@ -6443,6 +6422,16 @@ gimilzir_events.7830 = { # Meeting with Dalavin success
 			}
 			add_elven_hope_effect = { VALUE = major_elven_hope_gain HOPE_EFFECT = effect_elven_hope_good_realm_rises }
 		}
+		set_global_variable = has_ally_gimilzir_man
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
+		start_travel_plan = {
+			destination = scope:gimilzir_char.capital_province
+			travel_with_domicile = no
+			players_use_planner = no
+			return_trip = no
+		}
 		if = { 
 			limit = { 
 				has_character_flag = has_ally_talilan_woman
@@ -6461,17 +6450,6 @@ gimilzir_events.7830 = { # Meeting with Dalavin success
 				set_variable = lotr_permanent_defensive_alliance
 				set_coa = d_kinn_lai_gimilzir_alliance		
 			}	
-			stress_impact = {
-				compassionate = miniscule_stress_impact_loss
-				zealous = minor_stress_impact_loss
-			}
-			character:lineoftainalann10 = { 
-				progress_towards_friend_effect = {
-					REASON = friend_formal_offer
-					CHARACTER = root
-					OPINION = 25
-				}
-			}
 		}
 		
 	}
@@ -6504,6 +6482,15 @@ gimilzir_events.7831 = { # Meeting with Dalavin failure
 
 	option = {
 		name = gimilzir_events.7831.a
+		hidden_effect = {
+			current_travel_plan ?= { abort_travel_plan = yes }
+		}
+		start_travel_plan = {
+			destination = scope:gimilzir_char.capital_province
+			travel_with_domicile = no
+			players_use_planner = no
+			return_trip = no
+		}
 		reverse_add_opinion = {
 			target = scope:talilan_man
 			modifier = annoyed_opinion
@@ -6860,7 +6847,7 @@ gimilzir_events.7900 = { # Post Settle Flavor 20 Yearsish
 			custom = event_form_gimilarani_get_characters_custom
 			limit = { 
 				culture = { has_cultural_pillar = heritage_southern_adunaic }
-				faith_is_good = yes
+				faith.religion = religion:dunedain_religion
 			}
 			set_culture = culture:gimilarani
 		}
@@ -6921,7 +6908,14 @@ gimilzir_events.9999 = {
 	hidden = yes
 
 	immediate = {
-		ud_lotr_laamp_setup_effect = yes
+		if = { 
+			limit = {
+				character:linegimilzadan2 ?= {
+					is_alive = yes
+				}
+			}
+			ud_lotr_laamp_setup_effect = yes
+		}
 		if = { 
 			limit = { 
 				exists = title:d_laamp_house_of_gimilzadan.holder

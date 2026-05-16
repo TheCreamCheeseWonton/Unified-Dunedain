@@ -747,7 +747,32 @@ fire_intro_events_1349 = {
 ### 6787 / TA 2754 - LONG WINTER START DATE ###
 ###############################################
 fire_intro_events_2754 = {
-
+	##QUONTON CUSTOM CHATACVEYRSSUHSDS
+	character:k_wastelands_holder = { 
+		trigger_event = {
+			id = gimilzir_events.9999
+			delayed = no
+		}
+	}
+	character:linegimilzadan46 ?= { #LotR
+		if = {
+			limit = {
+				is_alive = yes
+				has_dlc_feature = roads_to_power
+			}
+			if = {
+				limit = {
+					character:linegimilzadan45brother ?= {
+						is_alive = yes
+						is_landed = no
+						NOT = { is_courtier_of = character:linegimilzadan46 }
+					}
+				}
+				add_courtier = character:linegimilzadan45brother
+			}
+		}
+	}
+	
 	## ERIADOR ##
 	character:lineisildur37 = { #Arassuil, Chieftain of the Dúnedain
 		trigger_event = {
@@ -1600,18 +1625,20 @@ fire_intro_events_3000 = {
 		}
 	}
 	##Quonton
-	character:linegimilzadan2 ?= {
-		if = { 
-			limit = {
+	if = { 
+		limit = {
+			character:linegimilzadan2 ?= {
 				is_alive = yes
 			}
+		}
+		character:linegimilzadan2 ?= {
 			trigger_event = {
 				id = gimilzir_events.2
 				days = 1
 			}
 			house ?= {
 				if = {
-					limit = { NOT = { house_head = PREV } }
+					limit = { NOT = { house_head = prev } }
 					set_house_head = prev
 				}
 			}
@@ -3164,6 +3191,32 @@ fire_intro_events_3000 = {
 				days = 1
 			}
 			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
+		}
+	}
+
+	character:lineofdurin107 = { # Náin the Slakeless of Azanulinbar-dûm
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2020
+				days = 1
+			}
+			set_relation_grudge = character:lineofazog6
+			set_relation_grudge = character:lineofazog9
+			add_opinion = {
+				target = character:lineofazog6
+				modifier = hate_opinion
+				opinion = -200
+			}	
+			add_opinion = {
+				target = character:lineofazog9
+				modifier = hate_opinion
+				opinion = -200
+			}	
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } 
 		}
 	}
 

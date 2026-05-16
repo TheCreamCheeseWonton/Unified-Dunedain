@@ -339,6 +339,7 @@ decision_proclaim_pharazain = {
 			has_primary_title = title:e_thon_an_kharlokh
 			has_primary_title = title:e_anbalkumagan
 			has_primary_title = title:e_thani_hazad
+			highest_held_title_tier > tier_empire
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -466,6 +467,9 @@ decision_proclaim_pharazain = {
 				name = unavailable_unique_decisions
 				target = flag:separatism_has_been_delt_with_kharadune
 			}
+		}
+		else = { 
+			set_global_variable = hegemony_pharazain
 		}
 		save_scope_as = founder
 		#Create the title and make it primary

@@ -106,6 +106,42 @@ create_artifact_arnorian_steelbow_effect = {
 	}
 }
 
+create_artifact_lesser_ring_custom_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = lesser_ring_name
+		description = lesser_ring_description
+		creator = character:lineoffeanor10  #Celebrimbor
+		type = miscellaneous
+		visuals = ring
+		wealth = scope:wealth
+		quality = scope:quality
+		history = {
+			type = created
+			date = 2182.1.1
+			actor = character:lineoffeanor10  #Celebrimbor
+			recipient = character:lineoffeanor10  #Celebrimbor
+			location = province:4351 #Ost-in-Edhil
+		}
+		modifier = lesser_ring_modifier_no_health
+		template = lesser_ring_template
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+
+	scope:newly_created_artifact ?= {
+		equip_artifact_to_owner_replace = yes
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = lesser_ring 
+		save_scope_as = epic
+	}
+}
+
 create_artifact_uraumo_effect = {
 	set_artifact_rarity_illustrious = yes
 	create_artifact = {

@@ -705,6 +705,53 @@
 		}
 	}
 	
+	amarasi_portrait = { 
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = all_hairstyles
+				accessory = female_hair_custom_43
+			}
+		}   
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = hairstyles
+				template = agot_hairstyles
+				accessory = female_hair_custom_43
+				type = female
+			}
+		}   
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = clothes
+				template = kirani_war_clothes
+				accessory = f_clothes_epe_early_islamic_iranian_war_nob_01_hi
+				type = female
+			}
+		}   
+		dna_modifiers = {
+			accessory = {
+				mode = add
+				gene = cloaks
+				template = all_cloaks
+				accessory = female_cloaks_secular_north_high_winter_01
+				type = female
+			}
+		}
+		weight = {
+			base = 0
+			modifier = {
+				add = 999
+				exists = this
+				exists = character:linegimilzadan_usakan_wife
+				this = character:linegimilzadan_usakan_wife
+			}
+		}
+	}
+	
 	nakhoran_portrait = { 
 		dna_modifiers = {
 			accessory = {

@@ -342,6 +342,12 @@ pharazain_events.9 = {
       			}
       			desc = pharazain_events.9.desc4
     		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = hegemony_pharazain
+      			}
+      			desc = pharazain_events.9.desc5
+    		}
   		}
 	}
 	theme = war
@@ -375,9 +381,9 @@ pharazain_events.9 = {
 
 	option = {
 		name = pharazain_events.9.a
-		#trigger = { 
-		#	has_global_variable = bellakar_pharazain
-		#}
+		trigger = { 
+			has_global_variable = bellakar_pharazain
+		}
 		custom_tooltip = anbalkumagan_revolts
 		custom_tooltip = thani_hazad_revolts
 		hidden_effect_new_object = { 
@@ -594,6 +600,76 @@ pharazain_events.9 = {
 					AND = { 
 						NOT = { 
 							capital_province = { geographical_region = special_pharazain } 
+						} 
+						NOR = {
+							culture = title:h_pharazain.holder.culture 
+							has_relation_best_friend = title:h_pharazain.holder
+							has_relation_friend = title:h_pharazain.holder 
+							is_allied_to = title:h_pharazain.holder
+							culture = {
+								cultural_acceptance = { target = root.culture value > 60 }
+							}
+							is_at_war_with = title:h_pharazain.holder
+							is_elf = yes
+						}
+					} 
+				}
+				start_war = {
+					casus_belli = independence_war
+					target = title:h_pharazain.holder
+				}
+			}
+		}
+	}
+	option = {
+		name = pharazain_events.9.e
+		trigger = { 
+			has_global_variable = hegemony_pharazain
+		}
+		custom_tooltip = anbalkumagan_revolts
+		custom_tooltip = bellakar_revolts
+		custom_tooltip = thani_hazad_revolts
+		hidden_effect_new_object = { 
+			sunset_invasion_general_effect = { #An-Balkumagan
+				GEOGRAPHICAL_REGION = custom_anbalkumagan_sirayn
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_anbalkumagan_character
+				GRAB_LANDING_COUNTY_EFFECT = anbalkumagan_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = anbalkumagan_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = anbalkumagan_civil_war_start_invasion_war
+			}
+			sunset_invasion_general_effect = { #Bellakar
+				GEOGRAPHICAL_REGION = middleearth_harad_far_bellakar
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_bellakar_character
+				GRAB_LANDING_COUNTY_EFFECT = bellakar_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = bellakar_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = bellakar_civil_war_start_invasion_war
+			}
+			sunset_invasion_general_effect = { #Thani-Hazad
+				GEOGRAPHICAL_REGION = custom_mannish_thani_hazad
+				REVIVE_DEAD_CHARACTER_EFFECT = civil_war_spawn_thani_hazad_character
+				GRAB_LANDING_COUNTY_EFFECT = thani_hazad_civil_war_grab_landing_county
+				INVASION_LANDING_EFFECT = thani_hazad_civil_war_landing_effect
+				START_INVASION_WAR_EFFECT = thani_hazad_civil_war_start_invasion_war
+			}
+		}
+		if = {
+			limit = { # Major News
+				NOT = { has_game_rule = no_news }
+			}
+			every_player = { #Global News Announcement
+				trigger_event = pharazain_events.16
+			}
+		}
+		custom_tooltip = {
+			##Quonton
+			text = all_non_pharazain_vassals_war
+			every_vassal = {
+				limit = { 
+					AND = { 
+						NOT = { 
+							capital_province = { geographical_region = special_pharazain } 
+							trigger_if = { limit = { title:h_pharazain.holder = { has_title = title:h_sakal_an_khar } } capital_province = { geographical_region = special_sakal_an_khar_formable } }
+							trigger_if = { limit = { title:h_pharazain.holder = { has_title = title:h_azraphel_an_khar } } capital_province = { geographical_region = special_azraphel_an_khar } }
 						} 
 						NOR = {
 							culture = title:h_pharazain.holder.culture 

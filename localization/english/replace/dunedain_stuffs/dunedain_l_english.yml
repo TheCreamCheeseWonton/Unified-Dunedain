@@ -23,7 +23,7 @@
  building_type_wonder_usakan_citadels: "Citadel of Ûsakan"
  building_type_wonder_usakan_citadels_desc: "A citadel of the Ûsakan Bay, raised by the [adunai|E]. These great fortresses stand astride the bay’s mouths and its principal seaways, ensuring that Tantûrak cannot be caught unawares by its enemies."
 
- building_wonder_tanturak_ranger_bases: "Zidar an-Tantûrak"
+ building_wonder_tanturak_ranger_base: "Zidar an-Tantûrak"
  building_wonder_tanturak_ranger_base_desc: "Zidar an-Tantûrak stands as the headquarters of the Tantûrak Rangers. From this stronghold, they guard the northern mountain passes, ensuring that none may descend from the [yellowmountains|E] to threaten the heartlands of Tantûrak.\n\nYet their duty does not end at the high passes. From Zidar an-Tantûrak, ranger bands range deep into the jungles of Ûsakan, moving silently through the wilderness to watch over every corner of the land. There, they safeguard the [adunai|E], ensuring that the people of Tantûrak may live without fear within their domain.\n\nThrough vigilance, skill, and unyielding resolve, the Rangers of Tantûrak stand as the realm’s shield. By their watch, Tantûrak shall never fall again, and through their strength, the land remains safe."
  building_type_wonder_tanturak_ranger_base: "Zidar an-Tantûrak"
  building_type_wonder_tanturak_ranger_base_desc: "Zidar an-Tantûrak stands as the headquarters of the Tantûrak Rangers. From this stronghold, they guard the northern mountain passes, ensuring that none may descend from the [yellowmountains|E] to threaten the heartlands of Tantûrak.\n\nYet their duty does not end at the high passes. From Zidar an-Tantûrak, ranger bands range deep into the jungles of Ûsakan, moving silently through the wilderness to watch over every corner of the land. There, they safeguard the [adunai|E], ensuring that the people of Tantûrak may live without fear within their domain.\n\nThrough vigilance, skill, and unyielding resolve, the Rangers of Tantûrak stand as the realm’s shield. By their watch, Tantûrak shall never fall again, and through their strength, the land remains safe."
@@ -61,6 +61,7 @@
 
  holy_site_sarul_faithful_name: "Sarûl"
  holy_site_ardinak_faithful_name: "Ardinâk"
+ holy_site_guishas_faithful_name: "Pharasphurus"
 
  tenet_unrelenting_faith_adunai_faithful_name: "Light Unyielding"
  tenet_unrelenting_faith_adunai_faithful_desc: "Surrounded by those who have turned from the light of [eru|E], we stand alone in a sea of shadow. Yet we do not waver. No trial will bend us, no darkness unmake us. We will stand, and we will fight any who would tear our faith from us."
@@ -290,6 +291,9 @@
 
  happy_colonists_arnor: "Happy Colonists"
  happy_colonists_arnor_desc: "The colonists of this land have been permitted to keep the artifacts they discovered, greatly boosting their morale."
+
+ uncanny_health_usakani_modifier: "Youthful Vigor"
+ uncanny_health_usakani_modifier_desc: "This character is blessed with an unusually healthy and extended youth."
 
  #Pharazain pre-formation modifiers
  custom_ud_conquer_modifier: "Quelling Revolts"
@@ -600,7 +604,7 @@
  decision_mikazra_zain_tooltip: "A new kingdom of the Adûnâi"
  decision_mikazra_zain_effect.tt: "All vassals that are #V not#! your [religion|E] or of an [adunaic|E] [heritage|E] will receive a #N -50#! opinion mallus of you."
  decision_mikazra_zain_trigger.tt_1: "#V 5%#! of the [GetGeographicalRegion('special_mikazra_zain').GetName] must be of your [culture|E]"
- decision_mikazra_zain_trigger.tt_2: "You must control at least #V 75%#! of the [counties|E] in the [GetGeographicalRegion('special_mikazra_zain').GetName] [region|E]"
+ decision_mikazra_zain_trigger.tt_2: "You must control at least #V 65%#! of the [counties|E] in the [GetGeographicalRegion('special_mikazra_zain').GetName] [region|E]"
  special_mikazra_zain: "Mîkazra-Zâin"
 
  decision_tanturak_build_usakan_bay_citadels: "Raise the Citadels of Ûsakan"
@@ -811,10 +815,12 @@
  pharazain_events.9.desc2: "Last night, while the rest of [GetTitleByKey('h_pharazain').GetNameNoTier] slept, a single spark of rebellion ignited the powderkeg that had long been smoldering beneath my rule. By dawn, countless cities across the realm had descended into chaos, as commoners and traitors alike rose up against those still loyal to my rule. \n\nA simmering hatred for [GetTitleByKey('h_pharazain').GetNameNoTier] had quietly taken root in the hearts of many of my people, largely concealed from the eyes of my loyal nobility. Where I had believed I ruled a united dominion, they saw only a foreign power imposed upon their lives, not a protector, not a unifier, but an oppressor. \n\nI awoke to find my proud kingdom ablaze. Anarchy and revolt spread unchecked through every province beyond my core strongholds. The royal court lies in disarray, my armies are overstretched and disorganized, governance has all but collapsed, and tax collectors are slain before they can even reach their posts. The realm itself teeters on the brink, no longer functioning as a kingdom should.\n\n#V The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has begun.#!"
  pharazain_events.9.desc3: "Last night, while the rest of [GetTitleByKey('h_pharazain').GetNameNoTier] slept, a single spark of rebellion ignited the powderkeg that had long been smoldering beneath my rule. By dawn, countless cities across the realm had descended into chaos, as commoners and traitors alike rose up against those still loyal to my rule. \n\nA simmering hatred for [GetTitleByKey('h_pharazain').GetNameNoTier] had quietly taken root in the hearts of many of my people, largely concealed from the eyes of my loyal nobility. Where I had believed I ruled a united dominion, they saw only a foreign power imposed upon their lives, not a protector, not a unifier, but an oppressor. \n\nI awoke to the sight of my once-proud kingdom engulfed in flame. Anarchy and rebellion now run rampant across every province beyond [bellakar|E], as the [adunai|E] of both [anbalkumagan|E] and [thanihazad|E] have cast off all pretense of loyalty and risen in open revolt! The realm itself teeters on the brink, no longer functioning as a kingdom should.\n\n#V The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has begun.#!"
  pharazain_events.9.desc4: "Last night, while the rest of [GetTitleByKey('h_pharazain').GetNameNoTier] slept, a single spark of rebellion ignited the powderkeg that had long been smoldering beneath my rule. By dawn, countless cities across the realm had descended into chaos, as commoners and traitors alike rose up against those still loyal to my rule. \n\nA simmering hatred for [GetTitleByKey('h_pharazain').GetNameNoTier] had quietly taken root in the hearts of many of my people, largely concealed from the eyes of my loyal nobility. Where I had believed I ruled a united dominion, they saw only a foreign power imposed upon their lives, not a protector, not a unifier, but an oppressor. \n\nI awoke to the sight of my once-proud kingdom engulfed in flame. Anarchy and rebellion now run rampant across every province beyond [anbalkumagan|E], as the [adunai|E] of both [bellakar|E] and [thanihazad|E] have cast off all pretense of loyalty and risen in open revolt! The realm itself teeters on the brink, no longer functioning as a kingdom should.\n\n#V The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has begun.#!"
+ pharazain_events.9.desc5: "Last night, while the rest of [GetTitleByKey('h_pharazain').GetNameNoTier] slept, a single spark of rebellion ignited the powderkeg that had long been smoldering beneath my rule. By dawn, countless cities across the realm had descended into chaos, as commoners and traitors alike rose up against those still loyal to my rule. \n\nA simmering hatred for [GetTitleByKey('h_pharazain').GetNameNoTier] had quietly taken root in the hearts of many of my people, largely concealed from the eyes of my loyal nobility. Where I had believed I ruled a united dominion, they saw only a foreign power imposed upon their lives, not a protector, not a unifier, but an oppressor. \n\nI awoke to find my proud kingdom ablaze. Anarchy and revolt spread unchecked through every province of [GetTitleByKey('h_pharazain').GetNameNoTier]. The royal court lies in disarray, my armies are overstretched and disorganized, governance has all but collapsed, and tax collectors are slain before they can even reach their posts. The realm itself teeters on the brink, no longer functioning as a kingdom should.\n\n#V The [GetTitleByKey('h_pharazain').GetNameNoTier] Civil War has begun.#!"
  pharazain_events.9.a: "How could this happen..."
  pharazain_events.9.b: "How could this happen..."
  pharazain_events.9.c: "How could this happen..."
  pharazain_events.9.d: "How could this happen..."
+ pharazain_events.9.e: "How could this happen..."
 
  all_non_pharazain_vassals_war: "All [vassals|E] who's [capital|E] are outside of the [GetGeographicalRegion('special_pharazain').GetName] [region|E] and not your [ally|E], [friend|E], or of your [heritage|E] will:\nBegin a [war|E] for Independence"
  remove_all_previous_modifiers: "All [modifiers|E] gained during the conquest of [GetTitleByKey('h_pharazain').GetNameNoTier] will be removed"
@@ -1411,6 +1417,7 @@
 
  ##Titles 
  d_laamp_house_of_gimilzadan: "The Gimilzîr Estate"
+ d_laamp_azra_ursurpers: "Azra Usurper"
  h_sakal_an_khar: "Sakal an-Khar"
  h_azraphel_an_khar: "Azraphel an-Khar"
  e_mikazra_zain: "Mîkazra-Zâin"

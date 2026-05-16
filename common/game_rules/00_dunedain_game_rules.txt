@@ -13,7 +13,7 @@
 
 
 dunedain_bon_rule = {
-	default = default_bon
+	default = lore_accurate_bon
 
 	categories = {
 		realms tweaks

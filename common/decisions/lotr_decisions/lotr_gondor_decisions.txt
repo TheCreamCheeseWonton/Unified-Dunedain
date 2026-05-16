@@ -2517,6 +2517,7 @@ decision_reunify_dunedain = {
 			custom = decision_reunify_dunedain_characters_custom
 			limit = { 
 				culture = { has_cultural_pillar = heritage_dunedain }
+				NOT = { culture = { this = culture:orodbedhrim } }
 			}
 			set_culture = culture:new_dunedain
 		}
@@ -2526,6 +2527,7 @@ decision_reunify_dunedain = {
 			custom = decision_reunify_dunedain_counties_custom2
 			limit = {
 				culture = { has_cultural_pillar = heritage_dunedain }
+				NOT = { culture = { this = culture:orodbedhrim } }
 			}
 			set_county_culture = culture:new_dunedain
 		}
@@ -2902,7 +2904,10 @@ decision_reunify_numenor_culture = {
 					every_living_character = { 
 						limit = { 
 							OR = { 
-								culture = { has_cultural_pillar = heritage_dunedain }
+								AND = { 
+									culture = { has_cultural_pillar = heritage_dunedain }
+									NOT = { culture = { this = culture:orodbedhrim } }
+								}
 								AND = { 
 									culture = { has_cultural_pillar = heritage_bellakari }
 									NOT = { culture = { this = culture:bellanarud } }
@@ -2975,7 +2980,10 @@ decision_reunify_numenor_culture = {
 					every_living_character = { 
 						limit = { 
 							OR = { 
-								culture = { has_cultural_pillar = heritage_dunedain }
+								AND = { 
+									culture = { has_cultural_pillar = heritage_dunedain }
+									NOT = { culture = { this = culture:orodbedhrim } }
+								}
 								AND = { 
 									culture = { has_cultural_pillar = heritage_bellakari }
 									NOT = { culture = { this = culture:bellanarud } }
@@ -3047,7 +3055,10 @@ decision_reunify_numenor_culture = {
 					every_living_character = { 
 						limit = { 
 							OR = { 
-								culture = { has_cultural_pillar = heritage_dunedain }
+								AND = { 
+									culture = { has_cultural_pillar = heritage_dunedain }
+									NOT = { culture = { this = culture:orodbedhrim } }
+								}
 								AND = { 
 									culture = { has_cultural_pillar = heritage_bellakari }
 									NOT = { culture = { this = culture:bellanarud } }
@@ -3068,7 +3079,10 @@ decision_reunify_numenor_culture = {
 				custom = decision_reunify_numenor_culture_counties_custom
 				limit = {
 					OR = { 
-						culture = { has_cultural_pillar = heritage_dunedain }
+						AND = { 
+							culture = { has_cultural_pillar = heritage_dunedain }
+							NOT = { culture = { this = culture:orodbedhrim } }
+						}
 						AND = { 
 							culture = { has_cultural_pillar = heritage_bellakari }
 							NOT = { culture = { this = culture:bellanarud } }
@@ -3205,7 +3219,10 @@ decision_reunify_numenor_culture = {
 				every_living_character = { 
 					limit = { 
 						OR = { 
-							culture = { has_cultural_pillar = heritage_dunedain }
+							AND = { 
+								culture = { has_cultural_pillar = heritage_dunedain }
+								NOT = { culture = { this = culture:orodbedhrim } }
+							}
 							AND = { 
 								culture = { has_cultural_pillar = heritage_bellakari }
 								NOT = { culture = { this = culture:bellanarud } }
@@ -3277,7 +3294,10 @@ decision_reunify_numenor_culture = {
 				custom = decision_reunify_numenor_culture_counties_custom_a
 				limit = {
 					OR = { 
-						culture = { has_cultural_pillar = heritage_dunedain }
+						AND = { 
+							culture = { has_cultural_pillar = heritage_dunedain }
+							NOT = { culture = { this = culture:orodbedhrim } }
+						}
 						AND = { 
 							culture = { has_cultural_pillar = heritage_bellakari }
 							NOT = { culture = { this = culture:bellanarud } }

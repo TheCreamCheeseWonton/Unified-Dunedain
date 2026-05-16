@@ -1135,7 +1135,7 @@ add_blood_of_numenor_effect = {
 				}
 				##Quonton
 				AND = {
-					current_year > 6787
+					current_year >= 6787
 					culture ?= {
 						OR = { 
 							this = culture:gimilarani
