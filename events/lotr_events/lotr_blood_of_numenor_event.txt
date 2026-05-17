@@ -2958,12 +2958,6 @@ numenoreanblood.0001 = {
 				remove_trait = blood_of_numenor_2
 				remove_trait = blood_of_numenor_3
 				remove_trait = blood_of_numenor_4
-				remove_trait = blood_of_numenor_5
-				remove_trait = blood_of_numenor_6
-				remove_trait = blood_of_numenor_7
-				remove_trait = blood_of_numenor_8
-				remove_trait = blood_of_numenor_9
-				remove_trait = blood_of_numenor_10
 			}
 			scope:child ?= { add_trait = blood_of_numenor_4 }
 		}
@@ -2996,14 +2990,6 @@ numenoreanblood.0001 = {
 			scope:child ?= {
 				remove_trait = blood_of_numenor_1
 				remove_trait = blood_of_numenor_2
-				remove_trait = blood_of_numenor_3
-				remove_trait = blood_of_numenor_4
-				remove_trait = blood_of_numenor_5
-				remove_trait = blood_of_numenor_6
-				remove_trait = blood_of_numenor_7
-				remove_trait = blood_of_numenor_8
-				remove_trait = blood_of_numenor_9
-				remove_trait = blood_of_numenor_10
 			}
 			scope:child ?= { add_trait = blood_of_numenor_2 }
 		}

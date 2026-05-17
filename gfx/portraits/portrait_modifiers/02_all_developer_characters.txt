@@ -710,14 +710,6 @@
 			accessory = {
 				mode = add
 				gene = hairstyles
-				template = all_hairstyles
-				accessory = female_hair_custom_43
-			}
-		}   
-		dna_modifiers = {
-			accessory = {
-				mode = add
-				gene = hairstyles
 				template = agot_hairstyles
 				accessory = female_hair_custom_43
 				type = female
