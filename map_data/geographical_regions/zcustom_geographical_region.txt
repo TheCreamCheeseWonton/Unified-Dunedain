@@ -200,3 +200,12 @@ special_mikazra_zain = {
 		middleearth_uttersouth_mumakan_koronande
 	}
 }
+
+special_coastal_tanturak = { 
+	duchies = { 
+		# k_usakan
+		d_okan
+		# k_tanturak
+		d_tanturak d_ardinak d_tam_wamo d_azra_zhe
+	}
+}

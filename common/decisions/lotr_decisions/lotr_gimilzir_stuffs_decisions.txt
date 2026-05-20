@@ -29,9 +29,13 @@
 				target = flag:decision_choose_gimilzir_path
 			}
 		}
-		
+		current_date < 7058.1.1
 	}
 	is_valid = {
+		custom_tooltip = {	
+			text = has_been_less_than_25_years
+			current_date < 7058.1.1
+		}
 		prestige_level >=3
 	}
 	
@@ -366,13 +370,14 @@ decision_become_allies_with_kinnlai_gimilzir_renew = {
 		dynasty = dynasty:dynasty_gimilzadan
 		
 		has_defensive_alliance = no
+		is_house_head = yes
 
 		OR = { 
-			character:lineoftainalann10 = { 
+			character:lineoftainalann10 ?= { 
 				is_alive = yes
 				is_landed = yes
 			}
-			character:lineoftainalann3 = { 
+			character:lineoftainalann3 ?= { 
 				is_alive = yes
 				is_landed = yes
 			}
@@ -496,7 +501,7 @@ decision_gimilzir_adunaic_revival_sarul = {#Settle Adunaic in Sarul
 				limit = {
 					is_ai = no
 				}
-				value = 250
+				value = 100
 			}
 			else = {
 				value = 1
@@ -507,7 +512,7 @@ decision_gimilzir_adunaic_revival_sarul = {#Settle Adunaic in Sarul
 				limit = {
 					is_ai = no
 				}
-				value = 100
+				value = 25
 			}
 			else = {
 				value = 1
@@ -559,6 +564,7 @@ decision_gimilzir_tanturak_founder_statue = {
 			name = unavailable_unique_decisions
 			target = flag:enable_gimilzir_tanturak_statue_enabled
 		}
+		dynasty = dynasty:dynasty_gimilzadan
 		NOT = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
@@ -604,4 +610,70 @@ decision_gimilzir_tanturak_founder_statue = {
 		gold = 1000
 	}
 
+}
+
+decision_start_diplomatic_council = {
+	title = decision_start_diplomatic_council
+	picture = {
+		reference =gfx/interface/illustrations/decisions/decision_council.dds
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	selection_tooltip = decision_start_diplomatic_council_tooltip
+	desc = decision_start_diplomatic_council_desc
+	confirm_text = decision_start_diplomatic_council_confirm
+	
+	ai_check_interval = 240
+	
+	decision_group_type = gimilzir_decisions
+	
+	is_shown = {
+		is_landed = yes
+		has_character_flag = enable_council
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_start_diplomatic_council
+			}
+		}
+		any_independent_ruler = {
+			any_held_county = {
+				any_county_province = {
+					geographical_region = special_coastal_tanturak
+				}
+			}
+			is_human = yes
+			NOT = { this = root }
+		}
+	}
+	is_valid = {
+		is_at_war = no
+		is_travelling = no
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	cost = {
+		prestige = 200
+	}
+	
+	effect = {
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_start_diplomatic_council
+		}
+		custom_tooltip = decision_start_diplomatic_council_tooltip_tt
+		trigger_event = gimilzir_events.7842 
+	}
+	
+	ai_will_do = {
+		base = 100
+	}
 }

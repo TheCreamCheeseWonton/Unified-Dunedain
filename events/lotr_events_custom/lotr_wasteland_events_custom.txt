@@ -475,6 +475,13 @@ wastelands_custom.003 = { # Artifacts of old
 					create_artifact_arnorian_shield_effect = { OWNER = root }
 				}
 			}
+			2 = {
+				send_interface_toast = {
+					left_icon = root
+					title = wastelands_custom.003.c.success.toast.t
+					create_artifact_arnor_sword_effect = { OWNER = root }
+				}
+			}
 			1 = {
 				send_interface_toast = {
 					left_icon = root

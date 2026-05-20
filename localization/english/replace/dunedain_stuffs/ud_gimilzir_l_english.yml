@@ -4,6 +4,9 @@
  gimilzir_failcontract_tt: "You #high Fail#! the #high Story Contract#!"
  usakani_opinion: "#E Ûsakani [opinion|E]#!"
 
+  ##CBs
+ lotr_gimilzir_usakan_invasion: "Batânim Invasion"
+
  challenge_character_arugimil: "Ârûgimil of House Gimilzîr"
  challenge_character_arugimil_desc: "In the heartlands of the southern [kingsmen|E] stands House Gimilzîr, the last bastion of the southern [faithful|E] of [thanihazad|E]. As heir to the legacy of [gimilziran|E] and [elros|E] himself, Ârûgimil bears the near-impossible burden of living up to such greatness, all while the rule of his house has been thrust upon him.\n\nWill he rise to lead his family and the [batanim|E] to glory, or be crushed beneath the weight of his own fears?"
 
@@ -30,6 +33,7 @@
  decision_choose_gimilzir_path_tooltip: "We must choose the future of House Gimilzîr"
  decision_choose_gimilzir_path_confirm: "The future of House Gimilzîr is bright!"
  decision_choose_gimilzir_path_tt: "I will choose the future of House Gimilzîr"
+ has_been_less_than_25_years: "It has been fewer than #high 25 years#! since Ârûgimil came to lead House Gimilzîr."
 
  decision_gimilzir_tanturak_founder_statue: "In Memory of Ârûgimil"
  decision_gimilzir_tanturak_founder_statue_desc: "[GetScriptedCharacterByHistoryID( 'linegimilzadan2' ).GetName] is dead, and many across the realm believe that we must honor the memory of this great man, the savior of the [batanim|E]. It is to him that we owe Tantûrak being made our own, the prosperity we now enjoy, and even our very existence. His deeds demand remembrance worthy of their magnitude.\n\nAnd so, we shall ensure that his legacy endures. A great statue has been commissioned in Pharasphurus, one that will stand as a lasting tribute to his life and accomplishments. The finest [dwarven|E] stonemasons have been summoned from the [yellowmountains|E], their unmatched skill set to the task of carving his likeness from solid onyx, unyielding, eternal, and forever memorialized in stone. \n\nIn this way, his name shall not fade, and his deeds shall be remembered for generations to come."
@@ -175,6 +179,9 @@
 
  lotr_usakan_dislike_tanturak_modifier: "Ûsakani Disdain"
  lotr_usakan_dislike_tanturak_modifier_desc: "The Ûsakani people see the [batanim|E] as evil [adunaic|E] conquers"
+
+ lotr_usakan_like_tanturak_modifier: "Ûsakani Acceptance"
+ lotr_usakan_like_tanturak_modifier_desc: "The Ûsakani people see the [batanim|E] as new friends and neighbors"
 
  gimilzir_tanturak_refounder: "The Refounder of Tantûrak"
  gimilzir_tanturak_refounder_desc: "This character refounded the realm of Tantûrak, which has became the home of the [faithful|E] [batanim|E]"
@@ -568,14 +575,53 @@
   gimilzir_events.781.t: "Across the Bay"
   gimilzir_events.781.desc: "It has been some time since the [batanim|E] first made landfall upon the shores of [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip], and much progress has been made in shaping this land into a new home for our people. Yet [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] has proven a far more challenging island to settle than we first believed.\n\nMany among my people now look northward to [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], seeking new lands, citing the unnatural nature of [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] and the increasingly cramped conditions upon its shores. My people require more land, and I shall see it granted.\n\nHowever, the lands that once formed the old realm of Tantûrak are not empty. Along the coasts dwell scattered peoples, living in sparse and decentralized communities. Some among my ranks claim it is our birthright to seize these lands by force, and expel the locals from these lands. Others caution that such a path would stain our spirit, and urge that we instead expand with grace, treating the local Ûsakani with respect. Regardless, war is likely in our future.\n\nWhat path shall we take?"
   gimilzir_events.781.a: "By the sword, Tantûrak shall be ours!"
-  gimilzir_events.781.b: "Maybe we should employ a kinder touch" #Waging war against good people is bad for the soul
+  gimilzir_events.781.b: "Waging war against good people is bad for the soul"
   gimilzir_events.781.c: "I will forge my own path"
   gimilzir_events.781.a.tt: "You will use military force to conquer Tantûrak"
   gimilzir_events.781.b.tt: "You will use diplomacy to unite Tantûrak"
 
+  gimilzir_events.7810.t: "An Unexpected Ally?"
+  gimilzir_events.7810.desc: "I have been busy at work these past few days, preparing my soldiers, my people, and myself for the war to come. Tantûrak shall become our new homeland, even if we must resort to violence to claim it. News of my ambitions seems to have spread quickly, for today a ship arrived at Ardinâk’s primary harbor bearing an impressive retinue of knights, and their commander.\n\n[usakani_fighter.GetName] demanded an audience with me at once, declaring that she carried an offer I could not refuse. Now I stand before the imposing Ûsakani woman, one clearly accustomed to warfare and battle.\n\n“I know of your plans, [adunai|E],” she began, her fierce eyes never leaving mine. “And I know opportunity when I see it. I was cast out by my family in [GetTitleByKey('c_azra_zhe').GetNameNoTierNoTooltip] simply for being a strong willed woman, and now I intend to claim my birthright. Grant me the lands of Azra-Zhê, and in return my soldiers, and my loyalty, shall be yours.”\n\nI paused for a moment, weighing her words carefully and wondering whether her involvement would truly benefit me."
+  gimilzir_events.7810.a: "I will press her claim"
+  gimilzir_events.7810.b: "No, these lands will be mine!"
+  gimilzir_events.7810.a.tt: "You enter into a mutual [alliance|E] with [usakani_fighter.GetName]"
+  she_is_very_sad_and_is_fucking_angry: "She leaves, very upset"
+  usakan_wife_will_get_land: "[usakani_fighter.GetFirstName] will expect to be granted the lands of Azra-Zhê"
+
+  gimilzir_events.7811.t: "An Unexpected Ally?"
+  gimilzir_events.7811.desc: "I have been hard at work these past few days, preparing my envoys, my people, and myself for the diplomatic maneuvers to come. Tantûrak shall become our new homeland, but if we are to find peace here, we must forge friendships with the local Ûsakani. News of my ambitions seems to have spread quickly, for today a ship arrived at Ardinâk’s primary harbor bearing an impressive retinue of knights, and their commander.\n\n[usakani_fighter.GetName] demanded an audience with me at once, declaring that she carried an offer I could not refuse. Now I stand before the imposing Ûsakani woman, one clearly seasoned by warfare and battle.\n\n“I know of your plans, [adunai|E],” she began, her fierce eyes never leaving mine. “And I know opportunity when I see it. I was cast out by my family in [GetTitleByKey('c_azra_zhe').GetNameNoTierNoTooltip] simply for being a strong-willed woman, and now I intend to claim my birthright. Grant me the lands of Azra-Zhê, and in return you shall have my loyalty, and my voice, which carries influence within Ûsakan.”\n\nI paused for a moment, carefully weighing her words and wondering whether her involvement would truly benefit me."
+  gimilzir_events.7811.a: "I will press her claim"
+  gimilzir_events.7811.b: "No, all these lands will be mine!"
+
+  gimilzir_events.7812.t: "The Batânim Invasion"
+  gimilzir_events.7812.desc: "Everything has been prepared. My armies stand disciplined and ready, my people have been armed, and I myself have steeled my spirit against all who would dare oppose the light of [eru|E]. The Ûsakani are [men|E] of Darkness, and they must be shown the light of the [valargods|E] and of [eru|E]. More important still, the [batanim|E] must have lands they can truly call their own.\n\nSoon my armies shall board our ships and sail for the mainland and for Sarûl, where we will begin the conquest of these lands. The local Ûsakani, fearing the return of the [adunai|E], have united beneath a single King of Tândurakân, and many among their people have taken up arms to oppose us.\n\nBut no force of [men|E] shall halt the undying light of [eruiluvatar|E]."
+  gimilzir_events.7812.a: "Forward, for our people"
+  usakan_wife_joins_war_defender: "[GetScriptedCharacterByHistoryID( 'linegimilzadan_usakan_wife' ).GetName] joins the war as a defender"
+  usakan_wife_joins_war_attacker: "[GetScriptedCharacterByHistoryID( 'linegimilzadan_usakan_wife' ).GetName] joins the war as an attacker"
+
+  gimilzir_events.7813.t: "Paying my Dues to [usakani_fighter.GetFirstName]"
+  gimilzir_events.7813.desc: "The war has come to an end, and now all the Ûsakani lands surrounding Ardinâk are mine. Much of the ancient heartland of Tantûrak now lies under my rule, wrested from the [men|E] of Darkness who once dwelt there.\n\nAs I admire the grand streets and broad boulevards of the newly conquered city of Sarûl, my steadfast ally, the woman who brought me so many victories in the war against the Ûsakani, approaches my side. “[gimilzirchar.GetFirstName], it truly is a magnificent city, isn’t it?” she began. “Never in my wildest dreams did I imagine I would help an [adunai|E] claim it.”\n\nShe let out a weary sigh before continuing. “I have aided you with all my strength and experience in securing this new homeland for your people. But now I must ask that you honor our agreement and grant me the lands I rightfully claim.”\n\nTurning fully to face me, her expression hardened with resolve. “I need your word,” she said firmly, “and then I shall continue to serve you faithfully.”"
+  gimilzir_events.7813.a: "[usakani_fighter.GetFirstName], your birthright shall be restored"
+  gimilzir_events.7813.b: "I claimed these lands, and I will keep them!"
+
+  gimilzir_events.7814.t: "My Expected Ally"
+  gimilzir_events.7814.desc: "[usakani_fighter.GetFirstName] joins me upon the beaches near Sarûl as my armies disembark onto the shores of what will soon become our jungle homeland. Though we have already spent some time in these lands, the jungle still fills me with awe and unease, its dense depths as beautiful as they are forbidding.\n\n“I know these lands better than almost anyone,” [usakani_fighter.GetFirstName] says to me. “I will ensure safe passage for you and your armies through the jungle, or at least as safe as one can reasonably expect.”\n\nThere is a confidence in her voice, but also something warmer now, a familiarity that has grown between us through shared struggle. I find myself trusting her more than I once would have dared.\n\nI nod gratefully. “Thank you, [usakani_fighter.GetFirstName]. Your guidance has already proven invaluable. I suspect it will continue to be.”\n\nShe lets out a short laugh, glancing at me sidelong. “I haven’t even swung a sword yet. Do not praise me too soon.”\n\nSoon we will meet the Ûsakani in battle, but at the very least I can take solace in knowing that my people are not entirely alone in these lands."
+  gimilzir_events.7814.a: "Together, to war!"
+
+  gimilzir_events.7815.t: "My Unexpected Enemy"
+  gimilzir_events.7815.desc: "As I land upon the beaches near Sarûl, my armies disembark onto the shores of what will soon become our jungle homeland. Though we have already spent some time in these lands, the jungle still fills me with awe and unease, its dense depths as beautiful as they are forbidding. \n\nBefore long, I am approached by one of my knights, who hands me a report.\n\n“My lord, [usakani_fighter.GetFirstName] has turned against us! She has pledged her soldiers to the defense of Ûsakan, claiming you will bring the same darkness as the [adunai|E] of old. Already, she has drawn many to her banner.”\n\nI stand in silence for a moment, taken aback. I knew denying her claim would anger her, but I had not expected her defiance to become such a formidable thorn in my side.\n\n“No matter,” I say at last, my voice steady. “We will crush her, as we do all who reject the light of [eru|E].”"
+  gimilzir_events.7815.a: "I will destroy her"
+
+  pay_him_350_gold: "You will pay [sarulholder.GetFirstName] #BOLD #V 350#! [gold|E]"
+
   gimilzir_events.782.t: "The Conquest of Sarûl"
   gimilzir_events.782.desc: "[GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] is ours! After thousands of years, [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], the capital of the old realm of Tantûrak, once more stands as the seat of a [numenorean|E] realm,  my realm. This time, we shall show the world what a [faithful|E] Tantûrak can be, a realm that vanquishes evil, rather than giving rise to it.\n\nYet, as unfortunate as it may be, the native Ûsakani people do not see us as liberators who would guide them into the light of [eru|E]. Instead, they view us as the same evil [adunai|E] of old. We must prove them wrong through the way we rule and lead Tantûrak.\n\nNow that the [batanim|E] have finally secured [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], many settlers in [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] long to journey there and restore the old capital as a true city of the [batanim|E], from which we shall govern. Though we must prepare [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] before it can receive them, already thousands wait, ready to bring their families and their lives to the city."
   gimilzir_events.782.a: "Soon, our new capital will be born!"
+  gimilzir_tanturak_decision_enable: "Enables the #bold #V 'Batânim Settle Sarûl'#! Decision"
+
+  gimilzir_events.7821.t: "Sarûl, Our New Lands"
+  gimilzir_events.7821.desc: "[GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] is ours! After thousands of years, [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], the capital of the old realm of Tantûrak, once more stands as the seat of a [numenorean|E] realm,  my realm. This time, we shall show the world what a [faithful|E] Tantûrak can be, a realm that vanquishes evil, rather than giving rise to it.\n\nNow that the [batanim|E] have finally secured [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip], many settlers in [GetTitleByKey('c_ardinak').GetNameNoTierNoTooltip] long to journey there and restore the old capital as a true city of the [batanim|E], from which we shall govern. Though we must prepare [GetTitleByKey('c_sarul').GetNameNoTierNoTooltip] before it can receive them, already thousands wait, ready to bring their families and their lives to the city."
+  gimilzir_events.7821.a: "Soon, our new capital will be born!"
   gimilzir_tanturak_decision_enable: "Enables the #bold #V 'Batânim Settle Sarûl'#! Decision"
 
   gimilzir_events.7820.t: "The Contract with Mispír"
@@ -664,6 +710,16 @@
   gimilzir_events.7900.desc: "It has been many years since the [batanim|E] first set foot upon the shores of Tantûrak. Since that time, my people have known prosperity, a measure of peace, and a homeland far removed from the overbearing rule of the Kharadûnâi [kingsmen|E]. In these years, our culture has flourished, with new [batanim|E] art, song, dance, and countless other forms of expression having emerged. All born of our freedom to live as we will and the ability to worship [eru|E] without fear.\n\nMoreover, some of the native peoples of Ûsakan have joined our ranks, bringing with them their own customs and traditions, which have begun to intertwine with ours. Through this blending, our culture has grown richer, yet also more distinct.\n\nIn this time, the ways of my people have diverged greatly from those of the traditional Kharadûnâi. Though we [batanim|E] once considered ourselves as one with them, since our departure many in Tantûrak have come to see us as a different people. Separate, with an identity of our own.\n\nShould I allow this divergence to continue? Or should we hold fast to our roots and preserve what we once were?"
   gimilzir_events.7900.a: "Gimilthâni? I think I like that name..."
   gimilzir_events.7900.b: "Our heritage must be held onto with unwavering resolve!"
+
+  gimilzir_events.7901.t: "My Long Life"
+  gimilzir_events.7901.desc: "I am now one hundred and seventy years old, and I have lived a life long beyond that of most men, a life filled with joy and sorrow, hardship and triumph. I have witnessed great victories that strengthened my people and secured their future, yet I have also borne terrible pain and endured losses that no victory could ever truly mend.\n\nNow, however, I feel the weight of the years upon me. My body aches where once it stood strong, and the vigor of youth has long since faded. So many whom I loved have already departed this world, passing beyond the circles of the earth to whatever fate awaits the Children of Ilúvatar. Friends, kin, companions of war and peace alike, all have gone before me, leaving only memories behind.\n\nAnd in the quiet hours, a part of me wonders if my own time has finally come. Perhaps it is now my turn to lay down my life willingly, as our forefathers once did, and join those who have passed on into the unknown beyond."
+  gimilzir_events.7901.a: "I shall accept the Gift of Ilúvatar."
+  gimilzir_events.7901.b: "No I must continue on!"
+
+  child_prodegy_modifier: "Heir to Greatness"
+  child_prodegy_modifier_desc: "This character has been blessed as the heir to Ârûgimil Gimilzir and, as such, carries both immense experience and great expectation."
+
+
   event_form_gimilarani_get_innovations: "The [gimilarani_culture.GetName] [culture|E] gains all [kharadunaim_culture.GetName] [innovations|E]"
   event_form_gimilarani_get_characters_custom: "All Southern Adûnâic [heritage|E] [characters|e] who's [faith|E] is [alignment_good|E]"
   event_form_gimilarani_counties_custom1: "All Southern Adûnâic [heritage|E] [counties|e] within your [realm|E] and the [GetGeographicalRegion('special_azraphel_an_khar').GetName] [region|E]"

@@ -1337,6 +1337,123 @@ tradition_kharatakhori = { # Kharatakhori tradition
 	}
 }
 
+tradition_reformed_kharatakhori = { # Kharatakhori tradition
+	category = societal
+
+	layers = {
+		0 = diplo
+		1 = western
+		4 = blacknumenorean.dds
+	}
+
+	is_shown = {
+		has_cultural_tradition = tradition_reformed_kharatakhori
+	}
+
+	can_pick = {
+		NOT = { has_cultural_tradition = tradition_staunch_traditionalists }
+		NOT = { 
+			lotr_culture_has_adunaic_supremacy_tradition = yes
+		}
+		trigger_if = { #LotR
+            limit = {
+                scope:replacing ?= culture_tradition:tradition_variag_succession
+            }
+            custom_tooltip = {
+                text = cannot_replace_variag_succession
+                NOT = { has_cultural_tradition = tradition_variag_succession } #To prevent stacking after hybridization
+            }
+        }
+	}
+
+	parameters = { 
+		#dislikes_marrying_outside_adunai_heritage = yes 	
+		values_numenorean_blood = yes 
+		courtiers_less_likely_to_leave_same_culture_court = yes
+		
+		# tradition_staunch_traditionalists like parameters
+		expensive_convert_to_local_culture = yes
+		harder_to_hybridize = yes
+		less_likely_to_promote_culture = yes # These 2 parameters need to be merged to avoid text bloat
+		less_likely_to_culture_convert = yes
+
+		#Hereditary Hierechry replacements 
+		# loyal_trait_more_valued = yes
+		poorly_educated_leaders_distrusted = yes
+
+		#Stuff from Astute Diplomats
+		cannot_attack_truces = yes
+		facilitate_white_peace = yes
+		
+		innovation_from_diplomacy_traits = yes
+	}
+		
+	character_modifier = { # change from culture to tenet
+		#same_tradition_blacknumenorean_opinion = 5
+		dread_decay_mult = 0.25
+		development_growth_factor = 0.1
+		long_reign_bonus_mult = 0.25
+		cultural_head_fascination_mult = 0.05
+		dread_loss_mult = -0.5
+		farmlands_tax_mult = 0.1
+		learn_language_scheme_phase_duration_add = medium_scheme_phase_duration_bonus_value
+	}
+	
+	culture_modifier = {
+		cultural_acceptance_gain_mult = -0.25
+	}
+
+	county_modifier = {
+		monthly_county_control_growth_add = 0.5
+	}	
+	
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_communal = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_communal_spiritual_or_stoic_desc
+				}
+			}
+			if = {
+				limit = {
+					scope:character = {
+						any_sub_realm_county = {
+							culture = scope:character.culture
+							any_neighboring_county = {
+								NOT = {
+									culture = scope:character.culture
+								}
+								culture = {
+									cultural_acceptance = { target = scope:character.culture value >= 40 }
+								}
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = non_tolerated_cultures_desc
+				}
+			}
+			
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+}
+
 tradition_batanim = { # Southern Faithful
 	category = societal
 

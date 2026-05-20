@@ -3477,6 +3477,18 @@ decision_unify_southern_adunai = {
 			name = unavailable_unique_decisions
 			target = flag:decision_unify_southern_adunai
 		}
+		
+		if = { 
+			limit = { 
+				culture:kharadunaim = { 
+					has_cultural_tradition = tradition_reformed_kharadunai
+				}
+			}
+			culture:kharatakhori = { 
+				remove_culture_tradition = tradition_kharatakhori
+				add_culture_tradition = tradition_reformed_kharatakhori
+			}
+		}
 	}
 
 	# AI

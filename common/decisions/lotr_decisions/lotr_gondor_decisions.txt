@@ -3876,6 +3876,7 @@ decision_numenor_in_exile = {
 		
 		##Quonton
 		add_character_modifier = custom_add_cultural_acceptance_gain_for_nie
+		give_nickname = nick_numenor_restorer
 		custom_tooltip = decision_gain_numenorean_soldiers_innovations
 		hidden_effect = {
 			if = { 

@@ -1979,7 +1979,12 @@ reform_amendment_template = {
 	# can this character benefit from the full modifiers of the artifact?
 	can_benefit = {
 		AND = {
-			culture = { has_cultural_tradition = tradition_reformed_kharadunai }
+			OR = { 
+				culture = { has_cultural_tradition = tradition_reformed_kharadunai }
+				culture = { has_cultural_tradition = tradition_reformed_kharatakhori }
+				culture = { has_cultural_tradition = tradition_adunaic_legacy }
+				culture = { has_cultural_tradition = tradition_new_numenor }
+			}
 			faith_is_good = yes
 		}
 	}
@@ -2010,7 +2015,12 @@ reformer_scepter_template = {
 	# can this character benefit from the full modifiers of the artifact?
 	can_benefit = {
 		AND = {
-			culture = { has_cultural_tradition = tradition_reformed_kharadunai }
+			OR = { 
+				culture = { has_cultural_tradition = tradition_reformed_kharadunai }
+				culture = { has_cultural_tradition = tradition_reformed_kharatakhori }
+				culture = { has_cultural_tradition = tradition_adunaic_legacy }
+				culture = { has_cultural_tradition = tradition_new_numenor }
+			}
 			faith_is_good = yes
 		}
 	}

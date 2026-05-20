@@ -5,3 +5,5 @@
 	nick_bearer_of_light = {}
 	
 	nick_pharazain_golden = {}
+	
+	nick_numenor_restorer = {}

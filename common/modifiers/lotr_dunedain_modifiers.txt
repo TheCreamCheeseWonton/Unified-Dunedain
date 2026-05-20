@@ -620,6 +620,13 @@ lotr_usakan_dislike_tanturak_modifier = {
 	county_opinion_add = -10
 }
 
+lotr_usakan_like_tanturak_modifier = {
+	icon = piety_positive
+	monthly_piety = 0.1
+	usakani_opinion  = 20
+	county_opinion_add = 10
+}
+
 lotr_converting_usakan_modifier = {
 	icon = piety_positive
 	monthly_piety = 0.1
@@ -680,8 +687,17 @@ uncanny_health_usakani_modifier = {
 	negate_health_penalty_add = 3
 }
 
-#uncanny_health_usakani_modifier_nothing = {
-#	icon = health_positive
-#	fertility = -10
-#	negate_health_penalty_add = 100
-#}
+child_prodegy_modifier = { 
+	icon = health_positive
+	diplomacy = 3
+	martial = 3
+	stewardship = 3
+	intrigue = 3
+	learning = 3
+}
+
+uncanny_health_usakani_modifier_nothing = {
+	icon = health_positive
+	fertility = -10
+	negate_health_penalty_add = 100
+}

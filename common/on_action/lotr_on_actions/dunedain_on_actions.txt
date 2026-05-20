@@ -9,6 +9,7 @@ on_prestige_level_gain = { on_actions = { ud_on_prestige_level_gain } }
 on_title_gain = { on_actions = { ud_custom_on_title_gain ud_bellakar_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan ud_thani_hazad_conquered_bellakar ud_thani_hazad_conquered_an_balkumagan ud_an_balkumagan_conquered_bellakar ud_an_balkumagan_conquered_thani_hazad ud_bellakar_conquered_an_balkumagan_good ud_thani_hazad_conquered_an_balkumagan_good} }
 on_birth_child = { on_actions = { pharazain_born_in_the_gold_events } }
 on_game_start_after_lobby = { on_actions = { ud_on_game_start_after_lobby } }
+on_birthday = { on_actions = { ud_on_birthday } }
 
 # Use this to test
 # debug_log = "my custom on_action has triggered"
@@ -26,6 +27,16 @@ ud_on_prestige_level_gain = {
 	}
 	effect = { 
 		trigger_event = { id = gimilzir_events.30 days = { 1 90 } }
+	}
+}
+
+ud_on_birthday = { 
+	trigger = { 
+		age = 170
+		root = character:linegimilzadan2
+	}
+	effect = { 
+		trigger_event = { id = gimilzir_events.7901 days = { 1 90 } }
 	}
 }
 
@@ -53,7 +64,21 @@ ud_custom_on_title_gain = {
 				name = unavailable_unique_event
 				target = flag:ud_conquer_sarul_gimilzir
 			}
-			trigger_event = { id = gimilzir_events.782 delayed = yes }
+			if = { 
+				limit = { 
+					has_character_modifier = gimilzir_ardinak_military
+				}
+				trigger_event = { id = gimilzir_events.782 delayed = yes }
+			}
+			else_if = { 
+				limit = { 
+					has_character_modifier = gimilzir_ardinak_diplomacy
+				}
+				trigger_event = { id = gimilzir_events.7848 delayed = yes }
+			}
+			else = { 
+				trigger_event = { id = gimilzir_events.782 delayed = yes }
+			}
 		}
 		if = { 
 			limit = { 
@@ -447,9 +472,8 @@ dunedain_on_game_start = {
 			}
 			character:linegimilzadan_usakan_wife = { 
 				add_character_modifier = uncanny_health_usakani_modifier
-				##uncomment once her content has been made
-				#add_trait = cannot_marry 
-				#add_character_modifier = uncanny_health_usakani_modifier_nothing
+				add_trait = cannot_marry 
+				add_character_modifier = uncanny_health_usakani_modifier_nothing
 			}
 		}
 		if = { 

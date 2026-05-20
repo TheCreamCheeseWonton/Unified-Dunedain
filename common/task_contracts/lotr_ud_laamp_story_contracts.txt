@@ -12,7 +12,7 @@ lotr_gimilzir_tanturak_contract_inzilloni = {
 	travel = yes
 	use_diplomatic_range = no
 
-	weight = { value = 0 }
+	weight = { value = 200 }
 
 	# Validity Triggers
 	valid_to_create = {
@@ -100,7 +100,7 @@ lotr_gimilzir_tanturak_contract_azarideth = {
 	travel = yes
 	use_diplomatic_range = no
 
-	weight = { value = 0 }
+	weight = { value = 200 }
 
 	# Validity Triggers
 	valid_to_create = {
@@ -188,7 +188,7 @@ lotr_gimilzir_tanturak_contract_uruloni = {
 	travel = yes
 	use_diplomatic_range = no
 
-	weight = { value = 0 }
+	weight = { value = 200 }
 
 	# Validity Triggers
 	valid_to_create = {
@@ -276,7 +276,7 @@ lotr_gimilzir_tanturak_contract_mispir = {
 	travel = yes
 	use_diplomatic_range = no
 
-	weight = { value = 0 }
+	weight = { value = 200 }
 
 	# Validity Triggers
 	valid_to_create = {
@@ -364,7 +364,7 @@ lotr_gimilzir_tanturak_contract_gimileth = {
 	travel = yes
 	use_diplomatic_range = no
 
-	weight = { value = 0 }
+	weight = { value = 200 }
 
 	# Validity Triggers
 	valid_to_create = {
@@ -452,7 +452,7 @@ lotr_gimilzir_tanturak_contract_arpel = {
 	travel = yes
 	use_diplomatic_range = no
 
-	weight = { value = 0 }
+	weight = { value = 200 }
 
 	# Validity Triggers
 	valid_to_create = {
@@ -540,7 +540,7 @@ lotr_gimilzir_tanturak_contract_arpel_sailing = {
 	travel = yes
 	use_diplomatic_range = no
 
-	weight = { value = 0 }
+	weight = { value = 200 }
 
 	# Validity Triggers
 	valid_to_create = {

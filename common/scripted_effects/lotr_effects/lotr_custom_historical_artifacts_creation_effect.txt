@@ -106,6 +106,34 @@ create_artifact_arnorian_steelbow_effect = {
 	}
 }
 
+create_artifact_arnor_sword_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = { save_scope_as = owner }
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_illustrious = yes
+
+	# Create the artifact
+	create_artifact = {
+		name = arnorian_sword_name
+		description = arnorian_sword_description
+		creator = character:lineofelrond1 #Elrond
+		type = sword
+		visuals = anduril
+		wealth = scope:wealth
+		quality = scope:quality
+		modifier = arnor_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+	
+	
+	scope:newly_created_artifact ?= {
+		set_variable = { name = historical_unique_artifact value = yes }
+		set_variable = relic
+		save_scope_as = epic
+	}
+}
+
 create_artifact_lesser_ring_custom_effect = {
 	# Get the character the artifact is being made for.
 	$OWNER$ = { save_scope_as = owner }

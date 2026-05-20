@@ -272,6 +272,9 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 		custom_tooltip = choose_gimilzir_path_tt_3
 		add_character_flag = gimilzir_path_chooser
 		trigger_event = gimilzir_events.7
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
+		}
 	}
 	
 	option = {
@@ -5527,30 +5530,2331 @@ gimilzir_events.781 = { # Flavor Event for after settling down, talking about ho
 	option = {
 		name = gimilzir_events.781.a # We need Lebensrealm
 		add_prestige = -100
+		add_unpressed_claim = title:e_usakan
 		add_unpressed_claim = title:k_tanturak
 		add_unpressed_claim = title:d_tanturak
-		add_unpressed_claim = title:d_tam_wamo
-		add_unpressed_claim = title:d_azra_zhe
-		add_unpressed_claim = title:d_okan
 		add_character_modifier = { 
 			modifier = gimilzir_ardinak_military
 			years = 30
+		}
+		if = { 
+			limit = { 
+				title:c_sarul.holder = { 
+					is_human = yes
+				}
+			}
+			trigger_event = {
+				id = gimilzir_events.7810
+				days = {10 30}
+			}
 		}
 	}
 	
 	option = {
 		name = gimilzir_events.781.b # Naaa Nazi
 		add_prestige = -50
-		add_unpressed_claim = title:k_tanturak
+		#add_unpressed_claim = title:k_tanturak
 		add_character_modifier = { 
 			modifier = gimilzir_ardinak_diplomacy
 			years = 30
+		}
+		if = { 
+			limit = { 
+				title:c_sarul.holder = { 
+					is_human = yes
+				}
+			}
+			trigger_event = {
+				id = gimilzir_events.7811
+				days = {10 30}
+			}
 		}
 	}
 	
 	option = {
 		name = gimilzir_events.781.c #Im lazy and like my island
 		add_prestige = 100
+	}
+}
+
+gimilzir_events.7810 = { # Usakani Wife Joins War
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7810.t
+	desc = gimilzir_events.7810.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = marshal
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		character:linegimilzadan_usakan_wife = { save_scope_as = usakani_fighter }
+	}
+
+	option = {
+		name = gimilzir_events.7810.a # Join Us
+		custom_tooltip = gimilzir_events.7810.a.tt
+		custom_tooltip = usakan_wife_will_get_land
+		create_alliance = {
+			target = character:linegimilzadan_usakan_wife
+			allied_through_owner = root
+			allied_through_target = character:linegimilzadan_usakan_wife
+		}
+		character:linegimilzadan_usakan_wife = {
+			add_opinion = {
+				target = root
+				modifier = event_negotiated_alliance_opinion
+			}
+		}	
+		add_opinion = {
+			target = character:linegimilzadan_usakan_wife
+			modifier = event_negotiated_alliance_opinion
+		}
+		add_character_flag = taken_usakan_wife_war
+		trigger_event = {
+			id = gimilzir_events.7812
+			days = {10 30}
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7810.b # No Dont want
+		custom_tooltip = she_is_very_sad_and_is_fucking_angry
+		character:linegimilzadan_usakan_wife = {
+			add_opinion = {
+				target = root
+				modifier = insult_opinion
+				opinion = -50
+			}
+		}	
+		character:linegimilzadan_usakan_wife = {
+			create_alliance = title:c_azra_zhe.holder
+		}	
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
+		trigger_event = {
+			id = gimilzir_events.7812
+			days = {10 30}
+		}
+	}
+}
+
+gimilzir_events.7811 = { # Usakani Wife Hears of your thing and asks you to press her claim
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7811.t
+	desc = gimilzir_events.7811.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = personality_bold
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		character:linegimilzadan_usakan_wife = { save_scope_as = usakani_fighter }
+	}
+
+	option = {
+		name = gimilzir_events.7811.a # Join Us
+		custom_tooltip = gimilzir_events.7810.a.tt
+		custom_tooltip = usakan_wife_will_get_land
+		create_alliance = {
+			target = character:linegimilzadan_usakan_wife
+			allied_through_owner = root
+			allied_through_target = character:linegimilzadan_usakan_wife
+		}
+		character:linegimilzadan_usakan_wife = {
+			add_opinion = {
+				target = root
+				modifier = event_negotiated_alliance_opinion
+			}
+		}	
+		add_opinion = {
+			target = character:linegimilzadan_usakan_wife
+			modifier = event_negotiated_alliance_opinion
+		}
+		add_character_flag = taken_usakan_wife_alliance
+		trigger_event = {
+			id = gimilzir_events.7816
+			days = {10 30}
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7811.b # No Dont want
+		custom_tooltip = she_is_very_sad_and_is_fucking_angry
+		character:linegimilzadan_usakan_wife = {
+			add_opinion = {
+				target = root
+				modifier = insult_opinion
+				opinion = -50
+			}
+		}	
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
+		trigger_event = {
+			id = gimilzir_events.7819
+			days = {10 30}
+		}
+	}
+}
+
+gimilzir_events.7812 = { # Start War for Usakan
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7812.t
+	desc = gimilzir_events.7812.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+	
+	immediate = {
+		every_ruler = {
+			limit = {
+				any_held_county = {
+					any_county_province = {
+						geographical_region = special_coastal_tanturak
+					}
+				}
+				is_human = yes
+				NOT = { 
+					OR = { 
+						this = title:c_sarul.holder.top_liege
+						this = root
+					}
+				}
+			}
+			add_to_list = usakani_enemies_gimilzir
+		}
+		title:c_sarul.holder.top_liege = { 
+			get_title = title:k_tanturak
+		}
+		every_in_list = {
+			list = usakani_enemies_gimilzir
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = title:c_sarul.holder.top_liege
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+
+	option = {
+		name = gimilzir_events.7812.a # Start War
+		hidden_effect = { 
+			title:c_sarul.holder.top_liege = { 
+				### Army ###
+				spawn_army = {
+					levies = 10000
+					location = title:c_sarul.title_province
+					origin = title:c_sarul.title_province
+					inheritable = yes
+					uses_supply = no
+					name = usakani_defence_army
+				}
+			}
+		}
+		start_war = {
+			casus_belli = lotr_gimilzir_usakan_invasion
+			target = title:c_sarul.holder.top_liege
+			target_title = title:c_sarul
+			target_title = title:e_usakan
+		}
+		every_character_war = {
+			limit = { using_cb = lotr_gimilzir_usakan_invasion }
+			save_scope_as = war_against_usakan
+		}
+		if = { 
+			limit = { 
+				has_character_flag = taken_usakan_wife_war
+			}
+			custom_tooltip = { 
+				text = usakan_wife_joins_war_attacker
+				character:linegimilzadan_usakan_wife ?= { 
+					scope:war_against_usakan = {
+						add_attacker= prev
+					}
+				}
+			}
+			trigger_event = gimilzir_events.7814
+		}
+		else = { 
+			custom_tooltip = { 
+				text = usakan_wife_joins_war_defender
+				character:linegimilzadan_usakan_wife ?= { 
+					scope:war_against_usakan = {
+						add_defender= prev
+					}
+				}
+			}
+			trigger_event = gimilzir_events.7815
+		}		
+	}
+}
+
+gimilzir_events.7813 = { # Usakani Wife takes land
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7813.t
+	desc = gimilzir_events.7813.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = personality_bold
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		character:linegimilzadan_usakan_wife = { save_scope_as = usakani_fighter }
+	}
+
+	option = {
+		name = gimilzir_events.7813.a # Give land
+		character:linegimilzadan_usakan_wife = {
+			progress_towards_friend_effect = {
+				REASON = friend_formal_offer
+				CHARACTER = root
+				OPINION = 25
+			}
+		}
+		character:linegimilzadan_usakan_wife = {
+			set_character_faith = faith:faith_adunaic_faithful
+			get_title = title:c_azra_zhe
+			get_title = title:c_hwozaya
+			get_title = title:c_rathane
+			get_title = title:c_bata_jeme
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:gimilzirchar
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		culture = { 
+			change_cultural_acceptance = {
+				target = scope:usakani_fighter.culture
+				value = 10
+				desc = cultural_acceptance_gain_event
+			}
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7813.b # Betray Her
+		stress_impact = { just = 50 }
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
+		character:linegimilzadan_usakan_wife = {
+			add_opinion = {
+				target = root
+				modifier = betrayal_opinion
+				opinion = -100
+			}
+			set_relation_rival = {
+				target = scope:gimilzirchar
+				reason = rival_covetted_claim
+			}
+		}	
+	}
+}
+
+gimilzir_events.7814 = { # Usakani Wife joins you
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7814.t
+	desc = gimilzir_events.7814.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = celebrate_sword
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		character:linegimilzadan_usakan_wife = { save_scope_as = usakani_fighter }
+	}
+
+	option = {
+		name = gimilzir_events.7814.a 
+		character:linegimilzadan_usakan_wife = {
+			progress_towards_friend_effect = {
+				REASON = friend_formal_offer
+				CHARACTER = root
+				OPINION = 25
+			}
+			hidden_effect = { 
+				### Army ###
+				spawn_army = {
+					levies = 1000
+					location = title:c_ardinak.title_province
+					origin = title:c_ardinak.title_province
+					inheritable = yes
+					uses_supply = no
+					name = usakani_defence_army
+				}
+			}
+		}
+	}
+}
+
+
+gimilzir_events.7815 = { # Usakani Wife joins against you
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7815.t
+	desc = gimilzir_events.7815.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = shock
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = aggressive_sword
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		character:linegimilzadan_usakan_wife = { save_scope_as = usakani_fighter }
+	}
+
+	option = {
+		name = gimilzir_events.7815.a 
+		character:linegimilzadan_usakan_wife = {
+			set_relation_rival = {
+				target = scope:gimilzirchar
+				reason = rival_covetted_claim
+			}
+			hidden_effect = { 
+				### Army ###
+				spawn_army = {
+					levies = 1000
+					men_at_arms = {
+						type = usakani_ambushers
+						stacks = 10
+					}
+					location = title:c_sarul.title_province
+					origin = title:c_sarul.title_province
+					inheritable = yes
+					uses_supply = no
+					name = usakani_defence_army
+				}
+			}
+		}
+	}
+}
+
+gimilzir_events.7816 = { # Start War for Azra Zhe
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7816.t
+	desc = gimilzir_events.7816.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = marshal
+	}
+
+	option = {
+		name = gimilzir_events.7816.a # Start War
+		hidden_effect = { 
+			title:c_azra_zhe.holder.top_liege = { 
+				### Army ###
+				spawn_army = {
+					levies = 1000
+					location = title:c_azra_zhe.title_province
+					origin = title:c_azra_zhe.title_province
+					inheritable = yes
+					uses_supply = no
+					name = usakani_defence_army
+				}
+			}
+		}
+		start_war = {
+			casus_belli = lotr_gimilzir_usakan_invasion
+			target = title:c_azra_zhe.holder.top_liege
+			target_title = title:d_azra_zhe
+		}
+		every_character_war = {
+			limit = { using_cb = lotr_gimilzir_usakan_invasion }
+			save_scope_as = war_against_usakan
+		}
+		custom_tooltip = { 
+			text = usakan_wife_joins_war_defender
+			character:linegimilzadan_usakan_wife ?= { 
+				scope:war_against_usakan = {
+					add_attacker= prev
+				}
+			}
+		}
+		trigger_event = gimilzir_events.7817		
+	}
+}
+
+gimilzir_events.7817 = { # Usakani Wife joins you
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7817.t
+	desc = gimilzir_events.7817.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = aggressive_sword
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = celebrate_sword
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		character:linegimilzadan_usakan_wife = { save_scope_as = usakani_fighter }
+	}
+
+	option = {
+		name = gimilzir_events.7817.a 
+		character:linegimilzadan_usakan_wife = {
+			progress_towards_friend_effect = {
+				REASON = friend_formal_offer
+				CHARACTER = root
+				OPINION = 25
+			}
+		}
+	}
+}
+
+gimilzir_events.7818 = { # Usakani Wife takes land
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7818.t
+	desc = gimilzir_events.7818.desc
+	theme = war
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	right_portrait = {
+		character = character:linegimilzadan_usakan_wife
+		animation = personality_bold
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		character:linegimilzadan_usakan_wife = { save_scope_as = usakani_fighter }
+		remove_character_flag = taken_usakan_wife_alliance
+	}
+
+	option = {
+		name = gimilzir_events.7818.a # Give land
+		character:linegimilzadan_usakan_wife = {
+			progress_towards_friend_effect = {
+				REASON = friend_formal_offer
+				CHARACTER = root
+				OPINION = 25
+			}
+		}
+		character:linegimilzadan_usakan_wife = {
+			set_character_faith = faith:faith_adunaic_faithful
+			get_title = title:c_azra_zhe
+			if = { 
+				limit = { 
+					ROOT = {
+						has_title = title:c_hwozaya
+					}
+				}
+				get_title = title:c_hwozaya
+			}
+			if = { 
+				limit = { 
+					ROOT = {
+						has_title = title:c_bata_jeme
+					}
+				}
+				get_title = title:c_bata_jeme
+			}
+			if = { 
+				limit = { 
+					ROOT = {
+						has_title = title:c_rathane
+					}
+				}
+				get_title = title:c_rathane
+			}
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:gimilzirchar
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		add_character_flag = gimilzir_no_betrayal
+		trigger_event = {
+			id = gimilzir_events.7819
+			days = {10 30}
+		}
+		culture = { 
+			change_cultural_acceptance = {
+				target = scope:usakani_fighter.culture
+				value = 10
+				desc = cultural_acceptance_gain_event
+			}
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7818.b # Betray Her
+		stress_impact = { just = 50 }
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
+		character:linegimilzadan_usakan_wife = {
+			add_opinion = {
+				target = root
+				modifier = betrayal_opinion
+				opinion = -100
+			}
+			set_relation_rival = {
+				target = scope:gimilzirchar
+				reason = rival_covetted_claim
+			}
+		}	
+		trigger_event = {
+			id = gimilzir_events.7819
+			days = {10 30}
+		}
+	}
+}
+
+gimilzir_events.7819 = { # take Sarul
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7819.t
+	desc = gimilzir_events.7819.desc
+	theme = diplomacy
+	left_portrait = {
+		character = root
+		animation = chancellor
+	}
+	
+	lower_center_portrait = {
+		character = scope:sarulholder
+		animation = idle
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+	}
+
+	option = {
+		name = gimilzir_events.7819.a # meet with sarul
+		custom_tooltip = gimilzir_events.7819.a.tt
+		trigger_event = {
+			id = gimilzir_events.7832
+			days = {10 30}
+		}
+	}
+	
+	#option = {
+	#	name = gimilzir_events.7819.b #Dont Want it
+	#}
+}
+
+gimilzir_events.7832 = { # Meeting with Sarul 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7832.t
+	desc = gimilzir_events.7832.desc
+	theme = diplomacy
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	right_portrait  = {
+		character = scope:sarulholder
+		animation = personality_cynical
+	}
+	
+	cooldown = { years = 1000 }
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzir_char } 
+	}
+
+	option = {
+		name = gimilzir_events.7832.a 
+		trigger_event = gimilzir_events.7833
+	}
+}
+
+gimilzir_events.7833 = { # Meeting with Sarul  2 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7833.t
+	desc = gimilzir_events.7833.desc
+	theme = diplomacy
+	left_portrait = {
+		character = root
+		animation = debating
+	}
+	
+	right_portrait  = {
+		character = scope:sarulholder
+		animation = disapproval
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzir_char } 
+	}
+
+	option = {
+		name = gimilzir_events.7833.a 
+		duel = {
+ 			skill = diplomacy
+ 			target = scope:sarulholder
+ 			40 = {
+				# You convince him
+ 				desc = gimilzir_events.7833.a.success
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = 3.5
+ 					min = -49
+ 				}
+				modifier = { 
+					add = 25
+					has_trait = diplomat
+				}
+				
+				modifier = { 
+					add = 75
+					has_character_flag = gimilzir_no_betrayal
+				}
+				
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 0
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 25
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 50
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 75
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 25
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 100
+						}
+					}
+				}
+				
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7833.a.success
+ 					left_icon = root
+ 					right_icon = scope:sarulholder
+ 				}
+				trigger_event = gimilzir_events.7834
+ 			}
+ 			60 = {
+ 				# You fail to convince him
+ 				desc = gimilzir_events.7833.a.failure
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = -3.5
+ 					min = -49
+ 				}
+				modifier = {
+					add = 50
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = { 
+					add = 75
+					NOT = { has_character_flag = gimilzir_no_betrayal }
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = paranoid
+				}
+				modifier = {
+					add = 10
+					has_trait = sadistic
+				}
+				modifier = {
+					add = 100
+					faith_is_good = no
+				}
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7833.a.failure
+ 					left_icon = root
+ 					right_icon = scope:sarulholder
+ 				}
+				scope:sarulholder = {
+					add_opinion = {
+						target = root
+						modifier = refusal_opinion
+						opinion = -15
+					}
+				}
+				trigger_event = gimilzir_events.7835
+ 			}
+ 		}
+	}
+	option = {
+		name = gimilzir_events.7833.b 
+		duel = {
+ 			skill = martial
+ 			target = scope:sarulholder
+ 			40 = {
+				# You convince him
+ 				desc = gimilzir_events.7833.b.success
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = 3.5
+ 					min = -49
+ 				}
+				modifier = { 
+					add = 25
+					has_trait = diplomat
+				}
+				
+				modifier = { 
+					add = 75
+					has_character_flag = gimilzir_no_betrayal
+				}
+				
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				
+				modifier = {
+					add = 10
+					has_trait = sadistic
+				}
+				
+				modifier = {
+					add = 25
+					dread >= 25
+				}
+				
+				modifier = {
+					add = 25
+					dread >= 50
+				}
+				
+				modifier = {
+					add = 25
+					dread >= 75
+				}
+				
+				modifier = {
+					add = 25
+					dread >= 90
+				}
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 0
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 25
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 50
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 75
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 25
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 100
+						}
+					}
+				}
+				
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7833.b.success
+ 					left_icon = root
+ 					right_icon = scope:sarulholder
+ 				}
+				add_dread = 10
+				trigger_event = gimilzir_events.7836
+ 			}
+ 			60 = {
+ 				# You fail to convince him
+ 				desc = gimilzir_events.7833.b.failure
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = -3.5
+ 					min = -49
+ 				}
+				modifier = {
+					add = 50
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = { 
+					add = 75
+					NOT = { has_character_flag = gimilzir_no_betrayal }
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = paranoid
+				}
+				modifier = {
+					add = 100
+					faith_is_good = no
+				}
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7833.b.failure
+ 					left_icon = root
+ 					right_icon = scope:sarulholder
+ 				}
+				scope:sarulholder = {
+					add_opinion = {
+						target = root
+						modifier = refusal_opinion
+						opinion = -15
+					}
+				}
+				trigger_event = gimilzir_events.7837
+ 			}
+ 		}
+	}
+	option = {
+		name = gimilzir_events.7833.c
+		custom_tooltip = pay_him_350_gold
+		duel = {
+ 			skill = stewardship
+ 			target = scope:sarulholder
+ 			65 = {
+				# You convince him
+ 				desc = gimilzir_events.7833.c.success
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = 3.5
+ 					min = -49
+ 				}
+				modifier = { 
+					add = 25
+					has_trait = diplomat
+				}
+				
+				modifier = { 
+					add = 75
+					has_character_flag = gimilzir_no_betrayal
+				}
+				
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 0
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 25
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 50
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 75
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 25
+					scope:sarulholder = {
+						opinion = {
+							target = root
+							value >= 100
+						}
+					}
+				}
+				
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7833.c.success
+ 					left_icon = root
+ 					right_icon = scope:sarulholder
+ 				}
+				trigger_event = gimilzir_events.7838
+ 			}
+ 			35 = {
+ 				# You fail to convince him
+ 				desc = gimilzir_events.7833.c.failure
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = -3.5
+ 					min = -49
+ 				}
+				modifier = {
+					add = 50
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = { 
+					add = 75
+					NOT = { has_character_flag = gimilzir_no_betrayal }
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = paranoid
+				}
+				modifier = {
+					add = 10
+					has_trait = sadistic
+				}
+				modifier = {
+					add = 100
+					faith_is_good = no
+				}
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7833.c.failure
+ 					left_icon = root
+ 					right_icon = scope:sarulholder
+ 				}
+				scope:sarulholder = {
+					add_opinion = {
+						target = root
+						modifier = refusal_opinion
+						opinion = -15
+					}
+				}
+				trigger_event = gimilzir_events.7839
+ 			}
+ 		}
+	}
+}
+
+gimilzir_events.7834 = { # Meeting with sarul diplomatic success 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7834.t
+	desc = gimilzir_events.7834.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+	right_portrait = {
+		character = scope:sarulholder
+		animation = thinking
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzirchar }
+		scope:sarulholder = {
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:gimilzirchar
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+	option = {
+		name = gimilzir_events.7834.a
+		get_title = title:c_sarul
+		scope:sarulholder = {
+			vassal_contract_set_obligation_level = {
+				type = title_revocation_rights
+				level = 1
+			}
+			vassal_contract_set_obligation_level = {
+				type = religious_rights
+				level = 1
+			}
+		}
+		trigger_event = {
+			id = gimilzir_events.7841
+			days = {10 30}
+		}
+		#add_character_flag = taken_sarul
+	}
+}
+
+gimilzir_events.7835 = { # Meeting with sarul diplomatic failure 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7835.t
+	desc = gimilzir_events.7835.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = shame
+	}
+	
+	right_portrait = {
+		character = scope:sarulholder
+		animation = anger
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzirchar }
+	}
+
+	option = {
+		name = gimilzir_events.7835.a
+		reverse_add_opinion = {
+			target = scope:sarulholder
+			modifier = angry_opinion
+			opinion = -75
+		}
+		start_war = {
+			casus_belli = lotr_gimilzir_usakan_invasion
+			target = title:c_sarul.holder
+			target_title = title:d_tanturak
+		}
+		every_character_war = {
+			limit = { using_cb = lotr_gimilzir_usakan_invasion }
+			save_scope_as = war_against_sarul
+		}
+		if = { 
+			limit = { 
+				NOT = { has_character_flag = gimilzir_no_betrayal }
+			}
+			custom_tooltip = { 
+				text = usakan_wife_joins_war_defender
+				character:linegimilzadan_usakan_wife ?= { 
+					scope:war_against_sarul = {
+						add_defender= prev
+					}
+				}
+			}
+		}
+		add_character_flag = take_sarul_war		
+	}
+	option = {
+		name = gimilzir_events.7835.b #Nothing We Can Do
+		reverse_add_opinion = {
+			target = scope:sarulholder
+			modifier = angry_opinion
+			opinion = -25
+		}
+	}
+}
+
+gimilzir_events.7836 = { # Meeting with sarul threat success 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7836.t
+	desc = gimilzir_events.7836.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+	right_portrait = {
+		character = scope:sarulholder
+		animation = worry
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzirchar }
+		scope:sarulholder = {
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:gimilzirchar
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+	option = {
+		name = gimilzir_events.7836.a
+		get_title = title:c_sarul
+		reverse_add_opinion = {
+			target = scope:sarulholder
+			modifier = scared_opinion
+			opinion = -25
+		}
+		trigger_event = {
+			id = gimilzir_events.7841
+			days = {10 30}
+		}
+		#add_character_flag = taken_sarul
+	}
+}
+
+gimilzir_events.7837 = { # Meeting with sarul threat failure 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7837.t
+	desc = gimilzir_events.7837.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = marshal
+	}
+	
+	right_portrait = {
+		character = scope:sarulholder
+		animation = anger
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzirchar }
+	}
+
+	option = {
+		name = gimilzir_events.7837.a
+		reverse_add_opinion = {
+			target = scope:sarulholder
+			modifier = angry_opinion
+			opinion = -75
+		}
+		start_war = {
+			casus_belli = lotr_gimilzir_usakan_invasion
+			target = title:c_sarul.holder
+			target_title = title:d_tanturak
+		}
+		every_character_war = {
+			limit = { using_cb = lotr_gimilzir_usakan_invasion }
+			save_scope_as = war_against_sarul
+		}
+		if = { 
+			limit = { 
+				NOT = { has_character_flag = gimilzir_no_betrayal }
+			}
+			custom_tooltip = { 
+				text = usakan_wife_joins_war_defender
+				character:linegimilzadan_usakan_wife ?= { 
+					scope:war_against_sarul = {
+						add_defender= prev
+					}
+				}
+			}
+		}	
+		add_character_flag = take_sarul_war
+	}
+	option = {
+		name = gimilzir_events.7837.b #Nothing We Can Do
+		reverse_add_opinion = {
+			target = scope:sarulholder
+			modifier = angry_opinion
+			opinion = -25
+		}
+		add_dread = -20
+	}
+}
+
+gimilzir_events.7838 = { # Meeting with sarul pay success 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7838.t
+	desc = gimilzir_events.7838.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	
+	right_portrait = {
+		character = scope:sarulholder
+		animation = steward
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzirchar }
+		scope:sarulholder = {
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:gimilzirchar
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+	option = {
+		name = gimilzir_events.7838.a
+		get_title = title:c_sarul
+		pay_reserved_gold = { target = scope:sarulholder gold = 350 }
+		trigger_event = {
+			id = gimilzir_events.7841
+			days = {10 30}
+		}
+		#add_character_flag = taken_sarul
+	}
+}
+
+gimilzir_events.7839 = { # Meeting with sarul pay failure 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7839.t
+	desc = gimilzir_events.7839.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = shame
+	}
+	
+	right_portrait = {
+		character = scope:sarulholder
+		animation = anger
+	}
+	
+	immediate = {
+		title:c_sarul.holder = { 
+			save_scope_as = sarulholder 
+		}
+		root = { save_scope_as = gimilzirchar }
+	}
+
+	option = {
+		name = gimilzir_events.7839.a
+		reverse_add_opinion = {
+			target = scope:sarulholder
+			modifier = angry_opinion
+			opinion = -75
+		}
+		start_war = {
+			casus_belli = lotr_gimilzir_usakan_invasion
+			target = title:c_sarul.holder
+			target_title = title:d_tanturak
+		}
+		every_character_war = {
+			limit = { using_cb = lotr_gimilzir_usakan_invasion }
+			save_scope_as = war_against_sarul
+		}
+		if = { 
+			limit = { 
+				NOT = { has_character_flag = gimilzir_no_betrayal }
+			}
+			custom_tooltip = { 
+				text = usakan_wife_joins_war_defender
+				character:linegimilzadan_usakan_wife ?= { 
+					scope:war_against_sarul = {
+						add_defender= prev
+					}
+				}
+			}
+		}	
+		add_character_flag = take_sarul_war
+	}
+	option = {
+		name = gimilzir_events.7839.b #Nothing We Can Do
+		reverse_add_opinion = {
+			target = scope:sarulholder
+			modifier = angry_opinion
+			opinion = -25
+		}
+	}
+}
+
+gimilzir_events.7841 = { # preparing for mass vassalization
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7841.t
+	desc = gimilzir_events.7841.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+	}
+
+	option = {
+		name = gimilzir_events.7841.a #Start the council
+		trigger = { 
+			any_independent_ruler = {
+				any_held_county = {
+					any_county_province = {
+						geographical_region = special_coastal_tanturak
+					}
+				}
+				is_human = yes
+				NOT = { this = root }
+			}
+		}
+		custom_tooltip = council_decison_enable
+		add_character_flag = enable_council
+	}
+	option = {
+		name = gimilzir_events.7841.b #Everyone is dead
+		trigger = { 
+			NOT = { 
+				any_independent_ruler = {
+					any_held_county = {
+						any_county_province = {
+							geographical_region = special_coastal_tanturak
+						}
+					}
+					is_human = yes
+					NOT = { this = root }
+				}
+			}
+		}
+		add_prestige = 200
+		#custom_tooltip = council_decison_enable
+		#add_character_flag = enable_council
+	}
+	option = {
+		trigger = { 
+			any_independent_ruler = {
+				any_held_county = {
+					any_county_province = {
+						geographical_region = special_coastal_tanturak
+					}
+				}
+				is_human = yes
+				NOT = { this = root }
+			}
+		}
+		name = gimilzir_events.7841.c #There is no need
+	}
+}
+
+gimilzir_events.7842 = { # starting council
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7842.t
+	desc = gimilzir_events.7842.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = chancellor
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		every_ruler = {
+			limit = {
+				any_held_county = {
+					any_county_province = {
+						geographical_region = special_coastal_tanturak
+					}
+				}
+				is_human = yes
+				NOT = { 
+					OR = { 
+						is_vassal_or_below_of = root
+						this = root
+					}
+				}
+			}
+			add_to_list = usakani_leaders_gimilzir
+		}
+	}
+
+	option = {
+		name = gimilzir_events.7842.a #Start the council
+		trigger_event = {
+			id = gimilzir_events.7843
+			days = {10 30}
+		}
+	}
+}
+
+gimilzir_events.7843 = { # starting council 2
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7843.t
+	desc = gimilzir_events.7843.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = debating
+	}
+	
+	right_portrait = {
+		character = scope:usakani_leader
+		animation = personality_callous
+	}
+	
+	lower_left_portrait = {
+		character = scope:usakani_leader_wife
+		animation = debating
+	}
+	
+	lower_right_portrait = {
+		character = scope:usakani_leader_2
+		animation = thinking
+	}
+	
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		random_in_list = { 
+			list = usakani_leaders_gimilzir
+			save_scope_as = usakani_leader
+		}
+		random_in_list = { 
+			list = usakani_leaders_gimilzir
+			limit = { 
+				NOT = { this = scope:usakani_leader }
+			}
+			save_scope_as = usakani_leader_2
+		}
+		if = { 
+			limit = { 
+				has_character_flag = gimilzir_no_betrayal
+			}
+			character:linegimilzadan_usakan_wife = { save_scope_as = usakani_leader_wife }
+		}	
+	}
+
+	option = {
+		name = gimilzir_events.7843.a #Start the council
+		trigger_event = gimilzir_events.7844
+		duel = {
+ 			skill = diplomacy
+ 			target = scope:usakani_leader
+ 			40 = {
+				# You convince him
+ 				desc = gimilzir_events.7843.a.success
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = 3.5
+ 					min = -49
+ 				}
+				modifier = { 
+					add = 50
+					has_trait = diplomat
+				}
+				
+				modifier = { 
+					add = 75
+					has_character_flag = gimilzir_no_betrayal
+				}
+				
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 0
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 25
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 50
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 75
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 25
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 100
+						}
+					}
+				}
+				
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7843.a.success
+ 					left_icon = root
+ 					right_icon = scope:usakani_leader
+ 				}
+				add_character_flag = council_win_1
+ 			}
+ 			60 = {
+ 				# You fail to convince him
+ 				desc = gimilzir_events.7843.a.failure
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = -3.5
+ 					min = -49
+ 				}
+				modifier = {
+					add = 50
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = { 
+					add = 75
+					NOT = { has_character_flag = gimilzir_no_betrayal }
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = paranoid
+				}
+				modifier = {
+					add = 10
+					has_trait = sadistic
+				}
+				modifier = {
+					add = 100
+					faith_is_good = no
+				}
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7843.a.failure
+ 					left_icon = root
+ 					right_icon = scope:usakani_leader
+ 				}
+				scope:usakani_leader = {
+					add_opinion = {
+						target = root
+						modifier = refusal_opinion
+						opinion = -15
+					}
+				}
+ 			}
+ 		}
+	}
+}
+
+gimilzir_events.7844 = { # starting council 3
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7844.t
+	desc = gimilzir_events.7844.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = personality_callous
+	}
+	
+	lower_left_portrait = {
+		character = scope:usakani_leader_wife
+		animation = debating
+	}
+	
+	right_portrait = {
+		character = scope:usakani_leader
+		animation = debating
+	}
+	
+	lower_right_portrait = {
+		character = scope:usakani_leader_2
+		animation = thinking
+	}
+
+	option = {
+		name = gimilzir_events.7844.a #Start the council
+		trigger_event = gimilzir_events.7845
+		duel = {
+ 			skill = diplomacy
+ 			target = scope:usakani_leader
+ 			40 = {
+				# You convince him
+ 				desc = gimilzir_events.7844.a.success
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = 3.5
+ 					min = -49
+ 				}
+				modifier = { 
+					add = 50
+					has_trait = diplomat
+				}
+				
+				modifier = { 
+					add = 75
+					has_character_flag = gimilzir_no_betrayal
+				}
+				
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 0
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 25
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 50
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 75
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 25
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 100
+						}
+					}
+				}
+				
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7844.a.success
+ 					left_icon = root
+ 					right_icon = scope:usakani_leader
+ 				}
+ 			}
+ 			60 = {
+ 				# You fail to convince him
+ 				desc = gimilzir_events.7844.a.failure
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = -3.5
+ 					min = -49
+ 				}
+				modifier = {
+					add = 50
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = { 
+					add = 75
+					NOT = { has_character_flag = gimilzir_no_betrayal }
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = paranoid
+				}
+				modifier = {
+					add = 10
+					has_trait = sadistic
+				}
+				modifier = {
+					add = 100
+					faith_is_good = no
+				}
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7844.a.failure
+ 					left_icon = root
+ 					right_icon = scope:usakani_leader
+ 				}
+				scope:usakani_leader = {
+					add_opinion = {
+						target = root
+						modifier = refusal_opinion
+						opinion = -15
+					}
+				}
+				add_character_flag = council_failure_1
+ 			}
+ 		}
+	}
+}
+
+gimilzir_events.7845 = { # starting council 4
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7845.t
+	desc = gimilzir_events.7845.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+	
+	lower_left_portrait = {
+		character = scope:usakani_leader_wife
+		animation = personality_bold
+	}
+	
+	right_portrait = {
+		character = scope:usakani_leader
+		animation = personality_callous
+	}
+	
+	lower_right_portrait = {
+		character = scope:usakani_leader_2
+		animation = personality_cynical
+	}
+
+	option = {
+		name = gimilzir_events.7845.a #Start the council
+		duel = {
+ 			skill = diplomacy
+ 			target = scope:usakani_leader
+ 			30 = {
+				# You convince him
+ 				desc = gimilzir_events.7845.a.success
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = 3.5
+ 					min = -49
+ 				}
+				modifier = { 
+					add = 50
+					has_trait = diplomat
+				}
+				
+				modifier = { 
+					add = 75
+					has_character_flag = gimilzir_no_betrayal
+				}
+				
+				modifier = { 
+					add = 100
+					has_character_flag = council_win_1
+				}
+				
+				modifier = {
+					add = 10
+					has_trait = deceitful
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 0
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 25
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 50
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 10
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 75
+						}
+					}
+				}
+				
+				modifier = { 
+					add = 25
+					scope:usakani_leader = {
+						opinion = {
+							target = root
+							value >= 100
+						}
+					}
+				}
+				
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7845.a.success
+ 					left_icon = root
+ 					right_icon = scope:usakani_leader
+ 				}
+				trigger_event = gimilzir_events.7846
+ 			}
+ 			70 = {
+ 				# You fail to convince him
+ 				desc = gimilzir_events.7845.a.failure
+ 				compare_modifier = {
+ 					value = scope:duel_value
+ 					multiplier = -3.5
+ 					min = -49
+ 				}
+				modifier = {
+					add = 50
+				}
+				modifier = { 
+					add = 100
+					has_character_flag = council_failure_1
+				}
+				modifier = {
+					add = 10
+					has_trait = shy
+				}
+				modifier = { 
+					add = 75
+					NOT = { has_character_flag = gimilzir_no_betrayal }
+				}
+				modifier = {
+					add = 10
+					has_trait = arbitrary
+				}
+				modifier = {
+					add = 10
+					has_trait = paranoid
+				}
+				modifier = {
+					add = 10
+					has_trait = sadistic
+				}
+				modifier = {
+					add = 100
+					faith_is_good = no
+				}
+ 				send_interface_toast = {
+ 					title = gimilzir_events.7845.a.failure
+ 					left_icon = root
+ 					right_icon = scope:usakani_leader
+ 				}
+				scope:usakani_leader = {
+					add_opinion = {
+						target = root
+						modifier = refusal_opinion
+						opinion = -25
+					}
+				}
+				trigger_event = gimilzir_events.7847
+ 			}
+ 		}
+	}
+}
+
+gimilzir_events.7846 = {
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7846.t
+	desc = gimilzir_events.7846.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = personality_content
+	}
+	
+	lower_left_portrait = {
+		character = scope:usakani_leader_wife
+		animation = personality_bold
+	}
+	
+	right_portrait = {
+		character = scope:usakani_leader
+		animation = throne_room_bow_1
+	}
+	
+	lower_right_portrait = {
+		character = scope:usakani_leader_2
+		animation = personality_content
+	}
+	
+	immediate = { 
+		root = { save_scope_as = gimilzirchar }
+		every_in_list = { 
+			list = usakani_leaders_gimilzir
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:gimilzirchar
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+	}
+
+	option = {
+		name = gimilzir_events.7846.a # What an Interesting development
+		dynasty = { add_dynasty_prestige = medium_dynasty_prestige_gain }
+        add_legitimacy = medium_legitimacy_gain
+		add_prestige = medium_prestige_gain
+		add_piety = medium_piety_gain
+		add_character_modifier = { 
+			modifier = lotr_usakan_like_tanturak_modifier
+			years = 30
+		}
+		every_vassal = {
+			add_opinion = {
+				modifier = pleased_opinion
+				opinion = 50
+				target = root
+			}
+		}
+		every_in_list = { 
+			list = usakani_leaders_gimilzir
+			vassal_contract_set_obligation_level = {
+				type = title_revocation_rights
+				level = 1
+			}
+			vassal_contract_set_obligation_level = {
+				type = religious_rights
+				level = 1
+			}
+		}
+	}
+}
+
+gimilzir_events.7847 = {
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7847.t
+	desc = gimilzir_events.7847.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	
+	lower_left_portrait = {
+		character = scope:usakani_leader_wife
+		animation = disapproval
+	}
+	
+	right_portrait = {
+		character = scope:usakani_leader
+		animation = aggressive_mace
+	}
+	
+	lower_right_portrait = {
+		character = scope:usakani_leader_2
+		animation = personality_bold
+	}
+	
+	option = {
+		name = gimilzir_events.7847.a # Well time for war
+		add_character_modifier = { 
+			modifier = lotr_usakan_dislike_tanturak_modifier
+			years = 30
+		}
+		scope:usakani_leader = { 
+			get_title = title:k_tanturak
+		}
+		every_in_list = {
+			list = usakani_leaders_gimilzir
+			create_title_and_vassal_change = {
+				type = swear_fealty
+				save_scope_as = change
+				add_claim_on_loss = yes
+			}
+			change_liege = {
+				liege = scope:usakani_leader
+				change = scope:change
+			}
+			resolve_title_and_vassal_change = scope:change
+		}
+		hidden_effect = { 
+			scope:usakani_leader = { 
+				### Army ###
+				spawn_army = {
+					levies = 10000
+					location = scope:usakani_leader.capital_province
+					origin = scope:usakani_leader.capital_province
+					inheritable = yes
+					uses_supply = no
+					name = usakani_defence_army
+				}
+			}
+		}
+		start_war = {
+			casus_belli = lotr_gimilzir_usakan_invasion
+			target = scope:usakani_leader
+			target_title = title:d_tanturak
+			target_title = title:e_usakan
+		}
+		every_character_war = {
+			limit = { using_cb = lotr_gimilzir_usakan_invasion }
+			save_scope_as = war_against_usakan
+		}
+		if = { 
+			limit = { 
+				has_character_flag = gimilzir_no_betrayal
+			}
+			custom_tooltip = { 
+				text = usakan_wife_joins_war_attacker
+				character:linegimilzadan_usakan_wife ?= { 
+					scope:war_against_usakan = {
+						add_attacker= prev
+					}
+				}
+			}
+			trigger_event = gimilzir_events.7814
+		}
+		else = { 
+			custom_tooltip = { 
+				text = usakan_wife_joins_war_defender
+				character:linegimilzadan_usakan_wife ?= { 
+					scope:war_against_usakan = {
+						add_defender= prev
+					}
+				}
+			}
+			trigger_event = gimilzir_events.7815
+		}
+	}
+	option = {
+		name = gimilzir_events.7847.b # Well we tried
+		 add_prestige = -100
 	}
 }
 
@@ -5607,6 +7911,58 @@ gimilzir_events.782 = { # Conquer Sarul Flavor Event  Talking about how people w
 			modifier = lotr_usakan_dislike_tanturak_modifier
 			years = 30
 		}
+	}
+}
+
+gimilzir_events.7848 = { # Conquer Sarul Flavor Event  Talking about how people want to settle there but you need to rebuild the city first - diplomacy
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7848.t
+	desc = gimilzir_events.7848.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+	immediate = { 
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:enable_gimilzir_sarul_tanturak_decision
+		}
+		hidden_effect = { 
+			culture:usakani = { 
+				add_innovation = innovation_hoardings
+			}
+		}
+		if = { 
+			limit = { 
+				OR = { 
+					has_character_flag = gimilzir_mispir_trade_bad
+					has_character_flag = gimilzir_mispir_trade_good
+				}
+			}
+			trigger_event = { id = gimilzir_events.7820 months = { 1 6 } }
+			if = { 
+				limit = { 
+					OR = { 
+						character:lineoftainalann10 = { 
+							is_alive = yes
+							is_landed = yes
+						}
+						character:lineoftainalann3 = { 
+							is_alive = yes
+							is_landed = yes
+						}
+					}
+				}
+				trigger_event = { id = gimilzir_events.7821 years = { 1 3 } }
+			}
+		}
+	}
+
+	option = {
+		name = gimilzir_events.7848.a # What an Interesting development
+		custom_tooltip = gimilzir_tanturak_decision_enable
 	}
 }
 
@@ -6899,6 +9255,36 @@ gimilzir_events.7900 = { # Post Settle Flavor 20 Yearsish
 				years = 30
 			}
 		}
+	}
+}
+
+gimilzir_events.7901 = { # Gimilzir, 170 years old event
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.7901.t
+	desc = gimilzir_events.7901.desc
+	theme = realm
+	left_portrait = {
+		character = root
+		animation = prayer
+	}
+
+	option = {
+		name = gimilzir_events.7901.a # Welp, time to die!
+		primary_heir ?= {
+			add_character_modifier = child_prodegy_modifier
+		}
+		hidden_effect = {
+			add_piety_level = 1
+		}
+		death = { death_reason = death_laid_down_life } #LOTR
+		show_as_tooltip = {
+			add_piety_level = 1
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.7901.b # naaaa
 	}
 }
 

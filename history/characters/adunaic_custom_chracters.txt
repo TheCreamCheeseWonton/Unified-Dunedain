@@ -214,7 +214,8 @@ linegimilzadan091 = {
 	name = Adu_u_nafazor		
 	dynasty = dynasty_gimilzadan			
 	religion = faith_adunaic_faithful				
-	culture = kharadunaim				
+	culture = kharadunaim	
+	dna = lotr_gimillatto	
 
 	father = linegimilzadan09				
 	trait = blood_of_numenor_10
@@ -222,8 +223,28 @@ linegimilzadan091 = {
 	3911.1.11 = {
 		birth = yes
 	}
+	3971.3.16 = {
+        add_spouse = linegimilzadan091_wife
+    }
 	4025.3.10 = {				
 		death = { death_reason = death_battle } 			
+	}				
+}
+
+linegimilzadan091_wife = { 
+	name = Adu_u_naphe_e_l					
+	religion = faith_adunaic_faithful				
+	culture = kharadunaim	
+	dna = lotr_gimillatto	
+	female = yes
+				
+	trait = blood_of_numenor_10
+	trait = zealous
+	3915.3.1 = {
+		birth = yes
+	}
+	4025.3.30 = {				
+		death = { death_reason = death_disappearance } 			
 	}				
 }
 
@@ -233,7 +254,8 @@ linegimilzadan10 = {
 	religion = faith_adunaic_faithful				
 	culture = kharadunaim				
 
-	father = linegimilzadan091				
+	father = linegimilzadan091
+	mother = linegimilzadan091_wife
 
 	trait = blood_of_numenor_9
 	trait = diligent
@@ -1231,7 +1253,7 @@ linegimilzadan_usakan_wife = {
 	name = Amarasi
 	dna = lotr_arugimil_usakani_wife
 	dynasty = dynasty_ludajin
-    religion = faith_amba
+    religion = faith_sederi
     culture = usakani
 	father = lineoludajin17
 	mother = lineoludajin18
@@ -1587,6 +1609,9 @@ lineagimilzadanwife = {
 		birth = yes
 		effect = {
 			learn_language = language_sindarin
+			learn_language = language_adunaic_umbar
+			learn_language = language_adunaic_bellakar
+			learn_language = language_kharadunaic
 		}
 	}
 	7094.3.22 = { death = { death_reason = death_natural_causes }  }
