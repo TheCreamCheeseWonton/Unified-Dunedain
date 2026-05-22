@@ -6072,6 +6072,17 @@ gimilzir_events.7817 = { # Usakani Wife joins you
 				CHARACTER = root
 				OPINION = 25
 			}
+			hidden_effect = { 
+				### Army ###
+				spawn_army = {
+					levies = 200
+					location = title:c_ardinak.title_province
+					origin = title:c_ardinak.title_province
+					inheritable = yes
+					uses_supply = no
+					name = usakani_defence_army
+				}
+			}
 		}
 	}
 }
