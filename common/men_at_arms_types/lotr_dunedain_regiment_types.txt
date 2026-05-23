@@ -3304,7 +3304,7 @@ gimilzir_elites = {
 	type = heavy_infantry
 
 	damage = 100
-	toughness = 45
+	toughness = 25
 	pursuit = 0
 	screen = 20
 	
