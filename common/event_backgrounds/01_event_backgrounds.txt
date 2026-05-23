@@ -10026,6 +10026,20 @@ relaxing_room = {
 		environment = "environment_bp2_study_indian"
 		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
 	}
+	background = { # LotR Dwarf
+		trigger = { 
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location.culture ?= { is_dwarf_culture = yes } 
+				}
+			}
+			trigger_else = { location.culture ?= { is_dwarf_culture = yes } }
+		}
+		reference = "gfx/interface/illustrations/event_scenes/kitchen_dwarven.dds"
+		environment = "environment_event_bp1_kitchen_western" 
+		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
+	}
 	background = { #Nomads
 		trigger = {
 			trigger_if = {
@@ -13910,6 +13924,100 @@ tournament_contest = {
 }
 
 holy_site_generic = {
+	background = { # Dwarven
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location.culture ?= { is_dwarf_culture = yes }
+				}
+			}
+			trigger_else = {
+				location.culture ?= { is_dwarf_culture = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		environment = "environment_travel_farmlands"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+
+	background = { #Elven - Lorien
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location = {
+						culture ?= { is_elf_culture = yes }
+						terrain = mallorn_forest
+					}
+				}
+			}
+			trigger_else = {
+				location = {
+					culture ?= { is_elf_culture = yes }
+					terrain = mallorn_forest
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		environment = "environment_event_forest"
+		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
+	}
+
+	background = { #Elven - desertic
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location = {
+						culture ?= { is_elf_culture = yes }
+						OR = {
+							terrain = drylands
+							terrain = desert
+							terrain = oasis
+							terrain = desert_mountains
+							terrain = red_desert
+							terrain = dune_sea
+						}
+					}
+				}
+			}
+			trigger_else = {
+				location = {
+					culture ?= { is_elf_culture = yes }
+					OR = {
+						terrain = drylands
+						terrain = desert
+						terrain = oasis
+						terrain = desert_mountains
+						terrain = red_desert
+						terrain = dune_sea
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		environment = "environment_event_temple"
+		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
+	}
+
+	background = { #Elven - temperate
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location.culture ?= { is_elf_culture = yes }
+				}
+			}
+			trigger_else = {
+				location.culture ?= { is_elf_culture = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/fp4_legendary_spring.dds"
+		environment = "environment_legendary_spring" 
+		ambience = "event:/SFX/Events/Backgrounds/FP4/fp4_magic_spring"
+	}
+
 	background = { # Dunedain generic holy site
 		trigger = {
 			trigger_if = {
@@ -14440,6 +14548,88 @@ holy_site_generic = {
 }
 
 holy_site_generic_scope = {
+	background = { # Dwarven
+		trigger = {
+			OR = {
+				AND = {
+					exists = scope:activity
+					scope:activity.activity_location.culture = { is_dwarf_culture = yes }
+				}
+				scope:holy_site_scope.culture = { is_dwarf_culture = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		environment = "environment_travel_farmlands"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+	background = { #Elven - Lorien
+		trigger = {
+			OR = {
+				AND = {
+					exists = scope:activity
+					scope:activity.activity_location = {
+						culture ?= { is_elf_culture = yes }
+						terrain = mallorn_forest
+					}
+				}
+				scope:holy_site_scope = {
+					culture ?= { is_elf_culture = yes }
+					terrain = mallorn_forest
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		environment = "environment_event_forest"
+		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
+	}
+	background = { #Elven - desertic
+		trigger = {
+			OR = {
+				AND = {
+					exists = scope:activity
+					scope:activity.activity_location = {
+						culture ?= { is_elf_culture = yes }
+						OR = {
+							terrain = drylands
+							terrain = desert
+							terrain = oasis
+							terrain = desert_mountains
+							terrain = red_desert
+							terrain = dune_sea
+						}
+					}
+				}
+				scope:holy_site_scope = {
+					culture ?= { is_elf_culture = yes }
+					OR = {
+						terrain = drylands
+						terrain = desert
+						terrain = oasis
+						terrain = desert_mountains
+						terrain = red_desert
+						terrain = dune_sea
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		environment = "environment_event_temple"
+		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
+	}
+	background = { #Elven - temperate
+		trigger = {
+			OR = {
+				AND = {
+					exists = scope:activity
+					scope:activity.activity_location.culture = { is_elf_culture = yes }
+				}
+				scope:holy_site_scope.culture = { is_elf_culture = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/fp4_legendary_spring.dds"
+		environment = "environment_legendary_spring" 
+		ambience = "event:/SFX/Events/Backgrounds/FP4/fp4_magic_spring"
+	}
 	background = { # Dunedain generic holy site
 		trigger = {
 			OR = {
@@ -14806,58 +14996,55 @@ holy_site_generic_scope = {
 #Improved to also include generic holy sites, as fallbacks
 #Our backgrounds should all have fallbacks or they're risky!
 holy_site_unique = {
-	background = { #Jerusalem
-		trigger = {
-			# trigger_if = {
-			# 	limit = {
-			# 		exists = scope:activity
-			# 	}
-			# 	scope:activity.activity_location.county = title:c_jerusalem
-			# }
-			# trigger_else = {
-			# 	location.county = title:c_jerusalem
-			# }
-			always = no #LotR
-		}
-		reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_jerusalem.dds"
-		environment = "environment_jerusalem"
-		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_jerusalem"
-	}
+	# background = { #Jerusalem
+	# 	trigger = {
+	# 		trigger_if = {
+	# 			limit = {
+	# 				exists = scope:activity
+	# 			}
+	# 			scope:activity.activity_location.county = title:c_jerusalem
+	# 		}
+	# 		trigger_else = {
+	# 			location.county = title:c_jerusalem
+	# 		}
+	# 	}
+	# 	reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_jerusalem.dds"
+	# 	environment = "environment_jerusalem"
+	# 	ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_jerusalem"
+	# }
 
-	background = { #Mecca
-		trigger = {
-			# trigger_if = {
-			# 	limit = {
-			# 		exists = scope:activity
-			# 	}
-			# 	scope:activity.activity_location.county = title:c_mecca
-			# }
-			# trigger_else = {
-			# 	location.county = title:c_mecca
-			# }
-			always = no #LotR
-		}
-		reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_mecca.dds"
-		environment = "environment_mecca"
-		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_holysite_mena"
-	}
-	background = { # Hagia Sophia
-		trigger = {
-			# trigger_if = {
-			# 	limit = {
-			# 		exists = scope:activity
-			# 	}
-			# 	scope:activity.activity_location.county = title:c_byzantion
-			# }
-			# trigger_else = {
-			# 	location.county = title:c_byzantion
-			# }
-			always = no #LotR
-		}
-		reference = "gfx/interface/illustrations/event_scenes/ep3_hagia_sophia.dds"
-		environment = "environment_ep3_hagia_sophia"
-		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_hagia_sophia"
-	}
+	# background = { #Mecca
+	# 	trigger = {
+	# 		trigger_if = {
+	# 			limit = {
+	# 				exists = scope:activity
+	# 			}
+	# 			scope:activity.activity_location.county = title:c_mecca
+	# 		}
+	# 		trigger_else = {
+	# 			location.county = title:c_mecca
+	# 		}
+	# 	}
+	# 	reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_mecca.dds"
+	# 	environment = "environment_mecca"
+	# 	ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_holysite_mena"
+	# }
+	# background = { # Hagia Sophia
+	# 	trigger = {
+	# 		trigger_if = {
+	# 			limit = {
+	# 				exists = scope:activity
+	# 			}
+	# 			scope:activity.activity_location.county = title:c_byzantion
+	# 		}
+	# 		trigger_else = {
+	# 			location.county = title:c_byzantion
+	# 		}
+	# 	}
+	# 	reference = "gfx/interface/illustrations/event_scenes/ep3_hagia_sophia.dds"
+	# 	environment = "environment_ep3_hagia_sophia"
+	# 	ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_hagia_sophia"
+	# }
 	#Elves
 	background = { # Caras Galadhon
 		trigger = {
@@ -15005,6 +15192,100 @@ holy_site_unique = {
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
 	
+	background = { # Dwarven
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location.culture ?= { is_dwarf_culture = yes }
+				}
+			}
+			trigger_else = {
+				location.culture ?= { is_dwarf_culture = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		environment = "environment_travel_farmlands"
+		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
+	}
+
+	background = { #Elven - Lorien
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location = {
+						culture ?= { is_elf_culture = yes }
+						terrain = mallorn_forest
+					}
+				}
+			}
+			trigger_else = {
+				location = {
+					culture ?= { is_elf_culture = yes }
+					terrain = mallorn_forest
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		environment = "environment_event_forest"
+		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
+	}
+
+	background = { #Elven - desertic
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location = {
+						culture ?= { is_elf_culture = yes }
+						OR = {
+							terrain = drylands
+							terrain = desert
+							terrain = oasis
+							terrain = desert_mountains
+							terrain = red_desert
+							terrain = dune_sea
+						}
+					}
+				}
+			}
+			trigger_else = {
+				location = {
+					culture ?= { is_elf_culture = yes }
+					OR = {
+						terrain = drylands
+						terrain = desert
+						terrain = oasis
+						terrain = desert_mountains
+						terrain = red_desert
+						terrain = dune_sea
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		environment = "environment_event_temple"
+		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
+	}
+
+	background = { #Elven - temperate
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location.culture ?= { is_elf_culture = yes }
+				}
+			}
+			trigger_else = {
+				location.culture ?= { is_elf_culture = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/fp4_legendary_spring.dds"
+		environment = "environment_legendary_spring" 
+		ambience = "event:/SFX/Events/Backgrounds/FP4/fp4_magic_spring"
+	}
+
 	background = { # Dunedain generic holy site
 		trigger = {
 			trigger_if = {
@@ -15035,6 +15316,7 @@ holy_site_unique = {
 		environment = "environment_ep3_holysite_orthodox"
 		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_orthodox_holy_site"
 	}
+
 	background = { #Zoroastrian generic holy site
 		trigger = {
 			trigger_if = {
@@ -15526,34 +15808,32 @@ holy_site_unique = {
 }
 
 holy_site_scope = {
-	background = { #Jerusalem
-		trigger = {
-			# scope:background_terrain_scope.county = title:c_jerusalem
-			always = no #LotR
-		}
-		reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_jerusalem.dds"
-		environment = "environment_jerusalem"
-		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_jerusalem"
-	}
+	# background = { #Jerusalem
+	# 	trigger = {
+	# 		scope:background_terrain_scope.county = title:c_jerusalem
+	# 	}
+	# 	reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_jerusalem.dds"
+	# 	environment = "environment_jerusalem"
+	# 	ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_jerusalem"
+	# }
 
-	background = { #Mecca
-		trigger = {
-			# scope:background_terrain_scope.county = title:c_mecca
-			always = no #LotR
-		}
-		reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_mecca.dds"
-		environment = "environment_mecca"
-		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_holysite_mena"
-	}
-	background = { # Hagia Sophia
-		trigger = {
-			# scope:background_terrain_scope.county = title:c_byzantion
-			always = no #LotR
-		}
-		reference = "gfx/interface/illustrations/event_scenes/ep3_hagia_sophia.dds"
-		environment = "environment_ep3_hagia_sophia"
-		ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_hagia_sophia"
-	}
+	# background = { #Mecca
+	# 	trigger = {
+	# 		scope:background_terrain_scope.county = title:c_mecca
+	# 	}
+	# 	reference = "gfx/interface/illustrations/event_scenes/ep2_holysite_mecca.dds"
+	# 	environment = "environment_mecca"
+	# 	ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_holysite_mena"
+	# }
+	# background = { # Hagia Sophia
+	# 	trigger = {
+	# 		scope:background_terrain_scope.county = title:c_byzantion
+	# 	}
+	# 	reference = "gfx/interface/illustrations/event_scenes/ep3_hagia_sophia.dds"
+	# 	environment = "environment_ep3_hagia_sophia"
+	# 	ambience = "event:/DLC/EP3/SFX/Events/Event_Images/ep3_evn_eventimage_hagia_sophia"
+	# }
+
 	background = { #Zoroastrian generic holy site
 		trigger = {
 			# scope:background_terrain_scope.religion ?= religion:zoroastrianism_religion

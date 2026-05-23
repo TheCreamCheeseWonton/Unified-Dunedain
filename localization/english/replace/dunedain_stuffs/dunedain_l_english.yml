@@ -244,6 +244,7 @@
  d_cinta_toina: "Cinta Toina"
 
  #Modifiers 
+ block_settlement_dunedain: "This land is difficult to colonized"
  custom_add_cultural_acceptance_gain_for_nie: "Numenorean Revival"
  custom_add_cultural_acceptance_gain_for_nie_desc: "With the establishment of Númenor-in-Exile, the many different cultures descendant from [numenor|E] have been united into one state, and have thus begun to mingle and find their differences fewer and fewer by the day."
  custom_building_construction_special: "Armenelostion Under Construction"
@@ -631,7 +632,7 @@
  decision_deal_with_pharazain_separatism_confirm: "Suppress these rebellions at once!"
 
  decision_deal_with_pharazain_separatism_not_no_more_separatism_tt: "The fires of revolution still burn bright in [GetTitleByKey('h_pharazain').GetNameNoTier]"
- decision_deal_with_pharazain_separatism.second_step: "Restor Order to a Province"
+ decision_deal_with_pharazain_separatism.second_step: "Restore Order to a Province"
 
  decision_deal_with_pharazain_separatism.tt.no_separatism_fallback: "No provinces are currently able to have their Order Restored"
  decision_deal_with_pharazain_separatism.tt.bellazen: "Restore Order in [GetGeographicalRegion('special_k_bellazen').GetName]"
@@ -1427,7 +1428,7 @@
 
  ##Titles 
  d_laamp_house_of_gimilzadan: "The Gimilzîr Estate"
- d_laamp_azra_ursurpers: "The Azra Usurpers"
+ d_laamp_azra_ursurpers: "The Azra Exiles"
  h_sakal_an_khar: "Sakal an-Khar"
  h_azraphel_an_khar: "Azraphel an-Khar"
  e_mikazra_zain: "Mîkazra-Zâin"

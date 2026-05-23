@@ -1,0 +1,531 @@
+﻿#wotr = {
+#	default = default_wotr
+#
+#	default_wotr = {
+#
+#	}
+#	
+#	random_wotr = {
+#
+#	}
+#}
+
+ai_behavior = {
+	default = default_ai_behavior
+
+	categories = {
+		realms historicity ai
+	}
+
+	default_ai_behavior = {
+
+	}
+
+	weighted_ai_behavior = {
+
+	}
+	
+	random_ai_behavior = {
+
+	}
+}
+
+sauron_strength_rule = {
+	default = default_sauron_strength
+	
+	categories = {
+		realms historicity ai
+	}
+	
+	weakened_sauron_strength = {
+	
+	}
+	
+	default_sauron_strength = {
+	
+	}
+	
+	strong_sauron_strength = {
+	
+	}
+	
+	very_strong_sauron_strength = {
+	
+	}
+	
+	apocalyptic_sauron_strength = {
+	
+	}
+	
+}
+
+gondor_strength_rule = {
+	default = default_gondor_strength
+	
+	categories = {
+		realms historicity ai
+	}
+	
+	weakened_gondor_strength = {
+	
+	}
+	
+	default_gondor_strength = {
+	
+	}
+	
+	strong_gondor_strength = {
+	
+	}
+	
+	very_strong_gondor_strength = {
+	
+	}
+	
+	apocalyptic_gondor_strength = {
+	
+	}
+	
+}
+
+colonisation_speed_rule = {
+	default = default_colonisation_speed
+
+	categories = {
+		realms flavor historicity ai
+	}
+
+	default_colonisation_speed = { }
+
+	weighted_colonisation_speed = { } 
+
+	normal_colonisation_speed = { }
+}
+
+shattered_earth_rule = {
+	default = shattered_earth_false
+
+	categories = {
+		realms flavor historicity
+	}
+
+	shattered_earth_false = {
+
+	}
+
+	shattered_earth_counties = {
+
+	}
+	
+}
+
+calendar_rule = {
+	default = sindarin_calendar
+
+	categories = {
+		realms flavor
+	}
+
+	sindarin_calendar = {
+
+	}
+
+	quenya_calendar = {
+
+	}
+
+	hobbit_calendar = {
+
+	}
+	
+	bellakaze_calendar = {
+
+	}
+
+	gregorian_calendar = {
+
+	}
+	
+}
+
+sauron_appearance_rule = {
+	default = armored_sauron
+
+	categories = {
+		realms flavor
+	}
+
+	fair_sauron = {
+
+	}
+
+	corrupted_sauron = {
+
+	}
+
+	crispy_sauron = {
+
+	}
+	
+	armored_sauron = {
+	
+	}
+	
+}
+
+elven_expansion_rule = {
+	default = limited_elven_expansion
+
+	categories = {
+		realms tweaks historicity
+	}
+
+	limited_elven_expansion = {
+
+	}
+
+	free_elven_expansion = {
+
+	}
+	
+}
+
+elven_conversion_rule = {
+	default = slow_elven_conversion
+
+	categories = {
+		realms tweaks historicity culture
+	}
+
+	slow_elven_conversion = {
+
+	}
+
+	normal_elven_conversion = {
+
+	}
+
+}
+
+hope_change_rule = {
+	default = default_hope_change
+
+	categories = {
+		realms tweaks historicity
+	}
+
+	very_slow_hope_change = {
+
+	}
+	slow_hope_change = {
+
+	}
+	default_hope_change = {
+
+	}
+	fast_hope_change = {
+
+	}
+	very_fast_hope_change = {
+
+	}
+
+}
+
+mithril_location_rule = {
+	default = mithril_only_moria
+
+	categories = {
+		realms tweaks historicity
+	}
+
+	mithril_only_moria = {
+
+	}
+
+	mithril_only_misties = {
+
+	}
+
+	mithril_anywhere = {
+
+	}
+
+}
+
+no_dwarven_remarriage_rule = {
+	default = no_dwarven_remarriage
+	categories = {
+		realms tweaks historicity culture
+	}
+
+	no_dwarven_remarriage = {
+
+	}
+
+	dwarven_remarriage_allowed = {
+
+	}
+}
+
+female_beards_rule = {
+	default = short_dwarven_beards
+
+	categories = {
+		realms tweaks historicity culture
+	}
+
+	no_female_beards = {
+
+	}
+
+	short_dwarven_beards = {
+
+	}
+
+	long_dwarven_beards = {
+
+	}
+
+	long_and_short_dwarven_beards = {
+
+	}
+
+	beards_for_all = {
+
+	}
+
+}
+
+dunedain_beards_rule = {
+	default = dunedain_beards_semi_canon
+
+	categories = {
+		realms tweaks historicity culture
+	}
+
+	dunedain_beards_canon = {
+
+	}
+
+	dunedain_beards_semi_canon = {
+
+	}
+
+	dunedain_beards_non_canon = {
+
+	}
+}
+
+news_alerts_rule = {
+	default = major_news
+
+	categories = {
+		realms flavor
+	}
+
+	no_news = {
+
+	}
+
+	major_news = {
+
+	}
+
+	all_news = {
+
+	}
+	
+}
+
+gil_galad_parentage_rule = {
+	default = orodreth_parent
+
+	categories = {
+		realms flavor
+	}
+
+	orodreth_parent = {
+
+	}
+
+	fingon_parent = {
+
+	}
+
+	finrod_parent = {
+
+	}
+
+	maglor_parent = {
+
+	}
+
+	caranthir_parent = {
+
+	}
+	
+}
+
+aesthetic_rhudaur_rule = {
+	default = ugly_rhudaur
+
+	categories = {
+		realms tweaks
+	}
+
+	ugly_rhudaur = {
+
+	}
+
+	aesthetic_rhudaur = {
+
+	}
+	
+}
+
+sunset_invasions_rule = {
+	default = valinor_intervention
+
+	categories = {
+		realms tweaks difficulty
+	}
+	
+	no_intervention = {
+	}
+
+	valinor_intervention = {
+	}
+
+	great_armament = {
+	}
+
+	# second_return_of_the_noldor = {
+	# }
+
+	# fleet_of_ciryatur = {
+	# }
+
+	second_coming_of_amav = {
+	}
+	
+	random_intervention = {
+	}
+}
+
+delay_for_sunset_invasions_rule = {
+	default = default_invasion_delay
+
+	categories = {
+		realms tweaks difficulty
+	}
+
+	default_invasion_delay = {
+	}
+
+	early_invasion_delay = {
+	}
+
+	late_invasion_delay = {
+	}
+}
+
+northern_orc_invasions = {
+	categories = {
+		realms difficulty historicity ai
+	}
+	
+	northern_orcs_invade = {
+
+	}
+	
+	northern_orcs_no_invade = {
+
+	}
+}
+
+southern_orc_invasions = {
+	categories = {
+		realms difficulty historicity ai
+	}
+	
+	southern_orcs_invade = {
+
+	}
+	
+	southern_orcs_no_invade = {
+
+	}
+	
+}
+
+hostile_holy_war_rule = {
+	default = hostile_holy_wars_unrestricted
+
+	categories = {
+		realms tweaks historicity
+	}
+
+	hostile_holy_wars_unrestricted = {
+
+	}
+
+	hostile_holy_wars_restricted = {
+
+	}
+}
+
+historicity_extra_admin_gondor = { # LOTR
+	
+	categories = { historicity }
+	
+	default = historicity_extra_admin_gondor_gameplay_not_administrative
+
+	historicity_extra_admin_gondor_gameplay_not_administrative = {}
+
+	historicity_extra_admin_gondor_alt_historic_always = {}
+}
+
+historicity_extra_admin_arnor = { # LOTR
+	
+	categories = { historicity }
+	
+	default = historicity_extra_admin_arnor_gameplay_not_administrative
+
+	historicity_extra_admin_arnor_gameplay_not_administrative = {}
+
+	historicity_extra_admin_arnor_alt_historic_always = {}
+}
+
+historicity_extra_admin_umbar = { # LOTR
+	
+	categories = { historicity }
+	
+	default = historicity_extra_admin_umbar_gameplay_not_administrative
+
+	historicity_extra_admin_umbar_gameplay_not_administrative = {}
+
+	historicity_extra_admin_umbar_alt_historic_always = {}
+}
+
+historicity_extra_admin_bellakar = { # LOTR
+	
+	categories = { historicity }
+	
+	default = historicity_extra_admin_bellakar_gameplay_not_administrative
+
+	historicity_extra_admin_bellakar_gameplay_not_administrative = {}
+
+	historicity_extra_admin_bellakar_alt_historic_always = {}
+}
+
+historicity_extra_admin_ray = { # LOTR
+	
+	categories = { historicity }
+	
+	default = historicity_extra_admin_ray_gameplay_not_administrative
+
+	historicity_extra_admin_ray_gameplay_not_administrative = {}
+
+	historicity_extra_admin_ray_alt_historic_always = {}
+}

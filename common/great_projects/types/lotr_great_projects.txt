@@ -2066,6 +2066,48 @@ dwarven_capital_05 = {
 				trigger_event = lotr_great_project.1010
 			}
 		}
+		scope:province.county = { save_scope_as = capital }
+		if = {
+			limit = { scope:province = title:c_durins_hall.title_province }
+			if = {
+				limit = {
+					exists = dynasty:dynasty_durin.dynast
+					NOT = { title:k_durins_folk.title_province = title:c_durins_hall.title_province }
+				}
+				dynasty:dynasty_durin.dynast = { trigger_event = dwarven.3000 }
+			}
+		}
+		else_if = {
+			limit = { scope:province = title:c_luznakuz.title_province }
+			if = {
+				limit = {
+					exists = dynasty:dynasty_uri.dynast
+					NOT = { title:k_durins_folk.title_province = title:c_luznakuz.title_province }
+				}
+				dynasty:dynasty_uri.dynast = { trigger_event = dwarven.3000 }
+			}
+		}
+		else_if = {
+			limit = { scope:province = title:c_azelanduzur.title_province }
+			if = {
+				limit = {
+					exists = dynasty:dwalin.dynast
+					NOT = { title:k_durins_folk.title_province = title:c_azelanduzur.title_province }
+				}
+				dynasty:dynasty_dwalin.dynast = { trigger_event = dwarven.3000 }
+			}
+		}
+		else_if = {
+			limit = { scope:province = title:c_ursulbazari.title_province }
+			if = {
+				limit = {
+					exists = dynasty:thrar.dynast
+					NOT = { title:k_durins_folk.title_province = title:c_ursulbazari.title_province }
+				}
+				dynasty:dynasty_thrar.dynast = { trigger_event = dwarven.3000 }
+			}
+		}
+		#Add the other three in when they got land
 	}
 
 	on_cancel = {
@@ -3739,12 +3781,7 @@ construct_great_citadel_01 = {
  	is_shown = {
 		highest_held_title_tier >= tier_duchy
 		is_landed = yes
-		##Quonton
-		OR = { 
-			culture = { has_cultural_pillar = heritage_dunedain }
-			culture = { has_cultural_tradition = tradition_new_numenor }
-		}
-		##End Quonton	
+		culture = { has_innovation = innovation_numenorean_architecture_01 }
 
 		NOR = {
 			is_planning_great_project = construct_great_citadel_01
@@ -4523,6 +4560,7 @@ construct_great_citadel_03 = {
 
 	can_start_planning = {
 		is_independent_ruler = yes
+		culture = { has_innovation = innovation_numenorean_architecture_03 }
 	}
 
 	is_valid = {
@@ -4881,6 +4919,10 @@ mend_the_realm = {
 		highest_held_title_tier >= tier_duchy
 		is_elf = yes
 		is_landed = yes
+		trigger_if = {
+			limit = { is_independent_ruler = no }
+			liege = { is_elf = yes }
+		}
 		NOR = {
 			is_planning_great_project = mend_the_realm
 			custom_tooltip = {

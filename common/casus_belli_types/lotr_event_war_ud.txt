@@ -726,6 +726,12 @@ lotr_gimilzir_usakan_invasion = {
 					days = {1 10}
 				}
 			}
+			scope:attacker = {
+				trigger_event = {
+					id = gimilzir_events.7849
+					days = {10 20}
+				}
+			}
 		}
 		
 		if = { 
@@ -738,6 +744,12 @@ lotr_gimilzir_usakan_invasion = {
 				trigger_event = {
 					id = gimilzir_events.7818
 					days = {1 10}
+				}
+			}
+			scope:attacker = {
+				trigger_event = {
+					id = gimilzir_events.7849
+					days = {10 20}
 				}
 			}
 		}

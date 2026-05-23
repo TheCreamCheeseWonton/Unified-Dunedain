@@ -1,209 +1,47 @@
 ﻿has_dunedain_court_illustration_trigger = { # Gondorian
 	primary_title != title:e_gondor_steward
-	# capital_county.culture = {
-	# 	AND = {
-	# 		has_cultural_pillar = heritage_dunedain
-	# 		has_cultural_tradition = tradition_gondorian_legacy 
-	# 	}
-	# }
-	trigger_if = {
-		limit = { exists = capital_province }
-		AND = {
-			capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-			OR = {
-				capital_province = { geographical_region = middleearth_west_gondor }
-				capital_province = { geographical_region = custom_gondor_calenardhon }
-				capital_province = { geographical_region = middleearth_mordor }
-				capital_province = { geographical_region = middleearth_harad_near_harondor }
-			}
+	capital_county.culture = {
+		has_cultural_pillar = heritage_dunedain
+		NOR = {
+			this = culture:arnorian
+			this = culture:new_arnorian
+			this = culture:numenorean
+			this = culture:dunedain
+			this = culture:dunedain_ranger
+			this = culture:uialedain
 		}
 	}
-	trigger_else_if = {
-		limit = { NOT = { exists = capital_province } }
-		trigger_if = { 
-			limit = { exists = host.capital_province }
-			AND = {
-				OR = { 
-					host.capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-					host.capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					host.capital_province = { geographical_region = middleearth_west_gondor }
-				}
-			}
-		}
-		trigger_else_if = {
-			limit = { exists = liege.capital_province }
-			AND = {
-				OR = { 
-					liege.capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-					liege.capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					liege.capital_province = { geographical_region = middleearth_west_gondor }
-				}
-			}
-		}
-		trigger_else = { always = yes }
-	}
-	trigger_else = { always = yes }
+	NOT = { capital_province = { geographical_region = middleearth_harad_near_umbar } }
 }
 
 has_dunedain_steward_court_illustration_trigger = { # House of Steward
 	primary_title = title:e_gondor_steward
-	# capital_county.culture = {
-	# 	AND = {
-	# 		has_cultural_pillar = heritage_dunedain
-	# 		has_cultural_tradition = tradition_gondorian_legacy 
-	# 	}
-	# }
-	trigger_if = {
-		limit = { exists = capital_province }
-		AND = {
-			OR = { 
-				capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-				capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-			}
-			OR = {
-				capital_province = { geographical_region = middleearth_west_gondor }
-			}
-		}
+	capital_county.culture = {
+		has_cultural_pillar = heritage_dunedain
 	}
-	trigger_else_if = {
-		limit = { NOT = { exists = capital_province } }
-		trigger_if = { 
-			limit = { exists = host.capital_province }
-			AND = {
-				OR = { 
-					host.capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-					host.capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					host.capital_province = { geographical_region = middleearth_west_gondor }
-				}
-			}
-		}
-		trigger_else_if = {
-			limit = { exists = liege.capital_province }
-			AND = {
-				OR = { 
-					liege.capital_province.culture  = { has_cultural_pillar = heritage_dunedain }
-					liege.capital_province.culture  = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					liege.capital_province = { geographical_region = middleearth_west_gondor }
-				}
-			}
-		}
-		trigger_else = { always = yes }
-	}
-	trigger_else = { always = yes }
+	NOT = { capital_province = { geographical_region = middleearth_harad_near_umbar } }
 }
 
 has_dunedain_2_court_illustration_trigger = { # Arnorian
-	# capital_county.culture = {
-	# 	AND = {
-	# 		has_cultural_pillar = heritage_dunedain
-	# 		has_cultural_tradition = tradition_arnorian_legacy
-	# 	}
-	# }
-	trigger_if = {
-		limit = { exists = capital_province }
-		AND = {
-			OR = { 
-				capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-				capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-			}
-			OR = {
-				capital_province = { geographical_region = middleearth_west_arnor }
-			}
+	capital_county.culture = {
+		has_cultural_pillar = heritage_dunedain
+		OR = {
+			this = culture:arnorian
+			this = culture:new_arnorian
+			this = culture:numenorean
+			this = culture:dunedain
+			this = culture:dunedain_ranger
+			this = culture:uialedain
 		}
 	}
-	trigger_else_if = {
-		limit = { NOT = { exists = capital_province } }
-		trigger_if = { 
-			limit = { exists = host.capital_province }
-			AND = {
-				OR = { 
-					host.capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-					host.capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					host.capital_province = { geographical_region = middleearth_west_arnor }
-				}
-			}
-		}
-		trigger_else_if = {
-			limit = { exists = liege.capital_province }
-			AND = {
-				OR = { 
-					liege.capital_province.culture  = { has_cultural_pillar = heritage_dunedain }
-					liege.capital_province.culture  = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					liege.capital_province = { geographical_region = middleearth_west_arnor }
-				}
-			}
-		}
-		trigger_else = { always = yes }
-	}
-	trigger_else = { always = yes }
+	NOT = { capital_province = { geographical_region = middleearth_harad_near_umbar } }
 }
 
 has_dunedain_3_court_illustration_trigger = { # Dunedain Umbar
-	# capital_county.culture = {
-	# 	AND = {
-	# 		has_cultural_pillar = heritage_dunedain
-	# 		OR = {
-	# 			has_cultural_tradition = tradition_gondorian_legacy
-	# 			has_cultural_tradition = tradition_arnorian_legacy
-	# 			has_cultural_tradition = tradition_mende_anduya
-	# 			has_cultural_tradition = tradition_tales_of_great_deeds
-	# 		}
-	# 	}
-	# }
-	# capital_province = { geographical_region = middleearth_harad_near_umbar }
-	trigger_if = {
-		limit = { exists = capital_province }
-		AND = {
-			OR = { 
-				capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-				capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-			}
-			OR = {
-				capital_province = { geographical_region = middleearth_harad_near_umbar }
-			}
-		}
+	culture = {
+		has_cultural_pillar = heritage_dunedain
 	}
-	trigger_else_if = {
-		limit = { NOT = { exists = capital_province } }
-		trigger_if = { 
-			limit = { exists = host.capital_province }
-			AND = {
-				OR = { 
-					host.capital_province.culture = { has_cultural_pillar = heritage_dunedain }
-					host.capital_province.culture = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					host.capital_province = { geographical_region = middleearth_harad_near_umbar }
-				}
-			}
-		}
-		trigger_else_if = {
-			limit = { exists = liege.capital_province }
-			AND = {
-				OR = { 
-					liege.capital_province.culture  = { has_cultural_pillar = heritage_dunedain }
-					liege.capital_province.culture  = { has_cultural_pillar = heritage_unified_adunaic }
-				}
-				OR = {
-					liege.capital_province = { geographical_region = middleearth_harad_near_umbar }
-				}
-			}
-		}
-		trigger_else = { always = yes }
-	}
-	trigger_else = { always = yes }
+	capital_province = { geographical_region = middleearth_harad_near_umbar }
 }
 
 has_dwarven_court_illustration_trigger = {
@@ -249,14 +87,12 @@ has_middlemen_court_illustration_trigger = {
 				has_cultural_pillar = heritage_daen_coentis
 				has_cultural_pillar = heritage_danan_lin
 				has_cultural_tradition = tradition_the_people_of_the_plains_old
-				this = culture:sagath
-				any_parent_culture_or_above = { this = culture:sagath }
+				this = culture:gargath
+				any_parent_culture_or_above = { this = culture:gargath }
 				this = culture:logath
 				any_parent_culture_or_above = { this = culture:logath }
 			}
-			NOR = {
-				has_cultural_tradition = tradition_dorwinion_vineyards
-			}
+			NOT = { has_cultural_tradition = tradition_dorwinion_vineyards }
 		}
 	}
 }
@@ -411,7 +247,7 @@ has_eastern_dwarf_7_court_illustration_trigger = { # Dark Grey Bricks, Fallback
 }
 
 has_adunai_court_illustration_trigger = {
-	capital_county.culture = {
+	culture = {
 		OR = {
 			has_cultural_pillar = heritage_northern_adunaic
 			has_cultural_pillar = heritage_southern_adunaic

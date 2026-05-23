@@ -280,7 +280,7 @@ culture_has_skirmisher_maa = {
 		has_innovation = innovation_southern_adunai_warfare
 		has_innovation = innovation_druedain_warfare
 		has_innovation = innovation_haradrim_tradition
-		has_innovation = innovation_conscripts_warfare
+		#has_innovation = innovation_conscripts_warfare
 		##Quonton
 		has_innovation = innovation_unified_adunai_warfare
 		has_innovation = innovation_numenorean_warriors
@@ -315,6 +315,7 @@ culture_has_archer_maa = {
 		has_innovation = innovation_numenorean_warriors_custom
 		has_innovation = innovation_numenorean_warriors_adunaic
 		has_innovation = innovation_dunedain_warriors
+		has_innovation = innovation_tanturak_rangers_warfare
 		##End Quonton
 		has_innovation = innovation_orc_pits
 		has_innovation = innovation_gondorian_soldiers

@@ -1058,18 +1058,25 @@ artifact_feature_wood_linden_trigger = {
 }
 
 #LotR regional woods
-# mallorn
+# Mallorn
 artifact_feature_wood_mallorn_trigger = {
 	exists = scope:wealth
 	artifact_value_trigger = { VALUE = scope:wealth MIN = 70 MAX = 999 }
 	artifact_region_trigger = { CHARACTER = scope:owner REGION = material_woods_mallorn }
 }
 
-# oiolaire
+# Oiolaire
 artifact_feature_wood_oiolaire_trigger = {
 	exists = scope:wealth
 	artifact_value_trigger = { VALUE = scope:wealth MIN = 70 MAX = 999 }
 	artifact_region_trigger = { CHARACTER = scope:owner REGION = material_woods_oiolaire }
+}
+
+# Lebethron
+artifact_feature_wood_lebethron_trigger = {
+	exists = scope:wealth
+	artifact_value_trigger = { VALUE = scope:wealth MIN = 50 MAX = 999 }
+	artifact_region_trigger = { CHARACTER = scope:owner REGION = material_woods_lebethron }
 }
 
 ##########################################

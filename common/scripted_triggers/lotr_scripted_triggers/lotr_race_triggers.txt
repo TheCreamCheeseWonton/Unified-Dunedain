@@ -269,6 +269,10 @@ is_human = { #all other races and species should be added here
 	custom_description = {
 		text = is_human
 		culture ?= { has_cultural_parameter = is_human_heritage }
+		trigger_if = { #Check to ensure it's a character
+			limit = { exists = location }
+			NOT = { has_trait = doom_sundered }
+		}
 	}
 }
 
@@ -473,6 +477,14 @@ is_maiar_culture = {
 	}
 }
 
+is_good_maiar = {
+	culture ?= { has_cultural_parameter = is_ainur_heritage }
+}
+
+is_good_maiar_culture = {
+	this = { has_cultural_parameter = is_ainur_heritage }
+}
+
 is_valinor_maiar_character = {
 	NAND = { 
 		this = character:lineofsaruman
@@ -645,7 +657,7 @@ is_elf = {
 		OR = {
 			culture ?= { has_cultural_parameter = is_elven_heritage }
 			trigger_if = { #Check to ensure it's a character
-				limit = { exists = primary_title }
+				limit = { exists = location }
 				has_trait = doom_sundered
 			}
 		}

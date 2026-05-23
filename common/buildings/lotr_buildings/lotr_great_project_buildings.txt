@@ -1878,7 +1878,7 @@ lotr_great_citadel_03 = {
 
 	# This building is the result of a great project
 	can_construct_potential = {
-		has_building = lotr_great_fleet_02
+		has_building = lotr_great_citadel_02
 	}
 
 	show_disabled = yes

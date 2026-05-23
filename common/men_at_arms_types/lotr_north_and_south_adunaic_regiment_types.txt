@@ -558,12 +558,12 @@ indentured_conscripts = {
 	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
 		OR = {
-			culture ?= { has_innovation = innovation_conscripts_warfare }
+			culture ?= { has_cultural_parameter = unlock_maa_indentured_conscripts}
 			AND = {
 				is_human = yes
 				is_landless_adventurer = yes
 				has_perk = planned_cultivation_perk
-				location.culture ?= { has_innovation = innovation_conscripts_warfare }
+				location.culture ?= { has_cultural_parameter = unlock_maa_indentured_conscripts}
 			}
 		}
 	}

@@ -3,6 +3,18 @@
 	development_growth_factor = 0.1
 }
 
+custom_gimilzir_incapable = {
+	icon = health_negative
+	diplomacy_mult = -0.8
+	martial_mult = -0.8
+	stewardship_mult = -0.8
+	intrigue_mult = -0.8
+	learning_mult = -0.8
+	prowess_mult = -0.8
+	health = -2
+	dread_baseline_add = -25
+	dread_loss_mult = 1
+}
 custom_building_construction_special_character1 = { 
 	icon = county_modifier_development_positive
 	monthly_income = -12

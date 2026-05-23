@@ -381,6 +381,10 @@ lotr_THE_BUG_jank_effect = {
 			set_county_culture = culture:wastelands
 			set_county_faith = faith:faith_wastelands_pagan
 		}
+		title:c_girchirion = {
+			set_county_culture = culture:wastelands
+			set_county_faith = faith:faith_wastelands_pagan
+		}
 		title:c_forbardh = {
 			set_county_culture = culture:wastelands
 			set_county_faith = faith:faith_wastelands_pagan
@@ -462,7 +466,7 @@ fire_intro_events_1349 = {
 		# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
 	}
 	
-	character:linemelosse33 = { #Mellondir II
+	character:linemelosse33 = { #Mellondir III
 		trigger_event = {
 			id = lotr_intro_events.6009
 			days = 1
@@ -476,6 +480,14 @@ fire_intro_events_1349 = {
 			days = 1
 		}
 		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+	}
+
+	character:linearamir27 = { #Duinfinn, scion of Aramir, bastard son of King Elenthorn the Strong of Rhudaur
+		trigger_event = {
+			id = lotr_intro_events.6014
+			days = 1
+		}
+		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 	}
 	
 	## ANGMAR ##
@@ -604,6 +616,20 @@ fire_intro_events_1349 = {
 		set_realm_capital = title:c_zimrenzil
 	}
 	
+	character:lineofisilithor28 = { # Sakalkhâd of Korlea - RoA
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.6809
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
+		}
+	}
+	
 	## HARAD ##
 	character:lineofadrais3 = { # Pakirh Adraias/Paul Atreides
 		if = {
@@ -629,6 +655,20 @@ fire_intro_events_1349 = {
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
 	}
+	character:lineofatsutho6 = { # Fanaya of Khorsaj - RoA
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.6808
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
+		}
+	}
+
 	## SIRAYN ##
 	character:nazgul5 = { #Khorahil
 		trigger_event = {
@@ -644,6 +684,7 @@ fire_intro_events_1349 = {
 		}
 		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 	}	
+
 	## YELLOW MOUNTAINS ##
 	character:lineofulkhash6 = {
 		if = {
@@ -658,8 +699,24 @@ fire_intro_events_1349 = {
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
 	}
+
+	## SHAYN ##
+
+	character:lineofganaseeyim1 = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.7605
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
 	
-	## Anarike ##
+	## ANARIKE ##
 	character:lineofbalakhorin1 = { # Introduction to King Zimrikhâr of Anarikê
 		if = {
 			limit = {
@@ -703,6 +760,20 @@ fire_intro_events_1349 = {
 		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 	}
 
+	## ISTARI ##
+	character:lineofpallando = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.5600
+				days = 1 
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
 	## ELVES ##
 	character:lineofamdir3 = { # Amroth of Lorien
 		if = {
@@ -717,29 +788,72 @@ fire_intro_events_1349 = {
 		}
 	}
 
-	## Dwarves ##
+	## DWARVES ##
 	character:lineofdourhand17 = { #Skorgrím Dourhand
-		trigger_event = {
-			id = lotr_intro_events.2011
-			days = 1
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2011
+				days = 1
+			}
+			character:lineofdourhand17 = { set_relation_grudge = character:lineofdwalinV }
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 		}
-		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 	}
 
 	character:lineofdurin64 = { #Glóni of Durin's Folk
-		trigger_event = {
-			id = lotr_intro_events.2014
-			days = 1
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2014 
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
-		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 	}
 
 	character:lineofdurin641 = { #Lóni 'the Turncoat'
-		trigger_event = {
-			id = lotr_intro_events.2015
-			days = 1
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2015
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
-		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+	}
+
+	character:lineofuri67 = { #Fror II of Uri's Folk
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2023
+				days = 1
+			}
+			character:lineofuri65d = { set_relation_grudge = character:lineofdourhand17 }
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
+		}
+	}
+
+	character:lineofdwalinV = { #Dwalin V of Dwalin's Folk
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2024
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
+		}
 	}
 }
 
@@ -1776,6 +1890,10 @@ fire_intro_events_3000 = {
 				is_landed = yes
 			}
 			trigger_event = {
+				id = lotr_intro_events.6405
+				days = 1
+			}
+			trigger_event = {
 				id = rohan.1200
 				days = 730
 			}
@@ -1943,9 +2061,9 @@ fire_intro_events_3000 = {
 		}
 	}
 
-	#########################################
-	### Arnor and Enedwaith Introductions ###
-	#########################################
+	##########################################
+	### Arnor and Enedhwaith Introductions ###
+	##########################################
 
 	#Aragorn's Introduction Event
 	character:lineisildur42 = {
@@ -2034,6 +2152,79 @@ fire_intro_events_3000 = {
 				days = 1
 			}
 			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
+		}
+	}
+
+	# Shire introduction event
+
+	character:lineoftook20 = { # Ferumbras III of the Shire
+		if = {
+			limit = { is_alive = yes }
+			trigger_event = {
+				id = lotr_intro_events.7708
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	# Bree introduction event
+
+	character:lineofbutterbur7 = { # Barliman Butterbur of Bree
+		if = {
+			limit = { is_alive = yes }
+			trigger_event = {
+				id = lotr_intro_events.7709
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	# Dunland Introduction Events
+
+	character:lineoffreca15 = { # Wulfgar of Dunlandfells
+		if = {
+			limit = { is_alive = yes }
+			trigger_event = {
+				id = lotr_intro_events.7704
+				days = 1
+			}
+			set_relation_grudge = character:lineofeorl28
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	character:lineofdathabha4 = { # Thrydan II Wolfsbane of Dathabha
+		if = {
+			limit = { is_alive = yes }
+			trigger_event = {
+				id = lotr_intro_events.7705
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	character:lineofwulfdening5 = { # Wulfdene II of Emyn Adorn
+		if = {
+			limit = { is_alive = yes }
+			trigger_event = {
+				id = lotr_intro_events.7706
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	character:linecerdicing4 = { # Isenmund of West Marches
+		if = {
+			limit = { is_alive = yes }
+			trigger_event = {
+				id = lotr_intro_events.7707
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
 	}
 
@@ -2475,6 +2666,20 @@ fire_intro_events_3000 = {
 			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
 		}
 	}
+	
+	character:lineofisilithor28 = { # Sakalkhâd of Korlea - RoA
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.6803
+				days = 1
+			}
+			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
+		}
+	}
 
 	############################################
 	### 	 Anduin Vale Introductions 	     ###
@@ -2705,6 +2910,20 @@ fire_intro_events_3000 = {
 				days = 1
 			}
 			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } # Maintenence event, not intro
+		}
+	}
+
+	character:lineofkoldana98 = { # Realm-Master Hawin
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.6704
+				days = 1
+			}
+			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
 		}
 	}
 
@@ -3194,32 +3413,6 @@ fire_intro_events_3000 = {
 		}
 	}
 
-	character:lineofdurin107 = { # Náin the Slakeless of Azanulinbar-dûm
-		if = {
-			limit = {
-				is_alive = yes
-				is_landed = yes
-			}
-			trigger_event = {
-				id = lotr_intro_events.2020
-				days = 1
-			}
-			set_relation_grudge = character:lineofazog6
-			set_relation_grudge = character:lineofazog9
-			add_opinion = {
-				target = character:lineofazog6
-				modifier = hate_opinion
-				opinion = -200
-			}	
-			add_opinion = {
-				target = character:lineofazog9
-				modifier = hate_opinion
-				opinion = -200
-			}	
-			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } 
-		}
-	}
-
 	character:linegorin7 = { # Gorin of Nordinbad
 		if = {
 			limit = {
@@ -3388,6 +3581,60 @@ fire_intro_events_3000 = {
 		}
 	}
 
+	character:lineofdurin107 = { # Náin the Slakeless of Azanulinbar-dûm
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2020
+				days = 1
+			}
+			set_relation_grudge = character:lineofazog6
+			set_relation_grudge = character:lineofazog9
+			add_opinion = {
+				target = character:lineofazog6
+				modifier = hate_opinion
+				opinion = -200
+			}	
+			add_opinion = {
+				target = character:lineofazog9
+				modifier = hate_opinion
+				opinion = -200
+			}	
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } 
+		}
+	}
+
+	character:lineofdurin99 = { # Glóin Gróinsson of Golden Hall
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2021
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	character:lineofdurin96 = { # Dwalin son of Fundin of Halls of Steel
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.2022
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
 	###########################
 	### Vulmaw Introduction ###
 	###########################
@@ -3489,7 +3736,7 @@ fire_intro_events_3000 = {
 				id = lotr_intro_events.4009
 				days = 1
 			}
-			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 		}
 	}
 	

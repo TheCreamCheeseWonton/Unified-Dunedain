@@ -2871,7 +2871,7 @@ lineblackqueen9 = {
 		birth = yes
 		effect = {
 			add_character_flag = has_scripted_appearance
-			add_character_flag = no_auto_family
+			add_character_flag = do_not_generate_starting_family
 		}
 	}
     7010.1.1 = {
@@ -5776,7 +5776,7 @@ linebarazoncorsair42 = { # Arphazêl companion
 
 	7000.1.1 = {
 		employer = linepharazon2 
-		effect = {
+        effect = {
             add_character_flag = no_eyepatch
             add_character_flag = one_eyed_healed
         }
@@ -5788,7 +5788,7 @@ linebarazoncorsair42 = { # Arphazêl companion
     }
 
     7123.4.2 = {
-		 make_trait_inactive = no_eyepatch
+        make_trait_inactive = no_eyepatch
         death = { death_reason = death_accident  }
     }
 }
@@ -22304,7 +22304,7 @@ lineofseashadow7 = { # The Sea-shadow, aimed to add both the Barren isles and To
 		give_nickname = nick_seashadow
 		effect = {
 			add_character_flag = had_nickname_event
-			add_character_flag = no_auto_family
+			add_character_flag = do_not_generate_starting_family
 		}
 	}
 	

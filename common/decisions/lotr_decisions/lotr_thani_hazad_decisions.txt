@@ -568,7 +568,7 @@ decision_form_sea_dragon_host = {
 decision_beat_barasi = {	
 	title = decision_beat_barasi
 	picture = {
-		reference ="gfx/interface/illustrations/decisions/decision_castle.dds"
+		reference ="gfx/interface/illustrations/decisions/decision_adunai_01.dds"
 	}
 	selection_tooltip = decision_beat_barasi_tooltip
 	desc = decision_beat_barasi_desc
@@ -652,7 +652,7 @@ decision_beat_barasi = {
 decision_beat_bandits = {	
 	title = decision_beat_bandits
 	picture = {
-		reference ="gfx/interface/illustrations/decisions/decision_castle.dds"
+		reference ="gfx/interface/illustrations/decisions/decision_wildmen_04.dds"
 	}
 	selection_tooltip = decision_beat_bandits_tooltip
 	desc = decision_beat_bandits_desc
@@ -699,15 +699,25 @@ decision_beat_bandits = {
 					}
 					completely_controls = title:d_pel
 				}
-				custom_tooltip = {
-					text = focused_east
-					has_character_flag = seregul_focusing_east
-					has_character_flag = east_event
+				AND = {
+					custom_tooltip = {
+						text = focused_east
+						has_character_flag = seregul_focusing_east
+					}
+					custom_tooltip = {
+						text = seregul_had_event
+						has_character_flag = east_event
+					}
 				}
-				custom_tooltip = {
-					text = focused_everywhere
-					has_character_flag = seregul_focusing_everywhere
-					has_character_flag = east_event
+				AND = {
+					custom_tooltip = {
+						text = focused_everywhere
+						has_character_flag = seregul_focusing_everywhere
+					}
+					custom_tooltip = {
+						text = seregul_had_event
+						has_character_flag = east_event
+					}
 				}
 			}
 			NOT = { has_truce = title:c_obishamba.holder }
@@ -742,7 +752,7 @@ decision_beat_bandits = {
 decision_beat_mag = {	
 	title = decision_beat_mag
 	picture = {
-		reference ="gfx/interface/illustrations/decisions/decision_castle.dds"
+		reference ="gfx/interface/illustrations/decisions/decision_yellow_mountains.dds"
 	}
 	selection_tooltip = decision_beat_mag_tooltip
 	desc = decision_beat_mag_desc
@@ -782,8 +792,21 @@ decision_beat_mag = {
 	}
 
 	is_valid = {
-		completely_controls = title:c_obishamba
-		NOT = { has_truce = title:d_bukumagen.holder }
+		trigger_if = {
+			limit = {
+				OR = {
+					title:c_obishamba.holder = {  
+						is_vassal_of = title:d_bukumagen.holder
+					}
+					title:c_obishamba.holder = title:d_bukumagen.holder
+				}
+			}
+			NOT = { has_truce = title:d_bukumagen.holder }
+		}
+		trigger_else = {
+			completely_controls = title:c_obishamba
+			NOT = { has_truce = title:d_bukumagen.holder }
+		}
 	}
 
 	is_valid_showing_failures_only = {
@@ -811,7 +834,7 @@ decision_beat_mag = {
 
 decision_beat_elves = {
 	title = decision_beat_elves
-	picture = { reference ="gfx/interface/illustrations/decisions/decision_castle.dds" }
+	picture = { reference ="gfx/interface/illustrations/decisions/decision_dunland_04.dds" }
 	selection_tooltip = decision_beat_elves_tooltip
 	desc = decision_beat_elves_desc
 	confirm_text = decision_beat_elves_confirm
@@ -856,15 +879,25 @@ decision_beat_elves = {
 					}
 					completely_controls = title:d_shanwo
 				}
-				custom_tooltip = {
-					text = focused_west
-					has_character_flag = seregul_focusing_west
-					has_character_flag = west_event
+				AND = {
+					custom_tooltip = {
+						text = focused_west
+						has_character_flag = seregul_focusing_west
+					}
+					custom_tooltip = {
+						text = seregul_had_event
+						has_character_flag = west_event
+					}
 				}
-				custom_tooltip = {
-					text = focused_everywhere
-					has_character_flag = seregul_focusing_everywhere
-					has_character_flag = west_event
+				AND = {
+					custom_tooltip = {
+						text = focused_everywhere
+						has_character_flag = seregul_focusing_everywhere
+					}
+					custom_tooltip = {
+						text = seregul_had_event
+						has_character_flag = west_event
+					}
 				}
 			}
 			NOT = { has_truce = title:c_mokuba.holder }

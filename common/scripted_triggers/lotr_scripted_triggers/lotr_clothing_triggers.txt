@@ -1598,13 +1598,11 @@ lotr_portrait_wear_armor_trigger = {
 
 lotr_portrait_wear_armor_currently_in_army_trigger = {
 	is_pregnant = no	
-	is_istari = no
 	is_maiar = no
 }
 
 lotr_portrait_wear_helmet_trigger = {
 	is_pregnant = no
-	is_istari = no
 	is_maiar = no
 }
 
@@ -2051,8 +2049,7 @@ lotr_regular_bedchamber_clothes_trigger = {
 	lotr_elven_bedchamber_clothes_trigger = no
 	lotr_dwarven_bedchamber_clothes_trigger = no
 	lotr_orc_bedchamber_clothes_trigger = no
-	is_maiar = no
-	is_nazgul = no
+	cannot_be_killed = no
 }
 
 lotr_should_be_knight_idle_trigger = { # from AGOT

@@ -1151,11 +1151,7 @@ kill_random_courtiers = {
 			NOR = {
 				exists = top_liege
 				top_liege ?= title:k_wastelands.holder
-				is_sauron = yes
-				is_nazgul = yes
-				is_maiar_fallen = yes
-				is_maiar = yes
-				is_istari = yes
+				cannot_be_killed = yes
 			}
 		}
 		save_scope_as = lore_char
@@ -1245,6 +1241,8 @@ lotr_WAC_transfer_titles_effect = {
 		}
 	}
 	resolve_title_and_vassal_change = scope:change
+
+	# error_log = "WAC | Title transferred to New Holder"
 }
 
 lotr_WAC_build_settlement_building_effect = {
@@ -1252,8 +1250,8 @@ lotr_WAC_build_settlement_building_effect = {
 	create_character = {
 		name = "temp_holder"
 		employer = root.story_owner
-		culture = root.story_owner.culture
-		faith = root.story_owner.faith
+		culture = culture:wastelands
+		faith = faith:faith_wastelands_pagan
 		gender_female_chance = 0
 		save_scope_as = temporary_title_holder
 	}
@@ -1281,7 +1279,6 @@ lotr_WAC_build_settlement_building_effect = {
 			} 
 		}
 	}
-
 
 	if = {
 		limit = { var:title_tier_to_colonise = flag:county }
@@ -1318,7 +1315,7 @@ lotr_WAC_build_settlement_building_effect = {
 	
 	scope:temporary_title_holder = {
 		trigger_event = wastelands.9999
-		trigger_event = { id = wastelands.9998 days = 1 }
+		trigger_event = { id = wastelands.9998 days = 5 }
 	}
 }
 
@@ -1449,5 +1446,61 @@ lotr_WAC_adjust_settings_effect = {
 				remove_variable = $VAR$
 			}
 		}
+	}
+}
+
+lotr_WAC_add_story_cycle_to_visualisation = {
+	if = {
+		limit = { 
+			NOT = {
+				any_owned_story = { story_type = story_cycle_automated_colonisation_visual }
+			}
+		}
+		create_story = {
+			type = story_cycle_automated_colonisation_visual
+			save_temporary_scope_as = visualisation_story
+		}
+	}
+	else = {
+		random_owned_story = {
+			limit = { story_type = story_cycle_automated_colonisation_visual }
+			save_temporary_scope_as = visualisation_story
+		}
+	}
+	scope:visualisation_story = { clear_variable_list = WAC_LIST_OF_TITLES }
+	every_owned_story = {
+		limit = { story_type = story_cycle_automated_colonisation }
+		save_scope_as = current_WAC_story
+		if = {
+			limit = {
+				exists = scope:visualisation_story
+				NOT = {
+					scope:visualisation_story = { 
+						is_target_in_variable_list = {
+							name = WAC_LIST_OF_TITLES
+							target = scope:current_WAC_story.var:title_to_colonise
+						}
+					}
+				}
+			}
+			scope:visualisation_story = {
+				add_to_variable_list = {
+					name = WAC_LIST_OF_TITLES
+					target = scope:current_WAC_story.var:title_to_colonise
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			scope:visualisation_story = { 
+				variable_list_size = {
+					name = WAC_LIST_OF_TITLES
+					value = 0
+				}
+			} 
+		}
+		scope:visualisation_story = { end_story = yes }
 	}
 }

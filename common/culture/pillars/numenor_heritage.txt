@@ -1,6 +1,6 @@
 ﻿##Quonton
 heritage_unified_adunaic = {
-	type = heritage
+	type = Heritage
 	parameters = {
 		heritage_group_numenorean = yes
 		heritage_family_edain = yes

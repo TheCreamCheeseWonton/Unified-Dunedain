@@ -719,7 +719,7 @@ decision_bellakar_mardruak_corsairs = { # Destroy the corsairs of Mardruak
 	}
 
 	is_valid = {
-		custom_tooltip = mardurak_corsairs_must_exist
+		custom_tooltip = mardruak_corsairs_must_exist
 	}
 
 	cost = {

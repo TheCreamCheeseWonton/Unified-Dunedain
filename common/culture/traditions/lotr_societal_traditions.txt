@@ -992,6 +992,7 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 		less_likely_to_promote_culture = yes # These 2 parameters need to be merged to avoid text bloat
 		less_likely_to_culture_convert = yes
 		peasant_and_populist_factions_less_common = yes
+		unlock_maa_indentured_conscripts = yes
 	}
 		
 	character_modifier = { # change from culture to tenet
@@ -1858,6 +1859,7 @@ tradition_tanturaki = { # Tantûraki tradition by Zeltron
 		harder_to_hybridize = yes
 		less_likely_to_promote_culture = yes # These 2 parameters need to be merged to avoid text bloat
 		less_likely_to_culture_convert = yes
+		unlock_maa_indentured_conscripts = yes
 	}
 		
 	character_modifier = { # change from culture to tenet

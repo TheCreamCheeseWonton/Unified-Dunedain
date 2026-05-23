@@ -2893,6 +2893,7 @@ gondor.0517 = { #Aragorn wedding-bot if he was too stupid to do it himself
 
 	trigger = {
 		has_character_flag = aragorn_gw #Aragorn hasn't organised his GW yet
+		betrothed ?= { has_character_flag = aragorn_gw } #And he's still betrothed to the same person
 	}
 
 	immediate = {
@@ -2913,7 +2914,7 @@ gondor.0517 = { #Aragorn wedding-bot if he was too stupid to do it himself
 
 		if = {  #Arwen marriage handling
 			limit = {
-				betrothed = character:lineofelrond4 
+				betrothed = character:lineofelrond4
 			}
 			if = {
 				limit = {
@@ -2927,6 +2928,8 @@ gondor.0517 = { #Aragorn wedding-bot if he was too stupid to do it himself
 				}
 				#Marry them
 				marry = betrothed
+				#So Aragorn doesn't get married twice to the same person
+				remove_variable = promised_grand_wedding_marriage_countdown
 				#Set up their relationship
 				set_relation_lover = character:lineofelrond4
 				set_relation_friend = character:lineofelrond4
@@ -2943,12 +2946,21 @@ gondor.0517 = { #Aragorn wedding-bot if he was too stupid to do it himself
 					days = 100
 				}
 			}
-			else = { break_betrothal = betrothed }
+			else = {
+				# remove promise
+				clean_grand_wedding_betrothal_variables = yes
+				# First of all, the betrothal is broken
+				break_betrothal = character:lineofelrond4
+				# The alliance is broken
+				break_alliance = character:lineofelrond1
+			}
 		}
-		else = { marry = betrothed } #Aragorn marries his betrothed normally
-
-		#So Aragorn doesn't get married twice to the same person
-		remove_variable = promised_grand_wedding_marriage_countdown
+		else = { 
+			#Aragorn marries his betrothed normally
+			marry = betrothed
+			#So Aragorn doesn't get married twice to the same person
+			remove_variable = promised_grand_wedding_marriage_countdown
+		}
 	}
 }
 

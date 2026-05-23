@@ -5076,8 +5076,7 @@ lotr_travel_events.0021 = { # First time meeting the Orc
 			OR = {
 				is_elf = yes 
 				is_orc = yes 
-				has_trait = skinchanger 
-				is_maiar_fallen = yes 
+				has_trait = skinchanger
 				is_maiar = yes 
 			}
 		}
@@ -5609,8 +5608,7 @@ lotr_travel_events.0022 = { # Second time meeting the Orc - Paid or ran away
 			OR = {
 				is_elf = yes 
 				is_orc = yes 
-				has_trait = skinchanger 
-				is_maiar_fallen = yes 
+				has_trait = skinchanger
 				is_maiar = yes 
 			}
 		}
@@ -6146,8 +6144,7 @@ lotr_travel_events.0023 = { # Second time meeting the Orc - Cheated Death
 			OR = {
 				is_elf = yes 
 				is_orc = yes 
-				has_trait = skinchanger 
-				is_maiar_fallen = yes 
+				has_trait = skinchanger
 				is_maiar = yes 
 			}
 		}
@@ -6675,8 +6672,7 @@ lotr_travel_events.0024 = { # Second time meeting the Orc - Scared him
 			OR = {
 				is_elf = yes 
 				is_orc = yes 
-				has_trait = skinchanger 
-				is_maiar_fallen = yes 
+				has_trait = skinchanger
 				is_maiar = yes 
 			}
 		}
@@ -7199,8 +7195,7 @@ lotr_travel_events.0025 = { # Second time meeting the Orc - He beat you
 			OR = {
 				is_elf = yes 
 				is_orc = yes 
-				has_trait = skinchanger 
-				is_maiar_fallen = yes 
+				has_trait = skinchanger
 				is_maiar = yes 
 			}
 		}
@@ -8469,6 +8464,7 @@ lotr_travel_events.0501 = { # Elf encounters the sea, feels sea longing
 	}
 	option = { # I feel the call of the ocean
 		name = lotr_travel_events.0501.a 
+		add_piety = major_piety_gain
 		add_elven_hope_effect = { VALUE = minor_elven_hope_loss HOPE_EFFECT = effect_elven_hope_negative_event_choice }
 	}
 	option = { # Must... resist
@@ -8659,6 +8655,8 @@ lotr_travel_events.0505 = { # Elf sees straggler, can help
 	}
 	option = { # Not my problem
 		name = lotr_travel_events.0505.a
+		add_legitimacy = minor_legitimacy_gain
+		add_prestige = medium_prestige_gain
 		add_elven_hope_effect = { VALUE = minor_elven_hope_loss HOPE_EFFECT = effect_elven_hope_negative_event_choice }
 			current_travel_plan = {
 			every_entourage_character = {
@@ -8682,7 +8680,7 @@ lotr_travel_events.0505 = { # Elf sees straggler, can help
 		name = lotr_travel_events.0505.b
 		add_elven_hope_effect = { VALUE = minimal_elven_hope_gain HOPE_EFFECT = effect_elven_hope_positive_event_choice }
 		remove_short_term_gold = minor_gold_value
-		add_piety = minor_piety_gain
+		add_piety = medium_piety_gain
 		stress_impact = {
 			greedy = major_stress_impact_gain
 			generous = medium_stress_impact_loss
@@ -8695,8 +8693,6 @@ lotr_travel_events.0505 = { # Elf sees straggler, can help
 			NEW_COURT_OWNER = root 
 		}
 		add_elven_hope_effect = { VALUE = minor_elven_hope_gain HOPE_EFFECT = effect_elven_hope_positive_event_choice }
-		add_piety = medium_piety_gain
-
 	}
 }
 

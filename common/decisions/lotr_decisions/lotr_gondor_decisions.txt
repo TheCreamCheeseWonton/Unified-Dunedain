@@ -1106,7 +1106,7 @@ decision_destroy_mordor = {
 				}
 				completely_controls_region = custom_gondorian_heartlands
 			}
-trigger_else_if = { #Custom Northward Bellakar Stuff
+			trigger_else_if = { #Custom Northward Bellakar Stuff
 				limit = {
 					any_ruler = {
 						is_gondor = yes
@@ -2822,7 +2822,7 @@ decision_reunify_numenor_culture = {
 						remove_innovation = innovation_northern_adunai_warfare
 						remove_innovation = innovation_southern_adunai_warfare
 						remove_innovation = innovation_knights_of_kharadune_warfare
-						remove_innovation = innovation_conscripts_warfare
+						#remove_innovation = innovation_conscripts_warfare
 						remove_innovation = innovation_bellakari_warfare
 						remove_innovation = innovation_mardrukan_warfare
 						remove_innovation = innovation_tanturak_rangers_warfare
@@ -3150,7 +3150,7 @@ decision_reunify_numenor_culture = {
 						remove_innovation = innovation_northern_adunai_warfare
 						remove_innovation = innovation_southern_adunai_warfare
 						remove_innovation = innovation_knights_of_kharadune_warfare
-						remove_innovation = innovation_conscripts_warfare
+						#remove_innovation = innovation_conscripts_warfare
 						remove_innovation = innovation_bellakari_warfare
 						remove_innovation = innovation_mardrukan_warfare
 						remove_innovation = innovation_tanturak_rangers_warfare
@@ -3395,6 +3395,7 @@ renovate_special_building_arminalethor = {
 		}
 	}
 
+	# AI
 	ai_check_interval_by_tier = {
 		barony = 0
 		county = 0
@@ -3899,7 +3900,7 @@ decision_numenor_in_exile = {
 					remove_innovation = innovation_northern_adunai_warfare
 					remove_innovation = innovation_southern_adunai_warfare
 					remove_innovation = innovation_knights_of_kharadune_warfare
-					remove_innovation = innovation_conscripts_warfare
+					#remove_innovation = innovation_conscripts_warfare
 				}
 			}
 		}
@@ -6013,9 +6014,9 @@ decision_abandon_watch_on_mordor = {
 		barony = 0
 		county = 0
 		duchy = 0
-		kingdom = 50
-		empire = 50
-		hegemony = 50
+		kingdom = 0
+		empire = 0
+		hegemony = 0
 	}
 	ai_potential = {
 		always = no
@@ -6024,7 +6025,7 @@ decision_abandon_watch_on_mordor = {
 		base = 0
 	}
 
-	decision_group_type = realms_in_exile_major
+	decision_group_type = realms_in_exile_minor
 
 	desc = decision_abandon_watch_on_mordor_desc
 	selection_tooltip = decision_abandon_watch_on_mordor_desc_tooltip

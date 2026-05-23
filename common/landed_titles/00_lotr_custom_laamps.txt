@@ -11,7 +11,7 @@
 
 d_laamp_azra_ursurpers = {
 	color = { 0 69 0 }
-	capital = c_azra_zhe
+	capital = c_sarul
 	definite_form = yes
 	landless = yes
 	require_landless = yes

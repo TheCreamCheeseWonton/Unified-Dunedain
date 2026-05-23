@@ -6342,7 +6342,7 @@ sailing.3202 = {
 					}
 				}
 				custom_tooltip = sailing.3202.a.failure.tt
-				hidden_effect = { death = { death_reason = death_perished_at_sea } }
+				hidden_effect = { death = { death_reason = death_drowned } }
 			}
 		}
 	}
@@ -6398,7 +6398,7 @@ sailing.3202 = {
 					}
 				}
 				custom_tooltip = sailing.3202.a.failure.tt
-				hidden_effect = { death = { death_reason = death_perished_at_sea } }
+				hidden_effect = { death = { death_reason = death_drowned } }
 			}
 		}
 	}
@@ -18422,7 +18422,7 @@ sailing.5207 = { # Border of the Woodland realm - Raft-elves
 		}
 	}
 	trigger = { title:k_lasgalen.holder = { is_elf = yes } }
-	on_trigger_fail = { trigger_event = { id = sailing.9001 days = 15 } }
+	on_trigger_fail = { trigger_event = { id = sailing.9001 days = 15 } } # Aerien note: make an event for this edge case
 	immediate = {
 		hidden_effect = {
 			create_character = {

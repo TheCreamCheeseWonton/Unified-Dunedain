@@ -290,3 +290,93 @@ dynasty_belazgar={
 	}
 
 }
+
+dynasty_ludajin = {
+	pattern="pattern__solid_designer.dds"
+	color1=rgb { 30 76 72 }
+	color2=white
+	color3=red
+	color4=white
+	colored_emblem={
+		color1=white
+		color2=red
+		texture="ce_frame_circle_borre_double.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.590000 0.590000 }
+			depth=1.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=red
+		texture="ce_circle_mask.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.460000 0.460000 }
+			depth=2.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		texture="ce_circle_mask.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.490000 0.490000 }
+			depth=3.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		texture="ans_scrimshaw_outline_01.dds"
+		instance={
+			position={ 0.500000 0.580000 }
+			depth=14.010000
+		}
+
+		instance={
+			depth=15.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=white
+		color2=white
+		color3=white
+		texture="ce_african_star_igbo.dds"
+		instance={
+			position={ 0.500000 0.355000 }
+			scale={ 0.330000 0.330000 }
+		}
+
+	}
+
+	colored_emblem={
+		color1=red
+		color2=white
+		texture="ce_african_pattern_05.dds"
+		instance={
+			depth=17.010000
+		}
+
+	}
+
+	colored_emblem={
+		color1=rgb { 30 76 72 }
+		texture="ans_scrimshaw_05.dds"
+		instance={
+			position={ 0.500000 0.530000 }
+			depth=16.010000
+		}
+
+	}
+
+}
+
+
