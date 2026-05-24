@@ -699,6 +699,15 @@ uncanny_health_usakani_modifier = {
 	negate_health_penalty_add = 3
 }
 
+powerful_blood_usakani_modifier = {
+	icon = health_positive
+	positive_random_genetic_chance = 0.30
+	positive_inactive_inheritance_chance = 0.30
+	genetic_trait_strengthen_chance = 0.3
+	negative_random_genetic_chance = -0.30
+	negative_inactive_inheritance_chance = -0.30
+}
+
 child_prodegy_modifier = { 
 	icon = health_positive
 	diplomacy = 3

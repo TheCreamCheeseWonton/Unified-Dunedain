@@ -188,6 +188,14 @@ gimilzir_events.34 = { # Gimilzadan You Failed
 	title = gimilzir_events.34.t
 	desc = gimilzir_events.34.desc
 	theme = mental_break
+	trigger = { 
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_choose_gimilzir_path
+			}
+		}
+	}
 
 	left_portrait = {
 		character = root
@@ -7908,6 +7916,12 @@ gimilzir_events.7846 = {
         add_legitimacy = medium_legitimacy_gain
 		add_prestige = medium_prestige_gain
 		add_piety = medium_piety_gain
+		title:k_tanturak = {
+			change_title_holder = {
+				holder = root
+				change = scope:title_change
+			}
+		}
 		add_character_modifier = { 
 			modifier = lotr_usakan_like_tanturak_modifier
 			years = 30
@@ -8155,21 +8169,21 @@ gimilzir_events.782 = { # Conquer Sarul Flavor Event  Talking about how people w
 				}
 			}
 			trigger_event = { id = gimilzir_events.7820 months = { 1 6 } }
-			if = { 
-				limit = { 
-					OR = { 
-						character:lineoftainalann10 = { 
-							is_alive = yes
-							is_landed = yes
-						}
-						character:lineoftainalann3 = { 
-							is_alive = yes
-							is_landed = yes
-						}
+		}
+		if = { 
+			limit = { 
+				OR = { 
+					character:lineoftainalann10 = { 
+						is_alive = yes
+						is_landed = yes
+					}
+					character:lineoftainalann3 = { 
+						is_alive = yes
+						is_landed = yes
 					}
 				}
-				trigger_event = { id = gimilzir_events.7821 years = { 1 3 } }
 			}
+			trigger_event = { id = gimilzir_events.7821 years = { 1 3 } }
 		}
 	}
 
@@ -8211,21 +8225,21 @@ gimilzir_events.7848 = { # Conquer Sarul Flavor Event  Talking about how people 
 				}
 			}
 			trigger_event = { id = gimilzir_events.7820 months = { 1 6 } }
-			if = { 
-				limit = { 
-					OR = { 
-						character:lineoftainalann10 = { 
-							is_alive = yes
-							is_landed = yes
-						}
-						character:lineoftainalann3 = { 
-							is_alive = yes
-							is_landed = yes
-						}
+		}
+		if = { 
+			limit = { 
+				OR = { 
+					character:lineoftainalann10 = { 
+						is_alive = yes
+						is_landed = yes
+					}
+					character:lineoftainalann3 = { 
+						is_alive = yes
+						is_landed = yes
 					}
 				}
-				trigger_event = { id = gimilzir_events.7821 years = { 1 3 } }
 			}
+			trigger_event = { id = gimilzir_events.7821 years = { 1 3 } }
 		}
 	}
 
@@ -9489,6 +9503,34 @@ gimilzir_events.7900 = { # Post Settle Flavor 20 Yearsish
 				culture = { has_cultural_pillar = heritage_southern_adunaic }
 			}
 			set_county_culture = culture:gimilarani
+		}
+		hidden_effect = { 
+			every_county_in_region = {
+				region = middleearth_mountains_yellow
+				custom = event_form_gimilarani_counties_custom1
+				limit = {
+					OR = {
+						holder = root
+						holder.top_liege = root
+					}
+					culture = { has_cultural_pillar = heritage_southern_adunaic }
+				}
+				set_county_culture = culture:gimilarani
+			}
+			every_county_in_region = {
+				region = middleearth_mountains_yellow
+				limit = {
+					OR = {
+						holder = root
+						holder.top_liege = root
+					}
+					culture = { NOT = { has_cultural_pillar = heritage_southern_adunaic } }
+				}
+				add_county_modifier = { 
+					modifier = improve_promote_culture_modifier
+					years = 30
+				}
+			}
 		}
 		every_county_in_region = {
 			region = special_azraphel_an_khar

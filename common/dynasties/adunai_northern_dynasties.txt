@@ -49,6 +49,11 @@ dynasty_gimilzadan = { ##Gimilzadan
 	culture = "kharadunaim"
 	motto = dynn_gimilzadan_motto
 }
+dynasty_gimiladune = { ##Gimiladune
+	name = "dynn_gimiladune"
+	culture = "kharadunaim"
+	motto = dynn_gimiladune_motto
+}
 dynasty_arazra = {
 	name = "dynn_Arazranionath"
 	culture = "ar_adunaim_numenorean"

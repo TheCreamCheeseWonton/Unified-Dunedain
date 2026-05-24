@@ -3321,7 +3321,7 @@ gimilzir_elites = {
 	high_maintenance_cost = { gold = 2.38 }
 	provision_cost = @provisions_cost_infantry_bankrupting
 	
-	stack = 100
+	stack = 50
 	
 	max_regiments = 1
 	ai_quality = { value = @cultural_maa_extra_ai_score }

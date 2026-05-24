@@ -299,6 +299,9 @@
  uncanny_health_usakani_modifier: "Youthful Vigor"
  uncanny_health_usakani_modifier_desc: "This character is blessed with an unusually healthy and extended youth."
 
+ powerful_blood_usakani_modifier: "Powerful Blood"
+ powerful_blood_usakani_modifier_desc: "This character is blessed with unusually powerful blood."
+
  uncanny_health_usakani_modifier_nothing: "Unnatural Mending"
  uncanny_health_usakani_modifier_nothing_desc: "This character always seems to rise again from any injury, no matter how severe."
 
@@ -1425,10 +1428,14 @@
  dynn_Arazranionath_motto: "Lords of the sea, for all eternity"
  dynn_Belazgarath: "Belazgarath"
  dynn_Belazgarath_motto: "War is our calling, for we our its lords"
+ dynn_gimiladune: "Gimiladûnê"
+ dynn_gimiladune_motto: "The Shield of the Batânim"
 
  ##Titles 
  d_laamp_house_of_gimilzadan: "The Gimilzîr Estate"
  d_laamp_azra_ursurpers: "The Azra Exiles"
+ d_laamp_light_of_south: "The Grey Cloaks of Mûmakan"
+ d_laamp_knights_of_kharadun_gimil: "Batânim Knights of Kharadûnê"
  h_sakal_an_khar: "Sakal an-Khar"
  h_azraphel_an_khar: "Azraphel an-Khar"
  e_mikazra_zain: "Mîkazra-Zâin"

@@ -62,3 +62,41 @@ d_laamp_azra_ursurpers = {
 		}
 	}
 }
+
+d_laamp_light_of_south = {
+	7010.5.10 = {
+		liege = 0
+		holder = linegimilzadan_north_dunedain_wife
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_dlc_feature = roads_to_power }
+				}
+				holder = { destroy_title = prev }
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+}
+
+d_laamp_knights_of_kharadun_gimil = {
+	7030.5.10 = {
+		liege = 0
+		holder = linegimilzadan_gimilthani_wife
+		government = landless_adventurer_government
+		succession_laws = { landless_adventurer_succession_law }
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_dlc_feature = roads_to_power }
+				}
+				holder = { destroy_title = prev }
+			}
+			create_landless_adventurer_title_history_effect = yes
+			set_variable = { name = adventurer_creation_reason value = flag:historical }
+		}
+	}
+}

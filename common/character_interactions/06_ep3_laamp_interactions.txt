@@ -6072,6 +6072,18 @@ evict_adventurer_interaction = {
 					is_ai = yes
 				}
 			}
+			NOT = { 
+				AND = { 
+					has_character_flag = is_north_dunedain_wife_gimilzir 
+					is_ai = yes
+				}
+			}
+			NOT = { 
+				AND = { 
+					has_character_flag = is_gimilthani_wife_gimilzir 
+					is_ai = yes
+				}
+			}
 		}
 		scope:actor = {
 			is_wastelands = no #LOTR

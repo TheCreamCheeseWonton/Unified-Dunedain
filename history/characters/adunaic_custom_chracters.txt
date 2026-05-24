@@ -1204,6 +1204,10 @@ linegimilzadan1 = {
 	
 	6971.1.29 = {
 		birth = yes
+		add_trait_xp = {
+			trait = lifestyle_blademaster
+			value = 40
+		}
 	}
     7002.3.17 = { add_spouse = lineagimilzadanwife }
 	7093.6.18 = { death = { death_reason = death_natural_causes }  }
@@ -1282,6 +1286,89 @@ linegimilzadan_usakan_wife = {
 	
 	7016.7.23 = {
 		birth = yes
+	}
+
+	7124.3.14 = { death = { death_reason = death_natural_causes }  }
+}
+
+linegimilzadan_north_dunedain_wife = {
+	name = Melabrian
+	dynasty_house = house_gilraen			
+	religion = faith_edain
+	culture = dunedain_ranger
+	father = linehalbarad8
+	mother = lineofciryon59sister
+	female = yes
+
+	trait = education_martial_3
+	trait = diligent
+	trait = brave
+	trait = zealous
+	trait = holy_warrior
+	trait = lifestyle_blademaster
+	trait = blood_of_numenor_5
+	
+	disallow_random_traits = yes
+	
+    diplomacy = 6
+    martial = 19
+    stewardship = 6
+    intrigue = 7
+    learning = 2
+    prowess = 19
+	
+    sexuality = heterosexual
+	
+	6992.3.10 = {
+		birth = yes		
+		effect = {
+			learn_language = language_sindarin
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = 40
+			}
+		}
+	}
+
+	7124.3.14 = { death = { death_reason = death_natural_causes }  }
+}
+
+linegimilzadan_gimilthani_wife = {
+	name = Azrune_e_th
+	dynasty= dynasty_gimiladune
+	religion = faith_adunaic_faithful
+	culture = kharadunaim
+	female = yes
+
+	trait = education_martial_3
+	trait = compassionate
+	trait = brave
+	trait = just
+	trait = lifestyle_blademaster
+	trait = blood_of_numenor_3
+    trait = intellect_good_2
+	trait = beauty_good_2
+	
+	disallow_random_traits = yes
+	
+    diplomacy = 14
+    martial = 16
+    stewardship = 15
+    intrigue = 7
+    learning = 16
+    prowess = 13
+	
+    sexuality = heterosexual
+	
+	7010.1.2 = {
+		birth = yes
+		effect = {
+			learn_language = language_sindarin
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = 40
+			}
+		}
 	}
 
 	7124.3.14 = { death = { death_reason = death_natural_causes }  }
