@@ -1669,7 +1669,10 @@ wonder_amon_hen = {
 	can_construct = {
 		building_requirement_castle_city_church = { LEVEL = 02 }
 		scope:holder ?= {
-			culture = { has_cultural_pillar = heritage_dunedain }
+			OR = {
+				culture = { has_cultural_pillar = heritage_dunedain }
+				culture = { has_cultural_tradition = tradition_new_numenor }
+			}
 		}
 	}
 	
@@ -1724,7 +1727,10 @@ wonder_amon_lhaw = {
 	can_construct = {
 		building_requirement_castle_city_church = { LEVEL = 02 }
 		scope:holder ?= {
-			culture = { has_cultural_pillar = heritage_dunedain }
+			OR = {
+				culture = { has_cultural_pillar = heritage_dunedain }
+				culture = { has_cultural_tradition = tradition_new_numenor }
+			}
 		}
 	}
 	
