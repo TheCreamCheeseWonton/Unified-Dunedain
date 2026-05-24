@@ -18,7 +18,7 @@
 	
 	is_shown = {
 		is_landed = no
-		dynasty = dynasty:dynasty_gimilzadan
+		this = character:linegimilzadan2
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:enable_gimilzir_decision

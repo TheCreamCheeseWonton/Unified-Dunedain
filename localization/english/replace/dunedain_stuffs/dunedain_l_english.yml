@@ -425,8 +425,8 @@
 
  decision_reunify_numenor_culture: "Restore a Númenórean Identity"
  decision_reunify_numenor_culture_desc: "Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the former [numenoreans|E] of [middleearth|E] have diverged. Separated by politics, religion, conflict, and sheer distance, the many Sons of [numenor|E] have long been divided. Now, with all of the old Númenórean Colonies under our rule, and the formation of Númenor-in-Exile, the Númenóreans are once again united!"
- decision_reunify_numenor_culture_tooltip: "We are the [numenorean|E]."
- decision_reunify_numenor_culture_confirm: "We are the Númenórean."
+ decision_reunify_numenor_culture_tooltip: "We are [numenorean|E]."
+ decision_reunify_numenor_culture_confirm: "We are Númenórean."
 
  renovate_special_building_arminalethor: "Renovate [GetTitleByKey('b_tol_uialgaer').GetNameNoTier]"
  renovate_special_building_arminalethor_desc: "The islands of [GetTitleByKey('b_tol_uialgaer').GetNameNoTier] has long been inhabited by [numenoreans|E]. Since before the [akallabeth|E], these islands have been sacred to worshipers of [ulmocharacter|E], who believed that they were created by the great [valargods|E] himself. However, for many long years, the islands have been occupied by servants of the Enemy, the [kingsmen|E]. Their beauty and splendor wasted on those who didn't appreciate their value. \nSince we took these islands, many minds have wondered what we could do with such a beautiful land of farms, sand, and sea. Singular is the idea that stands out from all the rest: to build a city in the memory of [armenelos|E] on the island's white sand beaches. Often it's been said that these Sacred Islands have emanated the memory of [numenor|E], and now we shall make those words a reality, by forging from nothing a city whose ancestor would be proud."
@@ -446,7 +446,7 @@
  decision_gain_numenor_blood_culture_none: "All Númenórean-decedent [characters|e] become #P Númenórean#!"
 
  decision_unify_southern_adunai: "Restore a Southern Adûnâic Identity"
- decision_unify_southern_adunai_desc: "Ever since the [akallabeth|E], and the shattering of the Númenórean colonial empire, the [numenoreans|E] of the former Southern Colonies have diverged. The north in the more populated heartland of [anbalkumagan|E] has fallen into depravity and pride, being some of the most wicked [men|E] to exist in the [thirdage|E]. The [numenoreans|E] of the south in the much more sparsely settled [thanihazad|E] have developed a much less degenerate culture, one much more founded on the original principles of [numenor|E]. United as one people before the [downfall|E], they can be one once more!"
+ decision_unify_southern_adunai_desc: "Ever since the [akallabeth|E], and the shattering of the [numenorean_empire|E], the [numenoreans|E] of the former Southern Colonies have diverged. The north in the more populated heartland of [anbalkumagan|E] has fallen into depravity and pride, being some of the most wicked [men|E] to exist in the [thirdage|E]. The [numenoreans|E] of the south in the much more sparsely settled [thanihazad|E] have developed a much less degenerate culture, one much more founded on the original principles of [numenor|E]. United as one people before the [downfall|E], they can be one once more!"
  decision_unify_southern_adunai_tooltip: "We are the Kharatakhôri."
  decision_unify_southern_adunai_confirm: "We are the Kharatakhôri."
  decision_unify_south_adunai_get_innovations: "The [kharatakhori_culture.GetName] [culture|E] gains all [anbalukkhori_culture.GetName] and [kharadunaim_culture.GetName] [innovations|E]"
