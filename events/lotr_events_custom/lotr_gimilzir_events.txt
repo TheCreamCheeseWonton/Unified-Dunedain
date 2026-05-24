@@ -5679,6 +5679,9 @@ gimilzir_events.7810 = { # Usakani Wife Joins War
 			id = gimilzir_events.7812
 			days = {10 30}
 		}
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
+		}
 	}
 	
 	option = {
@@ -6913,6 +6916,9 @@ gimilzir_events.7835 = { # Meeting with sarul diplomatic failure
 			}
 		}
 		add_character_flag = take_sarul_war		
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
+		}
 	}
 	option = {
 		name = gimilzir_events.7835.b #Nothing We Can Do
@@ -7027,6 +7033,9 @@ gimilzir_events.7837 = { # Meeting with sarul threat failure
 			}
 		}	
 		add_character_flag = take_sarul_war
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
+		}
 	}
 	option = {
 		name = gimilzir_events.7837.b #Nothing We Can Do
@@ -7138,6 +7147,9 @@ gimilzir_events.7839 = { # Meeting with sarul pay failure
 			}
 		}	
 		add_character_flag = take_sarul_war
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
+		}
 	}
 	option = {
 		trigger = { 
@@ -7203,6 +7215,9 @@ gimilzir_events.7841 = { # preparing for mass vassalization
 		}
 		custom_tooltip = council_decison_enable
 		add_character_flag = enable_council
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
+		}
 	}
 	option = {
 		name = gimilzir_events.7841.b #Everyone is dead
@@ -7222,6 +7237,9 @@ gimilzir_events.7841 = { # preparing for mass vassalization
 		add_prestige = 200
 		#custom_tooltip = council_decison_enable
 		#add_character_flag = enable_council
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
+		}
 	}
 	option = {
 		trigger = { 
@@ -8079,6 +8097,9 @@ gimilzir_events.7847 = {
 				}
 			}
 			trigger_event = gimilzir_events.7815
+		}
+		ai_chance = { # Any modifiers are handled in the follow-up events
+			base = 100
 		}
 	}
 	option = {
