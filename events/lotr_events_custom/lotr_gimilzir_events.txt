@@ -281,6 +281,20 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 		add_pressed_claim = title:k_pel
 		#add_character_flag = gimilzir_path_chooser
 		#trigger_event = gimilzir_events.6
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_gimilthani_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_north_dunedain_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
 	}
 	
 	option = {
@@ -294,6 +308,20 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 		add_pressed_claim = title:k_an_balkumagan
 		#add_character_flag = gimilzir_path_chooser
 		#trigger_event = gimilzir_events.5
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_gimilthani_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_north_dunedain_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
 	}
 	
 	option = {
@@ -326,6 +354,20 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 		ROOT.dynasty = { 
 			add_dynasty_prestige = 1000
 		}
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_gimilthani_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_north_dunedain_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
 	}
 	
 	##Numenor Wilderness
@@ -337,6 +379,20 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 		custom_tooltip = choose_gimilzir_path_tt_6
 		trigger_event = gimilzir_events.0117
 		add_character_flag = gimilzir_path_chooser
+		hidden_effect = { 
+			character:linegimilzadan_usakan_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_gimilthani_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+			character:linegimilzadan_north_dunedain_wife = { 
+				remove_trait = cannot_marry 
+				remove_character_modifier = uncanny_health_usakani_modifier_nothing
+			}
+		}
 	}
 	
 	option = {
