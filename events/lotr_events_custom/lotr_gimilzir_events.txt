@@ -7913,6 +7913,7 @@ gimilzir_events.7846 = {
 	
 	immediate = { 
 		root = { save_scope_as = gimilzirchar }
+		get_title = title:k_tanturak
 		every_in_list = { 
 			list = usakani_leaders_gimilzir
 			create_title_and_vassal_change = {
@@ -7934,12 +7935,6 @@ gimilzir_events.7846 = {
         add_legitimacy = medium_legitimacy_gain
 		add_prestige = medium_prestige_gain
 		add_piety = medium_piety_gain
-		title:k_tanturak = {
-			change_title_holder = {
-				holder = root
-				change = scope:title_change
-			}
-		}
 		add_character_modifier = { 
 			modifier = lotr_usakan_like_tanturak_modifier
 			years = 30
