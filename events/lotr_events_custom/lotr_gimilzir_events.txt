@@ -608,6 +608,7 @@ gimilzir_events.074 = { # Arrives at Numenor - Complete
 		every_living_character = { 
 			limit = { 
 				location ?= { geographical_region = middleearth_numenor }
+				is_human = yes
 			}
 			remove_trait = blood_of_numenor_1
 			remove_trait = blood_of_numenor_2

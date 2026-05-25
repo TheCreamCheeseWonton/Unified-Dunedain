@@ -499,7 +499,7 @@ dunedain_on_game_start = {
 			}
 			character:linegimilzadan_north_dunedain_wife = { 
 				add_trait = cannot_marry 
-				add_realm_law_skip_effects = camp_purpose_mercenaries
+				add_realm_law_skip_effects = camp_purpose_rangers
 				domicile ?= { change_provisions = major_provisions_gain }
 				add_character_flag = is_north_dunedain_wife_gimilzir
 				add_character_modifier = uncanny_health_usakani_modifier_nothing
