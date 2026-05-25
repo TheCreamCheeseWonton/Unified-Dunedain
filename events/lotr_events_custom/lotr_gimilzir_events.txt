@@ -328,6 +328,17 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 		}
 	}
 	
+	##Numenor Wilderness
+	option = {
+		name = gimilzir_events.4.f
+		trigger = { 
+			has_global_variable = numenor_wilderness_enabled
+		}
+		custom_tooltip = choose_gimilzir_path_tt_6
+		trigger_event = gimilzir_events.0117
+		add_character_flag = gimilzir_path_chooser
+	}
+	
 	option = {
 		name = gimilzir_events.4.e
 		remove_list_global_variable = {
@@ -335,6 +346,238 @@ gimilzir_events.4 = { # Gimilzadan Flavor 4
 			target = flag:decision_choose_gimilzir_path
 		}
 		custom_tooltip = choose_gimilzir_path_tt_5
+	}
+}
+
+gimilzir_events.0117 = { # Gimilzadan Flavor Numenor
+	content_source = realms_dlc 
+	type = character_event
+	title = gimilzir_events.07.t
+	desc = gimilzir_events.07.desc
+	theme = faith
+	
+	override_background = { reference = docks }
+	
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = {
+		name = gimilzir_events.07.a
+		trigger_event = gimilzir_events.0127
+	}
+}
+
+
+gimilzir_events.0127 = { # Numenor Sailing beginning 
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.071.t
+	desc = gimilzir_events.071.desc
+	theme = sailing_activity
+	override_background = { reference = docks }
+	left_portrait = {
+		character = root
+		animation = debating
+	}
+	right_portrait = {
+		character = scope:gimilzirchar_father
+		animation = personality_cynical
+	}
+	
+	immediate = {
+		play_music_cue = lotr_cue_adunai
+		root = { save_scope_as = gimilzirchar }
+		root.father = { save_scope_as = gimilzirchar_father }
+	}
+	
+	option = { # Start Sailing
+		name = gimilzir_events.071.a
+		trigger_event = {
+			id = gimilzir_events.072
+			days = { 45 90 }
+		}
+		custom_tooltip = gimilzir.71.tt_22
+		start_travel_plan = {
+			destination = title:c_uinen.title_province
+			travel_with_domicile = yes
+			players_use_planner = no
+			on_arrival_event = gimilzir_events.074
+			return_trip = no
+			on_arrival_destinations = none
+
+		}
+	}
+	
+	option = {
+		name = gimilzir_events.71.b
+		trigger_event = gimilzir_events.4
+		custom_tooltip = gimilzir.71.tt_3
+	}
+}
+
+gimilzir_events.072 = { # Flavor Towards Numenor
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.072.t
+	desc = gimilzir_events.072.desc
+	theme = sailing_activity
+	override_background = {
+		reference = docks_adunai
+	}
+	left_portrait = {
+		character = root
+		animation = survey
+	}
+	immediate = {
+		root = { save_scope_as = gimilzirchar }
+		root.father = { save_scope_as = gimilzirchar_father }
+	}
+
+	option = {
+		name = gimilzir_events.072.a
+		trigger_event = {
+			id = gimilzir_events.073
+			months = { 2 4 }
+		}
+	}
+}
+
+gimilzir_events.073 = { # At sea
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.073.t
+	desc = gimilzir_events.073.desc
+	theme = sailing_activity
+	override_background = {
+		reference = ocean
+	}
+	left_portrait = {
+		character = root
+		animation = pondering
+	}
+
+	option = {
+		name = gimilzir_events.073.a # Almost There!
+	}
+}
+
+gimilzir_events.074 = { # Arrives at Numenor - Complete
+	content_source = realms_dlc
+	type = character_event
+	title = gimilzir_events.074.t
+	desc = gimilzir_events.074.desc
+	theme = sailing_activity
+	override_background = {
+		reference = docks
+	}
+	left_portrait = {
+		character = root
+		animation = survey
+	}
+	immediate = {
+		play_music_cue = "mx_cue_combat_2"
+		hidden_effect = {
+			random_list = {
+				4 = {
+					create_artifact_numenorean_figurine_effect = { OWNER = root }
+				}
+				2 = {
+					create_artifact_numenorean_helm_effect = { OWNER = root }
+				}
+				2 = {
+					create_artifact_numenorean_shield_effect = { OWNER = root }
+				}
+				1 = {
+					create_artifact_numenorean_steelbow_effect = { OWNER = root }
+				}
+			}
+			scope:newly_created_artifact = { save_scope_as = numenorean_artifact }
+		}
+		add_character_modifier = reached_meneltarma
+		add_prestige = 1000
+		add_legitimacy_effect = { LEGITIMACY = medium_legitimacy_gain }
+		root.dynasty = {
+			add_dynasty_prestige = 1000
+			add_dynasty_prestige_level = 1
+		}
+		if = {
+			limit = {
+				faith_is_good = yes
+			}
+			add_piety = 750
+		}
+		if = {
+			limit = {
+				has_dlc_feature = legends
+				dynasty = { NOT = { has_variable = gained_meneltarma_legend } }
+			}
+			create_legend_seed = {
+				type = holy
+				quality = illustrious
+				chronicle = climbed_the_meneltarma
+				properties = {
+					dynasty = root.dynasty
+					founder = root
+					title = root.primary_title.empire
+				}
+			}
+			dynasty = {
+				set_variable = {
+					name = gained_meneltarma_legend
+					value = yes
+				}
+			}
+		}
+		create_artifact_palantir_romenna_effect = { OWNER = this }
+		province:6146 = {
+			set_holding_type = castle_holding
+		}
+		get_title = title:c_uinen
+		title:c_uinen = {
+			set_county_faith = root.faith
+			set_county_culture = root.culture
+			change_development_level = 3
+		}
+		get_title = title:d_arandor
+		
+		faith:faith_adunaic_faithful = {
+			activate_holy_site = meneltarma
+			activate_holy_site = armenelos
+			activate_holy_site = oromet
+			activate_holy_site = eldalonde
+			activate_holy_site = nindamos
+		}
+		every_living_character = { 
+			limit = { 
+				location ?= { geographical_region = middleearth_numenor }
+			}
+			remove_trait = blood_of_numenor_1
+			remove_trait = blood_of_numenor_2
+			remove_trait = blood_of_numenor_3
+			remove_trait = blood_of_numenor_4
+			remove_trait = blood_of_numenor_5
+			remove_trait = blood_of_numenor_6
+			remove_trait = blood_of_numenor_7
+			add_trait = blood_of_numenor_7
+		}
+	}
+
+	option = {
+		name = gimilzir_events.074.a
+		add_gold = 500
+		province:6146 = {
+			add_building = castle_01
+			add_building = curtain_walls_01
+			add_building = windmills_01
+			add_building = barracks_01
+			add_building = common_tradeport_01
+		}
+		
+		title:c_uinen = { 
+			change_development_level = 4
+		}
 	}
 }
 

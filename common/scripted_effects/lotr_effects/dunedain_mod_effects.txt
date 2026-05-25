@@ -512,3 +512,8 @@ ud_lotr_gimilzir_following_effect = {
 		add_character_modifier = gimilzir_tanturak_following_1
 	}
 }
+
+##Wilderness Dummy EFFECT
+wilderness_dummy_effect = { 
+	set_global_variable = numenor_wilderness_enabled
+}

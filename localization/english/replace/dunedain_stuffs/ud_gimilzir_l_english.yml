@@ -125,6 +125,29 @@
   choose_gimilzir_path_tt_4: "You will forge your own path forward, without any guidance"
   gimilzir_events.4.e: "I need more time to think"
   choose_gimilzir_path_tt_5: "You will choose at a different time"
+ gimilzir_events.4.f: "Perhaps... Numenor"
+ choose_gimilzir_path_tt_6: "You will set sail into [belegaer_sea|E] to find [numenor|E]"
+
+ gimilzir_events.07.t: "What Madness is this?"
+ gimilzir_events.07.desc: "A thought has gripped my mind for some time now, holding me captive above all others, [numenor|E]. The ancient jewel of the [numenorean_empire|E], the island from which my family hails, the land where all [adunai|E] once dwelt. Its legend is unmatched, its power unrivaled, and its splendor once cast all others into shadow. Yet for an entire [age|E], the island has been lost, believed swallowed beneath the waves.\n\nAnd yet, I have heard rumors. Whispers from sailors and mariners who claim to have glimpsed distant shores far out upon the [belegaer_sea|E]. A dream, too, returns to me time and again, showing the [meneltarma|E] rising high above the broad lands of [numenor|E] below. Could these visions reveal what remains there now? Could they be a sign from [eruiluvatar|E], guiding me toward what I am meant to do?\n\nI know it may seem madness to sail into the unknown. Yet my heart tells me this is the path forward."
+ gimilzir_events.07.a: "Out into Belegaer!"
+
+ gimilzir_events.071.t: "My Sceptical Family"
+ gimilzir_events.071.desc: "When I finally revealed my plans for the future to those of House Gimilzîr, the reactions were... mixed, to say the least. My mother looked at me as though I had grown horns, my aunts assumed I was joking, my grandparents laughed outright, and my father sat in quiet contemplation.\n\nBut when they realized I was serious, all pandemonium broke loose. An argument erupted, one in which my father and I stood alone against the rest of the family, who were convinced I had lost my mind.\n\nAt last, I spoke of my dreams. The visions I have been given of [numenor|E], and how I believe they were sent by [eru|E] himself, guiding me toward the island and toward a path forward for our people.\n\nAt this, some voices fell silent... and a few even turned to my side.\n\nAfter long discussion, I finally persuaded them that this was the only path forward. And so, at last, preparations began for our departure toward [numenor|E]."
+ gimilzir_events.071.a: "I promise you all this, in the end, everything will be made right."
+ gimilzir.71.tt_22: "You will travel to [numenor|E]"
+
+ gimilzir_events.072.t: "A Worried Family"
+ gimilzir_events.072.desc: "Ever since I spoke of journeying to [numenor|E], worry has spread throughout my family. My mother fears I have gone mad, while my aunts believe I will lead us all to a watery grave. Yet my father still stands beside me, steadfast in his belief that my path is true. He continues to support my journey, recalling the many stories he has heard from fishermen who swear they have seen distant shores deep within the [belegaer_sea|E]. For his faith in me, I shall be eternally grateful.\n\nI spend my days gazing out upon the ocean, breathing in the salt air, watching the endless waves roll toward horizons unknown. Never before have I known such peace, nor such clarity of purpose. I know my calling is true, and I know that somewhere out there lies [numenor|E], the island that, soon enough, shall become my own."
+ gimilzir_events.072.a: "Out into Belegaer!"
+
+ gimilzir_events.073.t: "Life at Sea"
+ gimilzir_events.073.desc: "Ever since I spoke of journeying to [numenor|E], worry has spread throughout my family. My mother fears I have gone mad, while my aunts believe I will lead us all to a watery grave. Yet my father stands beside me, believing my path to be true. He says he has known several fishermen who swear they have seen the distant shores of [numenor|E], and so has long believed that the island yet remains somewhere beyond the horizon. For his faith in me, I shall be eternally grateful.\n\nI spend my days gazing out upon the ocean, breathing in the salt air, watching the endless waves roll toward horizons unknown. Never before have I known such peace, nor such clarity of purpose. I know my calling is true, and I know that somewhere out there lies [numenor|E], the island that, soon enough, shall become my own."
+ gimilzir_events.073.a: "Out into Belegaer!"
+
+ gimilzir_events.074.t: "The Island of Numenor"
+ gimilzir_events.074.desc: "I can hardly believe it. Even though it has been my goal through all these weeks of sailing and labor, some part of me never truly believed that [numenor|E] still existed.\n\nAs we sailed into the waters around [numenor|E], every soul in my company felt a sudden warmth spread through their bodies. Wrinkles carved by age softened and withered away. Bones and joints that had once grown weak felt as though they had been restored to their youthful strength. We knew then, without doubt, that we had been blessed. \n\nAnd now I stand upon her sacred earth. As our boats pull into the overgrown ruins upon the island of [GetTitleByKey('c_uinen').GetNameNoTierNoTooltip], I look westward toward the heart of the land. I see great hills and rolling woods, wide grasslands scattered with trees, the ruined remnants of [numenor|E] of old, and above it all, the great mountain of [meneltarma|E].\n\nNow that I stand here, I realize those dreams were no mere visions. They showed me this very sight, the one I now behold with my own eyes. My breath catches, and I am struck by the sheer awe of it all.\n\n[numenor|E] exists. [numenor|E] stands ready to be reclaimed. And I was always meant to be the one to reclaim it."
+ gimilzir_events.074.a: "I shall reclaim [numenor|E], in the name of [eruiluvatar]!"
 
  gimilzir_tanturak_following_1: "Batânim Following - Tiny"
  gimilzir_tanturak_following_1_desc: "A tiny number of [batanim|E] follow this character towards a new homeland"

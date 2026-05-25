@@ -1,0 +1,51 @@
+﻿##Wilderness Submod Fix
+@correct_culture_primary_score = 100
+@better_than_the_alternatives_score = 50
+@always_primary_score = 1000
+@never_primary_score = -1000
+
+c_uinen = {
+	color = { 10 30 8 }
+	destroy_if_invalid_heir = yes
+	de_jure_drift_disabled = no
+	ignore_titularity_for_title_weighting = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	capital = c_sarul
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				OR = {
+					culture = { has_cultural_pillar = heritage_southern_adunaic }
+					culture = { has_cultural_pillar = heritage_northern_adunaic }
+				}
+			}
+			add = @better_than_the_alternatives_score
+			add = @always_primary_score
+		}
+	}
+}
+
+d_arandor = {
+	color = { 10 30 8 }
+	destroy_if_invalid_heir = yes
+	de_jure_drift_disabled = no
+	ignore_titularity_for_title_weighting = yes
+	no_automatic_claims = yes
+	always_follows_primary_heir = yes
+	capital = c_sarul
+
+	ai_primary_priority = {
+		if = {
+			limit = {
+				OR = {
+					culture = { has_cultural_pillar = heritage_southern_adunaic }
+					culture = { has_cultural_pillar = heritage_northern_adunaic }
+				}
+			}
+			add = @better_than_the_alternatives_score
+			add = @always_primary_score
+		}
+	}
+}

@@ -1,0 +1,42 @@
+﻿##Wilderness submod
+meneltarma = {
+	county = c_guishas
+	barony = b_guishas
+	character_modifier = {
+		monthly_piety_gain_mult = 0.10
+		piety_level_impact_mult = 0.20
+	}
+}
+
+armenelos = {
+	county = c_guishas
+	barony = b_guishas
+	character_modifier = {
+		stewardship_per_piety_level = 1
+		direct_vassal_opinion = 5
+	}
+}
+
+nindamos = {
+	county = c_guishas
+	barony = b_guishas
+	character_modifier = {
+		naval_movement_speed_mult = 0.15
+		supply_duration = 0.25
+	}
+}
+eldalonde = {
+	county = c_guishas
+	barony = b_guishas
+	character_modifier = {
+		stress_gain_mult = -0.10
+		health = 0.25
+	}
+}
+oromet = {
+	county = c_guishas
+	barony = b_guishas
+	character_modifier = {
+		learning_per_piety_level = 1
+	}
+}
