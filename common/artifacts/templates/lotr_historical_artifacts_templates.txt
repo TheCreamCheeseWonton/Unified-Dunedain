@@ -2844,7 +2844,11 @@ sceptre_of_umbar_template = {
 		}
 	}
 	can_benefit = {
-		religion = religion:adunai_religion
+		 OR = {
+            faith = faith:faith_kings_men_castamir
+            faith = faith:faith_castamiri_creed
+            religion = religion:adunai_religion 
+		}
 	}
 
 	fallback = {

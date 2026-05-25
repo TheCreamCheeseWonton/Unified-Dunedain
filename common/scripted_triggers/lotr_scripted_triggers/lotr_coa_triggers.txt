@@ -39,9 +39,11 @@ coa_edain_trigger = {
 }
 
 coa_switch_to_dunedain_trigger = {
-	holder.culture = { has_cultural_pillar = heritage_dunedain }
 	##Quonton
-	holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	OR = { 
+		holder.culture = { has_cultural_pillar = heritage_dunedain }
+		holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
 }
 
 coa_switch_to_adunai_trigger = {
@@ -68,9 +70,11 @@ coa_switch_to_kharadunai_trigger = {
 }
 
 coa_switch_to_northern_adunai_trigger = { # this was set for umbar
-	holder.culture = { has_cultural_pillar = heritage_northern_adunaic }
 	##Quonton
-	holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	OR = { 
+		holder.culture = { has_cultural_pillar = heritage_northern_adunaic }
+		holder.culture = { has_cultural_pillar = heritage_unified_adunaic }
+	}
 }
 
 coa_switch_to_evil_trigger = {
