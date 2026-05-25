@@ -2885,7 +2885,7 @@
                     portrait_commoner_armor_trigger = {
                         CULTURE_INPUT = umbar
                     }
-                    portrait_commoner_armor_trigger = {
+                    portrait_low_nobles_armor_trigger = {
                         CULTURE_INPUT = umbar
                     }
 					##Quonton
