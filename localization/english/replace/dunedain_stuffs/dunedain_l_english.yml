@@ -502,7 +502,7 @@
  decision_adunaic_revival_usakan_tt: "Stand, [adunai|E] of the Ûsakan Bay!"
  decision_adunaic_revival_usakan_confirm: "[GetTitleByKey('k_usakan').GetNameNoTier] is again a realm of the [adunai|E]"
 
- decision_adunaic_revival_tanturak: "Revive Adûnaic Culture in [GetTitleByKey('k_tanturak').GetNameNoTier]"
+ decision_adunaic_revival_tanturak: "Revive Adûnaic Culture in Tantûrak"
  decision_adunaic_revival_tanturak_desc: "Tantûrak was once a proud, if depraved, realm of the [adunai|E]. For many long years, the ancient palaces and cities of [numenor|E], hidden within Tantûrak's vast jungles, have stood abandoned and decaying. But no longer! By bringing in colonists from [GetTitleByKey('e_thani_hazad').GetNameNoTier], these lands shall once again become true lands of the [adunai|E]!"
  decision_adunaic_revival_tanturak_tt: "Stand, [adunai|E] of the South!"
  decision_adunaic_revival_tanturak_confirm: "[GetTitleByKey('k_tanturak').GetNameNoTier] is again a realm of the [adunai|E]"
