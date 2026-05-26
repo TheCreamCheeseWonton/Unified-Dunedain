@@ -373,12 +373,8 @@ decision_become_allies_with_kinnlai_gimilzir_renew = {
 		}
 		
 		dynasty = dynasty:dynasty_gimilzadan
-
-		NOT = { 
-			any_dynasty_member = { 
-				has_defensive_alliance = yes
-			}
-		}
+		
+		is_ai = no
 		
 		has_defensive_alliance = no
 		is_house_head = yes
