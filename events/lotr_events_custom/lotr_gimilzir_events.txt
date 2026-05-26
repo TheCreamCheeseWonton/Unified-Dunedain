@@ -586,7 +586,6 @@ gimilzir_events.074 = { # Arrives at Numenor - Complete
 				}
 			}
 		}
-		create_artifact_palantir_romenna_effect = { OWNER = this }
 		province:6146 = {
 			set_holding_type = castle_holding
 		}
