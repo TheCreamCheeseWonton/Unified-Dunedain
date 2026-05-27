@@ -455,15 +455,6 @@ gimilzir_events.0127 = { # Numenor Sailing beginning
 			days = { 45 90 }
 		}
 		custom_tooltip = gimilzir.71.tt_22
-		start_travel_plan = {
-			destination = title:c_uinen.title_province
-			travel_with_domicile = yes
-			players_use_planner = no
-			on_arrival_event = gimilzir_events.074
-			return_trip = no
-			on_arrival_destinations = none
-
-		}
 	}
 	
 	option = {
@@ -533,107 +524,10 @@ gimilzir_events.074 = { # Arrives at Numenor - Complete
 		animation = survey
 	}
 	immediate = {
-		play_music_cue = "mx_cue_combat_2"
-		hidden_effect = {
-			random_list = {
-				4 = {
-					create_artifact_numenorean_figurine_effect = { OWNER = root }
-				}
-				2 = {
-					create_artifact_numenorean_helm_effect = { OWNER = root }
-				}
-				2 = {
-					create_artifact_numenorean_shield_effect = { OWNER = root }
-				}
-				1 = {
-					create_artifact_numenorean_steelbow_effect = { OWNER = root }
-				}
-			}
-			scope:newly_created_artifact = { save_scope_as = numenorean_artifact }
-		}
-		add_character_modifier = reached_meneltarma
-		add_prestige = 1000
-		add_legitimacy_effect = { LEGITIMACY = medium_legitimacy_gain }
-		root.dynasty = {
-			add_dynasty_prestige = 1000
-			add_dynasty_prestige_level = 1
-		}
-		if = {
-			limit = {
-				faith_is_good = yes
-			}
-			add_piety = 750
-		}
-		if = {
-			limit = {
-				has_dlc_feature = legends
-				dynasty = { NOT = { has_variable = gained_meneltarma_legend } }
-			}
-			create_legend_seed = {
-				type = holy
-				quality = illustrious
-				chronicle = climbed_the_meneltarma
-				properties = {
-					dynasty = root.dynasty
-					founder = root
-					title = root.primary_title.empire
-				}
-			}
-			dynasty = {
-				set_variable = {
-					name = gained_meneltarma_legend
-					value = yes
-				}
-			}
-		}
-		province:6146 = {
-			set_holding_type = castle_holding
-		}
-		get_title = title:c_uinen
-		title:c_uinen = {
-			set_county_faith = root.faith
-			set_county_culture = root.culture
-			change_development_level = 3
-		}
-		get_title = title:d_arandor
-		
-		faith:faith_adunaic_faithful = {
-			activate_holy_site = meneltarma_faithful
-			activate_holy_site = armenelos_faithful
-			activate_holy_site = oromet_faithful
-			activate_holy_site = eldalonde_faithful
-			activate_holy_site = nindamos_faithful
-		}
-		every_living_character = { 
-			limit = { 
-				location ?= { geographical_region = middleearth_numenor }
-				is_human = yes
-			}
-			remove_trait = blood_of_numenor_1
-			remove_trait = blood_of_numenor_2
-			remove_trait = blood_of_numenor_3
-			remove_trait = blood_of_numenor_4
-			remove_trait = blood_of_numenor_5
-			remove_trait = blood_of_numenor_6
-			remove_trait = blood_of_numenor_7
-			add_trait = blood_of_numenor_7
-		}
 	}
 
 	option = {
 		name = gimilzir_events.074.a
-		add_gold = 500
-		province:6146 = {
-			add_building = castle_01
-			add_building = curtain_walls_01
-			add_building = windmills_01
-			add_building = barracks_01
-			add_building = common_tradeport_01
-		}
-		
-		title:c_uinen = { 
-			change_development_level = 4
-		}
 	}
 }
 
