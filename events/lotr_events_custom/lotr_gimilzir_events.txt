@@ -454,6 +454,10 @@ gimilzir_events.0127 = { # Numenor Sailing beginning
 			id = gimilzir_events.072
 			days = { 45 90 }
 		}
+		trigger_event = {
+			id = gimilzir_events.074
+			days = { 45 90 }
+		}
 		custom_tooltip = gimilzir.71.tt_22
 	}
 	
