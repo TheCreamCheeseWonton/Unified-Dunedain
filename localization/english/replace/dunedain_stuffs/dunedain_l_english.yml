@@ -1446,7 +1446,7 @@
  
  ##Game Rules
  rule_dunedain_bon_rule: "$lotr_gr_prefix$Unified Dunedain - The [bloodofnumenor|E]"
- setting_default_bon: "BoN - Default"
+ setting_default_bon: "BoN - Blessing Renewed"
  setting_default_bon_desc: "You will be able to increase your [bloodofnumenor|E] trait through a select few Decisions."
  setting_lore_accurate_bon: "BoN - Lore Accurate"
  setting_lore_accurate_bon_desc: "You will not be able to increase your [bloodofnumenor|E] trait, as the strength of [men|E] ever fades."

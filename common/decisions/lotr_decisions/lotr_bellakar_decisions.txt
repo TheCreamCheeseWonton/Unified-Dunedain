@@ -4056,47 +4056,59 @@ decision_unify_adunai = {
 		}
 		trigger_if = { 
 			limit = {
-				culture = culture:anbalukkhori
+				culture:bellakarani = {
+					any_culture_county = { count >1 culture = culture:bellakarani  }
+				}
 			}
-			culture = { cultural_acceptance = { target = culture:kharadunaim value >= 40 } }
-			OR = { 
-				culture = { cultural_acceptance = { target = culture:bellakarani value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:bellakaze value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:felayan value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:mardrukan value >= 40 } }
-			}
+			culture = { cultural_acceptance = { target = culture:bellakarani value >= 40 } }
 		}
-		trigger_else_if = { 
+		trigger_if = { 
 			limit = {
-				culture = culture:kharadunaim
+				culture:bellakaze = {
+					any_culture_county = { count >1 culture = culture:bellakaze  }
+				}
+			}
+			culture = { cultural_acceptance = { target = culture:bellakaze value >= 40 } }
+		}
+		trigger_if = { 
+			limit = {
+				culture:felayan = {
+					any_culture_county = { count >1 culture = culture:felayan  }
+				}
+			}
+			culture = { cultural_acceptance = { target = culture:felayan value >= 40 } }
+		}
+		trigger_if = { 
+			limit = {
+				culture:mardrukan = {
+					any_culture_county = { count >1 culture = culture:mardrukan  }
+				}
+			}
+			culture = { cultural_acceptance = { target = culture:mardrukan value >= 40 } }
+		}
+		trigger_if = { 
+			limit = {
+				culture:anbalukkhori = {
+					any_culture_county = { count >1 culture = culture:anbalukkhori  }
+				}
 			}
 			culture = { cultural_acceptance = { target = culture:anbalukkhori value >= 40 } }
-			OR = { 
-				culture = { cultural_acceptance = { target = culture:bellakarani value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:bellakaze value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:felayan value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:mardrukan value >= 40 } }
-			}
 		}
-		trigger_else_if = { 
+		trigger_if = { 
 			limit = {
-				culture = culture:kharatakhori
-			}
-			OR = { 
-				culture = { cultural_acceptance = { target = culture:bellakarani value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:bellakaze value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:felayan value >= 40 } }
-				culture = { cultural_acceptance = { target = culture:mardrukan value >= 40 } }
-			}
-		}
-		trigger_else = { 
-			OR = { 
-				AND = { 
-					culture = { cultural_acceptance = { target = culture:anbalukkhori value >= 40 } }
-					culture = { cultural_acceptance = { target = culture:kharadunaim value >= 40 } }
+				culture:kharadunaim = {
+					any_culture_county = { count >1 culture = culture:kharadunaim  }
 				}
-				culture = { cultural_acceptance = { target = culture:kharatakhori value >= 40 } }
 			}
+			culture = { cultural_acceptance = { target = culture:kharadunaim value >= 40 } }
+		}
+		trigger_if = { 
+			limit = {
+				culture:kharatakhori = {
+					any_culture_county = { count >1 culture = culture:kharatakhori  }
+				}
+			}
+			culture = { cultural_acceptance = { target = culture:kharatakhori value >= 40 } }
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -4117,6 +4129,7 @@ decision_unify_adunai = {
 			culture:kharadunaim = { save_temporary_scope_as = kharadunaim_culture }
 			culture:kharatakhori = { save_temporary_scope_as = kharatakhori_culture }
 			culture:tanturaki = { save_temporary_scope_as = tanturaki_culture }
+			culture:gimilarani = { save_temporary_scope_as = gimilarani_culture }
 			# Needs to be above the 'custom_tooltip'
 			custom_tooltip = decision_unify_pharazaini_get_innovations
 			hidden_effect = {
@@ -4129,6 +4142,7 @@ decision_unify_adunai = {
 				get_all_innovations_from = culture:kharadunaim
 				get_all_innovations_from = culture:kharatakhori
 				get_all_innovations_from = culture:tanturaki
+				get_all_innovations_from = culture:gimilarani
 				remove_innovation = innovation_lesser_numenorean_heritage
 				remove_innovation = innovation_varangian_adventurers
 				remove_innovation = innovation_northern_adunai_warfare
@@ -4367,11 +4381,18 @@ decision_unify_southern_adunai = {
 		}
 		trigger_if = { 
 			limit = {
-				culture = culture:anbalukkhori
+				culture:kharadunaim = {
+					any_culture_county = { count >1 culture = culture:kharadunaim  }
+				}
 			}
 			culture = { cultural_acceptance = { target = culture:kharadunaim value >= 40 } }
 		}
-		trigger_else = { 
+		trigger_if = { 
+			limit = {
+				culture:anbalukkhori = {
+					any_culture_county = { count >1 culture = culture:anbalukkhori  }
+				}
+			}
 			culture = { cultural_acceptance = { target = culture:anbalukkhori value >= 40 } }
 		}
 	}
@@ -4387,12 +4408,16 @@ decision_unify_southern_adunai = {
 			culture:kharatakhori = { save_temporary_scope_as = kharatakhori_culture }
 			culture:anbalukkhori = { save_temporary_scope_as = anbalukkhori_culture }
 			culture:kharadunaim = { save_temporary_scope_as = kharadunaim_culture }
+			culture:tanturaki = { save_temporary_scope_as = tanturaki_culture }
+			culture:gimilarani = { save_temporary_scope_as = gimilarani_culture }
 			# Needs to be above the 'custom_tooltip'
 			custom_tooltip = decision_unify_south_adunai_get_innovations
 			hidden_effect = {
 				reset_culture_creation_date = yes
 				get_all_innovations_from = culture:anbalukkhori
 				get_all_innovations_from = culture:kharadunaim
+				get_all_innovations_from = culture:tanturaki
+				get_all_innovations_from = culture:gimilarani
 				remove_innovation = innovation_lesser_numenorean_heritage
 				remove_innovation = innovation_varangian_adventurers
 				#remove_innovation = innovation_conscripts_warfare

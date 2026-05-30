@@ -2785,6 +2785,7 @@ decision_reunify_numenor_culture = {
 				culture:kharadunaim  = { save_temporary_scope_as = kharadunaim_culture }
 				culture:kharatakhori = { save_temporary_scope_as = kharatakhori_culture }
 				culture:tanturaki = { save_temporary_scope_as = tanturaki_culture }
+				culture:gimilarani = { save_temporary_scope_as = gimilarani_culture }
 				culture:pharazaini_culture  = { save_temporary_scope_as = pharazaini_culture_culture }
 				# Needs to be above the 'custom_tooltip'
 				custom_tooltip = decision_reunify_numenor_culture_get_innovations
@@ -2806,6 +2807,7 @@ decision_reunify_numenor_culture = {
 					get_all_innovations_from = culture:pharazaini_culture
 					get_all_innovations_from = culture:kharatakhori
 					get_all_innovations_from = culture:tanturaki
+					get_all_innovations_from = culture:gimilarani
 					culture:new_numenorean = {
 						add_innovation = innovation_lords_of_the_westlands
 						add_innovation = innovation_lords_of_the_golden_lands

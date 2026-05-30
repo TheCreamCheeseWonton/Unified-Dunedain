@@ -689,7 +689,7 @@ gimilzir_events.701 = { # Inzilloni Contract
 		duel = {
  			skill = martial
  			target = scope:inzilloniholder
- 			40 = {
+ 			30 = {
 				# You convince him
  				desc = gimilzir_events.701.a.success
  				compare_modifier = {
@@ -712,7 +712,7 @@ gimilzir_events.701 = { # Inzilloni Contract
 				trigger_event = gimilzir_events.702
 				add_prestige = 25
  			}
- 			60 = {
+ 			70 = {
  				# You fail to convince him
  				desc = gimilzir_events.701.a.failure
  				compare_modifier = {
@@ -1358,7 +1358,7 @@ gimilzir_events.711 = { # Azarideth Contract
 		duel = {
  			skill = diplomacy
  			target = scope:azaridethholder
- 			40 = {
+ 			30 = {
 				# You convince him
  				desc = gimilzir_events.711.a.success
  				compare_modifier = {
@@ -1381,7 +1381,7 @@ gimilzir_events.711 = { # Azarideth Contract
 				trigger_event = gimilzir_events.712
 				add_prestige = 25
  			}
- 			60 = {
+ 			70 = {
  				# You fail to convince him
  				desc = gimilzir_events.711.a.failure
  				compare_modifier = {
@@ -1936,7 +1936,7 @@ gimilzir_events.721 = { # Uruloni Contract
 		duel = {
  			skill = diplomacy
  			target = scope:uruloniholder
- 			30 = {
+ 			20 = {
 				# You convince him
  				desc = gimilzir_events.721.a.success
  				compare_modifier = {
@@ -1959,7 +1959,7 @@ gimilzir_events.721 = { # Uruloni Contract
 				trigger_event = gimilzir_events.722
 				add_prestige = 25
  			}
- 			70 = {
+ 			80 = {
  				# You fail to convince him
  				desc = gimilzir_events.721.a.failure
  				compare_modifier = {
@@ -2550,7 +2550,7 @@ gimilzir_events.731 = { # Mispir Contract
 		duel = {
  			skill = stewardship
  			target = scope:mispirholder
- 			30 = {
+ 			20 = {
 				# You convince him
  				desc = gimilzir_events.731.a.success
  				compare_modifier = {
@@ -2576,7 +2576,7 @@ gimilzir_events.731 = { # Mispir Contract
 				custom_tooltip = gimilzir_events.731.b.tt
 				custom_tooltip = gimilzir_events.731.c_lesser.tt
  			}
- 			70 = {
+ 			80 = {
  				# You fail to convince him
  				desc = gimilzir_events.731.a.failure
  				compare_modifier = {
@@ -3133,7 +3133,7 @@ gimilzir_events.741 = { # Gimileth Contract
 		duel = {
  			skill = diplomacy
  			target = scope:gimilethholder
- 			30 = {
+ 			20 = {
 				# You convince him
  				desc = gimilzir_events.741.a.success
  				compare_modifier = {
@@ -3156,7 +3156,7 @@ gimilzir_events.741 = { # Gimileth Contract
 				trigger_event = gimilzir_events.742
 				add_prestige = 25
  			}
- 			70 = {
+ 			80 = {
  				# You fail to convince him
  				desc = gimilzir_events.741.a.failure
  				compare_modifier = {
@@ -3837,7 +3837,7 @@ gimilzir_events.751 = { # Arpel Contract
 		duel = {
  			skill = learning
  			target = scope:arpelholder
- 			40 = {
+ 			30 = {
 				# You convince him
  				desc = gimilzir_events.751.a.success
  				compare_modifier = {
@@ -3870,7 +3870,7 @@ gimilzir_events.751 = { # Arpel Contract
 				trigger_event = gimilzir_events.752
 				add_prestige = 25
  			}
- 			60 = {
+ 			70 = {
  				# You fail to convince him
  				desc = gimilzir_events.751.a.failure
  				compare_modifier = {
@@ -4464,7 +4464,7 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 		duel = {
  			skill = stewardship
  			target = scope:arpelholder
- 			40 = {
+ 			30 = {
 				# You convince him
  				desc = gimilzir_events.761.a.success
  				compare_modifier = {
@@ -4487,7 +4487,7 @@ gimilzir_events.761 = { # Arpel Sailing Contract
 				trigger_event = gimilzir_events.762
 				add_prestige = 25
  			}
- 			60 = {
+ 			70 = {
  				# You fail to convince him
  				desc = gimilzir_events.761.a.failure
  				compare_modifier = {

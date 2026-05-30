@@ -477,6 +477,7 @@ decision_gimilzir_adunaic_revival_sarul = {#Settle Adunaic in Sarul
 				target = flag:decision_gimilzir_adunaic_revival_sarul
 			}
 		}
+		dynasty = dynasty:dynasty_gimilzadan
 		is_target_in_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:gimilzir_tanturak_path
