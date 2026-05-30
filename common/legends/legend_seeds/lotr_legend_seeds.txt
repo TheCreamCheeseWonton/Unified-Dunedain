@@ -160,6 +160,17 @@ anarion_ai = {
 			}
 			completely_controls = title:e_gondor_steward
 		}
+		trigger_if = {
+			limit = {
+				house = house:house_gondorstewards
+			}
+			OR = {
+				has_trait = ambitious
+				has_trait = arrogant
+				has_trait = arbitrary
+				has_trait = disloyal
+			}
+		}
 	}
 
 	chronicle = ancestral_glory

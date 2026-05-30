@@ -350,6 +350,7 @@ throne = {
 		trigger = {
 			artifact_should_use_gfx_type_trigger = { TYPE = elven_building }
 			artifact_low_rarity_trigger = yes
+			NOT = { capital_province = { geographical_region = middleearth_west_rhovanion_lothlorien } }
 		}
 		reference = throne_elf_1_basic_entity
 	}
@@ -357,8 +358,27 @@ throne = {
 		trigger = {
 			artifact_should_use_gfx_type_trigger = { TYPE = elven_building }
 			artifact_high_rarity_trigger = yes
+			NOT = { capital_province = { geographical_region = middleearth_west_rhovanion_lothlorien } }
 		}
 		reference = throne_elf_1_fancy_entity
+	}
+
+	# LotR: Elven throne: Silver
+	asset = {
+		trigger = {
+			artifact_should_use_gfx_type_trigger = { TYPE = elven_building }
+			artifact_low_rarity_trigger = yes
+			capital_province = { geographical_region = middleearth_west_rhovanion_lothlorien }
+		}
+		reference = throne_elf_1_silver_basic_entity
+	}
+	asset = {
+		trigger = {
+			artifact_should_use_gfx_type_trigger = { TYPE = elven_building }
+			artifact_high_rarity_trigger = yes
+			capital_province = { geographical_region = middleearth_west_rhovanion_lothlorien }
+		}
+		reference = throne_elf_1_silver_fancy_entity
 	}
 
 	# LotR: Western Dwarven throne

@@ -12,7 +12,7 @@ tradition_legendary_artisans = {
 		1 = mena
 		4 = artisan.dds
 	}
-	
+
 	is_shown = {
 		has_dlc_feature = royal_court
 		OR = {
@@ -29,7 +29,7 @@ tradition_legendary_artisans = {
 	}
 
 	can_pick = {
-		NOT = { 
+		NOT = {
 			has_cultural_tradition = tradition_artisans
 		}
 		trigger_if = { #LotR
@@ -42,7 +42,7 @@ tradition_legendary_artisans = {
             }
         }
 	}
-	
+
 	parameters = {
 		legendary_inspiration = yes
 	}
@@ -51,7 +51,7 @@ tradition_legendary_artisans = {
 		artifact_decay_reduction_mult = -0.15
 		knight_effectiveness_mult = 0.1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -124,11 +124,11 @@ tradition_intricate_plotters = {
 		1 = mediterranean
 		4 = intricate_plotters.dds
 	}
-	
+
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
 	}
-	
+
 	parameters = {
 		# Make more likely to start schemes by on actions?
 		more_likely_to_start_schemes = yes
@@ -144,13 +144,13 @@ tradition_intricate_plotters = {
 		intrigue = 1
 		diplomacy = 1
 		owned_scheme_secrecy_add = 10
-		
+
 		ai_honor = -50
 		ai_sociability = 50
 		ai_vengefulness = 20
 		ai_compassion = -20
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -196,11 +196,11 @@ tradition_intricate_plotters = {
 					desc = rulers_at_war_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -228,6 +228,130 @@ tradition_intricate_plotters = {
 
 ### Dwarven ###
 
+tradition_dwarves_hard_working = {
+	category = societal
+
+	layers = {
+		0 = diplo
+		1 = western
+		3 = 1.dds
+		4 = dwarven_dilligence.dds
+	}
+
+	can_pick = {
+		is_dwarf_culture = yes
+	}
+
+	parameters = {
+		development_gain_on_building_complete = yes
+	}
+	character_modifier = {
+		build_speed = -0.15
+		build_gold_cost = 0.05
+		court_grandeur_baseline_add = 10
+		cultural_head_fascination_mult = 0.10
+	}
+	province_modifier = {
+		halls_tax_mult = 0.05
+		halls_development_growth_factor = 0.1
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_stoic_or_communal_desc
+				}
+			}
+			if = {
+				limit = {
+					trigger_if = {
+						limit = {
+							scope:character = {
+								is_ai = no
+							}
+						}
+						NOT = {
+							any_ruler = {
+								count >= 5
+								culture = prev
+								primary_title.tier >= tier_county
+								has_trait = diligent
+							}
+						}
+					}
+					trigger_else = {
+						always = no
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = rulers_with_diligent_desc
+				}
+			}
+
+			if = {
+				limit = {
+					scope:character = {
+						has_variable = tradition_hard_working_travel_discount
+					}
+				}
+
+				add = {
+					value = tradition_travel_discount
+					desc = tradition_travel_discount_desc
+				}
+			}
+
+			if = {
+				limit = {
+					culture_tradition_reduction_trigger = { TRADITION = tradition_hard_working }
+				}
+				multiply = {
+					value = 0.5
+					desc = inspired_by_culture_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 400
+		if = {
+			limit = {
+				NOR = {
+					culture_pillar:ethos_stoic = { is_in_list = traits }
+					culture_pillar:ethos_communal = { is_in_list = traits }
+				}
+			}
+			multiply = 0.5
+		}
+		else_if = {
+			limit = {
+				scope:character ?= {
+					ai_has_economical_boom_personality = yes
+				}
+			}
+			multiply = 4
+		}
+	}
+}
+
 tradition_miners = {
 	category = societal
 
@@ -236,7 +360,7 @@ tradition_miners = {
 		1 = western
 		4 = lotr_mining_fervour.dds
 	}
-	
+
 	is_shown = {
 		NOR = {
 			#has_cultural_pillar = heritage_khazad
@@ -264,20 +388,20 @@ tradition_miners = {
 			}
 		}
 	}
-	
+
 	parameters = {
 		can_use_mining_activity = yes
 		can_appoint_ootm = yes
 		can_recruit_halls_specialist = yes
 	}
-	
+
 	character_modifier = {
 		mountains_tax_mult = 0.05
 		desert_mountains_tax_mult = 0.05
 		hills_tax_mult = 0.05
 		halls_tax_mult = 0.05
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -285,11 +409,11 @@ tradition_miners = {
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -311,7 +435,7 @@ tradition_mining_fervour = {
 		1 = western
 		4 = lotr_mining_fervour.dds
 	}
-	
+
 	can_pick = {
 		custom_description = {
 			text = culture_in_mountains_desc
@@ -326,20 +450,20 @@ tradition_mining_fervour = {
 			}
 		}
 	}
-	
+
 	parameters = {
 		more_frequent_mining_expeditions = yes
 		mining_traits_more_common = yes
 		mining_traits_more_valued = yes
 	}
-	
+
 	character_modifier = {
 		mountains_development_growth_factor = 0.05
 		desert_mountains_development_growth_factor = 0.05
 		hills_development_growth_factor = 0.05
 		halls_development_growth_factor = 0.1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -347,11 +471,11 @@ tradition_mining_fervour = {
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -373,7 +497,7 @@ tradition_surface_dweller = {
 		1 = western
 		4 = desert_mountains.dds
 	}
-	
+
 	is_shown = {
 		OR = {
 			#has_cultural_pillar = heritage_khazad
@@ -386,7 +510,7 @@ tradition_surface_dweller = {
 			has_cultural_pillar = heritage_stonefoot
 		}
 	}
-	
+
 	can_pick = {
 		custom_tooltip = {
 			text = cannot_have_mountain_homes_and_surface_dweller
@@ -409,11 +533,11 @@ tradition_surface_dweller = {
 			}
 		}
 	}
-	
+
 	parameters = {
 		can_recruit_halls_specialist = yes
 	}
-	
+
 	character_modifier = {
 		plains_development_growth_factor = 0.1
 		mountains_development_growth_factor = 0.05
@@ -422,12 +546,12 @@ tradition_surface_dweller = {
 		red_desert_development_growth_factor = 0.1
 		halls_development_growth_factor = 0.05
 	}
-	
+
 	province_modifier = {
 		build_gold_cost = -0.1
 		halls_construction_gold_cost = 0.2
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -435,11 +559,11 @@ tradition_surface_dweller = {
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -461,7 +585,7 @@ tradition_jewel_dwarves = {
 		1 = mena
 		4 = tools.dds
 	}
-	
+
 	is_shown = {
 		OR = {
 			#has_cultural_pillar = heritage_khazad
@@ -474,12 +598,12 @@ tradition_jewel_dwarves = {
 			has_cultural_pillar = heritage_stonefoot
 		}
 	}
-	
+
 	parameters = {
 		lifestyle_artifact_crafting_traits_more_common = yes
 		jewel_smith_traits_more_common = yes
 	}
-	
+
 	character_modifier = {
 		monthly_crafting_lifestyle_xp_gain_mult = 0.10
 		artifact_decay_reduction_mult = -0.10
@@ -489,7 +613,7 @@ tradition_jewel_dwarves = {
 	county_modifier = {
 		development_growth_factor = 0.05
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -497,11 +621,11 @@ tradition_jewel_dwarves = {
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -535,10 +659,10 @@ tradition_mende_anduya = { #Dúnedain insularity
 			##Quonton
 			has_cultural_pillar = heritage_unified_adunaic
 		}
-	}	
+	}
 
 	can_pick = {
-		NOT = { 
+		NOT = {
 			lotr_culture_has_adunaic_supremacy_tradition = yes
 		}
 		trigger_if = { #LotR
@@ -551,7 +675,7 @@ tradition_mende_anduya = { #Dúnedain insularity
             }
         }
 	}
-	
+
 	parameters = {
 		dislikes_marrying_outside_of_cultural_heritage = yes
 		ai_doesnt_marry_outside_cultural_heritage = yes
@@ -560,9 +684,9 @@ tradition_mende_anduya = { #Dúnedain insularity
 		less_likely_to_culture_convert = yes
 	}
 	character_modifier = {
-		same_culture_opinion = 10		
+		same_culture_opinion = 10
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -604,11 +728,11 @@ tradition_mende_anduya = { #Dúnedain insularity
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -636,7 +760,7 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 		1 = western
 		4 = hunter.dds
 	}
-	
+
 	is_shown = {
 		##Quonton
 		OR = { 
@@ -644,7 +768,7 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 			has_cultural_tradition = tradition_new_numenor
 		}
 	}
-	
+
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
 		custom_tooltip = {
@@ -661,7 +785,7 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
             }
         }
 	}
-	
+
 	parameters = {
 		more_frequent_hunts = yes
 		hunting_traits_more_valued = yes
@@ -672,12 +796,12 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 		unlock_voluntary_laampdom = yes
 		more_likely_to_be_laamps = yes
 	}
-	
+
 	character_modifier = {
 		character_travel_speed_mult = 0.15
 		character_travel_safety_mult = 0.25
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -724,11 +848,11 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 					desc = rulers_with_hunter_lifestyle_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -768,14 +892,14 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 #             }
 #         }
 # 	}
-	
+
 # 	parameters = { # Unlocks Elven-friendly interactions
 
 # 	}
 # 	character_modifier = {
-	
+
 # 	}
-	
+
 # 	cost = {
 # 		prestige = {
 # 			add = {
@@ -817,11 +941,11 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 # 					desc = non_tolerated_cultures_desc
 # 				}
 # 			}
-			
+
 # 			multiply = tradition_replacement_cost_if_relevant
 # 		}
 # 	}
-	
+
 # 	ai_will_do = {
 # 		value = 100
 # 		if = {
@@ -838,10 +962,10 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 # 			}
 # 			multiply = 0
 # 		}
-# 	}	
+# 	}
 # }
 
-tradition_blacknumenorean_legacy = { # Black Numenorean traditions 
+tradition_blacknumenorean_legacy = { # Black Numenorean traditions
 	category = societal
 
 	layers = {
@@ -859,7 +983,7 @@ tradition_blacknumenorean_legacy = { # Black Numenorean traditions
 	}
 
 	can_pick = {
-		NOT = { 
+		NOT = {
 			has_cultural_tradition = tradition_staunch_traditionalists
 			lotr_culture_has_adunaic_supremacy_tradition = yes
 		}
@@ -874,11 +998,11 @@ tradition_blacknumenorean_legacy = { # Black Numenorean traditions
         }
 	}
 
-	parameters = { 
-		dislikes_marrying_outside_adunai_heritage = yes 		
-		values_numenorean_blood = yes 
+	parameters = {
+		dislikes_marrying_outside_adunai_heritage = yes
+		values_numenorean_blood = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
-		
+
 		# tradition_staunch_traditionalists like parameters
 		stubborn_trait_more_common = yes
 		expensive_convert_to_local_culture = yes
@@ -886,18 +1010,18 @@ tradition_blacknumenorean_legacy = { # Black Numenorean traditions
 		less_likely_to_promote_culture = yes # These 2 parameters need to be merged to avoid text bloat
 		less_likely_to_culture_convert = yes
 	}
-		
+
 	character_modifier = { # change from culture to tenet
 		#same_tradition_blacknumenorean_opinion = 5
 	}
-	
+
 	culture_modifier = {
 		cultural_acceptance_gain_mult = -0.35
 	}
 
 	county_modifier = {
 		monthly_county_control_growth_add = 0.5
-	}	
+	}
 
 	cost = {
 		prestige = {
@@ -940,13 +1064,13 @@ tradition_blacknumenorean_legacy = { # Black Numenorean traditions
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
 }
 
-tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically the same as normal BN, open to suggestion on adjustments. 
+tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically the same as normal BN, open to suggestion on adjustments.
 	category = societal
 
 	layers = {
@@ -963,8 +1087,8 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 	}
 
 	can_pick = {
-		NOT = { 
-			has_cultural_tradition = tradition_staunch_traditionalists 
+		NOT = {
+			has_cultural_tradition = tradition_staunch_traditionalists
 			lotr_culture_has_adunaic_supremacy_tradition = yes
 		}
 
@@ -980,11 +1104,11 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 	}
 
 
-	parameters = { 
-		dislikes_marrying_outside_adunai_heritage = yes 		
-		values_numenorean_blood = yes 
+	parameters = {
+		dislikes_marrying_outside_adunai_heritage = yes
+		values_numenorean_blood = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
-		
+
 		# tradition_staunch_traditionalists like parameters
 		stubborn_trait_more_common = yes
 		expensive_convert_to_local_culture = yes
@@ -994,7 +1118,7 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 		peasant_and_populist_factions_less_common = yes
 		unlock_maa_indentured_conscripts = yes
 	}
-		
+
 	character_modifier = { # change from culture to tenet
 		#same_tradition_blacknumenorean_opinion = 5
 		dread_loss_mult = -0.5
@@ -1003,7 +1127,7 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 		dread_decay_mult = -0.3
 		revolting_siege_morale_loss_mult = 0.25
 	}
-	
+
 	culture_modifier = {
 		cultural_acceptance_gain_mult = -0.6
 	}
@@ -1011,7 +1135,7 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 	county_modifier = {
 		monthly_county_control_growth_add = 0.5
 		development_growth_factor = -0.1
-	}	
+	}
 
 	cost = {
 		prestige = {
@@ -1054,7 +1178,7 @@ tradition_anbalukkhori = { # Anbalukkhori tradition by Trig. Currently basically
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1077,7 +1201,7 @@ tradition_kharadunai = { # Kharadunaic tradition by Trig
 	}
 
 	can_pick = {
-		NOT = { 
+		NOT = {
 			has_cultural_tradition = tradition_staunch_traditionalists
 			lotr_culture_has_adunaic_supremacy_tradition = yes
 		}
@@ -1093,11 +1217,11 @@ tradition_kharadunai = { # Kharadunaic tradition by Trig
         }
 	}
 
-	parameters = { 
-		dislikes_marrying_outside_adunai_heritage = yes 			
-		values_numenorean_blood = yes 
+	parameters = {
+		dislikes_marrying_outside_adunai_heritage = yes
+		values_numenorean_blood = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
-		
+
 		# tradition_staunch_traditionalists like parameters
 		expensive_convert_to_local_culture = yes
 		harder_to_hybridize = yes
@@ -1109,7 +1233,7 @@ tradition_kharadunai = { # Kharadunaic tradition by Trig
 		cannot_attack_truces = yes
 		facilitate_white_peace = yes
 	}
-		
+
 	character_modifier = { # change from culture to tenet
 		#same_tradition_blacknumenorean_opinion = 5
 		long_reign_bonus_mult = 0.25
@@ -1117,11 +1241,11 @@ tradition_kharadunai = { # Kharadunaic tradition by Trig
 		dread_decay_mult = -0.25
 		revolting_siege_morale_loss_mult = 0.25
 	}
-	
+
 	culture_modifier = {
 		cultural_acceptance_gain_mult = -0.5
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1163,7 +1287,7 @@ tradition_kharadunai = { # Kharadunaic tradition by Trig
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1186,10 +1310,10 @@ tradition_reformed_kharadunai = { # Kharadunaic reforms by Derei
 		always = no # Part of Derei's content, cannot be normally picked
 	}
 
-	parameters = { 		
-		values_numenorean_blood = yes 
+	parameters = {
+		values_numenorean_blood = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
-		
+
 		# tradition_staunch_traditionalists remnants from tradition_kharadunai
 		expensive_convert_to_local_culture = yes
 		less_likely_to_culture_convert = yes
@@ -1201,7 +1325,7 @@ tradition_reformed_kharadunai = { # Kharadunaic reforms by Derei
 		#Philosopher culture but diplomatic
 		innovation_from_diplomacy_traits = yes
 	}
-		
+
 	character_modifier = { # change from culture to tenet
 		dread_decay_mult = 0.25
 		development_growth_factor = 0.1
@@ -1615,8 +1739,8 @@ tradition_bellakarani_sophistication = {
 			text = must_have_administrative_government_tt
 			scope:character = { government_allows = administrative }
 		}
-		NOT = { 
-			OR = { 
+		NOT = {
+			OR = {
 				lotr_culture_has_adunaic_supremacy_tradition = yes
 				has_cultural_tradition = tradition_mende_anduya
 			}
@@ -1640,7 +1764,7 @@ tradition_bellakarani_sophistication = {
             }
         }
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1688,11 +1812,11 @@ tradition_bellakarani_sophistication = {
 					desc = inspired_by_culture_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 200
 		# if = { #LotR
@@ -1738,12 +1862,12 @@ tradition_azralai = { # Azralâi tradition made by Quonton
         }
 	}
 
-	parameters = { 
-		dislikes_marrying_outside_of_cultural_heritage = yes 		
-		values_numenorean_blood = yes 
+	parameters = {
+		dislikes_marrying_outside_of_cultural_heritage = yes
+		values_numenorean_blood = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
 		less_likely_to_culture_convert = yes
-		
+
 		#culture_blending like parameters6
 		cheaper_to_hybridize = yes
 		learns_more_languages = yes
@@ -1751,7 +1875,7 @@ tradition_azralai = { # Azralâi tradition made by Quonton
 		#Hereditary Hierechry replacements
 		# loyal_trait_more_valued = yes
 		poorly_educated_leaders_distrusted = yes
-		
+
 		#Coastal bonuses
 		coastal_agriculture_building_bonuses = yes
 		coastal_holding_bonuses = yes
@@ -1766,7 +1890,7 @@ tradition_azralai = { # Azralâi tradition made by Quonton
 	culture_modifier = {
 		cultural_acceptance_gain_mult = 0.15
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1808,12 +1932,12 @@ tradition_azralai = { # Azralâi tradition made by Quonton
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
 
-	
+
 }
 
 tradition_tanturaki = { # Tantûraki tradition by Zeltron
@@ -1833,7 +1957,7 @@ tradition_tanturaki = { # Tantûraki tradition by Zeltron
 	}
 
 	can_pick = {
-		NOT = { 
+		NOT = {
 			has_cultural_tradition = tradition_staunch_traditionalists
 			lotr_culture_has_adunaic_supremacy_tradition = yes
 		}
@@ -1848,11 +1972,11 @@ tradition_tanturaki = { # Tantûraki tradition by Zeltron
         }
 	}
 
-	parameters = { 
-		dislikes_marrying_outside_adunai_heritage = yes 		
-		values_numenorean_blood = yes 
+	parameters = {
+		dislikes_marrying_outside_adunai_heritage = yes
+		values_numenorean_blood = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
-		
+
 		# tradition_staunch_traditionalists like parameters
 		stubborn_trait_more_common = yes
 		expensive_convert_to_local_culture = yes
@@ -1861,7 +1985,7 @@ tradition_tanturaki = { # Tantûraki tradition by Zeltron
 		less_likely_to_culture_convert = yes
 		unlock_maa_indentured_conscripts = yes
 	}
-		
+
 	character_modifier = { # change from culture to tenet
 		#same_tradition_blacknumenorean_opinion = 5
 		different_culture_opinion = -50
@@ -1870,16 +1994,16 @@ tradition_tanturaki = { # Tantûraki tradition by Zeltron
 		monthly_county_control_growth_add = 0.2
 		county_opinion_add = -30
 		build_speed = -0.05
-		build_gold_cost = -0.05				
+		build_gold_cost = -0.05
 	}
-	
+
 	culture_modifier = {
 		cultural_acceptance_gain_mult = -0.80
 	}
 
 	county_modifier = {
 		county_opinion_add = 30
-	}	
+	}
 
 	cost = {
 		prestige = {
@@ -1922,7 +2046,7 @@ tradition_tanturaki = { # Tantûraki tradition by Zeltron
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1938,7 +2062,7 @@ tradition_slave_society = {
 		1 = mediterranean
 		4 = battle.dds
 	}
-	
+
 	is_shown = {
 		OR = {
 			has_cultural_tradition = tradition_blacknumenorean_legacy
@@ -1964,20 +2088,20 @@ tradition_slave_society = {
             }
         }
 	}
-	
+
 	parameters = {
 		culture_can_raid_at_sea_even_if_feudal = yes
 		can_launch_slave_expeditions = yes
 	}
-	
+
 	culture_modifier = { # LOTR: Generally speaking not found of cultures build on slave trading
 		cultural_acceptance_gain_mult = -0.25
 	}
-	
+
 	character_modifier = {
 		max_loot_mult = 0.25
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2015,11 +2139,11 @@ tradition_slave_society = {
 			#		desc = high_coastal_percentage_desc
 			#	}
 			#}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 50
 		if = {
@@ -2043,7 +2167,7 @@ tradition_orcish_society = {
 	is_shown = {
 		always = no
 	}
-	
+
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
 		is_orc_culture = yes
@@ -2057,7 +2181,7 @@ tradition_orcish_society = {
             }
         }
 	}
-	
+
 	parameters = {
 		culture_can_raid_at_sea_even_if_feudal = yes
 		can_use_conquest_cbs = yes
@@ -2068,21 +2192,21 @@ tradition_orcish_society = {
 		can_recruit_halls_specialist = yes
 		murderers_are_prestigious_and_feared = yes
 	}
-	
+
 	character_modifier = { # Orcs constantly infight
 		monthly_county_control_decline_factor = -0.2
 		vassal_opinion = -30 # An Orc Overlord can never rest easy
-		general_opinion = -10 
-		
+		general_opinion = -10
+
 		ai_honor = -40 # Orcs are not an honorable lot!
 		ai_war_chance = 1
 		ai_war_cooldown = -0.25
 	}
-	
+
 	province_modifier = {
 		levy_size = 0.15
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2128,7 +2252,7 @@ tradition_orcish_society = {
 					desc = rulers_at_war_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -2153,7 +2277,7 @@ tradition_orcish_society = {
 # 			}
 # 		}
 # 	}
-	
+
 # 	parameters = {
 # 		sorcerer_trait_gives_bonuses = yes
 # 		sorcerer_trait_more_common = yes
@@ -2206,11 +2330,11 @@ tradition_orcish_society = {
 # 					desc = rulers_with_mystic_desc
 # 				}
 # 			}
-			
+
 # 			multiply = tradition_replacement_cost_if_relevant
 # 		}
 # 	}
-	
+
 # 	ai_will_do = {
 # 		value = 100
 # 		if = {
@@ -2249,20 +2373,20 @@ tradition_heryvellyn = { # Elven Wine-Lovers Tradition
 			}
 		}
 	}
-	
+
 	parameters = {
 		unlock_wine_tasting_activity_elf = yes
-		
+
 	}
 
 	character_modifier = {
-		stress_loss_per_prestige_level = 0.03		
-	}	
+		stress_loss_per_prestige_level = 0.03
+	}
 
 	county_modifier = {
 		development_growth_factor = 0.05
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2270,7 +2394,7 @@ tradition_heryvellyn = { # Elven Wine-Lovers Tradition
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			if = {
 				limit = {
 					NOR = {
@@ -2284,11 +2408,11 @@ tradition_heryvellyn = { # Elven Wine-Lovers Tradition
 					desc = not_bureaucratic_courtly_or_egalitarian_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 75
 	}
@@ -2305,7 +2429,7 @@ tradition_sirgalan_exiles = { # Sirrandai Specific Tradition
 
 	is_shown = {
 		always = no
-	}	
+	}
 
 	can_pick = {
 		trigger_if = { #LotR
@@ -2318,12 +2442,12 @@ tradition_sirgalan_exiles = { # Sirrandai Specific Tradition
             }
         }
 	}
-	
+
 	parameters = {
 		dislikes_marrying_outside_of_cultural_heritage = yes
 		courtiers_less_likely_to_leave_same_culture_court = yes
 	}
-	
+
 	culture_modifier = {
 	}
 	character_modifier = {
@@ -2332,7 +2456,7 @@ tradition_sirgalan_exiles = { # Sirrandai Specific Tradition
 	}
 	county_modifier = {
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2374,11 +2498,11 @@ tradition_sirgalan_exiles = { # Sirrandai Specific Tradition
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -2416,14 +2540,14 @@ tradition_sirgala_renewed = { # Sirrandai Specific Tradition
             }
         }
 	}
-	
+
 	parameters = {
 		forest_fighter_trait_more_common = yes
 		content_trait_more_common = yes
 	}
-	
+
 	culture_modifier = {
-		
+
 	}
 	character_modifier = {
 		same_culture_opinion = 15
@@ -2437,7 +2561,7 @@ tradition_sirgala_renewed = { # Sirrandai Specific Tradition
 		forest_construction_gold_cost = -0.15
 		forest_holding_construction_gold_cost = -0.15
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2479,11 +2603,11 @@ tradition_sirgala_renewed = { # Sirrandai Specific Tradition
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -2537,11 +2661,11 @@ tradition_avarin_solidarity = { # Avari Specific Tradition
 	culture_modifier = {
 	}
 	character_modifier = {
-		same_culture_opinion = 10		
+		same_culture_opinion = 10
 	}
 	county_modifier = {
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2583,11 +2707,11 @@ tradition_avarin_solidarity = { # Avari Specific Tradition
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -2618,7 +2742,7 @@ tradition_ancient_wanderers = { # Cuind Specific Tradition
 
 	is_shown = {
 		has_cultural_pillar = heritage_moriquendi
-	}	
+	}
 
 	can_pick = {
 		trigger_if = { #LotR
@@ -2631,15 +2755,15 @@ tradition_ancient_wanderers = { # Cuind Specific Tradition
             }
         }
 	}
-	
+
 	parameters = {
 		more_likely_to_leave_court = yes
 		unlock_voluntary_laampdom = yes
 		more_likely_to_be_laamps = yes
 	}
-	
+
 	culture_modifier = {
-		
+
 	}
 	character_modifier = {
 		movement_speed = 0.1
@@ -2647,7 +2771,7 @@ tradition_ancient_wanderers = { # Cuind Specific Tradition
 	}
 	county_modifier = {
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2689,11 +2813,11 @@ tradition_ancient_wanderers = { # Cuind Specific Tradition
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {

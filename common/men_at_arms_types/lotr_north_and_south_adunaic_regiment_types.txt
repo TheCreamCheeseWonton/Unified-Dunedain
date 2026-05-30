@@ -539,7 +539,7 @@ knights_of_kharadune = {
 }
 
 indentured_conscripts = {
-	type = peasant_militia
+	type = skirmishers
 
 	buy_cost = { gold = 20 }
 	low_maintenance_cost = { gold = 0.05 }

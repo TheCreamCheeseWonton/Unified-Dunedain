@@ -23,7 +23,7 @@
 	coa_gfx = { southern_numenorean_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_south_adunai_colonial_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -57,7 +57,7 @@ anbalukkhori = {
 	coa_gfx = { southern_evil_numenorean_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { anbalukkhori_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_anbalukkhori_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -92,7 +92,7 @@ kharadunaim = {
 	# building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	building_gfx = { kharadunaic_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { thani_hazad_clothing_gfx }
-	unit_gfx = { iberian_christian_unit_gfx }
+	unit_gfx = { acg_kharadunaim_unit_gfx iberian_christian_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -128,7 +128,7 @@ kharatakhori = {
 	# building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	building_gfx = { kharadunaic_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { anbalukkhori_clothing_gfx }
-	unit_gfx = { iberian_christian_unit_gfx }
+	unit_gfx = { acg_south_adunai_unit_gfx iberian_christian_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -163,7 +163,7 @@ tanturaki = { # The inhabitants of the colony of Tantûrak, this culture is exti
 	coa_gfx = { southern_evil_numenorean_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_tanturaki_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -201,7 +201,7 @@ gimilarani = { #Faithful Batanim of Thani Hazad
 	# building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	building_gfx = { kharadunaic_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { thani_hazad_clothing_gfx }
-	unit_gfx = { iberian_christian_unit_gfx }
+	unit_gfx = { acg_gimilthani_unit_gfx iberian_christian_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	

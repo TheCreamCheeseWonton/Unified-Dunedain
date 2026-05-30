@@ -2164,6 +2164,10 @@ fire_intro_events_3000 = {
 				id = lotr_intro_events.7708
 				days = 1
 			}
+			trigger_event = {
+				id = hobbit.201
+				years = 3
+			}
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
 	}

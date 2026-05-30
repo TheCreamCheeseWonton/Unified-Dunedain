@@ -3898,6 +3898,7 @@ tradition_roving_bands = {
 		character_travel_speed_mult = 0.15
 		character_travel_safety_mult = 0.10
 		hostile_county_attrition_raiding = -0.25
+		raid_speed = 0.1
 	}
 	
 	cost = {
@@ -4061,6 +4062,123 @@ tradition_beast_masters = {
 									terrain = hills
 									terrain = halls
 								}
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}
+
+tradition_thralls_of_angmar = {
+	category = regional
+
+	layers = {
+		0 = learning
+		1 = western
+		4 = iron_crown.dds
+	}
+	is_shown = {
+		is_orc_culture = yes
+	}
+	can_pick = {
+		culture_not_pacifistic_trigger = yes
+		custom_tooltip = {
+			text = culture_in_angmar_desc
+			any_culture_county = {
+				percent >= 0.4
+				any_county_province = {
+					geographical_region = middleearth_forodwaith_angmar
+				}
+			}
+		}		
+		trigger_if = { #LotR
+            limit = {
+                scope:replacing ?= culture_tradition:tradition_variag_succession
+            }
+            custom_tooltip = {
+                text = cannot_replace_variag_succession
+                NOT = { has_cultural_tradition = tradition_variag_succession } #To prevent stacking after hybridization
+            }
+        }
+	}
+	parameters = {
+		winter_soldier_trait_more_common = yes
+		winter_trait_bonuses = yes
+		can_recruit_winter_specialist = yes
+		resistant_to_winter_privation = yes
+		unlock_maa_angmar_ironclaws = yes
+		doesnt_care_about_culture_faith_in_factions = yes
+		wants_to_learn_liege_language = yes
+		extra_learn_language_success_chance_vs_liege = yes
+		more_hostage_acceptance_for_vassals = yes
+	}
+	character_modifier = {
+		taiga_travel_danger = taiga_low_danger_reduction
+		opinion_of_liege = 10
+	}
+	county_modifier = {
+		county_opinion_add = 5
+	}
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_stoic_or_communal_desc
+				}
+			}
+			#if = {
+			#	limit = {
+			#		NOT = {
+			#			any_culture_county = {
+			#				percent >= 0.3
+			#				any_county_province = {
+			#					OR = {
+			#						geographical_region = world_europe_north
+			#						geographical_region = world_europe_west
+			#						geographical_region = world_europe_east
+			#						geographical_region = world_steppe
+			#						geographical_region = world_tibet
+			#					}
+			#				}
+			#			}
+			#		}
+			#	}
+			#	add = {
+			#		value = tradition_unfulfilled_criteria_penalty
+			#		desc = winter_percentage_desc
+			#	}
+			#}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+	ai_will_do = {
+		value = 400
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						any_sub_realm_county = {
+							percent >= 0.3
+							culture = scope:character.culture
+							any_county_province = {
+								geographical_region = middleearth_forodwaith
 							}
 						}
 					}

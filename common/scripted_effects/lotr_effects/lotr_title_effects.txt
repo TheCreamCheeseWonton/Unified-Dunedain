@@ -810,6 +810,11 @@ lotr_set_important_location_effect = {
 			enter_realm_event = lotr_enter_realm.4031
 		}
 		set_important_location = {
+			title = title:k_usakan
+			leave_realm_event = lotr_enter_realm.4030
+			enter_realm_event = lotr_enter_realm.4031
+		}
+		set_important_location = {
 			title = title:k_talilan
 			leave_realm_event = lotr_enter_realm.4030
 			enter_realm_event = lotr_enter_realm.4031

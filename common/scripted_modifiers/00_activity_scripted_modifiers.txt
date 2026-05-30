@@ -921,6 +921,11 @@ activity_guest_hunt_ai_accept_modifier = {
 		add = 10
 		desc = ACTIVITY_MARTIAL_PROWESS_REASON
 	}
+	modifier = { #LOTR
+		has_trait = education_martial_prowess_5
+		add = 12
+		desc = ACTIVITY_MARTIAL_PROWESS_REASON
+	}
 	modifier = {
 		has_trait = education_martial_1
 		add = 2
@@ -1217,6 +1222,11 @@ activity_guest_tournament_ai_accept_modifier = {
 	modifier = {
 		has_trait = education_martial_prowess_4
 		add = 7
+		desc = ACTIVITY_MARTIAL_PROWESS_REASON
+	}
+	modifier = { #LOTR
+		has_trait = education_martial_prowess_5
+		add = 10
 		desc = ACTIVITY_MARTIAL_PROWESS_REASON
 	}
 	modifier = {

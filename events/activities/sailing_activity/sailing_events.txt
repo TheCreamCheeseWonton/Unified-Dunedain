@@ -6684,7 +6684,7 @@ sailing.3304 = {
 	}
 	right_portrait = {
 		character = scope:mutiny_leader
-		animation = callous
+		animation = personality_callous
 	}
 
 	immediate = {

@@ -17131,6 +17131,17 @@ generate_historical_artifact_based_on_location_effect = {
 			}
 			create_artifact_durins_helm_effect = { OWNER = root }
 		}
+		5 = { #Wildwood Cupboard
+			trigger = {
+				NOT = {
+					any_artifact = {
+						has_variable = wildwood_cupboard
+					}
+				}
+				$LOCATION$ ?= { geographical_region = middleearth_mountains_misty_khazad_dum }
+			}
+			create_artifact_wildwood_cupboard_effect = { OWNER = root }
+		}
 		10 = { #Sting
 			trigger = {
 				NOT = {
@@ -17917,6 +17928,17 @@ generate_historical_artifact_based_on_location_effect = {
 				}
 			}
 			create_artifact_nimphelos_effect = { OWNER = root }
+		}
+		5 = { #Creation of the Seven Fathers
+			trigger = {
+				NOT = {
+					any_artifact = {
+						has_variable = creation_of_the_seven_fathers
+					}
+				}
+				$LOCATION$ ?= { geographical_region = middleearth_mountains_blue }
+			}
+			create_artifact_creation_of_the_seven_fathers_effect = { OWNER = root }
 		}
 		10 = { #Standard of Cardolan
 			trigger = {

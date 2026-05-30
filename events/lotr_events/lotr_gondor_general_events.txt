@@ -1105,7 +1105,13 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				if = {
 					limit = {
 						culture = {
-							NOT = { has_cultural_pillar = heritage_dunedain }
+							NOR = { 
+								has_cultural_pillar = heritage_dunedain 
+								has_cultural_pillar = heritage_calaquendi
+								has_cultural_pillar = heritage_lomiquendi
+								has_cultural_pillar = heritage_moriquendi
+								has_cultural_pillar = heritage_wastelands
+							}
 						}
 					}
 					set_county_culture = culture:gondorian
@@ -1139,7 +1145,13 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				if = {
 					limit = {
 						culture = {
-							NOT = { has_cultural_pillar = heritage_dunedain }
+							NOR = { 
+								has_cultural_pillar = heritage_dunedain 
+								has_cultural_pillar = heritage_calaquendi
+								has_cultural_pillar = heritage_lomiquendi
+								has_cultural_pillar = heritage_moriquendi
+								has_cultural_pillar = heritage_wastelands
+							}
 						}
 					}
 					set_county_culture = culture:orodbedhrim
@@ -1173,7 +1185,13 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				if = {
 					limit = {
 						culture = {
-							NOT = { has_cultural_pillar = heritage_dunedain }
+							NOR = { 
+								has_cultural_pillar = heritage_dunedain 
+								has_cultural_pillar = heritage_calaquendi
+								has_cultural_pillar = heritage_lomiquendi
+								has_cultural_pillar = heritage_moriquendi
+								has_cultural_pillar = heritage_wastelands
+							}
 						}
 					}
 					set_county_culture = culture:gondorian
@@ -1207,7 +1225,13 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				if = {
 					limit = {
 						culture = {
-							NOT = { has_cultural_pillar = heritage_dunedain }
+							NOR = { 
+								has_cultural_pillar = heritage_dunedain 
+								has_cultural_pillar = heritage_calaquendi
+								has_cultural_pillar = heritage_lomiquendi
+								has_cultural_pillar = heritage_moriquendi
+								has_cultural_pillar = heritage_wastelands
+							}
 						}
 					}
 					set_county_culture = culture:gondorian
@@ -1241,7 +1265,13 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				if = {
 					limit = {
 						culture = {
-							NOT = { has_cultural_pillar = heritage_dunedain }
+							NOR = { 
+								has_cultural_pillar = heritage_dunedain 
+								has_cultural_pillar = heritage_calaquendi
+								has_cultural_pillar = heritage_lomiquendi
+								has_cultural_pillar = heritage_moriquendi
+								has_cultural_pillar = heritage_wastelands
+							}
 						}
 					}
 					set_county_culture = culture:belfalathrim
@@ -1275,7 +1305,13 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				if = {
 					limit = {
 						culture = {
-							NOT = { has_cultural_pillar = heritage_dunedain }
+							NOR = { 
+								has_cultural_pillar = heritage_dunedain 
+								has_cultural_pillar = heritage_calaquendi
+								has_cultural_pillar = heritage_lomiquendi
+								has_cultural_pillar = heritage_moriquendi
+								has_cultural_pillar = heritage_wastelands
+							}
 						}
 					}
 					set_county_culture = culture:gondorian
@@ -1290,6 +1326,7 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 		}
 		title:k_ithilien = {
 			every_de_jure_county = {
+				limit = { NOT = { this = title:c_minas_ithil } }
 				holder = {
 					if = {	
 						limit = {
@@ -1309,7 +1346,13 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				if = {
 					limit = {
 						culture = {
-							NOT = { has_cultural_pillar = heritage_dunedain }
+							NOR = { 
+								has_cultural_pillar = heritage_dunedain 
+								has_cultural_pillar = heritage_calaquendi
+								has_cultural_pillar = heritage_lomiquendi
+								has_cultural_pillar = heritage_moriquendi
+								has_cultural_pillar = heritage_wastelands
+							}
 						}
 					}
 					set_county_culture = culture:gondorian
@@ -1347,7 +1390,7 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 			every_held_title = {
 				limit = {
 					tier >= tier_county
-					empire = {
+					empire ?= {
 						this = title:c_minas_tirith.empire
 					}
 				}
@@ -1364,7 +1407,7 @@ scripted_effect set_gondor_ruler_to_chosen_candidate = {
 				limit = { is_ai = yes }
 				add_character_modifier = {
 					modifier = restoration_of_gondor_modifier
-					years = 2
+					years = 5
 				}
 			}
 		}
@@ -2115,12 +2158,12 @@ gondor.6502 = { # After the War - choosing a new ruler for Gondor
 				create_maa_regiment = {
 					type = guard_of_the_citadel
 					check_can_recruit = yes
-					size = 3
+					size = 4
 				}
 				create_maa_regiment = {
 					type = rangers_of_ithilien
 					check_can_recruit = yes
-					size = 3
+					size = 4
 				}
 			}
 		}
@@ -2150,15 +2193,15 @@ gondor.6502 = { # After the War - choosing a new ruler for Gondor
 						levies = 800
 						men_at_arms = {
 							type = guard_of_the_citadel
-							stacks = 4
+							stacks = 5
 						}
 						men_at_arms = {
 							type = gondorian_bowmen
-							stacks = 4
+							stacks = 5
 						}
 						men_at_arms = {
 							type = gondorian_footmen
-							stacks = 4
+							stacks = 5
 						}
 						location = title:c_minas_tirith.title_province
 						uses_supply = no

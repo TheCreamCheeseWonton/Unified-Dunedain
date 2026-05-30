@@ -47,7 +47,7 @@ numenorean = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_numenorean_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -83,7 +83,7 @@ new_numenorean = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_numenorean_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -117,7 +117,7 @@ new_dunedain = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_dunedain_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -156,7 +156,7 @@ dunedain = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { arnorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_dunedain_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -195,7 +195,7 @@ arnorian = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { arnorian_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { arnorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_arnorian_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -239,7 +239,7 @@ uialedain = { #Folk of Emyn Uial (Hills of Evendim)
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { arnorian_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { uialedain_clothing_gfx }
-	unit_gfx = { western_unit_gfx }
+	unit_gfx = { acg_uialedain_unit_gfx western_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -279,7 +279,7 @@ dunedain_ranger = { # For the Dúnedain of Arnor after the fall of Fornost and t
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { arnorian_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { dunedain_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_dunedain_ranger_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -320,7 +320,7 @@ new_arnorian = { # Revivalist culture of Arnor in the Fourth Age
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { arnorian_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_new_arnorian_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 
@@ -356,7 +356,7 @@ gondorian = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_gondorian_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -391,7 +391,7 @@ caledhrim = { # The people of Calenardhon, descended from a mix of the local Dae
 	coa_gfx = { caledhrim_coa_gfx numenorean_coa_gfx dunedain_group_coa_gfx eredrim_coa_gfx }
 	building_gfx = { caledhrim_building_gfx numenorean_building_gfx daen_building_gfx western_building_gfx  }
 	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_caledhrim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -428,7 +428,7 @@ orodbedhrim = { # The mixed people of the highlands, descended from the Men of t
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_orodbedhrim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -463,7 +463,7 @@ umbaredain = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { umbar_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_umbaredain_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -499,7 +499,7 @@ harondorim = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { harondorim_clothing_gfx } #replace to new mix of north_haradrim and gondorian
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_harondorim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -537,7 +537,7 @@ belfalathrim = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { belfalathrim_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_belfalathrim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
 	
@@ -573,7 +573,7 @@ eothedain = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_caledhrim_unit_gfx dunedain_unit_gfx }
 	
 	ethnicities = {
 		1 = numenorean_ethnicity

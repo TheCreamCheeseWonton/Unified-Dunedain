@@ -1,4 +1,5 @@
 ﻿has_dunedain_court_illustration_trigger = { # Gondorian
+	exists = title:e_gondor_steward
 	primary_title != title:e_gondor_steward
 	capital_county.culture = {
 		has_cultural_pillar = heritage_dunedain
@@ -15,6 +16,7 @@
 }
 
 has_dunedain_steward_court_illustration_trigger = { # House of Steward
+	exists = title:e_gondor_steward
 	primary_title = title:e_gondor_steward
 	capital_county.culture = {
 		has_cultural_pillar = heritage_dunedain
@@ -69,6 +71,10 @@ has_moriquendi_court_illustration_trigger = {
 	}
 }
 
+has_lothlorien_court_illustration_trigger = {
+	capital_province = { geographical_region = middleearth_west_rhovanion_lothlorien }
+}
+
 has_hadorim_court_illustration_trigger = {
 	capital_county.culture = {
 		has_cultural_pillar = heritage_eotheod
@@ -88,9 +94,7 @@ has_middlemen_court_illustration_trigger = {
 				has_cultural_pillar = heritage_danan_lin
 				has_cultural_tradition = tradition_the_people_of_the_plains_old
 				this = culture:gargath
-				any_parent_culture_or_above = { this = culture:gargath }
 				this = culture:logath
-				any_parent_culture_or_above = { this = culture:logath }
 			}
 			NOT = { has_cultural_tradition = tradition_dorwinion_vineyards }
 		}
@@ -130,10 +134,7 @@ has_saruman_many_colours_court_illustration_trigger = {
 
 has_mordorrim_court_illustration_trigger = {
 	culture = {
-		OR = {
-			this = culture:mordorrim
-			any_parent_culture_or_above = { this = culture:mordorrim }
-		}
+		this = culture:mordorrim
 	}
 }
 
@@ -253,6 +254,7 @@ has_adunai_court_illustration_trigger = {
 			has_cultural_pillar = heritage_southern_adunaic
 			has_cultural_pillar = heritage_eastern_adunaic
 			has_cultural_pillar = heritage_bellakari
+			##Quonton
 			has_cultural_pillar = heritage_unified_adunaic
 		}
 	}

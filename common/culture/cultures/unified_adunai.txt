@@ -21,7 +21,7 @@
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_pharazain_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -56,7 +56,7 @@ new_numenorean_adunaic = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
-	unit_gfx = { dunedain_unit_gfx }
+	unit_gfx = { acg_numenorean_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	

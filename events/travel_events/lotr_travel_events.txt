@@ -7313,6 +7313,901 @@ lotr_travel_events.0025 = { # Second time meeting the Orc - He beat you
 }
 
 ##########################################
+# Dwarven Toymaker
+# by Juke
+# 0026
+# Encounter a Dwarven Toymaker on the road
+##########################################
+
+scripted_trigger lotr_toy_eligible_child_trigger = {
+	OR = {
+		is_lotr_adult = no
+		has_trait = eccentric
+	}
+	NOR = {
+		has_relation_rival = root
+		scope:child_1 ?= this
+		scope:child_2 ?= this
+		any_character_artifact = { has_variable = dwarven_toy_artifact }
+		has_character_flag = had_dwarven_toy_event
+	}
+}
+scripted_effect lotr_create_toy_effect = {
+	hidden_effect = {
+		scope:toymaker = {
+			create_artifact = {
+				name = $TOY_TYPE$.t
+				description = {
+					desc = lotr_toy_generic
+					desc = $TOY_TYPE$.desc
+					desc = lotr_toy_outro
+				}
+				template = dwarven_toy_template
+				type = miscellaneous
+				visuals = chest
+				modifier = artifact_learning_1_modifier
+				modifier = artifact_stress_gain_4_modifier
+				wealth = 40
+				quality = 40
+				save_scope_as = toy_artifact
+			}
+		}
+	}
+}
+scripted_effect lotr_gift_toy_effect = {
+	save_scope_as = toy_sender
+	location.county.duchy = { save_scope_as = toy_duchy }
+	$TARGET$ = { save_scope_as = toy_receiver }
+	scope:toy_receiver = { trigger_event = lotr_travel_events.0027 }
+	show_as_tooltip = {
+		scope:toy_receiver = {
+			add_opinion = {
+				target = scope:toy_sender
+				modifier = gift_opinion
+				opinion = 25
+			}
+		}
+		scope:toy_artifact = { set_owner = scope:toy_receiver }
+		scope:toy_receiver = {
+			lotr_toy_boost_education_effect = yes
+		}
+	}
+}
+scripted_effect lotr_toy_boost_education_effect = {
+	save_scope_as = educatee
+	if = {
+		limit = {
+			age < 16 # Still getting educated
+			has_education_focus_trigger = yes
+		}
+		custom_tooltip = lotr_travel_events.0026.tt
+		hidden_effect = {
+			education_point_acquisition_additional_points_effect = { LEVEL = mid }
+		}
+	}
+	else_if = {
+		limit = {
+			age < 16 # Still getting educated
+			has_education_focus_trigger = no
+		}
+		custom_tooltip = lotr_travel_events.0026.tt
+		hidden_effect = { # We display the education buff even though it doesnt apply
+			switch = {
+				trigger = scope:toy_type
+				flag:lotr_toy_troll = { add_martial_skill = 1 }
+				flag:lotr_toy_army = { add_martial_skill = 1 }
+				flag:lotr_toy_miner = { add_stewardship_skill = 1 }
+				flag:lotr_toy_spyglass = { add_intrigue_skill = 1 }
+				flag:lotr_toy_pipe = { add_diplomacy_skill = 1 }
+				flag:lotr_toy_puzzle = { add_learning_skill = 1 }
+				flag:lotr_toy_trebuchet = { add_learning_skill = 1 }
+				flag:lotr_toy_ship = { add_stewardship_skill = 1 }
+				flag:lotr_toy_whistle = { add_diplomacy_skill = 1 }
+			}
+		}
+	}
+	else_if = { # LotR Minors without education focus
+		# This applies to races where majority age is higher than 16, and the kid finished education
+		limit = { is_lotr_adult = no }
+		switch = {
+			trigger = scope:toy_type
+			flag:lotr_toy_troll = { add_martial_skill = 1 }
+			flag:lotr_toy_army = { add_martial_skill = 1 }
+			flag:lotr_toy_miner = { add_stewardship_skill = 1 }
+			flag:lotr_toy_spyglass = { add_intrigue_skill = 1 }
+			flag:lotr_toy_pipe = { add_diplomacy_skill = 1 }
+			flag:lotr_toy_puzzle = { add_learning_skill = 1 }
+			flag:lotr_toy_trebuchet = { add_learning_skill = 1 }
+			flag:lotr_toy_ship = { add_stewardship_skill = 1 }
+			flag:lotr_toy_whistle = { add_diplomacy_skill = 1 }
+		}
+	}
+}
+lotr_travel_events.0026 = {
+	content_source = realms_dlc
+	type = character_event
+	title = lotr_travel_events.0026.t
+	desc = {
+		desc = lotr_travel_events.0026.desc
+		first_valid = {
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_troll }
+				desc = lotr_toy_troll.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_army }
+				desc = lotr_toy_army.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_miner }
+				desc = lotr_toy_miner.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_spyglass }
+				desc = lotr_toy_spyglass.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_pipe }
+				desc = lotr_toy_pipe.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_puzzle }
+				desc = lotr_toy_puzzle.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_trebuchet }
+				desc = lotr_toy_trebuchet.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_ship }
+				desc = lotr_toy_ship.desc
+			}
+			triggered_desc = {
+				trigger = { scope:toy_type = flag:lotr_toy_whistle }
+				desc = lotr_toy_whistle.desc
+			}
+		}
+	}
+	override_background = {
+		trigger = {
+			location = {
+				is_wastelands = no # Buildings visible in background
+				OR = { # Relatively temperate, trees
+					terrain = plains
+					terrain = hills
+					terrain = farmlands
+					terrain = wetlands
+					terrain = steppe
+					terrain = drylands
+					terrain = floodplains
+					terrain = savanna
+				}
+			}
+		}
+		reference = dwarf_caravan
+	}
+	theme = travel
+	
+	left_portrait = {
+		character = ROOT
+		animation = personality_rational
+	}
+	
+	right_portrait = {
+		character = scope:toymaker
+		animation = happy
+	}
+	
+	lower_center_portrait = {
+		character ?= scope:child_1
+	}
+	
+	lower_right_portrait = {
+		character ?= scope:child_2
+	}
+
+	artifact = {
+		position = lower_left_portrait
+		target = scope:toy_artifact
+		trigger = { exists = scope:toy_artifact }
+	}
+	
+	trigger = {
+		is_location_valid_for_travel_event_on_land = yes
+		is_available_travelling = yes
+		age > 4
+		NOR = {
+			is_orc = yes
+			faith.religion = { is_in_family = rf_forcesofevil } #Men of Darkness can trade, but pure evil cant
+			location.culture = { is_orc_culture = yes } # Not their turf!
+			location.culture = { is_elf_culture = yes } # Dont encounter dwarven merchants in elven counties
+		}
+		location = {
+			OR = {
+				geographical_region = middleearth_west
+				geographical_region = middleearth_rhun
+				geographical_region = middleearth_harad
+				geographical_region = middleearth_uttersouth
+			}
+			NOR = { # Never here
+				terrain = halls
+				terrain = mallorn_forest
+				terrain = volcanic_plains
+				terrain = dune_sea
+			}
+		}
+		OR = {
+			lotr_toy_eligible_child_trigger = yes
+			player_heir ?= { lotr_toy_eligible_child_trigger = yes }
+			any_warden_hostage = { lotr_toy_eligible_child_trigger = yes }
+			any_relation = {
+				type = ward
+				lotr_toy_eligible_child_trigger = yes
+			}
+			any_relation = {
+				type = friend
+				lotr_toy_eligible_child_trigger = yes
+			}
+			any_relation = {
+				type = lover
+				lotr_toy_eligible_child_trigger = yes
+			}
+			any_relation = {
+				type = crush
+				lotr_toy_eligible_child_trigger = yes
+			}
+			any_courtier = {
+				OR = {
+					is_child_of = root
+					is_grandchild_of = root
+					is_great_grandchild_of = root
+					is_sibling_of = root
+				}
+				lotr_toy_eligible_child_trigger = yes
+			}
+		}
+	}
+	
+	cooldown = { years = 15 }
+
+	weight_multiplier = {
+		base = 1
+		modifier = { # Toymakers of Dale
+			add = 0.2
+			location = { geographical_region = middleearth_west_rhovanion_dalelands }
+			province:4408.culture = { is_dwarf_culture = yes } # Erebor is dwarven
+		}
+		modifier = { # Less for AI
+			add = -0.2
+			is_ai = yes
+		}
+		modifier = { # Less common if evil or evil area
+			add = -0.4
+			OR = {
+				faith_is_evil = yes
+				location = { faith_is_evil = yes }
+			}
+		}
+		modifier = { # Rarer here
+			add = -0.4
+			location = {
+				OR = {
+					terrain = jungle
+					terrain = deep_forest
+					terrain = arctic
+					terrain = mountains
+					terrain = desert_mountains
+				}
+			}
+		}
+	}
+
+	immediate = {
+		add_character_flag = had_dwarven_toy_event
+		# Figure out where the dwarf is from!
+		random_list = {
+			180 = { # Longbeard
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west }
+						location = { geographical_region = middleearth_forodwaith }
+						location = { geographical_region = middleearth_rhun_seaofrhun }
+						location = { geographical_region = middleearth_rhun_khand }
+						location = { geographical_region = middleearth_rhun_nurunkizdin }
+						location = { geographical_region = middleearth_harad_near }
+						location = { geographical_region = middleearth_mountains_iron }
+						location = { geographical_region = middleearth_mountains_misty }
+						location = { geographical_region = middleearth_mountains_blue }
+						location = { geographical_region = middleearth_mountains_white }
+					}
+				}
+				culture:longbeards = { save_scope_as = toymaker_culture }
+				faith:faith_khazad = { save_scope_as = toymaker_faith }
+				modifier = {
+					game_start_date < 2350
+					add = 70
+				}
+				modifier = {
+					location = { geographical_region = middleearth_west_rhovanion }
+					add = 50
+				}
+			}
+			70 = { # Iron Hills Longbeard
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west }
+						location = { geographical_region = middleearth_forodwaith }
+						location = { geographical_region = middleearth_rhun_seaofrhun }
+						location = { geographical_region = middleearth_rhun_khand }
+						location = { geographical_region = middleearth_rhun_nurunkizdin }
+						location = { geographical_region = middleearth_harad_near }
+						location = { geographical_region = middleearth_mountains_iron }
+						location = { geographical_region = middleearth_mountains_misty }
+						location = { geographical_region = middleearth_mountains_blue }
+						location = { geographical_region = middleearth_mountains_white }
+					}
+					game_start_date >= 2350
+				}
+				culture:iron_hills = { save_scope_as = toymaker_culture }
+				faith:faith_khazad = { save_scope_as = toymaker_faith }
+				modifier = {
+					location = { geographical_region = middleearth_west_rhovanion }
+					add = 50
+				}
+			}
+			80 = { # Firebeard
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west }
+						location = { geographical_region = middleearth_forodwaith }
+						location = { geographical_region = middleearth_rhun_seaofrhun }
+						location = { geographical_region = middleearth_mountains_iron }
+						location = { geographical_region = middleearth_mountains_misty }
+						location = { geographical_region = middleearth_mountains_blue }
+						location = { geographical_region = middleearth_mountains_white }
+					}
+				}
+				culture:firebeards = { save_scope_as = toymaker_culture }
+				faith:faith_khazad = { save_scope_as = toymaker_faith }
+			}
+			120 = { # Broadbeam
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west }
+						location = { geographical_region = middleearth_forodwaith }
+						location = { geographical_region = middleearth_rhun_seaofrhun }
+						location = { geographical_region = middleearth_mountains_iron }
+						location = { geographical_region = middleearth_mountains_misty }
+						location = { geographical_region = middleearth_mountains_blue }
+						location = { geographical_region = middleearth_mountains_white }
+					}
+				}
+				culture:broadbeams = { save_scope_as = toymaker_culture }
+				faith:faith_broadbeams = { save_scope_as = toymaker_faith }
+			}
+			100 = { # Ironfist
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west_rhovanion }
+						location = { geographical_region = middleearth_forodwaith }
+						location = { geographical_region = middleearth_rhun }
+						location = { geographical_region = middleearth_harad_near }
+						location = { geographical_region = middleearth_fareast }
+						location = { geographical_region = middleearth_mountains_iron }
+						location = { geographical_region = middleearth_mountains_red }
+					}
+				}
+				culture:ironfists = { save_scope_as = toymaker_culture }
+				faith:faith_ironfists = { save_scope_as = toymaker_faith }
+			}
+			100 = { # Stiffbeard
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west_rhovanion }
+						location = { geographical_region = middleearth_forodwaith }
+						location = { geographical_region = middleearth_rhun }
+						location = { geographical_region = middleearth_harad_near }
+						location = { geographical_region = middleearth_fareast }
+						location = { geographical_region = middleearth_mountains_iron }
+						location = { geographical_region = middleearth_mountains_red }
+					}
+				}
+				culture:stiffbeards = { save_scope_as = toymaker_culture }
+				faith:faith_stiffbeards = { save_scope_as = toymaker_faith }
+			}
+			30 = { # Blacklock
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_harad }
+						location = { geographical_region = middleearth_uttersouth }
+						location = { geographical_region = middleearth_fareast }
+						location = { geographical_region = middleearth_mountains_yellow }
+					}
+				}
+				culture:blacklocks = { save_scope_as = toymaker_culture }
+				if = {
+					limit = { game_start_date >= 6500 }
+					faith:faith_blacklocks = { save_scope_as = toymaker_faith }
+				}
+				else = { faith:faith_khazad = { save_scope_as = toymaker_faith } }
+				modifier = {
+					game_start_date < 6500
+					add = 70
+				}
+			}
+			70 = { # Axes of Nargubraz
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west_rhovanion }
+						location = { geographical_region = middleearth_rhun_seaofrhun }
+						location = { geographical_region = middleearth_rhun_khand }
+						location = { geographical_region = middleearth_harad }
+						location = { geographical_region = middleearth_uttersouth }
+						location = { geographical_region = middleearth_fareast }
+						location = { geographical_region = middleearth_mountains_yellow }
+					}
+					game_start_date >= 6500
+				}
+				culture:blacklocks_nargubraz = { save_scope_as = toymaker_culture }
+				faith:faith_blacklocks = { save_scope_as = toymaker_faith }
+			}
+			100 = { # Stonefoot
+				trigger = {
+					OR = {
+						location = { geographical_region = middleearth_west }
+						location = { geographical_region = middleearth_forodwaith }
+						location = { geographical_region = middleearth_rhun_seaofrhun }
+						location = { geographical_region = middleearth_rhun_khand }
+						location = { geographical_region = middleearth_rhun_nurunkizdin }
+						location = { geographical_region = middleearth_harad_near }
+						location = { geographical_region = middleearth_mountains_iron }
+						location = { geographical_region = middleearth_mountains_misty }
+						location = { geographical_region = middleearth_mountains_blue }
+						location = { geographical_region = middleearth_mountains_white }
+					}
+				}
+				culture:stonefoots = { save_scope_as = toymaker_culture }
+				faith:faith_khazad = { save_scope_as = toymaker_faith }
+			}
+		}
+		create_character = {
+			template = merchant_template
+			location = root.location
+			gender_female_chance = 5
+			age = { 60 215 }
+			culture = scope:toymaker_culture
+			faith = scope:toymaker_faith
+			trait = artificer
+			trait = compassionate #Makes kids toys
+			random_traits_list = {
+				count = 1
+				gregarious = {}
+				generous = {}
+			}
+			random_traits_list = {
+				count = 1
+				education_diplomacy_1 = {}
+				education_diplomacy_2 = {}
+				education_stewardship_1 = {}
+				education_stewardship_2 = {}
+				education_stewardship_3 = {}
+			}
+			save_scope_as = toymaker
+			after_creation = {
+				hidden_effect = {
+					if = {
+						limit = { ROOT.location = { geographical_region = middleearth_harad } }
+						add_trait = lifestyle_trans_haradric_merchant
+						add_trait_xp = {
+							trait = lifestyle_trans_haradric_merchant
+							value = { 5 100 }
+						}
+					}
+					random_list = {
+						55 = {}
+						30 = { give_nickname = nick_the_toymaker }
+						15 = { give_nickname = nick_the_crafty_event }
+					}
+				}
+			}
+		}
+
+		### Find Children! ####
+		if = { # See if #1 can be heir
+			limit = {
+				exists = player_heir
+				player_heir = { lotr_toy_eligible_child_trigger = yes }
+			}
+			player_heir = { save_scope_as = child_1 }
+		}
+		if = { # See if #2 can be ward
+			limit = {
+				any_relation = {
+					type = ward
+					lotr_toy_eligible_child_trigger = yes
+				}
+			}
+			random_relation = {
+				type = ward
+				limit = { lotr_toy_eligible_child_trigger = yes }
+				save_scope_as = child_2
+			}
+		}
+		else_if = { # See if #2 can be hostage
+			limit = {
+				any_warden_hostage = { lotr_toy_eligible_child_trigger = yes }
+			}
+			random_warden_hostage = {
+				limit = { lotr_toy_eligible_child_trigger = yes }
+				save_scope_as = child_2
+			}
+		}
+		if = { # Assign open spots to random kids
+			limit = {
+				NAND = {
+					exists = scope:child_1
+					exists = scope:child_2
+				}
+			}
+			every_courtier = {
+				limit = {
+					OR = {
+						is_child_of = root
+						is_grandchild_of = root
+						is_great_grandchild_of = root
+						is_sibling_of = root
+					}
+					lotr_toy_eligible_child_trigger = yes
+				}
+				add_to_list = children_list
+			}
+			every_relation = {
+				type = friend
+				limit = { lotr_toy_eligible_child_trigger = yes }
+				add_to_list = children_list
+			}
+			every_relation = {
+				type = lover
+				limit = { lotr_toy_eligible_child_trigger = yes }
+				add_to_list = children_list
+			}
+			every_relation = {
+				type = crush
+				limit = { lotr_toy_eligible_child_trigger = yes }
+				add_to_list = children_list
+			}
+			if = {
+				limit = {
+					NOT = { exists = scope:child_1 }
+					list_size = { name = children_list value > 0 }
+				}
+				random_in_list = {
+					list = children_list
+					save_scope_as = child_1
+					remove_from_list = children_list
+					weight = {
+						base = 1
+						modifier = { # High Priority
+							OR = {
+								is_ai = no
+								root = { has_relation_crush = prev }
+								has_relation_best_friend = ROOT
+							}
+							add = 4
+						}
+						modifier = {
+							is_child_of = ROOT
+							add = 2
+						}
+						modifier = {
+							OR = {
+								is_sibling_of = ROOT
+								has_relation_friend = ROOT
+							}
+							add = 1
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = { exists = scope:child_2 }
+					list_size = { name = children_list value > 0 }
+				}
+				random_in_list = {
+					list = children_list
+					save_scope_as = child_2
+					remove_from_list = children_list
+					weight = {
+						base = 1
+						modifier = { # High Priority
+							OR = {
+								is_ai = no
+								root = { has_relation_crush = prev }
+								has_relation_best_friend = ROOT
+							}
+							add = 4
+						}
+						modifier = {
+							is_child_of = ROOT
+							add = 2
+						}
+						modifier = {
+							OR = {
+								is_sibling_of = ROOT
+								has_relation_friend = ROOT
+							}
+							add = 1
+						}
+					}
+				}
+			}
+		}
+		
+		### Save Opinion for AI Weights ###
+		scope:child_1 ?= {
+			save_opinion_value_as = {
+				name = opinion_of_child_1
+				target = scope:child_1
+			}
+		}
+		scope:child_2 ?= {
+			save_opinion_value_as = {
+				name = opinion_of_child_2
+				target = scope:child_2
+			}
+		}
+
+		### Create the Artifact ###
+		random_list = {
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_troll
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_troll }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_army
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_army }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_miner
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_miner }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_spyglass
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_spyglass }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_pipe
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_pipe }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_puzzle
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_puzzle }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_trebuchet
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_trebuchet }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_ship
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_ship }
+			}
+			100 = {
+				save_scope_value_as = {
+					name = toy_type
+					value = flag:lotr_toy_whistle
+				}
+				lotr_create_toy_effect = { TOY_TYPE = lotr_toy_whistle }
+			}
+		}
+		scope:toy_artifact = {
+			set_variable = dwarven_toy_artifact
+		}
+	}
+
+	# I want that
+	option = {
+		name = lotr_travel_events.0026.a
+		trigger = {
+			OR = {
+				has_trait = eccentric
+				is_lotr_adult = no
+			}
+		}
+		trait = eccentric
+		pay_short_term_gold = {
+			target = scope:toymaker
+			gold = medium_gold_value
+		}
+		scope:toy_artifact = { set_owner = ROOT }
+		lotr_toy_boost_education_effect = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					can_equip_artifact = scope:toy_artifact
+					is_ai = yes
+				}
+				scope:toy_artifact = { equip_artifact_to_owner = yes }
+			}
+		}
+		ai_chance = {
+			base = 300
+			modifier = {
+				factor = 2
+				has_trait = greedy
+			}
+			modifier = {
+				factor = 0
+				short_term_gold < medium_gold_value
+			}
+		}
+	}
+
+	# Child 1 wants this
+	option = {
+		name = lotr_travel_events.0026.b
+		trigger = { exists = scope:child_1 }
+		pay_short_term_gold = {
+			target = scope:toymaker
+			gold = medium_gold_value
+		}
+		lotr_gift_toy_effect = { TARGET = scope:child_1 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = scope:opinion_of_child_1
+				exists = scope:opinion_of_child_1
+			}
+			modifier = {
+				factor = 3
+				scope:child_1 ?= { is_ai = no }
+			}
+			modifier = {
+				factor = 0
+				short_term_gold < medium_gold_value
+			}
+		}
+	}
+
+	# Child 2 wants this
+	option = {
+		name = lotr_travel_events.0026.c
+		trigger = { exists = scope:child_2 }
+		pay_short_term_gold = {
+			target = scope:toymaker
+			gold = medium_gold_value
+		}
+		lotr_gift_toy_effect = { TARGET = scope:child_2 }
+		ai_chance = {
+			base = 100
+			modifier = {
+				add = scope:opinion_of_child_2
+				exists = scope:opinion_of_child_2
+			}
+			modifier = {
+				factor = 3
+				scope:child_2 ?= { is_ai = no }
+			}
+			modifier = {
+				factor = 0
+				short_term_gold < medium_gold_value
+			}
+		}
+	}
+
+	# Nah Im good
+	option = {
+		name = lotr_travel_events.0026.d
+		hidden_effect = { destroy_artifact = scope:toy_artifact }
+		if = {
+			limit = { is_lotr_adult = no }
+			stress_impact = { base = minor_stress_impact_gain }
+		}
+		else = {
+			stress_impact = { eccentric = minor_stress_impact_gain }
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	after = {
+		scope:toymaker = {
+			silent_disappearance_effect = yes
+		}
+	}
+}
+lotr_travel_events.0027 = { #Sending Toy letter
+	type = letter_event
+	opening = lotr_travel_events.0027.opening
+	desc = lotr_travel_events.0027.desc
+	sender = scope:toy_sender
+
+	immediate = {
+		add_opinion = {
+			target = scope:toy_sender
+			modifier = gift_opinion
+			opinion = 25
+		}
+		scope:toy_artifact = { set_owner = scope:toy_receiver }
+		lotr_toy_boost_education_effect = yes
+		add_character_flag = had_dwarven_toy_event
+		hidden_effect = {
+			if = {
+				limit = {
+					can_equip_artifact = scope:toy_artifact
+					is_ai = yes
+				}
+				scope:toy_artifact = { equip_artifact_to_owner = yes }
+			}
+		}
+	}
+
+	option = {
+		name = lotr_travel_events.0027.a
+		if = {
+			limit = {
+				age > 4
+				location != scope:toy_sender.location
+			}
+			scope:toy_sender = {
+				trigger_event = {
+					id = lotr_travel_events.0028
+					days = { 10 20 }
+				}
+			}
+		}
+	}
+}
+lotr_travel_events.0028 = { # Letter response
+	type = letter_event
+	opening = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					scope:toy_receiver = {
+						is_child_of = scope:toy_sender
+						age < 12
+					}
+				}
+				desc = lotr_travel_events.0028.opening_papa
+			}
+			desc = lotr_travel_events.0028.opening
+		}
+	}
+	desc = lotr_travel_events.0028.desc
+	sender = scope:toy_receiver
+
+	option = {
+		name = lotr_travel_events.0028.a
+	}
+}
+
+##########################################
 # Black Flags
 # by Alrain
 # 0101

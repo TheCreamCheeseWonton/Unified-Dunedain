@@ -26,7 +26,7 @@
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_black_numenorean_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -60,7 +60,7 @@ old_umbarean = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { umbar_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_old_umbarean_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -100,7 +100,7 @@ umbarean = {
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { umbar_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_umbarean_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	
@@ -139,7 +139,7 @@ ar_adunaim_numenorean = { #Pharazônabênî
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { umbar_clothing_gfx }
-	unit_gfx = { eastern_unit_gfx }
+	unit_gfx = { acg_black_numenorean_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_lotr_1
 	dynasty_coa_frame = house_frame_lotr_1
 	

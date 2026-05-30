@@ -93,8 +93,952 @@ decision_reclaim_mardruak = {
 	}
 }
 
-## The Korlean League ##
-decision_restore_korlean_league = {
+decision_bellakar_x_gondor = {
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_arnor_01.dds"
+	}
+	title = decision_bellakar_x_gondor
+	selection_tooltip = decision_bellakar_x_gondor_tooltip
+	desc = decision_bellakar_x_gondor_desc
+	confirm_text = decision_bellakar_x_gondor_confirm
+	
+	# SHOWN
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		OR = {
+			has_title = title:e_bellakar
+			has_title = title:h_pharazain
+		}
+		NOT = {
+			has_title = title:e_gondor
+			has_title = title:h_reunited_kingdom
+		}
+		faith_is_good = yes
+		OR = {
+			AND = {
+				exists = title:e_gondor.holder # Checks if aragorn has returned
+				in_diplomatic_range = title:e_gondor.holder
+			}
+			AND = {
+				exists = title:h_reunited_kingdom.holder
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_solidify_reunited_kingdom
+				}
+				in_diplomatic_range = title:h_reunited_kingdom.holder
+			}
+		}
+		dynasty = dynasty:dynasty_tumakveh
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:gondor_x_bellakar
+			}
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:bellakar_x_gondor
+			}
+		}
+		trigger_if = {
+			limit = {
+				exists = title:h_reunited_kingdom.holder
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_solidify_reunited_kingdom
+				}
+			}
+			NOT = {
+				is_allied_to = title:h_reunited_kingdom.holder
+			}
+		}
+		trigger_else = {
+			trigger_if = {
+				limit = {
+					exists = title:e_gondor.holder
+				}
+				NOT = {
+					is_allied_to = title:e_gondor.holder
+				}
+			}
+		}
+		global_var:bellakar_north_focus = no
+	}
+
+	# IS VALID
+	is_valid = {
+		prestige_level >= 4
+		sauron_is_alive = yes
+		trigger_if = {
+			limit = {
+				exists = title:h_reunited_kingdom.holder
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_solidify_reunited_kingdom
+				}
+			}
+			title:h_reunited_kingdom.holder = {
+				faith_is_good = yes
+				OR = {
+					# dynasty = dynasty:dynasty_elros
+					dynasty = dynasty:dynasty_elendil
+					dynasty = dynasty:dynasty_anarion
+				}
+			}
+		}
+		trigger_else = {
+			title:e_gondor.holder = {
+				faith_is_good = yes
+				OR = {
+					# dynasty = dynasty:dynasty_elros
+					dynasty = dynasty:dynasty_elendil
+					dynasty = dynasty:dynasty_anarion
+				}
+			}
+		}
+
+		custom_tooltip = {
+			text = decision_bellakar_x_gondor_custom_tooltip_a
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:reclaim_mardruak_decision
+			}
+		}
+		custom_tooltip = {
+			text = decision_bellakar_x_gondor_custom_tooltip_b
+			OR = {
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:bellakar_felayan_rapprochement
+				}
+				# In case you do it not via the decision
+				has_title = title:k_felaya
+				any_vassal_or_below = {
+					has_title = title:k_felaya
+				}
+				completely_controls = title:k_felaya
+				##Quonton
+				has_title = title:h_pharazain
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	#EFFECT
+	effect = { # make an alliance between Gondor x Bellakar for next ~150 years or something idk
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:bellakar_x_gondor
+		}
+		if = {
+			limit = {
+				exists = title:h_reunited_kingdom.holder
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_solidify_reunited_kingdom
+				}
+			}
+			title:h_reunited_kingdom.holder = {
+				trigger_event = {
+					id = bellakar.0250
+					days = { 15 30 }
+				} 
+			}
+		}
+		else = {
+			title:e_gondor.holder = {
+				trigger_event = {
+					id = bellakar.0250
+					days = { 15 30 }
+				} 
+			}
+		}
+	}
+
+	# AI
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 100
+	}
+}
+
+decision_tame_desert = {
+	title = decision_tame_desert
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_tame_desert.dds"
+	}
+
+	sort_order = 500
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
+	ai_potential = {
+		always = yes
+	}
+
+	selection_tooltip = decision_tame_desert_tooltip
+	desc = decision_tame_desert_desc
+	confirm_text = decision_tame_desert_confirm
+	
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		culture = {
+			##Quonton
+			OR = {	
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+			##End Quonton
+		}
+		is_landed = yes
+		
+	    OR = {
+			has_title = title:e_bellakar
+			has_title = title:h_pharazain
+		}
+		
+			
+		
+		any_county_in_region = {
+			region = special_region_west_dune_sea
+			OR = {
+				holder = {
+					is_vassal_or_below_of = root
+				}
+				holder = root
+			}
+			percent >= 0.2
+		}
+
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:tame_desert_decision
+			}
+		}
+		
+	}
+	is_valid = {
+		custom_tooltip = {
+			text = bellakar_mardrurak_reclaimed
+			completely_controls = title:k_mardruak
+		}
+		#completely_controls = title:k_tedja
+		completely_controls = title:k_qarsa
+		completely_controls = title:k_aukar
+		custom_tooltip = {
+			text =  conversion_west_dune_sea_desc
+			any_county_in_region = {
+				region = special_region_west_dune_sea
+				percent >= 0.50
+				faith = root.faith
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	effect = {
+		custom_tooltip = tame_desert_effects_tt
+#		title:k_tedja = {
+#			if = {
+#				limit = {
+#					NOT = {
+#						empire = title:e_bellakar
+#					}
+#				}
+#				set_de_jure_liege_title = title:e_bellakar
+#			}
+#		}
+		
+		title:k_qarsa = {
+			if = {
+				limit = {
+					NOT = {
+						empire = title:e_bellakar
+					}
+				}
+				set_de_jure_liege_title = title:e_bellakar
+			}
+		}
+		
+		title:k_aukar = {
+			if = {
+				limit = {
+					NOT = {
+						empire = title:e_bellakar
+					}
+				}
+				set_de_jure_liege_title = title:e_bellakar
+			}
+		}
+		
+		give_nickname = nick_sand_lord
+		
+		hidden_effect = {
+			every_sub_realm_county = {
+			limit = {
+					kingdom = title:k_tedja
+					tier = tier_county
+				}
+				
+				
+				if = {
+					limit = {
+						NOT = { culture = root.culture }
+					}
+					
+					random = {
+						chance = 25
+						set_county_culture = culture:bellanarud
+						set_county_faith = root.faith
+					}
+				}
+			}
+		
+			every_sub_realm_county = {
+			limit = {
+					kingdom = title:k_qarsa
+					tier = tier_county
+				}
+				
+				
+				if = {
+					limit = {
+						NOT = { culture = root.culture }
+					}
+					
+					random = {
+						chance = 25
+						set_county_culture = culture:bellanarud
+						set_county_faith = root.faith
+					}
+				}
+			}
+
+			every_sub_realm_county = {
+			limit = {
+					kingdom = title:k_aukar
+					tier = tier_county
+				}
+				
+				
+				if = {
+					limit = {
+						NOT = { culture = root.culture }
+					}
+					
+					random = {
+						chance = 25
+						set_county_culture = culture:bellanarud
+						set_county_faith = root.faith
+					}
+				}
+			}
+		if = {
+			limit = {
+				# Major News
+				NOT = {
+					has_game_rule = no_news
+				}
+			}
+			every_player = { #Global News Announcement
+				trigger_event = news_event.0066
+			}
+		}
+		
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:tame_desert_decision
+		}
+		
+		save_scope_as = desert_tamer
+		title:d_sarwa = {
+			if = {
+				limit = {
+					title:d_sarwa = {
+						AND = {
+							NOT = {
+								kingdom = title:k_aukar
+							}
+							kingdom = {
+								OR = {
+									empire = title:e_bellakar
+								}
+							}							
+						}
+					}					
+				}
+				set_de_jure_liege_title = title:k_aukar
+			}
+		}				
+	}
+}
+
+decision_subdue_sarwa = {
+	title = decision_subdue_sarwa
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_numenorean_ship.dds"
+	}
+	
+	sort_order = 500
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
+	ai_potential = {
+		always = yes
+	}
+
+	selection_tooltip = decision_subdue_sarwa_tooltip
+	desc = decision_subdue_sarwa_desc
+	confirm_text = decision_subdue_sarwa_confirm
+	
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		culture = {
+			##Quonton
+			OR = {	
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+			##End Quonton
+		}
+	    OR = {
+			has_title = title:e_bellakar
+		}
+		any_sub_realm_county = {
+			duchy = title:d_narduvi
+		}
+		title:d_narduvi = {
+			kingdom = {
+				OR = {
+					empire = title:e_bellakar
+				}
+			}
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_subdue_sarwa
+			}
+		}
+	}
+	
+	is_valid = {
+		completely_controls = title:d_narduvi
+		completely_controls = title:d_sarwa	
+		custom_tooltip = {
+			text = bellakar_must_convert_sarwa
+			title:c_sularaja = {
+				culture = {
+					has_cultural_pillar = heritage_bellakari
+				}
+			}
+			title:c_narduvi = {
+				culture = {
+					has_cultural_pillar = heritage_bellakari
+				}
+			}
+			title:c_arazira = {
+				culture = {
+					has_cultural_pillar = heritage_bellakari
+				}
+			}
+			title:c_tosar = {
+				culture = {
+					has_cultural_pillar = heritage_bellakari
+				}
+			}		
+			title:c_refina = {
+				culture = {
+					has_cultural_pillar = heritage_bellakari
+				}
+			}										
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 500
+	}
+	
+	effect = {
+		trigger_event = bellakar.4000
+		title:d_sarwa = {
+			if = {
+				limit = {
+					AND = {
+						title:k_aukar = {
+							OR = {
+								empire = title:e_bellakar
+							}
+						}
+						title:d_sarwa = {
+							NOT = {
+								kingdom = title:k_aukar
+							}
+						}
+					}
+
+				}
+				set_de_jure_liege_title = title:k_aukar
+			}
+		}
+		title:d_sarwa = {
+			if = {
+				limit = {
+					AND = {
+						title:k_aukar = {
+							NOR = {
+								empire = title:e_bellakar
+							}
+						}
+						title:d_sarwa = {
+							NOT = {
+								kingdom = title:k_nilulonde
+							}
+						}
+					}
+
+				}
+				set_de_jure_liege_title = title:k_nilulonde
+			}
+		}		
+		
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_subdue_sarwa
+		}
+	}
+	
+}
+
+decision_umbar_annexation = {
+	title = decision_umbar_annexation
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_umbar_01.dds"
+	}
+
+	sort_order = 500
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
+	ai_potential = {
+		always = yes
+	}
+
+	selection_tooltip = decision_umbar_annexation_tooltip
+	desc = decision_umbar_annexation_desc
+	confirm_text = decision_umbar_annexation_confirm
+	
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		culture = {
+			##Quonton
+			OR = {	
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+			##End Quonton
+		}
+	    OR = {
+			has_title = title:e_bellakar
+		}
+		any_sub_realm_county = {
+			kingdom = title:k_umbar
+		}
+		completely_controls = title:k_mardruak
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_umbar_annexation
+			}
+		}
+	}
+	
+	is_valid = {
+		completely_controls = title:d_dusalan
+		completely_controls = title:d_annabrith
+		custom_tooltip = {
+			text = bellakar_must_have_umbar_control
+			title:c_badharkan = {
+				county_control = 100
+			}
+			title:c_azulathan = {
+				county_control = 100
+			}
+			title:c_annabrith = {
+				county_control = 100
+			}
+			title:c_dhajran = {
+				county_control = 100
+			}
+			title:c_mazrakh = {
+				county_control = 100
+			}
+			title:c_zorthan = {
+				county_control = 100
+			}
+			title:c_dhurn = {
+				county_control = 100
+			}																												
+		}
+		OR = {			
+			custom_tooltip = {
+				text = bellakar_umbar_not_exist
+				title:k_umbar.holder = {
+					NOT = {
+						exists = yes
+					}
+				}
+			}
+			
+			custom_tooltip = {
+				text = bellakar_umbar_vassal
+				title:k_umbar.holder = {
+					any_liege_or_above = {
+						this = root
+					}
+				}
+			}									
+		
+			custom_tooltip = {
+				text = bellakar_umbar_you
+				title:k_umbar.holder = root
+			}
+
+			custom_tooltip = {
+				text = bellakar_umbar_tributary
+				title:k_umbar.holder = {
+					OR = {
+						is_tributary_of_suzerain_or_above = root
+						any_liege_or_above = {
+							is_tributary_of_suzerain_or_above = root
+						}
+					}										
+				}
+			}			
+		}
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 500
+	}
+	
+	effect = {
+		trigger_event = {
+			id = bellakar.4001
+		}		
+		title:d_dusalan = {
+			if = {
+				limit = {
+					title:d_dusalan = {
+						NOT = {
+							kingdom = title:k_mardruak
+						}
+					}
+				}
+				set_de_jure_liege_title = title:k_mardruak
+			}
+		}
+		title:d_annabrith = {
+			if = {
+				limit = {
+					title:d_annabrith = {
+						NOT = {
+							kingdom = title:k_mardruak
+						}
+					}
+				}
+				set_de_jure_liege_title = title:k_mardruak
+			}
+		}		
+		
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_umbar_annexation
+		}
+	}
+	
+}
+
+decision_bellakar_tulwang_annexation = {
+	title = decision_bellakar_tulwang_annexation
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_numenorean_haven.dds"
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 24
+		hegemony = 24
+	}
+	ai_potential = {
+		always = yes
+	}
+
+	sort_order = 500
+
+	selection_tooltip = decision_bellakar_tulwang_annexation_tooltip
+	desc = decision_bellakar_tulwang_annexation_desc
+	confirm_text = decision_bellakar_tulwang_annexation_confirm
+	
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {
+		culture = {
+			##Quonton
+			OR = {	
+				has_cultural_pillar = heritage_bellakari
+				has_cultural_pillar = heritage_unified_adunaic
+			}
+			##End Quonton
+		}
+	    OR = {
+			has_title = title:e_bellakar
+		}
+		any_sub_realm_county = {
+			kingdom = title:k_tulwang
+		}
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_bellakar_tulwang_annexation
+			}
+		}
+	}
+	
+	is_valid = {
+		completely_controls_region = special_region_just_tulwang
+		prestige_level >= 3
+		custom_tooltip = {
+			text = must_have_tulwang_acceptance
+			any_county_in_region = {
+				region = special_region_just_tulwang
+				percent >= 0.50
+				OR = {
+					culture = {
+						cultural_acceptance = { target = root.culture value >= 40 }
+					}	
+					culture = root.culture			
+				}
+			}
+		}			
+	}
+	
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	cost = {
+		gold = 500
+		prestige = 1000
+	}
+	
+	effect = {
+		trigger_event = {
+			id = bellakar.4002
+		}		
+		title:k_tulwang = {
+			if = {
+				limit = {
+					title:k_tulwang = {
+						NOT = {
+							empire = title:e_bellakar
+						}
+					}
+				}
+				set_de_jure_liege_title = title:e_bellakar
+			}
+		}
+		hidden_effect = {
+			title:d_ashatur = {
+				if = {
+					limit = {
+						title:d_ashatur = {
+							NOT = {
+								kingdom = title:k_an_balkumagan
+							}
+						}
+					}
+					set_de_jure_liege_title = title:k_an_balkumagan
+				}
+			}
+			title:d_tulija = {
+				if = {
+					limit = {
+						title:d_tulija = {
+							NOT = {
+								kingdom = title:k_an_balkumagan
+							}
+						}
+					}
+					set_de_jure_liege_title = title:k_an_balkumagan
+				}
+			}
+			title:c_lokha = {
+				if = {
+					limit = {
+						title:c_lokha = {
+							NOT = {
+								duchy = title:d_tulwa
+							}
+						}
+					}
+					set_de_jure_liege_title = title:d_tulwa
+				}
+			}
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_bellakar_tulwang_annexation
+		}
+	}
+	
+}
+
+decision_bellakar_tedjin_suppression = {
+	title = decision_bellakar_tedjin_suppression
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_gondor_02.dds" }
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 48
+		duchy = 48
+		kingdom = 12
+		empire = 12
+		hegemony = 12
+	}
+	decision_group_type = realms_in_exile_major
+
+	desc = decision_bellakar_tedjin_suppression_desc
+	selection_tooltip = decision_bellakar_tedjin_suppression_tooltip
+	confirm_text = decision_bellakar_tedjin_suppression_confirm
+	
+	sort_order = 700
+
+	is_shown = {
+		is_landed = yes 
+		faith_is_evil = no
+		is_human = yes 
+		capital_province = { geographical_region = middleearth_harad_far_bellakar }
+		NOT = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_bellakar_tedjin_suppression
+			}
+		}
+	}
+	
+	is_valid = {
+		faith = { has_doctrine = tenet_bellakari_syncretism }
+		completely_controls = title:c_nilulonde
+		OR = {
+			has_title = title:k_tedja
+			any_vassal_or_below = { has_title = title:k_tedja }
+		}
+		custom_tooltip = { # No independent Tedjin rulers left
+			text = decision_bellakar_tedjin_suppression_tt
+			any_county_in_region = { 
+				region = middleearth_harad_dunesea_naraktedja
+				AND = {
+					holder = { this.culture = culture:tedjin }
+					holder = { is_independent_ruler = yes }
+				}
+				count = 0
+			}
+		}
+		title:c_nilulonde.title_province = { has_great_building = no }
+	}
+	
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+		is_at_war = no
+	}
+
+	effect = {
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = decision_bellakar_tedjin_suppression_toast
+			left_icon = root
+			dynasty = { add_dynasty_prestige = 750 }
+			add_prestige = massive_prestige_gain
+			title:c_nilulonde.title_province = { set_great_building = great_building_nilulonde }
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_bellakar_tedjin_suppression
+		}
+	}
+
+	cost = {
+		gold = 1000
+		#prestige = medium_prestige_value
+	}
+
+
+	ai_will_do = {
+		base = 100
+	}
+}
+
+decision_restore_korlean_league = { #The Korlean League
 	title = decision_restore_korlean_league_title
 	picture = {
 		reference = gfx/interface/illustrations/event_scenes/docks_adunai.dds
@@ -132,6 +1076,9 @@ decision_restore_korlean_league = {
 			OR = {
 				has_doctrine = tenet_adunaic_birthright
 				has_doctrine = tenet_adunaic_mandate 
+				has_doctrine = tenet_memory_of_akallabeth
+				##Quonton
+				has_doctrine = tenet_faithful_mandate 
 			}
 		}
 
@@ -4315,867 +5262,7 @@ decision_greater_faithful_tedjin_kingdom = {
 	}
 }
 
-##### Bellakar Decisions ######
-decision_bellakar_x_gondor = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_arnor_01.dds"
-	}
-	title = decision_bellakar_x_gondor
-	selection_tooltip = decision_bellakar_x_gondor_tooltip
-	desc = decision_bellakar_x_gondor_desc
-	confirm_text = decision_bellakar_x_gondor_confirm
-	
-	# SHOWN
-	decision_group_type = realms_in_exile_major
-	
-	is_shown = {
-		OR = {
-			has_title = title:e_bellakar
-			has_title = title:h_pharazain
-		}
-		NOT = {
-			has_title = title:e_gondor
-			has_title = title:h_reunited_kingdom
-		}
-		faith_is_good = yes
-		OR = {
-			AND = {
-				exists = title:e_gondor.holder # Checks if aragorn has returned
-				in_diplomatic_range = title:e_gondor.holder
-			}
-			AND = {
-				exists = title:h_reunited_kingdom.holder
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:decision_solidify_reunited_kingdom
-				}
-				in_diplomatic_range = title:h_reunited_kingdom.holder
-			}
-		}
-		dynasty = dynasty:dynasty_tumakveh
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:gondor_x_bellakar
-			}
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:bellakar_x_gondor
-			}
-		}
-		trigger_if = {
-			limit = {
-				exists = title:h_reunited_kingdom.holder
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:decision_solidify_reunited_kingdom
-				}
-			}
-			NOT = {
-				is_allied_to = title:h_reunited_kingdom.holder
-			}
-		}
-		trigger_else = {
-			trigger_if = {
-				limit = {
-					exists = title:e_gondor.holder
-				}
-				NOT = {
-					is_allied_to = title:e_gondor.holder
-				}
-			}
-		}
-		global_var:bellakar_north_focus = no
-	}
-
-	# IS VALID
-	is_valid = {
-		prestige_level >= 4
-		sauron_is_alive = yes
-		trigger_if = {
-			limit = {
-				exists = title:h_reunited_kingdom.holder
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:decision_solidify_reunited_kingdom
-				}
-			}
-			title:h_reunited_kingdom.holder = {
-				faith_is_good = yes
-				OR = {
-					# dynasty = dynasty:dynasty_elros
-					dynasty = dynasty:dynasty_elendil
-					dynasty = dynasty:dynasty_anarion
-				}
-			}
-		}
-		trigger_else = {
-			title:e_gondor.holder = {
-				faith_is_good = yes
-				OR = {
-					# dynasty = dynasty:dynasty_elros
-					dynasty = dynasty:dynasty_elendil
-					dynasty = dynasty:dynasty_anarion
-				}
-			}
-		}
-
-		custom_tooltip = {
-			text = decision_bellakar_x_gondor_custom_tooltip_a
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:reclaim_mardruak_decision
-			}
-		}
-		custom_tooltip = {
-			text = decision_bellakar_x_gondor_custom_tooltip_b
-			OR = {
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:bellakar_felayan_rapprochement
-				}
-				# In case you do it not via the decision
-				has_title = title:k_felaya
-				any_vassal_or_below = {
-					has_title = title:k_felaya
-				}
-				completely_controls = title:k_felaya
-				##Quonton
-				has_title = title:h_pharazain
-			}
-		}
-	}
-
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-
-	#EFFECT
-	effect = { # make an alliance between Gondor x Bellakar for next ~150 years or something idk
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:bellakar_x_gondor
-		}
-		if = {
-			limit = {
-				exists = title:h_reunited_kingdom.holder
-				is_target_in_global_variable_list = {
-					name = unavailable_unique_decisions
-					target = flag:decision_solidify_reunited_kingdom
-				}
-			}
-			title:h_reunited_kingdom.holder = {
-				trigger_event = {
-					id = bellakar.0250
-					days = { 15 30 }
-				} 
-			}
-		}
-		else = {
-			title:e_gondor.holder = {
-				trigger_event = {
-					id = bellakar.0250
-					days = { 15 30 }
-				} 
-			}
-		}
-	}
-
-	# AI
-	ai_check_interval_by_tier = {
-		barony = 0
-		county = 0
-		duchy = 0
-		kingdom = 0
-		empire = 24
-		hegemony = 24
-	}
-	ai_potential = {
-		always = yes
-	}
-	ai_will_do = {
-		base = 100
-	}
-}
-
-decision_tame_desert = {
-	title = decision_tame_desert
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_tame_desert.dds"
-	}
-
-	sort_order = 500
-	
-	ai_check_interval_by_tier = {
-		barony = 0
-		county = 0
-		duchy = 0
-		kingdom = 0
-		empire = 24
-		hegemony = 24
-	}
-	ai_potential = {
-		always = yes
-	}
-
-	selection_tooltip = decision_tame_desert_tooltip
-	desc = decision_tame_desert_desc
-	confirm_text = decision_tame_desert_confirm
-	
-	decision_group_type = realms_in_exile_major
-	
-	is_shown = {
-		culture = {
-			##Quonton
-			OR = {	
-				has_cultural_pillar = heritage_bellakari
-				has_cultural_pillar = heritage_unified_adunaic
-			}
-			##End Quonton
-		}
-		is_landed = yes
-		
-	    OR = {
-			has_title = title:e_bellakar
-			has_title = title:h_pharazain
-		}
-		
-			
-		
-		any_county_in_region = {
-			region = special_region_west_dune_sea
-			OR = {
-				holder = {
-					is_vassal_or_below_of = root
-				}
-				holder = root
-			}
-			percent >= 0.2
-		}
-
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:tame_desert_decision
-			}
-		}
-		
-	}
-	is_valid = {
-		custom_tooltip = {
-			text = bellakar_mardrurak_reclaimed
-			completely_controls = title:k_mardruak
-		}
-		#completely_controls = title:k_tedja
-		completely_controls = title:k_qarsa
-		completely_controls = title:k_aukar
-		custom_tooltip = {
-			text =  conversion_west_dune_sea_desc
-			any_county_in_region = {
-				region = special_region_west_dune_sea
-				percent >= 0.50
-				faith = root.faith
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	
-	effect = {
-		custom_tooltip = tame_desert_effects_tt
-#		title:k_tedja = {
-#			if = {
-#				limit = {
-#					NOT = {
-#						empire = title:e_bellakar
-#					}
-#				}
-#				set_de_jure_liege_title = title:e_bellakar
-#			}
-#		}
-		
-		title:k_qarsa = {
-			if = {
-				limit = {
-					NOT = {
-						empire = title:e_bellakar
-					}
-				}
-				set_de_jure_liege_title = title:e_bellakar
-			}
-		}
-		
-		title:k_aukar = {
-			if = {
-				limit = {
-					NOT = {
-						empire = title:e_bellakar
-					}
-				}
-				set_de_jure_liege_title = title:e_bellakar
-			}
-		}
-		
-		give_nickname = nick_sand_lord
-		
-		hidden_effect = {
-			every_sub_realm_county = {
-			limit = {
-					kingdom = title:k_tedja
-					tier = tier_county
-				}
-				
-				
-				if = {
-					limit = {
-						NOT = { culture = root.culture }
-					}
-					
-					random = {
-						chance = 25
-						set_county_culture = culture:bellanarud
-						set_county_faith = root.faith
-					}
-				}
-			}
-		
-			every_sub_realm_county = {
-			limit = {
-					kingdom = title:k_qarsa
-					tier = tier_county
-				}
-				
-				
-				if = {
-					limit = {
-						NOT = { culture = root.culture }
-					}
-					
-					random = {
-						chance = 25
-						set_county_culture = culture:bellanarud
-						set_county_faith = root.faith
-					}
-				}
-			}
-
-			every_sub_realm_county = {
-			limit = {
-					kingdom = title:k_aukar
-					tier = tier_county
-				}
-				
-				
-				if = {
-					limit = {
-						NOT = { culture = root.culture }
-					}
-					
-					random = {
-						chance = 25
-						set_county_culture = culture:bellanarud
-						set_county_faith = root.faith
-					}
-				}
-			}
-		if = {
-			limit = {
-				# Major News
-				NOT = {
-					has_game_rule = no_news
-				}
-			}
-			every_player = { #Global News Announcement
-				trigger_event = news_event.0066
-			}
-		}
-		
-		}
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:tame_desert_decision
-		}
-		
-		save_scope_as = desert_tamer
-		title:d_sarwa = {
-			if = {
-				limit = {
-					title:d_sarwa = {
-						AND = {
-							NOT = {
-								kingdom = title:k_aukar
-							}
-							kingdom = {
-								OR = {
-									empire = title:e_bellakar
-								}
-							}							
-						}
-					}					
-				}
-				set_de_jure_liege_title = title:k_aukar
-			}
-		}				
-	}
-}
-
-decision_subdue_sarwa = {
-	title = decision_subdue_sarwa
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_numenorean_ship.dds"
-	}
-	
-	sort_order = 500
-
-	ai_check_interval_by_tier = {
-		barony = 0
-		county = 0
-		duchy = 0
-		kingdom = 0
-		empire = 24
-		hegemony = 24
-	}
-	ai_potential = {
-		always = yes
-	}
-
-	selection_tooltip = decision_subdue_sarwa_tooltip
-	desc = decision_subdue_sarwa_desc
-	confirm_text = decision_subdue_sarwa_confirm
-	
-	decision_group_type = realms_in_exile_major
-	
-	is_shown = {
-		culture = {
-			##Quonton
-			OR = {	
-				has_cultural_pillar = heritage_bellakari
-				has_cultural_pillar = heritage_unified_adunaic
-			}
-			##End Quonton
-		}
-	    OR = {
-			has_title = title:e_bellakar
-		}
-		any_sub_realm_county = {
-			duchy = title:d_narduvi
-		}
-		title:d_narduvi = {
-			kingdom = {
-				OR = {
-					empire = title:e_bellakar
-				}
-			}
-		}
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:decision_subdue_sarwa
-			}
-		}
-	}
-	
-	is_valid = {
-		completely_controls = title:d_narduvi
-		completely_controls = title:d_sarwa	
-		custom_tooltip = {
-			text = bellakar_must_convert_sarwa
-			title:c_sularaja = {
-				culture = {
-					has_cultural_pillar = heritage_bellakari
-				}
-			}
-			title:c_narduvi = {
-				culture = {
-					has_cultural_pillar = heritage_bellakari
-				}
-			}
-			title:c_arazira = {
-				culture = {
-					has_cultural_pillar = heritage_bellakari
-				}
-			}
-			title:c_tosar = {
-				culture = {
-					has_cultural_pillar = heritage_bellakari
-				}
-			}		
-			title:c_refina = {
-				culture = {
-					has_cultural_pillar = heritage_bellakari
-				}
-			}										
-		}
-	}
-	
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-
-	cost = {
-		gold = 500
-	}
-	
-	effect = {
-		trigger_event = bellakar.4000
-		title:d_sarwa = {
-			if = {
-				limit = {
-					AND = {
-						title:k_aukar = {
-							OR = {
-								empire = title:e_bellakar
-							}
-						}
-						title:d_sarwa = {
-							NOT = {
-								kingdom = title:k_aukar
-							}
-						}
-					}
-
-				}
-				set_de_jure_liege_title = title:k_aukar
-			}
-		}
-		title:d_sarwa = {
-			if = {
-				limit = {
-					AND = {
-						title:k_aukar = {
-							NOR = {
-								empire = title:e_bellakar
-							}
-						}
-						title:d_sarwa = {
-							NOT = {
-								kingdom = title:k_nilulonde
-							}
-						}
-					}
-
-				}
-				set_de_jure_liege_title = title:k_nilulonde
-			}
-		}		
-		
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:decision_subdue_sarwa
-		}
-	}
-	
-}
-
-decision_umbar_annexation = {
-	title = decision_umbar_annexation
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_umbar_01.dds"
-	}
-
-	sort_order = 500
-	
-	ai_check_interval_by_tier = {
-		barony = 0
-		county = 0
-		duchy = 0
-		kingdom = 0
-		empire = 24
-		hegemony = 24
-	}
-	ai_potential = {
-		always = yes
-	}
-
-	selection_tooltip = decision_umbar_annexation_tooltip
-	desc = decision_umbar_annexation_desc
-	confirm_text = decision_umbar_annexation_confirm
-	
-	decision_group_type = realms_in_exile_major
-	
-	is_shown = {
-		culture = {
-			##Quonton
-			OR = {	
-				has_cultural_pillar = heritage_bellakari
-				has_cultural_pillar = heritage_unified_adunaic
-			}
-			##End Quonton
-		}
-	    OR = {
-			has_title = title:e_bellakar
-		}
-		any_sub_realm_county = {
-			kingdom = title:k_umbar
-		}
-		completely_controls = title:k_mardruak
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:decision_umbar_annexation
-			}
-		}
-	}
-	
-	is_valid = {
-		completely_controls = title:d_dusalan
-		completely_controls = title:d_annabrith
-		custom_tooltip = {
-			text = bellakar_must_have_umbar_control
-			title:c_badharkan = {
-				county_control = 100
-			}
-			title:c_azulathan = {
-				county_control = 100
-			}
-			title:c_annabrith = {
-				county_control = 100
-			}
-			title:c_dhajran = {
-				county_control = 100
-			}
-			title:c_mazrakh = {
-				county_control = 100
-			}
-			title:c_zorthan = {
-				county_control = 100
-			}
-			title:c_dhurn = {
-				county_control = 100
-			}																												
-		}
-		OR = {			
-			custom_tooltip = {
-				text = bellakar_umbar_not_exist
-				title:k_umbar.holder = {
-					NOT = {
-						exists = yes
-					}
-				}
-			}
-			
-			custom_tooltip = {
-				text = bellakar_umbar_vassal
-				title:k_umbar.holder = {
-					any_liege_or_above = {
-						this = root
-					}
-				}
-			}									
-		
-			custom_tooltip = {
-				text = bellakar_umbar_you
-				title:k_umbar.holder = root
-			}
-
-			custom_tooltip = {
-				text = bellakar_umbar_tributary
-				title:k_umbar.holder = {
-					OR = {
-						is_tributary_of_suzerain_or_above = root
-						any_liege_or_above = {
-							is_tributary_of_suzerain_or_above = root
-						}
-					}										
-				}
-			}			
-		}
-	}
-	
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-
-	cost = {
-		gold = 500
-	}
-	
-	effect = {
-		trigger_event = {
-			id = bellakar.4001
-		}		
-		title:d_dusalan = {
-			if = {
-				limit = {
-					title:d_dusalan = {
-						NOT = {
-							kingdom = title:k_mardruak
-						}
-					}
-				}
-				set_de_jure_liege_title = title:k_mardruak
-			}
-		}
-		title:d_annabrith = {
-			if = {
-				limit = {
-					title:d_annabrith = {
-						NOT = {
-							kingdom = title:k_mardruak
-						}
-					}
-				}
-				set_de_jure_liege_title = title:k_mardruak
-			}
-		}		
-		
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:decision_umbar_annexation
-		}
-	}
-	
-}
-
-decision_bellakar_tulwang_annexation = {
-	title = decision_bellakar_tulwang_annexation
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_numenorean_haven.dds"
-	}
-	
-	ai_check_interval_by_tier = {
-		barony = 0
-		county = 0
-		duchy = 0
-		kingdom = 0
-		empire = 24
-		hegemony = 24
-	}
-	ai_potential = {
-		always = yes
-	}
-
-	sort_order = 500
-
-	selection_tooltip = decision_bellakar_tulwang_annexation_tooltip
-	desc = decision_bellakar_tulwang_annexation_desc
-	confirm_text = decision_bellakar_tulwang_annexation_confirm
-	
-	decision_group_type = realms_in_exile_major
-	
-	is_shown = {
-		culture = {
-			##Quonton
-			OR = {	
-				has_cultural_pillar = heritage_bellakari
-				has_cultural_pillar = heritage_unified_adunaic
-			}
-			##End Quonton
-		}
-	    OR = {
-			has_title = title:e_bellakar
-		}
-		any_sub_realm_county = {
-			kingdom = title:k_tulwang
-		}
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:decision_bellakar_tulwang_annexation
-			}
-		}
-	}
-	
-	is_valid = {
-		completely_controls_region = special_region_just_tulwang
-		prestige_level >= 3
-		custom_tooltip = {
-			text = must_have_tulwang_acceptance
-			any_county_in_region = {
-				region = special_region_just_tulwang
-				percent >= 0.50
-				OR = {
-					culture = {
-						cultural_acceptance = { target = root.culture value >= 40 }
-					}	
-					culture = root.culture			
-				}
-			}
-		}			
-	}
-	
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-
-	cost = {
-		gold = 500
-		prestige = 1000
-	}
-	
-	effect = {
-		trigger_event = {
-			id = bellakar.4002
-		}		
-		title:k_tulwang = {
-			if = {
-				limit = {
-					title:k_tulwang = {
-						NOT = {
-							empire = title:e_bellakar
-						}
-					}
-				}
-				set_de_jure_liege_title = title:e_bellakar
-			}
-		}
-		hidden_effect = {
-			title:d_ashatur = {
-				if = {
-					limit = {
-						title:d_ashatur = {
-							NOT = {
-								kingdom = title:k_an_balkumagan
-							}
-						}
-					}
-					set_de_jure_liege_title = title:k_an_balkumagan
-				}
-			}
-			title:d_tulija = {
-				if = {
-					limit = {
-						title:d_tulija = {
-							NOT = {
-								kingdom = title:k_an_balkumagan
-							}
-						}
-					}
-					set_de_jure_liege_title = title:k_an_balkumagan
-				}
-			}
-			title:c_lokha = {
-				if = {
-					limit = {
-						title:c_lokha = {
-							NOT = {
-								duchy = title:d_tulwa
-							}
-						}
-					}
-					set_de_jure_liege_title = title:d_tulwa
-				}
-			}
-		}
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:decision_bellakar_tulwang_annexation
-		}
-	}
-	
-}
-
+##### Korlean Expedition Decisions ######
 decision_launch_korlean_expedition = { # Rise of Angmar Korlea story content start
 	title = decision_launch_korlean_expedition
 	picture = {

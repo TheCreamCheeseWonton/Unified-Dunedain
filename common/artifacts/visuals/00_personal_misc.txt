@@ -4,40 +4,48 @@
 }
 
 crown = {
-	icon = {
+	icon = { #LotR
 		trigger = { 
-			scope:owner = {
-				OR = {
-					culture = { has_cultural_pillar = heritage_quendi }
-					culture = { has_cultural_pillar = heritage_calaquendi }
-					culture = { has_cultural_pillar = heritage_lomiquendi }
-					culture = { has_cultural_pillar = heritage_moriquendi }
-				} 
-			}
+			artifact_should_use_gfx_type_trigger = { TYPE = elven_building }
 		}
 		reference = "artifact_elven_circlet.dds"
 	}
-	icon = {
+	icon = { #LotR
 		trigger = { 
-			scope:owner = {
-				OR = {
-					culture = { has_cultural_pillar = heritage_longbeard }
-					culture = { has_cultural_pillar = heritage_firebeard }
-					culture = { has_cultural_pillar = heritage_broadbeam }
-					culture = { has_cultural_pillar = heritage_ironfist }
-					culture = { has_cultural_pillar = heritage_stiffbeard }
-					culture = { has_cultural_pillar = heritage_blacklock }
-					culture = { has_cultural_pillar = heritage_stonefoot }
-				} 
-			}
+			artifact_should_use_gfx_type_trigger = { TYPE = dwarven_building }
+			NOT = { capital_province = { geographical_region = middleearth_mountains_misty_khazad_dum } }
+			NOT = { capital_province = { geographical_region = middleearth_mountains_iron_erebor } }
 		}
 		reference = "artifact_dwarven_crown.dds"
+	}
+	icon = { #LotR
+		trigger = {
+			artifact_should_use_gfx_type_trigger = { TYPE = dwarven_building }
+			scope:owner = {
+				culture = { has_cultural_pillar = heritage_longbeard }
+				capital_province = { geographical_region = middleearth_mountains_iron_erebor }
+				NOT = { capital_province = { geographical_region = middleearth_mountains_misty_khazad_dum } }
+			}
+		}
+		reference = "artifact_erebor_crown.dds"
+	}
+	icon = { #LotR
+		trigger = {
+			artifact_should_use_gfx_type_trigger = { TYPE = dwarven_building }
+			scope:owner = {
+				culture = { has_cultural_pillar = heritage_longbeard }
+				capital_province = { geographical_region = middleearth_mountains_misty_khazad_dum }
+				NOT = { capital_province = { geographical_region = middleearth_mountains_iron_erebor } }
+			}
+		}
+		reference = "artifact_longbeard_crown.dds"
 	}
 	icon = {
 		trigger = {
 			OR = {
 				artifact_should_use_gfx_type_trigger = { TYPE = iranian_building }
 				artifact_should_use_gfx_type_trigger = { TYPE = steppe_building }
+				artifact_should_use_gfx_type_trigger = { TYPE = rhun_building } #LotR
 			}
 		}
 		reference = "artifact_crown_lotus.dds"
@@ -48,8 +56,20 @@ crown = {
 				artifact_should_use_gfx_type_trigger = { TYPE = western_building }
 				artifact_should_use_gfx_type_trigger = { TYPE = norse_building }
 			}
+			NOR = { #LotR
+				artifact_should_use_gfx_type_trigger = { TYPE = elven_building }
+				artifact_should_use_gfx_type_trigger = { TYPE = dwarven_building }
+				artifact_should_use_gfx_type_trigger = { TYPE = orc_building }
+			}
+
 		}
 		reference = "artifact_crown_leaf.dds"
+	}
+	icon = { #LotR
+		trigger = {
+			artifact_should_use_gfx_type_trigger = { TYPE = orc_building } #LotR
+		}
+		reference = "artifact_uruk_crown.dds"
 	}
 	icon = {
 		trigger = {
@@ -58,6 +78,10 @@ crown = {
 				artifact_should_use_gfx_type_trigger = { TYPE = steppe_building }
 				artifact_should_use_gfx_type_trigger = { TYPE = western_building }
 				artifact_should_use_gfx_type_trigger = { TYPE = norse_building }
+				artifact_should_use_gfx_type_trigger = { TYPE = rhun_building } #LotR
+				artifact_should_use_gfx_type_trigger = { TYPE = elven_building } #LotR
+				artifact_should_use_gfx_type_trigger = { TYPE = dwarven_building } #LotR
+				artifact_should_use_gfx_type_trigger = { TYPE = orc_building } #LotR
 			}
 		}
 		reference = "artifact_crown.dds"
@@ -97,13 +121,13 @@ crown = {
 			has_dlc = "Fashion of the Abbasid Court"
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_apysaic }
-					culture = { has_cultural_pillar = heritage_middle_apysaic }
-					culture = { has_cultural_pillar = heritage_southern_apysaic }
-					# culture = { has_cultural_pillar = heritage_arabic }
-					# culture = { has_cultural_pillar = heritage_iranian }
-					# culture = { has_cultural_pillar = heritage_turkic }
-					# culture = { has_cultural_pillar = heritage_berber }
+					culture = { has_cultural_pillar = heritage_northern_apysaic } #LotR
+					culture = { has_cultural_pillar = heritage_middle_apysaic } #LotR
+					culture = { has_cultural_pillar = heritage_southern_apysaic } #LotR
+					# culture = { has_cultural_pillar = heritage_arabic } #LotR
+					# culture = { has_cultural_pillar = heritage_iranian } #LotR
+					# culture = { has_cultural_pillar = heritage_turkic } #LotR
+					# culture = { has_cultural_pillar = heritage_berber } #LotR
 				}
 				highest_held_title_tier = tier_empire
 			}
@@ -115,13 +139,13 @@ crown = {
 			has_dlc = "Fashion of the Abbasid Court"
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_apysaic }
-					culture = { has_cultural_pillar = heritage_middle_apysaic }
-					culture = { has_cultural_pillar = heritage_southern_apysaic }
-					# culture = { has_cultural_pillar = heritage_arabic }
-					# culture = { has_cultural_pillar = heritage_iranian }
-					# culture = { has_cultural_pillar = heritage_turkic }
-					# culture = { has_cultural_pillar = heritage_berber }
+					culture = { has_cultural_pillar = heritage_northern_apysaic } #LotR
+					culture = { has_cultural_pillar = heritage_middle_apysaic } #LotR
+					culture = { has_cultural_pillar = heritage_southern_apysaic } #LotR
+					# culture = { has_cultural_pillar = heritage_arabic } #LotR
+					# culture = { has_cultural_pillar = heritage_iranian } #LotR
+					# culture = { has_cultural_pillar = heritage_turkic } #LotR
+					# culture = { has_cultural_pillar = heritage_berber } #LotR
 				}
 				highest_held_title_tier <= tier_kingdom
 			}
@@ -135,14 +159,14 @@ crown = {
 			always = no
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_adunaic }
+					culture = { has_cultural_pillar = heritage_northern_adunaic } #LotR
 					##Quonton
 					culture = { has_cultural_pillar = heritage_unified_adunaic }
-					# culture = { has_cultural_pillar = heritage_frankish }
-					# culture = { has_cultural_pillar = heritage_latin }
-					# culture = { has_cultural_pillar = heritage_central_germanic }
-					# culture = { has_cultural_pillar = heritage_west_germanic }
-					# culture = { has_cultural_pillar = heritage_west_slavic }
+					# culture = { has_cultural_pillar = heritage_frankish } #LotR
+					# culture = { has_cultural_pillar = heritage_latin } #LotR
+					# culture = { has_cultural_pillar = heritage_central_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_slavic } #LotR
 				}
 				highest_held_title_tier = tier_empire
 			}
@@ -155,14 +179,14 @@ crown = {
 			always = no
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_adunaic }
+					culture = { has_cultural_pillar = heritage_northern_adunaic } #LotR
 					##Quonton
 					culture = { has_cultural_pillar = heritage_unified_adunaic }
-					# culture = { has_cultural_pillar = heritage_frankish }
-					# culture = { has_cultural_pillar = heritage_latin }
-					# culture = { has_cultural_pillar = heritage_central_germanic }
-					# culture = { has_cultural_pillar = heritage_west_germanic }
-					# culture = { has_cultural_pillar = heritage_west_slavic }
+					# culture = { has_cultural_pillar = heritage_frankish } #LotR
+					# culture = { has_cultural_pillar = heritage_latin } #LotR
+					# culture = { has_cultural_pillar = heritage_central_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_slavic } #LotR
 				}
 				highest_held_title_tier <= tier_kingdom
 			}
@@ -175,14 +199,14 @@ crown = {
 			always = no
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_adunaic }
+					culture = { has_cultural_pillar = heritage_northern_adunaic } #LotR
 					##Quonton
 					culture = { has_cultural_pillar = heritage_unified_adunaic }
-					# culture = { has_cultural_pillar = heritage_frankish }
-					# culture = { has_cultural_pillar = heritage_latin }
-					# culture = { has_cultural_pillar = heritage_central_germanic }
-					# culture = { has_cultural_pillar = heritage_west_germanic }
-					# culture = { has_cultural_pillar = heritage_west_slavic }
+					# culture = { has_cultural_pillar = heritage_frankish } #LotR
+					# culture = { has_cultural_pillar = heritage_latin } #LotR
+					# culture = { has_cultural_pillar = heritage_central_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_slavic } #LotR
 				}
 				highest_held_title_tier <= tier_kingdom
 			}
@@ -195,14 +219,14 @@ crown = {
 			always = no
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_adunaic }
+					culture = { has_cultural_pillar = heritage_northern_adunaic } #LotR
 					##Quonton
 					culture = { has_cultural_pillar = heritage_unified_adunaic }
-					# culture = { has_cultural_pillar = heritage_frankish }
-					# culture = { has_cultural_pillar = heritage_latin }
-					# culture = { has_cultural_pillar = heritage_central_germanic }
-					# culture = { has_cultural_pillar = heritage_west_germanic }
-					# culture = { has_cultural_pillar = heritage_west_slavic }
+					# culture = { has_cultural_pillar = heritage_frankish } #LotR
+					# culture = { has_cultural_pillar = heritage_latin } #LotR
+					# culture = { has_cultural_pillar = heritage_central_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_slavic } #LotR
 				}
 				highest_held_title_tier <= tier_kingdom
 			}
@@ -317,15 +341,21 @@ crown = {
 		reference = male_headgear_secular_mena_imperial_01_artifact_entity
 	}
 	# Sassanid
-	# asset = {		
-	# 	trigger = {
-	# 		artifact_use_mena_building_visuals_trigger = yes #this trigger cuts out the maker
-	# 		scope:owner = {
-	# 			culture = { has_cultural_pillar = heritage_iranian }
-	# 		}
-	# 	}
-	# 	reference = male_headgear_secular_ep1_sassanid_crown_artifact_entity
-	# }
+	asset = {	#LotR
+		trigger = {
+			artifact_use_mena_building_visuals_trigger = yes #this trigger cuts out the maker
+			scope:owner = {
+				# culture = { has_cultural_pillar = heritage_iranian }
+				culture = { 
+					OR = {
+						has_cultural_pillar = heritage_north_khailuza
+						has_cultural_pillar = heritage_south_khailuza
+					}
+				}
+			}
+		}
+		reference = male_headgear_secular_ep1_sassanid_crown_artifact_entity
+	}
 	#Western and Medi not Byz/Iberian 
 	asset = {		
 		trigger = {
@@ -334,8 +364,8 @@ crown = {
 				artifact_use_mediterranean_building_visuals_trigger = yes #this trigger cuts out the maker
 			}
 			scope:owner = {
-				culture = { NOT = { has_cultural_pillar = heritage_dunedain } }
-				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } }
+				culture = { NOT = { has_cultural_pillar = heritage_dunedain } } #LotR
+				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } } #LotR
 				highest_held_title_tier <= tier_kingdom
 			}
 		}
@@ -348,8 +378,8 @@ crown = {
 				artifact_use_mediterranean_building_visuals_trigger = yes #this trigger cuts out the maker
 			}
 			scope:owner = {
-				culture = { NOT = { has_cultural_pillar = heritage_dunedain } }
-				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } }
+				culture = { NOT = { has_cultural_pillar = heritage_dunedain } } #LotR
+				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } } #LotR
 				highest_held_title_tier <= tier_kingdom
 			}
 		}
@@ -362,8 +392,8 @@ crown = {
 				artifact_use_mediterranean_building_visuals_trigger = yes #this trigger cuts out the maker
 			}
 			scope:owner = {
-				culture = { NOT = { has_cultural_pillar = heritage_dunedain } }
-				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } }
+				culture = { NOT = { has_cultural_pillar = heritage_dunedain } } #LotR
+				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } } #LotR
 				highest_held_title_tier <= tier_kingdom
 			}
 		}
@@ -376,8 +406,8 @@ crown = {
 				artifact_use_mediterranean_building_visuals_trigger = yes #this trigger cuts out the maker
 			}
 			scope:owner = {
-				culture = { NOT = { has_cultural_pillar = heritage_dunedain } }
-				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } }
+				culture = { NOT = { has_cultural_pillar = heritage_dunedain } } #LotR
+				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } } #LotR
 				highest_held_title_tier <= tier_kingdom
 			}
 		}
@@ -390,8 +420,8 @@ crown = {
 				artifact_use_mediterranean_building_visuals_trigger = yes #this trigger cuts out the maker
 			}
 			scope:owner = {
-				culture = { NOT = { has_cultural_pillar = heritage_dunedain } }
-				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } }
+				culture = { NOT = { has_cultural_pillar = heritage_dunedain } } #LotR
+				# culture = { NOT = { has_cultural_pillar = heritage_byzantine } } #LotR
 				highest_held_title_tier = tier_empire
 			}
 		}
@@ -441,14 +471,20 @@ crown = {
 	#Steppe
 	asset = {
 		trigger = {
-			artifact_use_mongol_unit_visuals_trigger = yes #this trigger cuts out the maker
+			OR = {
+				artifact_use_mongol_unit_visuals_trigger = yes #this trigger cuts out the maker
+				culture = { has_clothing_gfx = variag_clothing_gfx }
+			}
 			scope:owner = { highest_held_title_tier <= tier_kingdom }
 		}
 		reference = male_headgear_secular_steppe_royalty_01_artifact_entity
 	}
 	asset = {
 		trigger = {
-			artifact_use_mongol_unit_visuals_trigger = yes #this trigger cuts out the maker
+			OR = {
+				artifact_use_mongol_unit_visuals_trigger = yes #this trigger cuts out the maker
+				culture = { has_clothing_gfx = variag_clothing_gfx }
+			}
 			scope:owner = { highest_held_title_tier = tier_empire }
 		}
 		reference = male_headgear_secular_steppe_imperial_01_artifact_entity
@@ -543,14 +579,14 @@ armor = {
 			always = no
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_adunaic }
+					culture = { has_cultural_pillar = heritage_northern_adunaic } #LotR
 					##Quonton
 					culture = { has_cultural_pillar = heritage_unified_adunaic }
-					# culture = { has_cultural_pillar = heritage_frankish }
-					# culture = { has_cultural_pillar = heritage_latin }
-					# culture = { has_cultural_pillar = heritage_central_germanic }
-					# culture = { has_cultural_pillar = heritage_west_germanic }
-					# culture = { has_cultural_pillar = heritage_west_slavic }
+					# culture = { has_cultural_pillar = heritage_frankish } #LotR
+					# culture = { has_cultural_pillar = heritage_latin } #LotR
+					# culture = { has_cultural_pillar = heritage_central_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_germanic } #LotR
+					# culture = { has_cultural_pillar = heritage_west_slavic } #LotR
 				}
 			}
 		}
@@ -562,13 +598,13 @@ armor = {
 			has_dlc = "Fashion of the Abbasid Court"
 			scope:owner = {
 				OR = {
-					culture = { has_cultural_pillar = heritage_northern_apysaic }
-					culture = { has_cultural_pillar = heritage_middle_apysaic }
-					culture = { has_cultural_pillar = heritage_southern_apysaic }
-					# culture = { has_cultural_pillar = heritage_arabic }
-					# culture = { has_cultural_pillar = heritage_iranian }
-					# culture = { has_cultural_pillar = heritage_turkic }
-					# culture = { has_cultural_pillar = heritage_berber }
+					culture = { has_cultural_pillar = heritage_northern_apysaic } #LotR
+					culture = { has_cultural_pillar = heritage_middle_apysaic } #LotR
+					culture = { has_cultural_pillar = heritage_southern_apysaic } #LotR
+					# culture = { has_cultural_pillar = heritage_arabic } #LotR
+					# culture = { has_cultural_pillar = heritage_iranian } #LotR
+					# culture = { has_cultural_pillar = heritage_turkic } #LotR
+					# culture = { has_cultural_pillar = heritage_berber } #LotR
 				}
 			}
 		}
@@ -1033,7 +1069,7 @@ cheese = {
 }
 
 pocket_book = {
-	icon = {
+	icon = { #LotR
 		trigger =  {
 			scope:owner = {
 				OR = {
@@ -1043,7 +1079,7 @@ pocket_book = {
 					culture = { has_cultural_pillar = heritage_lomiquendi }
 					culture = { has_cultural_pillar = heritage_moriquendi }
 					##Quonton
-					culture = { has_cultural_tradition = tradition_new_numenor }
+					culture = { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}

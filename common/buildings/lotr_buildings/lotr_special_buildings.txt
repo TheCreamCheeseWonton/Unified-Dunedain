@@ -1650,8 +1650,8 @@ wonder_argonath = {
 	}
 	county_modifier = {
 		monthly_county_control_growth_factor = 0.3
-	}	
-	
+	}
+
 	ai_value = {
 		base = 100
 	}
@@ -1675,7 +1675,7 @@ wonder_amon_hen = {
 			}
 		}
 	}
-	
+
 	is_enabled = {
 		custom_tooltip = {
 			text = dunedain_or_has_ring_tt
@@ -1704,13 +1704,13 @@ wonder_amon_hen = {
 	character_modifier = {
 		intrigue_per_piety_level = 1
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = 6
 		}
 	}
-	
+
 	ai_value = {
 		base = 100
 	}
@@ -1733,7 +1733,7 @@ wonder_amon_lhaw = {
 			}
 		}
 	}
-	
+
 	is_enabled = {
 		custom_tooltip = {
 			text = dunedain_or_has_ring_tt
@@ -1762,13 +1762,13 @@ wonder_amon_lhaw = {
 	character_modifier = {
 		learning_per_piety_level = 1
 	}
-	
+
 	fallback = {
 		province_modifier = {
 			fort_level = 6
 		}
 	}
-	
+
 	ai_value = {
 		base = 100
 	}
@@ -8671,8 +8671,7 @@ wonder_rhosgobel = { # Rhosgobel
 	cost_gold = 500
 	can_construct = {
         scope:holder ?= {
-            is_maiar = yes
-			NOT = { culture = culture:maiar_fallen }
+            is_good_maiar = yes
         }
 	}
 	character_modifier = {
@@ -8680,8 +8679,7 @@ wonder_rhosgobel = { # Rhosgobel
 	}
 	is_enabled = {
        	scope:holder ?= {
-            is_maiar = yes
-			NOT = { culture = culture:maiar_fallen }
+            is_good_maiar = yes
        	}
 	}
 
@@ -12996,6 +12994,70 @@ wonder_gundabad_02 = { # Gunduzbad kh. High Home, Dwarven version
 		base = 100
 	}
 
+	next_building = wonder_gundabad_03
+
+	type = special
+	flag = travel_point_of_interest_martial
+}
+
+wonder_gundabad_03 = { # Gundabad, orc version
+
+	asset = {
+		type = pdxmesh
+		name = "gundabad_dwarven_mesh"
+	}
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_wonder_gundabad.dds"
+
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+
+	can_construct = {
+		scope:holder ?= {
+			faith_is_evil = yes
+		}
+	}
+
+	is_enabled = {
+		scope:holder ?= {
+			faith_is_evil = yes
+		}
+	}
+
+	show_disabled = yes
+
+	cost_gold = 1000
+
+	character_modifier = {
+		knight_limit = 2
+		knight_effectiveness_mult = 0.2
+		army_maintenance_mult = -0.10
+		monthly_dynasty_prestige_mult = 0.05
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.2
+		hostile_raid_time = 0.5
+	}
+
+	province_modifier = {
+		fort_level = good_building_fort_level_tier_1
+		defender_holding_advantage = normal_building_advantage_tier_5
+	}
+	levy = 1500
+	max_garrison = 500
+
+	on_complete = {
+		remove_building = wonder_gundabad_03
+		add_building = wonder_gundabad_01
+	}
+
+	ai_value = {
+		base = 100
+	}
+
 	type = special
 	flag = travel_point_of_interest_martial
 }
@@ -14887,11 +14949,11 @@ wonder_kinnlai_sanctum_of_the_valiant_02 = { # Sanctum of the Valiant - restored
 }
 wonder_kinnlai_sanctum_of_the_valiant_03 = { # Sanctum of the Valiant - thriving
 	type_icon = "wonder_kinnlai_sanctum_of_the_valiant.dds"
-	
+
 	effect_desc = {
 		desc = wonder_kinnlai_sanctum_of_the_valiant_training_desc
 	}
-	
+
 	construction_time = very_slow_construction_time
 
 	can_construct_potential = {

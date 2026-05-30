@@ -11,7 +11,7 @@
 #############################################
 
 ################################
-# Wastelands General Effects ### 
+# Wastelands General Effects ###
 ################################
 
 # Returns colony to a Wilderness / Wastelands
@@ -63,7 +63,7 @@ make_settlement_county_wilderness = {
 
 		hidden_effect = {
 			create_title_and_vassal_change = {
-				type = revoked
+				type = returned
 				save_scope_as = change
 			}
 			change_title_holder = {
@@ -293,7 +293,7 @@ ai_colonisation_effect = {
 		}
 		else_if = { # If Saruman settles
 			limit = {
-				scope:new_holder = { 
+				scope:new_holder = {
 					AND = {
 						has_character_flag = is_saruman
 						NOR = {
@@ -301,7 +301,7 @@ ai_colonisation_effect = {
 							has_character_flag = saruman_dunlendings_crushed
 							has_character_flag = saruman_uruk_hai_created
 						}
-					} 
+					}
 				}
 			}
 			set_county_culture = culture:isengard_dunlending
@@ -395,17 +395,17 @@ ai_colonisation_effect = {
 
 	scope:new_holder = {
 		if = {
-			limit = { 
-				NOT = { any_owned_story = { story_type = story_conqueror } } 
-				NOT = { has_character_flag = dwarf_in_moria } 
-				this = character:k_wastelands_holder 
+			limit = {
+				NOT = { any_owned_story = { story_type = story_conqueror } }
+				NOT = { has_character_flag = dwarf_in_moria }
+				this = character:k_wastelands_holder
 			}
 			hidden_effect = { remove_short_term_gold = colonise_cost_val }
 		}
 		else_if = {
-			limit = { 
-				NOT = { any_owned_story = { story_type = story_conqueror } } 
-				NOT = { has_character_flag = dwarf_in_moria } 
+			limit = {
+				NOT = { any_owned_story = { story_type = story_conqueror } }
+				NOT = { has_character_flag = dwarf_in_moria }
 			}
 			remove_short_term_gold = colonise_cost_val
 		}
@@ -466,6 +466,155 @@ ai_colonisation_effect = {
 
 	# scope:wastelands_holder_title.holder = { debug_log_scopes = no } # Only needed for testing
 	# debug_log = "lotr_wastelands_effects: -- COLONISATION FINISHED!" # Only needed for testing
+}
+
+# Colonise as a laamp effect including government and development changes
+lotr_laamp_colonisation_effect = {
+	root.location.county = { save_scope_as = target_county }
+	if = {
+		limit = {
+			NOT = { has_trait = adventurer }
+		}
+		add_trait = adventurer
+	}
+		ai_colonisation_effect = { WASTELANDS = scope:target_county ROOT_SCOPE = scope:actor }
+		add_gold = 250
+		if = {
+			limit = { is_elf = yes }
+			change_government = elven_government
+		}
+		else_if = {
+			limit = { is_hobbit = yes }
+			change_government = hobbit_government
+		}
+		else_if = {
+			limit = { is_orc = yes }
+			change_government = orcish_government
+		}
+		else = {
+			if = {
+				limit = {
+					exists = culture.culture_head
+					culture.culture_head = { has_government = feudal_government }
+				}
+				change_government = feudal_government
+			}
+			else_if = {
+				limit = {
+					exists = culture.culture_head
+					culture.culture_head = { has_government = clan_government }
+				}
+				change_government = clan_government
+			}
+			else_if = {
+				limit = {
+					exists = culture.culture_head
+					culture.culture_head = { has_government = wanua_government }
+				}
+				change_government = wanua_government
+			}
+			else_if = {
+				limit = {
+					exists = culture.culture_head
+					culture.culture_head = { has_government = tribal_government }
+				}
+				change_government = tribal_government
+			}
+			else_if = {
+				limit = {
+					exists = culture.culture_head
+					culture.culture_head = { has_government = oligarchy_government }
+				}
+				change_government = oligarchy_government
+			}
+			else = {
+				change_government = feudal_government
+			}
+		}
+		scope:target_county = {
+			random_list = {
+				33 = { change_development_level = 2 }
+				33 = { change_development_level = 3 }
+				33 = { change_development_level = 4 }
+			}
+			if = {
+				limit = { root = { is_elf = yes } }
+				title_province = { set_holding_type = elven_holding }
+			}
+			else_if = {
+				limit = { root.location = { terrain = halls } }
+				title_province = { set_holding_type = dwarven_holding }
+			}
+			else_if = {
+				limit = { root = { is_hobbit = yes } }
+				title_province = { set_holding_type = city_holding }
+			}
+			else = {
+				if = {
+					limit = {
+						OR = {
+							root = { has_government = tribal_government }
+							root = { has_government = wanua_government }
+						}
+					}
+					title_province = { set_holding_type = tribal_holding }
+				}
+				else = {
+					title_province = { set_holding_type = castle_holding }
+				}
+			}
+		}
+
+		if = { #Fallback
+			limit = { scope:target_county.faith = faith:faith_wastelands_pagan }
+			scope:target_county = { set_county_faith = root.faith }
+		}
+		if = { #Fallback
+			limit = { scope:target_county.culture = culture:wastelands }
+			scope:target_county = { set_county_culture = root.culture }
+		}
+
+	hidden_effect = {
+		create_title_and_vassal_change = {
+			type = independency
+			save_scope_as = change
+			add_claim_on_loss = no
+		}
+		becomes_independent = { change = scope:change }
+		resolve_title_and_vassal_change = scope:change
+
+		correct_wastelands_tracker = yes
+	}
+}
+
+# Remove settler's train domicile building if you settle a courtier
+lotr_delete_settlers_train_effect = {
+	domicile ?= {
+		if = {
+			limit = { has_domicile_building = settlement_supplies_06 }
+			remove_domicile_building = settlement_supplies_06
+		}
+		if = {
+			limit = { has_domicile_building = settlement_supplies_05 }
+			remove_domicile_building = settlement_supplies_05
+		}
+		if = {
+			limit = { has_domicile_building = settlement_supplies_04 }
+			remove_domicile_building = settlement_supplies_04
+		}
+		if = {
+			limit = { has_domicile_building = settlement_supplies_03 }
+			remove_domicile_building = settlement_supplies_03
+		}
+		if = {
+			limit = { has_domicile_building = settlement_supplies_02 }
+			remove_domicile_building = settlement_supplies_02
+		}
+		if = {
+			limit = { has_domicile_building = settlement_supplies_01 }
+			remove_domicile_building = settlement_supplies_01
+		}
+	}
 }
 
 halve_development = {
@@ -634,7 +783,7 @@ remove_cleaned_blockers_effect = { # Immediately remove any cleared blockers in 
 }
 
 upgrade_colony_holding_struggle_catalyst_effect = { # Balrog Struggle
-	#save the county holder as the character in case the construction wasn't started through GUI or by the AI 
+	#save the county holder as the character in case the construction wasn't started through GUI or by the AI
 	if = {
 		limit = {
 			NOT = { exists = scope:character }
@@ -671,7 +820,7 @@ upgrade_colony_holding_struggle_catalyst_effect = { # Balrog Struggle
 lotr_upgrade_settlement_to_full_holding_effect = {
 	$COUNTY$ = { save_scope_as = target_county }
 
-	scope:target_county = {		
+	scope:target_county = {
 		if = {
 			limit = { holder = { is_elf = yes } }
 			title_province = { set_holding_type = elven_holding }
@@ -836,10 +985,10 @@ pirate_adventurer_start_war_effect = {
 set_every_county_wilderness = {
 	$SELECTED_TITLE$.holder ?= {
 		every_tributary = {
-			limit = { 
+			limit = {
 				OR = {
 					suzerain = character:k_wastelands_holder
-					suzerain = { is_landed = no } 
+					suzerain = { is_landed = no }
 				}
 			}
 			end_tributary = yes
@@ -854,7 +1003,7 @@ set_every_county_wilderness = {
 
 	if = {
 		limit = { NOT = { exists = global_var:used_wastelands_gui } }
-		set_global_variable = used_wastelands_gui 
+		set_global_variable = used_wastelands_gui
 	}
 
 	if = {
@@ -868,7 +1017,7 @@ set_every_county_wilderness = {
 	}
 	if = {
 		limit = { $SELECTED_TITLE$ = title:e_bozisha_miraz }
-		title:e_thon_an_kharlokh = { holder ?= { destroy_title = prev } } 
+		title:e_thon_an_kharlokh = { holder ?= { destroy_title = prev } }
 	}
 	if = {
 		limit = { $SELECTED_TITLE$ = title:e_calenardhon }
@@ -890,7 +1039,7 @@ set_every_county_wilderness = {
 					}
 					holder = { add_to_list = prev_title_holder }
 				}
-	
+
 				every_county_province = {
 					limit = {
 						is_county_capital = yes
@@ -919,7 +1068,7 @@ set_every_county_wilderness = {
 					}
 					remove_holding = yes
 				}
-				
+
 				change_title_holder = {
 					holder = character:k_wastelands_holder
 					change = scope:change
@@ -928,7 +1077,7 @@ set_every_county_wilderness = {
 				change_development_level = -100
 			}
 		}
-		
+
 	}
 
 	$SELECTED_TITLE$ = {
@@ -947,10 +1096,10 @@ set_every_county_wilderness = {
 							list = prev_title_holder
 							this = holder
 						}
-						holder = { 
+						holder = {
 							any_held_title = {
 								tier = tier_county
-								count > 0 
+								count > 0
 							}
 						}
 						holder = character:k_wastelands_holder
@@ -973,7 +1122,7 @@ set_every_county_wilderness = {
 				}
 				remove_holding = yes
 			}
-			
+
 			change_title_holder = {
 				holder = character:k_wastelands_holder
 				change = scope:change
@@ -1018,7 +1167,7 @@ set_every_county_wilderness = {
 			set_location = province:3900
 		}
 	}
-		
+
 	character:k_wastelands_holder = {
 		every_held_county = {
 			set_county_faith = faith:faith_wastelands_pagan
@@ -1035,8 +1184,8 @@ set_every_county_wilderness = {
 						}
 					}
 				}
-			} 
-			else_if = { 
+			}
+			else_if = {
 				limit = {
 					trigger_if = {
 						limit = {
@@ -1102,7 +1251,7 @@ add_kingdom_titles_to_list = {
 						}
 					}
 				}
-				
+
 				kingdom = {
 					add_to_variable_list = {
 						name = de_jure_duchies
@@ -1207,7 +1356,7 @@ remove_kingdom_and_duchy_variables_from_empires = {
 						}
 					}
 				}
-				
+
 				kingdom = {
 					remove_list_variable = {
 						name = de_jure_duchies
@@ -1262,11 +1411,11 @@ lotr_WAC_build_settlement_building_effect = {
 		}
 		add_character_flag = $BUILDING$_priority
 		set_variable = {
-			name = gold_to_add 
+			name = gold_to_add
 			value = $GOLD_AMOUNT$
 		}
 		set_variable = {
-			name = prestige_to_add 
+			name = prestige_to_add
 			value = $PRESTIGE_AMOUNT$
 		}
 	}
@@ -1276,7 +1425,7 @@ lotr_WAC_build_settlement_building_effect = {
 			add_prestige = {
 				value = $PRESTIGE_AMOUNT$
 				multiply = -1
-			} 
+			}
 		}
 	}
 
@@ -1284,7 +1433,7 @@ lotr_WAC_build_settlement_building_effect = {
 		limit = { var:title_tier_to_colonise = flag:county }
 		var:title_to_colonise = {
 			if = {
-				limit = { 
+				limit = {
 					title_province = {
 						NOT = { has_building_with_flag = obstacle }
 						NOT = { has_building = $BUILDING$ }
@@ -1312,7 +1461,7 @@ lotr_WAC_build_settlement_building_effect = {
 			}
 		}
 	}
-	
+
 	scope:temporary_title_holder = {
 		trigger_event = wastelands.9999
 		trigger_event = { id = wastelands.9998 days = 5 }
@@ -1378,7 +1527,7 @@ lotr_WAC_transfer_all_player_settings = {
 		GLOBAL_LIST = lotr_WAC_holding_refuge_settings
 		PLAYER = root
 	}
-	
+
 	### Titles ###
 	lotr_WAC_transfer_setting_of_player_effect = {
 		GLOBAL_LIST = lotr_WAC_vassal_ruler_settings
@@ -1399,7 +1548,7 @@ lotr_WAC_transfer_stories_effect = {
 
 lotr_WAC_create_settings_story_cycle = {
 	if = {
-		limit = { 
+		limit = {
 			NOT = {
 				any_owned_story = { story_type = story_cycle_automated_colonisation_settings }
 			}
@@ -1451,7 +1600,7 @@ lotr_WAC_adjust_settings_effect = {
 
 lotr_WAC_add_story_cycle_to_visualisation = {
 	if = {
-		limit = { 
+		limit = {
 			NOT = {
 				any_owned_story = { story_type = story_cycle_automated_colonisation_visual }
 			}
@@ -1475,7 +1624,7 @@ lotr_WAC_add_story_cycle_to_visualisation = {
 			limit = {
 				exists = scope:visualisation_story
 				NOT = {
-					scope:visualisation_story = { 
+					scope:visualisation_story = {
 						is_target_in_variable_list = {
 							name = WAC_LIST_OF_TITLES
 							target = scope:current_WAC_story.var:title_to_colonise
@@ -1494,12 +1643,12 @@ lotr_WAC_add_story_cycle_to_visualisation = {
 
 	if = {
 		limit = {
-			scope:visualisation_story = { 
+			scope:visualisation_story = {
 				variable_list_size = {
 					name = WAC_LIST_OF_TITLES
 					value = 0
 				}
-			} 
+			}
 		}
 		scope:visualisation_story = { end_story = yes }
 	}

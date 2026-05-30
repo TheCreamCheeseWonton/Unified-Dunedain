@@ -4850,3 +4850,48 @@ great_building_arminalethor = {
 	type = great_building
 	flag = travel_point_of_interest_martial
 }
+
+great_building_nilulonde = {
+	type_icon = "icon_structure_iron_pillar_of_dhar.dds"
+
+	can_construct = {
+		always = no
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+	}
+	
+	county_modifier = {
+		county_opinion_add = 10
+		development_growth_factor = 0.1
+	}
+
+	province_modifier = {
+		supply_limit = normal_building_supply_limit_tier_5
+	}
+	character_modifier = {
+		monthly_dynasty_prestige = 0.1
+		martial = 1
+		knight_effectiveness_mult = 0.1
+		knight_limit = 1
+	}
+
+	type = great_building
+	flag = travel_point_of_interest_martial
+}

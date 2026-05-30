@@ -6020,14 +6020,35 @@ inspiration_adventure_create_artifact_effect = {
 									add = 5
 								}
 								trigger = {
-									NOT = {
-										any_artifact = {
-											has_variable = eriador_rune_stone
-										}
+									any_artifact = {
+										count < 5
+										has_variable = eriador_rune_stone
 									}
 									scope:location ?= { geographical_region = middleearth_uttersouth_mumakan }
 								}
 								create_artifact_eriador_rune_stone_effect = { OWNER = root }
+							}
+							15 = { #Crown of Amâv (fake)
+								modifier = {
+									OR = {
+										scope:adventurer.adventure_inspiration_average_skill_value >= medium_inspiration_skill
+										AND = {
+											exists = scope:inspiration_owner.var:artifact_quality
+											scope:inspiration_owner.var:artifact_quality > medium_adventurer_epic_quality_level #Cumulative event choices
+										}
+									}
+									add = -10 #If the adventurer is of medium or above skill they will avoid mass produced crowns.
+								}
+								trigger = {
+									any_artifact = {
+										count < 8
+										has_variable = crown_of_amav
+									}
+									scope:location ?= {
+										geographical_region = middleearth_uttersouth_mumakan
+									}
+								}
+								create_artifact_crown_of_amav_effect = { OWNER = root }
 							}
 						}
 					}

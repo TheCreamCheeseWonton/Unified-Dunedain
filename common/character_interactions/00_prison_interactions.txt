@@ -7416,6 +7416,7 @@ execute_prisoner_interaction = {
 			scope:actor = {
 				has_government = landless_adventurer_government
 				has_perk = fear_tax_perk
+				is_elf = no
 			}
 		}
 		flag = execution_provisions

@@ -1552,6 +1552,10 @@ gondor.0502 = { # Aragorn is allowed into Minas Tirith and is coronated
 				}
 			}
 		}
+		trigger_event = {
+			id = gondor.0598 
+			days = 1
+		}
 	}
 }
 
@@ -2402,10 +2406,6 @@ gondor.0507 = { # The Glory of Gondor Restored
 				check_can_recruit = no
 				size = 3
 			}
-		}
-		trigger_event = {
-		id = gondor.0598
-		days = 1
 		}
 	}
 	
@@ -5538,11 +5538,13 @@ gondor.0598 = {
 	immediate = {
 		if = {
 			limit = { has_game_rule = strong_gondor_strength }
+			remove_character_modifier = gondor_strengthened_1_modifier
 			add_character_modifier = gondor_strengthened_2_modifier
 		}
 		else_if = {
 			limit = { has_game_rule = very_strong_gondor_strength }
 			add_character_modifier = gondor_strengthened_3_modifier
+			remove_character_modifier = gondor_strengthened_2_modifier
 		}
 		title:k_gondor_steward.holder ?= {
 			trigger_event = {

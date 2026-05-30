@@ -412,6 +412,11 @@ dunedain_religion = {
 			holy_site = inzilioni
 			holy_site = arpel
 			holy_site = mispir
+			holy_site = meneltarma_faithful
+			holy_site = armenelos_faithful
+			holy_site = nindamos_faithful
+			holy_site = eldalonde_faithful
+			holy_site = oromet_faithful
 			
 			holy_site = sarul_faithful
 			holy_site = ardinak_faithful

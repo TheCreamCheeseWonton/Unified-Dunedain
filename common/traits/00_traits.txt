@@ -16148,15 +16148,30 @@ governor = {
 		25 = {
 			monthly_influence = 1
 			stewardship = 1
+			
+			# culture_modifier = { #LotR
+			# 	parameter = governor_trait_gives_counter_resistance
+			# 	counter_resistance = governor_trait_counter_bonus_value
+			# }
 		}
 		50 = {
 			monthly_influence = 1
 			diplomacy = 1
+			
+			# culture_modifier = { #LotR
+			# 	parameter = governor_trait_gives_counter_resistance
+			# 	counter_resistance = governor_trait_counter_bonus_value
+			# }
 		}
 		75 = {
 			monthly_influence = 1
 			martial = 1
 			intrigue = 1
+			
+			# culture_modifier = { #LotR
+			# 	parameter = governor_trait_gives_counter_resistance
+			# 	counter_resistance = governor_trait_counter_bonus_value
+			# }
 		}
 		100 = {
 			monthly_influence = 2
@@ -16164,6 +16179,11 @@ governor = {
 			martial = 1
 			stewardship = 1
 			intrigue = 1
+			
+			# culture_modifier = { #LotR
+			# 	parameter = governor_trait_gives_counter_resistance
+			# 	counter_resistance = governor_trait_counter_bonus_value
+			# }
 		}
 	}
 	

@@ -1091,6 +1091,12 @@
 		weight = 1
 	}
 
+	generic_material_wood_lebethron = { #LotR
+		group = generic_material_wood
+		trigger = { artifact_feature_wood_lebethron_trigger = yes }
+		weight = 1
+	}
+
 #################################################################
 # Weapon Core Features - Blades, Hilts, Heads, (S)hafts)		#
 #################################################################
@@ -1311,6 +1317,12 @@
 		trigger = { artifact_feature_wood_oiolaire_trigger = yes }
 		weight = 1
 	}
+
+	shaft_wood_lebethron = {
+		group = shaft_wood
+		trigger = { artifact_feature_wood_lebethron_trigger = yes }
+		weight = 1
+	}
 	
 ######### Bows
 
@@ -1347,6 +1359,12 @@
 		weight = 1
 	}
 
+	longbow_wood_lebethron = {
+		group = longbow_wood
+		trigger = { artifact_feature_wood_lebethron_trigger = yes }
+		weight = 1
+	}
+
 	# Composite
 	composite_wood_bamboo = {
 		group = composite_wood
@@ -1375,6 +1393,12 @@
 	composite_wood_oiolaire = {
 		group = composite_wood
 		trigger = { artifact_feature_wood_oiolaire_trigger = yes }
+		weight = 1
+	}
+
+	composite_wood_lebethron = {
+		group = composite_wood
+		trigger = { artifact_feature_wood_lebethron_trigger = yes }
 		weight = 1
 	}
 
@@ -1496,6 +1520,12 @@
 	bow_wood_oiolaire = {
 		group = bow_wood
 		trigger = { artifact_feature_wood_oiolaire_trigger = yes }
+		weight = 1
+	}
+
+	bow_wood_lebethron = {
+		group = bow_wood
+		trigger = { artifact_feature_wood_lebethron_trigger = yes }
 		weight = 1
 	}
 
@@ -3589,6 +3619,17 @@
 			AND = { 
 				artifact_value_trigger = { VALUE = scope:wealth MIN = 70 MAX = 999 }
 				artifact_region_trigger = { CHARACTER = scope:owner REGION = material_woods_oiolaire }
+			}
+		}
+		weight = 10
+	}
+
+	box_material_lebethron = {
+		group = box_material
+		trigger = {
+			AND = { 
+				artifact_value_trigger = { VALUE = scope:wealth MIN = 50 MAX = 999 }
+				artifact_region_trigger = { CHARACTER = scope:owner REGION = material_woods_lebethron }
 			}
 		}
 		weight = 10

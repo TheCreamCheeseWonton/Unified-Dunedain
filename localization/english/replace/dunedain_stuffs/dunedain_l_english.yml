@@ -397,6 +397,10 @@
  ephalnardu: "Êphalnardû"
  ephalnardu_flavor: "In the waning days of the [secondage|E], the Far Soldiers of the Eastern Fleet were often drawn from the outspoken [faithful|E] or those considered troublemakers by the Lords of [numenor|E]. Cast out to the furthest outposts, they became men of iron will and hardened bodies, able to endure any storm or typhoon, as they do even to this day."
 
+ acg_gimilthani_unit_gfx:0 "$gimilarani$"
+ acg_south_adunai_unit_gfx:0 "$kharatakhori$"
+ acg_pharazain_unit_gfx:0 "$pharazaini_culture$"
+
  #Cû Sindar for bow
  #Dâr is bastardization of daer meaning large
  #Arûn is bastardization of eryn meaning wood or forest
