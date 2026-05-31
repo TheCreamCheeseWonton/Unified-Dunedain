@@ -2903,6 +2903,30 @@ decision_reunify_numenor_culture = {
 					else = { 
 						add_trait = blood_of_numenor_10
 					}
+					if = { 
+						limit = { has_trait = clouded_eyes }	
+						remove_trait = clouded_eyes
+					}
+					if = { 
+						limit = { has_trait = withering_mind }	
+						remove_trait = withering_mind
+					}
+					if = { 
+						limit = { has_trait = infirm }	
+						remove_trait = infirm
+					}
+					if = { 
+						limit = { has_trait = faltering_heart }	
+						remove_trait = faltering_heart
+					}
+					if = { 
+						limit = { has_trait = fragile_bones }	
+						remove_trait = fragile_bones
+					}
+					if = { 
+						limit = { has_trait = incapable }	
+						remove_trait = incapable
+					}
 					every_living_character = { 
 						limit = { 
 							OR = { 
@@ -2972,6 +2996,30 @@ decision_reunify_numenor_culture = {
 						}
 						else = { 
 							add_trait = blood_of_numenor_4
+						}
+						if = { 
+							limit = { has_trait = clouded_eyes }	
+							remove_trait = clouded_eyes
+						}
+						if = { 
+							limit = { has_trait = withering_mind }	
+							remove_trait = withering_mind
+						}
+						if = { 
+							limit = { has_trait = infirm }	
+							remove_trait = infirm
+						}
+						if = { 
+							limit = { has_trait = faltering_heart }	
+							remove_trait = faltering_heart
+						}
+						if = { 
+							limit = { has_trait = fragile_bones }	
+							remove_trait = fragile_bones
+						}
+						if = { 
+							limit = { has_trait = incapable }	
+							remove_trait = incapable
 						}
 					}
 				}
@@ -3048,6 +3096,30 @@ decision_reunify_numenor_culture = {
 						}
 						else = { 
 							add_trait = blood_of_numenor_2
+						}
+						if = { 
+							limit = { has_trait = clouded_eyes }	
+							remove_trait = clouded_eyes
+						}
+						if = { 
+							limit = { has_trait = withering_mind }	
+							remove_trait = withering_mind
+						}
+						if = { 
+							limit = { has_trait = infirm }	
+							remove_trait = infirm
+						}
+						if = { 
+							limit = { has_trait = faltering_heart }	
+							remove_trait = faltering_heart
+						}
+						if = { 
+							limit = { has_trait = fragile_bones }	
+							remove_trait = fragile_bones
+						}
+						if = { 
+							limit = { has_trait = incapable }	
+							remove_trait = incapable
 						}
 					}
 				}
@@ -3163,79 +3235,22 @@ decision_reunify_numenor_culture = {
 
 			set_culture = culture:new_numenorean_adunaic
 			custom_tooltip = decision_reunify_numenor_culture_vassals_custom_a
-			custom_tooltip = decision_gain_numenor_blood_culture_self
-			custom_tooltip = decision_gain_numenor_blood_culture
-			hidden_effect = {		
-				if = { 
-					limit = { has_trait = blood_of_numenor_10 }	
-					add_piety = 1000
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_9 }	
-					remove_trait = blood_of_numenor_9
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_8 }	
-					remove_trait = blood_of_numenor_8
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_7 }	
-					remove_trait = blood_of_numenor_7
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_6 }	
-					remove_trait = blood_of_numenor_6
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_5 }	
-					remove_trait = blood_of_numenor_5
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_4 }	
-					remove_trait = blood_of_numenor_4
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_3 }	
-					remove_trait = blood_of_numenor_3
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_2 }	
-					remove_trait = blood_of_numenor_2
-					add_trait = blood_of_numenor_10
-				}
-				else_if = { 
-					limit = { has_trait = blood_of_numenor_1 }	
-					remove_trait = blood_of_numenor_1
-					add_trait = blood_of_numenor_10
-				}
-				else = { 
-					add_trait = blood_of_numenor_10
-				}
-				every_living_character = { 
-					limit = { 
-						OR = { 
-							AND = { 
-								culture = { has_cultural_pillar = heritage_dunedain }
-								NOT = { culture = { this = culture:orodbedhrim } }
-							}
-							AND = { 
-								culture = { has_cultural_pillar = heritage_bellakari }
-								NOT = { culture = { this = culture:bellanarud } }
-							}
-							culture = { has_cultural_pillar = heritage_northern_adunaic }
-							culture = { has_cultural_pillar = heritage_southern_adunaic }
-							culture = { has_cultural_pillar = heritage_eastern_adunaic }
-							culture = { has_cultural_pillar = heritage_unified_adunaic }
-						}
-					}
-					set_culture = culture:new_numenorean_adunaic
+			if = { 
+				limit = { has_game_rule = default_bon }
+				custom_tooltip = decision_gain_numenor_blood_culture_self
+				custom_tooltip = decision_gain_numenor_blood_culture
+			}
+			else_if = { 
+				limit = { has_game_rule = half_bon }
+				custom_tooltip = decision_gain_numenor_blood_culture_lesser
+			}
+			else = { 
+				limit = { has_game_rule = lore_accurate_bon }
+				custom_tooltip = decision_gain_numenor_blood_culture_none
+			}
+			if = { 
+				limit = { has_game_rule = default_bon }
+				hidden_effect = {		
 					if = { 
 						limit = { has_trait = blood_of_numenor_10 }	
 						add_piety = 1000
@@ -3263,30 +3278,272 @@ decision_reunify_numenor_culture = {
 					else_if = { 
 						limit = { has_trait = blood_of_numenor_5 }	
 						remove_trait = blood_of_numenor_5
-						add_trait = blood_of_numenor_9
+						add_trait = blood_of_numenor_10
 					}
 					else_if = { 
 						limit = { has_trait = blood_of_numenor_4 }	
 						remove_trait = blood_of_numenor_4
-						add_trait = blood_of_numenor_8
+						add_trait = blood_of_numenor_10
 					}
 					else_if = { 
 						limit = { has_trait = blood_of_numenor_3 }	
 						remove_trait = blood_of_numenor_3
-						add_trait = blood_of_numenor_7
+						add_trait = blood_of_numenor_10
 					}
 					else_if = { 
 						limit = { has_trait = blood_of_numenor_2 }	
 						remove_trait = blood_of_numenor_2
-						add_trait = blood_of_numenor_6
+						add_trait = blood_of_numenor_10
 					}
 					else_if = { 
 						limit = { has_trait = blood_of_numenor_1 }	
 						remove_trait = blood_of_numenor_1
-						add_trait = blood_of_numenor_5
+						add_trait = blood_of_numenor_10
 					}
 					else = { 
-						add_trait = blood_of_numenor_4
+						add_trait = blood_of_numenor_10
+					}
+					if = { 
+						limit = { has_trait = clouded_eyes }	
+						remove_trait = clouded_eyes
+					}
+					if = { 
+						limit = { has_trait = withering_mind }	
+						remove_trait = withering_mind
+					}
+					if = { 
+						limit = { has_trait = infirm }	
+						remove_trait = infirm
+					}
+					if = { 
+						limit = { has_trait = faltering_heart }	
+						remove_trait = faltering_heart
+					}
+					if = { 
+						limit = { has_trait = fragile_bones }	
+						remove_trait = fragile_bones
+					}
+					if = { 
+						limit = { has_trait = incapable }	
+						remove_trait = incapable
+					}
+					every_living_character = { 
+						limit = { 
+							OR = { 
+								AND = { 
+									culture = { has_cultural_pillar = heritage_dunedain }
+									NOT = { culture = { this = culture:orodbedhrim } }
+								}
+								AND = { 
+									culture = { has_cultural_pillar = heritage_bellakari }
+									NOT = { culture = { this = culture:bellanarud } }
+								}
+								culture = { has_cultural_pillar = heritage_northern_adunaic }
+								culture = { has_cultural_pillar = heritage_southern_adunaic }
+								culture = { has_cultural_pillar = heritage_eastern_adunaic }
+								culture = { has_cultural_pillar = heritage_unified_adunaic }
+							}
+						}
+						set_culture = culture:new_numenorean_adunaic
+						if = { 
+							limit = { has_trait = blood_of_numenor_10 }	
+							add_piety = 1000
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_9 }	
+							remove_trait = blood_of_numenor_9
+							add_trait = blood_of_numenor_10
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_8 }	
+							remove_trait = blood_of_numenor_8
+							add_trait = blood_of_numenor_10
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_7 }	
+							remove_trait = blood_of_numenor_7
+							add_trait = blood_of_numenor_10
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_6 }	
+							remove_trait = blood_of_numenor_6
+							add_trait = blood_of_numenor_10
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_5 }	
+							remove_trait = blood_of_numenor_5
+							add_trait = blood_of_numenor_9
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_4 }	
+							remove_trait = blood_of_numenor_4
+							add_trait = blood_of_numenor_8
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_3 }	
+							remove_trait = blood_of_numenor_3
+							add_trait = blood_of_numenor_7
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_2 }	
+							remove_trait = blood_of_numenor_2
+							add_trait = blood_of_numenor_6
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_1 }	
+							remove_trait = blood_of_numenor_1
+							add_trait = blood_of_numenor_5
+						}
+						else = { 
+							add_trait = blood_of_numenor_4
+						}
+						if = { 
+							limit = { has_trait = clouded_eyes }	
+							remove_trait = clouded_eyes
+						}
+						if = { 
+							limit = { has_trait = withering_mind }	
+							remove_trait = withering_mind
+						}
+						if = { 
+							limit = { has_trait = infirm }	
+							remove_trait = infirm
+						}
+						if = { 
+							limit = { has_trait = faltering_heart }	
+							remove_trait = faltering_heart
+						}
+						if = { 
+							limit = { has_trait = fragile_bones }	
+							remove_trait = fragile_bones
+						}
+						if = { 
+							limit = { has_trait = incapable }	
+							remove_trait = incapable
+						}
+					}
+				}
+			}
+			else_if = { 
+				limit = { has_game_rule = half_bon }
+				hidden_effect = {	
+					every_living_character = { 
+						limit = { 
+							OR = { 
+								AND = { 
+									culture = { has_cultural_pillar = heritage_dunedain }
+									NOT = { culture = { this = culture:orodbedhrim } }
+								}
+								AND = { 
+									culture = { has_cultural_pillar = heritage_bellakari }
+									NOT = { culture = { this = culture:bellanarud } }
+								}
+								culture = { has_cultural_pillar = heritage_northern_adunaic }
+								culture = { has_cultural_pillar = heritage_southern_adunaic }
+								culture = { has_cultural_pillar = heritage_eastern_adunaic }
+								culture = { has_cultural_pillar = heritage_unified_adunaic }
+							}
+						}
+						set_culture = culture:new_numenorean_adunaic
+						if = { 
+							limit = { has_trait = blood_of_numenor_10 }	
+							add_piety = 1000
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_9 }	
+							remove_trait = blood_of_numenor_9
+							add_trait = blood_of_numenor_10
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_8 }	
+							remove_trait = blood_of_numenor_8
+							add_trait = blood_of_numenor_10
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_7 }	
+							remove_trait = blood_of_numenor_7
+							add_trait = blood_of_numenor_9
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_6 }	
+							remove_trait = blood_of_numenor_6
+							add_trait = blood_of_numenor_8
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_5 }	
+							remove_trait = blood_of_numenor_5
+							add_trait = blood_of_numenor_7
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_4 }	
+							remove_trait = blood_of_numenor_4
+							add_trait = blood_of_numenor_6
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_3 }	
+							remove_trait = blood_of_numenor_3
+							add_trait = blood_of_numenor_5
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_2 }	
+							remove_trait = blood_of_numenor_2
+							add_trait = blood_of_numenor_4
+						}
+						else_if = { 
+							limit = { has_trait = blood_of_numenor_1 }	
+							remove_trait = blood_of_numenor_1
+							add_trait = blood_of_numenor_3
+						}
+						else = { 
+							add_trait = blood_of_numenor_2
+						}
+						if = { 
+							limit = { has_trait = clouded_eyes }	
+							remove_trait = clouded_eyes
+						}
+						if = { 
+							limit = { has_trait = withering_mind }	
+							remove_trait = withering_mind
+						}
+						if = { 
+							limit = { has_trait = infirm }	
+							remove_trait = infirm
+						}
+						if = { 
+							limit = { has_trait = faltering_heart }	
+							remove_trait = faltering_heart
+						}
+						if = { 
+							limit = { has_trait = fragile_bones }	
+							remove_trait = fragile_bones
+						}
+						if = { 
+							limit = { has_trait = incapable }	
+							remove_trait = incapable
+						}
+					}
+				}
+			}
+			else = { 
+				hidden_effect = {	
+					every_living_character = { 
+						limit = { 
+							OR = { 
+								AND = { 
+									culture = { has_cultural_pillar = heritage_dunedain }
+									NOT = { culture = { this = culture:orodbedhrim } }
+								}
+								AND = { 
+									culture = { has_cultural_pillar = heritage_bellakari }
+									NOT = { culture = { this = culture:bellanarud } }
+								}
+								culture = { has_cultural_pillar = heritage_northern_adunaic }
+								culture = { has_cultural_pillar = heritage_southern_adunaic }
+								culture = { has_cultural_pillar = heritage_eastern_adunaic }
+								culture = { has_cultural_pillar = heritage_unified_adunaic }
+							}
+						}
+						set_culture = culture:new_numenorean_adunaic
 					}
 				}
 			}
