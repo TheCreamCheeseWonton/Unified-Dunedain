@@ -84,6 +84,7 @@ ud_custom_on_title_gain = {
 		if = { 
 			limit = { 
 				scope:title ?= title:k_tanturak
+				dynasty = dynasty:dynasty_gimilzadan
 				is_target_in_global_variable_list = {
 					name = unavailable_unique_decisions
 					target = flag:gimilzir_tanturak_path
