@@ -431,6 +431,15 @@ pharazain_post_anbalkumagan_evil = {
 	knight_effectiveness_per_dread = 0.002
 }
 
+pharazain_post_hegemon = { 
+	icon = diplomacy_positive
+	same_culture_opinion = 20
+	diplomacy = 1
+	vassal_tax_mult = 0.1
+	dread_baseline_add = 15
+
+}
+
 pharazain_post_bellakar = { 
 	icon = diplomacy_positive
 	different_culture_opinion = 10

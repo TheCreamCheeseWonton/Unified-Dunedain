@@ -1456,6 +1456,12 @@ pharazain_events.25 = { #Separatism Warning
       			}
       			desc = pharazain_events.25.desc4
     		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = hegemony_pharazain
+      			}
+      			desc = pharazain_events.25.desc5
+    		}
   		}
 	}
 	theme = stewardship
@@ -1669,6 +1675,12 @@ pharazain_events.30 = { # Solidify Empire Flavor - 2
       			}
       			desc = pharazain_events.30.desc4
     		}
+			triggered_desc = {
+      			trigger = {
+        			has_global_variable = hegemony_pharazain
+      			}
+      			desc = pharazain_events.30.desc5
+    		}
   		}
 	}
 	theme = stewardship_duty_focus
@@ -1783,6 +1795,18 @@ pharazain_events.30 = { # Solidify Empire Flavor - 2
 		}
 
 		add_character_modifier = { modifier = pharazain_post_anbalkumagan_good years = 30 }
+		add_character_modifier = {
+			modifier = promise_of_feasts_modifier
+			years = 15
+		}
+	}
+	option = {
+		name = pharazain_events.30.g #We made the right choice
+		trigger = {
+			has_global_variable = hegemony_pharazain
+		}
+
+		add_character_modifier = { modifier = pharazain_post_hegemon years = 30 }
 		add_character_modifier = {
 			modifier = promise_of_feasts_modifier
 			years = 15
