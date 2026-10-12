@@ -2135,7 +2135,7 @@ numenorean_marines = {
 	##Buffed so hes a bigger challenge
 	stack = 100
 	ai_quality = { value = 500 }
-	icon = numenorean_soldiers
+	icon = numenorean_elites
 }
 
 #numenorean_crossbowmen = {
