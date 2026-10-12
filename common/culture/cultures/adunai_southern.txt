@@ -28,7 +28,8 @@
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		1 = southern_adunai_ethnicity
+		50 = black_numenorean_ethnicity
+		50 = southern_adunai_ethnicity		
 	}
 }
 
@@ -62,7 +63,7 @@ anbalukkhori = {
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		1 = southern_adunai_ethnicity
+		100 = southern_adunai_ethnicity
 	}
 }
 
@@ -97,7 +98,7 @@ kharadunaim = {
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		1 = southern_adunai_ethnicity
+		100 = southern_adunai_ethnicity
 	}
 }
 
@@ -133,7 +134,7 @@ kharatakhori = {
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		1 = southern_adunai_ethnicity
+		100 = southern_adunai_ethnicity
 	}
 }
 ##End Quonton
@@ -168,7 +169,7 @@ tanturaki = { # The inhabitants of the colony of Tantûrak, this culture is exti
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		1 = southern_adunai_ethnicity
+		100 = southern_adunai_ethnicity
 	}
 }
 
@@ -206,7 +207,7 @@ gimilarani = { #Faithful Batanim of Thani Hazad
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		3 = southern_adunai_ethnicity
-		1 = numenorean_ethnicity
+		67 = southern_adunai_ethnicity
+		33 = numenorean_ethnicity
 	}
 }

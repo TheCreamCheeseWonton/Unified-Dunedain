@@ -534,6 +534,9 @@ dunedain_on_game_start = {
 				assign_dog_eye_color_effect = { COLOR = brown }
 			}
 		}
+		
+		##Set Up Island Numenoreans
+		title:c_tol_uialgaer = { if = { limit = { game_start_date > 6900 } set_county_culture = culture:ar_adunaim_numenorean } }
 
 		##Bad Arnorian Ruins
 		province:4415 = { if = { limit = { is_wastelands = yes } add_province_modifier = { modifier = util_wasteland_3 days = 0 } add_building = ruins_of_arnor_bad } }

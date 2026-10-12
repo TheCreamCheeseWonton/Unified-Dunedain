@@ -1051,7 +1051,7 @@
  nick_pharazain_golden: "an-Pharazir"
  nick_pharazain_golden_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U], hailed as an-Pharazir, 'The Golden One,' is remembered for bringing into being the [GetTitleByKey('h_pharazain').GetName], the fulfillment of a long-cherished dream. After enduring decades of Civil War and unrest, [CHARACTER.GetShortUINameNoTooltipNoFormat|U] secured [CharYourHerHis(CHARACTER)] empire through wit, courage, and unyielding resolve. In time, [CharYouSheHe(CHARACTER)] not only established but also cemented dominion over the greatest realm of the [adunai|E], if not all [men|E], in [middleearth|E]."
 
- nick_numenor_restorer: "Restorer of the World"
+ nick_numenor_restorer: "Rehtacala"
  nick_numenor_restorer_desc: "[CHARACTER.GetShortUINameNoTooltipNoFormat|U], hailed throughout the realms of [men|E] as the great reformer of the Dominion of [numenor|E] in exile. From [thanihazad|E] and [bellakar|E], to [gondor|E], and even the distant kingdom of [arnor|E], all acclaimed [CHARACTER.GetShortUINameNoTooltipNoFormat|U] as their rightful sovereign. From the days of [CharYourHerHis(CHARACTER)] reign onward, the dominion of Númenor-in-Exile would be acknowledged across the world of [men|E]." 
 
  dunedain_identity.1.t: "The Language Question"

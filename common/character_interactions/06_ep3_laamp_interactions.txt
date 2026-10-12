@@ -2028,6 +2028,15 @@ negotiate_settlement_interaction = {
 				}
 			}
 		}
+		modifier = { # LOTR - Don't land people you can't tolerate
+			add = -500
+			scope:actor = { NOT = { lotr_tolerance_trigger = { CHARACTER = scope:recipient } } }
+			desc = LOTR_RACE_AND_ALIGNMENT_INCOMPATIBILITY
+		}
+		modifier = { # LOTR - Don't land people of opposite alignments
+			add = -50
+			scope:recipient = { opposite_alignment = { TARGET = scope:actor } }
+		}
 	}
 
 	ai_will_do = {

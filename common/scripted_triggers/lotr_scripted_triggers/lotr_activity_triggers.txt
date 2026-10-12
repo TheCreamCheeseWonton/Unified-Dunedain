@@ -9,6 +9,7 @@ lotr_is_shown_inspection_activity_trigger = {
 	NOT = { has_trait = sauron_ringless }
 	is_in_valinor = no #LotR
 	is_lotr_adult = yes
+	is_wastelands = no
 }
 
 lotr_is_shown_pilgrimage_activity_trigger = {
@@ -20,12 +21,8 @@ lotr_is_shown_pilgrimage_activity_trigger = {
 }
 
 lotr_is_shown_adult_education_activity_trigger = {
-	is_lotr_adult = yes #LotR
-	NOT = { #LotR
-		is_orc = yes # Orcs don't go to college!
-		cannot_be_killed = yes
-		is_in_valinor = yes
-	}
+	lotr_is_shown_basic_activity_trigger = yes
+	is_orc = no # Orcs don't go to college!
 }
 
 lotr_can_sail = {

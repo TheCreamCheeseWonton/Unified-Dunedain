@@ -194,6 +194,17 @@ wizard_staff_template = {
 	unique = yes
 }
 
+glamdring_template = {
+	can_equip = {
+		NOR = {
+			is_orc = yes
+			is_nazgul = yes
+		}
+	}
+
+	unique = yes
+}
+
 pipe_of_radagast_template = {
 	can_equip = {
 		always = yes
@@ -1393,6 +1404,35 @@ elendilmir_valandil_template = {
 	unique = yes
 }
 
+dunacharn_template = {
+	can_equip = {
+		NOR = {
+			is_orc = yes
+			is_nazgul = yes
+		}
+	}
+	can_benefit = {
+		OR = {
+			dynasty = dynasty:dynasty_elros
+			dynasty = dynasty:dynasty_elendil
+			dynasty = dynasty:dynasty_anarion
+			culture = { has_cultural_pillar = heritage_dunedain }
+		}
+	}
+
+	fallback = {
+		prowess_no_portrait = 10
+		monthly_prestige = 0.5
+		knight_effectiveness_mult = 0.1
+	}
+
+	ai_score = {
+		value = 100
+	}
+
+	unique = yes
+}
+
 
 ## Rohan & Dunland ##
 
@@ -1443,6 +1483,8 @@ tapestry_ride_eorl_template = {
 		court_grandeur_baseline_add = 3
 		monthly_prestige = 0.2
 	}
+
+	unique = yes
 }
 
 wulf_fang_template = {

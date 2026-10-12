@@ -900,6 +900,15 @@ culture_ai_weight_monster = {
 		limit = { culture = { has_cultural_tradition = tradition_beast_masters } }
 		add = 500
 	}
+	if = {
+		limit = { 
+			OR = {
+				culture = culture:kazgumhoth
+				culture = { any_parent_culture_or_above = { this = culture:kazgumhoth } }
+			}
+		}
+		add = 250
+	}
 }
 
 counter_synergy_ai_weight_archers = {

@@ -2560,8 +2560,13 @@ inspiration_adventure_create_artifact_effect = {
 														terrain = halls
 														is_dwarf = no
 													}
+													geographical_region = adventure_orclands
 												}
 											}
+										}
+										modifier = {
+											NOT = { scope:location ?= { is_orc = yes } }
+											add = -75
 										}
 										random_list = {
 											1 = {
@@ -4437,13 +4442,13 @@ inspiration_adventure_create_artifact_effect = {
 								trigger = {
 									game_start_date > 4033
 									NOR = {
-										any_artifact = { has_variable = dunachar }
+										any_artifact = { has_variable = dunacharn }
 									}
 									scope:location ?= {
 										geographical_region = middleearth_west_arnor
 									}
 								}
-								create_artifact_dunachar_effect = { OWNER = root }
+								create_artifact_dunacharn_effect = { OWNER = root }
 							}
 
 							5 = { #Gorthagnir
@@ -5521,7 +5526,7 @@ inspiration_adventure_create_artifact_effect = {
 								}
 								trigger = {
 									any_artifact = {
-										count < 10
+										count < 12
 										has_variable = lesser_ring
 									}
 									scope:location ?= { geographical_region = middleearth_west_eregion_south }

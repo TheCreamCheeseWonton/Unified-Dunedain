@@ -1,16 +1,19 @@
 ﻿@msg_completion_effect_dwarven = "event:/DLC/EP4/SFX/Stingers/China/tgp_mx_sting_finishing_great_project_disaster"
-@great_project_dwarven_icon = "gfx/interface/icons/great_projects/_default.dds"
+@great_project_dwarven_icon = "gfx/interface/icons/faith/custom_dwarf_09.dds"
 @dwarven_capital_illustration = "gfx/interface/illustrations/decisions/decision_dwarves_03.dds"
 @lotr_build_fleet_icon = "gfx/interface/icons/activities/activity_sailing.dds"
 @lotr_build_fleet_illustration = "gfx/interface/illustrations/decisions/decision_fleet.dds"
 @lotr_mend_realm_icon = "gfx/interface/icons/faith/custom_elves_01.dds"
-@lotr_mend_realm_illustration = "gfx/interface/illustrations/event_scenes/elven_holding.dds"
-@lotr_build_osgiliath = "gfx/interface/illustrations/event_scenes/battlefield_dunedain.dds"
-@arnorian_stronghold_illustration = "gfx/interface/illustrations/event_scenes/fornost.dds"
+@lotr_mend_realm_illustration = "gfx/interface/illustrations/event_scenes/lotr_elven_holding.dds"
+@lotr_build_osgiliath = "gfx/interface/illustrations/event_scenes/lotr_battlefield_dunedain.dds"
+@lotr_arnorian_stronghold_icon = "gfx/interface/icons/faith/custom_edain.dds"
+@lotr_arnorian_stronghold_illustration = "gfx/interface/illustrations/event_scenes/lotr_fornost.dds"
 @lotr_build_gaven = "gfx/interface/illustrations/event_scenes/jungle_pyramid_ruins.dds"
 @icon_great_project_generic_icon = "gfx/interface/icons/great_projects/_default.dds"
 @lotr_build_citadel_icon = "gfx/interface/icons/regimenttypes/heavy_infantry.dds"
 @lotr_build_citadel_illustration = "gfx/interface/illustrations/decisions/decision_dol_amroth_01.dds"
+@lotr_rebuild_ost_in_edhil_icon = "gfx/interface/icons/artifact/artifact_icons_unique_nardring.dds"
+@lotr_rebuild_ost_in_edhil_illustration = "gfx/interface/illustrations/event_scenes/lotr_eregion.dds"
 
 ### The Dwarven Capital Great Project! ~ by Brice Underhill
 
@@ -32,7 +35,7 @@ dwarven_capital_02 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = first_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = second_tier_dwarven_capital_building
 					has_province_modifier = second_tier_dwarven_capital_building_ongoing
 				}
@@ -56,8 +59,8 @@ dwarven_capital_02 = {
 			}
 			trigger_if = {
 				limit = {
-					this = province:4909  #Durin's Hall
-					exists = struggle:balrog_struggle 
+					this = province:4909 #Durin's Hall
+					exists = struggle:balrog_struggle
 				}
 				custom_tooltip = {
 					text = balrog_is_slumbering
@@ -80,8 +83,8 @@ dwarven_capital_02 = {
 				}
 				trigger_if = {
 					limit = {
-						this = province:4909  #Durin's Hall
-						exists = struggle:balrog_struggle 
+						this = province:4909 #Durin's Hall
+						exists = struggle:balrog_struggle
 					}
 					custom_tooltip = {
 						text = balrog_is_slumbering
@@ -96,7 +99,7 @@ dwarven_capital_02 = {
 		gold = dwarven_capital_gold_cost
 	}
 
-	construction_time = 1825
+	construction_time = dwarven_great_project_base_construction_time
 
 	contributor_cooldown = standard_contributor_cooldown_value
 
@@ -251,7 +254,6 @@ dwarven_capital_02 = {
 			}
 			contributor_is_valid = {
 				dwarven_second_tier_trigger = yes
-				is_dwarf = yes
 			}
 
 			cost = { }
@@ -281,7 +283,7 @@ dwarven_capital_02 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_low_gold_cost
@@ -295,6 +297,10 @@ dwarven_capital_02 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_brick_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -304,14 +310,7 @@ dwarven_capital_02 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -322,7 +321,7 @@ dwarven_capital_02 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_low_gold_cost
@@ -343,6 +342,10 @@ dwarven_capital_02 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_tiles_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -352,14 +355,7 @@ dwarven_capital_02 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -370,7 +366,7 @@ dwarven_capital_02 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_low_gold_cost
@@ -391,6 +387,10 @@ dwarven_capital_02 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_shallow_pools_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -400,14 +400,7 @@ dwarven_capital_02 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -432,6 +425,10 @@ dwarven_capital_02 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -441,14 +438,7 @@ dwarven_capital_02 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -461,7 +451,7 @@ dwarven_capital_02 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_low_gold_cost
@@ -475,6 +465,10 @@ dwarven_capital_02 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_decorative_tiles_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -484,14 +478,7 @@ dwarven_capital_02 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -504,7 +491,7 @@ dwarven_capital_02 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_low_gold_cost
@@ -545,6 +532,10 @@ dwarven_capital_02 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_decorated_ceilings_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -554,14 +545,7 @@ dwarven_capital_02 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -589,11 +573,10 @@ dwarven_capital_02 = {
 					text = lotr_khazad_legacy_3_name
 					dynasty = { has_dynasty_perk = lotr_khazad_legacy_3 }
 				}
-				is_dwarf = yes
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -614,7 +597,6 @@ dwarven_capital_02 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_throne_room_reward_effect = yes }
 			}
-
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -624,7 +606,7 @@ dwarven_capital_02 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 	}
@@ -666,7 +648,7 @@ dwarven_capital_03 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = second_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = third_tier_dwarven_capital_building
 					has_province_modifier = third_tier_dwarven_capital_building_ongoing
 				}
@@ -691,8 +673,8 @@ dwarven_capital_03 = {
 			}
 			trigger_if = {
 				limit = {
-					this = province:4909  #Durin's Hall
-					exists = struggle:balrog_struggle 
+					this = province:4909 #Durin's Hall
+					exists = struggle:balrog_struggle
 				}
 				custom_tooltip = {
 					text = balrog_is_slumbering
@@ -716,8 +698,8 @@ dwarven_capital_03 = {
 			}
 			trigger_if = {
 				limit = {
-					this = province:4909  #Durin's Hall
-					exists = struggle:balrog_struggle 
+					this = province:4909 #Durin's Hall
+					exists = struggle:balrog_struggle
 				}
 				custom_tooltip = {
 					text = balrog_is_slumbering
@@ -728,13 +710,16 @@ dwarven_capital_03 = {
 	}
 
 	cost = {
-		gold = {
+		treasury_or_gold = {
 			value = dwarven_capital_gold_cost
 			multiply = 1.5
 		}
 	}
 
-	construction_time = 3650
+	construction_time = {
+		value = dwarven_great_project_base_construction_time
+		multiply = 2
+	}
 
 	contributor_cooldown = standard_contributor_cooldown_value
 
@@ -887,7 +872,6 @@ dwarven_capital_03 = {
 			}
 			contributor_is_valid = {
 				dwarven_third_tier_trigger = yes
-				is_dwarf = yes
 			}
 
 			cost = { }
@@ -917,7 +901,7 @@ dwarven_capital_03 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -931,6 +915,10 @@ dwarven_capital_03 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_marble_stone_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -940,14 +928,7 @@ dwarven_capital_03 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -958,7 +939,7 @@ dwarven_capital_03 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -979,6 +960,10 @@ dwarven_capital_03 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_arched_gateways_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -988,14 +973,7 @@ dwarven_capital_03 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1006,7 +984,7 @@ dwarven_capital_03 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1027,6 +1005,10 @@ dwarven_capital_03 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_divine_statues_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1036,14 +1018,7 @@ dwarven_capital_03 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1068,6 +1043,10 @@ dwarven_capital_03 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1077,14 +1056,7 @@ dwarven_capital_03 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1116,7 +1088,7 @@ dwarven_capital_03 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1137,6 +1109,10 @@ dwarven_capital_03 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_dynastic_statues_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1146,14 +1122,7 @@ dwarven_capital_03 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1166,7 +1135,7 @@ dwarven_capital_03 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1180,6 +1149,10 @@ dwarven_capital_03 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_gilded_ceilings_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1189,14 +1162,7 @@ dwarven_capital_03 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1226,7 +1192,7 @@ dwarven_capital_03 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1247,7 +1213,6 @@ dwarven_capital_03 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_palatial_compound_reward_effect = yes }
 			}
-
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1300,7 +1265,7 @@ dwarven_capital_04 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = third_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = fourth_tier_dwarven_capital_building
 					has_province_modifier = fourth_tier_dwarven_capital_building_ongoing
 				}
@@ -1318,15 +1283,15 @@ dwarven_capital_04 = {
 			custom_tooltip = {
 				text = lotr_great_project_type_dwarven_capital_has_t3_building
 				has_building_with_flag = third_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = fourth_tier_dwarven_capital_building
 					has_province_modifier = fourth_tier_dwarven_capital_building_ongoing
 				}
 			}
 			trigger_if = {
 				limit = {
-					this = province:4909  #Durin's Hall
-					exists = struggle:balrog_struggle 
+					this = province:4909 #Durin's Hall
+					exists = struggle:balrog_struggle
 				}
 				custom_tooltip = {
 					text = balrog_is_slumbering
@@ -1342,14 +1307,14 @@ dwarven_capital_04 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = third_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = fourth_tier_dwarven_capital_building
 					has_province_modifier = fourth_tier_dwarven_capital_building_ongoing
 				}
 				trigger_if = {
 					limit = {
-						this = province:4909  #Durin's Hall
-						exists = struggle:balrog_struggle 
+						this = province:4909 #Durin's Hall
+						exists = struggle:balrog_struggle
 					}
 					custom_tooltip = {
 						text = balrog_is_slumbering
@@ -1362,13 +1327,16 @@ dwarven_capital_04 = {
 	}
 
 	cost = {
-		gold = {
+		treasury_or_gold = {
 			value = dwarven_capital_gold_cost
 			multiply = 2
 		}
 	}
 
-	construction_time = 5475
+	construction_time = {
+		value = dwarven_great_project_base_construction_time
+		multiply = 3
+	}
 
 	contributor_cooldown = standard_contributor_cooldown_value
 
@@ -1519,7 +1487,6 @@ dwarven_capital_04 = {
 			}
 			contributor_is_valid = {
 				dwarven_fourth_tier_trigger = yes
-				is_dwarf = yes
 			}
 			cost = { }
 
@@ -1548,7 +1515,7 @@ dwarven_capital_04 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1562,6 +1529,10 @@ dwarven_capital_04 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_slabs_of_porphyry_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1571,14 +1542,7 @@ dwarven_capital_04 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1589,7 +1553,7 @@ dwarven_capital_04 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1610,6 +1574,10 @@ dwarven_capital_04 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_zaungdans_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1619,14 +1587,7 @@ dwarven_capital_04 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1637,7 +1598,7 @@ dwarven_capital_04 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1658,6 +1619,10 @@ dwarven_capital_04 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_gilded_shrines_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1667,14 +1632,7 @@ dwarven_capital_04 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1699,6 +1657,10 @@ dwarven_capital_04 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1708,14 +1670,7 @@ dwarven_capital_04 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1728,7 +1683,7 @@ dwarven_capital_04 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1749,6 +1704,10 @@ dwarven_capital_04 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_carven_pillars_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1758,14 +1717,7 @@ dwarven_capital_04 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1793,6 +1745,10 @@ dwarven_capital_04 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_bejeweled_ceilings_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -1802,14 +1758,7 @@ dwarven_capital_04 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -1837,11 +1786,10 @@ dwarven_capital_04 = {
 					text = lotr_khazad_legacy_3_name
 					dynasty = { has_dynasty_perk = lotr_khazad_legacy_3 }
 				}
-				is_dwarf = yes
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -1913,7 +1861,7 @@ dwarven_capital_05 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = fourth_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = final_tier_dwarven_capital_building
 					has_province_modifier = final_tier_dwarven_capital_building_ongoing
 				}
@@ -1931,15 +1879,15 @@ dwarven_capital_05 = {
 			custom_tooltip = {
 				text = lotr_great_project_type_dwarven_capital_has_t4_building
 				has_building_with_flag = fourth_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = final_tier_dwarven_capital_building
 					has_province_modifier = final_tier_dwarven_capital_building_ongoing
 				}
 			}
 			trigger_if = {
 				limit = {
-					this = province:4909  #Durin's Hall
-					exists = struggle:balrog_struggle 
+					this = province:4909 #Durin's Hall
+					exists = struggle:balrog_struggle
 				}
 				custom_tooltip = {
 					text = balrog_is_slumbering
@@ -1956,14 +1904,14 @@ dwarven_capital_05 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = fourth_tier_dwarven_capital_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = final_tier_dwarven_capital_building
 					has_province_modifier = final_tier_dwarven_capital_building_ongoing
 				}
 				trigger_if = {
 					limit = {
-						this = province:4909  #Durin's Hall
-						exists = struggle:balrog_struggle 
+						this = province:4909 #Durin's Hall
+						exists = struggle:balrog_struggle
 					}
 					custom_tooltip = {
 						text = balrog_is_slumbering
@@ -1975,13 +1923,16 @@ dwarven_capital_05 = {
 	}
 
 	cost = {
-		gold = {
+		treasury_or_gold = {
 			value = dwarven_capital_gold_cost
 			multiply = 3
 		}
 	}
 
-	construction_time = 7300
+	construction_time = {
+		value = dwarven_great_project_base_construction_time
+		multiply = 4
+	}
 
 	contributor_cooldown = standard_contributor_cooldown_value
 
@@ -2091,7 +2042,7 @@ dwarven_capital_05 = {
 			limit = { scope:province = title:c_azelanduzur.title_province }
 			if = {
 				limit = {
-					exists = dynasty:dwalin.dynast
+					exists = dynasty:dynasty_dwalin.dynast
 					NOT = { title:k_durins_folk.title_province = title:c_azelanduzur.title_province }
 				}
 				dynasty:dynasty_dwalin.dynast = { trigger_event = dwarven.3000 }
@@ -2101,7 +2052,7 @@ dwarven_capital_05 = {
 			limit = { scope:province = title:c_ursulbazari.title_province }
 			if = {
 				limit = {
-					exists = dynasty:thrar.dynast
+					exists = dynasty:dynasty_thrar.dynast
 					NOT = { title:k_durins_folk.title_province = title:c_ursulbazari.title_province }
 				}
 				dynasty:dynasty_thrar.dynast = { trigger_event = dwarven.3000 }
@@ -2172,7 +2123,6 @@ dwarven_capital_05 = {
 			}
 			contributor_is_valid = {
 				dwarven_fourth_tier_trigger = yes
-				is_dwarf = yes
 			}
 
 			cost = { }
@@ -2202,7 +2152,7 @@ dwarven_capital_05 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_high_gold_cost
@@ -2216,6 +2166,10 @@ dwarven_capital_05 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_marble_foundation_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -2225,14 +2179,7 @@ dwarven_capital_05 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -2243,7 +2190,7 @@ dwarven_capital_05 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_high_gold_cost
@@ -2264,6 +2211,10 @@ dwarven_capital_05 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_waterways_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -2273,14 +2224,7 @@ dwarven_capital_05 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -2305,6 +2249,10 @@ dwarven_capital_05 = {
 			on_complete = {
 				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -2314,14 +2262,7 @@ dwarven_capital_05 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -2334,7 +2275,7 @@ dwarven_capital_05 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_high_gold_cost
@@ -2355,6 +2296,10 @@ dwarven_capital_05 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_bejeweled_reliefs_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -2364,14 +2309,7 @@ dwarven_capital_05 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -2384,7 +2322,7 @@ dwarven_capital_05 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_high_gold_cost
@@ -2412,6 +2350,10 @@ dwarven_capital_05 = {
 			on_complete = {
 				show_as_tooltip = { dwarven_contributor_pillar_forest_reward_effect = yes }
 			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
 			ai_check_interval_by_tier = {
 				barony = 0
 				county = 12
@@ -2421,14 +2363,7 @@ dwarven_capital_05 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
-				if = {
-					limit = {
-						is_tributary = yes
-						overlord = { has_realm_law_flag = tributaries_more_likely_to_contribute_to_GPs }
-					}
-					multiply = 2
-				}
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -2456,11 +2391,10 @@ dwarven_capital_05 = {
 					text = lotr_khazad_legacy_3_name
 					dynasty = { has_dynasty_perk = lotr_khazad_legacy_3 }
 				}
-				is_dwarf = yes
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_high_gold_cost
@@ -2529,7 +2463,7 @@ construct_great_fleet_01 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		highest_held_title_tier >= tier_duchy
 		is_landed = yes
 		lotr_can_sail = yes
@@ -2582,10 +2516,12 @@ construct_great_fleet_01 = {
 		scope:province.county.holder.top_liege ?= scope:owner
 	}
 
-	province_filter = realm
+	province_filter = geographical_region
+	province_filter_target = middearth_sailing
 
 	is_location_valid = {
 		scope:province = {
+			scope:founder ?= { has_title = scope:province.county }
 			custom_tooltip = {
 				text = great_project_type_construct_great_fleet_01_coastal_county
 				is_coastal = yes
@@ -2973,7 +2909,7 @@ construct_great_fleet_02 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		highest_held_title_tier >= tier_duchy
 
 		lotr_can_sail = yes
@@ -3375,7 +3311,7 @@ construct_great_fleet_03 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		highest_held_title_tier >= tier_duchy
 
 		lotr_can_sail = yes
@@ -3778,7 +3714,7 @@ construct_great_citadel_01 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		highest_held_title_tier >= tier_duchy
 		is_landed = yes
 		culture = { has_innovation = innovation_numenorean_architecture_01 }
@@ -4159,7 +4095,7 @@ construct_great_citadel_02 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		highest_held_title_tier >= tier_duchy
 
 		lotr_can_sail = yes
@@ -4536,7 +4472,7 @@ construct_great_citadel_03 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		highest_held_title_tier >= tier_duchy
 
 		lotr_can_sail = yes
@@ -4915,7 +4851,7 @@ mend_the_realm = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		highest_held_title_tier >= tier_duchy
 		is_elf = yes
 		is_landed = yes
@@ -5338,7 +5274,7 @@ construct_osgiliath_02 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		AND = {
 			has_title = title:c_osgiliath
 			OR = {
@@ -5706,7 +5642,7 @@ construct_osgiliath_03 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		OR = {
 			has_title = title:e_gondor_steward
 			has_title = title:e_gondor
@@ -6069,7 +6005,7 @@ construct_osgiliath_04 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		##Quonton
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
@@ -6438,7 +6374,7 @@ construct_osgiliath_05 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		##Quonton
 		OR = { 
 			culture = { has_cultural_pillar = heritage_dunedain }
@@ -6791,13 +6727,13 @@ construct_osgiliath_05 = {
 	completion_sound_effect = @msg_completion_effect_generic
 }
 
-### Arnorian Strongholds ###
+### Arnorian Strongholds ~ by Brice Underhill
 arnorian_stronghold_1 = {
 	icon = {
-		reference = @great_project_dwarven_icon
+		reference = @lotr_arnorian_stronghold_icon
 	}
 	illustration = {
-		reference = @arnorian_stronghold_illustration
+		reference = @lotr_arnorian_stronghold_illustration
 	}
 	name = {
 		desc = great_project_type_arnorian_stronghold_1
@@ -6813,7 +6749,7 @@ arnorian_stronghold_1 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = first_tier_arnorian_stronghold_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = second_tier_arnorian_stronghold_building
 					has_province_modifier = second_tier_arnorian_stronghold_building_ongoing
 				}
@@ -6829,7 +6765,7 @@ arnorian_stronghold_1 = {
 				text = lotr_great_project_type_arnorian_stronghold_has_t1_building
 				has_building_with_flag = first_tier_arnorian_stronghold_building
 			}
-			NOR = { 
+			NOR = {
 				has_building_with_flag = second_tier_arnorian_stronghold_building
 				has_province_modifier = second_tier_arnorian_stronghold_building_ongoing
 			}
@@ -6856,7 +6792,7 @@ arnorian_stronghold_1 = {
 					has_building_or_higher = elven_settlement_02
 				}
 				has_ruined_great_building = no
-				NOR = { 
+				NOR = {
 					has_building_with_flag = second_tier_arnorian_stronghold_building
 					has_province_modifier = second_tier_arnorian_stronghold_building_ongoing
 				}
@@ -6865,7 +6801,7 @@ arnorian_stronghold_1 = {
 	}
 
 	cost = {
-		gold = arnorian_stronghold_gold_cost
+		treasury_or_gold = arnorian_stronghold_gold_cost
 	}
 
 	construction_time = great_project_mandala_construction_time
@@ -6998,7 +6934,7 @@ arnorian_stronghold_1 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = arnorian_contribution_low_gold_cost
@@ -7021,7 +6957,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7031,7 +6967,7 @@ arnorian_stronghold_1 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = arnorian_contribution_low_gold_cost
@@ -7054,7 +6990,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7088,7 +7024,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7098,7 +7034,7 @@ arnorian_stronghold_1 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = arnorian_contribution_mid_gold_cost
@@ -7128,8 +7064,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7162,7 +7097,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7198,7 +7133,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7208,12 +7143,12 @@ arnorian_stronghold_1 = {
 			contributor_is_valid = { highest_held_title_tier > tier_barony }
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = arnorian_contribution_low_gold_cost
 					}
-					else = { value =  arnorian_contribution_mid_gold_cost }
+					else = { value = arnorian_contribution_mid_gold_cost }
 				}
 				piety = {
 					if = {
@@ -7238,7 +7173,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7267,12 +7202,12 @@ arnorian_stronghold_1 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
-						value =  arnorian_contribution_mid_gold_cost
+						value = arnorian_contribution_mid_gold_cost
 					}
-					else = { value =  arnorian_contribution_high_gold_cost }
+					else = { value = arnorian_contribution_high_gold_cost }
 				}
 				piety = {
 					if = {
@@ -7298,7 +7233,7 @@ arnorian_stronghold_1 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 	}
@@ -7324,10 +7259,10 @@ arnorian_stronghold_1 = {
 
 arnorian_stronghold_2 = {
 	icon = {
-		reference = @great_project_dwarven_icon
+		reference = @lotr_arnorian_stronghold_icon
 	}
 	illustration = {
-		reference = @arnorian_stronghold_illustration
+		reference = @lotr_arnorian_stronghold_illustration
 	}
 	name = {
 		desc = great_project_type_arnorian_stronghold_2
@@ -7340,7 +7275,7 @@ arnorian_stronghold_2 = {
 		any_sub_realm_county = {
 			any_county_province = {
 				has_building_with_flag = second_tier_arnorian_stronghold_building
-				NOR = { 
+				NOR = {
 					has_building_with_flag = final_tier_arnorian_stronghold_building
 					has_province_modifier = final_tier_arnorian_stronghold_building_ongoing
 				}
@@ -7356,7 +7291,7 @@ arnorian_stronghold_2 = {
 				text = lotr_great_project_type_arnorian_stronghold_has_t2_building
 				has_building_with_flag = second_tier_arnorian_stronghold_building
 			}
-			NOR = { 
+			NOR = {
 				has_building_with_flag = final_tier_arnorian_stronghold_building
 				has_province_modifier = final_tier_arnorian_stronghold_building_ongoing
 			}
@@ -7372,7 +7307,7 @@ arnorian_stronghold_2 = {
 				has_building_with_flag = second_tier_arnorian_stronghold_building
 				building_requirement_castle_city_church = { LEVEL = 03 }
 				has_ruined_great_building = no
-				NOR = { 
+				NOR = {
 					has_building_with_flag = final_tier_arnorian_stronghold_building
 					has_province_modifier = final_tier_arnorian_stronghold_building_ongoing
 				}
@@ -7518,7 +7453,7 @@ arnorian_stronghold_2 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = arnorian_contribution_mid_gold_cost
@@ -7541,7 +7476,7 @@ arnorian_stronghold_2 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7552,14 +7487,14 @@ arnorian_stronghold_2 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
-						limit = { 
+						limit = {
 							any_great_project = {
 								great_project_owner = root
 								great_project_type = arnorian_stronghold_2
 								great_project_construction_phase_is = planned
-								great_project_location = { has_building_with_flag = arnorian_capital } 
+								great_project_location = { has_building_with_flag = arnorian_capital }
 							}
 						}
 						if = {
@@ -7592,7 +7527,7 @@ arnorian_stronghold_2 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7603,14 +7538,14 @@ arnorian_stronghold_2 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
-						limit = { 
+						limit = {
 							any_great_project = {
 								great_project_owner = root
 								great_project_type = arnorian_stronghold_2
 								great_project_construction_phase_is = planned
-								great_project_location = { has_building_with_flag = arnorian_capital } 
+								great_project_location = { has_building_with_flag = arnorian_capital }
 							}
 						}
 						if = {
@@ -7653,7 +7588,7 @@ arnorian_stronghold_2 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = arnorian_contribution_low_gold_cost
@@ -7683,8 +7618,7 @@ arnorian_stronghold_2 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
-
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7717,7 +7651,7 @@ arnorian_stronghold_2 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 100
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7729,7 +7663,7 @@ arnorian_stronghold_2 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -7759,7 +7693,7 @@ arnorian_stronghold_2 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7772,7 +7706,7 @@ arnorian_stronghold_2 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_mid_gold_cost
@@ -7802,7 +7736,7 @@ arnorian_stronghold_2 = {
 				hegemony = 6
 			}
 			ai_will_do = {
-				value = 50
+				value = chinese_great_projects_contribution_ai_will_do_base_value
 			}
 		}
 
@@ -7814,7 +7748,7 @@ arnorian_stronghold_2 = {
 			}
 
 			cost = {
-				gold = {
+				treasury_or_gold = {
 					if = {
 						limit = { is_ai = yes }
 						value = dwarven_contribution_high_gold_cost
@@ -7886,7 +7820,7 @@ construct_gaven_02 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		has_title = title:c_gaven
 		province:7663 = {
 			has_building_with_flag = wonder_gaven_01
@@ -8257,7 +8191,7 @@ construct_gaven_03 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		has_title = title:c_gaven
 		province:7663 = {
 			has_building_with_flag = wonder_gaven_02
@@ -8624,7 +8558,7 @@ construct_gaven_04 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		has_title = title:c_gaven
 		province:7663 = {
 			has_building_with_flag = wonder_gaven_03
@@ -8991,7 +8925,7 @@ construct_gaven_05 = {
 
 	is_important = yes
 
- 	is_shown = {
+	is_shown = {
 		has_title = title:c_gaven
 		province:7663 = {
 			has_building_with_flag = wonder_gaven_04
@@ -9328,6 +9262,2511 @@ construct_gaven_05 = {
 		kingdom = 0
 		empire = 0
 		hegemony = 6
+	}
+	ai_will_do = {
+		value = 500
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			multiply = 0
+		}
+	}
+
+	completion_sound_effect = @msg_completion_effect_generic
+}
+
+### Ost-in-Edhil GP ~ by Brice Underhill
+rebuild_ost_in_edhil_01 = {
+	icon = {
+		reference = @lotr_rebuild_ost_in_edhil_icon
+	}
+	illustration = {
+		reference = @lotr_rebuild_ost_in_edhil_illustration
+	}
+
+	name = {
+		desc = great_project_type_rebuild_ost_in_edhil_01
+	}
+
+	owner = province_owner_top_liege
+
+	is_important = yes
+
+	is_shown = {
+		is_elf = yes
+		has_title = title:c_ost_in_edhil
+		province:4351 = {
+			NOT = { has_building_or_higher = wonder_ost_in_edhil_01 }
+			has_holding_type = elven_holding
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_01 }
+	}
+
+	can_start_planning = {
+		OR = {
+			has_title = title:k_eregion
+			has_title = title:e_orrostar
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_01 }
+		legitimacy_level >= 2
+	}
+
+	is_valid = {
+		scope:owner ?= { is_elf = yes }
+		scope:province = { has_holding_type = elven_holding }
+	}
+
+	province_filter = top_realm
+
+	is_location_valid = {
+		scope:province = { this = province:4351 } #Ost-in-Edhil
+	}
+
+	cost = {
+		treasury_or_gold = ost_in_edhil_gold_cost
+		piety = ost_in_edhil_piety_cost
+	}
+
+	construction_time = elven_great_project_base_construction_time
+
+	allowed_contributor_filter = {
+		owner = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:owner = {
+			add_legitimacy_effect = { LEGITIMACY = minor_legitimacy_gain }
+			add_elven_hope_effect = { VALUE = minor_elven_hope_gain HOPE_EFFECT = effect_elven_hope_ost_in_edhil_being_rebuilt }
+		}
+		scope:great_project = {
+			every_contribution = {
+				limit = {
+					contribution_is_funded = yes
+				}
+				contributor = {
+					add_prestige = minor_prestige_value
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		province:4351 = {
+			set_great_building = wonder_ost_in_edhil_01
+			add_to_global_variable_list = { # Add to list so it can be found by the PoI
+				name = lotr_gp_poi_list
+				target = this
+			}
+		}
+		scope:owner = {
+			#Owner rewards
+			show_as_tooltip = { mandala_owner_reward_01_effect = yes }
+		}
+		#Tally the rewards
+		scope:great_project ?= {
+			#Mirdan Applicant
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mirdan_applicant }
+			#Excavation
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = excavation }
+			#Work Force
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = work_force }
+			#Conservatory
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = conservatory }
+			#Shelters
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = shelters }
+			#Jeweller's Workshop
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = jeweller_workshop }
+		}
+		#Dole out some rewards!
+		gather_contributors_in_list_effect = yes
+		every_in_list = {
+			list = contributors_to_reward
+			if = {
+				limit = { this = scope:owner }
+				trigger_event = lotr_great_project.3000
+			}
+			else = {
+				if = {
+					limit = {
+						scope:owner = { is_ai = yes }
+					}
+					show_as_tooltip = {
+						mandala_contributor_opinion_reward_effect = { OVERLORD = scope:owner }
+					}
+				}
+				trigger_event = lotr_great_project.3010
+			}
+		}
+	}
+
+	on_cancel = {
+		scope:owner = {
+			add_elven_hope_effect = { VALUE = medium_elven_hope_loss HOPE_EFFECT = effect_elven_hope_ost_in_edhil_rebuilding_failed }
+		}
+	}
+
+	# Top liege pays with the treasury, while vassals may pitch in with gold
+	project_contributions = {
+		mirdan_applicant = {
+			allowed_contributor_filter = {
+				owner = yes
+			}
+			contributor_is_valid = {
+				ost_in_edhil_first_tier_trigger = yes
+			}
+
+			cost = { }
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_minor_rite_reward_effect = yes }
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 0
+				duchy = 0
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = {
+				value = 1000
+			}
+		}
+
+		excavation = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					value = eregion_contribution_low_gold_cost
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_excavation_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		conservatory = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					value = eregion_contribution_low_gold_cost
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = 0
+					}
+					else = { value = eregion_contribution_low_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_conservatory_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		work_force = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = 0
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		shelters = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					value = eregion_contribution_low_gold_cost
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_shelters_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		jeweller_workshop = {
+			contributor_is_valid = {
+				highest_held_title_tier > tier_barony
+				is_elf = yes
+			}
+
+			cost = {
+				treasury_or_gold = {
+					value = eregion_contribution_low_gold_cost
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = 0
+					}
+					else = { value = mandala_contribution_low_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_jeweller_workshop_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		government_type = { elven_government }
+		rank = kingdom
+	}
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+	ai_will_do = {
+		value = 500
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			multiply = 0
+		}
+	}
+
+	completion_sound_effect = @msg_completion_effect_generic
+}
+
+rebuild_ost_in_edhil_02 = {
+	icon = {
+		reference = @lotr_rebuild_ost_in_edhil_icon
+	}
+	illustration = {
+		reference = @lotr_rebuild_ost_in_edhil_illustration
+	}
+
+	name = {
+		desc = great_project_type_rebuild_ost_in_edhil_02
+	}
+
+	owner = province_owner_top_liege
+
+	is_important = yes
+
+	is_shown = {
+		is_elf = yes
+		has_title = title:c_ost_in_edhil
+		province:4351 = {
+			has_building = wonder_ost_in_edhil_01
+			has_holding_type = elven_holding
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_02 }
+	}
+
+	can_start_planning = {
+		OR = {
+			has_title = title:k_eregion
+			has_title = title:e_orrostar
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_02 }
+		legitimacy_level >= 3
+	}
+
+	is_valid = {
+		scope:owner ?= { is_elf = yes }
+		scope:province = { has_holding_type = elven_holding }
+	}
+
+	province_filter = top_realm
+
+	is_location_valid = {
+		scope:province = { this = province:4351 } #Ost-in-Edhil
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = ost_in_edhil_gold_cost
+			multiply = 1.5
+		}
+		piety = {
+			value = ost_in_edhil_piety_cost
+			multiply = 1.5
+		}
+	}
+
+	construction_time = {
+		value = elven_great_project_base_construction_time
+		multiply = 2
+	}
+
+	allowed_contributor_filter = {
+		owner = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:owner = {
+			add_legitimacy_effect = { LEGITIMACY = minor_legitimacy_gain }
+			add_elven_hope_effect = { VALUE = minor_elven_hope_gain HOPE_EFFECT = effect_elven_hope_ost_in_edhil_being_rebuilt }
+		}
+		scope:great_project = {
+			every_contribution = {
+				limit = {
+					contribution_is_funded = yes
+				}
+				contributor = {
+					add_prestige = minor_prestige_value
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		province:4351 = {
+			set_great_building = wonder_ost_in_edhil_02
+			add_to_global_variable_list = { # Add to list so it can be found by the PoI
+				name = lotr_gp_poi_list
+				target = this
+			}
+		}
+		scope:owner = {
+			#Owner rewards
+			show_as_tooltip = { mandala_owner_reward_01_effect = yes }
+		}
+		#Tally the rewards
+		scope:great_project ?= {
+			#Mirdan Apprentice
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mirdan_apprentice }
+			#Slabs of Sandstone
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = slabs_of_sandstone }
+			#Timber
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = timber }
+			#Timber
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = forge }
+			#Work Force
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = work_force }
+			#Stables
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = stables }
+			#Orchards
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = orchards }
+		}
+		#Dole out some rewards!
+		gather_contributors_in_list_effect = yes
+		every_in_list = {
+			list = contributors_to_reward
+			if = {
+				limit = { this = scope:owner }
+				trigger_event = lotr_great_project.3000
+			}
+			else = {
+				if = {
+					limit = {
+						scope:owner = { is_ai = yes }
+					}
+					show_as_tooltip = {
+						mandala_contributor_opinion_reward_effect = { OVERLORD = scope:owner }
+					}
+				}
+				trigger_event = lotr_great_project.3010
+			}
+		}
+	}
+
+	on_cancel = {
+		scope:owner = {
+			add_elven_hope_effect = { VALUE = medium_elven_hope_loss HOPE_EFFECT = effect_elven_hope_ost_in_edhil_rebuilding_failed }
+		}
+	}
+
+	# Top liege pays with the treasury, while vassals may pitch in with gold
+	project_contributions = {
+		mirdan_apprentice = {
+			allowed_contributor_filter = {
+				owner = yes
+			}
+			contributor_is_valid = {
+				ost_in_edhil_second_tier_trigger = yes
+			}
+
+			cost = { }
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_minor_rite_reward_effect = yes }
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 0
+				duchy = 0
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = {
+				value = 1000
+			}
+		}
+
+		slabs_of_sandstone = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_low_piety_cost
+					}
+					else = { value = mandala_contribution_mid_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_slabs_of_sandstone_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		timber = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_prestige_cost
+					}
+					else = { value = eregion_contribution_mid_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_timber_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		forge = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_gold_cost
+					}
+					else = { value = eregion_contribution_high_gold_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_forge_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		work_force = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		stables = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_low_piety_cost
+					}
+					else = { value = mandala_contribution_mid_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_forge_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		orchards = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_jeweller_workshop_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		government_type = { elven_government }
+		rank = kingdom
+	}
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+	ai_will_do = {
+		value = 500
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			multiply = 0
+		}
+	}
+
+	completion_sound_effect = @msg_completion_effect_generic
+}
+
+rebuild_ost_in_edhil_03 = {
+	icon = {
+		reference = @lotr_rebuild_ost_in_edhil_icon
+	}
+	illustration = {
+		reference = @lotr_rebuild_ost_in_edhil_illustration
+	}
+
+	name = {
+		desc = great_project_type_rebuild_ost_in_edhil_03
+	}
+
+	owner = province_owner_top_liege
+
+	is_important = yes
+
+	is_shown = {
+		is_elf = yes
+		has_title = title:c_ost_in_edhil
+		province:4351 = {
+			has_building = wonder_ost_in_edhil_02
+			has_holding_type = elven_holding
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_03 }
+	}
+
+	can_start_planning = {
+		OR = {
+			has_title = title:k_eregion
+			has_title = title:e_orrostar
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_03 }
+		legitimacy_level >= 4
+	}
+
+	is_valid = {
+		scope:owner ?= { is_elf = yes }
+		scope:province = { has_holding_type = elven_holding }
+	}
+
+	province_filter = top_realm
+
+	is_location_valid = {
+		scope:province = { this = province:4351 } #Ost-in-Edhil
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = ost_in_edhil_gold_cost
+			multiply = 2
+		}
+		piety = {
+			value = ost_in_edhil_piety_cost
+			multiply = 2
+		}
+	}
+
+	construction_time = {
+		value = elven_great_project_base_construction_time
+		multiply = 3
+	}
+
+	allowed_contributor_filter = {
+		owner = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:owner = {
+			add_legitimacy_effect = { LEGITIMACY = minor_legitimacy_gain }
+			add_elven_hope_effect = { VALUE = minor_elven_hope_gain HOPE_EFFECT = effect_elven_hope_ost_in_edhil_being_rebuilt }
+		}
+		scope:great_project = {
+			every_contribution = {
+				limit = {
+					contribution_is_funded = yes
+				}
+				contributor = {
+					add_prestige = minor_prestige_value
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		province:4351 = {
+			set_great_building = wonder_ost_in_edhil_03
+		}
+		scope:owner = {
+			#Owner rewards
+			show_as_tooltip = { mandala_owner_reward_01_effect = yes }
+		}
+		#Tally the rewards
+		scope:great_project ?= {
+			#Mirdan Artisan
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mirdan_artisan }
+			#Marble Stone
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = marble_stone }
+			#Arched Gateways
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = arched_gateways }
+			#Gardens
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = gardens }
+			#Advanced Forge
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = advanced_forge }
+			#Work Force
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = work_force }
+			#Decorative Frescoes
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = decorative_frescoes }
+			#Fountains
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = fountains }
+		}
+		#Dole out some rewards!
+		gather_contributors_in_list_effect = yes
+		every_in_list = {
+			list = contributors_to_reward
+			if = {
+				limit = { this = scope:owner }
+				trigger_event = lotr_great_project.3000
+			}
+			else = {
+				if = {
+					limit = {
+						scope:owner = { is_ai = yes }
+					}
+					show_as_tooltip = {
+						mandala_contributor_opinion_reward_effect = { OVERLORD = scope:owner }
+					}
+				}
+				trigger_event = lotr_great_project.3010
+			}
+		}
+	}
+
+	on_cancel = {
+		scope:owner = {
+			add_elven_hope_effect = { VALUE = medium_elven_hope_loss HOPE_EFFECT = effect_elven_hope_ost_in_edhil_rebuilding_failed }
+		}
+	}
+
+	# Top liege pays with the treasury, while vassals may pitch in with gold
+	project_contributions = {
+		mirdan_artisan = {
+			allowed_contributor_filter = {
+				owner = yes
+			}
+			contributor_is_valid = {
+				ost_in_edhil_third_tier_trigger = yes
+			}
+
+			cost = { }
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_minor_rite_reward_effect = yes }
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 0
+				duchy = 0
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = {
+				value = 1000
+			}
+		}
+
+		marble_stone = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_gold_cost
+					}
+					else = { value = eregion_contribution_high_gold_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { dwarven_contributor_marble_stone_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		arched_gateways = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_gold_cost
+					}
+					else = { value = eregion_contribution_high_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_prestige_cost
+					}
+					else = { value = eregion_contribution_high_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { dwarven_contributor_arched_gateways_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		gardens = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { arnorian_contributor_gardens_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		advanced_forge = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_gold_cost
+					}
+					else = { value = eregion_contribution_huge_gold_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_advanced_forge_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		work_force = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		decorative_frescoes = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_prestige_cost
+					}
+					else = { value = eregion_contribution_high_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_decorative_frescoes_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		fountains = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_fountains_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		government_type = { elven_government }
+		rank = kingdom
+	}
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+	ai_will_do = {
+		value = 500
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			multiply = 0
+		}
+	}
+
+	completion_sound_effect = @msg_completion_effect_generic
+}
+
+rebuild_ost_in_edhil_04 = {
+	icon = {
+		reference = @lotr_rebuild_ost_in_edhil_icon
+	}
+	illustration = {
+		reference = @lotr_rebuild_ost_in_edhil_illustration
+	}
+
+	name = {
+		desc = great_project_type_rebuild_ost_in_edhil_04
+	}
+
+	owner = province_owner_top_liege
+
+	is_important = yes
+
+	is_shown = {
+		is_elf = yes
+		has_title = title:c_ost_in_edhil
+		province:4351 = {
+			has_building = wonder_ost_in_edhil_03
+			has_holding_type = elven_holding
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_04 }
+	}
+
+	can_start_planning = {
+		OR = {
+			has_title = title:k_eregion
+			has_title = title:e_orrostar
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_04 }
+		legitimacy_level = 5
+	}
+
+	is_valid = {
+		scope:owner ?= { is_elf = yes }
+		scope:province = { has_holding_type = elven_holding }
+	}
+
+	province_filter = top_realm
+
+	is_location_valid = {
+		scope:province = { this = province:4351 } #Ost-in-Edhil
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = ost_in_edhil_gold_cost
+			multiply = 2.5
+		}
+		piety = {
+			value = ost_in_edhil_piety_cost
+			multiply = 2.5
+		}
+	}
+
+	construction_time = {
+		value = elven_great_project_base_construction_time
+		multiply = 4
+	}
+
+	allowed_contributor_filter = {
+		owner = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:owner = {
+			add_legitimacy_effect = { LEGITIMACY = minor_legitimacy_gain }
+			add_elven_hope_effect = { VALUE = minor_elven_hope_gain HOPE_EFFECT = effect_elven_hope_ost_in_edhil_being_rebuilt }
+		}
+		scope:great_project = {
+			every_contribution = {
+				limit = {
+					contribution_is_funded = yes
+				}
+				contributor = {
+					add_prestige = minor_prestige_value
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		province:4351 = {
+			set_great_building = wonder_ost_in_edhil_04
+		}
+		scope:owner = {
+			#Owner rewards
+			show_as_tooltip = { mandala_owner_reward_01_effect = yes }
+		}
+		#Tally the rewards
+		scope:great_project ?= {
+			#Mirdan Master
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mirdan_master }
+			#Elven Jewels
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = elven_jewels }
+			#Sculpted Gateways
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = sculpted_gateways }
+			#Waterways
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = waterways }
+			#Defensive Walls
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = defensive_walls }
+			#Great Forge
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = great_forge }
+			#Work Force
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = work_force }
+			#Mirdain Statues
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mirdain_statues }
+			#Garden Lakes
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = garden_lakes }
+		}
+		#Dole out some rewards!
+		gather_contributors_in_list_effect = yes
+		every_in_list = {
+			list = contributors_to_reward
+			if = {
+				limit = { this = scope:owner }
+				trigger_event = lotr_great_project.3000
+			}
+			else = {
+				if = {
+					limit = {
+						scope:owner = { is_ai = yes }
+					}
+					show_as_tooltip = {
+						mandala_contributor_opinion_reward_effect = { OVERLORD = scope:owner }
+					}
+				}
+				trigger_event = lotr_great_project.3010
+			}
+		}
+	}
+
+	on_cancel = {
+		scope:owner = {
+			add_elven_hope_effect = { VALUE = medium_elven_hope_loss HOPE_EFFECT = effect_elven_hope_ost_in_edhil_rebuilding_failed }
+		}
+	}
+
+	# Top liege pays with the treasury, while vassals may pitch in with gold
+	project_contributions = {
+		mirdan_master = {
+			allowed_contributor_filter = {
+				owner = yes
+			}
+			contributor_is_valid = {
+				ost_in_edhil_fourth_tier_trigger = yes
+			}
+
+			cost = { }
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_minor_rite_reward_effect = yes }
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 0
+				duchy = 0
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = {
+				value = 1000
+			}
+		}
+
+		elven_jewels = {
+			contributor_is_valid = {
+				highest_held_title_tier > tier_barony
+				OR = {
+					culture = culture:noldor
+					custom_tooltip = {
+						text = descended_from_noldor_tt
+						culture = { any_parent_culture_or_above = { this = culture:noldor } }
+					}
+				}
+			}
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_gold_cost
+					}
+					else = { value = eregion_contribution_huge_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_elven_jewels_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		sculpted_gateways = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_gold_cost
+					}
+					else = { value = eregion_contribution_high_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_prestige_cost
+					}
+					else = { value = eregion_contribution_high_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_sculpted_gateways_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		waterways = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_gold_cost
+					}
+					else = { value = eregion_contribution_high_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_high_piety_cost
+					}
+					else = { value = mandala_contribution_huge_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { dwarven_contributor_waterways_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		defensive_walls = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_gold_cost
+					}
+					else = { value = eregion_contribution_huge_gold_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { arnorian_contributor_numenorean_walls_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		great_forge = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_gold_cost
+					}
+					else = { value = eregion_contribution_huge_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_great_forge_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		work_force = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		mirdain_statues = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_gold_cost
+					}
+					else = { value = eregion_contribution_high_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_mirdain_statues_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		garden_lakes = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_low_gold_cost
+					}
+					else = { value = eregion_contribution_mid_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_prestige_cost
+					}
+					else = { value = eregion_contribution_high_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_garden_lakes_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		government_type = { elven_government }
+		rank = kingdom
+	}
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 1
+		empire = 1
+		hegemony = 1
+	}
+	ai_will_do = {
+		value = 500
+		if = {
+			limit = {
+				is_at_war = yes
+			}
+			multiply = 0
+		}
+	}
+
+	completion_sound_effect = @msg_completion_effect_generic
+}
+
+rebuild_ost_in_edhil_05 = {
+	icon = {
+		reference = @lotr_rebuild_ost_in_edhil_icon
+	}
+	illustration = {
+		reference = @lotr_rebuild_ost_in_edhil_illustration
+	}
+
+	name = {
+		desc = great_project_type_rebuild_ost_in_edhil_05
+	}
+
+	owner = province_owner_top_liege
+
+	is_important = yes
+
+	is_shown = {
+		is_elf = yes
+		has_title = title:c_ost_in_edhil
+		province:4351 = {
+			has_building = wonder_ost_in_edhil_04
+			has_holding_type = elven_holding
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_05 }
+	}
+
+	can_start_planning = {
+		OR = {
+			has_title = title:k_eregion
+			has_title = title:e_orrostar
+		}
+		NOT = { is_planning_great_project = rebuild_ost_in_edhil_05 }
+		legitimacy_level = 5
+	}
+
+	is_valid = {
+		scope:owner ?= { is_elf = yes }
+		scope:province = { has_holding_type = elven_holding }
+	}
+
+	province_filter = top_realm
+
+	is_location_valid = {
+		scope:province = { this = province:4351 } #Ost-in-Edhil
+	}
+
+	cost = {
+		treasury_or_gold = {
+			value = ost_in_edhil_gold_cost
+			multiply = 3
+		}
+		piety = {
+			value = ost_in_edhil_piety_cost
+			multiply = 3
+		}
+	}
+
+	construction_time = {
+		value = elven_great_project_base_construction_time
+		multiply = 5
+	}
+
+	allowed_contributor_filter = {
+		owner = yes
+		vassals = yes
+		tributaries = yes
+		allies = yes
+	}
+
+	contributor_cooldown = standard_contributor_cooldown_value
+
+	on_start_build = {
+		scope:owner = {
+			add_legitimacy_effect = { LEGITIMACY = minor_legitimacy_gain }
+			add_elven_hope_effect = { VALUE = minor_elven_hope_gain HOPE_EFFECT = effect_elven_hope_ost_in_edhil_being_rebuilt }
+		}
+		scope:great_project = {
+			every_contribution = {
+				limit = {
+					contribution_is_funded = yes
+				}
+				contributor = {
+					add_prestige = minor_prestige_value
+				}
+			}
+		}
+	}
+
+	on_complete = {
+		province:4351 = {
+			set_great_building = wonder_ost_in_edhil_05
+		}
+		scope:owner = {
+			#Owner rewards
+			show_as_tooltip = { mandala_owner_reward_01_effect = yes }
+			add_elven_hope_effect = { VALUE = massive_elven_hope_gain HOPE_EFFECT = effect_elven_hope_ost_in_edhil_finished }
+		}
+		#Tally the rewards
+		scope:great_project ?= {
+			#Mirdan Grandmaster
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mirdan_grandmaster }
+			#Grand Promenade
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = grand_promenade }
+			#Royal Palace
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = ardhlarem }
+			#Gatehouses
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = gatehouses }
+			#River Harbour
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = river_harbour }
+			#Mirdairond
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mirdairond }
+			#Work Force
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = work_force }
+			#Valar Statues
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = valar_statues }
+			#Mithril Gates
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = mithril_gates }
+			#Obscuring Veil
+			determine_if_contributed_and_save_scope_effect = { CONTRIBUTION = obscuring_veil }
+		}
+		#Dole out some rewards!
+		gather_contributors_in_list_effect = yes
+		every_in_list = {
+			list = contributors_to_reward
+			if = {
+				limit = { this = scope:owner }
+				trigger_event = lotr_great_project.3000
+			}
+			else = {
+				if = {
+					limit = {
+						scope:owner = { is_ai = yes }
+					}
+					show_as_tooltip = {
+						mandala_contributor_opinion_reward_effect = { OVERLORD = scope:owner }
+					}
+				}
+				trigger_event = lotr_great_project.3010
+			}
+		}
+	}
+
+	on_cancel = {
+		scope:owner = {
+			add_elven_hope_effect = { VALUE = medium_elven_hope_loss HOPE_EFFECT = effect_elven_hope_ost_in_edhil_rebuilding_failed }
+		}
+	}
+
+	# Top liege pays with the treasury, while vassals may pitch in with gold
+	project_contributions = {
+		mirdan_grandmaster = {
+			allowed_contributor_filter = {
+				owner = yes
+			}
+			contributor_is_valid = {
+				ost_in_edhil_final_tier_trigger = yes
+			}
+
+			cost = { }
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_minor_rite_reward_effect = yes }
+			}
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 0
+				duchy = 0
+				kingdom = 3
+				empire = 3
+				hegemony = 3
+			}
+			ai_will_do = {
+				value = 1000
+			}
+		}
+
+		grand_promenade = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_gold_cost
+					}
+					else = { value = eregion_contribution_huge_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_prestige_cost
+					}
+					else = { value = eregion_contribution_huge_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_elven_jewels_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		ardhlarem = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_huge_gold_cost
+					}
+					else = { value = eregion_contribution_mega_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_prestige_cost
+					}
+					else = { value = eregion_contribution_huge_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { dwarven_contributor_dwarf_father_palace_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		gatehouses = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_gold_cost
+					}
+					else = { value = eregion_contribution_huge_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_prestige_cost
+					}
+					else = { value = eregion_contribution_huge_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { arnorian_contributor_numenorean_walls_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		river_harbour = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_gold_cost
+					}
+					else = { value = eregion_contribution_huge_gold_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_river_harbour_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		mirdairond = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_huge_gold_cost
+					}
+					else = { value = eregion_contribution_mega_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_huge_piety_cost
+					}
+					else = { value = mandala_contribution_mega_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_mirdairond_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		work_force = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = yes
+
+			on_complete = {
+				show_as_tooltip = { mandala_contributor_work_force_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		valar_statues = {
+			contributor_is_valid = { highest_held_title_tier > tier_barony }
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_mid_gold_cost
+					}
+					else = { value = eregion_contribution_high_gold_cost }
+				}
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_high_piety_cost
+					}
+					else = { value = mandala_contribution_huge_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_valar_statues_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		mithril_gates = {
+			contributor_is_valid = {
+				highest_held_title_tier > tier_barony
+				custom_tooltip = {
+					text = eregion_contributor_has_mithril
+					OR = {
+						has_variable = mithril
+						contains_prospecting_modifier = { PROSPECTING_MODIFIER = mining_mithril_province_modifier }
+					}
+				}
+			}
+
+			cost = {
+				treasury_or_gold = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_huge_gold_cost
+					}
+					else = { value = eregion_contribution_mega_gold_cost }
+				}
+				prestige = {
+					if = {
+						limit = { is_ai = yes }
+						value = eregion_contribution_high_prestige_cost
+					}
+					else = { value = eregion_contribution_huge_prestige_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_mithril_gates_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+
+		obscuring_veil = {
+			contributor_is_valid = {
+				custom_tooltip = {
+					text = eregion_contributor_has_elven_RoP
+					any_character_artifact = { has_variable = elven_ring }
+				}
+			}
+
+			cost = {
+				piety = {
+					if = {
+						limit = { is_ai = yes }
+						value = mandala_contribution_mid_piety_cost
+					}
+					else = { value = mandala_contribution_high_piety_cost }
+				}
+			}
+
+			contributor_cooldown = individual_contribution_cooldown_value
+
+			is_required = no
+
+			on_complete = {
+				show_as_tooltip = { eregion_contributor_obscuring_veil_reward_effect = yes }
+			}
+			on_contribution_funded = {
+				great_project_notify_contribution = yes
+				great_project_contribution_catalyst_effect = yes
+			}
+
+			ai_check_interval_by_tier = {
+				barony = 0
+				county = 12
+				duchy = 9
+				kingdom = 6
+				empire = 6
+				hegemony = 6
+			}
+			ai_will_do = {
+				value = chinese_great_projects_contribution_ai_will_do_base_value
+			}
+		}
+	}
+
+	ai_target_quick_trigger = {
+		adult = yes
+		government_type = { elven_government }
+		rank = kingdom
+	}
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 1
+		empire = 1
+		hegemony = 1
 	}
 	ai_will_do = {
 		value = 500

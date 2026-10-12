@@ -2270,6 +2270,12 @@
                     portrait_low_nobles_armor_trigger = { 
                         CULTURE_INPUT = harondorim
                     }
+                    portrait_commoner_armor_trigger = { 
+                        CULTURE_INPUT = umbaredain
+                    }
+                    portrait_low_nobles_armor_trigger = { 
+                        CULTURE_INPUT = umbaredain
+                    }
                 }
             }
             modifier = {
@@ -2287,6 +2293,12 @@
                     }
                     portrait_low_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = harondorim
+                    }
+                    portrait_commoner_armor_in_army_trigger = { 
+                        CULTURE_INPUT = umbaredain
+                    }
+                    portrait_low_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = umbaredain
                     }
                 }
             }
@@ -2327,6 +2339,9 @@
                     portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = harondorim
                     }
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = umbaredain
+                    }
                 }
             }
             modifier = {
@@ -2344,6 +2359,9 @@
                     }
                     portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = harondorim
+                    }
+                    portrait_high_nobles_armor_in_army_trigger = { 
+                        CULTURE_INPUT = umbaredain
                     }
                 }
             }
@@ -2381,6 +2399,9 @@
                     portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = harondorim
                     }
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = umbaredain
+                    }
 					portrait_high_nobles_armor_trigger = { 
                         CULTURE_INPUT = dunedain
                     }
@@ -2401,6 +2422,9 @@
                     }
                     portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = harondorim
+                    }
+                    portrait_high_nobles_armor_trigger = { 
+                        CULTURE_INPUT = umbaredain
                     }
 					portrait_high_nobles_armor_in_army_trigger = { 
                         CULTURE_INPUT = dunedain
@@ -2879,7 +2903,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 205
+                add = 100
                 #has_ep2_dlc_trigger = yes				
                 OR = {
                     portrait_commoner_armor_trigger = {
@@ -2938,7 +2962,7 @@
         weight = {
             base = 0
             modifier = {
-                add = 205
+                add = 200
 				OR = { 
 					portrait_high_nobles_armor_trigger = {
 						CULTURE_INPUT = umbar
@@ -5300,12 +5324,12 @@
                 template = katana_01
                 value = 1
             }           
-            morph = {
-                mode = replace
-                gene = gene_bs_body_shape
-                template = body_shape_average
-				value = 0.275
-            }
+            #morph = {
+            #    mode = replace
+            #    gene = gene_bs_body_shape
+            #    template = body_shape_average
+			#	value = 0.275
+            #}
         }
         outfit_tags = { military_outfit vulmaw_war }
         weight = {

@@ -16370,21 +16370,22 @@ generate_historical_artifact_based_on_location_effect = {
 		# 	}
 		# 	create_artifact_illustrious_sassanian_sword_effect = { OWNER = ROOT }
 		# }
-		# 2 = { #Narwhal Horn
-		# 	trigger = {
-		# 		$LOCATION$ ?= { geographical_region = world_europe_north }
-		# 	}
-		# 	create_artifact_wall_narwhal_horn_effect = {
-		# 		OWNER = scope:owner
-		# 		HUNTER = scope:inspiration_owner
-		# 	}
-		# }
-		# 1 = { #Fallback Relic
-		# 	create_artifact_pedestal_branch_relic_general_effect = {
-		# 		OWNER = root
-		# 		RELIGION = $LOCATION$.religion
-		# 	}
-		# }
+		2 = { #Narwhal Horn
+			trigger = {
+				# $LOCATION$ ?= { geographical_region = world_europe_north }
+				$LOCATION$ ?= { geographical_region = middleearth_forodwaith_forochel }
+			}
+			create_artifact_wall_narwhal_horn_effect = {
+				OWNER = scope:owner
+				HUNTER = scope:inspiration_owner
+			}
+		}
+		1 = { #Fallback Relic
+			create_artifact_pedestal_branch_relic_general_effect = {
+				OWNER = root
+				RELIGION = $LOCATION$.religion
+			}
+		}
 		2 = { #Dragon Helm of Dor Lomin
 			trigger = {
 				NOT = {
@@ -17368,13 +17369,13 @@ generate_historical_artifact_based_on_location_effect = {
 			trigger = {
 				game_start_date > 4033
 				NOR = {
-					any_artifact = { has_variable = dunachar }
+					any_artifact = { has_variable = dunacharn }
 				}
 				$LOCATION$ ?= {
 					geographical_region = middleearth_west_arnor
 				}
 			}
-			create_artifact_dunachar_effect = { OWNER = root }
+			create_artifact_dunacharn_effect = { OWNER = root }
 		}
 
 		5 = { #Gorthagnir

@@ -575,6 +575,7 @@ gondor.0310 = {
 			is_ai = yes
 			exists = scope:gondor_liege
 		}
+
 		create_title_and_vassal_change = {
 			type = revoked
 			save_scope_as = change
@@ -590,7 +591,12 @@ gondor.0310 = {
 			}
 		}
 		resolve_title_and_vassal_change = scope:change
-		set_employer = scope:gondor_liege
+
+		recruit_to_entourage_court_and_activity_effect = {
+			CHAR_TO_ADD = root
+			NEW_COURT_OWNER = scope:gondor_liege
+		}
+		
 
 		ai_chance = {
 			base = 0 # LotR: This should be tied to WotR mode.
@@ -623,8 +629,26 @@ gondor.0310 = {
 
 	option = { #I'll be a Ranger
 		name = gondor.0310.b
+
+		create_title_and_vassal_change = {
+			type = revoked
+			save_scope_as = change
+			add_claim_on_loss = yes
+		}
+		every_held_title = {
+			limit = { tier >= tier_county }
+			generate_coa = yes
+			change_title_holder = {
+				holder = root.top_liege
+				change = scope:change
+				take_baronies = yes
+			}
+		}
+		resolve_title_and_vassal_change = scope:change
+
+
 		if = {
-			limit = { 
+			limit = {
 				title:d_laamp_rangers_of_ithilien.holder ?= {
 					is_ai = yes #Don't take it from a player!
 					NOT = { is_close_family_of = root } #Don't take it from your brother!
@@ -776,6 +800,11 @@ gondor.0500 = {
 
 		remove_trait = celibate
 		remove_trait = cannot_marry
+
+		#It's not you, it's me
+		remove_relation_soulmate = character:lineofelrond4
+		remove_variable = lotr_canon_soulmate
+		character:lineofelrond4 = { remove_variable = lotr_canon_soulmate }
 
 		hidden_effect = { # everyone can marry now
 			character:dolamroth31 = {
@@ -1214,8 +1243,13 @@ gondor.0502 = { # Aragorn is allowed into Minas Tirith and is coronated
 				NEW_OWNER = root
 			}
 		}
-
-		set_culture = culture:gondorian
+		if = { 
+			limit = { culture = { this = culture:arnorian } }
+			add_prestige = 100
+		}
+		else = { 
+			set_culture = culture:gondorian
+		}
 		create_title_and_vassal_change = {
 			type = returned
 			save_scope_as = change
@@ -2016,9 +2050,6 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 		}
 		else = {
 			marry = character:lineofelrond4
-			set_relation_lover = character:lineofelrond4
-			set_relation_friend = character:lineofelrond4
-			set_relation_soulmate = character:lineofelrond4
 
 			character:lineoffinarfin5 = { # Galadriel sends a royal gift
 				trigger_event = {
@@ -2071,6 +2102,11 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 				}
 			}
 		}
+
+		#It's not you, it's me
+		remove_relation_soulmate = character:lineofelrond4
+		remove_variable = lotr_canon_soulmate
+		character:lineofelrond4 = { remove_variable = lotr_canon_soulmate }
 
 		if = {
 			limit = {
@@ -2134,6 +2170,11 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 				}
 			}
 		}
+
+		#It's not you, it's me
+		remove_relation_soulmate = character:lineofelrond4
+		remove_variable = lotr_canon_soulmate
+		character:lineofelrond4 = { remove_variable = lotr_canon_soulmate }
 
 		if = {
 			limit = {
@@ -2201,6 +2242,11 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 			}
 		}
 
+		#It's not you, it's me
+		remove_relation_soulmate = character:lineofelrond4
+		remove_variable = lotr_canon_soulmate
+		character:lineofelrond4 = { remove_variable = lotr_canon_soulmate }
+
 		if = {
 			limit = {
 				has_dlc_feature = tours_and_tournaments
@@ -2242,6 +2288,10 @@ gondor.0506 = { # A dream from long ago... Will Aragorn marry Arwen?
 	option = {  # It was but a dream. Do not marry any of the above options
 		name = gondor.0506.e
 		custom_tooltip = gondor.0506.e.tt
+		#It's not you, it's me
+		remove_relation_soulmate = character:lineofelrond4
+		remove_variable = lotr_canon_soulmate
+		character:lineofelrond4 = { remove_variable = lotr_canon_soulmate }
 		ai_chance = {
 			base = 0
 		}
@@ -4342,7 +4392,7 @@ gondor.0559 = { # Discord in Gondor - an opportunity for Mordor?
 	desc = gondor.0559.desc
 	theme = war
 	override_background = {
-		reference = barad_dur
+		reference = wilderness_volcanic
 	}
 	left_portrait = {
 		character = root
@@ -4460,7 +4510,13 @@ gondor.0562 = { # Royalist victory - Aragorn is crowned
 
 	option = {
 		name = gondor.0562.a # I will protect my people
-		set_culture = culture:gondorian
+		if = { 
+			limit = { culture = { this = culture:arnorian } }
+			add_prestige = 100
+		}
+		else = { 
+			set_culture = culture:gondorian
+		}
 		create_title_and_vassal_change = {
 			type = faction_demand
 			save_scope_as = change
@@ -5010,7 +5066,13 @@ gondor.0567 = { # Royalist victory - A new Dúnedain King is crowned
 
 	option = {
 		name = gondor.0567.a # I will protect my people
-		set_culture = culture:gondorian
+		if = { 
+			limit = { culture = { this = culture:arnorian } }
+			add_prestige = 100
+		}
+		else = { 
+			set_culture = culture:gondorian
+		}
 		create_title_and_vassal_change = {
 			type = faction_demand
 			save_scope_as = change
@@ -5684,7 +5746,6 @@ gondor.1100 = {
 		}
 	}
 }
-
 
 ##QUONTON AND WOMEN
 gondor.9011 = {
@@ -6644,7 +6705,7 @@ gondor.2102 = { # Victory, Mordor Shattered
 		animation = personality_honorable
 	}
 	override_background = {
-		reference = barad_dur
+		reference = wilderness_volcanic
 	}
 
 	immediate = {
@@ -6746,7 +6807,7 @@ gondor.2102 = { # Victory, Mordor Shattered
 # 	}
 # 	theme = diplomacy_majesty_focus
 # 	override_background = {
-# 		reference = barad_dur
+# 		reference = wilderness_volcanic
 # 	}
 # 	left_portrait = {
 # 		character = root
@@ -6791,7 +6852,7 @@ gondor.2104 = {	#triggered if sauron dies from a bug or unexpectedly, without pr
 	desc = gondor.2104.desc
 	theme = diplomacy_majesty_focus
 	override_background = {
-		reference = barad_dur
+		reference = wilderness_volcanic
 	}
 	left_portrait = {
 		character = root
@@ -8800,7 +8861,7 @@ gondor.2700 = { # Reclaim Dor Rhúnen
 	desc = gondor.2700.desc
 	theme = stewardship_duty_focus
 	override_background = {
-		reference = rhun
+		reference = wilderness_desert_rhun
 	}
 	right_portrait = {
 		character = root
@@ -9097,6 +9158,12 @@ gondor.2800 = { # Invite elves to Edhellond
 				change = scope:change
 			}
 		}
+		title:b_caleneithel_gondor = {
+			change_title_holder = {
+				holder = scope:elf_lothlorien
+				change = scope:change
+			}
+		}
 		resolve_title_and_vassal_change = scope:change
 
 		title:c_edhellond = {
@@ -9104,6 +9171,10 @@ gondor.2800 = { # Invite elves to Edhellond
 			set_county_faith = scope:elf_lothlorien.faith
 		}
 		title:c_edhellond_2 = {
+			set_county_culture = scope:elf_lothlorien.culture
+			set_county_faith = scope:elf_lothlorien.faith
+		}
+		title:b_caleneithel_gondor = {
 			set_county_culture = scope:elf_lothlorien.culture
 			set_county_faith = scope:elf_lothlorien.faith
 		}
@@ -9161,6 +9232,12 @@ gondor.2800 = { # Invite elves to Edhellond
 				change = scope:change
 			}
 		}
+		title:b_caleneithel_gondor = {
+			change_title_holder = {
+				holder = scope:elf_lasgalen
+				change = scope:change
+			}
+		}
 		resolve_title_and_vassal_change = scope:change
 
 		title:c_edhellond = {
@@ -9168,6 +9245,10 @@ gondor.2800 = { # Invite elves to Edhellond
 			set_county_faith = scope:elf_lasgalen.faith
 		}
 		title:c_edhellond_2 = {
+			set_county_culture = scope:elf_lasgalen.culture
+			set_county_faith = scope:elf_lasgalen.faith
+		}
+		title:b_caleneithel_gondor = {
 			set_county_culture = scope:elf_lasgalen.culture
 			set_county_faith = scope:elf_lasgalen.faith
 		}
@@ -9226,6 +9307,12 @@ gondor.2800 = { # Invite elves to Edhellond
 				change = scope:change
 			}
 		}
+		title:b_caleneithel_gondor = {
+			change_title_holder = {
+				holder = scope:elf_falathrim
+				change = scope:change
+			}
+		}
 		resolve_title_and_vassal_change = scope:change
 
 		title:c_edhellond = {
@@ -9233,6 +9320,10 @@ gondor.2800 = { # Invite elves to Edhellond
 			set_county_faith = scope:elf_falathrim.faith
 		}
 		title:c_edhellond_2 = {
+			set_county_culture = scope:elf_falathrim.culture
+			set_county_faith = scope:elf_falathrim.faith
+		}
+		title:b_caleneithel_gondor = {
 			set_county_culture = scope:elf_falathrim.culture
 			set_county_faith = scope:elf_falathrim.faith
 		}
@@ -9291,6 +9382,12 @@ gondor.2800 = { # Invite elves to Edhellond
 				change = scope:change
 			}
 		}
+		title:b_caleneithel_gondor = {
+			change_title_holder = {
+				holder = scope:elf_noldor
+				change = scope:change
+			}
+		}
 		resolve_title_and_vassal_change = scope:change
 
 		title:c_edhellond = {
@@ -9298,6 +9395,10 @@ gondor.2800 = { # Invite elves to Edhellond
 			set_county_faith = scope:elf_noldor.faith
 		}
 		title:c_edhellond_2 = {
+			set_county_culture = scope:elf_noldor.culture
+			set_county_faith = scope:elf_noldor.faith
+		}
+		title:b_caleneithel_gondor = {
 			set_county_culture = scope:elf_noldor.culture
 			set_county_faith = scope:elf_noldor.faith
 		}
@@ -9357,6 +9458,12 @@ gondor.2800 = { # Invite elves to Edhellond
 				change = scope:change
 			}
 		}
+		title:b_caleneithel_gondor = {
+			change_title_holder = {
+				holder = scope:elf_penni
+				change = scope:change
+			}
+		}
 		resolve_title_and_vassal_change = scope:change
 
 		title:c_edhellond = {
@@ -9367,7 +9474,10 @@ gondor.2800 = { # Invite elves to Edhellond
 			set_county_culture = scope:elf_penni.culture
 			set_county_faith = scope:elf_penni.faith
 		}
-
+		title:b_caleneithel_gondor = {
+			set_county_culture = scope:elf_penni.culture
+			set_county_faith = scope:elf_penni.faith
+		}
 
 		scope:elf_penni = {
 			add_opinion = {
@@ -10364,7 +10474,7 @@ gondor.3800 = { #Return of the King - Long Winter edition
 	title = gondor.3800.t
 	desc = gondor.3800.desc
 	theme = diplomacy_majesty_focus
-	window = visit_settlement_window
+	window = big_event_window
 	override_background = {
 		reference = minas_tirith
 	}
@@ -10498,10 +10608,16 @@ gondor.3800 = { #Return of the King - Long Winter edition
 				every_tributary = { end_tributary = yes }
 			}
 		}
-		set_culture = culture:gondorian
-		every_child = { set_culture = culture:gondorian }
-		root.player_heir = { every_child = { set_culture = culture:gondorian } }
-		every_spouse = { set_culture = culture:gondorian }
+		if = { 
+			limit = { culture = { this = culture:arnorian } }
+			add_prestige = 100
+		}
+		else = { 
+			set_culture = culture:gondorian
+			every_child = { set_culture = culture:gondorian }
+			root.player_heir = { every_child = { set_culture = culture:gondorian } }
+			every_spouse = { set_culture = culture:gondorian }
+		}
 
 		hidden_effect = {
 			create_title_and_vassal_change = {
@@ -10690,7 +10806,7 @@ gondor.3801 = { #Arassuil arrives at Minas Tirith
 	title = gondor.3801.t
 	desc = gondor.3801.desc
 	theme = diplomacy
-	window = visit_settlement_window
+	window = big_event_window
 	override_background = {
 		reference = minas_tirith
 	}
@@ -10843,7 +10959,7 @@ gondor.3803 = { #Arassuil arrives at Pelargir
 	title = gondor.3803.t
 	desc = gondor.3803.desc
 	theme = diplomacy
-	window = visit_settlement_window
+	window = big_event_window
 	override_background = {
 		reference = docks_dunedain
 	}
@@ -10985,7 +11101,7 @@ gondor.3804 = { #Arassuil arrives at Calembel
 	title = gondor.3804.t
 	desc = gondor.3804.desc
 	theme = diplomacy
-	window = visit_settlement_window
+	window = big_event_window
 	override_background = {
 		reference = throne_room_dunedain
 	}
@@ -11127,7 +11243,7 @@ gondor.3805 = { #Arassuil arrives at Dol Amroth
 	title = gondor.3805.t
 	desc = gondor.3805.desc
 	theme = diplomacy
-	window = visit_settlement_window
+	window = big_event_window
 	override_background = {
 		reference = dol_amroth
 	}
@@ -11277,7 +11393,7 @@ gondor.3806 = { #The Council of Gondor
 	title = gondor.3806.t
 	desc = gondor.3806.desc
 	theme = diplomacy
-	window = visit_settlement_window
+	window = big_event_window
 	override_background = {
 		reference = minas_tirith
 	}

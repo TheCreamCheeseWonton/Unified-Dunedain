@@ -69,6 +69,7 @@ decision_reclaim_mardruak = {
 		title:k_mardruak = {
 			set_de_jure_liege_title = title:e_bellakar
 		}
+		root.dynasty = { add_dynasty_prestige = 500 }
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:reclaim_mardruak_decision
@@ -106,6 +107,8 @@ decision_bellakar_x_gondor = {
 	decision_group_type = realms_in_exile_major
 	
 	is_shown = {
+		game_start_date >= 6000.1.1 # Rough date
+		global_var:bellakar_north_focus = no
 		OR = {
 			has_title = title:e_bellakar
 			has_title = title:h_pharazain
@@ -162,7 +165,6 @@ decision_bellakar_x_gondor = {
 				}
 			}
 		}
-		global_var:bellakar_north_focus = no
 	}
 
 	# IS VALID
@@ -504,7 +506,7 @@ decision_tame_desert = {
 decision_subdue_sarwa = {
 	title = decision_subdue_sarwa
 	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_numenorean_ship.dds"
+		reference = "gfx/interface/illustrations/decisions/decision_control_trade_in_the_bay_of_ormal.dds"
 	}
 	
 	sort_order = 500
@@ -707,25 +709,25 @@ decision_umbar_annexation = {
 		custom_tooltip = {
 			text = bellakar_must_have_umbar_control
 			title:c_badharkan = {
-				county_control = 100
+				county_control >= full_county_control
 			}
 			title:c_azulathan = {
-				county_control = 100
+				county_control >= full_county_control
 			}
 			title:c_annabrith = {
-				county_control = 100
+				county_control >= full_county_control
 			}
-			title:c_dhajran = {
-				county_control = 100
+			title:c_sakal_an_dalajaf = {
+				county_control >= full_county_control
 			}
 			title:c_mazrakh = {
-				county_control = 100
+				county_control >= full_county_control
 			}
 			title:c_zorthan = {
-				county_control = 100
+				county_control >= full_county_control
 			}
 			title:c_dhurn = {
-				county_control = 100
+				county_control >= full_county_control
 			}																												
 		}
 		OR = {			
@@ -955,7 +957,7 @@ decision_bellakar_tulwang_annexation = {
 
 decision_bellakar_tedjin_suppression = {
 	title = decision_bellakar_tedjin_suppression
-	picture = { reference = "gfx/interface/illustrations/decisions/decision_gondor_02.dds" }
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_harad_10.dds" }
 	
 	ai_check_interval_by_tier = {
 		barony = 0
@@ -988,7 +990,7 @@ decision_bellakar_tedjin_suppression = {
 	
 	is_valid = {
 		faith = { has_doctrine = tenet_bellakari_syncretism }
-		completely_controls = title:c_nilulonde
+		#completely_controls = title:c_nilulonde
 		OR = {
 			has_title = title:k_tedja
 			any_vassal_or_below = { has_title = title:k_tedja }
@@ -1004,7 +1006,7 @@ decision_bellakar_tedjin_suppression = {
 				count = 0
 			}
 		}
-		title:c_nilulonde.title_province = { has_great_building = no }
+		capital_province = { has_great_building = no }
 	}
 	
 	is_valid_showing_failures_only = {
@@ -1019,7 +1021,7 @@ decision_bellakar_tedjin_suppression = {
 			left_icon = root
 			dynasty = { add_dynasty_prestige = 750 }
 			add_prestige = massive_prestige_gain
-			title:c_nilulonde.title_province = { set_great_building = great_building_nilulonde }
+			capital_province = { set_great_building = great_building_nilulonde }
 		}
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
@@ -1041,7 +1043,7 @@ decision_bellakar_tedjin_suppression = {
 decision_restore_korlean_league = { #The Korlean League
 	title = decision_restore_korlean_league_title
 	picture = {
-		reference = gfx/interface/illustrations/event_scenes/docks_adunai.dds
+		reference = gfx/interface/illustrations/event_scenes/lotr_docks_adunai.dds
 	}
 
 	ai_potential = {

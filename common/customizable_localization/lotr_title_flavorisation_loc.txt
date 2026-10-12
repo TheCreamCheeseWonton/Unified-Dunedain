@@ -8,12 +8,20 @@ sauron_hidden_as_necromancer = {
 			is_sauron = yes
 			has_character_flag = unknown_sauron_flag
 		}
-        localization_key = sauron_hidden_as_necromancer 
-    }
-	text = { 
+		localization_key = sauron_hidden_as_necromancer
+	}
+	text = {
+		trigger = {
+			is_sauron = yes
+			NOT = { has_character_flag = unknown_sauron_flag }
+			has_character_flag = revealed_sauron
+		}
+		localization_key = emperor_feudal_male_e_mordor
+	}
+	text = {
 		fallback = yes
-        localization_key = sauron_hidden_as_necromancer
-    }
+		localization_key = sauron_hidden_as_necromancer
+	}
 }
 
 ### Dúnedain ###
@@ -41,12 +49,12 @@ county_dunedain = {
 	}
 	text = { # Other counties are localized as normal counties
 		fallback = yes
-        localization_key = county_feudal
-    }
+		localization_key = county_feudal
+	}
 
 }
 count_dunedain_male = {
-	type = character 
+	type = character
 	text = { # Count under the leage of Pelargir
 		trigger = {
 			liege ?= title:k_pelargir.holder
@@ -66,28 +74,28 @@ count_dunedain_male = {
 		localization_key = count_administrative_male_gondor
 	}
 	# text = { # Vassals of County Rank are localized as Lord # Commented out one localizes as 'Warden'
-	# 	trigger = {
-	# 		is_independent_ruler = no
-	# 		is_ruler = yes
-	# 	}
-    #     localization_key = count 
-	# 	#localization_key = count_dunedain_male_vassal
-    # }
+	#	trigger = {
+	#		is_independent_ruler = no
+	#		is_ruler = yes
+	#	}
+	#	localization_key = count
+	#	#localization_key = count_dunedain_male_vassal
+	# }
 	# text = { # Spouses of Wardeness localized as Lords
-	# 	trigger = {
-	# 		is_independent_ruler = no
-	# 		is_ruler = no
-	# 	}
-    #     localization_key = count
-    # }
+	#	trigger = {
+	#		is_independent_ruler = no
+	#		is_ruler = no
+	#	}
+	#	localization_key = count
+	# }
 	text = { # Independent Dúnedain of Count Rank are localized as 'Lords'
 		fallback = yes
-        localization_key = count
-    }
+		localization_key = count
+	}
 }
 
 count_dunedain_female = {
-	type = character 
+	type = character
 	text = { # Count under the leage of Pelargir
 		trigger = {
 			liege ?= title:k_pelargir.holder
@@ -107,24 +115,24 @@ count_dunedain_female = {
 		localization_key = count_administrative_female_gondor
 	}
 	# text = { # Vassals of County Rank are localized as Lady # Commented out one localizes as 'Wardeness'
-	# 	trigger = {
-	# 		is_independent_ruler = no
-	# 		is_ruler = yes
-	# 	}
-    #     localization_key = count_female
-	# 	#localization_key = count_dunedain_female_vassal
-    # }
+	#	trigger = {
+	#		is_independent_ruler = no
+	#		is_ruler = yes
+	#	}
+	#	localization_key = count_female
+	#	#localization_key = count_dunedain_female_vassal
+	# }
 	# text = { # Spouses of Wardens localized as Lady
-	# 	trigger = {
-	# 		is_independent_ruler = no
-	# 		is_ruler = no
-	# 	}
-    #     localization_key = count_female
-    # }
+	#	trigger = {
+	#		is_independent_ruler = no
+	#		is_ruler = no
+	#	}
+	#	localization_key = count_female
+	# }
 	text = { # Independent Dúnedain of Count Rank are localized as 'Ladies'
 		fallback = yes
-        localization_key = count_female
-    }
+		localization_key = count_female
+	}
 }
 
 ## Duchies ##
@@ -155,7 +163,7 @@ duke_dunedain_male = {
 			has_primary_title = title:d_pelargir
 		}
 		localization_key = king_feudal_male_k_lebennin
-	} 
+	}
 	text = { # League of Pelargir loc
 		trigger = {
 			liege ?= title:k_pelargir.holder
@@ -173,23 +181,23 @@ duke_dunedain_male = {
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = count
-    }
+		localization_key = count
+	}
 	text = { # Spouses of Ladies localized as 'Lord'
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count
-    }
+		localization_key = count
+	}
 	text = { # Independent Dúnedain of Ducal Rank are localized as 'High Lords'
 		fallback = yes
-        localization_key = duke
-    }
+		localization_key = duke
+	}
 }
 
 duke_dunedain_female = {
-	type = character 
+	type = character
 	text = {
 		trigger = { # Dukes under the League of Pelargir are localized as 'Legate'
 			liege ?= title:k_pelargir.holder
@@ -207,49 +215,49 @@ duke_dunedain_female = {
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = count_female
-    }
+		localization_key = count_female
+	}
 	text = { # Spouses of Ducal ranks localized as Lady
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count_female
-    }
+		localization_key = count_female
+	}
 	text = { # Independent Dúnedain of Ducal Rank are localized as 'High Lady'
 		fallback = yes
-        localization_key = duke_female
-    }
+		localization_key = duke_female
+	}
 }
 
 
 ## Kingdoms ##
 kingdom_dunedain = { # Province vs Principality
-	type = character 
-	
+	type = character
+
 	text = { # For select vassal houses given the honor, localize as Principalities
 		trigger = {
 			has_dynasty = yes
 			is_independent_ruler = no
 			OR = { # Add titles that historically have princely stature
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_belfalas 
+						kingdom = title:k_belfalas
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_dol_amroth }
 				}
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_ithilien 
+						kingdom = title:k_ithilien
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_ithilien }
 				}
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_cardolan 
+						kingdom = title:k_cardolan
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_cardolan }
 				}
@@ -274,24 +282,24 @@ kingdom_dunedain = { # Province vs Principality
 						culture = { has_cultural_pillar = heritage_unified_adunaic }
 					}
 				}
-				
+
 				AND = { # Kingdoms held by imperial tier Dunedain are also localized as 'Province'
 					is_independent_ruler = yes
 					highest_held_title_tier = tier_empire
 				}
 			}
 		}
-        localization_key = dunedain_province
-    }
+		localization_key = dunedain_province
+	}
 	text = { # Independent Dúnedain kingdom-tier titles are localized as Kingdoms
 		fallback = yes
-        localization_key = kingdom
-    }
+		localization_key = kingdom
+	}
 }
 
 king_dunedain_male = {
-	type = character 
-	
+	type = character
+
 	text = { # For select vassal houses given the honor, localize as Princes
 		trigger = {
 			has_dynasty = yes
@@ -299,23 +307,23 @@ king_dunedain_male = {
 			is_ruler = yes
 			OR = { # Add titles that historically have princely stature
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_belfalas 
+						kingdom = title:k_belfalas
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_dol_amroth }
 				}
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_ithilien 
+						kingdom = title:k_ithilien
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_ithilien }
 				}
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_cardolan 
+						kingdom = title:k_cardolan
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_cardolan }
 				}
@@ -339,8 +347,8 @@ king_dunedain_male = {
 				culture = { has_cultural_pillar = heritage_unified_adunaic }
 			}
 		}
-        localization_key = duke
-    }
+		localization_key = duke
+	}
 	text = { # Spouses of High Ladies localized as Lord
 		trigger = {
 			is_independent_ruler = no
@@ -354,17 +362,17 @@ king_dunedain_male = {
 				}
 			}
 		}
-        localization_key = count
-    }
+		localization_key = count
+	}
 	text = { # Independent Dúnedain of Kingly rank are localized as Kings
 		fallback = yes
-        localization_key = king
-    }
+		localization_key = king
+	}
 }
 
 king_dunedain_female = {
-	type = character 
-	
+	type = character
+
 	text = { # For select vassal houses given the honor, localize as Princess
 		trigger = {
 			has_dynasty = yes
@@ -374,21 +382,21 @@ king_dunedain_female = {
 				AND = {
 					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_belfalas 
+						kingdom = title:k_belfalas
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_dol_amroth }
 				}
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_ithilien 
+						kingdom = title:k_ithilien
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_ithilien }
 				}
 				AND = {
-					any_held_title = { 
+					any_held_title = {
 						tier = tier_kingdom
-						kingdom = title:k_cardolan 
+						kingdom = title:k_cardolan
 					}
 					dynasty = { has_dynasty_modifier = princely_house_of_cardolan }
 				}
@@ -412,8 +420,8 @@ king_dunedain_female = {
 				culture = { has_cultural_pillar = heritage_unified_adunaic }
 			}
 		}
-        localization_key = duke_female
-    }
+		localization_key = duke_female
+	}
 	text = { # Spouses of High Lords localized as Lady
 		trigger = {
 			is_independent_ruler = no
@@ -429,27 +437,27 @@ king_dunedain_female = {
 				}
 			}
 		}
-        localization_key = count_female
-    }
+		localization_key = count_female
+	}
 	text = { # Independent Dúnedain Women of Kingly rank are localized as Queens
 		fallback = yes
-        localization_key = king_female
-    }
+		localization_key = king_female
+	}
 }
 
 ### Dragon Knights ###
 easterling_count = {
-	type = character 
-	
+	type = character
+
 	text = { # Localize counts under the Dragon Knights
 		trigger = {
 			has_dynasty = yes
 			is_independent_ruler = no
 			is_ruler = yes
 			liege = {
-				any_held_title = { 
+				any_held_title = {
 					tier = tier_kingdom
-					kingdom = title:k_dragon_knights 
+					kingdom = title:k_dragon_knights
 				}
 			}
 		}
@@ -461,9 +469,9 @@ easterling_count = {
 			is_independent_ruler = no
 			is_ruler = yes
 			liege.liege = {
-				any_held_title = { 
+				any_held_title = {
 					tier = tier_kingdom
-					kingdom = title:k_dragon_knights 
+					kingdom = title:k_dragon_knights
 				}
 			}
 		}
@@ -471,22 +479,22 @@ easterling_count = {
 	}
 	text = { # Everyone else just gets a normal count title
 		fallback = yes
-        localization_key = count_igath
-    }
+		localization_key = count_igath
+	}
 }
 
 easterling_duke = {
-	type = character 
-	
+	type = character
+
 	text = { # Dukes under the dragon knights get a special title
 		trigger = {
 			has_dynasty = yes
 			is_independent_ruler = no
 			is_ruler = yes
 			liege = {
-				any_held_title = { 
+				any_held_title = {
 					tier = tier_kingdom
-					kingdom = title:k_dragon_knights 
+					kingdom = title:k_dragon_knights
 				}
 			}
 		}
@@ -494,19 +502,19 @@ easterling_duke = {
 	}
 	text = { # Everyone else gets a normal duke title
 		fallback = yes
-        localization_key = duke_igath
-    }
+		localization_key = duke_igath
+	}
 }
 
 easterling_county = {
-	type = character 
-	
+	type = character
+
 	text = { # Counties under the Dragon knights
 		trigger = {
 			liege = {
-				any_held_title = { 
+				any_held_title = {
 					tier = tier_kingdom
-					kingdom = title:k_dragon_knights 
+					kingdom = title:k_dragon_knights
 				}
 			}
 		}
@@ -515,9 +523,9 @@ easterling_county = {
 	text = { # Counties under Dukes under the Dragon knights
 		trigger = {
 			liege.liege = {
-				any_held_title = { 
+				any_held_title = {
 					tier = tier_kingdom
-					kingdom = title:k_dragon_knights 
+					kingdom = title:k_dragon_knights
 				}
 			}
 		}
@@ -525,19 +533,19 @@ easterling_county = {
 	}
 	text = { # Fallback to normal
 		fallback = yes
-        localization_key = county_igath
-    }
+		localization_key = county_igath
+	}
 }
 
 easterling_duchy = {
-	type = character 
-	
+	type = character
+
 	text = { # Dukes under the Dragon knights
 		trigger = {
 			liege = {
-				any_held_title = { 
+				any_held_title = {
 					tier = tier_kingdom
-					kingdom = title:k_dragon_knights 
+					kingdom = title:k_dragon_knights
 				}
 			}
 		}
@@ -545,151 +553,151 @@ easterling_duchy = {
 	}
 	text = { # Normal title fallback
 		fallback = yes
-        localization_key = duchy_igath
-    }
+		localization_key = duchy_igath
+	}
 }
 
 ### Oligarchies ###
 
 ## Counties ##
 count_oligarchy_male = {
-	type = character 
-	
+	type = character
+
 	text = {
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = count_oligarchy_male_vassal
-    }
+		localization_key = count_oligarchy_male_vassal
+	}
 	text = {
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count
-    }
+		localization_key = count
+	}
 	text = {
 		fallback = yes
-        localization_key = oligarch
-    }
+		localization_key = oligarch
+	}
 }
 
 count_oligarchy_female = {
-	type = character 
-	
+	type = character
+
 	text = {
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = count_oligarchy_female_vassal 
-    }
+		localization_key = count_oligarchy_female_vassal
+	}
 	text = {
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count_female
-    }
+		localization_key = count_female
+	}
 	text = {
 		fallback = yes
-        localization_key = oligarch
-    }
+		localization_key = oligarch
+	}
 }
 
 ## Duchies ##
 duke_oligarchy_male = {
-	type = character 
-	
+	type = character
+
 	text = {
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = duke_oligarchy_male_vassal
-    }
+		localization_key = duke_oligarchy_male_vassal
+	}
 	text = {
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count
-    }
+		localization_key = count
+	}
 	text = {
 		fallback = yes
-        localization_key = oligarch
-    }
+		localization_key = oligarch
+	}
 }
 
 duke_oligarchy_female = {
-	type = character 
-	
+	type = character
+
 	text = {
 		trigger = { # For vassal rulers
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = duke_oligarchy_female_vassal
-    }
+		localization_key = duke_oligarchy_female_vassal
+	}
 	text = { # For vassal wives
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count_female
-    }
+		localization_key = count_female
+	}
 	text = { # Oligarch Fallback
 		fallback = yes
-        localization_key = oligarch
-    }
+		localization_key = oligarch
+	}
 }
 
 ## Kingdoms ##
 king_oligarchy_male = {
-	type = character 
-	
+	type = character
+
 	text = { # Vassals of County Rank are localized as Lord # Commented out one localizes as 'Warden'
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = king_oligarchy_male_vassal #count_dunedain_male_vassal
-    }
+		localization_key = king_oligarchy_male_vassal #count_dunedain_male_vassal
+	}
 	text = { # Spouses of Wardeness localized as Lords
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count
-    }
+		localization_key = count
+	}
 	text = { # Independent Dúnedain of Count Rank are localized as 'Lords'
 		fallback = yes
-        localization_key = independant_king_oligarch
-    }
+		localization_key = independant_king_oligarch
+	}
 }
 
 king_oligarchy_female = {
-	type = character 
-	
+	type = character
+
 	text = { # Vassals of County Rank are localized as Lord # Commented out one localizes as 'Warden'
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = yes
 		}
-        localization_key = king_oligarchy_female_vassal #count_dunedain_male_vassal
-    }
+		localization_key = king_oligarchy_female_vassal #count_dunedain_male_vassal
+	}
 	text = { # Spouses of Wardeness localized as Lords
 		trigger = {
 			is_independent_ruler = no
 			is_ruler = no
 		}
-        localization_key = count_female
-    }
+		localization_key = count_female
+	}
 	text = { # Independent Dúnedain of Count Rank are localized as 'Lords'
 		fallback = yes
-        localization_key = independant_king_oligarch
-    }
+		localization_key = independant_king_oligarch
+	}
 }
 
 ### Dorwinion ###
@@ -698,9 +706,9 @@ county_male_dorwinion = {
 
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = winelords }
@@ -709,9 +717,9 @@ county_male_dorwinion = {
 	}
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = master_merchants }
@@ -720,8 +728,8 @@ county_male_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = count_feudal_male
-    }
+		localization_key = count_feudal_male
+	}
 }
 
 county_female_dorwinion = {
@@ -743,8 +751,8 @@ county_female_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = count_feudal_female
-    }
+		localization_key = count_feudal_female
+	}
 }
 
 duchy_male_dorwinion = {
@@ -771,8 +779,8 @@ duchy_male_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = duke_feudal_male
-    }
+		localization_key = duke_feudal_male
+	}
 }
 
 duchy_female_dorwinion = {
@@ -799,8 +807,8 @@ duchy_female_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = duke_feudal_female
-    }
+		localization_key = duke_feudal_female
+	}
 }
 
 kingdom_male_dorwinion = {
@@ -809,7 +817,7 @@ kingdom_male_dorwinion = {
 	text = {
 		trigger = {
 			has_dynasty = yes
-			dynasty = { 
+			dynasty = {
 				OR = {
 					has_dynasty_modifier = winelords
 					has_dynasty_modifier = master_merchants
@@ -820,8 +828,8 @@ kingdom_male_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = dorwinion_male_king_title
-    }
+		localization_key = dorwinion_male_king_title
+	}
 }
 
 kingdom_female_dorwinion = {
@@ -830,7 +838,7 @@ kingdom_female_dorwinion = {
 	text = {
 		trigger = {
 			has_dynasty = yes
-			dynasty = { 
+			dynasty = {
 				OR = {
 					has_dynasty_modifier = winelords
 					has_dynasty_modifier = master_merchants
@@ -841,8 +849,8 @@ kingdom_female_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = dorwinion_female_king_title
-    }
+		localization_key = dorwinion_female_king_title
+	}
 }
 
 empire_male_dorwinion = {
@@ -851,7 +859,7 @@ empire_male_dorwinion = {
 	text = {
 		trigger = {
 			has_dynasty = yes
-			dynasty = { 
+			dynasty = {
 				OR = {
 					has_dynasty_modifier = winelords
 					has_dynasty_modifier = master_merchants
@@ -862,8 +870,8 @@ empire_male_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = dorwinion_male_emperor_title
-    }
+		localization_key = dorwinion_male_emperor_title
+	}
 }
 
 empire_female_dorwinion = {
@@ -872,7 +880,7 @@ empire_female_dorwinion = {
 	text = {
 		trigger = {
 			has_dynasty = yes
-			dynasty = { 
+			dynasty = {
 				OR = {
 					has_dynasty_modifier = winelords
 					has_dynasty_modifier = master_merchants
@@ -883,8 +891,8 @@ empire_female_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = dorwinion_female_emperor_title
-    }
+		localization_key = dorwinion_female_emperor_title
+	}
 }
 
 free_city_dorwinion = {
@@ -892,9 +900,9 @@ free_city_dorwinion = {
 
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = winelords }
@@ -903,9 +911,9 @@ free_city_dorwinion = {
 	}
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = master_merchants }
@@ -914,8 +922,8 @@ free_city_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = viscounty_dorwinion_title
-    }
+		localization_key = viscounty_dorwinion_title
+	}
 }
 
 league_dorwinion = {
@@ -923,9 +931,9 @@ league_dorwinion = {
 
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = winelords }
@@ -934,9 +942,9 @@ league_dorwinion = {
 	}
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = master_merchants }
@@ -945,8 +953,8 @@ league_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = marquessate_dorwinion_title
-    }
+		localization_key = marquessate_dorwinion_title
+	}
 }
 
 realm_dorwinion = {
@@ -954,9 +962,9 @@ realm_dorwinion = {
 
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = winelords }
@@ -965,9 +973,9 @@ realm_dorwinion = {
 	}
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = master_merchants }
@@ -976,8 +984,8 @@ realm_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = kingdom_feudal
-    }
+		localization_key = kingdom_feudal
+	}
 }
 
 assembly_of_realms_dorwinion = {
@@ -985,9 +993,9 @@ assembly_of_realms_dorwinion = {
 
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = winelords }
@@ -996,9 +1004,9 @@ assembly_of_realms_dorwinion = {
 	}
 	text = {
 		trigger = {
-			# any_held_title = { 
-			# 	tier = tier_kingdom
-			# 	kingdom = title:k_dorwinion 
+			# any_held_title = {
+			#	tier = tier_kingdom
+			#	kingdom = title:k_dorwinion
 			# }
 			has_dynasty = yes
 			dynasty = { has_dynasty_modifier = master_merchants }
@@ -1007,8 +1015,8 @@ assembly_of_realms_dorwinion = {
 	}
 	text = {
 		fallback = yes
-        localization_key = empire_feudal
-    }
+		localization_key = empire_feudal
+	}
 }
 
 empire_aladegan = {
@@ -1023,8 +1031,8 @@ empire_aladegan = {
 	}
 	text = {
 		fallback = yes
-        localization_key = emperor
-    }
+		localization_key = emperor
+	}
 }
 
 #Elves
@@ -1095,8 +1103,8 @@ elf_queen_quenya = {
 	}
 	text = {
 		fallback = yes
-        localization_key = king_female_quenya
-    }
+		localization_key = king_female_quenya
+	}
 }
 
 elf_king_quenya = {
@@ -1137,8 +1145,8 @@ elf_king_quenya = {
 	}
 	text = {
 		fallback = yes
-        localization_key = king_male_quenya
-    }
+		localization_key = king_male_quenya
+	}
 }
 
 elf_empress_quenya = {
@@ -1179,8 +1187,8 @@ elf_empress_quenya = {
 	}
 	text = {
 		fallback = yes
-        localization_key = emperor_female_quenya
-    }
+		localization_key = emperor_female_quenya
+	}
 }
 
 elf_emperor_quenya = {
@@ -1221,8 +1229,8 @@ elf_emperor_quenya = {
 	}
 	text = {
 		fallback = yes
-        localization_key = emperor_male_quenya
-    }
+		localization_key = emperor_male_quenya
+	}
 }
 
 
@@ -1267,8 +1275,8 @@ elf_queen_sindarin = {
 	}
 	text = {
 		fallback = yes
-        localization_key = king_female_sindarin
-    }
+		localization_key = king_female_sindarin
+	}
 }
 
 elf_king_sindarin = {
@@ -1313,8 +1321,8 @@ elf_king_sindarin = {
 	}
 	text = {
 		fallback = yes
-        localization_key = king_male_sindarin
-    }
+		localization_key = king_male_sindarin
+	}
 }
 
 elf_empress_sindarin = {
@@ -1358,8 +1366,8 @@ elf_empress_sindarin = {
 	}
 	text = {
 		fallback = yes
-        localization_key = emperor_female_sindarin
-    }
+		localization_key = emperor_female_sindarin
+	}
 }
 
 elf_emperor_sindarin = {
@@ -1404,8 +1412,8 @@ elf_emperor_sindarin = {
 	}
 	text = {
 		fallback = yes
-        localization_key = emperor_male_sindarin
-    }
+		localization_key = emperor_male_sindarin
+	}
 }
 
 high_king_falathrim = {
@@ -1446,8 +1454,8 @@ high_king_falathrim = {
 	}
 	text = {
 		fallback = yes
-        localization_key = emperor_male_sindarin
-    }
+		localization_key = emperor_male_sindarin
+	}
 }
 
 high_queen_falathrim = {
@@ -1488,41 +1496,41 @@ high_queen_falathrim = {
 	}
 	text = {
 		fallback = yes
-        localization_key = emperor_female_sindarin
-    }
+		localization_key = emperor_female_sindarin
+	}
 }
 
 # Numenor
 emperor_feudal_male_numenorean = {
-    type = character
-    text = {
-        trigger = {
+	type = character
+	text = {
+		trigger = {
 			OR = {
-            	faith.religion = religion:adunai_religion
-                faith.religion = religion:melkoric_religion
-        	}
-        }
-        localization_key = emperor_feudal_male_adunaic
-    }
-    text = {
-        fallback = yes
-        localization_key = emperor_feudal_numenorean_tar
-    }
+				faith.religion = religion:adunai_religion
+				faith.religion = religion:melkoric_religion
+			}
+		}
+		localization_key = emperor_feudal_male_adunaic
+	}
+	text = {
+		fallback = yes
+		localization_key = emperor_feudal_numenorean_tar
+	}
 }
 
 emperor_feudal_female_numenorean = {
-    type = character
-    text = {
-        trigger = {
-            OR = {
-                faith.religion = religion:adunai_religion
-                faith.religion = religion:melkoric_religion
-            }
-        }
-        localization_key = emperor_feudal_female_adunaic
-    }
-    text = {
-        fallback = yes
-        localization_key = emperor_feudal_numenorean_tar
-    }
+	type = character
+	text = {
+		trigger = {
+			OR = {
+				faith.religion = religion:adunai_religion
+				faith.religion = religion:melkoric_religion
+			}
+		}
+		localization_key = emperor_feudal_female_adunaic
+	}
+	text = {
+		fallback = yes
+		localization_key = emperor_feudal_numenorean_tar
+	}
 }

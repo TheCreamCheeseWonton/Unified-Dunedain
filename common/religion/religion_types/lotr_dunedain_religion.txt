@@ -27,10 +27,10 @@ dunedain_religion = {
 
 	#Crimes
 	doctrine = doctrine_homosexuality_shunned
-	doctrine = doctrine_adultery_men_crime
-	doctrine = doctrine_adultery_women_crime
+	doctrine = doctrine_adultery_men_shunned
+	doctrine = doctrine_adultery_women_shunned
 	doctrine = doctrine_kinslaying_extended_family_crime
-	doctrine = doctrine_witchcraft_shunned
+	doctrine = doctrine_witchcraft_crime
 	doctrine = doctrine_deviancy_crime
 
 	#Clerical Functions
@@ -253,11 +253,7 @@ dunedain_religion = {
 			color = { 221 221 221 }
 			icon = secret_fire
 
-			holy_order_names = {
-				{ name = "holy_order_guardians_of_meneltarma" }
-			}
-			#juke note: these are placeholders, since numenor is gone we dont really have any actual holy sites for them
-
+			# Mainland Alternative Holy Sites
 			holy_site = suthure
 			holy_site = osgiliath
 			holy_site = pelargir
@@ -266,30 +262,26 @@ dunedain_religion = {
 			holy_site = adunazain
 			holy_site = uruloni
 
-			# others
-			doctrine = doctrine_gender_equal
-			doctrine = doctrine_witchcraft_crime
-			doctrine = doctrine_adultery_men_shunned
-			doctrine = doctrine_adultery_women_shunned
-			doctrine = doctrine_divorce_disallowed # To stop old Dúnedain from spamming out children.
-
-			# Tenets
+			#Tenets
 			doctrine = tenet_gift_of_men
 			doctrine = tenet_aniconism
 			doctrine = tenet_astrology
+
+			#Main Group
+			doctrine = doctrine_gender_equal
+
+			#Clerical Functions
 			doctrine = doctrine_clerical_gender_male_only
+
+			holy_order_names = {
+				{ name = "holy_order_guardians_of_meneltarma" }
+			}
 		}
 
-
-		### The Dúnedain / Gondor ###
+		### The Dunedain ###
 		faith_edain = {
 			color = { 50 65 200 }
 			icon = edain
-
-			holy_order_names = {
-				{ name = "holy_order_the_faithful" coat_of_arms = "ho_the_faithful" }
-				{ name = "holy_order_knights_of_manwe" coat_of_arms = "ho_knights_of_manwe" }
-			}
 
 			holy_site = annuminas
 			holy_site = barrow_downs
@@ -298,60 +290,51 @@ dunedain_religion = {
 			holy_site = pelargir
 			holy_site = imrazor_hallow
 
-			# others
-			doctrine = doctrine_witchcraft_crime
-			doctrine = doctrine_adultery_men_shunned
-			doctrine = doctrine_adultery_women_shunned
-			doctrine = doctrine_divorce_disallowed # To stop old Dúnedain from spamming out children.
-
-			# Tenets
+			#Tenets
 			doctrine = tenet_gift_of_men
 			doctrine = tenet_memory_of_akallabeth
 			doctrine = tenet_astrology
+
+			#Clerical Functions
 			doctrine = doctrine_clerical_gender_male_only
+
+			holy_order_names = {
+				{ name = "holy_order_the_faithful" coat_of_arms = "ho_the_faithful" }
+				{ name = "holy_order_knights_of_manwe" coat_of_arms = "ho_knights_of_manwe" }
+			}
 		}
 
 		faith_edain_ulmo = {
 			color = { 40 40 180 }
 			icon = edain_ulmo
 
-			holy_order_names = {
-				{ name = "holy_order_blades_of_the_covenant" coat_of_arms = "ho_blades_of_the_covenant" }
-				{ name = "holy_order_sentinels_of_the_deep" coat_of_arms = "ho_sentinels_of_the_deep"}
-			}
-
 			holy_site = dol_amroth
 			holy_site = imrazor_hallow
 			holy_site = pelargir
 			holy_site = tharagrondost
 			holy_site = umbar
-			#holy_site = tol_ereb
-			#holy_site = tol_lanc
+			# holy_site = tol_ereb
+			# holy_site = tol_lanc
 			holy_site = lond_daer
 			holy_site = korlea
 
-			# others
-			doctrine = doctrine_pluralism_pluralistic
-			doctrine = doctrine_witchcraft_crime
-			doctrine = doctrine_adultery_men_crime
-			doctrine = doctrine_adultery_women_crime
-			doctrine = doctrine_divorce_disallowed # To stop old Dúnedain from spamming out children.
-
-			# Tenets
+			#Tenets
 			doctrine = tenet_primacy_of_ulmo
 			doctrine = tenet_memory_of_akallabeth
 			doctrine = tenet_astrology
-			doctrine = doctrine_clerical_gender_either
+
+			#Main Group
+			doctrine = doctrine_pluralism_pluralistic
+
+			holy_order_names = {
+				{ name = "holy_order_blades_of_the_covenant" coat_of_arms = "ho_blades_of_the_covenant" }
+				{ name = "holy_order_sentinels_of_the_deep" coat_of_arms = "ho_sentinels_of_the_deep"}
+			}
 		}
 
 		faith_edain_manwe = {
 			color = { 255 228 148 }
 			icon = edain_manwe
-
-			holy_order_names = {
-				{ name = "holy_order_guards_of_ilmarin" coat_of_arms = "ho_guards_of_ilmarin" }
-				{ name = "holy_order_witnesses_of_manwe" coat_of_arms = "ho_witnesses_of_manwe"}
-			}
 
 			holy_site = dol_amroth
 			holy_site = minas_tirith
@@ -361,27 +344,23 @@ dunedain_religion = {
 			holy_site = halifirien
 			holy_site = barrow_downs
 
-			# others
-			doctrine = doctrine_witchcraft_crime
-			doctrine = doctrine_adultery_men_crime
-			doctrine = doctrine_adultery_women_crime
-			doctrine = doctrine_divorce_disallowed # To stop old Dúnedain from spamming out children.
-
-			# Tenets
+			#Tenets
 			doctrine = tenet_primacy_of_manwe
 			doctrine = tenet_memory_of_akallabeth
 			doctrine = tenet_legalism
+
+			#Clerical Functions
 			doctrine = doctrine_clerical_gender_male_only
+
+			holy_order_names = {
+				{ name = "holy_order_guards_of_ilmarin" coat_of_arms = "ho_guards_of_ilmarin" }
+				{ name = "holy_order_witnesses_of_manwe" coat_of_arms = "ho_witnesses_of_manwe"}
+			}
 		}
 
 		faith_edain_varda = {
 			color = { 136 89 173 }
 			icon = edain_varda
-
-			holy_order_names = {
-				{ name = "holy_order_the_starsworn" coat_of_arms = "ho_the_starsworn" }
-				{ name = "holy_order_heirs_of_the_eldar" coat_of_arms = "ho_heirs_of_the_eldar" }
-			}
 
 			holy_site = dol_amroth
 			holy_site = minas_tirith
@@ -389,18 +368,21 @@ dunedain_religion = {
 			holy_site = edhellond
 			holy_site = osgiliath
 
-			# others
-			doctrine = doctrine_witchcraft_crime
-			doctrine = doctrine_adultery_men_crime
-			doctrine = doctrine_adultery_women_crime
-			doctrine = doctrine_divorce_disallowed # To stop old Dúnedain from spamming out children.
-
-			# Tenets
+			#Tenets
 			doctrine = tenet_primacy_of_varda
 			doctrine = tenet_memory_of_akallabeth
 			doctrine = tenet_aniconism
-			doctrine = doctrine_clerical_gender_either
+
+			#Crimes
+			doctrine = doctrine_adultery_men_crime
+			doctrine = doctrine_adultery_women_crime
+
+			holy_order_names = {
+				{ name = "holy_order_the_starsworn" coat_of_arms = "ho_the_starsworn" }
+				{ name = "holy_order_heirs_of_the_eldar" coat_of_arms = "ho_heirs_of_the_eldar" }
+			}
 		}
+		
 		faith_adunaic_faithful = {
 			color = { 116 16 28 }
 			icon = faithful_adunai

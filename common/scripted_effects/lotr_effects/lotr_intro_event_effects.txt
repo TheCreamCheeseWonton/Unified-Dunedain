@@ -20,7 +20,6 @@ fire_intro_events = {
 	}
 
 	### Every Start Date ###
-
 	# Saruman
 	character:lineofsaruman ?= {
 		if = {
@@ -42,9 +41,15 @@ fire_intro_events = {
 		}
 	}
 	#Gandalf
-	character:lineofgandalf ?= {
+	character:lineofgandalf = {
 		if = {
-			limit = { is_alive = yes }
+			limit = { 
+				is_alive = yes 
+			}
+			trigger_event = {
+				id = lotr_intro_events.7999
+				days = 1
+			}
 			every_courtier = {
 				limit = {
 					culture = culture:istari
@@ -52,6 +57,137 @@ fire_intro_events = {
 				}
 				full_character_ethnicity_change = { CULTURE = culture:breemen }
 			}
+		}
+	}
+
+	#Legolas
+	character:lineoforopher6 = { # Legolas
+		if = {
+			limit = { 
+				is_alive = yes 
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8000
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+        }
+    }
+
+	#Celeborn
+	character:lineofelmo5 = { # Celeborn
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8001
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+        }
+    }
+
+	#Haldir
+	character:lineoftirneldor3 = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8004
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	#Lauriel
+	character:lineoflauriel = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8005
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	#Karamar
+	character:lineofbornmir5 = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8007
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	#Deneroth
+	character:lineoflanthir5 = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8011
+				days = 3
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	#Laerdan
+	character:lineoflaerdan3 = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8012
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	#Calmiriel
+	character:lineofmeglasul6 = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8013
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	#Gildor
+	character:lineofgildor = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8015
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
 	}
 
@@ -229,6 +365,10 @@ lotr_gamestart_culture_effect = { # Some culture ethos/traditions vary between s
 		culture:andrastrim = {
 			set_language_from = culture:gondorian # Andrathrim adopt Westron under Gondorian influence
 		}
+		culture:sakalai = {
+			set_language_from = culture:umbaredain # Embrace developing Southron language
+			set_name_list = name_list_gondorian_apysaic# Embrace Gondorian influence around Umbar post-conquest
+		}
 	}
 	if = {
 		limit = {
@@ -263,6 +403,15 @@ lotr_gamestart_culture_effect = { # Some culture ethos/traditions vary between s
 	}
 	if = {
 		limit = {
+			game_start_date >= 5500.1.1
+		}
+		culture:umbaredain = { # Umbaredain take up raiding after Kinstrife
+			add_culture_tradition = tradition_corsairs_of_umbar
+			remove_variable = tradition_cooldown
+		}
+	}
+	if = {
+		limit = {
 			game_start_date >= 5669.1.1 # Great Plague
 		}
 		culture:gondorian = {
@@ -280,6 +429,14 @@ lotr_gamestart_culture_effect = { # Some culture ethos/traditions vary between s
 			remove_culture_tradition = tradition_dune_sea_nomads
 			add_culture_tradition = tradition_dryland_dwellers
 			remove_variable = tradition_cooldown
+		}
+	}
+	if = {
+		limit = {
+			game_start_date >= 5863.1.1
+		}
+		culture:mejhanian = { # Tazinain develops along the coasts of Sirayn
+			set_language_from = culture:harani
 		}
 	}
 	if = {
@@ -490,6 +647,14 @@ fire_intro_events_1349 = {
 		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 	}
 	
+	character:lineofeketya71 = { #Ainundur of Eketya
+		trigger_event = {
+			id = lotr_intro_events.6015
+			days = 1
+		}
+		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } 
+	}
+	
 	## ANGMAR ##
 	character:nazgul1 = { #Witch-king
 		trigger_event = {
@@ -505,6 +670,20 @@ fire_intro_events_1349 = {
 			days = 1
 		}
 		lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+	}
+	
+	## RHUN ##
+	character:linebukrog3 = { # Shagul Stonehead, RoA Nurunkhizdin
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.4017
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
 	}
 
 	## GONDOR ##
@@ -522,6 +701,7 @@ fire_intro_events_1349 = {
 				is_alive = yes
 				is_ruler = yes 
 			}
+			add_trait = cannot_marry
 			trigger_event = {
 				id = lotr_intro_events.7701
 				days = 1 
@@ -536,6 +716,9 @@ fire_intro_events_1349 = {
 				is_alive = yes
 				is_ruler = yes 
 			}
+			add_character_flag = block_ranger_intro_event
+			add_character_flag = wear_armor 
+			add_character_flag = maratar_intro_flag
 			trigger_event = {
 				id = lotr_intro_events.7702
 				days = 1 
@@ -550,8 +733,24 @@ fire_intro_events_1349 = {
 				is_alive = yes
 				is_ruler = yes 
 			}
+			add_character_flag = glormagil_intro_flag
 			trigger_event = {
 				id = lotr_intro_events.7703
+				days = 1 
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
+		}
+	}
+	
+	character:linedilwun10 = { # Rlain, the Brazen Brigand 
+		if = {
+			limit = {
+				is_alive = yes
+				is_ruler = yes 
+			}
+			add_character_flag = rlain_intro_flag
+			trigger_event = {
+				id = lotr_intro_events.7710
 				days = 1 
 			}
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
@@ -607,6 +806,22 @@ fire_intro_events_1349 = {
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content }
 		}
 	}
+	
+	## RHOVANION ##
+	character:linerhovanion5 = { # King Fulkahari of Rhovanion
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.6705
+				days = 1
+			}
+			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
+		}
+	}
+	
 	## BELLAKAR ## 
 
 	title:k_mardruak = {
@@ -675,6 +890,17 @@ fire_intro_events_1349 = {
 			id = lotr_intro_events.5509
 			days = 1
 		}
+		if = { #Scripted MAA for Balance
+			limit = {
+				is_ai = yes
+			}
+			every_maa_regiment = { destroy_maa_regiment = yes }
+			add_character_flag = khorahil_has_bulgans
+			create_maa_regiment = { type = orc_siege_tower check_can_recruit = no size = 8 }
+			create_maa_regiment = { type = tayb_hasharin check_can_recruit = no size = 10 }
+			create_maa_regiment = { type = orc_warriors check_can_recruit = no size = 10 }
+			create_maa_regiment = { type = unburied_wights check_can_recruit = no size = 8 }
+		}
 		# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event } #Already bookmarked character
 	}
 	character:lineofkaruchhakar21 = { #Chamrada Karuchhakar, Lord of Tul Harar, Rise of Angmar
@@ -699,7 +925,20 @@ fire_intro_events_1349 = {
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
 	}
-
+	
+	character:linegrumlokh3 = {
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.4018
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
 	## SHAYN ##
 
 	character:lineofganaseeyim1 = {
@@ -816,7 +1055,7 @@ fire_intro_events_1349 = {
 		}
 	}
 
-	character:lineofdurin641 = { #Lóni 'the Turncoat'
+	character:lineofdurin65 = { #Lóni 'the Turncoat'
 		if = {
 			limit = {
 				is_alive = yes
@@ -886,7 +1125,7 @@ fire_intro_events_2754 = {
 			}
 		}
 	}
-	
+
 	## ERIADOR ##
 	character:lineisildur37 = { #Arassuil, Chieftain of the Dúnedain
 		trigger_event = {
@@ -1407,7 +1646,7 @@ fire_intro_events_2754 = {
 
 	## BOZISHA-MIRAZ & THÂNI-HAZÂD ##
 
-	character:lineofdulgu31 = { # Adûnaphazôr, Marshall of the Storm-Host
+	character:lineofdulgu38 = { # Adûnaphazôr, Marshal of the Storm-Host
 		if = {
 			limit = {
 				is_alive = yes
@@ -1491,7 +1730,7 @@ fire_intro_events_2754 = {
 		}
 	}
 	
-	character:lineofdulgu31 = { # Marshall of the Storm-Host
+	character:lineofdulgu38 = { # Marshal of the Storm-Host
 		if = {
 			limit = {
 				is_alive = yes
@@ -1503,6 +1742,18 @@ fire_intro_events_2754 = {
 			}
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
+	}
+
+	character:mispirtraveler = { # fixes Mispir Traveling in not the right times
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			set_age = 0
+			death = {
+				death_reason = death_vanished
+			}			
+		}				
 	}
 
 	# Bay of Ormal 
@@ -1954,6 +2205,20 @@ fire_intro_events_3000 = {
 		}
 	}
 
+	#Nurn Intro
+	character:lineofarki35 = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8010
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
 	character:lineofhuz189 = { # Huz-Margoz
 		if = {
 			limit = {
@@ -2060,6 +2325,20 @@ fire_intro_events_3000 = {
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
 	}
+ 
+	#Pelagir Introduction
+	character:lebennin19 = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8009
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
 
 	##########################################
 	### Arnor and Enedhwaith Introductions ###
@@ -2115,6 +2394,7 @@ fire_intro_events_3000 = {
 	character:linecalinyar8 = {
 		if = {
 			limit = { is_alive = yes }
+			add_character_flag = block_ranger_intro_event
 			trigger_event = {
 				id = lotr_intro_events.6012
 				days = 1
@@ -2179,6 +2459,21 @@ fire_intro_events_3000 = {
 			limit = { is_alive = yes }
 			trigger_event = {
 				id = lotr_intro_events.7709
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
+	#Eenedhwaith Intro
+
+	character:lineofnimue1 = {
+		if = {
+			limit = {
+				is_alive = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8008
 				days = 1
 			}
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
@@ -2254,6 +2549,19 @@ fire_intro_events_3000 = {
 			}
 			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
 		}
+	}
+	
+	# Bilbo Baggins
+	character:lineofbaggins12 = {
+		if = {
+			limit = { is_alive = yes }
+			trigger_event = hobbit.300
+			trigger_event = { 
+				id = lotr_intro_events.8002
+				days = 1
+			}
+		}
+
 	}
 	
 
@@ -2626,7 +2934,7 @@ fire_intro_events_3000 = {
 		}
 	}
 
-	character:lineofdulgu44 = { # Arnakhôr, Marshall of the Storm-Host
+	character:lineofdulgu55 = { # Arnakhôr, Marshal of the Storm-Host
 		if = {
 			limit = {
 				is_alive = yes
@@ -3674,6 +3982,21 @@ fire_intro_events_3000 = {
 		}
 	}
 
+	#Utor
+	character:lineroofsleeper1 = { 
+		if = {
+			limit = {
+				is_alive = yes
+				is_landed = yes
+			}
+			trigger_event = {
+				id = lotr_intro_events.8006
+				days = 1
+			}
+			lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = intro_event }
+		}
+	}
+
 	character:lineofazog10 = {
 		if = {
 			limit = {
@@ -4189,7 +4512,12 @@ fire_intro_events_3000 = {
 				days = 1
 			}
 			# lotr_set_lore_character_for_bookmark = { TYPE_OF_CONTENT = story_content } # Already bookmarked character
-		}		
+			### Stop Zantaka from increasing crown authority on day 1
+			set_variable = {
+				name = crown_authority_cooldown
+				years = 1
+			}
+		}			
 	}
 	character:lineofkoronandeinitial = {
 	if = { #Scripted MAA for Balance - TALK TO HENDRIX BEFORE CHANGING

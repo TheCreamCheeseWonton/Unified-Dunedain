@@ -524,6 +524,7 @@ poi_grand_city = {
 		province:264 = { add_to_list = provinces } # Pelargir
 		province:199  = { add_to_list = provinces } #Minas Tirith
 		province:819  = { add_to_list = provinces } #Umbar
+		province:5978  = { add_to_list = provinces } #Zaramgathol
 	}
 
 	on_visit = {
@@ -1458,7 +1459,7 @@ poi_rhosgobel = { #travel by the woods of rhosgobel
 				faith_is_evil = no
 			}
 			custom_tooltip = poi_rhosgobel_visit_event_tt
-			trigger_event = lotr_travel_events.0004	#rhosgobel
+			trigger_event = lotr_travel_events.0002	#rhosgobel
 		}
 		send_interface_toast = {
 			title = poi_rhosgobel.visit

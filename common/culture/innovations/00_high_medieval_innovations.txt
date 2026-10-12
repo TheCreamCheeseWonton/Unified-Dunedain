@@ -256,9 +256,9 @@ innovation_windmills = {
 	unlock_building = windmills_01
 	unlock_building = watermills_01
 
-	# county_modifier = { #LotR - to manage slot bloat
-		# building_slot_add = 1
-	# }
+	county_modifier = {
+		building_slot_add = 1
+	}
 
 	flag = global_regular
 	flag = high_medieval_era_regular

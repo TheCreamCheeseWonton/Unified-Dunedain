@@ -221,8 +221,7 @@ lotr_create_hegemony_effect = { # Makes a hegemony from scratch
 
 	resolve_title_and_vassal_change = scope:change
 
-	every_held_title = {
-		title_tier = empire
+	every_empire = { # This adds *everything* to the hegemony, change if used for non ME title
 		set_de_jure_liege_title = scope:new_title
 	}
 

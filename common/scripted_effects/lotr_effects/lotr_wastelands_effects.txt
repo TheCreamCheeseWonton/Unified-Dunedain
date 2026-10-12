@@ -1,6 +1,6 @@
 ﻿#############################################
 #				DICTIONARY:					#
-# 	Wastelands General Effects				#
+#	Wastelands General Effects				#
 #	Wastelands for on-game start effects	#
 #	Automated Colonisation Effects			#
 #											#
@@ -117,17 +117,17 @@ make_settlement_county_wilderness = {
 # Makes sure it's an adult, since non-adult always have clothes by default that can't be hidden
 # Make sure wasteland holders don't have gold to create titles
 remove_traits_wastelands_effect = {
-    every_excess_wasteland_character = {
-        clear_traits = yes
-        add_trait = wastelands
-        if = {
-            limit = {
-                age < 25
-            }
-            set_age = 25
-        }
-        remove_short_term_gold = gold
-    }
+	every_excess_wasteland_character = {
+		clear_traits = yes
+		add_trait = wastelands
+		if = {
+			limit = {
+				age < 25
+			}
+			set_age = 25
+		}
+		remove_short_term_gold = gold
+	}
 }
 
 # Destroy "Wilderness" characters that are created
@@ -183,13 +183,674 @@ empty_foreign_visitors_to_wastelands_effect = {
 	}
 }
 
+#add_to_variable_list = { name = has_dynamic_coa_dwarven target = this
+#add_to_variable_list = { name = has_dynamic_coa_numenorean target = this
+#add_to_variable_list = { name = has_dynamic_coa_elven target = this
+#add_to_variable_list = { name = has_dynamic_coa_orc target = this
+#add_to_variable_list = { name = has_dynamic_coa_haradrim target = this
+#add_to_variable_list = { name = has_dynamic_coa_easterling target = this
+#add_to_variable_list = { name = has_dynamic_coa_northron target = this
+#add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this
+#add_to_variable_list = { name = has_dynamic_coa_daen target = this
+
 lotr_reset_or_generate_coa = {
-	if = {
-		limit = { has_user_set_coa = yes }
-		reset_coa = yes
+	hidden_effect = {
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_dwarven
+				this.holder.culture ?= {
+					is_dwarf_culture = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_dwarven
+				NOT = {
+					this.holder.culture ?= {
+						is_dwarf_culture = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_numenorean
+				this.holder.culture ?= {
+					lotr_numenorean_trigger = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_numenorean
+				NOT = {
+					this.holder.culture ?= {
+						lotr_numenorean_trigger = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_elven
+				this.holder ?= {
+					is_elf = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_elven
+				NOT = {
+					this.holder ?= {
+						is_elf = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_orc
+				this.holder ?= {
+					OR = {
+						is_orc = yes
+						is_nazgul = yes
+						is_maiar_fallen = yes
+					}
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_orc
+				NOT = {
+					this.holder ?= {
+						OR = {
+							is_orc = yes
+							is_nazgul = yes
+							is_maiar_fallen = yes
+						}
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_haradrim
+				this.holder ?= {
+					lotr_haradrim_group_culture_trigger = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_haradrim
+				NOT = {
+					this.holder ?= {
+						lotr_haradrim_group_culture_trigger = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_easterling
+				this.holder ?= {
+					lotr_talathrim_cultures_trigger = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_easterling
+				NOT = {
+					this.holder ?= {
+						lotr_talathrim_cultures_trigger = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_northron
+				this.holder ?= {
+					lotr_northron_group_culture_trigger = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_northron
+				NOT = {
+					this.holder ?= {
+						lotr_northron_group_culture_trigger = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_baradhrim
+				this.holder ?= {
+					lotr_baradhrim_trigger = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_baradhrim
+				NOT = {
+					this.holder ?= {
+						lotr_baradhrim_trigger = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_daen
+				this.holder ?= {
+					lotr_gwathuirim_heritage_trigger = yes
+				}
+			}
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				has_variable_list = has_dynamic_coa_daen
+				NOT = {
+					this.holder ?= {
+						lotr_gwathuirim_heritage_trigger = yes
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
+		if = {
+			limit = {
+				has_user_set_coa = yes
+				NOT = {
+					OR = {
+						has_variable_list = has_dynamic_coa_dwarven
+						has_variable_list = has_dynamic_coa_numenorean
+						has_variable_list = has_dynamic_coa_elven
+						has_variable_list = has_dynamic_coa_orc
+						has_variable_list = has_dynamic_coa_haradrim
+						has_variable_list = has_dynamic_coa_easterling
+						has_variable_list = has_dynamic_coa_northron
+						has_variable_list = has_dynamic_coa_baradhrim
+						has_variable_list = has_dynamic_coa_daen
+					}
+				}
+			}
+			reset_coa = yes
+			update_dynamic_coa = yes
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					OR = {
+						has_variable_list = has_dynamic_coa_dwarven
+						has_variable_list = has_dynamic_coa_numenorean
+						has_variable_list = has_dynamic_coa_elven
+						has_variable_list = has_dynamic_coa_orc
+						has_variable_list = has_dynamic_coa_haradrim
+						has_variable_list = has_dynamic_coa_easterling
+						has_variable_list = has_dynamic_coa_northron
+						has_variable_list = has_dynamic_coa_baradhrim
+						has_variable_list = has_dynamic_coa_daen
+					}
+				}
+			}
+			generate_coa = yes
+			update_dynamic_coa = yes
+		}
 	}
-	else = {
-		generate_coa = yes
+}
+
+set_has_coa_effect = { ### Add all Starting Wasteland Counties with a Unique CoA here
+	title:c_amarthrynd = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_ojala = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_palo = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_sirannon = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_lanthiring = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_talath_formir = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_ost_in_edhil = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_nin_in_eilph = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_arabrand = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_edraregion = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_talath_formir = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_lanthiring = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_gwingris = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_men_andrath = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_nan_rhawereg = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_swanfleet = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_tuathair = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_cabhartir = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_seabhagtir = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_glasgleann = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_den_runnach = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_carnehtan = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_cailintur = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_iarnburn = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_cadlus = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_hwalord = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_frith_grabhail = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_glynharrow = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_dead_marshes = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_dagorlad = {
+		add_to_variable_list = { name = has_dynamic_coa_easterling target = this }
+	}
+	title:c_arandal = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_abrashadorh = {
+		add_to_variable_list = { name = has_dynamic_coa_haradrim target = this }
+	}
+	title:c_palo = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_osum = {
+		add_to_variable_list = { name = has_dynamic_coa_haradrim target = this }
+	}
+	title:c_okan = {
+		add_to_variable_list = { name = has_dynamic_coa_haradrim target = this }
+	}
+	title:c_tam_wamo = {
+		add_to_variable_list = { name = has_dynamic_coa_haradrim target = this }
+	}
+	title:c_ardinak = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_taulbund = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_ladros = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_aeluin = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_dorthonion = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_anach = {
+		add_to_variable_list = { name = has_dynamic_coa_elven target = this }
+	}
+	title:c_trowgastal = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_trowlair = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_creagtaile = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_drum_theas = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_carandor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_thallnock = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_cameth_brin = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_nan_tornaeth = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_ornuil = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_enthrithen = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_mitheithel = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_braighe_cuic = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_ettenmoors = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_nockdeiridh = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_taobhtir = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_glinkinlin = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_lurganmullach = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_auchleathan = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_agamaur = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_daramor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_seansliabh = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_gowrallion = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_corratalam = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_othrhain = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_enedhgarth = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_killarbrag = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_amon_sul = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_arhud = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_paksu_ma = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_junnas = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_ja_urho = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_ponso = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_hannula = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_ja_rokka = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_ja_kuru = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_niva = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_sukli = {
+		add_to_variable_list = { name = has_dynamic_coa_baradhrim target = this }
+	}
+	title:c_barandor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_cithrenor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_nidhglad = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_tinnudol = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_girithlindor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_dunglan = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_balost = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_undrond = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_argond = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_esher = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_brethilmindon = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_fileglad = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_tharbad = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_thalion = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_dolbarad = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_dol_tinereb = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_thaendor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_dinach = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_girwing = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_maerndor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_iarond = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_tyrn_gorthad = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_andrath = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_pinnath_charn = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_nidandor = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_partheinior = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_bondorn = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_erenir = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_faelond = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_glantrann = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_glandagol = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_sulnen = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_cardhbain = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_athilin = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_salur = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_holtwic = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_melburg = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_faedur = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_coruvegil = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_curedain = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_othnir = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_aralanthir = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_tol_uialgaer = {
+		add_to_variable_list = { name = has_dynamic_coa_numenorean target = this }
+	}
+	title:c_weduluma = {
+		add_to_variable_list = { name = has_dynamic_coa_easterling target = this }
+	}
+	title:c_baugatsor_i_sauron = {
+		add_to_variable_list = { name = has_dynamic_coa_orc target = this }
+	}
+	title:c_orodruin = {
+		add_to_variable_list = { name = has_dynamic_coa_orc target = this }
+	}
+	title:c_barad_dur = {
+		add_to_variable_list = { name = has_dynamic_coa_orc target = this }
+	}
+	title:c_mordath = {
+		add_to_variable_list = { name = has_dynamic_coa_orc target = this }
+	}
+	title:c_nol_klust = {
+		add_to_variable_list = { name = has_dynamic_coa_haradrim target = this }
+	}
+	title:c_guishas = {
+		add_to_variable_list = { name = has_dynamic_coa_haradrim target = this }
+	}
+	title:c_che_chy = {
+		add_to_variable_list = { name = has_dynamic_coa_haradrim target = this }
+	}
+	title:c_frecalund = {
+		add_to_variable_list = { name = has_dynamic_coa_daen target = this }
+	}
+	title:c_dale = {
+		add_to_variable_list = { name = has_dynamic_coa_northron target = this }
+	}
+	title:c_golden_hall = {
+		add_to_variable_list = { name = has_dynamic_coa_dwarven target = this }
+	}
+	title:c_great_foundries = {
+		add_to_variable_list = { name = has_dynamic_coa_dwarven target = this }
+	}
+	title:c_arkenhalls = {
+		add_to_variable_list = { name = has_dynamic_coa_dwarven target = this }
+	}
+	title:c_halls_of_steel = {
+		add_to_variable_list = { name = has_dynamic_coa_dwarven target = this }
+	}
+	title:c_golddeeps = {
+		add_to_variable_list = { name = has_dynamic_coa_dwarven target = this }
+	}
+	title:c_ravenhill = {
+		add_to_variable_list = { name = has_dynamic_coa_dwarven target = this }
+	}
+	title:c_throne_of_erebor = {
+		add_to_variable_list = { name = has_dynamic_coa_dwarven target = this }
 	}
 }
 
@@ -738,7 +1399,7 @@ remove_cleaned_blockers_effect = { # Immediately remove any cleared blockers in 
 			ghosts_cleared = { remove_building = ghosts_cleared }
 			ghosts_eregion_cleared = { remove_building = ghosts_eregion_cleared }
 			barrow_wights_cleared = { remove_building = barrow_wights_cleared }
-			ghosts_ost_in_edhil_cleared  = { remove_building = ghosts_ost_in_edhil_cleared  }
+			ghosts_ost_in_edhil_cleared = { remove_building = ghosts_ost_in_edhil_cleared }
 			dragon_attack_cleared = { remove_building = dragon_attack_cleared }
 			flooded_lands_cleared = { remove_building = flooded_lands_cleared }
 			bandits_cleared = { remove_building = bandits_cleared }
@@ -1025,7 +1686,7 @@ set_every_county_wilderness = {
 			every_de_jure_county = {
 				if = {
 					limit = { exists = global_var:wastelands_colonisable }
-               		add_county_modifier = block_settlement_ability
+					add_county_modifier = block_settlement_ability
 				}
 				if = {
 					limit = {
@@ -1084,29 +1745,12 @@ set_every_county_wilderness = {
 		every_de_jure_county = {
 			if = {
 				limit = { exists = global_var:wastelands_colonisable }
-            	add_county_modifier = block_settlement_ability
+				add_county_modifier = block_settlement_ability
 
 				set_color_from_title = title:k_invisible_title
 				set_title_name = k_wastelands
 			}
-			if = {
-				limit = {
-					NOT = {
-						any_in_list = {
-							list = prev_title_holder
-							this = holder
-						}
-						holder = {
-							any_held_title = {
-								tier = tier_county
-								count > 0
-							}
-						}
-						holder = character:k_wastelands_holder
-					}
-				}
-				holder = { add_to_list = prev_title_holder }
-			}
+			holder = { add_to_list = prev_title_holder }
 
 			every_county_province = {
 				limit = {
@@ -1133,12 +1777,13 @@ set_every_county_wilderness = {
 	}
 
 	resolve_title_and_vassal_change = scope:change
-
+	
 	# Kills off all the previous rulers, stops courtier bloat
 	every_in_list = {
 		list = prev_title_holder
 		if = {
 			limit = {
+				is_alive = yes
 				NOR = {
 					this = character:lineofsauron
 					this = character:nazgul1
@@ -1153,6 +1798,7 @@ set_every_county_wilderness = {
 					this = character:lineofsaruman
 					this = character:lineofgandalf
 					this = character:lineofradagast
+					this = title:k_wastelands.holder
 				}
 			}
 			death = { death_reason = death_disappearance }
@@ -1163,8 +1809,11 @@ set_every_county_wilderness = {
 			}
 		}
 		else = {
-			set_character_faith_with_conversion = faith:faith_ainur
-			set_location = province:3900
+			if = {
+				limit = { is_alive = yes }
+				set_character_faith_with_conversion = faith:faith_ainur
+				set_location = province:3900
+			}
 		}
 	}
 
@@ -1399,8 +2048,8 @@ lotr_WAC_build_settlement_building_effect = {
 	create_character = {
 		name = "temp_holder"
 		employer = root.story_owner
-		culture = culture:wastelands
-		faith = faith:faith_wastelands_pagan
+		culture = root.story_owner.culture
+		faith = root.story_owner.faith
 		gender_female_chance = 0
 		save_scope_as = temporary_title_holder
 	}
@@ -1644,12 +2293,36 @@ lotr_WAC_add_story_cycle_to_visualisation = {
 	if = {
 		limit = {
 			scope:visualisation_story = {
-				variable_list_size = {
-					name = WAC_LIST_OF_TITLES
-					value = 0
+				trigger_if = {
+					limit = { has_variable_list = WAC_LIST_OF_TITLES }
+					variable_list_size = {
+						name = WAC_LIST_OF_TITLES
+						value = 0
+					}
 				}
 			}
 		}
 		scope:visualisation_story = { end_story = yes }
+	}
+}
+
+lotr_make_halls_wastelands = {
+	# If surface dwellers **somehow** manage to get underground terrain, make it wilderness ( and give them a bit of gold in return )
+	if = {
+		limit = {
+			scope:title ?= {
+				tier = tier_county
+				title_province ?= { terrain = halls }
+			}
+			NOR = {
+				is_dwarf = yes
+				is_orc = yes
+				is_nazgul = yes
+				is_maiar_fallen = yes
+			}
+		}
+		make_settlement_county_wilderness = { COUNTY = scope:title }
+		add_gold = 125
+		debug_log = "Wilderness: Surface Race got Underground - Making Wasteland"
 	}
 }

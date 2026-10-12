@@ -1,0 +1,163 @@
+﻿@holding_illustration_arid = "gfx/interface/illustrations/holding_types/wastelands.dds"
+@holding_illustration_grass = "gfx/interface/illustrations/holding_types/wastelands.dds"
+@holding_illustration_norse = "gfx/interface/illustrations/holding_types/wastelands.dds"
+@holding_illustration_celtic = "gfx/interface/illustrations/holding_types/wastelands.dds"
+@holding_illustration_african = "gfx/interface/illustrations/holding_types/wastelands.dds"
+@holding_illustration_mena = "gfx/interface/illustrations/holding_types/wastelands.dds"
+@holding_illustration_steppe = "gfx/interface/illustrations/holding_types/wastelands.dds"
+@holding_illustration_underground = "gfx/interface/illustrations/holding_types/underground/underground_norse.dds"
+
+##Quonton
+ruins_of_arnor = {
+	# This is automatically spawned, so AI should ignore this
+	can_construct = {
+		always = no
+	}
+	
+	can_construct_potential = {
+		always = no
+	}
+	
+	county_modifier = {
+		development_growth_factor = -0.25
+		holding_build_speed = 0.25
+		county_opinion_add = -10
+		tax_mult = -0.1
+		travel_danger = 10
+	}
+	
+	character_modifier = {
+		stress_gain_mult = 0.1
+	}
+			
+	next_building = ruins_of_arnor_cleared
+	
+	type_icon = "wilderness_ruins_02.dds"
+
+	flag = obstacle
+
+	# This is automatically spawned, so AI should ignore this
+	ai_value = {
+		base = -100
+	}
+}
+
+ruins_of_arnor_cleared = {
+	construction_time = slow_construction_time
+	
+	can_construct = {
+		NOT = {
+			is_wastelands = yes
+		}
+	}	
+	
+	can_construct_potential = {
+		NOT = {
+			is_wastelands = yes
+		}
+	}
+			
+	type_icon = "wilderness_ruins_02.dds"
+
+	ai_value = {
+		base = 1000
+		modifier = {
+			factor = 0
+			culture = culture:wastelands
+		}
+	}
+
+	flag = obstacle	
+
+	on_complete = {
+		save_scope_as = obstacle_province
+		hidden_effect = {
+			county.holder = {
+				random_list = {
+					1 = { trigger_event = wastelands_custom.001 }
+					1.5 = { trigger_event = wastelands_custom.002 }
+					1 = { trigger_event = wastelands_custom.003 }
+					1 = { root = { remove_building = ruins_of_arnor_cleared } }
+				}
+			}
+		}
+		delayed_blockers_cleanup_effect = { DAYS = 2 }
+	}
+}
+
+ruins_of_arnor_bad = {
+	# This is automatically spawned, so AI should ignore this
+	can_construct = {
+		always = no
+	}
+	
+	can_construct_potential = {
+		always = no
+	}
+	
+
+	county_modifier = {
+		development_growth_factor = -0.40
+		holding_build_speed = 0.40
+		county_opinion_add = -15
+		tax_mult = -0.20
+		travel_danger = 20
+	}
+	
+	character_modifier = {
+		stress_gain_mult = 0.15
+	}
+			
+	next_building = ruins_of_arnor_bad_cleared
+	
+	type_icon = "wilderness_ruins_01.dds"
+
+	flag = obstacle
+
+	# This is automatically spawned, so AI should ignore this
+	ai_value = {
+		base = -100
+	}
+}
+
+ruins_of_arnor_bad_cleared = {
+	construction_time = very_slow_construction_time
+	
+	can_construct = {
+		NOT = {
+			is_wastelands = yes
+		}
+	}	
+	
+	can_construct_potential = {
+		NOT = {
+			is_wastelands = yes
+		}
+	}
+			
+	type_icon = "wilderness_ruins_01.dds"
+
+	ai_value = {
+		base = 1000
+		modifier = {
+			factor = 0
+			culture = culture:wastelands
+		}
+	}
+
+	flag = obstacle	
+
+	on_complete = {
+		save_scope_as = obstacle_province
+		hidden_effect = {
+			county.holder = {
+				random_list = {
+					2 = { trigger_event = wastelands_custom.001 }
+					2.5 = { trigger_event = wastelands_custom.002 }
+					2 = { trigger_event = wastelands_custom.003 }
+				}
+			}
+		}
+		delayed_blockers_cleanup_effect = { DAYS = 2 }
+	}
+}

@@ -2933,7 +2933,7 @@ start_city_construction_decision = {
 			has_trait = architect
 			stewardship >= 18
 		}
-		NOT = { opposite_alignment = { TARGET = location.county.holder }} #LOTR
+		lotr_tolerance_trigger = { CHARACTER = location.county.holder } #LOTR
 	}
 
 	is_valid_showing_failures_only = {

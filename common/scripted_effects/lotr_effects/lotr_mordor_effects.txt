@@ -1504,17 +1504,31 @@ lotr_grant_sauron_strength_game_rule_buff = {
 			limit = {
 				is_alive = yes
 				is_landed = yes
+				NOT = { has_title = title:e_mordor }
 			}
-			if = {
-				limit = { has_game_rule = apocalyptic_sauron_strength }
-				add_character_modifier = sauron_strengthened_4_modifier
+			switch = {
+				trigger = has_game_rule
+				weakened_evil_strength = { add_character_modifier = sauron_weakened_modifier }
+				strong_evil_strength = { add_character_modifier = sauron_strengthened_1_modifier }
+				very_strong_evil_strength = { add_character_modifier = sauron_strengthened_2_modifier }
+				apocalyptic_evil_strength = { add_character_modifier = sauron_strengthened_4_modifier }
+				apocalyptic_conqueror_evil_strength = { add_character_modifier = sauron_strengthened_4_modifier }
 			}
 		}
 	}
 }
 
 sauron_strength_gamerule_buffs = {
-	character:lineofsauron = {
+	if = {
+		limit = {
+			title:e_mordor.holder = character:nazgul1
+		}
+		character:nazgul1 = { save_scope_as = main_evil }
+	}
+	else = {
+		character:lineofsauron = { save_scope_as = main_evil }
+	}
+	scope:main_evil = {
 		switch = {
 			trigger = has_game_rule
 			weakened_sauron_strength = { add_character_modifier = sauron_weakened_modifier }
@@ -1525,6 +1539,7 @@ sauron_strength_gamerule_buffs = {
 	}
 	every_independent_ruler = {
 		limit = {
+			has_game_rule = apocalyptic_conqueror_evil_strength
 			has_character_modifier = sauron_strengthened_4_modifier
 			OR = {
 				highest_held_title_tier < tier_kingdom
@@ -1533,6 +1548,43 @@ sauron_strength_gamerule_buffs = {
 		}
 		create_story = story_conqueror
 	}
+}
+
+sauron_returns_strength_game_rule_effect = {
+	switch = {
+		trigger = has_game_rule
+		weakened_evil_strength = { add_character_modifier = sauron_weakened_modifier }
+		strong_evil_strength = { add_character_modifier = sauron_strengthened_1_modifier }
+		very_strong_evil_strength = { add_character_modifier = sauron_strengthened_2_modifier }
+		apocalyptic_evil_strength = { add_character_modifier = sauron_strengthened_4_modifier }
+		apocalyptic_conqueror_evil_strength = { add_character_modifier = sauron_strengthened_4_modifier }
+	}
+	switch = {
+		trigger = has_game_rule
+		weakened_sauron_strength = { remove_character_modifier = sauron_weakened_modifier }
+		strong_sauron_strength = { remove_character_modifier = sauron_strengthened_1_modifier }
+		very_strong_sauron_strength = { remove_character_modifier = sauron_strengthened_2_modifier }
+		apocalyptic_sauron_strength = { remove_character_modifier = sauron_strengthened_3_modifier }
+	}
+
+	character:lineofsauron = {
+		switch = {
+			trigger = has_game_rule
+			weakened_evil_strength = { remove_character_modifier = sauron_weakened_modifier }
+			strong_evil_strength = { remove_character_modifier = sauron_strengthened_1_modifier }
+			very_strong_evil_strength = { remove_character_modifier = sauron_strengthened_2_modifier }
+			apocalyptic_evil_strength = { remove_character_modifier = sauron_strengthened_4_modifier }
+			apocalyptic_conqueror_evil_strength = { remove_character_modifier = sauron_strengthened_4_modifier }
+		}
+		switch = {
+			trigger = has_game_rule
+			weakened_sauron_strength = { add_character_modifier = sauron_weakened_modifier }
+			strong_sauron_strength = { add_character_modifier = sauron_strengthened_1_modifier }
+			very_strong_sauron_strength = { add_character_modifier = sauron_strengthened_2_modifier }
+			apocalyptic_sauron_strength = { add_character_modifier = sauron_strengthened_3_modifier }
+		}
+	}
+
 }
 
 lotr_create_maa_or_upgrade_regiment_effect = {

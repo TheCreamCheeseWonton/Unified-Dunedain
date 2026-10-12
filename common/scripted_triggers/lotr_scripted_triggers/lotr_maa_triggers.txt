@@ -159,6 +159,60 @@ is_hobbit_maa_regiment = {
 	}
 }
 
+lotr_can_recruit_regiment = {
+	#Elven MaA
+	trigger_if = {
+		limit = { $REGIMENT$ = { is_elven_maa_regiment = yes } }
+		OR = {
+			is_elf = yes
+			AND = {
+				is_maiar = yes
+				faith_is_good = yes
+			}
+		}
+	}	
+	#Dwarven MaA
+	trigger_else_if = {
+		limit = { $REGIMENT$ = { is_dwarven_maa_regiment = yes } }
+		is_dwarf = yes
+	}
+	#Orcish MaA
+	trigger_else_if = {
+		limit = { $REGIMENT$ = { is_orcish_maa_regiment = yes } }
+		lotr_orc_buildings = yes
+	}
+	#Undead MaA
+	trigger_else_if = {
+		limit = { $REGIMENT$ = { is_undead_maa_regiment = yes } }
+		OR = {
+			is_nazgul = yes
+			is_maiar_fallen = yes
+		}
+	}
+	#Hobbit MaA
+	trigger_else_if = {
+		limit = { $REGIMENT$ = { is_hobbit_maa_regiment = yes } }
+		OR = {
+			is_hobbit = yes
+			is_human = yes
+			is_druedain = yes
+		}
+	}
+	#Everyone can keep vanilla siege weapons
+	trigger_else_if = {
+		limit = { $REGIMENT$ = { is_unit_type = siege_weapon } }
+		always = yes
+	}
+	#Human and Druedain MaA
+	trigger_else = {
+		OR = {
+			is_human = yes
+			is_druedain = yes
+			cannot_be_killed = yes
+		}
+	}
+}
+
 ### Hobbit MaA Triggers ###
 
 reform_hobbitry_in_arms_trigger = {

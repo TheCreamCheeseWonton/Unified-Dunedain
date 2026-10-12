@@ -2602,7 +2602,7 @@ pilgrimage.2003 = {
 	trigger = {
 		current_travel_plan = { next_destination_progress > 0.5 }
 		is_location_valid_for_travel_event_on_land = yes
-		lotr_location_can_spawn_laamp_courtiers = yes #LotR
+		lotr_location_can_spawn_courtiers = { LOCATION = location } #LotR
 	}
 	weight_multiplier = {
 		base = 1
@@ -9755,7 +9755,7 @@ pilgrimage.5701 = { # Barad-dur
 		}
 	}
 	theme = pilgrimage_destination
-	override_background = { reference = barad_dur }
+	override_background = { reference = wilderness_volcanic }
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -9829,7 +9829,7 @@ pilgrimage.5702 = { # Orodruin
 		}
 	}
 	theme = pilgrimage_destination
-	override_background = { reference = barad_dur }
+	override_background = { reference = wilderness_volcanic }
 	left_portrait = {
 		character = root
 		triggered_animation = {
@@ -10695,7 +10695,7 @@ pilgrimage.5840 = { # Sairtheod
 				# Didnt find him
 				700 = {
 					trigger_event = {
-						id = lotr_travel_events.0005
+						id = lotr_travel_events.0003
 						days = 5
 					}
 				}
@@ -10706,7 +10706,7 @@ pilgrimage.5840 = { # Sairtheod
 						value = flag:advice_1
 					}
 					trigger_event = {
-						id = lotr_travel_events.0006
+						id = lotr_travel_events.0004
 						days = 5
 					}
 				}
@@ -10717,7 +10717,7 @@ pilgrimage.5840 = { # Sairtheod
 						value = flag:advice_2
 					}
 					trigger_event = {
-						id = lotr_travel_events.0006
+						id = lotr_travel_events.0004
 						days = 5
 					}
 				}
@@ -10728,7 +10728,7 @@ pilgrimage.5840 = { # Sairtheod
 						value = flag:advice_3
 					}
 					trigger_event = {
-						id = lotr_travel_events.0006
+						id = lotr_travel_events.0004
 						days = 5
 					}
 				}
@@ -10739,7 +10739,7 @@ pilgrimage.5840 = { # Sairtheod
 						value = flag:advice_4
 					}
 					trigger_event = {
-						id = lotr_travel_events.0006
+						id = lotr_travel_events.0004
 						days = 5
 					}
 				}

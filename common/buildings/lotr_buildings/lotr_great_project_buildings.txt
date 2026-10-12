@@ -834,6 +834,7 @@ wonder_mabladdum_broken = { # Mablad-dum (destroyed by volcano)
 
 	type = great_building
 	flag = first_tier_dwarven_capital_building
+	flag = dwarven_capital_building
 	next_building = wonder_mabladdum_t2
 }
 wonder_mabladdum_t2 = { # Mablad-dum
@@ -2323,14 +2324,24 @@ wonder_osgiliath_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.25
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.25
+				}
+			}
 		}
 	}
 
@@ -2363,14 +2374,24 @@ wonder_osgiliath_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.5
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.5
+				}
+			}
 		}
 	}
 
@@ -2419,14 +2440,24 @@ wonder_osgiliath_04 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.75
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.75
+				}
+			}
 		}
 	}
 
@@ -2476,20 +2507,30 @@ wonder_osgiliath_05 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
 		}
 	}
 
 	county_modifier = {
-		fort_level = good_building_fort_level_tier_2
-		defender_holding_advantage = normal_building_advantage_tier_2
+		fort_level = good_building_fort_level_tier_5
+		defender_holding_advantage = normal_building_advantage_tier_4
 		tax_mult = 0.5
 		levy_size = 0.5
 		supply_limit_mult = 0.8
@@ -3634,7 +3675,7 @@ wonder_tharbad_01 = {
 	type_icon = "icon_wonder_tharbad.dds"
 	asset = {
 		type = pdxmesh
-		name = wonder_tharbad_castle_mesh
+		name = wonder_tharbad_ruins_mesh
 	}
 
 	#We only build this through Decision -> Great Projects
@@ -3687,7 +3728,7 @@ wonder_tharbad_02 = {
 	effect_desc = explore_history_cost_discount_medium_desc
 	asset = {
 		type = pdxmesh
-		name = wonder_tharbad_castle_mesh
+		name = wonder_tharbad_mesh
 	}
 
 	can_construct_potential = {
@@ -3785,7 +3826,7 @@ wonder_tharbad_03 = {
 	effect_desc = explore_history_cost_discount_max_desc
 	asset = {
 		type = pdxmesh
-		name = wonder_tharbad_castle_mesh
+		name = wonder_tharbad_mesh
 	}
 
 	can_construct_potential = {
@@ -3997,14 +4038,14 @@ wonder_amon_sul_02 = {
 	}
 	show_disabled = yes
 
+	max_garrison = 1000
+
 	province_modifier = {
-        fort_level = normal_building_fort_level_tier_3
-        garrison_size = 2
+        fort_level = normal_building_fort_level_tier_4
 	}
 
 	county_modifier = {
         monthly_county_control_growth_factor = 0.1
-		levy_size = 1
 	}
 
 	character_modifier = {
@@ -4015,7 +4056,6 @@ wonder_amon_sul_02 = {
 	fallback = {
 		province_modifier = {
 			fort_level = normal_building_fort_level_tier_3
-			garrison_size = 2
 		}
 	}
 
@@ -4087,27 +4127,26 @@ wonder_amon_sul_03 = {
 	}
 	show_disabled = yes
 
+	max_garrison = 2000
+
 	province_modifier = {
-        fort_level = normal_building_fort_level_tier_5
-        garrison_size = 4
+        fort_level = good_building_fort_level_tier_6
 	}
 
 	county_modifier = {
         monthly_county_control_growth_factor = 0.3
-		levy_size = 1.2
-		tax_mult = 0.2
+		tax_mult = 0.10
 	}
 
 	character_modifier = {
         same_culture_opinion = 12
-        monthly_prestige = 0.5
-		knight_effectiveness_mult = 0.1
+        monthly_prestige = 0.75
+		knight_effectiveness_mult = 0.2
 	}
 
 	fallback = {
 		province_modifier = {
-			fort_level = normal_building_fort_level_tier_5
-			garrison_size = 4
+			fort_level = good_building_fort_level_tier_5
 		}
 	}
 
@@ -4371,7 +4410,7 @@ wonder_gaven_01 = {
 
 	can_construct = {
 		always = no
-		}
+	}
 
 	show_disabled = yes
 
@@ -4425,14 +4464,24 @@ wonder_gaven_02 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.25
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.25
+				}
+			}
 		}
 	}
 
@@ -4466,14 +4515,24 @@ wonder_gaven_03 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.5
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.5
+				}
+			}
 		}
 	}
 
@@ -4510,14 +4569,24 @@ wonder_gaven_04 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.75
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.75
+				}
+			}
 		}
 	}
 
@@ -4544,8 +4613,8 @@ wonder_gaven_05 = {
 	type_icon = "icon_structure_sacred_pool.dds"
 
 	can_construct = {
-		 	always = no
-		}
+		always = no
+	}
 
 	show_disabled = yes
 
@@ -4555,14 +4624,24 @@ wonder_gaven_05 = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
 		}
 		piety = {
 			if = {
 				limit = { is_ai = yes }
 				value = ai_rebuild_value
 			}
-			else = { value = standard_rebuild_value }
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
 		}
 	}
 
@@ -4876,7 +4955,7 @@ great_building_nilulonde = {
 			else = { value = standard_rebuild_value }
 		}
 	}
-	
+
 	county_modifier = {
 		county_opinion_add = 10
 		development_growth_factor = 0.1
@@ -4894,4 +4973,489 @@ great_building_nilulonde = {
 
 	type = great_building
 	flag = travel_point_of_interest_martial
+}
+
+wonder_dragon_knights_capital = {
+	type_icon = "icon_structure_falak_ol_aflak_citadel.dds"
+
+	can_construct = {
+		always = no
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+	}
+
+	character_modifier = {
+		monthly_piety = 1
+		martial = 1
+	}
+
+	province_modifier = {
+		stationed_archer_cavalry_damage_mult = 0.3
+		stationed_archer_cavalry_toughness_mult = 0.3
+		fort_level = great_building_fort_level_tier_2
+		supply_limit_mult = 0.3
+	}
+
+	ai_value = {
+		base = 100
+	}
+	type = great_building
+	flag = travel_point_of_interest_martial_major
+}
+
+wonder_igal_zaram_warrens = {
+	type_icon = "icon_wonder_dol_guldur.dds"
+
+	can_construct = {
+		always = no
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+	}
+
+	county_modifier = {
+		build_speed = -0.2
+		development_growth_factor = 0.2
+	}
+	character_modifier = {
+		levy_attack = 5
+	}
+	max_garrison = 1250
+	province_modifier = {
+		levy_size = 0.5
+		supply_limit_mult = 0.5
+		levy_reinforcement_rate = 0.25
+	}
+
+	ai_value = {
+		base = 100
+	}
+	type = great_building
+	flag = travel_point_of_interest_martial_major
+}
+
+wonder_ost_in_edhil_01 = { # Ost-in-Edhil
+	type_icon = "icon_building_observatory.dds"
+
+	#We only build this through Decision -> Great Projects
+	can_construct_potential = {
+		always = no #This should never show up
+	}
+
+	is_enabled = {
+		is_elf = yes
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = { value = standard_rebuild_value }
+		}
+	}
+
+	can_rebuild = {
+		is_elf = yes
+	}
+
+	province_modifier = {
+	}
+	province_terrain_modifier = {
+ 	}
+	character_modifier = {
+		monthly_crafting_lifestyle_xp_gain_mult = 0.1
+		monthly_dynasty_prestige = 0.25
+	}
+	county_modifier = {
+		build_gold_cost = -0.15
+		build_speed = -0.3
+	}
+
+	fallback = {
+		character_modifier = {
+			monthly_dynasty_prestige = 0.1
+		}
+		county_modifier = {
+			build_gold_cost = -0.10
+			build_speed = -0.2
+		}
+	}
+
+	type = great_building
+	flag = elven_great_building
+	next_building = wonder_ost_in_edhil_02
+}
+wonder_ost_in_edhil_02 = { # Ost-in-Edhil
+	type_icon = "icon_building_observatory.dds"
+
+	#We only build this through Decision -> Great Projects
+	can_construct_potential = {
+		always = no #This should never show up
+	}
+
+	is_enabled = {
+		is_elf = yes
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.25
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.25
+				}
+			}
+		}
+	}
+
+	can_rebuild = {
+		is_elf = yes
+	}
+
+	province_modifier = {
+		monthly_income = 1
+		fort_level = good_building_fort_level_tier_4
+		defender_holding_advantage = normal_building_advantage_tier_4
+	}
+	province_terrain_modifier = {
+ 	}
+	character_modifier = {
+		monthly_crafting_lifestyle_xp_gain_mult = 0.2
+		monthly_dynasty_prestige = 0.5
+	}
+	county_modifier = {
+		development_growth = 0.1
+		build_gold_cost = -0.15
+		build_speed = -0.3
+	}
+
+	fallback = {
+		character_modifier = {
+			monthly_dynasty_prestige = 0.2
+		}
+		county_modifier = {
+			development_growth = 0.05
+			build_gold_cost = -0.10
+			build_speed = -0.15
+		}
+	}
+
+	type = great_building
+	flag = elven_great_building
+	next_building = wonder_ost_in_edhil_03
+	flag = travel_point_of_interest_stewarship_major
+}
+wonder_ost_in_edhil_03 = { # Ost-in-Edhil
+	type_icon = "icon_building_observatory.dds"
+
+	#We only build this through Decision -> Great Projects
+	can_construct_potential = {
+		always = no #This should never show up
+	}
+
+	is_enabled = {
+		is_elf = yes
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.5
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.5
+				}
+			}
+		}
+	}
+
+	can_rebuild = {
+		is_elf = yes
+	}
+
+	province_modifier = {
+		monthly_income = 3
+		fort_level = good_building_fort_level_tier_5
+		defender_holding_advantage = normal_building_advantage_tier_5
+	}
+	province_terrain_modifier = {
+ 	}
+	character_modifier = {
+		monthly_crafting_lifestyle_xp_gain_mult = 0.3
+		monthly_dynasty_prestige = 1
+	}
+	county_modifier = {
+		development_growth = 0.25
+		build_gold_cost = -0.15
+		build_speed = -0.3
+	}
+
+	fallback = {
+		character_modifier = {
+			monthly_dynasty_prestige = 0.3
+		}
+		county_modifier = {
+			development_growth = 0.05
+			build_gold_cost = -0.10
+			build_speed = -0.15
+		}
+	}
+
+	type = great_building
+	flag = elven_great_building
+	next_building = wonder_ost_in_edhil_04
+	flag = travel_point_of_interest_stewarship_major
+}
+wonder_ost_in_edhil_04 = { # Ost-in-Edhil
+	type_icon = "icon_building_observatory.dds"
+
+	#We only build this through Decision -> Great Projects
+	can_construct_potential = {
+		always = no #This should never show up
+	}
+
+	is_enabled = {
+		is_elf = yes
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.75
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 1.75
+				}
+			}
+		}
+	}
+
+	can_rebuild = {
+		is_elf = yes
+	}
+
+	province_modifier = {
+		monthly_income = 4
+		fort_level = good_building_fort_level_tier_6
+		defender_holding_advantage = normal_building_advantage_tier_6
+		stationed_maa_toughness_mult = 0.5
+		stationed_maa_damage_mult = 0.5
+	}
+	province_terrain_modifier = {
+ 	}
+	character_modifier = {
+		monthly_crafting_lifestyle_xp_gain_mult = 0.4
+		monthly_dynasty_prestige = 1.5
+		prowess_per_piety_level = 1
+	}
+	county_modifier = {
+		development_growth = 0.4
+		build_gold_cost = -0.15
+		build_speed = -0.3
+	}
+
+	fallback = {
+		character_modifier = {
+			monthly_dynasty_prestige = 0.5
+		}
+		county_modifier = {
+			development_growth = 0.1
+			build_gold_cost = -0.10
+			build_speed = -0.15
+		}
+	}
+
+	type = great_building
+	flag = elven_great_building
+	next_building = wonder_ost_in_edhil_05
+	flag = travel_point_of_interest_stewarship_major
+}
+wonder_ost_in_edhil_05 = { # Ost-in-Edhil
+	type_icon = "icon_building_observatory.dds"
+
+	#We only build this through Decision -> Great Projects
+	can_construct_potential = {
+		always = no #This should never show up
+	}
+
+	is_enabled = {
+		is_elf = yes
+	}
+
+	show_disabled = yes
+
+	rebuild_cost = {
+		gold = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+		piety = {
+			if = {
+				limit = { is_ai = yes }
+				value = ai_rebuild_value
+			}
+			else = {
+				value = {
+					add = standard_rebuild_value
+					multiply = 2
+				}
+			}
+		}
+	}
+
+	can_rebuild = {
+		is_elf = yes
+	}
+
+	province_modifier = {
+		monthly_income = 6
+		fort_level = good_building_fort_level_tier_8
+		defender_holding_advantage = normal_building_advantage_tier_8
+		stationed_maa_toughness_mult = 0.5
+		stationed_maa_damage_mult = 0.5
+	}
+	province_terrain_modifier = {
+ 	}
+	character_modifier = {
+		monthly_crafting_lifestyle_xp_gain_mult = 0.5
+		monthly_dynasty_prestige = 2
+		build_gold_cost = -0.05
+		build_speed = -0.1
+		maa_toughness_mult = 0.1
+		maa_damage_mult = 0.1
+		prowess_per_piety_level = 1
+		stewardship_per_prestige_level = 1
+	}
+	county_modifier = {
+		development_growth = 0.6
+		build_gold_cost = -0.15
+		build_speed = -0.3
+	}
+
+	fallback = {
+		character_modifier = {
+			monthly_dynasty_prestige = 1
+		}
+		county_modifier = {
+			development_growth = 0.2
+			build_gold_cost = -0.10
+			build_speed = -0.15
+		}
+	}
+
+	on_complete = {
+		county ?= {
+			holder = {
+				trigger_event = elven.0800
+			}
+		}
+	}
+
+	type = great_building
+	flag = elven_great_building
+	flag = travel_point_of_interest_stewarship_major
 }

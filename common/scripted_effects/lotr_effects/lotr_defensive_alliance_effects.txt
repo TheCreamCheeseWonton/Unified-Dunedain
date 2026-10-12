@@ -56,6 +56,48 @@
 				set_variable = lotr_no_confederation_rename
 			}			
 		}
+		nazgul_alliance_black_host = {
+			scope:new_confederation ?= {
+				set_confederation_name = CONFEDERATION_NAME_NAZGUL_BLACK_HOST
+				set_variable = lotr_no_confederation_rename
+			}
+		}
+		nazgul_alliance_the_two = {
+			scope:new_confederation ?= {
+				set_confederation_name = CONFEDERATION_NAME_NAZGUL_THE_TWO
+				set_variable = lotr_no_confederation_rename
+			}
+		}
+		nazgul_alliance_direction_shadow_north = {
+			scope:new_confederation ?= {
+				set_confederation_name = CONFEDERATION_NAME_NAZGUL_DIRECTION_SHADOW_NORTH
+				set_variable = lotr_no_confederation_rename
+			}
+		}
+		nazgul_alliance_direction_shadow_south = {
+			scope:new_confederation ?= {
+				set_confederation_name = CONFEDERATION_NAME_NAZGUL_DIRECTION_SHADOW_SOUTH
+				set_variable = lotr_no_confederation_rename
+			}
+		}
+		nazgul_alliance_direction_shadow_east = {
+			scope:new_confederation ?= {
+				set_confederation_name = CONFEDERATION_NAME_NAZGUL_DIRECTION_SHADOW_EAST
+				set_variable = lotr_no_confederation_rename
+			}
+		}
+		nazgul_alliance_direction_shadow = {
+			scope:new_confederation ?= {
+				set_confederation_name = CONFEDERATION_NAME_NAZGUL_DIRECTION_SHADOW
+				set_variable = lotr_no_confederation_rename
+			}
+		}
+		nazgul_alliance_dark_pact = {
+			scope:new_confederation ?= {
+				set_confederation_name = CONFEDERATION_NAME_NAZGUL_DARK_PACT
+				set_variable = lotr_no_confederation_rename
+			}
+		}
 		##Quonton
 		kinn_lai_alliance = {
 			scope:new_confederation ?= {

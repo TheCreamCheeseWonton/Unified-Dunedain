@@ -5940,96 +5940,96 @@ release_from_prison_interaction = {
 			desc = "TAKE_VOWS_LUSTFUL_REASON"
 		}
 		# Demand admin
-		#modifier = { #LotR
-		#	add = -20
-		#	trigger = {
-		#		scope:demand_admin = yes
-		#		OR = {
-		#			culture = {
-		#				OR = {
-		#					# Historical cultures
-		#					this = culture:greek
-		#					any_parent_culture_or_above = {
-		#						this = culture:greek
-		#					}
-		#					this = culture:han
-		#					any_parent_culture_or_above = {
-		#						this = culture:han
-		#					}
-		#					# Bureaucratic culture
-		#					has_cultural_pillar = ethos_bureaucratic
-		#				}
-		#			}
-		#			# Another admin government
-		#			government_allows = administrative
-		#		}
-		#	}
-		#	desc = "DEMAND_ADMIN_NEGATIVE_REASON"
-		#}
-		#modifier = { #LotR
-		#	add = -50
-		#	trigger = {
-		#		scope:demand_admin = yes
-		#		NOR = {
-		#			culture = {
-		#				OR = {
-		#					# Historical cultures
-		#					this = culture:greek
-		#					any_parent_culture_or_above = {
-		#						this = culture:greek
-		#					}
-		#					this = culture:han
-		#					any_parent_culture_or_above = {
-		#						this = culture:han
-		#					}
-		#					# Bureaucratic culture
-		#					has_cultural_pillar = ethos_bureaucratic
-		#				}
-		#			}
-		#			# Another admin government
-		#			government_allows = administrative
-		#		}
-		#		culture = {
-		#			NOR = {
-		#				has_cultural_tradition = tradition_hereditary_hierarchy
-		#				has_cultural_tradition = tradition_staunch_traditionalists
-		#			}
-		#		}
-		#	}
-		#	desc = "DEMAND_ADMIN_NEGATIVE_REASON"
-		#}
-		#modifier = { #LotR
-		#	add = -100
-		#	trigger = {
-		#		scope:demand_admin = yes
-		#		NOR = {
-		#			culture = {
-		#				OR = {
-		#					# Historical cultures
-		#					this = culture:greek
-		#					any_parent_culture_or_above = {
-		#						this = culture:greek
-		#					}
-		#					this = culture:han
-		#					any_parent_culture_or_above = {
-		#						this = culture:han
-		#					}
-		#					# Bureaucratic culture
-		#					has_cultural_pillar = ethos_bureaucratic
-		#				}
-		#			}
-		#			# Another admin government
-		#			government_allows = administrative
-		#		}
-		#		culture = {
-		#			OR = {
-		#				has_cultural_tradition = tradition_hereditary_hierarchy
-		#				has_cultural_tradition = tradition_staunch_traditionalists
-		#			}
-		#		}
-		#	}
-		#	desc = "DEMAND_ADMIN_NEGATIVE_REASON"
-		#}
+		modifier = { #LotR
+			add = -20
+			trigger = {
+				scope:demand_admin = yes
+				OR = {
+					culture = {
+						OR = {
+							# Historical cultures
+							# this = culture:greek
+							# any_parent_culture_or_above = {
+							# 	this = culture:greek
+							# }
+							# this = culture:han
+							# any_parent_culture_or_above = {
+							# 	this = culture:han
+							# }
+							# Bureaucratic culture
+							has_cultural_pillar = ethos_bureaucratic
+						}
+					}
+					# Another admin government
+					government_allows = administrative
+				}
+			}
+			desc = "DEMAND_ADMIN_NEGATIVE_REASON"
+		}
+		modifier = { #LotR
+			add = -50
+			trigger = {
+				scope:demand_admin = yes
+				NOR = {
+					culture = {
+						OR = {
+							# # Historical cultures
+							# this = culture:greek
+							# any_parent_culture_or_above = {
+							# 	this = culture:greek
+							# }
+							# this = culture:han
+							# any_parent_culture_or_above = {
+							# 	this = culture:han
+							# }
+							# Bureaucratic culture
+							has_cultural_pillar = ethos_bureaucratic
+						}
+					}
+					# Another admin government
+					government_allows = administrative
+				}
+				culture = {
+					NOR = {
+						has_cultural_tradition = tradition_hereditary_hierarchy
+						has_cultural_tradition = tradition_staunch_traditionalists
+					}
+				}
+			}
+			desc = "DEMAND_ADMIN_NEGATIVE_REASON"
+		}
+		modifier = { #LotR
+			add = -100
+			trigger = {
+				scope:demand_admin = yes
+				NOR = {
+					culture = {
+						OR = {
+							# Historical cultures
+							# this = culture:greek
+							# any_parent_culture_or_above = {
+							# 	this = culture:greek
+							# }
+							# this = culture:han
+							# any_parent_culture_or_above = {
+							# 	this = culture:han
+							# }
+							# Bureaucratic culture
+							has_cultural_pillar = ethos_bureaucratic
+						}
+					}
+					# Another admin government
+					government_allows = administrative
+				}
+				culture = {
+					OR = {
+						has_cultural_tradition = tradition_hereditary_hierarchy
+						has_cultural_tradition = tradition_staunch_traditionalists
+					}
+				}
+			}
+			desc = "DEMAND_ADMIN_NEGATIVE_REASON"
+		}
 		# Struggle
 		modifier = {
 			trigger = {

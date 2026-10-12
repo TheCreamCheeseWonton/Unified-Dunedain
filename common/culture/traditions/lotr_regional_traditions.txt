@@ -2,9 +2,7 @@
 #### LotR Regional Traditions ####
 ##################################
 
-###############################
-##### Dunedain Traditions #####
-###############################
+#### Dunedain ####
 
 ##Quonton
 tradition_fueled_by_vengeance = { #Modification of Eye for an Eye
@@ -452,116 +450,6 @@ tradition_new_numenor = {
 	ai_will_do = { value = 100 }
 }
 
-tradition_unified_dunedain = {
-	category = regional
-
-	layers = {
-		0 = intrigue
-		1 = mediterranean
-		4 = crown.dds
-	}
-	
-	is_shown = {
-		always = no
-	}
-	can_pick = {
-		has_cultural_pillar = heritage_dunedain
-		is_target_in_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:decision_reunify_dunedain
-		}
-	}
-
-	parameters = {
-		pensive_trait_more_common = yes
-		just_trait_more_common = yes
-		just_trait_gives_bonuses = yes
-		seduce_schemes_less_common = yes
-		can_use_sparring_duel = yes
-		coastal_agriculture_building_bonuses = yes
-		coastal_holding_bonuses = yes
-	}
-	
-	character_modifier = {
-		heavy_cavalry_damage_mult = 0.1
-		heavy_cavalry_toughness_mult = 0.1
-		tyranny_gain_mult = 0.5
-		supply_capacity_mult = 0.25
-		army_screen_mult = 0.05
-		men_at_arms_recruitment_cost = 0.1
-		men_at_arms_maintenance = -0.05
-		sea_travel_danger = medium_sea_danger_reduction
-		army_toughness_mult = 0.15
-		learning_per_piety_level = 1
-		controlled_province_advantage = 10
-		monthly_county_control_growth_add = 0.3
-		levy_attack = 5
-		levy_toughness = 5
-		epidemic_resistance = 10
-	}
-
-	province_modifier = {
-		build_gold_cost = 0.1
-		tax_mult = 0.05
-	}
-
-	cost = {
-		prestige = {
-			add = {
-				value = tradition_base_cost
-				desc = BASE
-				format = "BASE_VALUE_FORMAT"
-			}
-			if = {
-				limit = {
-					NOT = {
-						any_in_list = { list = traits this = flag:ethos_egalitarian }
-					}
-				}
-				add = {
-					value = tradition_incompatible_ethos_penalty
-					desc = not_egalitarian_desc
-				}
-			}
-			if = {
-				limit = {
-					trigger_if = {
-						limit = {
-							scope:character = {
-								is_ai = no
-							}
-						}
-						NAND = {
-							any_ruler = {
-								count >= 3
-								culture = prev
-								primary_title.tier >= tier_county
-								is_male = yes
-							}
-							any_ruler = {
-								count >= 3
-								culture = prev
-								primary_title.tier >= tier_county
-								is_female = yes
-							}
-						}
-					}
-					trigger_else = {
-						always = yes
-					}
-				}
-				add = {
-					value = tradition_unfulfilled_criteria_penalty
-					desc = three_gender_rulers_desc
-				}
-			}
-			
-			multiply = tradition_replacement_cost_if_relevant
-		}
-	}
-	
-	ai_will_do = { value = 100 }
-}
 ##End Quonton
 
 tradition_tales_of_great_deeds = {
@@ -573,7 +461,7 @@ tradition_tales_of_great_deeds = {
 		1 = indian
 		4 = knight.dds
 	}
-	
+
 	is_shown = {
 		has_cultural_pillar = heritage_dunedain
 		NOT = { #Replaces Martial Admiration
@@ -609,7 +497,7 @@ tradition_tales_of_great_deeds = {
 		knight_limit = 2
 		negate_prowess_penalty_add = 5 # Wounded knights fight better!
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -646,11 +534,11 @@ tradition_tales_of_great_deeds = {
 					desc = knights_with_prowess_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = { value = 100 }
 }
 
@@ -660,9 +548,9 @@ tradition_gondorian_legacy = {
 	layers = {
 		0 = martial
 		1 = western
-		4 = ship.dds
+		4 = legacy_of_the_south_kingdom.dds
 	}
-	
+
 	is_shown = {
 		OR = {
 			has_cultural_pillar = heritage_dunedain
@@ -670,13 +558,12 @@ tradition_gondorian_legacy = {
 		##Quonton
 		NOT = { #Is replaced by Unified Dunedain
 			OR = { 
-				has_cultural_tradition = tradition_unified_dunedain
+				has_cultural_tradition = tradition_rk_legacy
 				has_cultural_tradition = tradition_new_numenor
 			}
 		}
-		##End Quonton
 	}
-	
+
 	can_pick = {
 		custom_tooltip = {
 			text = culture_in_gondor_desc
@@ -687,7 +574,7 @@ tradition_gondorian_legacy = {
 				}
 			}
 		}
-		
+
 		custom_tooltip = {
 			text = cannot_have_tradition_fp1_coastal_warriors
 			NOT = { culture_tradition:tradition_fp1_coastal_warriors = { is_in_list = traits } }
@@ -703,14 +590,14 @@ tradition_gondorian_legacy = {
             }
         }
 	}
-	
+
 	parameters = {
 		trade_ports_give_control_growth = yes
 		can_travel_along_rivers = yes
 		coastal_agriculture_building_bonuses = yes
 		coastal_holding_bonuses = yes
 	}
-	
+
 	character_modifier = {
 		army_toughness_mult = 0.05
 		army_screen_mult = 0.05
@@ -718,7 +605,7 @@ tradition_gondorian_legacy = {
 		men_at_arms_maintenance = -0.05
 		sea_travel_danger = medium_sea_danger_reduction
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -755,11 +642,11 @@ tradition_gondorian_legacy = {
 					desc = high_coastal_percentage_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = { # Make stacking a bit less common
@@ -810,21 +697,14 @@ tradition_belfalathrim_chivalry = { # Belfalas and Dol Amroth
 		1 = western
 		4 = knight.dds
 	}
-	
+
 	is_shown = {
+		NOT = { has_cultural_tradition = tradition_chivalry }
 		OR = {
 			has_cultural_pillar = heritage_dunedain
 		}
-		##Quonton
-		NOT = { #Is replaced by Unified Dunedain
-			OR = { 
-				has_cultural_tradition = tradition_unified_dunedain
-				has_cultural_tradition = tradition_new_numenor
-			}
-		}
-		##End Quonton
 	}
-	
+
 	can_pick = {
 		custom_tooltip = {
 			text = culture_in_central_fiefs_desc
@@ -835,7 +715,7 @@ tradition_belfalathrim_chivalry = { # Belfalas and Dol Amroth
 				}
 			}
 		}
-
+		NOT = { has_cultural_tradition = tradition_chivalry }
 		trigger_if = { #LotR
             limit = {
                 scope:replacing ?= culture_tradition:tradition_variag_succession
@@ -846,7 +726,7 @@ tradition_belfalathrim_chivalry = { # Belfalas and Dol Amroth
             }
         }
 	}
-	
+
 	parameters = {
 		unlock_maa_belfalathric_bowmen = yes
 		unlock_maa_swan_knights = yes
@@ -857,13 +737,13 @@ tradition_belfalathrim_chivalry = { # Belfalas and Dol Amroth
 		ai_romance_scheme_increase = yes
 		poet_trait_romance_bonuses = yes
 	}
-	
+
 	character_modifier = {
 		heavy_cavalry_damage_mult = 0.1
 		heavy_cavalry_toughness_mult = 0.1
 		tyranny_gain_mult = 0.5
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -900,141 +780,141 @@ tradition_belfalathrim_chivalry = { # Belfalas and Dol Amroth
 					desc = knights_with_prowess_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
 }
 
-#tradition_harondorim_resilience = {
-#	category = regional
-#
-#	layers = {
-#		0 = intrigue
-#		1 = western
-#		4 = mountain.dds
-#	}
-#
-#	is_shown = {
-#		NOR = {
-#			has_cultural_tradition = tradition_highland_warriors
-#			has_cultural_tradition = tradition_warriors_of_the_dry
-#		}
-#		has_cultural_pillar = heritage_dunedain
-#	}
-#	can_pick = {
-#		culture_not_pacifistic_trigger = yes
-#		custom_description = {
-#			text = culture_in_desert_desc
-#			any_culture_county = {
-#				any_county_province = {
-#					terrain = desert
-#				}
-#			}
-#		}
-#		custom_tooltip = {
-#			text = culture_in_harondor_desc
-#			any_culture_county = {
-#				percent >= 0.4
-#				any_county_province = {
-#					geographical_region = middleearth_harad_near_harondor
-#				}
-#			}
-#		}
-#		trigger_if = { #LotR
-#            limit = {
-#                scope:replacing ?= culture_tradition:tradition_variag_succession
-#            }
-#            custom_tooltip = {
-#                text = cannot_replace_variag_succession
-#                NOT = { has_cultural_tradition = tradition_variag_succession } #To prevent stacking after hybridization
-#            }
-#        }
-#	}
-	
-#	parameters = {
-		#unlock_maa_harondorim_rangers = yes
-		#unlock_maa_harondorim_palace_guards = yes
-#		desert_warrior_trait_more_common = yes
-#		dry_trait_bonuses = yes
-#		can_recruit_dry_specialist = yes
-#	}
-	
-#	province_modifier = {
-#		desert_levy_size = 0.1
-#		desert_supply_limit_mult = 0.25
-#	}
-	
-#	character_modifier = {
-#		supply_capacity_mult = 0.5
-#		drylands_travel_danger = drylands_medium_danger_reduction
-#	}
-	
-#	cost = {
-#		prestige = {
-#			add = {
-#				value = tradition_base_cost
-#				desc = BASE
-#				format = "BASE_VALUE_FORMAT"
-#			}
-#			if = {
-#				limit = {
-#					NOR = {
-#						culture_pillar:ethos_bellicose = { is_in_list = traits }
-#						culture_pillar:ethos_stoic = { is_in_list = traits }
-#						culture_pillar:ethos_communal = { is_in_list = traits }
-#					}
-#				}
-#				add = {
-#					value = tradition_incompatible_ethos_penalty
-#					desc = not_bellicose_stoic_or_communal_desc
-#				}
-#			}
-#			if = {
-#				limit = {
-#					NOT = {
-#						any_culture_county = {
-#							percent >= 0.3
-#							any_county_province = {
-#								terrain = desert
-#							}
-#						}
-#					}
-#				}
-#				add = {
-#					value = tradition_unfulfilled_criteria_penalty
-#					desc = hill_percentage_desc
-#				}
-#			}
-#			
-#			multiply = tradition_replacement_cost_if_relevant
-#		}
-#	}
-	
-#	ai_will_do = {
-#		value = 100
-#		if = {
-#			limit = {
-#				NOT = {
-#					scope:character = {
-#						any_sub_realm_county = {
-#							percent >= 0.2
-#							culture = scope:character.culture
-#							any_county_province = {
-#								terrain = desert
-#							}
-#						}
-#					}
-#				}
-#			}
-#			multiply = 0
-#		}
-#	}
-#}
+tradition_harondorim_resilience = {
+	category = regional
+
+	layers = {
+		0 = intrigue
+		1 = western
+		4 = mountain.dds
+	}
+
+	is_shown = {
+		NOR = {
+			has_cultural_tradition = tradition_highland_warriors
+			has_cultural_tradition = tradition_warriors_of_the_dry
+		}
+		has_cultural_pillar = heritage_dunedain
+	}
+	can_pick = {
+		culture_not_pacifistic_trigger = yes
+		custom_description = {
+			text = culture_in_desert_desc
+			any_culture_county = {
+				any_county_province = {
+					terrain = desert
+				}
+			}
+		}
+		custom_tooltip = {
+			text = culture_in_harondor_desc
+			any_culture_county = {
+				percent >= 0.4
+				any_county_province = {
+					geographical_region = middleearth_harad_near_harondor
+				}
+			}
+		}
+		trigger_if = { #LotR
+           limit = {
+               scope:replacing ?= culture_tradition:tradition_variag_succession
+           }
+           custom_tooltip = {
+               text = cannot_replace_variag_succession
+               NOT = { has_cultural_tradition = tradition_variag_succession } #To prevent stacking after hybridization
+           }
+       }
+	}
+
+	parameters = {
+		# unlock_maa_harondorim_rangers = yes
+		# unlock_maa_harondorim_palace_guards = yes
+		desert_warrior_trait_more_common = yes
+		dry_trait_bonuses = yes
+		can_recruit_dry_specialist = yes
+	}
+
+	province_modifier = {
+		desert_levy_size = 0.1
+		desert_supply_limit_mult = 0.25
+	}
+
+	character_modifier = {
+		supply_capacity_mult = 0.5
+		drylands_travel_danger = drylands_medium_danger_reduction
+	}
+
+	cost = {
+		prestige = {
+			add = {
+				value = tradition_base_cost
+				desc = BASE
+				format = "BASE_VALUE_FORMAT"
+			}
+			if = {
+				limit = {
+					NOR = {
+						culture_pillar:ethos_bellicose = { is_in_list = traits }
+						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_communal = { is_in_list = traits }
+					}
+				}
+				add = {
+					value = tradition_incompatible_ethos_penalty
+					desc = not_bellicose_stoic_or_communal_desc
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_culture_county = {
+							percent >= 0.3
+							any_county_province = {
+								terrain = desert
+							}
+						}
+					}
+				}
+				add = {
+					value = tradition_unfulfilled_criteria_penalty
+					desc = hill_percentage_desc
+				}
+			}
+
+			multiply = tradition_replacement_cost_if_relevant
+		}
+	}
+
+	ai_will_do = {
+		value = 100
+		if = {
+			limit = {
+				NOT = {
+					scope:character = {
+						any_sub_realm_county = {
+							percent >= 0.2
+							culture = scope:character.culture
+							any_county_province = {
+								terrain = desert
+							}
+						}
+					}
+				}
+			}
+			multiply = 0
+		}
+	}
+}
 
 tradition_gondor_clans = {
 	category = regional
@@ -1050,14 +930,6 @@ tradition_gondor_clans = {
 			has_cultural_tradition = tradition_highland_warriors
 			#has_cultural_tradition = tradition_upland_skirmishing
 		}
-		##Quonton
-		NOT = { #Is replaced by Unified Dunedain
-			OR = { 
-				has_cultural_tradition = tradition_unified_dunedain
-				has_cultural_tradition = tradition_new_numenor
-			}
-		}
-		##End Quonton
 		has_cultural_pillar = heritage_dunedain
 	}
 	can_pick = {
@@ -1089,7 +961,7 @@ tradition_gondor_clans = {
             }
         }
 	}
-	
+
 	parameters = {
 		unlock_maa_gondorian_clansmen = yes
 		unlock_maa_orodbedhric_bowmen = yes
@@ -1097,18 +969,18 @@ tradition_gondor_clans = {
 		mountain_trait_bonuses = yes
 		can_recruit_mountain_specialist = yes
 	}
-	
+
 	province_modifier = {
 		mountains_levy_size = 0.1
 		mountains_supply_limit_mult = 0.25
 	}
-	
+
 	character_modifier = {
 		skirmishers_max_size_add = 2
 		knight_limit = -1
 		hills_travel_danger = hills_medium_danger_reduction
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1145,11 +1017,11 @@ tradition_gondor_clans = {
 					desc = hill_percentage_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -1177,9 +1049,9 @@ tradition_arnorian_legacy = {
 	layers = {
 		0 = martial
 		1 = western
-		4 = philosopher.dds
+		4 = legacy_of_the_north_kingdom.dds
 	}
-	
+
 	is_shown = {
 		OR = {
 			has_cultural_pillar = heritage_dunedain
@@ -1187,13 +1059,13 @@ tradition_arnorian_legacy = {
 		##Quonton
 		NOT = { #Is replaced by Unified Dunedain
 			OR = { 
-				has_cultural_tradition = tradition_unified_dunedain
+				has_cultural_tradition = tradition_rk_legacy
 				has_cultural_tradition = tradition_new_numenor
 			}
 		}
 		##End Quonton
 	}
-	
+
 	can_pick = {
 		custom_tooltip = {
 			text = culture_in_arnor_desc
@@ -1204,7 +1076,7 @@ tradition_arnorian_legacy = {
 				}
 			}
 		}
-		
+
 		custom_tooltip = {
 			text = cannot_have_tradition_fp1_coastal_warriors
 			NOT = { culture_tradition:tradition_fp1_coastal_warriors = { is_in_list = traits } }
@@ -1220,12 +1092,12 @@ tradition_arnorian_legacy = {
             }
         }
 	}
-	
+
 	parameters = {
 		pensive_trait_more_common = yes
 
 	}
-	
+
 	character_modifier = {
 		army_toughness_mult = 0.1
 		learning_per_piety_level = 1
@@ -1240,7 +1112,7 @@ tradition_arnorian_legacy = {
 	county_modifier = {
 		development_growth_factor = -0.1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1277,11 +1149,11 @@ tradition_arnorian_legacy = {
 					desc = high_coastal_percentage_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = { # Make stacking a bit less common
@@ -1332,7 +1204,7 @@ tradition_arnorian_law = {
 		1 = mediterranean
 		4 = crown.dds
 	}
-	
+
 	is_shown = {
 		any_parent_culture_or_above = {
 			OR = {
@@ -1343,7 +1215,7 @@ tradition_arnorian_law = {
 		##Quonton
 		NOT = { #Is replaced by Unified Dunedain
 			OR = { 
-				has_cultural_tradition = tradition_unified_dunedain
+				has_cultural_tradition = tradition_rk_legacy
 				has_cultural_tradition = tradition_new_numenor
 			}
 		}
@@ -1367,7 +1239,7 @@ tradition_arnorian_law = {
 		just_trait_more_common = yes
 		just_trait_gives_bonuses = yes
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1378,8 +1250,8 @@ tradition_arnorian_law = {
 			# if = {
 			# 	limit = {
 			# 		NOT = {
-			# 			any_in_list = { 
-			# 				list = traits 
+			# 			any_in_list = {
+			# 				list = traits
 			# 				this = flag:ethos_egalitarian
 			# 			}
 			# 		}
@@ -1421,12 +1293,67 @@ tradition_arnorian_law = {
 					desc = three_gender_rulers_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = { value = 100 }
+}
+
+tradition_rk_legacy = {
+	category = regional
+
+	layers = {
+		0 = martial
+		1 = western
+		4 = legacy_of_rk.dds
+	}
+
+	is_shown = {
+		always = no
+	}
+
+	can_pick = {
+		has_cultural_pillar = heritage_dunedain
+		is_target_in_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_reunify_dunedain
+		}
+	}
+
+	parameters = {
+		trade_ports_give_control_growth = yes
+		can_travel_along_rivers = yes
+		coastal_agriculture_building_bonuses = yes
+		coastal_holding_bonuses = yes
+		innovation_from_learning_traits = yes
+		pensive_trait_more_common = yes
+		just_trait_more_common = yes
+		just_trait_gives_bonuses = yes
+		seduce_schemes_less_common = yes
+	}
+
+	character_modifier = {
+		men_at_arms_recruitment_cost = 0.05
+		men_at_arms_maintenance = -0.05
+		sea_travel_danger = medium_sea_danger_reduction
+		learning_per_piety_level = 1
+		controlled_province_advantage = 10
+		monthly_county_control_growth_add = 0.3
+	}
+
+	province_modifier = {
+		build_gold_cost = 0.05
+		tax_mult = 0.05
+	}
+
+	county_modifier = {
+		development_growth_factor = 0.1
+	}
+
+	cost = {}
+	ai_will_do = {}
 }
 
 ### Rohirrim ###
@@ -1464,13 +1391,14 @@ tradition_riders_of_the_mark = {
             }
         }
 	}
-		
+
 	parameters = {
 		unlock_maa_riders_of_rohan = yes
 		unlock_maa_eorlingas_warriors = yes
 		#unlock_maa_eotheod_horse_archers = yes
 		#unlock_maa_eotheod_light_horsemen = yes
 		can_recruit_open_specialist = yes
+		stables_enabled_for_tribals = yes
 	}
 
 	character_modifier = {
@@ -1482,7 +1410,7 @@ tradition_riders_of_the_mark = {
 		heavy_cavalry_max_size_add = 2
 		movement_speed = 0.1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1502,11 +1430,11 @@ tradition_riders_of_the_mark = {
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -1536,7 +1464,7 @@ tradition_a_people_reunited = { # Upgraded version of Riders of the Mark
             }
         }
 	}
-		
+
 	parameters = {
 		unlock_maa_riders_of_rohan = yes
 		#unlock_maa_eotheod_horse_archers = yes
@@ -1556,7 +1484,7 @@ tradition_a_people_reunited = { # Upgraded version of Riders of the Mark
 		heavy_cavalry_max_size_add = 4
 		movement_speed = 0.1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1576,11 +1504,11 @@ tradition_a_people_reunited = { # Upgraded version of Riders of the Mark
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -1604,7 +1532,7 @@ tradition_a_scattered_people = { # Innate Tradition for Rhovannorim at the WOTR 
 	can_pick = {
 		always = no
 	}
-		
+
 	parameters = {
 		unlock_maa_rhovanion_freemen = yes
 		can_recruit_open_specialist = yes
@@ -1634,7 +1562,7 @@ tradition_a_scattered_people = { # Innate Tradition for Rhovannorim at the WOTR 
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1660,7 +1588,7 @@ tradition_a_people_reforged = { # Reward for refounding the kingdom of Rhovanion
 	can_pick = {
 		always = no # Unlocked by Decision to Refound the Kingdom of Rhovanion
 	}
-		
+
 	parameters = {
 		unlock_maa_rhovanion_freemen = yes
 		unlock_maa_rhovanion_light_cavalry = yes
@@ -1696,7 +1624,7 @@ tradition_a_people_reforged = { # Reward for refounding the kingdom of Rhovanion
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1728,6 +1656,7 @@ tradition_the_people_of_the_plains = { # Upgraded version of a People Reforged
 		unlock_maa_rhovanion_light_cavalry = yes
 		unlock_maa_rhovanion_heavy_cavalry = yes
 		can_recruit_open_specialist = yes
+		stables_enabled_for_tribals = yes
 	}
 
 	character_modifier = {
@@ -1762,7 +1691,7 @@ tradition_the_people_of_the_plains = { # Upgraded version of a People Reforged
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1788,7 +1717,7 @@ tradition_the_people_of_the_plains_old = { # Original version of People of the P
 		}
 		NOR = {
 			#No Rohirric traditions
-			has_cultural_tradition = tradition_a_people_reunited 
+			has_cultural_tradition = tradition_a_people_reunited
 			has_cultural_tradition = tradition_riders_of_the_mark
 			#No other Rhovanic traditions
 			has_cultural_tradition = tradition_a_people_reforged
@@ -1804,7 +1733,7 @@ tradition_the_people_of_the_plains_old = { # Original version of People of the P
 			any_culture_county = {
 				percent >= 0.6
 				any_county_province = {
-					geographical_region = custom_plains_rhovanion 
+					geographical_region = custom_plains_rhovanion
 				}
 			}
 		}
@@ -1824,6 +1753,7 @@ tradition_the_people_of_the_plains_old = { # Original version of People of the P
 		unlock_maa_rhovanion_light_cavalry = yes
 		unlock_maa_rhovanion_heavy_cavalry = yes
 		can_recruit_open_specialist = yes
+		stables_enabled_for_tribals = yes
 	}
 
 	character_modifier = { # Slighlty weaker than the reward version
@@ -1858,7 +1788,7 @@ tradition_the_people_of_the_plains_old = { # Original version of People of the P
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1878,7 +1808,7 @@ tradition_defended_enclosures = {
 		1 = western
 		4 = battle.dds
 	}
-	
+
 	is_shown = {
 		has_cultural_pillar = heritage_northron
 		NOT = { has_cultural_tradition = tradition_a_people_reunited }
@@ -1890,7 +1820,7 @@ tradition_defended_enclosures = {
 			any_culture_county = {
 				percent >= 0.6
 				any_county_province = {
-					geographical_region = middleearth_west_rhovanion_anduin 
+					geographical_region = middleearth_west_rhovanion_anduin
 				}
 			}
 		}
@@ -1908,17 +1838,17 @@ tradition_defended_enclosures = {
 	parameters = {
 		hunting_archery_building_bonuses = yes
 	}
-	
+
 	character_modifier = {
 		defender_advantage = 5
 		pikemen_toughness_mult = 0.1
 		pikemen_maintenance_mult = -0.1
 	}
-	
+
 	province_modifier = {
 		garrison_size = 0.15
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -1938,7 +1868,7 @@ tradition_defended_enclosures = {
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1952,13 +1882,13 @@ tradition_defended_enclosures = {
 
 tradition_dale_bow_culture = {
 	category = regional
-	
+
 	layers = {
 		0 = martial
 		1 = western
 		4 = bow.dds
 	}
-	
+
 	is_shown = {
 		has_cultural_pillar = heritage_northron
 	}
@@ -1970,7 +1900,7 @@ tradition_dale_bow_culture = {
 			any_culture_county = {
 				percent >= 0.6
 				any_county_province = {
-					geographical_region = middleearth_west_rhovanion_dalelands 
+					geographical_region = middleearth_west_rhovanion_dalelands
 				}
 			}
 		}
@@ -1985,7 +1915,7 @@ tradition_dale_bow_culture = {
         }
 		NOT = { has_cultural_tradition = tradition_adaptive_skirmishing } #To prevent stacking
 	}
-	
+
 	parameters = {
 		unlock_maa_dale_bowmen = yes
 		#unlock_maa_dale_pikes = yes
@@ -2015,7 +1945,7 @@ tradition_dale_bow_culture = {
 		#heavy_infantry_damage_mult = -0.1
 		#heavy_infantry_toughness_mult = -0.05
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2051,11 +1981,11 @@ tradition_dale_bow_culture = {
 					desc = culture_head_archers_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -2065,13 +1995,13 @@ tradition_dale_bow_culture = {
 
 #tradition_warriors_of_fame_and_field = {
 #	category = regional
-#	
+#
 #	layers = {
 #		0 = martial
 #		1 = western
 #		4 = farmland.dds
 #	}
-#	
+#
 #	is_shown = {
 #		has_cultural_pillar = heritage_northron
 #	}
@@ -2082,7 +2012,7 @@ tradition_dale_bow_culture = {
 #			any_culture_county = {
 #				percent >= 0.6
 #				any_county_province = {
-#					geographical_region = middleearth_west_rhovanion_dorwinion 
+#					geographical_region = middleearth_west_rhovanion_dorwinion
 #				}
 #			}
 #		}
@@ -2096,7 +2026,7 @@ tradition_dale_bow_culture = {
 #            }
 #        }
 #	}
-	
+
 	#parameters = {
 	#	unlock_maa_vintner_court_knights = yes
 	#	unlock_maa_thorn_guard = yes
@@ -2118,7 +2048,7 @@ tradition_dale_bow_culture = {
 #		vassal_limit = 5
 #		ai_war_chance = -0.5
 #	}
-#	
+#
 #	cost = {
 #		prestige = {
 #			add = {
@@ -2138,11 +2068,11 @@ tradition_dale_bow_culture = {
 #					desc = not_bellicose_or_spiritual_desc
 #				}
 #			}
-#			
+#
 #			multiply = tradition_replacement_cost_if_relevant
 #		}
 #	}
-#	
+#
 #	ai_will_do = {
 #		value = 0
 #	}
@@ -2172,7 +2102,7 @@ tradition_dorwinion_vineyards = { # Based on RICE munya tradition
 			}
 		}
 	}
-	
+
 	parameters = {
 		unlock_vineyards = yes
 		unlock_wine_tasting_activity = yes
@@ -2192,13 +2122,13 @@ tradition_dorwinion_vineyards = { # Based on RICE munya tradition
 		vassal_tax_contribution_mult = 0.1
 		different_culture_opinion = 10
 		vassal_limit = 5
-		ai_war_chance = -0.5		
-	}	
+		ai_war_chance = -0.5
+	}
 
 	county_modifier = {
 		development_growth_factor = 0.05
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2206,7 +2136,7 @@ tradition_dorwinion_vineyards = { # Based on RICE munya tradition
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			if = {
 				limit = {
 					NOR = {
@@ -2220,11 +2150,11 @@ tradition_dorwinion_vineyards = { # Based on RICE munya tradition
 					desc = not_bureaucratic_courtly_or_egalitarian_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 75
 	}
@@ -2234,7 +2164,7 @@ tradition_dorwinion_vineyards = { # Based on RICE munya tradition
 
 tradition_hidden_refuges = {
 	category = regional
-	
+
 	layers = {
 		0 = martial
 		1 = western
@@ -2298,7 +2228,7 @@ tradition_hidden_refuges = {
 		forest_supply_limit_mult = 0.25
 		deep_forest_supply_limit_mult = 0.25
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -2314,7 +2244,7 @@ tradition_prized_perfection = {
 		1 = mediterranean
 		4 = crown.dds
 	}
-	
+
 	is_shown = {
 		OR = {
 			has_cultural_pillar = heritage_southern_adunaic
@@ -2351,7 +2281,7 @@ tradition_prized_perfection = {
             }
         }
 	}
-	
+
 	parameters = {
 		can_blind_prisoners = yes
 		can_castrate_prisoners = yes
@@ -2366,7 +2296,7 @@ tradition_prized_perfection = {
 		ai_amenity_target_baseline = 0.75
 		ai_amenity_spending = 1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2386,7 +2316,7 @@ tradition_prized_perfection = {
 					desc = not_courtly_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -2404,7 +2334,7 @@ tradition_dune_sea_nomads = { # Makes Dune Sea habitable
 		1 = mena
 		4 = lotr_dune_sea.dds
 	}
-	
+
 	is_shown = {
 		any_culture_county = {
 			title_province = {
@@ -2454,7 +2384,7 @@ tradition_dune_sea_nomads = { # Makes Dune Sea habitable
 		desert_construction_gold_cost = -0.15
 		desert_holding_construction_gold_cost = -0.15
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2474,11 +2404,11 @@ tradition_dune_sea_nomads = { # Makes Dune Sea habitable
 					desc = not_stoic_or_spiritual_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = { value = 100 }
 }
 
@@ -2506,7 +2436,7 @@ tradition_trans_haradric_traders = { # Heavily involved in Trans-Haradric Trade 
 			}
 		}
 	}
-	
+
 	parameters = {
 		unlock_trans_haradric_travel_option = yes
 		unlock_trans_haradric_merchant_decision = yes
@@ -2524,7 +2454,7 @@ tradition_trans_haradric_traders = { # Heavily involved in Trans-Haradric Trade 
 	# 	build_gold_cost = -0.05
 	# 	build_speed = -0.05
 	# }
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2532,7 +2462,7 @@ tradition_trans_haradric_traders = { # Heavily involved in Trans-Haradric Trade 
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			if = {
 				limit = {
 					NOR = {
@@ -2546,11 +2476,11 @@ tradition_trans_haradric_traders = { # Heavily involved in Trans-Haradric Trade 
 					desc = not_communal_spiritual_or_stoic_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -2585,7 +2515,7 @@ tradition_masters_of_the_nuar = { # Harshandatt, Master of the Nuar River
 			}
 		}
 	}
-	
+
 	parameters = {
 		can_travel_along_rivers = yes
 	}
@@ -2603,7 +2533,7 @@ tradition_masters_of_the_nuar = { # Harshandatt, Master of the Nuar River
 		wetlands_development_growth_factor = 0.1
 		floodplains_development_growth_factor = 0.1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2611,7 +2541,7 @@ tradition_masters_of_the_nuar = { # Harshandatt, Master of the Nuar River
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			if = {
 				limit = {
 					NOR = {
@@ -2625,11 +2555,11 @@ tradition_masters_of_the_nuar = { # Harshandatt, Master of the Nuar River
 					desc = not_communal_spiritual_or_stoic_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -2657,7 +2587,7 @@ tradition_mud_masons = { # Mud Masons of Sîrayn
 			has_cultural_pillar = heritage_new_sirayni
 		}
 	}
-	
+
 	parameters = {
 		unlock_mud_mason_decision = yes
 	}
@@ -2671,7 +2601,7 @@ tradition_mud_masons = { # Mud Masons of Sîrayn
 		build_gold_cost = -0.05
 		build_speed = -0.05
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2679,7 +2609,7 @@ tradition_mud_masons = { # Mud Masons of Sîrayn
 				desc = BASE
 				format = "BASE_VALUE_FORMAT"
 			}
-			
+
 			if = {
 				limit = {
 					NOR = {
@@ -2693,11 +2623,11 @@ tradition_mud_masons = { # Mud Masons of Sîrayn
 					desc = not_communal_spiritual_or_stoic_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -2707,7 +2637,7 @@ tradition_mud_masons = { # Mud Masons of Sîrayn
 
 tradition_greatswords = {
 	category = regional
-	
+
 	layers = {
 		0 = martial
 		1 = western
@@ -2738,7 +2668,7 @@ tradition_greatswords = {
             }
         }
 	}
-	
+
 	parameters = {
 		unlock_maa_clan_swordsmen = yes
 		#unlock_maa_clan_axemen = yes
@@ -2753,7 +2683,7 @@ tradition_greatswords = {
 		knight_effectiveness_mult = 0.15
 		knight_limit = 2
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2789,7 +2719,7 @@ tradition_greatswords = {
 					desc = knights_with_prowess_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -2829,7 +2759,7 @@ tradition_warriors_of_rhun = {
 			has_cultural_pillar = heritage_igath
 		}
 	}
-		
+
 	parameters = {
 		#unlock_maa_easterling_kataphrakt = yes # Now unlocked by innovation
 		#unlock_maa_easterling_swordsmen = yes
@@ -2847,11 +2777,11 @@ tradition_warriors_of_rhun = {
 		same_culture_mercenary_hire_cost_mult = -0.4
 		levy_size = -0.2 # The Easterlings tend to fight with Mercenaries!
 	}
-	
+
 	culture_modifier = {
 		mercenary_count_mult = 2
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2871,11 +2801,11 @@ tradition_warriors_of_rhun = {
 					desc = not_bellicose_or_communal_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 	}
@@ -2891,15 +2821,15 @@ tradition_corsairs_of_umbar = {
 		1 = mediterranean
 		4 = lotr_corsairs_of_umbar.dds
 	}
-	
+
 	is_shown = {
+		NOT = { has_cultural_tradition = tradition_practiced_pirates }
 		any_culture_county = {
 			title_province = {
 				geographical_region = middleearth_harad_near_umbar
 			}
 		}
 	}
-	
 	can_pick = {
 		custom_description = {
 			text = percentage_of_culture_on_coast_desc
@@ -2923,7 +2853,7 @@ tradition_corsairs_of_umbar = {
             }
         }
 	}
-	
+
 	parameters = {
 		unlock_maa_corsair_warriors = yes
 		culture_can_raid_at_sea_even_if_feudal = yes
@@ -2938,7 +2868,7 @@ tradition_corsairs_of_umbar = {
 		different_culture_opinion = -20
 		sea_travel_danger = medium_sea_danger_reduction
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -2975,11 +2905,11 @@ tradition_corsairs_of_umbar = {
 					desc = high_coastal_percentage_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 50
 		#if = {
@@ -3002,15 +2932,7 @@ tradition_dunedain_of_umbar = {
 
 	is_shown = {
 		has_cultural_pillar = heritage_dunedain
-		##Quonton
-		NOT = { #Is replaced by Unified Dunedain
-			OR = { 
-				has_cultural_tradition = tradition_unified_dunedain
-				has_cultural_tradition = tradition_new_numenor
-			}
-		}
-		##End Quonton
-	}	
+	}
 
 	can_pick = {
 		custom_tooltip = {
@@ -3032,7 +2954,7 @@ tradition_dunedain_of_umbar = {
             }
         }
 	}
-	
+
 	parameters = {
 		dislikes_marrying_outside_of_cultural_heritage = yes
 		ai_doesnt_marry_outside_cultural_heritage = yes
@@ -3040,9 +2962,9 @@ tradition_dunedain_of_umbar = {
 		values_numenorean_blood = yes
 	}
 	character_modifier = {
-		same_culture_opinion = 10		
+		same_culture_opinion = 10
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -3084,11 +3006,11 @@ tradition_dunedain_of_umbar = {
 					desc = non_tolerated_cultures_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -3126,7 +3048,7 @@ tradition_laws_of_umbar = {
 		NOT = {
 			has_cultural_tradition = tradition_dunedain_of_umbar
 		}
-	}	
+	}
 
 	can_pick = {
 		custom_tooltip = {
@@ -3148,7 +3070,7 @@ tradition_laws_of_umbar = {
             }
         }
 	}
-	
+
 	parameters = {
 		can_always_convert_to_feudal = yes
 		can_unlock_single_heir_succession_law = yes
@@ -3163,7 +3085,7 @@ tradition_laws_of_umbar = {
 		learn_language_scheme_phase_duration_add = -5
 		tyranny_loss_mult = -0.5
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -3187,7 +3109,7 @@ tradition_laws_of_umbar = {
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 50
 		if = {
@@ -3214,7 +3136,7 @@ tradition_bellakar_succession = {
 		1 = western
 		4 = crown.dds
 	}
-	
+
 	parameters = {
 		gender_equal_inheritance = yes
 		poorly_educated_leaders_distrusted = yes
@@ -3241,11 +3163,11 @@ tradition_bellakar_succession = {
 		doctrine = doctrine_gender_female_orientated
 		opinion_of_male_rulers = 5
 	}
-	
+
 	is_shown = {
 		has_cultural_pillar = heritage_bellakari
 	}
-	
+
 	can_pick = {
 		NOT = {
 			has_cultural_tradition = tradition_equal_inheritance
@@ -3269,7 +3191,7 @@ tradition_bellakar_succession = {
             }
         }
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -3317,11 +3239,11 @@ tradition_bellakar_succession = {
 					desc = inspired_by_culture_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 200
 		# if = { #LotR
@@ -3347,7 +3269,7 @@ tradition_bellakarean_soldiers = {
 		1 = mediterranean
 		4 = imperial_tagmata.dds
 	}
-	
+
 	layers = {
 		0 = martial
 	}
@@ -3371,7 +3293,7 @@ tradition_bellakarean_soldiers = {
 	is_shown = {
 		has_cultural_pillar = heritage_bellakari
 	}
-	
+
 	can_pick = {
 		NOT = {
 			has_cultural_tradition = tradition_formation_fighting
@@ -3426,11 +3348,11 @@ tradition_bellakarean_soldiers = {
 					desc = 90_percent_cities_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -3473,13 +3395,15 @@ tradition_bellakarean_cities = {
 		1 = mediterranean
 		4 = bellakarean_cities.dds
 	}
-	
+
 	is_shown = {
+		NOT = { has_cultural_tradition = tradition_parochialism }
 		has_cultural_pillar = heritage_bellakari
 	}
-	
+
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
+		NOT = { has_cultural_tradition = tradition_parochialism }
 		custom_tooltip = {
 			text = culture_in_bellakar_desc
 			any_culture_county = {
@@ -3499,7 +3423,7 @@ tradition_bellakarean_cities = {
             }
         }
 	}
-	
+
 	parameters = {
 		capital_castles_more_like_cities = yes
 		can_make_oligarch_vassals = yes
@@ -3513,16 +3437,16 @@ tradition_bellakarean_cities = {
 		ai_more_likely_to_city = yes
 		more_parochial_vassals = yes
 	}
-	
+
 	character_modifier = {
 		city_holding_build_gold_cost = -0.1
 		city_holding_holding_build_gold_cost = -0.1
 		republic_government_vassal_opinion = -20
-		
+
 		republic_government_levy_contribution_add = 0.05 # LotR, moved from republican vassal contract
 		republic_government_tax_contribution_add = 0.1 # LotR, moved from republican vassal contract
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -3562,11 +3486,11 @@ tradition_bellakarean_cities = {
 					desc = 90_percent_cities_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -3625,7 +3549,7 @@ tradition_annammonnil = {
 			has_cultural_tradition = tradition_hidden_cities
 		}
 		has_cultural_pillar = heritage_moriquendi
-	}	
+	}
 
 	can_pick = {
 		NOT = {
@@ -3719,7 +3643,7 @@ tradition_annammonnil = {
 					desc = inspired_by_culture_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -3750,9 +3674,9 @@ tradition_gorgoroth_plain_dwellers = { # Remade tradition_caucasian_wolves to fi
 	layers = { # needs better picture
 		0 = steward
 		1 = mena
-		4 = mountain.dds
+		4 = lotr_gorgoroth_plain_dwellers.dds
 	}
-	
+
 	is_shown = {
 			is_orc_culture = yes
 			any_culture_county = {
@@ -3775,7 +3699,7 @@ tradition_gorgoroth_plain_dwellers = { # Remade tradition_caucasian_wolves to fi
 			}
 		}
 	}
-	
+
 	parameters = {
 		#unlock_maa_monaspa = no # replace this with an unique Building!
 		rough_terrain_expert_trait_more_common = yes
@@ -3791,7 +3715,7 @@ tradition_gorgoroth_plain_dwellers = { # Remade tradition_caucasian_wolves to fi
 	character_modifier = {
 		volcanic_plains_travel_danger = volcanic_plains_medium_danger_reduction
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -3828,7 +3752,7 @@ tradition_gorgoroth_plain_dwellers = { # Remade tradition_caucasian_wolves to fi
 					desc = volcanic_plains_percentage_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -3864,14 +3788,14 @@ tradition_roving_bands = {
 		1 = mediterranean
 		4 = fight.dds
 	}
-	
+
 	is_shown = {
 		is_orc_culture = yes
 		NOT = {
 			has_cultural_tradition = tradition_gorgoroth_plain_dwellers
 		}
 	}
-	
+
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
 
@@ -3885,7 +3809,7 @@ tradition_roving_bands = {
             }
         }
 	}
-	
+
 	parameters = {
 		wanderers_gain_extra_combat_skills = yes
 		#mercenary_courtiers_gain_extra_skills = yes
@@ -3893,14 +3817,14 @@ tradition_roving_bands = {
 		unlock_voluntary_laampdom = yes
 		more_likely_to_be_laamps = yes
 	}
-	
+
 	character_modifier = {
 		character_travel_speed_mult = 0.15
 		character_travel_safety_mult = 0.10
 		hostile_county_attrition_raiding = -0.25
 		raid_speed = 0.1
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -3947,11 +3871,11 @@ tradition_roving_bands = {
 					desc = rulers_with_reaver_desc
 				}
 			}
-			
+
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 100
 		if = {
@@ -3964,7 +3888,7 @@ tradition_roving_bands = {
 								has_holding_type = dwarven_holding
 							}
 						}
-					}			
+					}
 				}
 				multiply = 0
 			}
@@ -3979,11 +3903,11 @@ tradition_beast_masters = {
 		1 = mediterranean
 		4 = wolves_of_the_deep_steppe.dds
 	}
-	
+
 	is_shown = {
 		is_orc_culture = yes
 	}
-	
+
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
 
@@ -3997,7 +3921,7 @@ tradition_beast_masters = {
             }
         }
 	}
-	
+
 	character_modifier = {
 		monster_recruitment_cost_mult = -0.15
 		monster_maintenance_mult = -0.15
@@ -4006,7 +3930,7 @@ tradition_beast_masters = {
 		light_cavalry_damage_mult = 0.15
 		light_cavalry_toughness_mult = 0.15
 	}
-	
+
 	cost = {
 		prestige = {
 			add = {
@@ -4042,11 +3966,11 @@ tradition_beast_masters = {
 					value = tradition_unfulfilled_criteria_penalty
 					desc = knights_with_prowess_desc
 				}
-			}			
+			}
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
+
 	ai_will_do = {
 		value = 200
 		if = {
@@ -4081,9 +4005,11 @@ tradition_thralls_of_angmar = {
 		4 = iron_crown.dds
 	}
 	is_shown = {
+		NOT = { has_cultural_tradition = tradition_loyal_soldiers }
 		is_orc_culture = yes
 	}
 	can_pick = {
+		NOT = { has_cultural_tradition = tradition_loyal_soldiers }
 		culture_not_pacifistic_trigger = yes
 		custom_tooltip = {
 			text = culture_in_angmar_desc
@@ -4093,7 +4019,7 @@ tradition_thralls_of_angmar = {
 					geographical_region = middleearth_forodwaith_angmar
 				}
 			}
-		}		
+		}
 		trigger_if = { #LotR
             limit = {
                 scope:replacing ?= culture_tradition:tradition_variag_succession
@@ -4199,26 +4125,26 @@ tradition_thralls_of_angmar = {
 		# 1 = western
 		# 4 = ship.dds
 	# }
-	
+
 	# is_shown = {
 		# always = yes # Placeholder
 		# # TO DO (Juke?)
 	# }
-	
+
 	# can_pick = {
 		# always = yes # Placeholder
 		# # TO DO: Juke?
 	# }
-	
+
 	# parameters = {
 		# can_travel_along_rivers = yes
 		# can_go_whaling = yes
 	# }
-	
+
 	# character_modifier = {
 		# sea_travel_danger = medium_sea_danger_reduction
 	# }
-	
+
 	# cost = {
 		# prestige = {
 			# add = {
@@ -4227,11 +4153,11 @@ tradition_thralls_of_angmar = {
 				# format = "BASE_VALUE_FORMAT"
 			# }
 			# # TO DO: Juke?
-			
+
 			# multiply = tradition_replacement_cost_if_relevant
 		# }
 	# }
-	
+
 	# ai_will_do = {
 		# value = 100
 		# # TO DO: Juke?
@@ -4246,14 +4172,14 @@ tradition_thralls_of_angmar = {
 #		1 = mena
 #		4 = bow.dds
 #	}
-#	
+#
 #	is_shown = {
 #		has_cultural_pillar = heritage_east_african
 #	}
 #	can_pick = {
 #		always = no
 #	}
-#	
+#
 #	parameters = {
 #		unlock_maa_archers_of_the_nile = yes
 #		hunting_archery_building_bonuses = yes
@@ -4267,7 +4193,7 @@ tradition_thralls_of_angmar = {
 #	character_modifier = {
 #		defender_advantage = 5
 #	}
-#	
+#
 #	cost = {
 #		prestige = {
 #			add = {
@@ -4303,7 +4229,7 @@ tradition_thralls_of_angmar = {
 #					desc = culture_head_archers_desc
 #				}
 #			}
-#			
+#
 #			multiply = tradition_replacement_cost_if_relevant
 #		}
 #	}
@@ -4336,7 +4262,7 @@ tradition_thralls_of_angmar = {
 #		1 = mena
 #		4 = greeting.dds
 #	}
-#	
+#
 #	is_shown = {
 #		NOR = {
 #			any_in_list = { list = traits this = flag:tradition_african_tolerance }
@@ -4360,8 +4286,8 @@ tradition_thralls_of_angmar = {
 #	}
 #
 #	parameters = { #easily convert and don't force conversion
-#		more_easily_converted = yes 
-#		less_likely_to_force_conversion = yes 
+#		more_easily_converted = yes
+#		less_likely_to_force_conversion = yes
 #	}
 #
 #	character_modifier = { # easier to self-convert and create or reform faith
@@ -4392,11 +4318,11 @@ tradition_thralls_of_angmar = {
 #				}
 #			}
 #			# No extra cost here, since we have a fairly restrictive can_pick block.
-#			
+#
 #			multiply = tradition_replacement_cost_if_relevant
 #		}
 #	}
-#	
+#
 #	ai_will_do = {
 #		value = 100
 #		if = {

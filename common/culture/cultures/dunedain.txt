@@ -17,13 +17,13 @@ numenorean = {
 	# Any characters born on Numenor should use Numenorean culture, right up until the Akallabêth (Unless they emigrated and significantly integrated with the locals on the mainland)
 	# Any Numenorean characters alive after the Downfall should be represented as converting to either Dunedain of Black Numenorean culture after the Downfall.
 	# This should prevent anyone from reviving the culture.
-	
+
 	color = { 95 71 102 }
 	created = 593.1.1
 	parents = { beorian hadorim }
 
 	history_loc_override = numenorean_history_loc
-	
+
 	ethos = ethos_courtly
 	heritage = heritage_dunedain
 	language = language_adunaic
@@ -41,18 +41,18 @@ numenorean = {
 		requires_dlc_flag = hybridize_culture
 		fallback = tradition_conservative
 	}
-	
+
 	name_list = name_list_adunaic #Never appear outside of Sunset Invasion, so use Black Numenorean names
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { numenorean_clothing_gfx }
 	unit_gfx = { acg_numenorean_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		1 = numenorean_ethnicity
+		100 = numenorean_ethnicity
 	}
 }
 
@@ -62,7 +62,7 @@ new_numenorean = {
 	#	color = hsv { 0.85 0.27 0.42 }
 	created = 7000.1.1 # Doesn't Exist at game start
 	parents = { numenorean }
-	
+
 	ethos = ethos_bureaucratic
 	heritage = heritage_dunedain
 	language = language_adunaic
@@ -77,67 +77,31 @@ new_numenorean = {
 		tradition_faith_bound
 		tradition_fp3_beacon_of_learning
 	}
-	
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
 	unit_gfx = { acg_numenorean_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
-	ethnicities = {
-		1 = numenorean_ethnicity
-	}
-}
 
-new_dunedain = {
-	color = { 50 75 125 }
-	#	color = hsv { 0.85 0.27 0.42 }
-	created = 7000.1.1 # Doesn't Exist at game start
-	parents = { gondorian arnorian }
-	
-	ethos = ethos_bureaucratic
-	heritage = heritage_dunedain
-	language = language_westron
-	martial_custom = martial_custom_male_only
-	head_determination = head_determination_domain
-	traditions = {
-		tradition_mende_anduya
-		tradition_unified_dunedain
-		tradition_tales_of_great_deeds
-		tradition_seafaring
-		tradition_castle_keepers
-		tradition_faith_bound
-	}
-	
-	name_list = name_list_dunedain
-	
-	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
-	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
-	clothing_gfx = { gondorian_clothing_gfx }
-	unit_gfx = { acg_dunedain_unit_gfx dunedain_unit_gfx }
-	house_coa_frame = house_frame_04
-	dynasty_coa_frame = house_frame_04
-	
 	ethnicities = {
-		3 = numenorean_ethnicity
-		1 = eriadorim_ethnicity
+		100 = numenorean_ethnicity
 	}
 }
-##End Quonton
 
 dunedain = {
 	# Any faithful born in the colonies should use Dunedain culture
 	# Any faithful numenoreans born on Numenor should convert to Dunedain culture after the Downfall
-	
+
 	color = { 50 70 120 }
 	created = 2942.1.1 # Founding of Pelargir
 	parents = { numenorean }
 
 	history_loc_override = dunedain_history_loc
-	
+
 	ethos = ethos_spiritual
 	heritage = heritage_dunedain
 	language = language_sindarin
@@ -150,19 +114,18 @@ dunedain = {
 		tradition_castle_keepers
 		tradition_faith_bound
 	}
-	
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { arnorian_clothing_gfx }
 	unit_gfx = { acg_dunedain_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		3 = numenorean_ethnicity
-		1 = eriadorim_ethnicity
+		100 = dunedain_ethnicity
 	}
 }
 
@@ -170,9 +133,9 @@ arnorian = {
 	color = arthedain_blue
 	created = 4035.1.1
 	parents = { dunedain }
-	
+
 	history_loc_override = anorian_history_loc
-	
+
 	ethos = ethos_bureaucratic
 	heritage = heritage_dunedain
 	language = language_westron
@@ -189,29 +152,29 @@ arnorian = {
 		requires_dlc_flag = hybridize_culture
 		fallback = tradition_conservative
 	}
-	
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { arnorian_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { arnorian_clothing_gfx }
 	unit_gfx = { acg_arnorian_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		2 = numenorean_ethnicity
-		3 = eriadorim_ethnicity
+		70 = dunedain_ethnicity
+		30 = eriadorim_ethnicity
 	}
 }
 
-uialedain = { #Folk of Emyn Uial (Hills of Evendim) 
+uialedain = { #Folk of Emyn Uial (Hills of Evendim)
 	color = { 38 102 158 }
 	created = 6008.1.1 # Aftermath of the Battle of Fornost
 	parents = { arnorian }
-	
+
 	history_loc_override = uialedain_history_loc
-	
+
 	ethos = ethos_bureaucratic
 	heritage = heritage_dunedain
 	language = language_westron
@@ -233,29 +196,29 @@ uialedain = { #Folk of Emyn Uial (Hills of Evendim)
 		requires_dlc_flag = legacy_of_persia
 		fallback = tradition_philosopher_culture
 	}
-	
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { arnorian_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { uialedain_clothing_gfx }
 	unit_gfx = { acg_uialedain_unit_gfx western_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		1 = numenorean_ethnicity
-		1 = eriadorim_ethnicity
+		50 = dunedain_ethnicity
+		50 = eriadorim_ethnicity
 	}
 }
 
 dunedain_ranger = { # For the Dúnedain of Arnor after the fall of Fornost and the transition to the rangers
-	color = { 72 103 144 } 
+	color = { 72 103 144 }
 	created = 6008.1.1 # Aftermath of the Battle of Fornost
 	parents = { arnorian }
-	
+
 	history_loc_override = dunedain_ranger_history_loc
-	
+
 	ethos = ethos_communal
 	heritage = heritage_dunedain
 	language = language_westron
@@ -273,19 +236,18 @@ dunedain_ranger = { # For the Dúnedain of Arnor after the fall of Fornost and t
 		requires_dlc_flag = legacy_of_persia
 		fallback = tradition_philosopher_culture
 	}
-	
+
 	name_list = name_list_ranger
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { arnorian_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { dunedain_clothing_gfx }
 	unit_gfx = { acg_dunedain_ranger_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		1 = numenorean_ethnicity
-		1 = eriadorim_ethnicity
+		100 = dunedain_ethnicity
 	}
 }
 
@@ -293,7 +255,7 @@ new_arnorian = { # Revivalist culture of Arnor in the Fourth Age
 	color = { 35 60 125 }
 	created = 7055.1.1
 	parents = { dunedain_ranger gondorian }
-	
+
 	history_loc_override = new_arnorian_history_loc
 
 	ethos = ethos_communal
@@ -303,9 +265,10 @@ new_arnorian = { # Revivalist culture of Arnor in the Fourth Age
 	head_determination = head_determination_domain
 	traditions = {
 		tradition_mende_anduya
+		tradition_arnorian_legacy
 		tradition_castle_keepers
 		tradition_metal_craftsmanship
-		tradition_stalwart_defenders
+		#tradition_stalwart_defenders
 		tradition_tales_of_great_deeds
 	}
 
@@ -325,18 +288,19 @@ new_arnorian = { # Revivalist culture of Arnor in the Fourth Age
 	dynasty_coa_frame = house_frame_04
 
 	ethnicities = {
-		2 = numenorean_ethnicity
-		3 = eriadorim_ethnicity
+		40 = dunedain_ethnicity
+		40 = gondorian_ethnicity
+		20 = eriadorim_ethnicity
 	}
 }
 
 gondorian = {
-	color = { 1 40 106 } #gondor_blue 
+	color = { 1 40 106 } #gondor_blue
 	created = 4035.1.1
 	parents = { dunedain }
-	
+
 	history_loc_override = gondorian_history_loc
-	
+
 	ethos = ethos_courtly # Changes to ethos_stoic after Great Plague
 	heritage = heritage_dunedain
 	language = language_westron
@@ -350,30 +314,29 @@ gondorian = {
 		tradition_seafaring # Replaced with tradition_stalwart_defenders after Great Plague
 		# tradition_stalwart_defenders
 	}
-	
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
 	unit_gfx = { acg_gondorian_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		1 = numenorean_ethnicity
-		2 = gondorian_ethnicity
+		100 = gondorian_ethnicity
 	}
 }
 
 caledhrim = { # The people of Calenardhon, descended from a mix of the local Daen and Gondorian settlers, many who miragted to the region due to the land grants of Meneldil
-	color = { 60 100 210 } 
+	color = { 60 100 210 }
 	created = 4192.1.1 # The first year of Cemendur's reign
 	parents = { gondorian danaine }
-	
+
 	history_loc_override = caledhrim_history_loc
-	
-	ethos = ethos_stoic 
+
+	ethos = ethos_stoic
 	heritage = heritage_dunedain
 	language = language_westron
 	martial_custom = martial_custom_male_only
@@ -385,31 +348,30 @@ caledhrim = { # The people of Calenardhon, descended from a mix of the local Dae
 		tradition_stalwart_defenders
 		tradition_horse_breeder
 	}
-	
-	name_list = name_list_dunedain #Maybe mix in  some Danaine names 
-	
+
+	name_list = name_list_dunedain #Maybe mix in  some Danaine names
+
 	coa_gfx = { caledhrim_coa_gfx numenorean_coa_gfx dunedain_group_coa_gfx eredrim_coa_gfx }
 	building_gfx = { caledhrim_building_gfx numenorean_building_gfx daen_building_gfx western_building_gfx  }
 	clothing_gfx = { gondorian_clothing_gfx }
 	unit_gfx = { acg_caledhrim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = { # mixed Daen and Gondorian ethnicites
-		50 = gondorian_ethnicity
-		10 = dunlending_ethnicity
-		10 = donan_ethnicity		
-		5 = numenorean_ethnicity
+		60 = gondorian_ethnicity
+		20 = dunlending_ethnicity
+		20 = donan_ethnicity
 	}
 }
 
 orodbedhrim = { # The mixed people of the highlands, descended from the Men of the Mountains who embraced Gondor's rule and culture during the reigns of the Ship-Kings
-	color = { 30 50 70 } 
+	color = { 30 50 70 }
 	created = 4833.1.1 # The middle of Siriondil's reign
 	parents = { gondorian coenfir }
-	
+
 	history_loc_override = orodbedhrim_history_loc
-	
+
 	ethos = ethos_communal # To represent their more clan-based nature
 	heritage = heritage_dunedain
 	language = language_westron
@@ -418,24 +380,23 @@ orodbedhrim = { # The mixed people of the highlands, descended from the Men of t
 	traditions = {
 		tradition_gondorian_legacy
 		tradition_gondor_clans
-		tradition_hill_dwellers 
-		tradition_strong_kinship 
+		tradition_hill_dwellers
+		tradition_strong_kinship
 		tradition_warrior_culture
 	}
-	
+
 	name_list = name_list_dunedain # A mixed Eredrim+Gondorian list might be more fitting?
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { gondorian_clothing_gfx }
 	unit_gfx = { acg_orodbedhrim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = { # mixed Daen and Gondorian ethnicites
-		40 = gondorian_ethnicity
+		45 = gondorian_ethnicity
 		55 = eredrim_ethnicity
-		5 = numenorean_ethnicity
 	}
 }
 
@@ -443,30 +404,37 @@ umbaredain = {
 	color = { 43 97 89 }
 	created = 5203.1.1
 	parents = { gondorian old_umbarean }
-	
+
 	history_loc_override = umbaredain_history_loc
-	
+
 	ethos = ethos_courtly
 	heritage = heritage_dunedain
 	language = language_westron_south
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		tradition_dunedain_of_umbar 
+		tradition_dunedain_of_umbar
 		tradition_seafaring
 		tradition_castle_keepers
 		tradition_eye_for_an_eye
+		# tradition_corsairs_of_umbar # Added after Kin-strife
 	}
-	
+
+	dlc_tradition = {
+		trait = tradition_staunch_traditionalists
+		requires_dlc_flag = hybridize_culture
+		fallback = tradition_conservative
+	}
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
-	clothing_gfx = { umbar_clothing_gfx }
+	clothing_gfx = { umbaredain_clothing_gfx }
 	unit_gfx = { acg_umbaredain_unit_gfx eastern_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
 		85 = gondorian_ethnicity
 		15 = black_numenorean_ethnicity
@@ -477,38 +445,38 @@ harondorim = {
 	color = { 85 148 149 }
 	created = 5993.1.1
 	parents = { gondorian donan }
-	
+
 	history_loc_override = harondorim_history_loc
-	
+
 	ethos = ethos_egalitarian
 	heritage = heritage_dunedain
 	language = language_westron_south
 	martial_custom = martial_custom_male_only
 	head_determination = head_determination_domain
 	traditions = {
-		tradition_gondorian_legacy
-		#tradition_harondorim_resilience
+		# tradition_gondorian_legacy
+		tradition_harondorim_resilience
 		tradition_highland_warriors
 		tradition_hill_dwellers
 		tradition_xenophilic
 		tradition_stalwart_defenders
 	}
-	
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { numenorean_building_gfx mediterranean_building_gfx }
 	clothing_gfx = { harondorim_clothing_gfx } #replace to new mix of north_haradrim and gondorian
 	unit_gfx = { acg_harondorim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		55 = gondorian_ethnicity
-		15 = haradrim_ethnicity
+		50 = gondorian_ethnicity
+		20 = haradrim_ethnicity
 		15 = umbarean_ethnicity
 		10 = donan_ethnicity
-		5 = numenorean_ethnicity
+		5 = black_numenorean_ethnicity
 	}
 }
 
@@ -518,7 +486,7 @@ belfalathrim = {
 	parents = { numenorean }
 
 	history_loc_override = belfalathrim_history_loc
-	
+
 	ethos = ethos_courtly
 	heritage = heritage_dunedain
 	language = language_sindarin
@@ -531,20 +499,57 @@ belfalathrim = {
 		tradition_tales_of_great_deeds
 		tradition_horse_breeder
 	}
-	
+
 	name_list = name_list_dunedain
-	
+
 	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
 	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
 	clothing_gfx = { belfalathrim_clothing_gfx }
 	unit_gfx = { acg_belfalathrim_unit_gfx dunedain_unit_gfx }
 	house_coa_frame = house_frame_04
 	dynasty_coa_frame = house_frame_04
-	
+
 	ethnicities = {
-		5 = belfalathrim_ethnicity
-		1 = amrodrim_ethnicity
-		1 = numenorean_ethnicity
+		70 = belfalathrim_ethnicity
+		15 = amrodrim_ethnicity
+		15 = gondorian_ethnicity
+	}
+}
+
+new_dunedain = {
+	color = { 50 75 125 }
+	#	color = hsv { 0.85 0.27 0.42 }
+	created = 7000.1.1 # Doesn't Exist at game start
+	parents = { gondorian arnorian }
+
+	history_loc_override = new_dunedain_history_loc
+
+	ethos = ethos_bureaucratic
+	heritage = heritage_dunedain
+	language = language_westron
+	martial_custom = martial_custom_male_only
+	head_determination = head_determination_domain
+	traditions = {
+		tradition_mende_anduya
+		tradition_rk_legacy
+		tradition_tales_of_great_deeds
+		tradition_seafaring
+		tradition_castle_keepers
+		tradition_faith_bound
+	}
+
+	name_list = name_list_dunedain
+
+	coa_gfx = { numenorean_coa_gfx dunedain_group_coa_gfx }
+	building_gfx = { dunedain_building_gfx numenorean_building_gfx western_building_gfx }
+	clothing_gfx = { gondorian_clothing_gfx }
+	unit_gfx = { acg_dunedain_unit_gfx dunedain_unit_gfx }
+	house_coa_frame = house_frame_04
+	dynasty_coa_frame = house_frame_04
+
+	ethnicities = {
+		50 = dunedain_ethnicity
+		50 = gondorian_ethnicity
 	}
 }
 
@@ -576,8 +581,8 @@ eothedain = {
 	unit_gfx = { acg_caledhrim_unit_gfx dunedain_unit_gfx }
 	
 	ethnicities = {
-		1 = numenorean_ethnicity
-		1 = gondorian_ethnicity
-		3 = rohirrim_ethnicity
+		30 = numenorean_ethnicity
+		30 = gondorian_ethnicity
+		40 = rohirrim_ethnicity
 	}
 }

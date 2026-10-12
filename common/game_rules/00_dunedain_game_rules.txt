@@ -33,34 +33,34 @@ dunedain_bon_rule = {
 	
 }
 
-non_sauron_evil_strength_rule = {
-	default = default_evil_strength
-	
-	categories = {
-		realms historicity ai
-	}
-	
-	weakened_evil_strength = {
-	
-	}
-	
-	default_evil_strength = {
-	
-	}
-	
-	strong_evil_strength = {
-	
-	}
-	
-	very_strong_evil_strength = {
-	
-	}
-	
-	apocalyptic_evil_strength = {
-	
-	}
-	
-}
+#non_sauron_evil_strength_rule = {
+#	default = default_evil_strength
+#	
+#	categories = {
+#		realms historicity ai
+#	}
+#	
+#	weakened_evil_strength = {
+#	
+#	}
+#	
+#	default_evil_strength = {
+#	
+#	}
+#	
+#	strong_evil_strength = {
+#	
+#	}
+#	
+#	very_strong_evil_strength = {
+#	
+#	}
+#	
+#	apocalyptic_evil_strength = {
+#	
+#	}
+#	
+#}
 
 is_dominion_evil_rule = {
 	default = no_they_arent

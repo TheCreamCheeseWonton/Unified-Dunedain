@@ -26,7 +26,7 @@
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		1 = black_numenorean_ethnicity
+		100 = black_numenorean_ethnicity
 	}
 }
 
@@ -61,6 +61,6 @@ new_numenorean_adunaic = {
 	dynasty_coa_frame = house_frame_lotr_1
 	
 	ethnicities = {
-		1 = numenorean_ethnicity
+		100 = numenorean_ethnicity
 	}
 }

@@ -296,7 +296,7 @@ alley_night = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
@@ -355,7 +355,7 @@ alley_day = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_day.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_day.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -507,7 +507,7 @@ battlefield = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/battlefield_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_battlefield_dunedain.dds"
 		environment = "environment_event_farms"
 		ambience = "event:/SFX/Events/Backgrounds/battlefield_gloomy"
 	}
@@ -563,7 +563,7 @@ temple = {
 				location.culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_temple_dwarven.dds"
 		environment = "environment_event_temple"
 		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
@@ -585,7 +585,7 @@ temple = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_nimrodel.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
 	}
@@ -621,7 +621,7 @@ temple = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_temple_dwarven.dds"
 		environment = "environment_event_temple"
 		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
@@ -950,7 +950,7 @@ temple_scope = {
 				culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_temple_dwarven.dds"
 		environment = "environment_event_temple"
 		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
@@ -961,7 +961,7 @@ temple_scope = {
 				terrain = mallorn_forest
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_nimrodel.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
 	}
@@ -979,7 +979,7 @@ temple_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_temple_dwarven.dds"
 		environment = "environment_event_temple"
 		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
@@ -1464,7 +1464,7 @@ corridor_day = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/corridor_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_corridor_dunedain.dds"
 		environment = "environment_frontend_mediterranean_main" 
 		ambience = "event:/DLC/FP2/SFX/Events/corridor_day"
 	}
@@ -1476,7 +1476,7 @@ corridor_day = {
 			}
 			trigger_else = { location.culture = { is_dwarf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/corridor_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_corridor_dwarven.dds"
 		environment = "environment_event_corridor_day"
 		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_day"
 	}
@@ -2958,7 +2958,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -2979,7 +2979,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -3000,7 +3000,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -3233,7 +3233,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/harad_drylands.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_harad_drylands.dds"
 		environment = "environment_event_steppe"
 		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
 	}
@@ -3380,7 +3380,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -3401,7 +3401,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/arctic.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_arctic.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -3422,7 +3422,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_halls.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
@@ -3443,7 +3443,7 @@ wilderness = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/saltflats.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_saltflats.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -3461,21 +3461,21 @@ wilderness_scope = {
 
 	background = { #LotR Rhûn desert
 		trigger = { scope:background_wilderness_scope = { graphical_wilderness_desert_rhun_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
 	
 	background = { #LotR forest_deep
 		trigger = { scope:background_wilderness_scope = { graphical_wilderness_forest_deep_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
 
 	background = { #LotR forest_mallorn
 		trigger = { scope:background_wilderness_scope = { graphical_wilderness_forest_mallorn_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -3635,7 +3635,7 @@ wilderness_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/harad_drylands.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_harad_drylands.dds"
 		environment = "environment_event_steppe"
 		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
 	}
@@ -3723,7 +3723,7 @@ wilderness_scope = {
 				graphical_wilderness_volcanic_trigger = yes
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -3734,7 +3734,7 @@ wilderness_scope = {
 				graphical_wilderness_arctic_trigger = yes
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/arctic.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_arctic.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -3745,14 +3745,14 @@ wilderness_scope = {
 				graphical_underground_caverns_trigger = yes
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_halls.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
 	
 	background = { #LotR saltflats
 		trigger = { scope:background_wilderness_scope = { graphical_wilderness_saltflats_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/saltflats.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_saltflats.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -3768,7 +3768,7 @@ wilderness_activity = {
 
 	background = { #LotR Rhûn desert
 		trigger = { scope:activity.activity_location ?= { graphical_wilderness_desert_rhun_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -3956,14 +3956,14 @@ wilderness_activity = {
 	
 	background = { #LotR forest_deep
 		trigger = { scope:activity.activity_location ?= { graphical_wilderness_forest_deep_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
 
 	background = { #LotR forest_mallorn
 		trigger = { scope:activity.activity_location ?= { graphical_wilderness_forest_mallorn_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -4021,7 +4021,7 @@ wilderness_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_volcanic_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -4031,7 +4031,7 @@ wilderness_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_arctic_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/arctic.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_arctic.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -4041,7 +4041,7 @@ wilderness_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_underground_caverns_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_halls.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
@@ -4051,7 +4051,7 @@ wilderness_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_saltflats_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/saltflats.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_saltflats.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -4169,7 +4169,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -4432,7 +4432,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -4453,7 +4453,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -4603,7 +4603,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/harad_drylands.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_harad_drylands.dds"
 		environment = "environment_event_steppe"
 		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
 	}
@@ -4765,7 +4765,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_event_farms"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -4869,7 +4869,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -4890,7 +4890,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/arctic.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_arctic.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -4911,7 +4911,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_halls.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
@@ -4932,7 +4932,7 @@ terrain = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/saltflats.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_saltflats.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -5086,7 +5086,7 @@ terrain_scope = {
 	
 	background = { #LotR Rhûn desert
 		trigger = { scope:background_terrain_scope = { graphical_wilderness_desert_rhun_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -5104,14 +5104,14 @@ terrain_scope = {
 	
 	background = { #LotR forest_deep
 		trigger = { scope:background_terrain_scope = { graphical_wilderness_forest_deep_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
 	
 	background = { #LotR forest_mallorn
 		trigger = { scope:background_terrain_scope = { graphical_wilderness_forest_mallorn_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -5222,7 +5222,7 @@ terrain_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/harad_drylands.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_harad_drylands.dds"
 		environment = "environment_event_steppe"
 		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
 	}
@@ -5291,7 +5291,7 @@ terrain_scope = {
 				culture ?= { has_cultural_pillar = heritage_periannath }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_event_farms"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -5347,28 +5347,28 @@ terrain_scope = {
 	
 	background = { #LotR volcanic_plains
 		trigger = { scope:background_terrain_scope = { graphical_wilderness_volcanic_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
 
 	background = { #LotR arctic
 		trigger = { scope:background_terrain_scope = { graphical_wilderness_arctic_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/arctic.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_arctic.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
 
 	background = { #LotR underground
 		trigger = { scope:background_terrain_scope = { graphical_underground_caverns_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_halls.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
 	
 	background = { #LotR saltflats
 		trigger = { scope:background_terrain_scope = { graphical_wilderness_saltflats_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/saltflats.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_saltflats.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -5473,7 +5473,7 @@ terrain_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_desert_rhun_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -5503,7 +5503,7 @@ terrain_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_forest_deep_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -5513,7 +5513,7 @@ terrain_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_forest_mallorn_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -5581,7 +5581,7 @@ terrain_activity = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/harad_drylands.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_harad_drylands.dds"
 		environment = "environment_event_steppe"
 		ambience = "event:/SFX/Events/Backgrounds/steppe_day"
 	}
@@ -5700,7 +5700,7 @@ terrain_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_volcanic_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast" 
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -5710,7 +5710,7 @@ terrain_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_arctic_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/arctic.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_arctic.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -5720,7 +5720,7 @@ terrain_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_underground_caverns_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_halls.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
@@ -5730,7 +5730,7 @@ terrain_activity = {
 			exists = scope:activity.activity_location
 			scope:activity.activity_location ?= { graphical_wilderness_saltflats_trigger = yes } 
 		}
-		reference = "gfx/interface/illustrations/event_scenes/saltflats.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_saltflats.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -5809,7 +5809,7 @@ terrain_travel = {
 				culture ?= { is_hobbit_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -5825,7 +5825,7 @@ terrain_travel = {
 				culture ?= { is_elf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_holding.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_holding.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -5910,7 +5910,7 @@ terrain_travel = {
 				exists = province_owner
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -5966,7 +5966,7 @@ terrain_travel = {
 
 	background = { #LotR forest_deep
 		trigger = { location ?= { graphical_wilderness_forest_deep_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -5975,7 +5975,7 @@ terrain_travel = {
 			location ?= { graphical_wilderness_forest_mallorn_trigger = yes } 
 			NOT = { exists = province_owner }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -5984,7 +5984,7 @@ terrain_travel = {
 			location ?= { graphical_wilderness_forest_mallorn_trigger = yes } 
 			exists = province_owner
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_day.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_day.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}	
@@ -6028,7 +6028,7 @@ terrain_travel = {
 				NOT = { is_dwarf = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_mountain_settlement"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -6191,14 +6191,14 @@ terrain_travel = {
 	
 	background = { #LotR volcanic_plains
 		trigger = { location ?= { graphical_wilderness_volcanic_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast" 
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
 
 	background = { #LotR arctic
 		trigger = { location ?= { graphical_wilderness_arctic_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/arctic.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_arctic.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -6211,8 +6211,8 @@ terrain_travel = {
 				culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dwarven.dds"
-		environment = "environment_bp2_university"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_dwarven.dds"
+		environment = "environment_tgp_tanabata_festival_night_japan"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
 	background = { #LotR underground, orc settled
@@ -6223,7 +6223,7 @@ terrain_travel = {
 				culture ?= { is_orc_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -6232,14 +6232,14 @@ terrain_travel = {
 			location ?= { graphical_underground_caverns_trigger = yes } 
 			NOT = { exists = province_owner }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_halls.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
 	
 	background = { #LotR saltflats
 		trigger = { location ?= { graphical_wilderness_saltflats_trigger = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/saltflats.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_saltflats.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -6279,7 +6279,7 @@ docks = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/docks_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_docks_dunedain.dds"
 		environment = "environment_event_docks"
 		ambience = "event:/SFX/Events/Backgrounds/docks_day"
 	}
@@ -6296,7 +6296,7 @@ docks = {
 				location = { lotr_has_numenorean_culture_trigger = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/docks_adunai.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_docks_adunai.dds"
 		environment = "environment_event_docks"
 		ambience = "event:/SFX/Events/Backgrounds/docks_day"
 	}
@@ -6313,7 +6313,7 @@ docks = {
 				location = { is_elf = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/docks_elf.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_docks_elf.dds"
 		environment = "environment_event_corridor"
 		ambience = "event:/SFX/Events/Backgrounds/docks_day"
 	}
@@ -6491,7 +6491,7 @@ feast = {
 				scope:activity.activity_location.county ?= title:c_aradhrynd
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_thranduils_halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_thranduils_halls.dds"
 		environment = "environment_frontend_east_main"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6509,7 +6509,7 @@ feast = {
 				scope:activity.activity_location ?= { terrain = mallorn_forest }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6549,7 +6549,7 @@ feast = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/fangorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_fangorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6565,7 +6565,7 @@ feast = {
 				scope:activity.activity_location.culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_dwarven.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6581,7 +6581,7 @@ feast = {
 				scope:activity.activity_location.culture ?= { is_hobbit_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_hobbit.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6599,7 +6599,7 @@ feast = {
 				scope:activity.activity_location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6615,7 +6615,7 @@ feast = {
 				scope:activity.activity_location.culture ?= { is_orc_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_orc_camp.dds"
 		environment = "environment_event_battlefield"
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
@@ -6877,7 +6877,7 @@ feast_event = {
 				location.county ?= title:c_aradhrynd
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_thranduils_halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_thranduils_halls.dds"
 		environment = "environment_frontend_east_main"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6895,7 +6895,7 @@ feast_event = {
 				location ?= { terrain = mallorn_forest }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6935,7 +6935,7 @@ feast_event = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/fangorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_fangorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6951,7 +6951,7 @@ feast_event = {
 				location.culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_dwarven.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6967,7 +6967,7 @@ feast_event = {
 				location.culture ?= { is_hobbit_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_hobbit.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -6985,7 +6985,7 @@ feast_event = {
 				location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -7001,7 +7001,7 @@ feast_event = {
 				location.culture ?= { is_orc_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_orc_camp.dds"
 		environment = "environment_event_battlefield"
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
@@ -7255,7 +7255,7 @@ garden = {
 				location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/corridor_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_corridor_dwarven.dds"
 		environment = "environment_event_corridor_day"
 		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_day"
 	}
@@ -7271,7 +7271,7 @@ garden = {
 				location ?= { geographical_region = middleearth_mordor_gorgoroth }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast" 
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -7637,7 +7637,7 @@ garden_location = {
 				location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/corridor_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_corridor_dwarven.dds"
 		environment = "environment_event_corridor_day"
 		ambience = "event:/SFX/Events/Backgrounds/castle_corridor_day"
 	}
@@ -7645,7 +7645,7 @@ garden_location = {
 		trigger ={
 			location ?= { geographical_region = middleearth_mordor_gorgoroth }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast" 
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -8003,7 +8003,7 @@ market = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_day.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_day.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8026,7 +8026,7 @@ market = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_town.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_town.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8043,7 +8043,7 @@ market = {
 				location.culture ?= { is_hobbit_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_hobbit.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8074,7 +8074,7 @@ market = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_dunedain.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8091,8 +8091,8 @@ market = {
 				location.culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dwarven.dds"
-		environment = "environment_bp2_university"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_dwarven.dds"
+		environment = "environment_tgp_tanabata_festival_night_japan"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
 
@@ -8110,7 +8110,7 @@ market = {
 					location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8127,7 +8127,7 @@ market = {
 				location.culture ?= { is_orc_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_orc_camp.dds"
 		environment = "environment_event_battlefield"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8495,7 +8495,7 @@ market_scope = {
 				culture ?= { is_elf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_day.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_day.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8507,7 +8507,7 @@ market_scope = {
 				culture ?= { is_elf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_town.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_town.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8518,7 +8518,7 @@ market_scope = {
 				culture ?= { is_hobbit_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_hobbit.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8536,7 +8536,7 @@ market_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_dunedain.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8547,8 +8547,8 @@ market_scope = {
 				culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dwarven.dds"
-		environment = "environment_bp2_university"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_dwarven.dds"
+		environment = "environment_tgp_tanabata_festival_night_japan"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
 
@@ -8559,7 +8559,7 @@ market_scope = {
 				location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8570,7 +8570,7 @@ market_scope = {
 				culture ?= { is_orc_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_orc_camp.dds"
 		environment = "environment_event_battlefield"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8695,8 +8695,6 @@ market_scope = {
 					culture ?= { has_cultural_pillar = heritage_northern_adunaic }
 					culture ?= { has_cultural_pillar = heritage_bellakari }
 					culture ?= { has_cultural_pillar = heritage_southern_adunaic }
-					##Quonton
-					culture ?= { has_cultural_pillar = heritage_unified_adunaic }
 				}
 			}
 		}
@@ -8810,7 +8808,7 @@ village = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_day.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_day.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8833,7 +8831,7 @@ village = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_town.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_town.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8850,7 +8848,7 @@ village = {
 				location.culture ?= { is_hobbit_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_hobbit.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8881,11 +8879,10 @@ village = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_dunedain.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
-	}
-	
+	}	
 	background = { #LotR Dwarven
 		trigger = {
 			trigger_if = {
@@ -8898,7 +8895,7 @@ village = {
 				location.culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_city_dwarven.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -8916,7 +8913,7 @@ village = {
 				location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -8932,7 +8929,7 @@ village = {
 				location.culture ?= { is_orc_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_orc_camp.dds"
 		environment = "environment_event_battlefield"
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
@@ -9167,7 +9164,7 @@ sitting_room = {
 			}
 			trigger_else = { location.culture ?= { is_hobbit_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/relaxing_room_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_relaxing_room_hobbit.dds"
 		environment = "event:/SFX/Events/Backgrounds/office_workplace"
 		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
 	}
@@ -9657,7 +9654,7 @@ study = {
 			}
 			trigger_else = { location.culture ?= { is_hobbit_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/relaxing_room_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_relaxing_room_hobbit.dds"
 		environment = "event:/SFX/Events/Backgrounds/office_workplace"
 		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
 	}
@@ -9888,7 +9885,7 @@ study = {
 location_study = {
 	background = {	#Hobbit
 		trigger = { location.culture ?= { is_hobbit_culture = yes } }
-		reference = "gfx/interface/illustrations/event_scenes/relaxing_room_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_relaxing_room_hobbit.dds"
 		environment = "event:/SFX/Events/Backgrounds/office_workplace"
 		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
 	}
@@ -10022,7 +10019,7 @@ relaxing_room = {
 			}
 			trigger_else = { location.culture ?= { is_hobbit_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/relaxing_room_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_relaxing_room_hobbit.dds"
 		environment = "environment_bp2_study_indian"
 		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
 	}
@@ -10036,7 +10033,7 @@ relaxing_room = {
 			}
 			trigger_else = { location.culture ?= { is_dwarf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_dwarven.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
@@ -10297,7 +10294,7 @@ relaxing_room_scope = {
 		trigger = {
 			scope:background_relaxing_room_scope = { culture ?= { is_hobbit_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/relaxing_room_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_relaxing_room_hobbit.dds"
 		environment = "environment_bp2_study_indian"
 		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
 	}
@@ -10554,7 +10551,7 @@ tavern = {
 			}
 			trigger_else = { location.culture ?= { is_elf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_town.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_town.dds"
 		environment = "environment_event_market_west"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -10568,7 +10565,7 @@ tavern = {
 			}
 			trigger_else = { location.culture ?= { is_hobbit_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hobbit_tavern.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hobbit_tavern.dds"
 		environment = "environment_event_tavern"
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
@@ -10582,7 +10579,7 @@ tavern = {
 			}
 			trigger_else = { location.culture ?= { lotr_has_graphical_goidelic_culture_group_trigger = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/daen_tavern.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_daen_tavern.dds"
 		environment = "environment_event_tavern"
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
@@ -10612,7 +10609,7 @@ tavern = {
 				}  
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_dunedain.dds"
 		environment = "environment_event_tavern"
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
@@ -10626,7 +10623,7 @@ tavern = {
 			}
 			trigger_else = { location.culture ?= { is_dwarf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_dwarven.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
@@ -10640,7 +10637,7 @@ tavern = {
 			}
 			trigger_else = { location.culture ?= { is_orc_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/townmarket_western_day"
 	}
@@ -10795,7 +10792,7 @@ throne_room = {
 				} 
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dunedain.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -10809,7 +10806,7 @@ throne_room = {
 			}
 			trigger_else = { location.culture ?= { has_cultural_pillar = heritage_eotheod } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_rohirrim.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_rohirrim.dds"
 		environment = "environment_event_councilchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -10826,7 +10823,7 @@ throne_room = {
 				NOT = { government_has_flag = government_is_tribal }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dorwinion.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dorwinion.dds"
 		environment = "environment_frontend_mediterranean_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -10840,7 +10837,7 @@ throne_room = {
 			}
 			trigger_else = { location.province_owner ?= { is_nazgul = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil.dds"
 		environment = "environment_event_fp2_corridor_night" 
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}
@@ -10854,7 +10851,7 @@ throne_room = {
 			}
 			trigger_else = { location.province_owner ?= { is_sauron = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_sauron.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_sauron.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/DLC/FP2/SFX/Events/prison"
 	}
@@ -10868,7 +10865,7 @@ throne_room = {
 			}
 			trigger_else = { location = { geographical_region = middleearth_west_isengard } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil_istari.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_istari.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -10882,7 +10879,7 @@ throne_room = {
 			}
 			trigger_else = { location.culture ?= { is_orc_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_orc.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_orc.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}	
@@ -10920,7 +10917,7 @@ throne_room = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_thranduils_halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_thranduils_halls.dds"
 		environment = "environment_frontend_east_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -10942,7 +10939,7 @@ throne_room = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -10970,7 +10967,7 @@ throne_room = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_woodelf.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_woodelf.dds"
 		environment = "environment_indian_wedding"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -10984,7 +10981,7 @@ throne_room = {
 			}
 			trigger_else = { location.culture ?= { is_elf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_noldor.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_noldor.dds"
 		environment = "environment_event_councilchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -11006,7 +11003,7 @@ throne_room = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_easterling_imperial.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_easterling_imperial.dds"
 		environment = "environment_event_bp1_relaxing_room_western" 
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_middleeastern_african"
 	}
@@ -11036,7 +11033,7 @@ throne_room = {
 				} 
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dwarf_eastern.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf_eastern.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -11050,7 +11047,7 @@ throne_room = {
 			}
 			trigger_else = { location.culture ?= { is_dwarf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dwarf.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -11591,7 +11588,7 @@ throne_room_scope = {
 				} 
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dunedain.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -11611,7 +11608,7 @@ throne_room_scope = {
 				NOT = { government_has_flag = government_is_tribal }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dorwinion.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dorwinion.dds"
 		environment = "environment_frontend_mediterranean_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -11619,7 +11616,7 @@ throne_room_scope = {
 		trigger = { 
 			scope:background_throne_room_scope = { province_owner ?= { is_nazgul = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil.dds"
 		environment = "environment_event_fp2_corridor_night" 
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -11627,7 +11624,7 @@ throne_room_scope = {
 		trigger = { 
 			scope:background_throne_room_scope = { province_owner ?= { is_sauron = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil_maiar.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_maiar.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -11635,7 +11632,7 @@ throne_room_scope = {
 		trigger = { 
 			scope:background_throne_room_scope = { geographical_region = middleearth_west_isengard }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil_istari.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_istari.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -11643,7 +11640,7 @@ throne_room_scope = {
 		trigger = { 
 			scope:background_throne_room_scope = { culture ?= { is_orc_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil_high.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_high.dds"
 		environment = "environment_event_church"
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -11664,7 +11661,7 @@ throne_room_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_thranduils_halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_thranduils_halls.dds"
 		environment = "environment_frontend_east_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -11675,7 +11672,7 @@ throne_room_scope = {
 				county = title:c_caras_galadhon
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}	
@@ -11689,7 +11686,7 @@ throne_room_scope = {
 				graphical_wilderness_all_forests_trigger = yes
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_woodelf.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_woodelf.dds"
 		environment = "environment_event_councilchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -11697,7 +11694,7 @@ throne_room_scope = {
 		trigger = { 
 			scope:background_throne_room_scope = { culture ?= { is_elf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_noldor.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_noldor.dds"
 		environment = "environment_event_councilchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -11708,7 +11705,7 @@ throne_room_scope = {
 				culture ?= { has_cultural_pillar = heritage_ioriag } 
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_easterling_imperial.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_easterling_imperial.dds"
 		environment = "environment_event_bp1_relaxing_room_western" 
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_middleeastern_african"
 	}
@@ -11725,7 +11722,7 @@ throne_room_scope = {
 				} 
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dwarf_eastern.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf_eastern.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -11733,7 +11730,7 @@ throne_room_scope = {
 		trigger = { 
 			scope:background_throne_room_scope = { culture ?= { is_dwarf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dwarf.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -12168,8 +12165,36 @@ army_camp = {
 			}
 			trigger_else = { lotr_orc_buildings = yes }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_orc_camp.dds"
 		environment = "environment_event_battlefield"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
+	background = { #Mumakani
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					location ?= {
+						OR = {
+							culture ?= { has_cultural_parameter = heritage_group_mumakani }
+							geographical_region = middleearth_uttersouth_mumakan
+							geographical_region = middleearth_uttersouth_usakan
+						}
+					}
+				}					
+			}
+			trigger_else = { 
+				location ?= {
+					OR = {
+						culture ?= { has_cultural_parameter = heritage_group_mumakani }
+						geographical_region = middleearth_uttersouth_mumakan
+						geographical_region = middleearth_uttersouth_usakan
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/lotr_mumakani_camp.dds"
+		environment = "environment_event_genericcamp"
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
 	background = { #Nomads
@@ -12480,7 +12505,7 @@ bp1_kitchen_western = {
 			}
 			trigger_else = { location.culture ?= { is_hobbit_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_hobbit.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
@@ -12494,7 +12519,7 @@ bp1_kitchen_western = {
 			}
 			trigger_else = { location.culture ?= { is_dwarf_culture = yes } }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/kitchen_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_kitchen_dwarven.dds"
 		environment = "environment_event_bp1_kitchen_western" 
 		ambience = "event:/SFX/Events/Backgrounds/corner_of_tavern"
 	}
@@ -12512,7 +12537,7 @@ bp1_kitchen_western = {
 					location.county ?= { is_underground_county = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_goblins.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_goblins.dds"
 		environment = "environment_bp2_university"
 		ambience = "event:/SFX/Events/Backgrounds/feasthall"
 	}
@@ -12528,7 +12553,7 @@ bp1_kitchen_western = {
 				location.culture ?= { is_orc_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/orc_camp.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_orc_camp.dds"
 		environment = "environment_event_battlefield"
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
 	}
@@ -13253,7 +13278,7 @@ tour_arrival = {
 				activity_location.culture = { is_elf_culture = yes	}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_town.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_town.dds"
 		video_mask = "gfx/interface/video/tour_arrival.bk2"
 		environment = "environment_ep2_tour_arrival_western_neutral" 
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day" 
@@ -13265,7 +13290,7 @@ tour_arrival = {
 				activity_location.culture = { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		video_mask = "gfx/interface/video/tour_arrival.bk2"
 		environment = "environment_ep2_tour_arrival_western_neutral" 
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day" 
@@ -13277,7 +13302,7 @@ tour_arrival = {
 				activity_location.culture = { is_hobbit_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/market_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_market_hobbit.dds"
 		video_mask = "gfx/interface/video/tour_arrival.bk2"
 		environment = "environment_ep2_tour_arrival_western_neutral" 
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day" 
@@ -13289,7 +13314,7 @@ tour_arrival = {
 				activity_location.culture = { lotr_has_graphical_goidelic_culture_group_trigger = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/daen_tavern.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_daen_tavern.dds"
 		video_mask = "gfx/interface/video/tour_arrival.bk2"
 		environment = "environment_ep2_tour_arrival_western_neutral" 
 		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day" 
@@ -13936,7 +13961,7 @@ holy_site_generic = {
 				location.culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -13959,7 +13984,7 @@ holy_site_generic = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_nimrodel.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
 	}
@@ -13996,7 +14021,7 @@ holy_site_generic = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_temple_dwarven.dds"
 		environment = "environment_event_temple"
 		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
@@ -14558,7 +14583,7 @@ holy_site_generic_scope = {
 				scope:holy_site_scope.culture = { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -14578,7 +14603,7 @@ holy_site_generic_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_nimrodel.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
 	}
@@ -14612,7 +14637,7 @@ holy_site_generic_scope = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_temple_dwarven.dds"
 		environment = "environment_event_temple"
 		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
@@ -15058,7 +15083,7 @@ holy_site_unique = {
 				location.county = title:c_caras_galadhon
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
@@ -15074,7 +15099,7 @@ holy_site_unique = {
 				location.county = title:c_amon_lanc
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/amon_lanc.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_amon_lanc.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -15104,7 +15129,7 @@ holy_site_unique = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/grey_havens.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_grey_havens.dds"
 		environment = "environment_event_docks"
 		ambience = "event:/SFX/Events/Backgrounds/docks_day"
 	}
@@ -15121,7 +15146,7 @@ holy_site_unique = {
 				location.county = title:c_minas_tirith
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/minas_tirith.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_minas_tirith.dds"
 		environment = "environment_event_farms"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -15137,7 +15162,7 @@ holy_site_unique = {
 				location.county = title:c_dol_amroth
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dol_amroth.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dol_amroth.dds"
 		environment = "environment_event_docks"
 		ambience = "event:/SFX/Events/Backgrounds/docks_day"
 	}
@@ -15153,7 +15178,7 @@ holy_site_unique = {
 				location.county = title:c_annuminas
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/annuminas.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_annuminas.dds"
 		environment = "environment_event_mountains"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -15170,7 +15195,7 @@ holy_site_unique = {
 				location.county = title:c_kingstead
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/edoras.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_edoras.dds"
 		environment = "environment_event_farms"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -15187,7 +15212,7 @@ holy_site_unique = {
 				location.county = title:c_barad_dur
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -15204,7 +15229,7 @@ holy_site_unique = {
 				location.culture ?= { is_dwarf_culture = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -15227,7 +15252,7 @@ holy_site_unique = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/nimrodel.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_nimrodel.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Hunts/ep2_event_grand_hunt_waterbank"
 	}
@@ -15264,7 +15289,7 @@ holy_site_unique = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/temple_dwarven.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_temple_dwarven.dds"
 		environment = "environment_event_temple"
 		ambience = "event:/SFX/Events/Backgrounds/temple_generic"
 	}
@@ -15473,7 +15498,6 @@ holy_site_unique = {
 		environment = "environment_tgp_holysite_asia"
 		ambience = "event:/DLC/EP4/SFX/Events/Event_Backgrounds/tgp_holysite_asia"
 	}
-
 	
 	background = { # Orthodox generic holy site
 		trigger = {
@@ -16161,11 +16185,26 @@ ep2_hunt_poachers_camp = {
 }
 
 ep2_hunt_activity_camp = {
+	background = { #Mumakani
+		trigger = {
+			scope:activity.activity_location ?= {
+				OR = {
+					culture ?= { has_cultural_parameter = heritage_group_mumakani }
+					geographical_region = middleearth_uttersouth_mumakan
+					geographical_region = middleearth_uttersouth_usakan
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/lotr_mumakani_camp.dds"
+		environment = "environment_event_genericcamp"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
+
 	background = { #LotR deep_forest
 		trigger = {
 			scope:activity.activity_location ?= { graphical_wilderness_forest_deep_trigger = yes }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -16174,7 +16213,7 @@ ep2_hunt_activity_camp = {
 		trigger = {
 			scope:activity.activity_location ?= { graphical_wilderness_forest_mallorn_trigger = yes }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -16228,7 +16267,7 @@ ep2_hunt_activity_camp = {
 		trigger = {
 			scope:activity.activity_location ?= { graphical_wilderness_volcanic_trigger = yes }
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -16612,6 +16651,40 @@ ep2_involved_activity = {
 		environment = "environment_western_wedding"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Weddings/ep2_event_grand_wedding"
 	}
+	background = { #LotR Mumakani Hunting Camp
+		trigger = {
+			trigger_if = {
+				limit = { exists = scope:bg_override_char }
+				scope:bg_override_char = {
+					involved_activity = {
+						has_activity_type = activity_hunt
+						activity_location ?= { 
+							OR = {
+								culture ?= { has_cultural_parameter = heritage_group_mumakani }
+								geographical_region = middleearth_uttersouth_mumakan
+								geographical_region = middleearth_uttersouth_usakan
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				involved_activity = {
+					has_activity_type = activity_hunt
+					activity_location ?= { 
+						OR = {
+							culture ?= { has_cultural_parameter = heritage_group_mumakani }
+							geographical_region = middleearth_uttersouth_mumakan
+							geographical_region = middleearth_uttersouth_usakan
+						}
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/lotr_mumakani_camp.dds"
+		environment = "environment_event_genericcamp"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
 	background = { #LotR forest_deep
 		trigger = {
 			trigger_if = {
@@ -16630,7 +16703,7 @@ ep2_involved_activity = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -16652,7 +16725,7 @@ ep2_involved_activity = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -16674,7 +16747,7 @@ ep2_involved_activity = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -17544,6 +17617,23 @@ ep2_activity = {
 		environment = "environment_western_wedding"
 		ambience = "event:/DLC/EP2/SFX/Events/Grand_Activities/Weddings/ep2_event_grand_wedding"
 	}
+	background = { #LotR Mumakani Hunting Camp
+		trigger = {
+			scope:activity = {
+				has_activity_type = activity_hunt
+				activity_location ?= { 
+					OR = {
+						culture ?= { has_cultural_parameter = heritage_group_mumakani }
+						geographical_region = middleearth_uttersouth_mumakan
+						geographical_region = middleearth_uttersouth_usakan
+					}
+				}
+			}
+		}
+		reference = "gfx/interface/illustrations/event_scenes/lotr_mumakani_camp.dds"
+		environment = "environment_event_genericcamp"
+		ambience = "event:/SFX/Events/Backgrounds/camp_generic_day"
+	}
 	background = { #forest snowy
 		trigger = {
 			scope:activity = {
@@ -17583,17 +17673,6 @@ ep2_activity = {
 		environment = "environment_ep2_forest_managed"
 		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_dark_forest"
 	}
-	background = { #LotR Mining activity
-		trigger = {
-			scope:activity = {
-				has_activity_type = activity_mining
-				activity_location ?= { graphical_underground_caverns_trigger = yes }
-			}
-		}
-		reference = "gfx/interface/illustrations/activity_backgrounds/lotr_cave_interior.dds"
-		environment = "environment_event_alley"
-		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
-	}
 	background = { #LotR forest_deep
 		trigger = {
 			scope:activity = {
@@ -17601,7 +17680,7 @@ ep2_activity = {
 				activity_location ?= { graphical_wilderness_forest_deep_trigger = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_deep.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_deep.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -17613,7 +17692,7 @@ ep2_activity = {
 				= {  graphical_wilderness_forest_mallorn_trigger = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/forest_mallorn.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_forest_mallorn.dds"
 		environment = "environment_event_forest"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}
@@ -17655,7 +17734,7 @@ ep2_activity = {
 				activity_location = {  graphical_wilderness_volcanic_trigger = yes }
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/volcanic_plains.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_volcanic_plains.dds"
 		environment = "environment_event_bp1_desert"
 		ambience = "event:/SFX/Events/Backgrounds/burning_building"
 	}
@@ -17666,6 +17745,18 @@ ep2_activity = {
 		reference = "gfx/interface/illustrations/event_scenes/ep2_hunt_generic.dds"
 		environment = "environment_generic_hunt"
 		ambience = "event:/DLC/EP2/SFX/Events/Backgrounds/evn_background_dark_forest"
+	}
+	# MINING
+	background = { #LotR Mining activity
+		trigger = {
+			scope:activity = {
+				has_activity_type = activity_mining
+				activity_location ?= { graphical_underground_caverns_trigger = yes }
+			}
+		}
+		reference = "gfx/interface/illustrations/activity_backgrounds/lotr_cave_interior.dds"
+		environment = "environment_event_alley"
+		ambience = "event:/SFX/Events/Backgrounds/city_alley_night"
 	}
 	# PILGRIMAGE 
 	background = { # Dunedain generic holy site
@@ -17681,13 +17772,13 @@ ep2_activity = {
 			}
 			scope:activity ?= { has_activity_type = activity_pilgrimage }
 			scope:activity.activity_location.culture = {
-					##Quonton
-					OR = { 
-						has_cultural_pillar = heritage_dunedain 
-						has_cultural_tradition = tradition_new_numenor
-					}
-					##End Quonton
-				} 
+				##Quonton
+				OR = { 
+					has_cultural_pillar = heritage_dunedain 
+					has_cultural_tradition = tradition_new_numenor
+				}
+				##End Quonton
+			} 
 		}
 		reference = "gfx/interface/illustrations/event_scenes/ep3_holysite_gondor.dds"
 		environment = "environment_ep3_holysite_orthodox"
@@ -19362,7 +19453,7 @@ terrain_settlement = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -19392,7 +19483,7 @@ terrain_settlement = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_holding.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_holding.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -19434,7 +19525,7 @@ terrain_settlement = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -19526,7 +19617,7 @@ terrain_settlement = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_mountain_settlement"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -19588,7 +19679,7 @@ terrain_settlement = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -19632,7 +19723,7 @@ terrain_settlement = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -19656,7 +19747,7 @@ terrain_settlement = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_mountain_settlement"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -19774,7 +19865,7 @@ terrain_settlement_no_owner = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -19804,7 +19895,7 @@ terrain_settlement_no_owner = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/elven_holding.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_elven_holding.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -19842,7 +19933,7 @@ terrain_settlement_no_owner = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/rhun.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_rhun.dds"
 		environment = "environment_event_desert"
 		ambience = "event:/SFX/Events/Backgrounds/desert_day"
 	}
@@ -19890,7 +19981,7 @@ terrain_settlement_no_owner = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_mountain_settlement"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -19944,7 +20035,7 @@ terrain_settlement_no_owner = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -19983,7 +20074,7 @@ terrain_settlement_no_owner = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/hills_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_hills_hobbit.dds"
 		environment = "environment_travel_farmlands"
 		ambience = "event:/SFX/Events/Backgrounds/fields_farms_day"
 	}
@@ -20007,7 +20098,7 @@ terrain_settlement_no_owner = {
 				}
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/dwarven_gate.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_dwarven_gate.dds"
 		environment = "environment_travel_mountain_settlement"
 		ambience = "event:/SFX/Events/Backgrounds/mountains_day"
 	}
@@ -20119,7 +20210,7 @@ relaxing_room_location = {
 		trigger = {
 			location.culture ?= { is_hobbit_culture = yes }	
 		}
-		reference = "gfx/interface/illustrations/event_scenes/relaxing_room_hobbit.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_relaxing_room_hobbit.dds"
 		environment = "environment_bp2_study_indian"
 		ambience = "event:/DLC/FP2/SFX/Events/relaxing_room"
 	}
@@ -21171,7 +21262,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dunedain.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dunedain.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -21199,7 +21290,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dorwinion.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dorwinion.dds"
 		environment = "environment_frontend_mediterranean_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -21211,7 +21302,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil.dds"
 		environment = "environment_event_fp2_corridor_night" 
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -21223,7 +21314,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil_maiar.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_maiar.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -21237,7 +21328,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil_istari.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_istari.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -21249,7 +21340,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_evil_high.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_high.dds"
 		environment = "environment_event_church"
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -21274,7 +21365,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_thranduils_halls.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_thranduils_halls.dds"
 		environment = "environment_frontend_east_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -21289,7 +21380,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}	
@@ -21307,7 +21398,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_woodelf.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_woodelf.dds"
 		environment = "environment_event_councilchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -21319,7 +21410,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_noldor.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_noldor.dds"
 		environment = "environment_event_councilchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -21334,7 +21425,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_easterling_imperial.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_easterling_imperial.dds"
 		environment = "environment_event_bp1_relaxing_room_western" 
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_middleeastern_african"
 	}
@@ -21355,7 +21446,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dwarf_eastern.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf_eastern.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -21367,7 +21458,7 @@ coronation_activity_background = {
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		reference = "gfx/interface/illustrations/event_scenes/throneroom_dwarf.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}

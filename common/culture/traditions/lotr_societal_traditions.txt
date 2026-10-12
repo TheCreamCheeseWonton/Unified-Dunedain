@@ -767,10 +767,13 @@ tradition_wanderers_of_the_wild = { # Northern Dunedain Fun Times
 			has_cultural_pillar = heritage_dunedain
 			has_cultural_tradition = tradition_new_numenor
 		}
+		##End Quonton
+		NOT = { has_cultural_tradition = tradition_hunters }
 	}
 
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
+		NOT = { has_cultural_tradition = tradition_wanderers_of_the_wild }
 		custom_tooltip = {
 			text = cannot_have_tradition_vegetarianism
 			NOT = { culture_tradition:tradition_vegetarianism = { is_in_list = traits } }
@@ -2090,7 +2093,7 @@ tradition_slave_society = {
 	}
 
 	parameters = {
-		culture_can_raid_at_sea_even_if_feudal = yes
+		culture_can_raid_over_land_even_if_feudal = yes
 		can_launch_slave_expeditions = yes
 	}
 
@@ -2183,7 +2186,7 @@ tradition_orcish_society = {
 	}
 
 	parameters = {
-		culture_can_raid_at_sea_even_if_feudal = yes
+		culture_can_raid_over_land_even_if_feudal = yes
 		can_use_conquest_cbs = yes
 		cb_lower_prestige_level_requirement = yes
 		cheaper_cbs = yes
@@ -2355,7 +2358,7 @@ tradition_heryvellyn = { # Elven Wine-Lovers Tradition
 	layers = {
 		0 = steward
 		1 = mena
-		4 = RICE_luxury_goods.dds
+		4 = heryvellyn.dds
 	}
 
 	is_shown = {

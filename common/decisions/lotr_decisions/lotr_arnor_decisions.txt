@@ -7,7 +7,7 @@ decision_eradan_bree = {
 	sort_order = 100
 	title = decision_eradan_bree
 	picture = {
-		reference ="gfx/interface/illustrations/decisions/decision_breeland.dds"
+		reference ="gfx/interface/illustrations/decisions/decision_bree_02.dds"
 	}
 	selection_tooltip = decision_eradan_bree_tooltip
 	desc = decision_eradan_bree_desc
@@ -332,7 +332,7 @@ decision_talk_to_locals_sarnford = {
 	sort_order = 300
 	title = decision_talk_to_locals_sarnford
 	picture = {
-		reference ="gfx/interface/illustrations/event_scenes/carrock.dds"
+		reference ="gfx/interface/illustrations/event_scenes/lotr_carrock.dds"
 	}
 	selection_tooltip = decision_talk_to_locals_sarnford_tooltip
 	desc = decision_talk_to_locals_sarnford_desc
@@ -998,7 +998,8 @@ decision_adopt_arnorian_culture = {
 
 	is_shown = {
 		culture = { any_parent_culture_or_above = { this = culture:arnorian } }
-		##Quonton
+		NOT = { culture = { this = culture:new_arnorian } }
+		NOT = {	culture = { any_parent_culture_or_above = { this = culture:new_arnorian } } }
 		NOT = { culture = { any_parent_culture_or_above = { this = culture:new_dunedain } } }
 		NOT = { culture = { this = culture:new_dunedain } }
 		OR = {
@@ -1253,6 +1254,337 @@ decision_adopt_arnorian_culture = {
 			set_county_culture = culture:arnorian
 		}
 		custom_tooltip = decision_adopt_arnorian_culture_get_innovations
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_revive_arnorian_culture
+		}
+	}
+
+	# AI
+	ai_potential = { always = no }
+	ai_will_do = { base = 100 }
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 60
+		kingdom = 60
+		empire = 60
+		hegemony = 60
+	}
+}
+
+decision_adopt_new_arnorian_culture = {
+	sort_order = 97
+	title = decision_adopt_new_arnorian_culture
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_fornost_02.dds"
+	}
+	selection_tooltip = decision_adopt_new_arnorian_culture_tooltip
+	desc = decision_adopt_new_arnorian_culture_desc
+	confirm_text = decision_adopt_new_arnorian_culture_confirm
+
+	is_shown = {
+		has_title = title:h_reunited_kingdom
+		culture = { has_cultural_pillar = heritage_dunedain }
+		NOT = { culture = { this = culture:arnorian } }
+		NOT = { culture = { any_parent_culture_or_above = { this = culture:new_dunedain } } }
+		NOT = { culture = { this = culture:new_dunedain } }
+		highest_held_title_tier >= tier_empire
+		NOT = { 
+			OR = { 
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_revive_arnorian_culture
+				}
+				is_target_in_global_variable_list = {
+					name = unavailable_unique_decisions
+					target = flag:decision_form_new_arnorian_culture
+				}
+			}
+		}
+	}
+
+	decision_group_type = realms_in_exile_major
+	
+	is_valid = {
+		custom_tooltip = {
+			text = owns_40_percent_of_arnor
+			any_county_in_region = {
+				region = middleearth_west_arnor
+				OR = {
+					holder = { is_vassal_or_below_of = root }
+					holder = root
+				}
+				percent >= 0.20
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	
+	effect = {
+		play_music_cue = lotr_cue_gondor
+		culture = { save_scope_as = culture }
+		hidden_effect = { 
+			culture:new_arnorian = { 
+				get_all_innovations_from = root.culture
+			} 
+		}
+		if = { 
+			limit = { culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } } } 
+			set_culture = culture:new_arnorian
+		}
+		if = { #juke note: this code should be refined so it works with multiple spouses, though its unlikely to happen
+			limit = { 
+				any_spouse = { 
+					is_landed = no 
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				} 
+			}
+			every_spouse = {
+				limit = {
+					is_landed = no
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				}
+				if = {
+					limit = { is_ai = yes }
+					set_culture = culture:new_arnorian
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_close_family_member = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				}
+			}
+			every_close_family_member = {
+				limit = {
+					is_landed = no
+					NOT = { is_spouse_of = root }
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				}
+				custom = all_unlanded_family_members_new_arnor
+				if = {
+					limit = { is_ai = yes }
+					set_culture = culture:new_arnorian
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_courtier = {
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				}
+			}
+			every_courtier = {
+				custom = decision_adopt_new_arnorian_culture_courtier_custom
+				limit = {
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				}
+				if = {
+					limit = { is_ai = yes }
+					set_culture = culture:new_arnorian
+				}
+			}
+		}
+
+		#Convert appropriate vassals, and their family
+		if = {
+			limit = {
+				any_vassal_or_below = {
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				}
+			}
+			every_vassal_or_below = {
+				custom = decision_adopt_new_arnorian_culture_vassal_custom
+				limit = {
+					culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+				}
+				if = {
+					limit = { is_ai = yes }
+					set_culture = culture:new_arnorian
+				}
+				hidden_effect = {
+					if = {
+						limit = { 
+							any_spouse = { 
+								is_landed = no
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							} 
+						}
+						every_spouse = {
+							limit = {
+								is_landed = no
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							}
+							if = {
+								limit = { is_ai = yes }
+								set_culture = culture:new_arnorian
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_close_family_member = {
+								is_landed = no
+								NOT = { is_spouse_of = prev }
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							}
+						}
+						every_close_family_member = {
+							limit = {
+								is_landed = no
+								NOT = { is_spouse_of = prev }
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							}
+							custom = all_unlanded_family_members_new_arnor
+							if = {
+								limit = { is_ai = yes }
+								set_culture = culture:new_arnorian
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_courtier = {
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							}
+						}
+						every_courtier = {
+							limit = {
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							}
+							if = {
+								limit = { is_ai = yes }
+								hidden_effect = { set_culture = culture:new_arnorian }
+							}
+						}
+					}
+					if = {
+						limit = {
+							any_vassal_or_below = {
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							}
+						}
+						every_vassal_or_below = {
+							custom = decision_reunify_dunedain_vassals_custom
+							limit = {
+								culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+							}
+							if = {
+								limit = { is_ai = yes }
+								set_culture = culture:new_arnorian
+							}
+							hidden_effect = {
+								if = {
+									limit = { 
+										any_spouse = { 
+											is_landed = no 
+											culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+										} 
+									}
+									every_spouse = {
+										limit = {
+											is_landed = no
+											culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+										}
+										if = {
+											limit = { is_ai = yes }
+											set_culture = culture:new_arnorian
+										}
+									}
+								}
+								if = {
+									limit = {
+										any_close_family_member = {
+											is_landed = no
+											NOT = { is_spouse_of = prev }
+											culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+										}
+									}
+									every_close_family_member = {
+										limit = {
+											is_landed = no
+											NOT = { is_spouse_of = prev }
+											culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+										}
+										custom = all_unlanded_family_members_new_arnor
+										if = {
+											limit = { is_ai = yes }
+											set_culture = culture:new_arnorian
+										}
+									}
+								}
+								if = {
+									limit = {
+										any_courtier = {
+											culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+										}
+									}
+									every_courtier = {
+										limit = {
+											culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+										}
+										if = {
+											limit = { is_ai = yes }
+											hidden_effect = { set_culture = culture:new_arnorian }
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		#Flip Counties
+		every_county = {
+			custom = decision_adopt_new_arnorian_culture_province_custom
+			limit = {
+				OR = {
+					holder = root
+					holder.top_liege = root
+				}
+				culture = { AND = { any_parent_culture_or_above = { this = culture:arnorian } NOT = { this = culture:uialedain } } }
+			}
+			set_county_culture = culture:new_arnorian
+		}
+		every_vassal_or_below = {
+			custom = decision_adopt_new_arnorian_gondorian_culture_vassal_custom
+			limit = {
+				location ?= { geographical_region = custom_arnor_minus_tharbad_uialdedain }
+				culture = { this = culture:gondorian } 
+			}
+			set_culture = culture:new_arnorian
+		}
+		every_county_in_region = {
+			region = custom_arnor_minus_tharbad_uialdedain
+			custom = decision_adopt_new_arnorian_gondorian_culture_province_custom
+			limit = {
+				OR = {
+					holder = root
+					holder.top_liege = root
+				}
+				OR = { 
+					culture = { this = culture:gondorian }
+					culture = { this = culture:uialedain }
+				}
+			}
+			set_county_culture = culture:new_arnorian
+		}
+		custom_tooltip = decision_adopt_new_arnorian_culture_get_innovations
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_form_new_arnorian_culture
+		}
 	}
 
 	# AI
@@ -1604,7 +1936,7 @@ decision_reintegrate_shire = {
 # decision_establish_thalion_city = { #Upgrading Thalion now done via Great Project
 # 	title = decision_establish_thalion_city
 # 	picture = {
-# 		reference ="gfx/interface/illustrations/event_scenes/annuminas.dds"
+# 		reference ="gfx/interface/illustrations/event_scenes/lotr_annuminas.dds"
 # 	}
 # 	selection_tooltip = decision_establish_thalion_city_tooltip
 # 	desc = decision_establish_thalion_city_desc
@@ -1687,7 +2019,7 @@ decision_reintegrate_shire = {
 decision_establish_nelvorin_university = {
 	title = decision_establish_nelvorin_university
 	picture = {
-		reference ="gfx/interface/illustrations/event_scenes/annuminas.dds"
+		reference ="gfx/interface/illustrations/event_scenes/lotr_annuminas.dds"
 	}
 	selection_tooltip = decision_establish_nelvorin_university_tooltip
 	desc = decision_establish_nelvorin_university_desc
@@ -1950,7 +2282,7 @@ decision_silver_caras_celairnen = {
 # decision_establish_amon_raen_city = { #Cameth Brin now upgraded via Great Project
 # 	title = decision_establish_amon_raen_city
 # 	picture = {
-# 		reference ="gfx/interface/illustrations/event_scenes/annuminas.dds"
+# 		reference ="gfx/interface/illustrations/event_scenes/lotr_annuminas.dds"
 # 	}
 # 	selection_tooltip = decision_establish_amon_raen_city_tooltip
 # 	desc = decision_establish_amon_raen_city_desc
@@ -2044,7 +2376,7 @@ decision_silver_caras_celairnen = {
 decision_rhudaur_urbanization = {
 	title = decision_rhudaur_urbanization
 	picture = {
-		reference ="gfx/interface/illustrations/event_scenes/annuminas.dds"
+		reference ="gfx/interface/illustrations/event_scenes/lotr_annuminas.dds"
 	}
 	selection_tooltip = decision_rhudaur_urbanization_tooltip
 	desc = decision_rhudaur_urbanization_desc

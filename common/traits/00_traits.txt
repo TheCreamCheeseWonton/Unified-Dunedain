@@ -11268,7 +11268,7 @@ viking = {
 						culture =  { has_cultural_pillar = heritage_southern_adunaic }
 						##Quonton
 						culture = { has_cultural_pillar = heritage_unified_adunaic }
-						faith = faith:faith_corsair
+						faith = { has_doctrine = tenet_corsairs }
 						faith.religion = religion:adunai_religion
 					}
 					NOR = {

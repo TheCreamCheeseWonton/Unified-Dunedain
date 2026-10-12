@@ -31,7 +31,7 @@
 	dynasty_coa_frame = house_frame_04
 	
 	ethnicities = {
-		1 = black_numenorean_ethnicity
+		100 = black_numenorean_ethnicity
 	}
 }
 

@@ -1533,7 +1533,7 @@ colonisation_random.1007 = { # [Ettenmoors] Ettenmoors cleared!
  	}
 
  	override_background = {
- 		reference = rhudaur
+ 		reference = wilderness_mountains
  	}
 
 	trigger = {
@@ -4323,6 +4323,7 @@ colonisation_random.2014 = { # Ahead of Schedule
 			}
 			remove_wastelands_tracker_variable = yes
 		}
+		correct_wastelands_tracker = yes
 	}
 	
 	option = { # This is great!
@@ -4703,11 +4704,7 @@ colonisation_random.2017 = { # Scorpion Bed Discovered
 			has_holding_type = settlement_holding
 			NOT = { has_building = scorpion_bed }
 			free_building_slots > 0
-		}
-		any_sub_realm_county = {
-			any_county_province = {
-				geographical_region = middleearth_harad_dunesea
-			}
+			geographical_region = middleearth_harad_dunesea
 		}
 	}
 
@@ -4721,6 +4718,7 @@ colonisation_random.2017 = { # Scorpion Bed Discovered
 				has_holding_type = settlement_holding
 				NOT = { has_building = scorpion_bed }
 				free_building_slots > 0
+				geographical_region = middleearth_harad_dunesea
 			}
 			save_scope_as = colony_province
 			county = { save_scope_as = colony_county }

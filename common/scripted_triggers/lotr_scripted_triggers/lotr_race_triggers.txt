@@ -95,6 +95,8 @@ lotr_tolerance_trigger = {
 			OR = {
 				is_orc = yes
 				$CHARACTER$ = { is_orc = yes }
+				culture = culture:mordorrim
+				$CHARACTER$.culture = culture:mordorrim
 			}
 		}
 		same_alignment = { TARGET = $CHARACTER$ }
@@ -122,6 +124,8 @@ lotr_county_tolerance_trigger = {
 			OR = {
 				is_orc = yes
 				$COUNTY$ = { is_orc = yes }
+				culture = culture:mordorrim
+				$COUNTY$.culture = culture:mordorrim
 			}
 		}
 		same_alignment = { TARGET = $COUNTY$ }
@@ -260,6 +264,12 @@ lotr_canon_safe_from_harm_trigger = {
 		this = character:lineofpharala57 # Zantaka Husband Father
 		this = character:lineofelynda92 # Zantaka Story Rival
 		this = character:lineofzantaka2 # Zantaka adoptive daughter
+		this = character:linemabon9 # Éira (Juliet)
+		this = character:predolamroth181 # Maratar
+		this = character:predolamroth182 # Maratar's daughter
+		this = character:predolamroth183 # Maratar's son (Romeo)
+		this = character:linedilwun10 # The Brazen Brigand
+		this = character:linearastil16 # Glormagil
 	}
 }
 
@@ -317,6 +327,7 @@ lotr_culture_has_adunaic_supremacy_tradition = { #Fired from a culture scope
 		has_cultural_tradition = tradition_blacknumenorean_legacy
 		has_cultural_tradition = tradition_bellakarani_sophistication
 		has_cultural_tradition = tradition_azralai
+		has_cultural_tradition = tradition_tanturaki
 		##Quonton
 		has_cultural_tradition = tradition_kharatakhori
 		has_cultural_tradition = tradition_adunaic_legacy
@@ -343,6 +354,8 @@ lotr_horse_lords_trigger = {
 		culture = { has_cultural_pillar = heritage_eotheod }
 		culture = { has_cultural_pillar = heritage_tedjin }
 		culture = { has_cultural_pillar = heritage_ioriag }
+        culture = { has_cultural_tradition = tradition_a_people_reforged }
+        culture = { has_cultural_tradition = tradition_the_people_of_the_plains }
 	}
 }
 lotr_horse_lords_cultural_pillar_trigger = {
@@ -443,9 +456,13 @@ lotr_talathrim_cultures_trigger = {
 	}
 }
 
+lotr_baradhrim_trigger = {
+	culture = { has_cultural_pillar = heritage_baradhrim }
+}
+
 ## UNDYING TRIGGERS ##
 
-is_nazgul = {
+is_real_nazgul = {
 	OR = {
 		has_trait = nazgul
 		this = character:nazgul1
@@ -533,7 +550,7 @@ cannot_be_killed = {
 	OR = {
 		is_maiar = yes
 		is_maiar_fallen = yes
-		is_nazgul = yes
+		is_real_nazgul = yes
 		is_wastelands = yes
 	}
 }

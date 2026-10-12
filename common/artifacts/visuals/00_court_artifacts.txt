@@ -2916,11 +2916,11 @@ axe_court = {
 
 longaxe_court = {
 
-	icon = {
+	icon = { # Gondor
 		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = gondorian_unit } }
 		reference = artifact_gondorian_axe.dds
 	}
-	icon = {
+	icon = { # Rohan
 		trigger = {
 			OR = {
 				artifact_should_use_gfx_type_trigger = { TYPE = northern_unit }
@@ -2929,11 +2929,21 @@ longaxe_court = {
 		}
 		reference = artifact_axe.dds
 	}
-	icon = {
+	icon = { # Orcish
 		trigger = { 
 			OR = {
 				artifact_should_use_gfx_type_trigger = { TYPE = orcish_unit }
 				artifact_should_use_gfx_type_trigger = { TYPE = urukhai_unit } 
+			}
+		}
+		reference = artifact_axe.dds
+	}
+	icon = { # Elven
+		trigger = { 
+			OR = {
+				artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
 			}
 		}
 		reference = artifact_axe.dds
@@ -3040,6 +3050,17 @@ longaxe_court = {
 	###  Elven  ###
 	###############
 	
+	asset = { # Generic Elven
+		trigger = { 
+			OR = {
+				artifact_should_use_gfx_type_trigger = { TYPE = avari_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = noldor_unit }
+				artifact_should_use_gfx_type_trigger = { TYPE = silvan_unit }
+			}
+		}
+		reference = elven_longaxe_01_entity
+	}
+
 	##############
 	###  Orcs  ###
 	##############
@@ -3226,6 +3247,11 @@ spear_court = {
 	asset = { #Haradrim
 		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = harad_unit } }
 		reference = harad_spear_01_entity
+	}
+
+	asset = { #Northmen
+		trigger = { artifact_should_use_gfx_type_trigger = { TYPE = dalish_unit } }
+		reference = northmen_spear_01_entity # Boar Tusk by Robin the Mad Dev, AGOT
 	}
 
 	###############

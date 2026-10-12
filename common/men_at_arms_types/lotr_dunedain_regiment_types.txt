@@ -203,6 +203,8 @@ guard_of_the_citadel = {
 	high_maintenance_cost = { gold = 1.8 }
 	provision_cost = @provisions_cost_infantry_expensive
 
+	max_regiments = 1
+
 	allowed_in_hired_troops = no
 
 	stack = 100
@@ -288,8 +290,10 @@ harondorim_rangers = {
 		mountains = { damage = -57 toughness = -23 pursuit = -12 screen = -13 }
 		desert_mountains = { damage = -57 toughness = -23 pursuit = -12 screen = -13 }
 		hills = { damage = 62 toughness = 25 pursuit = 13 screen = 14 }
+		desert = { damage = 15 toughness = 6 pursuit = 3 screen = 4 }
 		red_desert = { damage = 15 toughness = 6 pursuit = 3 screen = 4 }
 		jungle = { damage = -43 toughness = -18 pursuit = -9 screen = -10 }
+		halls = { damage = -42 toughness = -17 pursuit = -18 screen = -19 }	
 	}
 
 	winter_bonus = {
@@ -348,6 +352,7 @@ harondorim_palace_guards = { #  Elite Armored Horsemen From Harondor
 		dune_sea = { damage = -72 toughness = -24 pursuit = -6 screen = -5 }
 		jungle = { damage = -120 toughness = -40 pursuit = -10 screen = -8 }
 		deep_forest = { damage = -120 toughness = -40 pursuit = -10 screen = -8 }
+		halls = { damage = -90 toughness = -30 pursuit = -15 screen = -11 }
 	}
 	winter_bonus = {
 		normal_winter = { damage = -18 toughness = -6 pursuit = -2 screen = -2 }
@@ -452,6 +457,7 @@ swan_knights = {
 		dune_sea = { damage = -77 toughness = -26 pursuit = -6 screen = -6 }
 		jungle = { damage = -128 toughness = -42 pursuit = -10 screen = -10 }
 		deep_forest = { damage = -128 toughness = -42 pursuit = -10 screen = -10 }
+		halls = { damage = -96 toughness = -32 pursuit = -15 screen = -15 }
 	}
 	winter_bonus = {
 		normal_winter = { damage = -20 toughness = -7 pursuit = -2 screen = -2 }
@@ -2375,6 +2381,13 @@ dunedain_soldiers = {
 	pursuit = 5
 	screen = 30
 	
+	terrain_bonus = {
+		mountains = { damage = 12 toughness = 15 screen = 6 }
+		desert_mountains = { damage = 12 toughness = 15 screen = 6 }
+		hills = { damage = 6 toughness = 8 screen = 3 }
+		red_desert = { damage = 6 toughness = 8 screen = 3 }
+	}
+	
 	counters = {
 		monster = 1
 		pikemen = 1
@@ -2466,12 +2479,10 @@ dunedain_archers = {
 	screen = 5
 	
 	terrain_bonus = {
-		hills = { damage = 12 toughness = 12 screen = 15 }
-		mountains = { damage = 6 toughness = 6 screen = 15 }
-		forest = { damage = 12 toughness = 12 screen = 15 }
-		taiga = { damage = 12 toughness = 12 screen = 15 }
-		plains = { damage = 8 screen = 5 }
-		farmlands = { damage = 8 screen = 5 }
+		hills = { damage = 13 toughness = 9 pursuit = 3 screen = 1 }
+		red_desert = { damage = 13 toughness = 9 pursuit = 3 screen = 1 }
+		taiga = { damage = 7 toughness = 5 pursuit = 2 screen = 1 }
+		forest = { damage = 7 toughness = 5 pursuit = 2 screen = 1 }
 	}
 	
 	winter_bonus = {
@@ -2575,16 +2586,22 @@ dunedain_knights = {
 	screen = 30
 	
 	terrain_bonus = {
-		plains = { damage = 30 toughness = 10 }
-		farmlands = { damage = 30 toughness = 10 }
-		drylands = { damage = 40 toughness = 10 }
-		desert = { damage = 10  toughness = 10 }
-		hills = { damage = -10 }
-		jungle = { damage = -25 }
-		mountains = { damage = -50 }
-		desert_mountains = { damage = -50 }
-		wetlands = { damage = -75 }
-		halls = { damage = -75 toughness = -10 pursuit = -10 }
+		wetlands = { damage = -81 toughness = -36 pursuit = -9 screen = -9 }
+		plains = { damage = 41 toughness = 18 pursuit = 5 screen = 5 }
+		farmlands = { damage = 41 toughness = 18 pursuit = 5 screen = 5 }
+		drylands = { damage = 41 toughness = 18 pursuit = 5 screen = 5 }
+		mountains = { damage = -81 toughness = -36 pursuit = -9 screen = -9 }
+		desert_mountains = { damage = -81 toughness = -36 pursuit = -9 screen = -9 }
+		hills = { damage = -21 toughness = -9 pursuit = -3 screen = -3 }
+		red_desert = { damage = -21 toughness = -9 pursuit = -3 screen = -3 }
+		dune_sea = { damage = -81 toughness = -36 pursuit = -9 screen = -9 }
+		jungle = { damage = -135 toughness = -60 pursuit = -15 screen = -15 }
+		deep_forest = { damage = -135 toughness = -60 pursuit = -15 screen = -15 }
+		halls = { damage = -101 toughness = -45 pursuit = -23 screen = -23 }
+	}
+	winter_bonus = {
+		normal_winter = { damage = -21 toughness = -9 pursuit = -3 screen = -3 }
+		harsh_winter = { damage = -41 toughness = -18 pursuit = -5 screen = -5 }
 	}
 
 	counters = {
@@ -2637,6 +2654,7 @@ dunedain_elites = {
 	counters = {
 		pikemen = 2
 		archers = 1
+		peasant_militia = 1
 		monster = 1
 		skirmishers = 1
 	}
@@ -2832,13 +2850,13 @@ arnorian_bowmen = { # Armored archers
 	screen = 0
 	
 	terrain_bonus = {
-		mountains = { damage = 35 toughness = 18 pursuit = 4 screen = 3 }
-		desert_mountains = { damage = 35 toughness = 18 pursuit = 4 screen = 3 }
-		hills = { damage = 18 toughness = 9 pursuit = 2 screen = 2 }
-		red_desert = { damage = 18 toughness = 9 pursuit = 2 screen = 2 }
+		mountains = { damage = 8 toughness = 3 pursuit = 1 }
+		desert_mountains = { damage = 8 toughness = 3 pursuit = 1 }
+		hills = { damage = 30 toughness = 12 pursuit = 6 }
+		red_desert = { damage = 30 toughness = 12 pursuit = 6 }
 	}
 	winter_bonus = {
-		normal_winter = { damage = 35 toughness = 18 pursuit = 4 screen = 3 }
+		normal_winter = { damage = 30 toughness = 12 pursuit = 6 }
 		harsh_winter = { damage = 52 toughness = 27 pursuit = 6 screen = 4 }
 	}
 
@@ -2894,6 +2912,7 @@ arnorian_cavalry = {
 		dune_sea = { damage = -30 toughness = -12 pursuit = -3 }
 		jungle = { damage = -50 toughness = -20 pursuit = -5 }
 		deep_forest = { damage = -50 toughness = -20 pursuit = -5 }
+		halls = { damage = -86 toughness = -45 pursuit = -19 screen = -15 }
 	}
 
 	counters = {
@@ -3158,7 +3177,12 @@ orthanc_guardsmen = { # Armored spearmen, armed with armour from Angrenost's old
 	type = pikemen
 	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
-		has_character_flag = saruman_rearm_orthanc_guard
+		this.house ?= { has_house_modifier = house_rearm_orthanc_guard }
+		faith_is_good = yes
+		OR = {
+			has_character_flag = is_saruman
+			title:c_isengard = root.capital_county
+		}
 	}
 
 	damage = 24
@@ -3196,7 +3220,12 @@ orthanc_bowmen = { # Armored archers, armed with armour from Angrenost's old sto
 	type = archers
 	access_through_subject = { lotr_orc_can_recruit_from_subject = no } #For orcs
 	can_recruit = {
-		has_character_flag = saruman_rearm_orthanc_guard
+		this.house ?= { has_house_modifier = house_rearm_orthanc_guard }
+		faith_is_good = yes
+		OR = {
+			has_character_flag = is_saruman
+			title:c_isengard = root.capital_county
+		}
 	}
 
 	damage = 36
@@ -3267,6 +3296,7 @@ mundburgian_eored = {
 		dune_sea = { damage = -75 toughness = -24 pursuit = -8 }
 		jungle = { damage = -125 toughness = -40 pursuit = -13 }
 		deep_forest = { damage = -125 toughness = -40 pursuit = -13 }
+		halls = { damage = -94 toughness = -30 pursuit = -19 }
 	}
 	winter_bonus = {
 		normal_winter = { damage = -19 toughness = -6 pursuit = -2 }

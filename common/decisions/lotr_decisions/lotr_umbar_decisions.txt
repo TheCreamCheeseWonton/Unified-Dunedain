@@ -1,4 +1,6 @@
-﻿### Umbar Decisions ###
+﻿#######################
+### Umbar Decisions ###
+#######################
 
 decision_harnen_kingdom = {
 	title = {
@@ -1334,7 +1336,7 @@ decision_settle_tol_uialgaer = { # Set up a colony on the Barren Isle
 decision_unite_the_sacred_isles = { # Form an island kingdom
 	title = decision_unite_the_sacred_isles
 	picture = {
-		reference = "gfx/interface/illustrations/event_scenes/docks_adunai.dds"
+		reference = "gfx/interface/illustrations/event_scenes/lotr_docks_adunai.dds"
 	}
 	
 	ai_check_interval_by_tier = {
@@ -1352,7 +1354,7 @@ decision_unite_the_sacred_isles = { # Form an island kingdom
 		base = 50
 	}
 	
-	sort_order = 50
+	sort_order = 550
 	
 	selection_tooltip = decision_unite_the_sacred_isles_tooltip
 	desc = decision_unite_the_sacred_isles_desc
@@ -1432,6 +1434,183 @@ decision_unite_the_sacred_isles = { # Form an island kingdom
 	}
 }
 
+decision_destroy_tarma_tar_calion = { # Destroy the Monument of Pharazôn
+	title = decision_destroy_tarma_tar_calion
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_numenorean_haven.dds"
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 50
+		duchy = 50
+		kingdom = 50
+		empire = 50
+		hegemony = 50
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 50
+	}
+	
+	sort_order = 50
+	
+	selection_tooltip = decision_destroy_tarma_tar_calion_tooltip
+	desc = decision_destroy_tarma_tar_calion_desc
+	confirm_text = decision_destroy_tarma_tar_calion_confirm
+	decision_group_type = realms_in_exile_minor
+	
+	is_shown = {
+		completely_controls = title:c_umbar	
+		title:b_kharateth.title_province = {
+			has_building = wonder_tar_calion
+		}
+		faith_is_evil = yes
+	}
+	
+	is_valid = {
+		faith_is_evil = yes
+		piety_level >= 4
+		trigger_if = {
+			limit = {
+				culture = {
+					OR = {
+						has_cultural_pillar = heritage_dunedain
+						has_cultural_pillar = heritage_northern_adunaic
+					}
+				}
+			}
+			prestige_level >= 4
+		}
+		completely_controls = title:d_umbar
+	}
+	is_valid_showing_failures_only = {
+		is_independent_ruler = yes
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	cost = {
+		prestige = 500
+	}
+	effect = {
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = decision_destroy_tarma_tar_calion_tt
+			left_icon = root
+			add_piety = major_piety_value
+			add_short_term_gold = 500
+			title:b_kharateth.title_province = {
+				remove_building = wonder_tar_calion
+			}
+		}
+	}
+}
+
+decision_azruneth_treasure_map = { # Find the Ormalian Treasure
+	title = decision_azruneth_treasure_map
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_council_02.dds"
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 12
+		kingdom = 12
+		empire = 0
+		hegemony = 0
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 00
+	}
+
+	sort_order = 300
+	
+	selection_tooltip = decision_azruneth_treasure_map_tooltip
+	desc = decision_azruneth_treasure_map_desc
+	confirm_text = decision_azruneth_treasure_map_confirm
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {	
+		has_title = title:d_fleet_of_shadows
+		NOT = { 
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_azruneth_treasure_map
+			}
+		}
+	}
+	
+	is_valid = {
+		gold >= 300
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	cost = {
+		gold = 100
+		prestige = 250
+	}
+	effect = {
+		if = {
+			limit = { title:c_nymia.title_province = { has_holding_type = wastelands_holding } }
+			ai_colonisation_effect = { WASTELANDS = title:b_taralmaraa ROOT_SCOPE = root }
+			title:c_nymia = { save_scope_as = azruneth_title_province }
+		}
+		else_if = {
+			limit = { title:c_duuribaatha.title_province = { has_holding_type = wastelands_holding } }
+			ai_colonisation_effect = { WASTELANDS = title:b_duuribaatha ROOT_SCOPE = root }
+			title:c_duuribaatha = { save_scope_as = azruneth_title_province }
+		}
+		else_if = {
+			limit = { title:c_skazantar.title_province = { has_holding_type = wastelands_holding } }
+			ai_colonisation_effect = { WASTELANDS = title:b_sega_skazand ROOT_SCOPE = root }
+			title:c_skazantar = { save_scope_as = azruneth_title_province }
+		}
+		else = {
+			get_title = title:c_duuribaatha
+			title:c_duuribaatha = { save_scope_as = azruneth_title_province }
+		}
+		hidden_effect = { #give free caravan master
+			if = {
+				limit = { NOT = { employs_court_position = travel_leader_court_position } }
+				create_character = {
+					template = travel_leader_court_position_template
+					employer = root
+					save_scope_as = caravan_master
+				}
+				appoint_court_position = {
+					recipient = scope:caravan_master
+					court_position = travel_leader_court_position
+				}
+			}
+		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:decision_azruneth_treasure_map
+		}
+		custom_tooltip = {
+			text = travel_to_new_pirate_haven
+			start_travel_plan = {
+				destination = scope:azruneth_title_province.title_province
+				on_arrival_event = lotr_khy.0299
+				return_trip = no
+				players_use_planner = no
+				on_arrival_destinations = all
+			}
+		}
+	}
+}
+
+### Ar-Adunaim Decisions ###
 decision_continue_adventure_arphazel = { ### Regain lost story contracts ~ Arphazêl ###
 	sort_order = 100
 	title = decision_continue_adventure_eradan
@@ -1666,6 +1845,73 @@ decision_arminalethor = { # Build a new capital
 				target = flag:decision_arminalethor
 			}
 
+		}
+	}
+}
+
+decision_solidify_adunaim = { # Make your empire de jure
+	title = decision_solidify_adunaim
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_adunai_03.dds"
+	}
+	
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 0
+		duchy = 0
+		kingdom = 0
+		empire = 5
+		hegemony = 5
+	}
+	ai_potential = {
+		always = yes
+	}
+	ai_will_do = {
+		base = 50
+	}
+	
+	sort_order = 950
+	
+	selection_tooltip = decision_solidify_adunaim_tooltip
+	desc = decision_solidify_adunaim_desc
+	confirm_text = decision_solidify_adunaim_confirm
+	decision_group_type = realms_in_exile_major
+	
+	is_shown = {	
+		has_title = title:e_adunaim
+		NOt = {
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_solidify_adunaim
+			}
+		}
+	}
+	
+	is_valid = {
+		completely_controls = capital_county.kingdom
+		prestige_level >= 3
+		legitimacy_level >= 5
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	cost = {
+		prestige = 500
+	}
+	effect = {
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = decision_solidify_adunaim
+			left_icon = root
+			add_dread = major_dread_gain
+			root.dynasty = { add_dynasty_prestige = 250 }
+			capital_county.kingdom = { set_de_jure_liege_title = title:e_adunaim }
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:decision_solidify_adunaim
+			}
 		}
 	}
 }

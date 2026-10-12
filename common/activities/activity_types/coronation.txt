@@ -6,14 +6,7 @@
 		trigger_if = { #LotR - Elves have different rules
 			limit = { is_elf = yes }
 			trigger_if = { 
-				limit = {
-					OR = { 
-						# hope_level < 4 # Causes crashes for the momment
-						has_lowest_hope = yes
-						has_low_hope = yes
-						has_medium_hope = yes
-					}
-				}
+				limit = { NOT = { has_high_hope_or_higher = yes } }
 				custom_tooltip = {
 					text = already_coronated_trigger
 					OR = {
@@ -591,15 +584,7 @@
 					}
 					trigger_if = { #LotR
 						limit = { is_elf = yes }
-						custom_tooltip = {
-							text = hope_too_high_for_coronation_trigger
-							OR = { 
-								# hope_level < 4 # Causes crashes for the momment
-								has_lowest_hope = yes
-								has_low_hope = yes
-								has_medium_hope = yes
-							}
-						}
+						limit = { NOT = { has_high_hope_or_higher = yes } }
 					}
 
 				}
@@ -725,22 +710,12 @@
 							has_realm_law = crowned_elf
 						}
 					}
-					custom_tooltip = {
-						text = hope_too_low_for_coronation_trigger
-						has_high_hope_or_higher = yes
-					}
+					has_high_hope_or_higher = yes
 				}
 				ai_will_do = {
 					value = 100
 					if = {
-						limit = {
-							OR = { 
-								# hope_level < 4 # Causes crashes for the momment
-								has_lowest_hope = yes
-								has_low_hope = yes
-								has_medium_hope = yes
-							}
-						}
+						limit = { NOT = { has_high_hope_or_higher = yes } }
 						multiply = 0
 					}
 				}
@@ -3777,7 +3752,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_dunedain.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dunedain.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -3805,7 +3780,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_dorwinion.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dorwinion.dds"
 		environment = "environment_frontend_mediterranean_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_mediterranean"
 	}
@@ -3817,7 +3792,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_evil.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil.dds"
 		environment = "environment_event_fp2_corridor_night" 
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -3829,7 +3804,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_evil_maiar.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_maiar.dds"
 		environment = "environment_event_feast"
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -3841,7 +3816,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_evil_istari.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_istari.dds"
 		environment = "environment_event_fp2_temple"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -3853,7 +3828,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_evil_high.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_evil_high.dds"
 		environment = "environment_event_church"
 		ambience = "event:/DLC/FP2/SFX/Events/prison" 
 	}	
@@ -3878,7 +3853,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_thranduils_halls.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_thranduils_halls.dds"
 		environment = "environment_frontend_east_main"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -3893,7 +3868,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/lorien_night.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_lorien_night.dds"
 		environment = "environment_event_alley"
 		ambience = "event:/SFX/Events/Backgrounds/deciduous_forest_day"
 	}	
@@ -3911,7 +3886,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_woodelf.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_woodelf.dds"
 		environment = "environment_event_bp1_relaxing_room_western"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}	
@@ -3923,7 +3898,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_noldor.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_noldor.dds"
 		environment = "environment_event_bp1_relaxing_room_western"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -3938,7 +3913,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_easterling_imperial.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_easterling_imperial.dds"
 		environment = "environment_event_bp1_relaxing_room_western" 
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_middleeastern_african"
 	}
@@ -3959,7 +3934,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_dwarf_eastern.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf_eastern.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}
@@ -3971,7 +3946,7 @@
 				has_current_phase = coronation_phase_coronation
 			}
 		}
-		texture = "gfx/interface/illustrations/event_scenes/throneroom_dwarf.dds"
+		texture = "gfx/interface/illustrations/event_scenes/lotr_throneroom_dwarf.dds"
 		environment = "environment_event_mena_bedchamber"
 		ambience = "event:/SFX/Events/Backgrounds/throneroom_western"
 	}

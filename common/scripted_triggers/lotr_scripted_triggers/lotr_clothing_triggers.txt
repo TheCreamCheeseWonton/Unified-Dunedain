@@ -31,6 +31,7 @@ portrait_western_proxy_clothing_contents_trigger = {
 		has_clothing_gfx = uialedain_clothing_gfx
 		has_clothing_gfx = belfalathrim_clothing_gfx		
 		has_clothing_gfx = gondorian_clothing_gfx
+		has_clothing_gfx = umbaredain_clothing_gfx
 		has_clothing_gfx = dale_clothing_gfx
 		has_clothing_gfx = hobbit_clothing_gfx
 	}
@@ -537,6 +538,25 @@ portrait_harondorim_clothing_contents_trigger = {
 	portrait_shared_clothing_contents_trigger = { #LotR
 		CULTURE_SCOPE = scope:culture
 		CULTURE_FLAG = harondorim
+	}
+}
+
+## Umbaredain ##
+
+portrait_umbaredain_clothing_trigger = {
+	scope:culture = { portrait_umbaredain_clothing_contents_trigger = yes }
+}
+
+portrait_umbaredain_clothing_spouse_trigger = {
+	culture = {
+		portrait_umbaredain_clothing_contents_trigger = yes
+	}
+}
+
+portrait_umbaredain_clothing_contents_trigger = {
+	portrait_shared_clothing_contents_trigger = { #LotR
+		CULTURE_SCOPE = scope:culture
+		CULTURE_FLAG = umbaredain
 	}
 }
 
@@ -1511,6 +1531,16 @@ lotr_portrait_wear_armor_trigger = {
 				government_has_flag = government_is_holy_order
 				has_realm_law = camp_purpose_mercenaries
 				has_realm_law = camp_purpose_brigands
+				trigger_if = {
+					limit = {
+						is_elf = no #elves get unique ranger clothing
+						NAND = {
+							culture = { has_cultural_pillar = heritage_dunedain } #dunedain get unique ranger clothing
+							NOT = { culture = culture:belfalathrim } # EXCEPT for the belfalathrim
+						}
+					}
+					has_realm_law = camp_purpose_rangers
+				}
 			}
 		}
 		has_trait = order_member
@@ -1534,6 +1564,16 @@ lotr_portrait_wear_armor_trigger = {
 							NOR = {
 								has_realm_law = camp_purpose_mercenaries
 								has_realm_law = camp_purpose_brigands
+								trigger_if = {
+									limit = {
+										is_elf = no #elves get unique ranger clothing
+										NAND = {
+											culture = { has_cultural_pillar = heritage_dunedain } #dunedain get unique ranger clothing
+											NOT = { culture = culture:belfalathrim } # EXCEPT for the belfalathrim
+										}
+									}
+									has_realm_law = camp_purpose_rangers
+								}
 							}
 							is_at_war = no
 						}
@@ -2053,6 +2093,14 @@ lotr_regular_bedchamber_clothes_trigger = {
 }
 
 lotr_should_be_knight_idle_trigger = { # from AGOT
+	is_lotr_adult = yes
+	NOR = {
+		portrait_sickness_trigger = yes
+		is_imprisoned = yes
+		has_trait = incapable
+		has_trait = ill
+		has_trait = craven
+	}
 	OR = {
 		AND = {
 			portrait_wear_armor_trigger = yes
@@ -2060,7 +2108,10 @@ lotr_should_be_knight_idle_trigger = { # from AGOT
 			prowess >= 15
 			NOT = { culture = { has_cultural_pillar = heritage_periannath } }
 		}
-		is_at_war = yes
+		AND = {
+			portrait_wear_armor_trigger = yes
+			is_at_war = yes
+		}
 		AND = {
 			is_knight = yes
 			liege = {

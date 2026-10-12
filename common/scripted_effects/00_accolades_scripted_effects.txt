@@ -2162,16 +2162,18 @@ save_type_specific_successor_culture_effect = {
 					scope:accolade_in_need = {
 						initial_type = accolade_type:archer_attribute
 					}
-					# OR = { #LotR
-					# 	has_cultural_pillar = heritage_brythonic
-					# 	has_cultural_pillar = heritage_east_african
-					# 	has_cultural_pillar = heritage_indo_aryan
-					# 	has_cultural_pillar = heritage_dravidian
-					# 	has_cultural_pillar = heritage_burman
-					# 	has_cultural_pillar = heritage_yoruba
-					# 	has_cultural_pillar = heritage_baltic
-					# 	has_cultural_pillar = heritage_balto_finnic
-					# }
+					OR = { #LotR
+						# has_cultural_pillar = heritage_brythonic
+						# has_cultural_pillar = heritage_east_african
+						# has_cultural_pillar = heritage_indo_aryan
+						# has_cultural_pillar = heritage_dravidian
+						# has_cultural_pillar = heritage_burman
+						# has_cultural_pillar = heritage_yoruba
+						# has_cultural_pillar = heritage_baltic
+						# has_cultural_pillar = heritage_balto_finnic
+						is_elf_culture = yes
+						has_cultural_pillar = heritage_druedain
+					}
 				}
 				# Skirmisher
 				AND = {
@@ -2205,20 +2207,24 @@ save_type_specific_successor_culture_effect = {
 					}
 					OR = {
 						has_cultural_tradition = tradition_ep3_indomitable_azatani
+						has_cultural_tradition = tradition_horse_breeder
+						has_cultural_tradition = tradition_roving_bands
 						# has_cultural_tradition = tradition_desert_ribat
 						# has_cultural_tradition = tradition_chanson_de_geste
 						# has_cultural_tradition = tradition_hussar
 					}
-					# OR = { #LotR
-					# 	has_cultural_pillar = heritage_iranian
-					# 	has_cultural_pillar = heritage_turkic
-					# 	has_cultural_pillar = heritage_mongolic
-					# 	has_cultural_pillar = heritage_arabic
-					# 	has_cultural_pillar = heritage_berber
-					# 	has_cultural_pillar = heritage_iberian
-					# 	has_cultural_pillar = heritage_indo_aryan
-					# 	has_cultural_pillar = heritage_magyar
-					# }
+					OR = {
+						# has_cultural_pillar = heritage_iranian
+						# has_cultural_pillar = heritage_turkic
+						# has_cultural_pillar = heritage_mongolic
+						# has_cultural_pillar = heritage_arabic
+						# has_cultural_pillar = heritage_berber
+						# has_cultural_pillar = heritage_iberian
+						# has_cultural_pillar = heritage_indo_aryan
+						# has_cultural_pillar = heritage_magyar
+						has_cultural_pillar = heritage_eotheod
+						has_cultural_parameter = heritage_group_talathrim
+					}
 				}
 				# Vanguard
 				AND = {
@@ -2240,15 +2246,18 @@ save_type_specific_successor_culture_effect = {
 						# has_innovation = innovation_sarawit
 						# has_innovation = innovation_legionnaires
 					}
-					# OR = { #LotR
-					# 	has_cultural_pillar = heritage_central_germanic
-					# 	has_cultural_pillar = heritage_north_germanic
-					# 	has_cultural_pillar = heritage_west_germanic
-					# 	has_cultural_pillar = heritage_east_slavic
-					# 	has_cultural_pillar = heritage_burman
-					# 	has_cultural_pillar = heritage_qiangic
-					# 	has_cultural_pillar = heritage_tibetan
-					# }
+					OR = {
+						# has_cultural_pillar = heritage_central_germanic
+						# has_cultural_pillar = heritage_north_germanic
+						# has_cultural_pillar = heritage_west_germanic
+						# has_cultural_pillar = heritage_east_slavic
+						# has_cultural_pillar = heritage_burman
+						# has_cultural_pillar = heritage_qiangic
+						# has_cultural_pillar = heritage_tibetan
+						has_cultural_parameter = heritage_group_haladin
+						has_cultural_parameter = heritage_group_numenorean
+						is_dwarf_culture = yes
+					}
 				}
 				# Lancer
 				AND = {
@@ -2262,16 +2271,20 @@ save_type_specific_successor_culture_effect = {
 						# has_innovation = innovation_valets
 						has_cultural_tradition = tradition_ep3_audacious_cadets
 						has_cultural_tradition = tradition_ep3_imperial_tagmata
+						has_cultural_tradition = tradition_belfalathrim_chivalry
+						has_cultural_tradition = tradition_variag_horse_lords
 					}
-					# OR = { #LotR
-					# 	has_cultural_pillar = heritage_iranian
-					# 	has_cultural_pillar = heritage_turkic
-					# 	has_cultural_pillar = heritage_mongolic
-					# 	has_cultural_pillar = heritage_central_germanic
-					# 	has_cultural_pillar = heritage_frankish
-					# 	has_cultural_pillar = heritage_indo_aryan
-					# 	has_cultural_pillar = heritage_byzantine
-					# }
+					OR = {
+						# has_cultural_pillar = heritage_iranian  #LotR
+						# has_cultural_pillar = heritage_turkic
+						# has_cultural_pillar = heritage_mongolic
+						# has_cultural_pillar = heritage_central_germanic
+						# has_cultural_pillar = heritage_frankish
+						# has_cultural_pillar = heritage_indo_aryan
+						# has_cultural_pillar = heritage_byzantine
+						has_cultural_pillar = heritage_eotheod
+						has_cultural_parameter = heritage_group_talathrim
+					}
 				}
 				# Besieger
 				AND = {
@@ -2333,6 +2346,7 @@ save_type_specific_successor_culture_effect = {
 						# has_cultural_pillar = heritage_indo_aryan
 						# has_cultural_pillar = heritage_burman
 						has_cultural_pillar = heritage_southern_apysaic #LotR
+						has_cultural_parameter = heritage_group_mumakani
 					}
 				}
 				# Horse Archer
@@ -2341,15 +2355,12 @@ save_type_specific_successor_culture_effect = {
 						initial_type = accolade_type:horse_archer_attribute
 					}
 					# has_cultural_parameter = unlock_maa_horse_archers #LotR
-					# OR = { #LotR
-					# 	has_cultural_pillar = heritage_turkic
-					# 	has_cultural_pillar = heritage_mongolic
-					# 	has_cultural_pillar = heritage_burman
-					# }
-					OR = { #LotR
+					OR = {
+						# has_cultural_pillar = heritage_turkic
+						# has_cultural_pillar = heritage_mongolic
+						# has_cultural_pillar = heritage_burman
 						has_cultural_pillar = heritage_eotheod
-						has_cultural_pillar = heritage_tedjin
-						has_cultural_pillar = heritage_ioriag
+						has_cultural_parameter = heritage_group_talathrim
 					}
 				}
 				# Huntsmaster
